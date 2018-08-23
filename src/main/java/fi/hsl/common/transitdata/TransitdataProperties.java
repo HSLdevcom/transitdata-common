@@ -32,6 +32,10 @@ public class TransitdataProperties {
         }
     }*/
 
+    public static final String REDIS_PREFIX_JPP = "jpp:";
+    public static final String REDIS_PREFIX_DVJ = "dvj:";
+
+
     public static final String KEY_PROTOBUF_SCHEMA = "protobuf-schema";
     public static final String KEY_SCHEMA_VERSION = "schema-version";
 
