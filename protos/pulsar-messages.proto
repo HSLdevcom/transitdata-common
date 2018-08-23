@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+package proto;
+
+option java_package = "fi.hsl.common.transitdata.proto";
+option java_outer_classname = "PulsarMessageProtos";
+
+message StopEvent {
+    required int64 dated_vehicle_journey_id = 1;
+    enum EventType {
+        ARRIVAL = 0;
+        DEPARTURE = 1;
+    }
+    required EventType event_type = 2;
+    required int64 target_time = 3;
+    required int32 stop_id = 4;
+    required int32 stop_seq = 5;
+    enum ScheduleRelationship {
+        SCHEDULED = 0;
+        SKIPPED = 1;
+    }
+    required ScheduleRelationship schedule_relationship = 6;
+}
