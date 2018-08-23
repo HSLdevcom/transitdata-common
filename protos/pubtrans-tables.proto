@@ -1,0 +1,49 @@
+syntax = "proto2";
+
+package proto;
+
+option java_package = "fi.hsl.common.transitdata.proto";
+option java_outer_classname = "PubtransTableProtos";
+
+message ROIArrival {
+    required int32 SchemaVersion = 1;
+    required int64 Id = 2;
+    required int64 IsOnDatedVehicleJourneyId = 3;
+    optional int64 IsOnMonitoredVehicleJourneyId = 4;
+    required int32 JourneyPatternSequenceNumber = 5;
+    required int64 IsTimetabledAtJourneyPatternPointGid = 6;
+    required int32 VisitCountNumber = 7;
+    optional int64 IsTargetedAtJourneyPatternPointGid = 8;
+    optional int64 WasObservedAtJourneyPatternPointGid = 9;
+    optional string TimetabledLatestDateTime = 10;
+    optional string TargetDateTime = 11;
+    optional string EstimatedDateTime = 12;
+    optional string ObservedDateTime = 13;
+    required int64 State = 14;
+    required int64 Type = 15;
+    required bool IsValidYesNo = 16;
+    required int64 LastModifiedUTCDateTime = 17;
+}
+
+message ROIDeparture {
+    required int32 SchemaVersion = 1;
+    required int64 Id = 2;
+    required int64 IsOnDatedVehicleJourneyId = 3;
+    optional int64 IsOnMonitoredVehicleJourneyId = 4;
+    required int32 JourneyPatternSequenceNumber = 5;
+    required int64 IsTimetabledAtJourneyPatternPointGid = 6;
+    required int32 VisitCountNumber = 7;
+    optional int64 IsTargetedAtJourneyPatternPointGid = 8;
+    optional int64 WasObservedAtJourneyPatternPointGid = 9;
+    optional int64 HasDestinationDisplayId = 10;
+    optional int64 HasDestinationStopAreaGid = 11;
+    optional int64 HasServiceRequirementId = 12;
+    optional string TimetabledLatestDateTime = 13;
+    optional string TargetDateTime = 14;
+    optional string EstimatedDateTime = 15;
+    optional string ObservedDateTime = 16;
+    required int64 State = 17;
+    required int64 Type = 18;
+    required bool IsValidYesNo = 19;
+    required int64 LastModifiedUTCDateTime = 20;
+}
