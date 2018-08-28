@@ -14,197 +14,205 @@ public final class PubtransTableProtos {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface ROIArrivalOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:proto.ROIArrival)
+  public interface CommonOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.Common)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required int32 SchemaVersion = 1;</code>
+     * <pre>
+     * Remember to bump up the version when updating the scema!
+     * </pre>
+     *
+     * <code>required int32 schema_version = 1 [default = 1];</code>
      */
     boolean hasSchemaVersion();
     /**
-     * <code>required int32 SchemaVersion = 1;</code>
+     * <pre>
+     * Remember to bump up the version when updating the scema!
+     * </pre>
+     *
+     * <code>required int32 schema_version = 1 [default = 1];</code>
      */
     int getSchemaVersion();
 
     /**
-     * <code>required int64 Id = 2;</code>
+     * <code>required int64 id = 2;</code>
      */
     boolean hasId();
     /**
-     * <code>required int64 Id = 2;</code>
+     * <code>required int64 id = 2;</code>
      */
     long getId();
 
     /**
-     * <code>required int64 IsOnDatedVehicleJourneyId = 3;</code>
+     * <code>required int64 is_on_dated_vehicle_journey_id = 3;</code>
      */
     boolean hasIsOnDatedVehicleJourneyId();
     /**
-     * <code>required int64 IsOnDatedVehicleJourneyId = 3;</code>
+     * <code>required int64 is_on_dated_vehicle_journey_id = 3;</code>
      */
     long getIsOnDatedVehicleJourneyId();
 
     /**
-     * <code>optional int64 IsOnMonitoredVehicleJourneyId = 4;</code>
+     * <code>optional int64 is_on_monitored_vehicle_journey_id = 4;</code>
      */
     boolean hasIsOnMonitoredVehicleJourneyId();
     /**
-     * <code>optional int64 IsOnMonitoredVehicleJourneyId = 4;</code>
+     * <code>optional int64 is_on_monitored_vehicle_journey_id = 4;</code>
      */
     long getIsOnMonitoredVehicleJourneyId();
 
     /**
-     * <code>required int32 JourneyPatternSequenceNumber = 5;</code>
+     * <code>required int32 journey_pattern_sequence_number = 5;</code>
      */
     boolean hasJourneyPatternSequenceNumber();
     /**
-     * <code>required int32 JourneyPatternSequenceNumber = 5;</code>
+     * <code>required int32 journey_pattern_sequence_number = 5;</code>
      */
     int getJourneyPatternSequenceNumber();
 
     /**
-     * <code>required int64 IsTimetabledAtJourneyPatternPointGid = 6;</code>
+     * <code>required int64 is_timetabled_at_journey_pattern_point_gid = 6;</code>
      */
     boolean hasIsTimetabledAtJourneyPatternPointGid();
     /**
-     * <code>required int64 IsTimetabledAtJourneyPatternPointGid = 6;</code>
+     * <code>required int64 is_timetabled_at_journey_pattern_point_gid = 6;</code>
      */
     long getIsTimetabledAtJourneyPatternPointGid();
 
     /**
-     * <code>required int32 VisitCountNumber = 7;</code>
+     * <code>required int32 visit_count_number = 7;</code>
      */
     boolean hasVisitCountNumber();
     /**
-     * <code>required int32 VisitCountNumber = 7;</code>
+     * <code>required int32 visit_count_number = 7;</code>
      */
     int getVisitCountNumber();
 
     /**
-     * <code>optional int64 IsTargetedAtJourneyPatternPointGid = 8;</code>
+     * <code>optional int64 is_targeted_at_journey_pattern_point_gid = 8;</code>
      */
     boolean hasIsTargetedAtJourneyPatternPointGid();
     /**
-     * <code>optional int64 IsTargetedAtJourneyPatternPointGid = 8;</code>
+     * <code>optional int64 is_targeted_at_journey_pattern_point_gid = 8;</code>
      */
     long getIsTargetedAtJourneyPatternPointGid();
 
     /**
-     * <code>optional int64 WasObservedAtJourneyPatternPointGid = 9;</code>
+     * <code>optional int64 was_observed_at_journey_pattern_point_gid = 9;</code>
      */
     boolean hasWasObservedAtJourneyPatternPointGid();
     /**
-     * <code>optional int64 WasObservedAtJourneyPatternPointGid = 9;</code>
+     * <code>optional int64 was_observed_at_journey_pattern_point_gid = 9;</code>
      */
     long getWasObservedAtJourneyPatternPointGid();
 
     /**
-     * <code>optional string TimetabledLatestDateTime = 10;</code>
+     * <code>optional string timetabled_latest_date_time = 10;</code>
      */
     boolean hasTimetabledLatestDateTime();
     /**
-     * <code>optional string TimetabledLatestDateTime = 10;</code>
+     * <code>optional string timetabled_latest_date_time = 10;</code>
      */
     java.lang.String getTimetabledLatestDateTime();
     /**
-     * <code>optional string TimetabledLatestDateTime = 10;</code>
+     * <code>optional string timetabled_latest_date_time = 10;</code>
      */
     com.google.protobuf.ByteString
         getTimetabledLatestDateTimeBytes();
 
     /**
-     * <code>optional string TargetDateTime = 11;</code>
+     * <code>optional string target_date_time = 11;</code>
      */
     boolean hasTargetDateTime();
     /**
-     * <code>optional string TargetDateTime = 11;</code>
+     * <code>optional string target_date_time = 11;</code>
      */
     java.lang.String getTargetDateTime();
     /**
-     * <code>optional string TargetDateTime = 11;</code>
+     * <code>optional string target_date_time = 11;</code>
      */
     com.google.protobuf.ByteString
         getTargetDateTimeBytes();
 
     /**
-     * <code>optional string EstimatedDateTime = 12;</code>
+     * <code>optional string estimated_date_time = 12;</code>
      */
     boolean hasEstimatedDateTime();
     /**
-     * <code>optional string EstimatedDateTime = 12;</code>
+     * <code>optional string estimated_date_time = 12;</code>
      */
     java.lang.String getEstimatedDateTime();
     /**
-     * <code>optional string EstimatedDateTime = 12;</code>
+     * <code>optional string estimated_date_time = 12;</code>
      */
     com.google.protobuf.ByteString
         getEstimatedDateTimeBytes();
 
     /**
-     * <code>optional string ObservedDateTime = 13;</code>
+     * <code>optional string observed_date_time = 13;</code>
      */
     boolean hasObservedDateTime();
     /**
-     * <code>optional string ObservedDateTime = 13;</code>
+     * <code>optional string observed_date_time = 13;</code>
      */
     java.lang.String getObservedDateTime();
     /**
-     * <code>optional string ObservedDateTime = 13;</code>
+     * <code>optional string observed_date_time = 13;</code>
      */
     com.google.protobuf.ByteString
         getObservedDateTimeBytes();
 
     /**
-     * <code>required int64 State = 14;</code>
+     * <code>required int64 state = 14;</code>
      */
     boolean hasState();
     /**
-     * <code>required int64 State = 14;</code>
+     * <code>required int64 state = 14;</code>
      */
     long getState();
 
     /**
-     * <code>required int64 Type = 15;</code>
+     * <code>required int64 type = 15;</code>
      */
     boolean hasType();
     /**
-     * <code>required int64 Type = 15;</code>
+     * <code>required int64 type = 15;</code>
      */
     long getType();
 
     /**
-     * <code>required bool IsValidYesNo = 16;</code>
+     * <code>required bool is_valid_yes_no = 16;</code>
      */
     boolean hasIsValidYesNo();
     /**
-     * <code>required bool IsValidYesNo = 16;</code>
+     * <code>required bool is_valid_yes_no = 16;</code>
      */
     boolean getIsValidYesNo();
 
     /**
-     * <code>required int64 LastModifiedUTCDateTime = 17;</code>
+     * <code>required int64 last_modified_utc_date_time = 17;</code>
      */
-    boolean hasLastModifiedUTCDateTime();
+    boolean hasLastModifiedUtcDateTime();
     /**
-     * <code>required int64 LastModifiedUTCDateTime = 17;</code>
+     * <code>required int64 last_modified_utc_date_time = 17;</code>
      */
-    long getLastModifiedUTCDateTime();
+    long getLastModifiedUtcDateTime();
   }
   /**
-   * Protobuf type {@code proto.ROIArrival}
+   * Protobuf type {@code proto.Common}
    */
-  public  static final class ROIArrival extends
+  public  static final class Common extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:proto.ROIArrival)
-      ROIArrivalOrBuilder {
+      // @@protoc_insertion_point(message_implements:proto.Common)
+      CommonOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ROIArrival.newBuilder() to construct.
-    private ROIArrival(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Common.newBuilder() to construct.
+    private Common(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ROIArrival() {
-      schemaVersion_ = 0;
+    private Common() {
+      schemaVersion_ = 1;
       id_ = 0L;
       isOnDatedVehicleJourneyId_ = 0L;
       isOnMonitoredVehicleJourneyId_ = 0L;
@@ -220,7 +228,7 @@ public final class PubtransTableProtos {
       state_ = 0L;
       type_ = 0L;
       isValidYesNo_ = false;
-      lastModifiedUTCDateTime_ = 0L;
+      lastModifiedUtcDateTime_ = 0L;
     }
 
     @java.lang.Override
@@ -228,7 +236,7 @@ public final class PubtransTableProtos {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ROIArrival(
+    private Common(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -333,7 +341,7 @@ public final class PubtransTableProtos {
             }
             case 136: {
               bitField0_ |= 0x00010000;
-              lastModifiedUTCDateTime_ = input.readInt64();
+              lastModifiedUtcDateTime_ = input.readInt64();
               break;
             }
             default: {
@@ -357,28 +365,36 @@ public final class PubtransTableProtos {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_ROIArrival_descriptor;
+      return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_Common_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_ROIArrival_fieldAccessorTable
+      return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_Common_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival.class, fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival.Builder.class);
+              fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.class, fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.Builder.class);
     }
 
     private int bitField0_;
-    public static final int SCHEMAVERSION_FIELD_NUMBER = 1;
+    public static final int SCHEMA_VERSION_FIELD_NUMBER = 1;
     private int schemaVersion_;
     /**
-     * <code>required int32 SchemaVersion = 1;</code>
+     * <pre>
+     * Remember to bump up the version when updating the scema!
+     * </pre>
+     *
+     * <code>required int32 schema_version = 1 [default = 1];</code>
      */
     public boolean hasSchemaVersion() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required int32 SchemaVersion = 1;</code>
+     * <pre>
+     * Remember to bump up the version when updating the scema!
+     * </pre>
+     *
+     * <code>required int32 schema_version = 1 [default = 1];</code>
      */
     public int getSchemaVersion() {
       return schemaVersion_;
@@ -387,133 +403,133 @@ public final class PubtransTableProtos {
     public static final int ID_FIELD_NUMBER = 2;
     private long id_;
     /**
-     * <code>required int64 Id = 2;</code>
+     * <code>required int64 id = 2;</code>
      */
     public boolean hasId() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required int64 Id = 2;</code>
+     * <code>required int64 id = 2;</code>
      */
     public long getId() {
       return id_;
     }
 
-    public static final int ISONDATEDVEHICLEJOURNEYID_FIELD_NUMBER = 3;
+    public static final int IS_ON_DATED_VEHICLE_JOURNEY_ID_FIELD_NUMBER = 3;
     private long isOnDatedVehicleJourneyId_;
     /**
-     * <code>required int64 IsOnDatedVehicleJourneyId = 3;</code>
+     * <code>required int64 is_on_dated_vehicle_journey_id = 3;</code>
      */
     public boolean hasIsOnDatedVehicleJourneyId() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>required int64 IsOnDatedVehicleJourneyId = 3;</code>
+     * <code>required int64 is_on_dated_vehicle_journey_id = 3;</code>
      */
     public long getIsOnDatedVehicleJourneyId() {
       return isOnDatedVehicleJourneyId_;
     }
 
-    public static final int ISONMONITOREDVEHICLEJOURNEYID_FIELD_NUMBER = 4;
+    public static final int IS_ON_MONITORED_VEHICLE_JOURNEY_ID_FIELD_NUMBER = 4;
     private long isOnMonitoredVehicleJourneyId_;
     /**
-     * <code>optional int64 IsOnMonitoredVehicleJourneyId = 4;</code>
+     * <code>optional int64 is_on_monitored_vehicle_journey_id = 4;</code>
      */
     public boolean hasIsOnMonitoredVehicleJourneyId() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>optional int64 IsOnMonitoredVehicleJourneyId = 4;</code>
+     * <code>optional int64 is_on_monitored_vehicle_journey_id = 4;</code>
      */
     public long getIsOnMonitoredVehicleJourneyId() {
       return isOnMonitoredVehicleJourneyId_;
     }
 
-    public static final int JOURNEYPATTERNSEQUENCENUMBER_FIELD_NUMBER = 5;
+    public static final int JOURNEY_PATTERN_SEQUENCE_NUMBER_FIELD_NUMBER = 5;
     private int journeyPatternSequenceNumber_;
     /**
-     * <code>required int32 JourneyPatternSequenceNumber = 5;</code>
+     * <code>required int32 journey_pattern_sequence_number = 5;</code>
      */
     public boolean hasJourneyPatternSequenceNumber() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>required int32 JourneyPatternSequenceNumber = 5;</code>
+     * <code>required int32 journey_pattern_sequence_number = 5;</code>
      */
     public int getJourneyPatternSequenceNumber() {
       return journeyPatternSequenceNumber_;
     }
 
-    public static final int ISTIMETABLEDATJOURNEYPATTERNPOINTGID_FIELD_NUMBER = 6;
+    public static final int IS_TIMETABLED_AT_JOURNEY_PATTERN_POINT_GID_FIELD_NUMBER = 6;
     private long isTimetabledAtJourneyPatternPointGid_;
     /**
-     * <code>required int64 IsTimetabledAtJourneyPatternPointGid = 6;</code>
+     * <code>required int64 is_timetabled_at_journey_pattern_point_gid = 6;</code>
      */
     public boolean hasIsTimetabledAtJourneyPatternPointGid() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>required int64 IsTimetabledAtJourneyPatternPointGid = 6;</code>
+     * <code>required int64 is_timetabled_at_journey_pattern_point_gid = 6;</code>
      */
     public long getIsTimetabledAtJourneyPatternPointGid() {
       return isTimetabledAtJourneyPatternPointGid_;
     }
 
-    public static final int VISITCOUNTNUMBER_FIELD_NUMBER = 7;
+    public static final int VISIT_COUNT_NUMBER_FIELD_NUMBER = 7;
     private int visitCountNumber_;
     /**
-     * <code>required int32 VisitCountNumber = 7;</code>
+     * <code>required int32 visit_count_number = 7;</code>
      */
     public boolean hasVisitCountNumber() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>required int32 VisitCountNumber = 7;</code>
+     * <code>required int32 visit_count_number = 7;</code>
      */
     public int getVisitCountNumber() {
       return visitCountNumber_;
     }
 
-    public static final int ISTARGETEDATJOURNEYPATTERNPOINTGID_FIELD_NUMBER = 8;
+    public static final int IS_TARGETED_AT_JOURNEY_PATTERN_POINT_GID_FIELD_NUMBER = 8;
     private long isTargetedAtJourneyPatternPointGid_;
     /**
-     * <code>optional int64 IsTargetedAtJourneyPatternPointGid = 8;</code>
+     * <code>optional int64 is_targeted_at_journey_pattern_point_gid = 8;</code>
      */
     public boolean hasIsTargetedAtJourneyPatternPointGid() {
       return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
-     * <code>optional int64 IsTargetedAtJourneyPatternPointGid = 8;</code>
+     * <code>optional int64 is_targeted_at_journey_pattern_point_gid = 8;</code>
      */
     public long getIsTargetedAtJourneyPatternPointGid() {
       return isTargetedAtJourneyPatternPointGid_;
     }
 
-    public static final int WASOBSERVEDATJOURNEYPATTERNPOINTGID_FIELD_NUMBER = 9;
+    public static final int WAS_OBSERVED_AT_JOURNEY_PATTERN_POINT_GID_FIELD_NUMBER = 9;
     private long wasObservedAtJourneyPatternPointGid_;
     /**
-     * <code>optional int64 WasObservedAtJourneyPatternPointGid = 9;</code>
+     * <code>optional int64 was_observed_at_journey_pattern_point_gid = 9;</code>
      */
     public boolean hasWasObservedAtJourneyPatternPointGid() {
       return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
-     * <code>optional int64 WasObservedAtJourneyPatternPointGid = 9;</code>
+     * <code>optional int64 was_observed_at_journey_pattern_point_gid = 9;</code>
      */
     public long getWasObservedAtJourneyPatternPointGid() {
       return wasObservedAtJourneyPatternPointGid_;
     }
 
-    public static final int TIMETABLEDLATESTDATETIME_FIELD_NUMBER = 10;
+    public static final int TIMETABLED_LATEST_DATE_TIME_FIELD_NUMBER = 10;
     private volatile java.lang.Object timetabledLatestDateTime_;
     /**
-     * <code>optional string TimetabledLatestDateTime = 10;</code>
+     * <code>optional string timetabled_latest_date_time = 10;</code>
      */
     public boolean hasTimetabledLatestDateTime() {
       return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
-     * <code>optional string TimetabledLatestDateTime = 10;</code>
+     * <code>optional string timetabled_latest_date_time = 10;</code>
      */
     public java.lang.String getTimetabledLatestDateTime() {
       java.lang.Object ref = timetabledLatestDateTime_;
@@ -530,7 +546,7 @@ public final class PubtransTableProtos {
       }
     }
     /**
-     * <code>optional string TimetabledLatestDateTime = 10;</code>
+     * <code>optional string timetabled_latest_date_time = 10;</code>
      */
     public com.google.protobuf.ByteString
         getTimetabledLatestDateTimeBytes() {
@@ -546,16 +562,16 @@ public final class PubtransTableProtos {
       }
     }
 
-    public static final int TARGETDATETIME_FIELD_NUMBER = 11;
+    public static final int TARGET_DATE_TIME_FIELD_NUMBER = 11;
     private volatile java.lang.Object targetDateTime_;
     /**
-     * <code>optional string TargetDateTime = 11;</code>
+     * <code>optional string target_date_time = 11;</code>
      */
     public boolean hasTargetDateTime() {
       return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
-     * <code>optional string TargetDateTime = 11;</code>
+     * <code>optional string target_date_time = 11;</code>
      */
     public java.lang.String getTargetDateTime() {
       java.lang.Object ref = targetDateTime_;
@@ -572,7 +588,7 @@ public final class PubtransTableProtos {
       }
     }
     /**
-     * <code>optional string TargetDateTime = 11;</code>
+     * <code>optional string target_date_time = 11;</code>
      */
     public com.google.protobuf.ByteString
         getTargetDateTimeBytes() {
@@ -588,16 +604,16 @@ public final class PubtransTableProtos {
       }
     }
 
-    public static final int ESTIMATEDDATETIME_FIELD_NUMBER = 12;
+    public static final int ESTIMATED_DATE_TIME_FIELD_NUMBER = 12;
     private volatile java.lang.Object estimatedDateTime_;
     /**
-     * <code>optional string EstimatedDateTime = 12;</code>
+     * <code>optional string estimated_date_time = 12;</code>
      */
     public boolean hasEstimatedDateTime() {
       return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
-     * <code>optional string EstimatedDateTime = 12;</code>
+     * <code>optional string estimated_date_time = 12;</code>
      */
     public java.lang.String getEstimatedDateTime() {
       java.lang.Object ref = estimatedDateTime_;
@@ -614,7 +630,7 @@ public final class PubtransTableProtos {
       }
     }
     /**
-     * <code>optional string EstimatedDateTime = 12;</code>
+     * <code>optional string estimated_date_time = 12;</code>
      */
     public com.google.protobuf.ByteString
         getEstimatedDateTimeBytes() {
@@ -630,16 +646,16 @@ public final class PubtransTableProtos {
       }
     }
 
-    public static final int OBSERVEDDATETIME_FIELD_NUMBER = 13;
+    public static final int OBSERVED_DATE_TIME_FIELD_NUMBER = 13;
     private volatile java.lang.Object observedDateTime_;
     /**
-     * <code>optional string ObservedDateTime = 13;</code>
+     * <code>optional string observed_date_time = 13;</code>
      */
     public boolean hasObservedDateTime() {
       return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     /**
-     * <code>optional string ObservedDateTime = 13;</code>
+     * <code>optional string observed_date_time = 13;</code>
      */
     public java.lang.String getObservedDateTime() {
       java.lang.Object ref = observedDateTime_;
@@ -656,7 +672,7 @@ public final class PubtransTableProtos {
       }
     }
     /**
-     * <code>optional string ObservedDateTime = 13;</code>
+     * <code>optional string observed_date_time = 13;</code>
      */
     public com.google.protobuf.ByteString
         getObservedDateTimeBytes() {
@@ -675,13 +691,13 @@ public final class PubtransTableProtos {
     public static final int STATE_FIELD_NUMBER = 14;
     private long state_;
     /**
-     * <code>required int64 State = 14;</code>
+     * <code>required int64 state = 14;</code>
      */
     public boolean hasState() {
       return ((bitField0_ & 0x00002000) == 0x00002000);
     }
     /**
-     * <code>required int64 State = 14;</code>
+     * <code>required int64 state = 14;</code>
      */
     public long getState() {
       return state_;
@@ -690,46 +706,46 @@ public final class PubtransTableProtos {
     public static final int TYPE_FIELD_NUMBER = 15;
     private long type_;
     /**
-     * <code>required int64 Type = 15;</code>
+     * <code>required int64 type = 15;</code>
      */
     public boolean hasType() {
       return ((bitField0_ & 0x00004000) == 0x00004000);
     }
     /**
-     * <code>required int64 Type = 15;</code>
+     * <code>required int64 type = 15;</code>
      */
     public long getType() {
       return type_;
     }
 
-    public static final int ISVALIDYESNO_FIELD_NUMBER = 16;
+    public static final int IS_VALID_YES_NO_FIELD_NUMBER = 16;
     private boolean isValidYesNo_;
     /**
-     * <code>required bool IsValidYesNo = 16;</code>
+     * <code>required bool is_valid_yes_no = 16;</code>
      */
     public boolean hasIsValidYesNo() {
       return ((bitField0_ & 0x00008000) == 0x00008000);
     }
     /**
-     * <code>required bool IsValidYesNo = 16;</code>
+     * <code>required bool is_valid_yes_no = 16;</code>
      */
     public boolean getIsValidYesNo() {
       return isValidYesNo_;
     }
 
-    public static final int LASTMODIFIEDUTCDATETIME_FIELD_NUMBER = 17;
-    private long lastModifiedUTCDateTime_;
+    public static final int LAST_MODIFIED_UTC_DATE_TIME_FIELD_NUMBER = 17;
+    private long lastModifiedUtcDateTime_;
     /**
-     * <code>required int64 LastModifiedUTCDateTime = 17;</code>
+     * <code>required int64 last_modified_utc_date_time = 17;</code>
      */
-    public boolean hasLastModifiedUTCDateTime() {
+    public boolean hasLastModifiedUtcDateTime() {
       return ((bitField0_ & 0x00010000) == 0x00010000);
     }
     /**
-     * <code>required int64 LastModifiedUTCDateTime = 17;</code>
+     * <code>required int64 last_modified_utc_date_time = 17;</code>
      */
-    public long getLastModifiedUTCDateTime() {
-      return lastModifiedUTCDateTime_;
+    public long getLastModifiedUtcDateTime() {
+      return lastModifiedUtcDateTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -775,7 +791,7 @@ public final class PubtransTableProtos {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasLastModifiedUTCDateTime()) {
+      if (!hasLastModifiedUtcDateTime()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -835,7 +851,7 @@ public final class PubtransTableProtos {
         output.writeBool(16, isValidYesNo_);
       }
       if (((bitField0_ & 0x00010000) == 0x00010000)) {
-        output.writeInt64(17, lastModifiedUTCDateTime_);
+        output.writeInt64(17, lastModifiedUtcDateTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -908,7 +924,7 @@ public final class PubtransTableProtos {
       }
       if (((bitField0_ & 0x00010000) == 0x00010000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(17, lastModifiedUTCDateTime_);
+          .computeInt64Size(17, lastModifiedUtcDateTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -920,10 +936,10 @@ public final class PubtransTableProtos {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival)) {
+      if (!(obj instanceof fi.hsl.common.transitdata.proto.PubtransTableProtos.Common)) {
         return super.equals(obj);
       }
-      fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival other = (fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival) obj;
+      fi.hsl.common.transitdata.proto.PubtransTableProtos.Common other = (fi.hsl.common.transitdata.proto.PubtransTableProtos.Common) obj;
 
       boolean result = true;
       result = result && (hasSchemaVersion() == other.hasSchemaVersion());
@@ -1006,10 +1022,10 @@ public final class PubtransTableProtos {
         result = result && (getIsValidYesNo()
             == other.getIsValidYesNo());
       }
-      result = result && (hasLastModifiedUTCDateTime() == other.hasLastModifiedUTCDateTime());
-      if (hasLastModifiedUTCDateTime()) {
-        result = result && (getLastModifiedUTCDateTime()
-            == other.getLastModifiedUTCDateTime());
+      result = result && (hasLastModifiedUtcDateTime() == other.hasLastModifiedUtcDateTime());
+      if (hasLastModifiedUtcDateTime()) {
+        result = result && (getLastModifiedUtcDateTime()
+            == other.getLastModifiedUtcDateTime());
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -1023,7 +1039,7 @@ public final class PubtransTableProtos {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (hasSchemaVersion()) {
-        hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
+        hash = (37 * hash) + SCHEMA_VERSION_FIELD_NUMBER;
         hash = (53 * hash) + getSchemaVersion();
       }
       if (hasId()) {
@@ -1032,52 +1048,52 @@ public final class PubtransTableProtos {
             getId());
       }
       if (hasIsOnDatedVehicleJourneyId()) {
-        hash = (37 * hash) + ISONDATEDVEHICLEJOURNEYID_FIELD_NUMBER;
+        hash = (37 * hash) + IS_ON_DATED_VEHICLE_JOURNEY_ID_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getIsOnDatedVehicleJourneyId());
       }
       if (hasIsOnMonitoredVehicleJourneyId()) {
-        hash = (37 * hash) + ISONMONITOREDVEHICLEJOURNEYID_FIELD_NUMBER;
+        hash = (37 * hash) + IS_ON_MONITORED_VEHICLE_JOURNEY_ID_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getIsOnMonitoredVehicleJourneyId());
       }
       if (hasJourneyPatternSequenceNumber()) {
-        hash = (37 * hash) + JOURNEYPATTERNSEQUENCENUMBER_FIELD_NUMBER;
+        hash = (37 * hash) + JOURNEY_PATTERN_SEQUENCE_NUMBER_FIELD_NUMBER;
         hash = (53 * hash) + getJourneyPatternSequenceNumber();
       }
       if (hasIsTimetabledAtJourneyPatternPointGid()) {
-        hash = (37 * hash) + ISTIMETABLEDATJOURNEYPATTERNPOINTGID_FIELD_NUMBER;
+        hash = (37 * hash) + IS_TIMETABLED_AT_JOURNEY_PATTERN_POINT_GID_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getIsTimetabledAtJourneyPatternPointGid());
       }
       if (hasVisitCountNumber()) {
-        hash = (37 * hash) + VISITCOUNTNUMBER_FIELD_NUMBER;
+        hash = (37 * hash) + VISIT_COUNT_NUMBER_FIELD_NUMBER;
         hash = (53 * hash) + getVisitCountNumber();
       }
       if (hasIsTargetedAtJourneyPatternPointGid()) {
-        hash = (37 * hash) + ISTARGETEDATJOURNEYPATTERNPOINTGID_FIELD_NUMBER;
+        hash = (37 * hash) + IS_TARGETED_AT_JOURNEY_PATTERN_POINT_GID_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getIsTargetedAtJourneyPatternPointGid());
       }
       if (hasWasObservedAtJourneyPatternPointGid()) {
-        hash = (37 * hash) + WASOBSERVEDATJOURNEYPATTERNPOINTGID_FIELD_NUMBER;
+        hash = (37 * hash) + WAS_OBSERVED_AT_JOURNEY_PATTERN_POINT_GID_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getWasObservedAtJourneyPatternPointGid());
       }
       if (hasTimetabledLatestDateTime()) {
-        hash = (37 * hash) + TIMETABLEDLATESTDATETIME_FIELD_NUMBER;
+        hash = (37 * hash) + TIMETABLED_LATEST_DATE_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getTimetabledLatestDateTime().hashCode();
       }
       if (hasTargetDateTime()) {
-        hash = (37 * hash) + TARGETDATETIME_FIELD_NUMBER;
+        hash = (37 * hash) + TARGET_DATE_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getTargetDateTime().hashCode();
       }
       if (hasEstimatedDateTime()) {
-        hash = (37 * hash) + ESTIMATEDDATETIME_FIELD_NUMBER;
+        hash = (37 * hash) + ESTIMATED_DATE_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getEstimatedDateTime().hashCode();
       }
       if (hasObservedDateTime()) {
-        hash = (37 * hash) + OBSERVEDDATETIME_FIELD_NUMBER;
+        hash = (37 * hash) + OBSERVED_DATE_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getObservedDateTime().hashCode();
       }
       if (hasState()) {
@@ -1091,14 +1107,1430 @@ public final class PubtransTableProtos {
             getType());
       }
       if (hasIsValidYesNo()) {
-        hash = (37 * hash) + ISVALIDYESNO_FIELD_NUMBER;
+        hash = (37 * hash) + IS_VALID_YES_NO_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getIsValidYesNo());
       }
-      if (hasLastModifiedUTCDateTime()) {
-        hash = (37 * hash) + LASTMODIFIEDUTCDATETIME_FIELD_NUMBER;
+      if (hasLastModifiedUtcDateTime()) {
+        hash = (37 * hash) + LAST_MODIFIED_UTC_DATE_TIME_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getLastModifiedUTCDateTime());
+            getLastModifiedUtcDateTime());
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.Common parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.Common parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.Common parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.Common parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.Common parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.Common parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.Common parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.Common parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.Common parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.Common parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.Common parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.Common parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(fi.hsl.common.transitdata.proto.PubtransTableProtos.Common prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.Common}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.Common)
+        fi.hsl.common.transitdata.proto.PubtransTableProtos.CommonOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_Common_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_Common_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.class, fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.Builder.class);
+      }
+
+      // Construct using fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        schemaVersion_ = 1;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        isOnDatedVehicleJourneyId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        isOnMonitoredVehicleJourneyId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        journeyPatternSequenceNumber_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        isTimetabledAtJourneyPatternPointGid_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        visitCountNumber_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        isTargetedAtJourneyPatternPointGid_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000080);
+        wasObservedAtJourneyPatternPointGid_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000100);
+        timetabledLatestDateTime_ = "";
+        bitField0_ = (bitField0_ & ~0x00000200);
+        targetDateTime_ = "";
+        bitField0_ = (bitField0_ & ~0x00000400);
+        estimatedDateTime_ = "";
+        bitField0_ = (bitField0_ & ~0x00000800);
+        observedDateTime_ = "";
+        bitField0_ = (bitField0_ & ~0x00001000);
+        state_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00002000);
+        type_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00004000);
+        isValidYesNo_ = false;
+        bitField0_ = (bitField0_ & ~0x00008000);
+        lastModifiedUtcDateTime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00010000);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_Common_descriptor;
+      }
+
+      @java.lang.Override
+      public fi.hsl.common.transitdata.proto.PubtransTableProtos.Common getDefaultInstanceForType() {
+        return fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public fi.hsl.common.transitdata.proto.PubtransTableProtos.Common build() {
+        fi.hsl.common.transitdata.proto.PubtransTableProtos.Common result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public fi.hsl.common.transitdata.proto.PubtransTableProtos.Common buildPartial() {
+        fi.hsl.common.transitdata.proto.PubtransTableProtos.Common result = new fi.hsl.common.transitdata.proto.PubtransTableProtos.Common(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.schemaVersion_ = schemaVersion_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.isOnDatedVehicleJourneyId_ = isOnDatedVehicleJourneyId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.isOnMonitoredVehicleJourneyId_ = isOnMonitoredVehicleJourneyId_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.journeyPatternSequenceNumber_ = journeyPatternSequenceNumber_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.isTimetabledAtJourneyPatternPointGid_ = isTimetabledAtJourneyPatternPointGid_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.visitCountNumber_ = visitCountNumber_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.isTargetedAtJourneyPatternPointGid_ = isTargetedAtJourneyPatternPointGid_;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000100;
+        }
+        result.wasObservedAtJourneyPatternPointGid_ = wasObservedAtJourneyPatternPointGid_;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000200;
+        }
+        result.timetabledLatestDateTime_ = timetabledLatestDateTime_;
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+          to_bitField0_ |= 0x00000400;
+        }
+        result.targetDateTime_ = targetDateTime_;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000800;
+        }
+        result.estimatedDateTime_ = estimatedDateTime_;
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00001000;
+        }
+        result.observedDateTime_ = observedDateTime_;
+        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+          to_bitField0_ |= 0x00002000;
+        }
+        result.state_ = state_;
+        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
+          to_bitField0_ |= 0x00004000;
+        }
+        result.type_ = type_;
+        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+          to_bitField0_ |= 0x00008000;
+        }
+        result.isValidYesNo_ = isValidYesNo_;
+        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
+          to_bitField0_ |= 0x00010000;
+        }
+        result.lastModifiedUtcDateTime_ = lastModifiedUtcDateTime_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof fi.hsl.common.transitdata.proto.PubtransTableProtos.Common) {
+          return mergeFrom((fi.hsl.common.transitdata.proto.PubtransTableProtos.Common)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(fi.hsl.common.transitdata.proto.PubtransTableProtos.Common other) {
+        if (other == fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.getDefaultInstance()) return this;
+        if (other.hasSchemaVersion()) {
+          setSchemaVersion(other.getSchemaVersion());
+        }
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (other.hasIsOnDatedVehicleJourneyId()) {
+          setIsOnDatedVehicleJourneyId(other.getIsOnDatedVehicleJourneyId());
+        }
+        if (other.hasIsOnMonitoredVehicleJourneyId()) {
+          setIsOnMonitoredVehicleJourneyId(other.getIsOnMonitoredVehicleJourneyId());
+        }
+        if (other.hasJourneyPatternSequenceNumber()) {
+          setJourneyPatternSequenceNumber(other.getJourneyPatternSequenceNumber());
+        }
+        if (other.hasIsTimetabledAtJourneyPatternPointGid()) {
+          setIsTimetabledAtJourneyPatternPointGid(other.getIsTimetabledAtJourneyPatternPointGid());
+        }
+        if (other.hasVisitCountNumber()) {
+          setVisitCountNumber(other.getVisitCountNumber());
+        }
+        if (other.hasIsTargetedAtJourneyPatternPointGid()) {
+          setIsTargetedAtJourneyPatternPointGid(other.getIsTargetedAtJourneyPatternPointGid());
+        }
+        if (other.hasWasObservedAtJourneyPatternPointGid()) {
+          setWasObservedAtJourneyPatternPointGid(other.getWasObservedAtJourneyPatternPointGid());
+        }
+        if (other.hasTimetabledLatestDateTime()) {
+          bitField0_ |= 0x00000200;
+          timetabledLatestDateTime_ = other.timetabledLatestDateTime_;
+          onChanged();
+        }
+        if (other.hasTargetDateTime()) {
+          bitField0_ |= 0x00000400;
+          targetDateTime_ = other.targetDateTime_;
+          onChanged();
+        }
+        if (other.hasEstimatedDateTime()) {
+          bitField0_ |= 0x00000800;
+          estimatedDateTime_ = other.estimatedDateTime_;
+          onChanged();
+        }
+        if (other.hasObservedDateTime()) {
+          bitField0_ |= 0x00001000;
+          observedDateTime_ = other.observedDateTime_;
+          onChanged();
+        }
+        if (other.hasState()) {
+          setState(other.getState());
+        }
+        if (other.hasType()) {
+          setType(other.getType());
+        }
+        if (other.hasIsValidYesNo()) {
+          setIsValidYesNo(other.getIsValidYesNo());
+        }
+        if (other.hasLastModifiedUtcDateTime()) {
+          setLastModifiedUtcDateTime(other.getLastModifiedUtcDateTime());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        if (!hasSchemaVersion()) {
+          return false;
+        }
+        if (!hasId()) {
+          return false;
+        }
+        if (!hasIsOnDatedVehicleJourneyId()) {
+          return false;
+        }
+        if (!hasJourneyPatternSequenceNumber()) {
+          return false;
+        }
+        if (!hasIsTimetabledAtJourneyPatternPointGid()) {
+          return false;
+        }
+        if (!hasVisitCountNumber()) {
+          return false;
+        }
+        if (!hasState()) {
+          return false;
+        }
+        if (!hasType()) {
+          return false;
+        }
+        if (!hasIsValidYesNo()) {
+          return false;
+        }
+        if (!hasLastModifiedUtcDateTime()) {
+          return false;
+        }
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        fi.hsl.common.transitdata.proto.PubtransTableProtos.Common parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (fi.hsl.common.transitdata.proto.PubtransTableProtos.Common) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int schemaVersion_ = 1;
+      /**
+       * <pre>
+       * Remember to bump up the version when updating the scema!
+       * </pre>
+       *
+       * <code>required int32 schema_version = 1 [default = 1];</code>
+       */
+      public boolean hasSchemaVersion() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <pre>
+       * Remember to bump up the version when updating the scema!
+       * </pre>
+       *
+       * <code>required int32 schema_version = 1 [default = 1];</code>
+       */
+      public int getSchemaVersion() {
+        return schemaVersion_;
+      }
+      /**
+       * <pre>
+       * Remember to bump up the version when updating the scema!
+       * </pre>
+       *
+       * <code>required int32 schema_version = 1 [default = 1];</code>
+       */
+      public Builder setSchemaVersion(int value) {
+        bitField0_ |= 0x00000001;
+        schemaVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Remember to bump up the version when updating the scema!
+       * </pre>
+       *
+       * <code>required int32 schema_version = 1 [default = 1];</code>
+       */
+      public Builder clearSchemaVersion() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        schemaVersion_ = 1;
+        onChanged();
+        return this;
+      }
+
+      private long id_ ;
+      /**
+       * <code>required int64 id = 2;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required int64 id = 2;</code>
+       */
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>required int64 id = 2;</code>
+       */
+      public Builder setId(long value) {
+        bitField0_ |= 0x00000002;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 id = 2;</code>
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long isOnDatedVehicleJourneyId_ ;
+      /**
+       * <code>required int64 is_on_dated_vehicle_journey_id = 3;</code>
+       */
+      public boolean hasIsOnDatedVehicleJourneyId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required int64 is_on_dated_vehicle_journey_id = 3;</code>
+       */
+      public long getIsOnDatedVehicleJourneyId() {
+        return isOnDatedVehicleJourneyId_;
+      }
+      /**
+       * <code>required int64 is_on_dated_vehicle_journey_id = 3;</code>
+       */
+      public Builder setIsOnDatedVehicleJourneyId(long value) {
+        bitField0_ |= 0x00000004;
+        isOnDatedVehicleJourneyId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 is_on_dated_vehicle_journey_id = 3;</code>
+       */
+      public Builder clearIsOnDatedVehicleJourneyId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        isOnDatedVehicleJourneyId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long isOnMonitoredVehicleJourneyId_ ;
+      /**
+       * <code>optional int64 is_on_monitored_vehicle_journey_id = 4;</code>
+       */
+      public boolean hasIsOnMonitoredVehicleJourneyId() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int64 is_on_monitored_vehicle_journey_id = 4;</code>
+       */
+      public long getIsOnMonitoredVehicleJourneyId() {
+        return isOnMonitoredVehicleJourneyId_;
+      }
+      /**
+       * <code>optional int64 is_on_monitored_vehicle_journey_id = 4;</code>
+       */
+      public Builder setIsOnMonitoredVehicleJourneyId(long value) {
+        bitField0_ |= 0x00000008;
+        isOnMonitoredVehicleJourneyId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 is_on_monitored_vehicle_journey_id = 4;</code>
+       */
+      public Builder clearIsOnMonitoredVehicleJourneyId() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        isOnMonitoredVehicleJourneyId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int journeyPatternSequenceNumber_ ;
+      /**
+       * <code>required int32 journey_pattern_sequence_number = 5;</code>
+       */
+      public boolean hasJourneyPatternSequenceNumber() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>required int32 journey_pattern_sequence_number = 5;</code>
+       */
+      public int getJourneyPatternSequenceNumber() {
+        return journeyPatternSequenceNumber_;
+      }
+      /**
+       * <code>required int32 journey_pattern_sequence_number = 5;</code>
+       */
+      public Builder setJourneyPatternSequenceNumber(int value) {
+        bitField0_ |= 0x00000010;
+        journeyPatternSequenceNumber_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 journey_pattern_sequence_number = 5;</code>
+       */
+      public Builder clearJourneyPatternSequenceNumber() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        journeyPatternSequenceNumber_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long isTimetabledAtJourneyPatternPointGid_ ;
+      /**
+       * <code>required int64 is_timetabled_at_journey_pattern_point_gid = 6;</code>
+       */
+      public boolean hasIsTimetabledAtJourneyPatternPointGid() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>required int64 is_timetabled_at_journey_pattern_point_gid = 6;</code>
+       */
+      public long getIsTimetabledAtJourneyPatternPointGid() {
+        return isTimetabledAtJourneyPatternPointGid_;
+      }
+      /**
+       * <code>required int64 is_timetabled_at_journey_pattern_point_gid = 6;</code>
+       */
+      public Builder setIsTimetabledAtJourneyPatternPointGid(long value) {
+        bitField0_ |= 0x00000020;
+        isTimetabledAtJourneyPatternPointGid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 is_timetabled_at_journey_pattern_point_gid = 6;</code>
+       */
+      public Builder clearIsTimetabledAtJourneyPatternPointGid() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        isTimetabledAtJourneyPatternPointGid_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int visitCountNumber_ ;
+      /**
+       * <code>required int32 visit_count_number = 7;</code>
+       */
+      public boolean hasVisitCountNumber() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>required int32 visit_count_number = 7;</code>
+       */
+      public int getVisitCountNumber() {
+        return visitCountNumber_;
+      }
+      /**
+       * <code>required int32 visit_count_number = 7;</code>
+       */
+      public Builder setVisitCountNumber(int value) {
+        bitField0_ |= 0x00000040;
+        visitCountNumber_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 visit_count_number = 7;</code>
+       */
+      public Builder clearVisitCountNumber() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        visitCountNumber_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long isTargetedAtJourneyPatternPointGid_ ;
+      /**
+       * <code>optional int64 is_targeted_at_journey_pattern_point_gid = 8;</code>
+       */
+      public boolean hasIsTargetedAtJourneyPatternPointGid() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>optional int64 is_targeted_at_journey_pattern_point_gid = 8;</code>
+       */
+      public long getIsTargetedAtJourneyPatternPointGid() {
+        return isTargetedAtJourneyPatternPointGid_;
+      }
+      /**
+       * <code>optional int64 is_targeted_at_journey_pattern_point_gid = 8;</code>
+       */
+      public Builder setIsTargetedAtJourneyPatternPointGid(long value) {
+        bitField0_ |= 0x00000080;
+        isTargetedAtJourneyPatternPointGid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 is_targeted_at_journey_pattern_point_gid = 8;</code>
+       */
+      public Builder clearIsTargetedAtJourneyPatternPointGid() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        isTargetedAtJourneyPatternPointGid_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long wasObservedAtJourneyPatternPointGid_ ;
+      /**
+       * <code>optional int64 was_observed_at_journey_pattern_point_gid = 9;</code>
+       */
+      public boolean hasWasObservedAtJourneyPatternPointGid() {
+        return ((bitField0_ & 0x00000100) == 0x00000100);
+      }
+      /**
+       * <code>optional int64 was_observed_at_journey_pattern_point_gid = 9;</code>
+       */
+      public long getWasObservedAtJourneyPatternPointGid() {
+        return wasObservedAtJourneyPatternPointGid_;
+      }
+      /**
+       * <code>optional int64 was_observed_at_journey_pattern_point_gid = 9;</code>
+       */
+      public Builder setWasObservedAtJourneyPatternPointGid(long value) {
+        bitField0_ |= 0x00000100;
+        wasObservedAtJourneyPatternPointGid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 was_observed_at_journey_pattern_point_gid = 9;</code>
+       */
+      public Builder clearWasObservedAtJourneyPatternPointGid() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        wasObservedAtJourneyPatternPointGid_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object timetabledLatestDateTime_ = "";
+      /**
+       * <code>optional string timetabled_latest_date_time = 10;</code>
+       */
+      public boolean hasTimetabledLatestDateTime() {
+        return ((bitField0_ & 0x00000200) == 0x00000200);
+      }
+      /**
+       * <code>optional string timetabled_latest_date_time = 10;</code>
+       */
+      public java.lang.String getTimetabledLatestDateTime() {
+        java.lang.Object ref = timetabledLatestDateTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            timetabledLatestDateTime_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string timetabled_latest_date_time = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTimetabledLatestDateTimeBytes() {
+        java.lang.Object ref = timetabledLatestDateTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          timetabledLatestDateTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string timetabled_latest_date_time = 10;</code>
+       */
+      public Builder setTimetabledLatestDateTime(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        timetabledLatestDateTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string timetabled_latest_date_time = 10;</code>
+       */
+      public Builder clearTimetabledLatestDateTime() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        timetabledLatestDateTime_ = getDefaultInstance().getTimetabledLatestDateTime();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string timetabled_latest_date_time = 10;</code>
+       */
+      public Builder setTimetabledLatestDateTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        timetabledLatestDateTime_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object targetDateTime_ = "";
+      /**
+       * <code>optional string target_date_time = 11;</code>
+       */
+      public boolean hasTargetDateTime() {
+        return ((bitField0_ & 0x00000400) == 0x00000400);
+      }
+      /**
+       * <code>optional string target_date_time = 11;</code>
+       */
+      public java.lang.String getTargetDateTime() {
+        java.lang.Object ref = targetDateTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            targetDateTime_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string target_date_time = 11;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTargetDateTimeBytes() {
+        java.lang.Object ref = targetDateTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          targetDateTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string target_date_time = 11;</code>
+       */
+      public Builder setTargetDateTime(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000400;
+        targetDateTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string target_date_time = 11;</code>
+       */
+      public Builder clearTargetDateTime() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        targetDateTime_ = getDefaultInstance().getTargetDateTime();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string target_date_time = 11;</code>
+       */
+      public Builder setTargetDateTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000400;
+        targetDateTime_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object estimatedDateTime_ = "";
+      /**
+       * <code>optional string estimated_date_time = 12;</code>
+       */
+      public boolean hasEstimatedDateTime() {
+        return ((bitField0_ & 0x00000800) == 0x00000800);
+      }
+      /**
+       * <code>optional string estimated_date_time = 12;</code>
+       */
+      public java.lang.String getEstimatedDateTime() {
+        java.lang.Object ref = estimatedDateTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            estimatedDateTime_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string estimated_date_time = 12;</code>
+       */
+      public com.google.protobuf.ByteString
+          getEstimatedDateTimeBytes() {
+        java.lang.Object ref = estimatedDateTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          estimatedDateTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string estimated_date_time = 12;</code>
+       */
+      public Builder setEstimatedDateTime(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
+        estimatedDateTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string estimated_date_time = 12;</code>
+       */
+      public Builder clearEstimatedDateTime() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        estimatedDateTime_ = getDefaultInstance().getEstimatedDateTime();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string estimated_date_time = 12;</code>
+       */
+      public Builder setEstimatedDateTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
+        estimatedDateTime_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object observedDateTime_ = "";
+      /**
+       * <code>optional string observed_date_time = 13;</code>
+       */
+      public boolean hasObservedDateTime() {
+        return ((bitField0_ & 0x00001000) == 0x00001000);
+      }
+      /**
+       * <code>optional string observed_date_time = 13;</code>
+       */
+      public java.lang.String getObservedDateTime() {
+        java.lang.Object ref = observedDateTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            observedDateTime_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string observed_date_time = 13;</code>
+       */
+      public com.google.protobuf.ByteString
+          getObservedDateTimeBytes() {
+        java.lang.Object ref = observedDateTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          observedDateTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string observed_date_time = 13;</code>
+       */
+      public Builder setObservedDateTime(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00001000;
+        observedDateTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string observed_date_time = 13;</code>
+       */
+      public Builder clearObservedDateTime() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        observedDateTime_ = getDefaultInstance().getObservedDateTime();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string observed_date_time = 13;</code>
+       */
+      public Builder setObservedDateTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00001000;
+        observedDateTime_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long state_ ;
+      /**
+       * <code>required int64 state = 14;</code>
+       */
+      public boolean hasState() {
+        return ((bitField0_ & 0x00002000) == 0x00002000);
+      }
+      /**
+       * <code>required int64 state = 14;</code>
+       */
+      public long getState() {
+        return state_;
+      }
+      /**
+       * <code>required int64 state = 14;</code>
+       */
+      public Builder setState(long value) {
+        bitField0_ |= 0x00002000;
+        state_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 state = 14;</code>
+       */
+      public Builder clearState() {
+        bitField0_ = (bitField0_ & ~0x00002000);
+        state_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long type_ ;
+      /**
+       * <code>required int64 type = 15;</code>
+       */
+      public boolean hasType() {
+        return ((bitField0_ & 0x00004000) == 0x00004000);
+      }
+      /**
+       * <code>required int64 type = 15;</code>
+       */
+      public long getType() {
+        return type_;
+      }
+      /**
+       * <code>required int64 type = 15;</code>
+       */
+      public Builder setType(long value) {
+        bitField0_ |= 0x00004000;
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 type = 15;</code>
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00004000);
+        type_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private boolean isValidYesNo_ ;
+      /**
+       * <code>required bool is_valid_yes_no = 16;</code>
+       */
+      public boolean hasIsValidYesNo() {
+        return ((bitField0_ & 0x00008000) == 0x00008000);
+      }
+      /**
+       * <code>required bool is_valid_yes_no = 16;</code>
+       */
+      public boolean getIsValidYesNo() {
+        return isValidYesNo_;
+      }
+      /**
+       * <code>required bool is_valid_yes_no = 16;</code>
+       */
+      public Builder setIsValidYesNo(boolean value) {
+        bitField0_ |= 0x00008000;
+        isValidYesNo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required bool is_valid_yes_no = 16;</code>
+       */
+      public Builder clearIsValidYesNo() {
+        bitField0_ = (bitField0_ & ~0x00008000);
+        isValidYesNo_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long lastModifiedUtcDateTime_ ;
+      /**
+       * <code>required int64 last_modified_utc_date_time = 17;</code>
+       */
+      public boolean hasLastModifiedUtcDateTime() {
+        return ((bitField0_ & 0x00010000) == 0x00010000);
+      }
+      /**
+       * <code>required int64 last_modified_utc_date_time = 17;</code>
+       */
+      public long getLastModifiedUtcDateTime() {
+        return lastModifiedUtcDateTime_;
+      }
+      /**
+       * <code>required int64 last_modified_utc_date_time = 17;</code>
+       */
+      public Builder setLastModifiedUtcDateTime(long value) {
+        bitField0_ |= 0x00010000;
+        lastModifiedUtcDateTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 last_modified_utc_date_time = 17;</code>
+       */
+      public Builder clearLastModifiedUtcDateTime() {
+        bitField0_ = (bitField0_ & ~0x00010000);
+        lastModifiedUtcDateTime_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.Common)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.Common)
+    private static final fi.hsl.common.transitdata.proto.PubtransTableProtos.Common DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new fi.hsl.common.transitdata.proto.PubtransTableProtos.Common();
+    }
+
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.Common getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<Common>
+        PARSER = new com.google.protobuf.AbstractParser<Common>() {
+      @java.lang.Override
+      public Common parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Common(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Common> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Common> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public fi.hsl.common.transitdata.proto.PubtransTableProtos.Common getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ROIArrivalOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.ROIArrival)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required .proto.Common common = 1;</code>
+     */
+    boolean hasCommon();
+    /**
+     * <code>required .proto.Common common = 1;</code>
+     */
+    fi.hsl.common.transitdata.proto.PubtransTableProtos.Common getCommon();
+    /**
+     * <code>required .proto.Common common = 1;</code>
+     */
+    fi.hsl.common.transitdata.proto.PubtransTableProtos.CommonOrBuilder getCommonOrBuilder();
+  }
+  /**
+   * Protobuf type {@code proto.ROIArrival}
+   */
+  public  static final class ROIArrival extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.ROIArrival)
+      ROIArrivalOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ROIArrival.newBuilder() to construct.
+    private ROIArrival(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ROIArrival() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ROIArrival(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = common_.toBuilder();
+              }
+              common_ = input.readMessage(fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(common_);
+                common_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_ROIArrival_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_ROIArrival_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival.class, fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int COMMON_FIELD_NUMBER = 1;
+    private fi.hsl.common.transitdata.proto.PubtransTableProtos.Common common_;
+    /**
+     * <code>required .proto.Common common = 1;</code>
+     */
+    public boolean hasCommon() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required .proto.Common common = 1;</code>
+     */
+    public fi.hsl.common.transitdata.proto.PubtransTableProtos.Common getCommon() {
+      return common_ == null ? fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.getDefaultInstance() : common_;
+    }
+    /**
+     * <code>required .proto.Common common = 1;</code>
+     */
+    public fi.hsl.common.transitdata.proto.PubtransTableProtos.CommonOrBuilder getCommonOrBuilder() {
+      return common_ == null ? fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.getDefaultInstance() : common_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasCommon()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!getCommon().isInitialized()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeMessage(1, getCommon());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getCommon());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival)) {
+        return super.equals(obj);
+      }
+      fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival other = (fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival) obj;
+
+      boolean result = true;
+      result = result && (hasCommon() == other.hasCommon());
+      if (hasCommon()) {
+        result = result && getCommon()
+            .equals(other.getCommon());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasCommon()) {
+        hash = (37 * hash) + COMMON_FIELD_NUMBER;
+        hash = (53 * hash) + getCommon().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1228,45 +2660,18 @@ public final class PubtransTableProtos {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getCommonFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        schemaVersion_ = 0;
+        if (commonBuilder_ == null) {
+          common_ = null;
+        } else {
+          commonBuilder_.clear();
+        }
         bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        isOnDatedVehicleJourneyId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        isOnMonitoredVehicleJourneyId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        journeyPatternSequenceNumber_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000010);
-        isTimetabledAtJourneyPatternPointGid_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000020);
-        visitCountNumber_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000040);
-        isTargetedAtJourneyPatternPointGid_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000080);
-        wasObservedAtJourneyPatternPointGid_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000100);
-        timetabledLatestDateTime_ = "";
-        bitField0_ = (bitField0_ & ~0x00000200);
-        targetDateTime_ = "";
-        bitField0_ = (bitField0_ & ~0x00000400);
-        estimatedDateTime_ = "";
-        bitField0_ = (bitField0_ & ~0x00000800);
-        observedDateTime_ = "";
-        bitField0_ = (bitField0_ & ~0x00001000);
-        state_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00002000);
-        type_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00004000);
-        isValidYesNo_ = false;
-        bitField0_ = (bitField0_ & ~0x00008000);
-        lastModifiedUTCDateTime_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00010000);
         return this;
       }
 
@@ -1298,71 +2703,11 @@ public final class PubtransTableProtos {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.schemaVersion_ = schemaVersion_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
+        if (commonBuilder_ == null) {
+          result.common_ = common_;
+        } else {
+          result.common_ = commonBuilder_.build();
         }
-        result.id_ = id_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.isOnDatedVehicleJourneyId_ = isOnDatedVehicleJourneyId_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.isOnMonitoredVehicleJourneyId_ = isOnMonitoredVehicleJourneyId_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.journeyPatternSequenceNumber_ = journeyPatternSequenceNumber_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        result.isTimetabledAtJourneyPatternPointGid_ = isTimetabledAtJourneyPatternPointGid_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
-          to_bitField0_ |= 0x00000040;
-        }
-        result.visitCountNumber_ = visitCountNumber_;
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
-          to_bitField0_ |= 0x00000080;
-        }
-        result.isTargetedAtJourneyPatternPointGid_ = isTargetedAtJourneyPatternPointGid_;
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
-          to_bitField0_ |= 0x00000100;
-        }
-        result.wasObservedAtJourneyPatternPointGid_ = wasObservedAtJourneyPatternPointGid_;
-        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
-          to_bitField0_ |= 0x00000200;
-        }
-        result.timetabledLatestDateTime_ = timetabledLatestDateTime_;
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
-          to_bitField0_ |= 0x00000400;
-        }
-        result.targetDateTime_ = targetDateTime_;
-        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
-          to_bitField0_ |= 0x00000800;
-        }
-        result.estimatedDateTime_ = estimatedDateTime_;
-        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
-          to_bitField0_ |= 0x00001000;
-        }
-        result.observedDateTime_ = observedDateTime_;
-        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
-          to_bitField0_ |= 0x00002000;
-        }
-        result.state_ = state_;
-        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
-          to_bitField0_ |= 0x00004000;
-        }
-        result.type_ = type_;
-        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
-          to_bitField0_ |= 0x00008000;
-        }
-        result.isValidYesNo_ = isValidYesNo_;
-        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
-          to_bitField0_ |= 0x00010000;
-        }
-        result.lastModifiedUTCDateTime_ = lastModifiedUTCDateTime_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1412,64 +2757,8 @@ public final class PubtransTableProtos {
 
       public Builder mergeFrom(fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival other) {
         if (other == fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival.getDefaultInstance()) return this;
-        if (other.hasSchemaVersion()) {
-          setSchemaVersion(other.getSchemaVersion());
-        }
-        if (other.hasId()) {
-          setId(other.getId());
-        }
-        if (other.hasIsOnDatedVehicleJourneyId()) {
-          setIsOnDatedVehicleJourneyId(other.getIsOnDatedVehicleJourneyId());
-        }
-        if (other.hasIsOnMonitoredVehicleJourneyId()) {
-          setIsOnMonitoredVehicleJourneyId(other.getIsOnMonitoredVehicleJourneyId());
-        }
-        if (other.hasJourneyPatternSequenceNumber()) {
-          setJourneyPatternSequenceNumber(other.getJourneyPatternSequenceNumber());
-        }
-        if (other.hasIsTimetabledAtJourneyPatternPointGid()) {
-          setIsTimetabledAtJourneyPatternPointGid(other.getIsTimetabledAtJourneyPatternPointGid());
-        }
-        if (other.hasVisitCountNumber()) {
-          setVisitCountNumber(other.getVisitCountNumber());
-        }
-        if (other.hasIsTargetedAtJourneyPatternPointGid()) {
-          setIsTargetedAtJourneyPatternPointGid(other.getIsTargetedAtJourneyPatternPointGid());
-        }
-        if (other.hasWasObservedAtJourneyPatternPointGid()) {
-          setWasObservedAtJourneyPatternPointGid(other.getWasObservedAtJourneyPatternPointGid());
-        }
-        if (other.hasTimetabledLatestDateTime()) {
-          bitField0_ |= 0x00000200;
-          timetabledLatestDateTime_ = other.timetabledLatestDateTime_;
-          onChanged();
-        }
-        if (other.hasTargetDateTime()) {
-          bitField0_ |= 0x00000400;
-          targetDateTime_ = other.targetDateTime_;
-          onChanged();
-        }
-        if (other.hasEstimatedDateTime()) {
-          bitField0_ |= 0x00000800;
-          estimatedDateTime_ = other.estimatedDateTime_;
-          onChanged();
-        }
-        if (other.hasObservedDateTime()) {
-          bitField0_ |= 0x00001000;
-          observedDateTime_ = other.observedDateTime_;
-          onChanged();
-        }
-        if (other.hasState()) {
-          setState(other.getState());
-        }
-        if (other.hasType()) {
-          setType(other.getType());
-        }
-        if (other.hasIsValidYesNo()) {
-          setIsValidYesNo(other.getIsValidYesNo());
-        }
-        if (other.hasLastModifiedUTCDateTime()) {
-          setLastModifiedUTCDateTime(other.getLastModifiedUTCDateTime());
+        if (other.hasCommon()) {
+          mergeCommon(other.getCommon());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1478,34 +2767,10 @@ public final class PubtransTableProtos {
 
       @java.lang.Override
       public final boolean isInitialized() {
-        if (!hasSchemaVersion()) {
+        if (!hasCommon()) {
           return false;
         }
-        if (!hasId()) {
-          return false;
-        }
-        if (!hasIsOnDatedVehicleJourneyId()) {
-          return false;
-        }
-        if (!hasJourneyPatternSequenceNumber()) {
-          return false;
-        }
-        if (!hasIsTimetabledAtJourneyPatternPointGid()) {
-          return false;
-        }
-        if (!hasVisitCountNumber()) {
-          return false;
-        }
-        if (!hasState()) {
-          return false;
-        }
-        if (!hasType()) {
-          return false;
-        }
-        if (!hasIsValidYesNo()) {
-          return false;
-        }
-        if (!hasLastModifiedUTCDateTime()) {
+        if (!getCommon().isInitialized()) {
           return false;
         }
         return true;
@@ -1531,724 +2796,122 @@ public final class PubtransTableProtos {
       }
       private int bitField0_;
 
-      private int schemaVersion_ ;
+      private fi.hsl.common.transitdata.proto.PubtransTableProtos.Common common_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.PubtransTableProtos.Common, fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.Builder, fi.hsl.common.transitdata.proto.PubtransTableProtos.CommonOrBuilder> commonBuilder_;
       /**
-       * <code>required int32 SchemaVersion = 1;</code>
+       * <code>required .proto.Common common = 1;</code>
        */
-      public boolean hasSchemaVersion() {
+      public boolean hasCommon() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required int32 SchemaVersion = 1;</code>
+       * <code>required .proto.Common common = 1;</code>
        */
-      public int getSchemaVersion() {
-        return schemaVersion_;
+      public fi.hsl.common.transitdata.proto.PubtransTableProtos.Common getCommon() {
+        if (commonBuilder_ == null) {
+          return common_ == null ? fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.getDefaultInstance() : common_;
+        } else {
+          return commonBuilder_.getMessage();
+        }
       }
       /**
-       * <code>required int32 SchemaVersion = 1;</code>
+       * <code>required .proto.Common common = 1;</code>
        */
-      public Builder setSchemaVersion(int value) {
+      public Builder setCommon(fi.hsl.common.transitdata.proto.PubtransTableProtos.Common value) {
+        if (commonBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          common_ = value;
+          onChanged();
+        } else {
+          commonBuilder_.setMessage(value);
+        }
         bitField0_ |= 0x00000001;
-        schemaVersion_ = value;
-        onChanged();
         return this;
       }
       /**
-       * <code>required int32 SchemaVersion = 1;</code>
+       * <code>required .proto.Common common = 1;</code>
        */
-      public Builder clearSchemaVersion() {
+      public Builder setCommon(
+          fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.Builder builderForValue) {
+        if (commonBuilder_ == null) {
+          common_ = builderForValue.build();
+          onChanged();
+        } else {
+          commonBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>required .proto.Common common = 1;</code>
+       */
+      public Builder mergeCommon(fi.hsl.common.transitdata.proto.PubtransTableProtos.Common value) {
+        if (commonBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              common_ != null &&
+              common_ != fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.getDefaultInstance()) {
+            common_ =
+              fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.newBuilder(common_).mergeFrom(value).buildPartial();
+          } else {
+            common_ = value;
+          }
+          onChanged();
+        } else {
+          commonBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>required .proto.Common common = 1;</code>
+       */
+      public Builder clearCommon() {
+        if (commonBuilder_ == null) {
+          common_ = null;
+          onChanged();
+        } else {
+          commonBuilder_.clear();
+        }
         bitField0_ = (bitField0_ & ~0x00000001);
-        schemaVersion_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long id_ ;
-      /**
-       * <code>required int64 Id = 2;</code>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required int64 Id = 2;</code>
-       */
-      public long getId() {
-        return id_;
-      }
-      /**
-       * <code>required int64 Id = 2;</code>
-       */
-      public Builder setId(long value) {
-        bitField0_ |= 0x00000002;
-        id_ = value;
-        onChanged();
         return this;
       }
       /**
-       * <code>required int64 Id = 2;</code>
+       * <code>required .proto.Common common = 1;</code>
        */
-      public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        id_ = 0L;
+      public fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.Builder getCommonBuilder() {
+        bitField0_ |= 0x00000001;
         onChanged();
-        return this;
-      }
-
-      private long isOnDatedVehicleJourneyId_ ;
-      /**
-       * <code>required int64 IsOnDatedVehicleJourneyId = 3;</code>
-       */
-      public boolean hasIsOnDatedVehicleJourneyId() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return getCommonFieldBuilder().getBuilder();
       }
       /**
-       * <code>required int64 IsOnDatedVehicleJourneyId = 3;</code>
+       * <code>required .proto.Common common = 1;</code>
        */
-      public long getIsOnDatedVehicleJourneyId() {
-        return isOnDatedVehicleJourneyId_;
-      }
-      /**
-       * <code>required int64 IsOnDatedVehicleJourneyId = 3;</code>
-       */
-      public Builder setIsOnDatedVehicleJourneyId(long value) {
-        bitField0_ |= 0x00000004;
-        isOnDatedVehicleJourneyId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 IsOnDatedVehicleJourneyId = 3;</code>
-       */
-      public Builder clearIsOnDatedVehicleJourneyId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        isOnDatedVehicleJourneyId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long isOnMonitoredVehicleJourneyId_ ;
-      /**
-       * <code>optional int64 IsOnMonitoredVehicleJourneyId = 4;</code>
-       */
-      public boolean hasIsOnMonitoredVehicleJourneyId() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional int64 IsOnMonitoredVehicleJourneyId = 4;</code>
-       */
-      public long getIsOnMonitoredVehicleJourneyId() {
-        return isOnMonitoredVehicleJourneyId_;
-      }
-      /**
-       * <code>optional int64 IsOnMonitoredVehicleJourneyId = 4;</code>
-       */
-      public Builder setIsOnMonitoredVehicleJourneyId(long value) {
-        bitField0_ |= 0x00000008;
-        isOnMonitoredVehicleJourneyId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 IsOnMonitoredVehicleJourneyId = 4;</code>
-       */
-      public Builder clearIsOnMonitoredVehicleJourneyId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        isOnMonitoredVehicleJourneyId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int journeyPatternSequenceNumber_ ;
-      /**
-       * <code>required int32 JourneyPatternSequenceNumber = 5;</code>
-       */
-      public boolean hasJourneyPatternSequenceNumber() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      /**
-       * <code>required int32 JourneyPatternSequenceNumber = 5;</code>
-       */
-      public int getJourneyPatternSequenceNumber() {
-        return journeyPatternSequenceNumber_;
-      }
-      /**
-       * <code>required int32 JourneyPatternSequenceNumber = 5;</code>
-       */
-      public Builder setJourneyPatternSequenceNumber(int value) {
-        bitField0_ |= 0x00000010;
-        journeyPatternSequenceNumber_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int32 JourneyPatternSequenceNumber = 5;</code>
-       */
-      public Builder clearJourneyPatternSequenceNumber() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        journeyPatternSequenceNumber_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long isTimetabledAtJourneyPatternPointGid_ ;
-      /**
-       * <code>required int64 IsTimetabledAtJourneyPatternPointGid = 6;</code>
-       */
-      public boolean hasIsTimetabledAtJourneyPatternPointGid() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      /**
-       * <code>required int64 IsTimetabledAtJourneyPatternPointGid = 6;</code>
-       */
-      public long getIsTimetabledAtJourneyPatternPointGid() {
-        return isTimetabledAtJourneyPatternPointGid_;
-      }
-      /**
-       * <code>required int64 IsTimetabledAtJourneyPatternPointGid = 6;</code>
-       */
-      public Builder setIsTimetabledAtJourneyPatternPointGid(long value) {
-        bitField0_ |= 0x00000020;
-        isTimetabledAtJourneyPatternPointGid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 IsTimetabledAtJourneyPatternPointGid = 6;</code>
-       */
-      public Builder clearIsTimetabledAtJourneyPatternPointGid() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        isTimetabledAtJourneyPatternPointGid_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int visitCountNumber_ ;
-      /**
-       * <code>required int32 VisitCountNumber = 7;</code>
-       */
-      public boolean hasVisitCountNumber() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
-      }
-      /**
-       * <code>required int32 VisitCountNumber = 7;</code>
-       */
-      public int getVisitCountNumber() {
-        return visitCountNumber_;
-      }
-      /**
-       * <code>required int32 VisitCountNumber = 7;</code>
-       */
-      public Builder setVisitCountNumber(int value) {
-        bitField0_ |= 0x00000040;
-        visitCountNumber_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int32 VisitCountNumber = 7;</code>
-       */
-      public Builder clearVisitCountNumber() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        visitCountNumber_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long isTargetedAtJourneyPatternPointGid_ ;
-      /**
-       * <code>optional int64 IsTargetedAtJourneyPatternPointGid = 8;</code>
-       */
-      public boolean hasIsTargetedAtJourneyPatternPointGid() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
-      }
-      /**
-       * <code>optional int64 IsTargetedAtJourneyPatternPointGid = 8;</code>
-       */
-      public long getIsTargetedAtJourneyPatternPointGid() {
-        return isTargetedAtJourneyPatternPointGid_;
-      }
-      /**
-       * <code>optional int64 IsTargetedAtJourneyPatternPointGid = 8;</code>
-       */
-      public Builder setIsTargetedAtJourneyPatternPointGid(long value) {
-        bitField0_ |= 0x00000080;
-        isTargetedAtJourneyPatternPointGid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 IsTargetedAtJourneyPatternPointGid = 8;</code>
-       */
-      public Builder clearIsTargetedAtJourneyPatternPointGid() {
-        bitField0_ = (bitField0_ & ~0x00000080);
-        isTargetedAtJourneyPatternPointGid_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long wasObservedAtJourneyPatternPointGid_ ;
-      /**
-       * <code>optional int64 WasObservedAtJourneyPatternPointGid = 9;</code>
-       */
-      public boolean hasWasObservedAtJourneyPatternPointGid() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
-      }
-      /**
-       * <code>optional int64 WasObservedAtJourneyPatternPointGid = 9;</code>
-       */
-      public long getWasObservedAtJourneyPatternPointGid() {
-        return wasObservedAtJourneyPatternPointGid_;
-      }
-      /**
-       * <code>optional int64 WasObservedAtJourneyPatternPointGid = 9;</code>
-       */
-      public Builder setWasObservedAtJourneyPatternPointGid(long value) {
-        bitField0_ |= 0x00000100;
-        wasObservedAtJourneyPatternPointGid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 WasObservedAtJourneyPatternPointGid = 9;</code>
-       */
-      public Builder clearWasObservedAtJourneyPatternPointGid() {
-        bitField0_ = (bitField0_ & ~0x00000100);
-        wasObservedAtJourneyPatternPointGid_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object timetabledLatestDateTime_ = "";
-      /**
-       * <code>optional string TimetabledLatestDateTime = 10;</code>
-       */
-      public boolean hasTimetabledLatestDateTime() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
-      }
-      /**
-       * <code>optional string TimetabledLatestDateTime = 10;</code>
-       */
-      public java.lang.String getTimetabledLatestDateTime() {
-        java.lang.Object ref = timetabledLatestDateTime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            timetabledLatestDateTime_ = s;
-          }
-          return s;
+      public fi.hsl.common.transitdata.proto.PubtransTableProtos.CommonOrBuilder getCommonOrBuilder() {
+        if (commonBuilder_ != null) {
+          return commonBuilder_.getMessageOrBuilder();
         } else {
-          return (java.lang.String) ref;
+          return common_ == null ?
+              fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.getDefaultInstance() : common_;
         }
       }
       /**
-       * <code>optional string TimetabledLatestDateTime = 10;</code>
+       * <code>required .proto.Common common = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getTimetabledLatestDateTimeBytes() {
-        java.lang.Object ref = timetabledLatestDateTime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          timetabledLatestDateTime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.PubtransTableProtos.Common, fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.Builder, fi.hsl.common.transitdata.proto.PubtransTableProtos.CommonOrBuilder> 
+          getCommonFieldBuilder() {
+        if (commonBuilder_ == null) {
+          commonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              fi.hsl.common.transitdata.proto.PubtransTableProtos.Common, fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.Builder, fi.hsl.common.transitdata.proto.PubtransTableProtos.CommonOrBuilder>(
+                  getCommon(),
+                  getParentForChildren(),
+                  isClean());
+          common_ = null;
         }
-      }
-      /**
-       * <code>optional string TimetabledLatestDateTime = 10;</code>
-       */
-      public Builder setTimetabledLatestDateTime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000200;
-        timetabledLatestDateTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string TimetabledLatestDateTime = 10;</code>
-       */
-      public Builder clearTimetabledLatestDateTime() {
-        bitField0_ = (bitField0_ & ~0x00000200);
-        timetabledLatestDateTime_ = getDefaultInstance().getTimetabledLatestDateTime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string TimetabledLatestDateTime = 10;</code>
-       */
-      public Builder setTimetabledLatestDateTimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000200;
-        timetabledLatestDateTime_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object targetDateTime_ = "";
-      /**
-       * <code>optional string TargetDateTime = 11;</code>
-       */
-      public boolean hasTargetDateTime() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
-      }
-      /**
-       * <code>optional string TargetDateTime = 11;</code>
-       */
-      public java.lang.String getTargetDateTime() {
-        java.lang.Object ref = targetDateTime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            targetDateTime_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string TargetDateTime = 11;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTargetDateTimeBytes() {
-        java.lang.Object ref = targetDateTime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          targetDateTime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string TargetDateTime = 11;</code>
-       */
-      public Builder setTargetDateTime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000400;
-        targetDateTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string TargetDateTime = 11;</code>
-       */
-      public Builder clearTargetDateTime() {
-        bitField0_ = (bitField0_ & ~0x00000400);
-        targetDateTime_ = getDefaultInstance().getTargetDateTime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string TargetDateTime = 11;</code>
-       */
-      public Builder setTargetDateTimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000400;
-        targetDateTime_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object estimatedDateTime_ = "";
-      /**
-       * <code>optional string EstimatedDateTime = 12;</code>
-       */
-      public boolean hasEstimatedDateTime() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
-      }
-      /**
-       * <code>optional string EstimatedDateTime = 12;</code>
-       */
-      public java.lang.String getEstimatedDateTime() {
-        java.lang.Object ref = estimatedDateTime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            estimatedDateTime_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string EstimatedDateTime = 12;</code>
-       */
-      public com.google.protobuf.ByteString
-          getEstimatedDateTimeBytes() {
-        java.lang.Object ref = estimatedDateTime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          estimatedDateTime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string EstimatedDateTime = 12;</code>
-       */
-      public Builder setEstimatedDateTime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000800;
-        estimatedDateTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string EstimatedDateTime = 12;</code>
-       */
-      public Builder clearEstimatedDateTime() {
-        bitField0_ = (bitField0_ & ~0x00000800);
-        estimatedDateTime_ = getDefaultInstance().getEstimatedDateTime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string EstimatedDateTime = 12;</code>
-       */
-      public Builder setEstimatedDateTimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000800;
-        estimatedDateTime_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object observedDateTime_ = "";
-      /**
-       * <code>optional string ObservedDateTime = 13;</code>
-       */
-      public boolean hasObservedDateTime() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
-      }
-      /**
-       * <code>optional string ObservedDateTime = 13;</code>
-       */
-      public java.lang.String getObservedDateTime() {
-        java.lang.Object ref = observedDateTime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            observedDateTime_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string ObservedDateTime = 13;</code>
-       */
-      public com.google.protobuf.ByteString
-          getObservedDateTimeBytes() {
-        java.lang.Object ref = observedDateTime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          observedDateTime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string ObservedDateTime = 13;</code>
-       */
-      public Builder setObservedDateTime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00001000;
-        observedDateTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string ObservedDateTime = 13;</code>
-       */
-      public Builder clearObservedDateTime() {
-        bitField0_ = (bitField0_ & ~0x00001000);
-        observedDateTime_ = getDefaultInstance().getObservedDateTime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string ObservedDateTime = 13;</code>
-       */
-      public Builder setObservedDateTimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00001000;
-        observedDateTime_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long state_ ;
-      /**
-       * <code>required int64 State = 14;</code>
-       */
-      public boolean hasState() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
-      }
-      /**
-       * <code>required int64 State = 14;</code>
-       */
-      public long getState() {
-        return state_;
-      }
-      /**
-       * <code>required int64 State = 14;</code>
-       */
-      public Builder setState(long value) {
-        bitField0_ |= 0x00002000;
-        state_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 State = 14;</code>
-       */
-      public Builder clearState() {
-        bitField0_ = (bitField0_ & ~0x00002000);
-        state_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long type_ ;
-      /**
-       * <code>required int64 Type = 15;</code>
-       */
-      public boolean hasType() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
-      }
-      /**
-       * <code>required int64 Type = 15;</code>
-       */
-      public long getType() {
-        return type_;
-      }
-      /**
-       * <code>required int64 Type = 15;</code>
-       */
-      public Builder setType(long value) {
-        bitField0_ |= 0x00004000;
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 Type = 15;</code>
-       */
-      public Builder clearType() {
-        bitField0_ = (bitField0_ & ~0x00004000);
-        type_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private boolean isValidYesNo_ ;
-      /**
-       * <code>required bool IsValidYesNo = 16;</code>
-       */
-      public boolean hasIsValidYesNo() {
-        return ((bitField0_ & 0x00008000) == 0x00008000);
-      }
-      /**
-       * <code>required bool IsValidYesNo = 16;</code>
-       */
-      public boolean getIsValidYesNo() {
-        return isValidYesNo_;
-      }
-      /**
-       * <code>required bool IsValidYesNo = 16;</code>
-       */
-      public Builder setIsValidYesNo(boolean value) {
-        bitField0_ |= 0x00008000;
-        isValidYesNo_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required bool IsValidYesNo = 16;</code>
-       */
-      public Builder clearIsValidYesNo() {
-        bitField0_ = (bitField0_ & ~0x00008000);
-        isValidYesNo_ = false;
-        onChanged();
-        return this;
-      }
-
-      private long lastModifiedUTCDateTime_ ;
-      /**
-       * <code>required int64 LastModifiedUTCDateTime = 17;</code>
-       */
-      public boolean hasLastModifiedUTCDateTime() {
-        return ((bitField0_ & 0x00010000) == 0x00010000);
-      }
-      /**
-       * <code>required int64 LastModifiedUTCDateTime = 17;</code>
-       */
-      public long getLastModifiedUTCDateTime() {
-        return lastModifiedUTCDateTime_;
-      }
-      /**
-       * <code>required int64 LastModifiedUTCDateTime = 17;</code>
-       */
-      public Builder setLastModifiedUTCDateTime(long value) {
-        bitField0_ |= 0x00010000;
-        lastModifiedUTCDateTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 LastModifiedUTCDateTime = 17;</code>
-       */
-      public Builder clearLastModifiedUTCDateTime() {
-        bitField0_ = (bitField0_ & ~0x00010000);
-        lastModifiedUTCDateTime_ = 0L;
-        onChanged();
-        return this;
+        return commonBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2308,204 +2971,44 @@ public final class PubtransTableProtos {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required int32 SchemaVersion = 1;</code>
+     * <code>required .proto.Common common = 1;</code>
      */
-    boolean hasSchemaVersion();
+    boolean hasCommon();
     /**
-     * <code>required int32 SchemaVersion = 1;</code>
+     * <code>required .proto.Common common = 1;</code>
      */
-    int getSchemaVersion();
+    fi.hsl.common.transitdata.proto.PubtransTableProtos.Common getCommon();
+    /**
+     * <code>required .proto.Common common = 1;</code>
+     */
+    fi.hsl.common.transitdata.proto.PubtransTableProtos.CommonOrBuilder getCommonOrBuilder();
 
     /**
-     * <code>required int64 Id = 2;</code>
-     */
-    boolean hasId();
-    /**
-     * <code>required int64 Id = 2;</code>
-     */
-    long getId();
-
-    /**
-     * <code>required int64 IsOnDatedVehicleJourneyId = 3;</code>
-     */
-    boolean hasIsOnDatedVehicleJourneyId();
-    /**
-     * <code>required int64 IsOnDatedVehicleJourneyId = 3;</code>
-     */
-    long getIsOnDatedVehicleJourneyId();
-
-    /**
-     * <code>optional int64 IsOnMonitoredVehicleJourneyId = 4;</code>
-     */
-    boolean hasIsOnMonitoredVehicleJourneyId();
-    /**
-     * <code>optional int64 IsOnMonitoredVehicleJourneyId = 4;</code>
-     */
-    long getIsOnMonitoredVehicleJourneyId();
-
-    /**
-     * <code>required int32 JourneyPatternSequenceNumber = 5;</code>
-     */
-    boolean hasJourneyPatternSequenceNumber();
-    /**
-     * <code>required int32 JourneyPatternSequenceNumber = 5;</code>
-     */
-    int getJourneyPatternSequenceNumber();
-
-    /**
-     * <code>required int64 IsTimetabledAtJourneyPatternPointGid = 6;</code>
-     */
-    boolean hasIsTimetabledAtJourneyPatternPointGid();
-    /**
-     * <code>required int64 IsTimetabledAtJourneyPatternPointGid = 6;</code>
-     */
-    long getIsTimetabledAtJourneyPatternPointGid();
-
-    /**
-     * <code>required int32 VisitCountNumber = 7;</code>
-     */
-    boolean hasVisitCountNumber();
-    /**
-     * <code>required int32 VisitCountNumber = 7;</code>
-     */
-    int getVisitCountNumber();
-
-    /**
-     * <code>optional int64 IsTargetedAtJourneyPatternPointGid = 8;</code>
-     */
-    boolean hasIsTargetedAtJourneyPatternPointGid();
-    /**
-     * <code>optional int64 IsTargetedAtJourneyPatternPointGid = 8;</code>
-     */
-    long getIsTargetedAtJourneyPatternPointGid();
-
-    /**
-     * <code>optional int64 WasObservedAtJourneyPatternPointGid = 9;</code>
-     */
-    boolean hasWasObservedAtJourneyPatternPointGid();
-    /**
-     * <code>optional int64 WasObservedAtJourneyPatternPointGid = 9;</code>
-     */
-    long getWasObservedAtJourneyPatternPointGid();
-
-    /**
-     * <code>optional int64 HasDestinationDisplayId = 10;</code>
+     * <code>optional int64 has_destination_display_id = 2;</code>
      */
     boolean hasHasDestinationDisplayId();
     /**
-     * <code>optional int64 HasDestinationDisplayId = 10;</code>
+     * <code>optional int64 has_destination_display_id = 2;</code>
      */
     long getHasDestinationDisplayId();
 
     /**
-     * <code>optional int64 HasDestinationStopAreaGid = 11;</code>
+     * <code>optional int64 has_destination_stop_area_gid = 3;</code>
      */
     boolean hasHasDestinationStopAreaGid();
     /**
-     * <code>optional int64 HasDestinationStopAreaGid = 11;</code>
+     * <code>optional int64 has_destination_stop_area_gid = 3;</code>
      */
     long getHasDestinationStopAreaGid();
 
     /**
-     * <code>optional int64 HasServiceRequirementId = 12;</code>
+     * <code>optional int64 has_service_requirement_id = 4;</code>
      */
     boolean hasHasServiceRequirementId();
     /**
-     * <code>optional int64 HasServiceRequirementId = 12;</code>
+     * <code>optional int64 has_service_requirement_id = 4;</code>
      */
     long getHasServiceRequirementId();
-
-    /**
-     * <code>optional string TimetabledLatestDateTime = 13;</code>
-     */
-    boolean hasTimetabledLatestDateTime();
-    /**
-     * <code>optional string TimetabledLatestDateTime = 13;</code>
-     */
-    java.lang.String getTimetabledLatestDateTime();
-    /**
-     * <code>optional string TimetabledLatestDateTime = 13;</code>
-     */
-    com.google.protobuf.ByteString
-        getTimetabledLatestDateTimeBytes();
-
-    /**
-     * <code>optional string TargetDateTime = 14;</code>
-     */
-    boolean hasTargetDateTime();
-    /**
-     * <code>optional string TargetDateTime = 14;</code>
-     */
-    java.lang.String getTargetDateTime();
-    /**
-     * <code>optional string TargetDateTime = 14;</code>
-     */
-    com.google.protobuf.ByteString
-        getTargetDateTimeBytes();
-
-    /**
-     * <code>optional string EstimatedDateTime = 15;</code>
-     */
-    boolean hasEstimatedDateTime();
-    /**
-     * <code>optional string EstimatedDateTime = 15;</code>
-     */
-    java.lang.String getEstimatedDateTime();
-    /**
-     * <code>optional string EstimatedDateTime = 15;</code>
-     */
-    com.google.protobuf.ByteString
-        getEstimatedDateTimeBytes();
-
-    /**
-     * <code>optional string ObservedDateTime = 16;</code>
-     */
-    boolean hasObservedDateTime();
-    /**
-     * <code>optional string ObservedDateTime = 16;</code>
-     */
-    java.lang.String getObservedDateTime();
-    /**
-     * <code>optional string ObservedDateTime = 16;</code>
-     */
-    com.google.protobuf.ByteString
-        getObservedDateTimeBytes();
-
-    /**
-     * <code>required int64 State = 17;</code>
-     */
-    boolean hasState();
-    /**
-     * <code>required int64 State = 17;</code>
-     */
-    long getState();
-
-    /**
-     * <code>required int64 Type = 18;</code>
-     */
-    boolean hasType();
-    /**
-     * <code>required int64 Type = 18;</code>
-     */
-    long getType();
-
-    /**
-     * <code>required bool IsValidYesNo = 19;</code>
-     */
-    boolean hasIsValidYesNo();
-    /**
-     * <code>required bool IsValidYesNo = 19;</code>
-     */
-    boolean getIsValidYesNo();
-
-    /**
-     * <code>required int64 LastModifiedUTCDateTime = 20;</code>
-     */
-    boolean hasLastModifiedUTCDateTime();
-    /**
-     * <code>required int64 LastModifiedUTCDateTime = 20;</code>
-     */
-    long getLastModifiedUTCDateTime();
   }
   /**
    * Protobuf type {@code proto.ROIDeparture}
@@ -2520,26 +3023,9 @@ public final class PubtransTableProtos {
       super(builder);
     }
     private ROIDeparture() {
-      schemaVersion_ = 0;
-      id_ = 0L;
-      isOnDatedVehicleJourneyId_ = 0L;
-      isOnMonitoredVehicleJourneyId_ = 0L;
-      journeyPatternSequenceNumber_ = 0;
-      isTimetabledAtJourneyPatternPointGid_ = 0L;
-      visitCountNumber_ = 0;
-      isTargetedAtJourneyPatternPointGid_ = 0L;
-      wasObservedAtJourneyPatternPointGid_ = 0L;
       hasDestinationDisplayId_ = 0L;
       hasDestinationStopAreaGid_ = 0L;
       hasServiceRequirementId_ = 0L;
-      timetabledLatestDateTime_ = "";
-      targetDateTime_ = "";
-      estimatedDateTime_ = "";
-      observedDateTime_ = "";
-      state_ = 0L;
-      type_ = 0L;
-      isValidYesNo_ = false;
-      lastModifiedUTCDateTime_ = 0L;
     }
 
     @java.lang.Override
@@ -2566,108 +3052,32 @@ public final class PubtransTableProtos {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = common_.toBuilder();
+              }
+              common_ = input.readMessage(fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(common_);
+                common_ = subBuilder.buildPartial();
+              }
               bitField0_ |= 0x00000001;
-              schemaVersion_ = input.readInt32();
               break;
             }
             case 16: {
               bitField0_ |= 0x00000002;
-              id_ = input.readInt64();
+              hasDestinationDisplayId_ = input.readInt64();
               break;
             }
             case 24: {
               bitField0_ |= 0x00000004;
-              isOnDatedVehicleJourneyId_ = input.readInt64();
+              hasDestinationStopAreaGid_ = input.readInt64();
               break;
             }
             case 32: {
               bitField0_ |= 0x00000008;
-              isOnMonitoredVehicleJourneyId_ = input.readInt64();
-              break;
-            }
-            case 40: {
-              bitField0_ |= 0x00000010;
-              journeyPatternSequenceNumber_ = input.readInt32();
-              break;
-            }
-            case 48: {
-              bitField0_ |= 0x00000020;
-              isTimetabledAtJourneyPatternPointGid_ = input.readInt64();
-              break;
-            }
-            case 56: {
-              bitField0_ |= 0x00000040;
-              visitCountNumber_ = input.readInt32();
-              break;
-            }
-            case 64: {
-              bitField0_ |= 0x00000080;
-              isTargetedAtJourneyPatternPointGid_ = input.readInt64();
-              break;
-            }
-            case 72: {
-              bitField0_ |= 0x00000100;
-              wasObservedAtJourneyPatternPointGid_ = input.readInt64();
-              break;
-            }
-            case 80: {
-              bitField0_ |= 0x00000200;
-              hasDestinationDisplayId_ = input.readInt64();
-              break;
-            }
-            case 88: {
-              bitField0_ |= 0x00000400;
-              hasDestinationStopAreaGid_ = input.readInt64();
-              break;
-            }
-            case 96: {
-              bitField0_ |= 0x00000800;
               hasServiceRequirementId_ = input.readInt64();
-              break;
-            }
-            case 106: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00001000;
-              timetabledLatestDateTime_ = bs;
-              break;
-            }
-            case 114: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00002000;
-              targetDateTime_ = bs;
-              break;
-            }
-            case 122: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00004000;
-              estimatedDateTime_ = bs;
-              break;
-            }
-            case 130: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00008000;
-              observedDateTime_ = bs;
-              break;
-            }
-            case 136: {
-              bitField0_ |= 0x00010000;
-              state_ = input.readInt64();
-              break;
-            }
-            case 144: {
-              bitField0_ |= 0x00020000;
-              type_ = input.readInt64();
-              break;
-            }
-            case 152: {
-              bitField0_ |= 0x00040000;
-              isValidYesNo_ = input.readBool();
-              break;
-            }
-            case 160: {
-              bitField0_ |= 0x00080000;
-              lastModifiedUTCDateTime_ = input.readInt64();
               break;
             }
             default: {
@@ -2703,412 +3113,70 @@ public final class PubtransTableProtos {
     }
 
     private int bitField0_;
-    public static final int SCHEMAVERSION_FIELD_NUMBER = 1;
-    private int schemaVersion_;
+    public static final int COMMON_FIELD_NUMBER = 1;
+    private fi.hsl.common.transitdata.proto.PubtransTableProtos.Common common_;
     /**
-     * <code>required int32 SchemaVersion = 1;</code>
+     * <code>required .proto.Common common = 1;</code>
      */
-    public boolean hasSchemaVersion() {
+    public boolean hasCommon() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required int32 SchemaVersion = 1;</code>
+     * <code>required .proto.Common common = 1;</code>
      */
-    public int getSchemaVersion() {
-      return schemaVersion_;
+    public fi.hsl.common.transitdata.proto.PubtransTableProtos.Common getCommon() {
+      return common_ == null ? fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.getDefaultInstance() : common_;
+    }
+    /**
+     * <code>required .proto.Common common = 1;</code>
+     */
+    public fi.hsl.common.transitdata.proto.PubtransTableProtos.CommonOrBuilder getCommonOrBuilder() {
+      return common_ == null ? fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.getDefaultInstance() : common_;
     }
 
-    public static final int ID_FIELD_NUMBER = 2;
-    private long id_;
+    public static final int HAS_DESTINATION_DISPLAY_ID_FIELD_NUMBER = 2;
+    private long hasDestinationDisplayId_;
     /**
-     * <code>required int64 Id = 2;</code>
+     * <code>optional int64 has_destination_display_id = 2;</code>
      */
-    public boolean hasId() {
+    public boolean hasHasDestinationDisplayId() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required int64 Id = 2;</code>
-     */
-    public long getId() {
-      return id_;
-    }
-
-    public static final int ISONDATEDVEHICLEJOURNEYID_FIELD_NUMBER = 3;
-    private long isOnDatedVehicleJourneyId_;
-    /**
-     * <code>required int64 IsOnDatedVehicleJourneyId = 3;</code>
-     */
-    public boolean hasIsOnDatedVehicleJourneyId() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>required int64 IsOnDatedVehicleJourneyId = 3;</code>
-     */
-    public long getIsOnDatedVehicleJourneyId() {
-      return isOnDatedVehicleJourneyId_;
-    }
-
-    public static final int ISONMONITOREDVEHICLEJOURNEYID_FIELD_NUMBER = 4;
-    private long isOnMonitoredVehicleJourneyId_;
-    /**
-     * <code>optional int64 IsOnMonitoredVehicleJourneyId = 4;</code>
-     */
-    public boolean hasIsOnMonitoredVehicleJourneyId() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional int64 IsOnMonitoredVehicleJourneyId = 4;</code>
-     */
-    public long getIsOnMonitoredVehicleJourneyId() {
-      return isOnMonitoredVehicleJourneyId_;
-    }
-
-    public static final int JOURNEYPATTERNSEQUENCENUMBER_FIELD_NUMBER = 5;
-    private int journeyPatternSequenceNumber_;
-    /**
-     * <code>required int32 JourneyPatternSequenceNumber = 5;</code>
-     */
-    public boolean hasJourneyPatternSequenceNumber() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    /**
-     * <code>required int32 JourneyPatternSequenceNumber = 5;</code>
-     */
-    public int getJourneyPatternSequenceNumber() {
-      return journeyPatternSequenceNumber_;
-    }
-
-    public static final int ISTIMETABLEDATJOURNEYPATTERNPOINTGID_FIELD_NUMBER = 6;
-    private long isTimetabledAtJourneyPatternPointGid_;
-    /**
-     * <code>required int64 IsTimetabledAtJourneyPatternPointGid = 6;</code>
-     */
-    public boolean hasIsTimetabledAtJourneyPatternPointGid() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    /**
-     * <code>required int64 IsTimetabledAtJourneyPatternPointGid = 6;</code>
-     */
-    public long getIsTimetabledAtJourneyPatternPointGid() {
-      return isTimetabledAtJourneyPatternPointGid_;
-    }
-
-    public static final int VISITCOUNTNUMBER_FIELD_NUMBER = 7;
-    private int visitCountNumber_;
-    /**
-     * <code>required int32 VisitCountNumber = 7;</code>
-     */
-    public boolean hasVisitCountNumber() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
-    }
-    /**
-     * <code>required int32 VisitCountNumber = 7;</code>
-     */
-    public int getVisitCountNumber() {
-      return visitCountNumber_;
-    }
-
-    public static final int ISTARGETEDATJOURNEYPATTERNPOINTGID_FIELD_NUMBER = 8;
-    private long isTargetedAtJourneyPatternPointGid_;
-    /**
-     * <code>optional int64 IsTargetedAtJourneyPatternPointGid = 8;</code>
-     */
-    public boolean hasIsTargetedAtJourneyPatternPointGid() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
-    }
-    /**
-     * <code>optional int64 IsTargetedAtJourneyPatternPointGid = 8;</code>
-     */
-    public long getIsTargetedAtJourneyPatternPointGid() {
-      return isTargetedAtJourneyPatternPointGid_;
-    }
-
-    public static final int WASOBSERVEDATJOURNEYPATTERNPOINTGID_FIELD_NUMBER = 9;
-    private long wasObservedAtJourneyPatternPointGid_;
-    /**
-     * <code>optional int64 WasObservedAtJourneyPatternPointGid = 9;</code>
-     */
-    public boolean hasWasObservedAtJourneyPatternPointGid() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
-    }
-    /**
-     * <code>optional int64 WasObservedAtJourneyPatternPointGid = 9;</code>
-     */
-    public long getWasObservedAtJourneyPatternPointGid() {
-      return wasObservedAtJourneyPatternPointGid_;
-    }
-
-    public static final int HASDESTINATIONDISPLAYID_FIELD_NUMBER = 10;
-    private long hasDestinationDisplayId_;
-    /**
-     * <code>optional int64 HasDestinationDisplayId = 10;</code>
-     */
-    public boolean hasHasDestinationDisplayId() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
-    }
-    /**
-     * <code>optional int64 HasDestinationDisplayId = 10;</code>
+     * <code>optional int64 has_destination_display_id = 2;</code>
      */
     public long getHasDestinationDisplayId() {
       return hasDestinationDisplayId_;
     }
 
-    public static final int HASDESTINATIONSTOPAREAGID_FIELD_NUMBER = 11;
+    public static final int HAS_DESTINATION_STOP_AREA_GID_FIELD_NUMBER = 3;
     private long hasDestinationStopAreaGid_;
     /**
-     * <code>optional int64 HasDestinationStopAreaGid = 11;</code>
+     * <code>optional int64 has_destination_stop_area_gid = 3;</code>
      */
     public boolean hasHasDestinationStopAreaGid() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional int64 HasDestinationStopAreaGid = 11;</code>
+     * <code>optional int64 has_destination_stop_area_gid = 3;</code>
      */
     public long getHasDestinationStopAreaGid() {
       return hasDestinationStopAreaGid_;
     }
 
-    public static final int HASSERVICEREQUIREMENTID_FIELD_NUMBER = 12;
+    public static final int HAS_SERVICE_REQUIREMENT_ID_FIELD_NUMBER = 4;
     private long hasServiceRequirementId_;
     /**
-     * <code>optional int64 HasServiceRequirementId = 12;</code>
+     * <code>optional int64 has_service_requirement_id = 4;</code>
      */
     public boolean hasHasServiceRequirementId() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>optional int64 HasServiceRequirementId = 12;</code>
+     * <code>optional int64 has_service_requirement_id = 4;</code>
      */
     public long getHasServiceRequirementId() {
       return hasServiceRequirementId_;
-    }
-
-    public static final int TIMETABLEDLATESTDATETIME_FIELD_NUMBER = 13;
-    private volatile java.lang.Object timetabledLatestDateTime_;
-    /**
-     * <code>optional string TimetabledLatestDateTime = 13;</code>
-     */
-    public boolean hasTimetabledLatestDateTime() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
-    }
-    /**
-     * <code>optional string TimetabledLatestDateTime = 13;</code>
-     */
-    public java.lang.String getTimetabledLatestDateTime() {
-      java.lang.Object ref = timetabledLatestDateTime_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          timetabledLatestDateTime_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string TimetabledLatestDateTime = 13;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTimetabledLatestDateTimeBytes() {
-      java.lang.Object ref = timetabledLatestDateTime_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        timetabledLatestDateTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TARGETDATETIME_FIELD_NUMBER = 14;
-    private volatile java.lang.Object targetDateTime_;
-    /**
-     * <code>optional string TargetDateTime = 14;</code>
-     */
-    public boolean hasTargetDateTime() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
-    }
-    /**
-     * <code>optional string TargetDateTime = 14;</code>
-     */
-    public java.lang.String getTargetDateTime() {
-      java.lang.Object ref = targetDateTime_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          targetDateTime_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string TargetDateTime = 14;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTargetDateTimeBytes() {
-      java.lang.Object ref = targetDateTime_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        targetDateTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ESTIMATEDDATETIME_FIELD_NUMBER = 15;
-    private volatile java.lang.Object estimatedDateTime_;
-    /**
-     * <code>optional string EstimatedDateTime = 15;</code>
-     */
-    public boolean hasEstimatedDateTime() {
-      return ((bitField0_ & 0x00004000) == 0x00004000);
-    }
-    /**
-     * <code>optional string EstimatedDateTime = 15;</code>
-     */
-    public java.lang.String getEstimatedDateTime() {
-      java.lang.Object ref = estimatedDateTime_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          estimatedDateTime_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string EstimatedDateTime = 15;</code>
-     */
-    public com.google.protobuf.ByteString
-        getEstimatedDateTimeBytes() {
-      java.lang.Object ref = estimatedDateTime_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        estimatedDateTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int OBSERVEDDATETIME_FIELD_NUMBER = 16;
-    private volatile java.lang.Object observedDateTime_;
-    /**
-     * <code>optional string ObservedDateTime = 16;</code>
-     */
-    public boolean hasObservedDateTime() {
-      return ((bitField0_ & 0x00008000) == 0x00008000);
-    }
-    /**
-     * <code>optional string ObservedDateTime = 16;</code>
-     */
-    public java.lang.String getObservedDateTime() {
-      java.lang.Object ref = observedDateTime_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          observedDateTime_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string ObservedDateTime = 16;</code>
-     */
-    public com.google.protobuf.ByteString
-        getObservedDateTimeBytes() {
-      java.lang.Object ref = observedDateTime_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        observedDateTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int STATE_FIELD_NUMBER = 17;
-    private long state_;
-    /**
-     * <code>required int64 State = 17;</code>
-     */
-    public boolean hasState() {
-      return ((bitField0_ & 0x00010000) == 0x00010000);
-    }
-    /**
-     * <code>required int64 State = 17;</code>
-     */
-    public long getState() {
-      return state_;
-    }
-
-    public static final int TYPE_FIELD_NUMBER = 18;
-    private long type_;
-    /**
-     * <code>required int64 Type = 18;</code>
-     */
-    public boolean hasType() {
-      return ((bitField0_ & 0x00020000) == 0x00020000);
-    }
-    /**
-     * <code>required int64 Type = 18;</code>
-     */
-    public long getType() {
-      return type_;
-    }
-
-    public static final int ISVALIDYESNO_FIELD_NUMBER = 19;
-    private boolean isValidYesNo_;
-    /**
-     * <code>required bool IsValidYesNo = 19;</code>
-     */
-    public boolean hasIsValidYesNo() {
-      return ((bitField0_ & 0x00040000) == 0x00040000);
-    }
-    /**
-     * <code>required bool IsValidYesNo = 19;</code>
-     */
-    public boolean getIsValidYesNo() {
-      return isValidYesNo_;
-    }
-
-    public static final int LASTMODIFIEDUTCDATETIME_FIELD_NUMBER = 20;
-    private long lastModifiedUTCDateTime_;
-    /**
-     * <code>required int64 LastModifiedUTCDateTime = 20;</code>
-     */
-    public boolean hasLastModifiedUTCDateTime() {
-      return ((bitField0_ & 0x00080000) == 0x00080000);
-    }
-    /**
-     * <code>required int64 LastModifiedUTCDateTime = 20;</code>
-     */
-    public long getLastModifiedUTCDateTime() {
-      return lastModifiedUTCDateTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3118,43 +3186,11 @@ public final class PubtransTableProtos {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasSchemaVersion()) {
+      if (!hasCommon()) {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasIsOnDatedVehicleJourneyId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasJourneyPatternSequenceNumber()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasIsTimetabledAtJourneyPatternPointGid()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasVisitCountNumber()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasState()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasType()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasIsValidYesNo()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasLastModifiedUTCDateTime()) {
+      if (!getCommon().isInitialized()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -3166,64 +3202,16 @@ public final class PubtransTableProtos {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, schemaVersion_);
+        output.writeMessage(1, getCommon());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, id_);
+        output.writeInt64(2, hasDestinationDisplayId_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt64(3, isOnDatedVehicleJourneyId_);
+        output.writeInt64(3, hasDestinationStopAreaGid_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeInt64(4, isOnMonitoredVehicleJourneyId_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeInt32(5, journeyPatternSequenceNumber_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeInt64(6, isTimetabledAtJourneyPatternPointGid_);
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeInt32(7, visitCountNumber_);
-      }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeInt64(8, isTargetedAtJourneyPatternPointGid_);
-      }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        output.writeInt64(9, wasObservedAtJourneyPatternPointGid_);
-      }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        output.writeInt64(10, hasDestinationDisplayId_);
-      }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        output.writeInt64(11, hasDestinationStopAreaGid_);
-      }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        output.writeInt64(12, hasServiceRequirementId_);
-      }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, timetabledLatestDateTime_);
-      }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, targetDateTime_);
-      }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, estimatedDateTime_);
-      }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, observedDateTime_);
-      }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
-        output.writeInt64(17, state_);
-      }
-      if (((bitField0_ & 0x00020000) == 0x00020000)) {
-        output.writeInt64(18, type_);
-      }
-      if (((bitField0_ & 0x00040000) == 0x00040000)) {
-        output.writeBool(19, isValidYesNo_);
-      }
-      if (((bitField0_ & 0x00080000) == 0x00080000)) {
-        output.writeInt64(20, lastModifiedUTCDateTime_);
+        output.writeInt64(4, hasServiceRequirementId_);
       }
       unknownFields.writeTo(output);
     }
@@ -3236,79 +3224,19 @@ public final class PubtransTableProtos {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, schemaVersion_);
+          .computeMessageSize(1, getCommon());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, id_);
+          .computeInt64Size(2, hasDestinationDisplayId_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, isOnDatedVehicleJourneyId_);
+          .computeInt64Size(3, hasDestinationStopAreaGid_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, isOnMonitoredVehicleJourneyId_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, journeyPatternSequenceNumber_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, isTimetabledAtJourneyPatternPointGid_);
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, visitCountNumber_);
-      }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(8, isTargetedAtJourneyPatternPointGid_);
-      }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(9, wasObservedAtJourneyPatternPointGid_);
-      }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(10, hasDestinationDisplayId_);
-      }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(11, hasDestinationStopAreaGid_);
-      }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(12, hasServiceRequirementId_);
-      }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, timetabledLatestDateTime_);
-      }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, targetDateTime_);
-      }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, estimatedDateTime_);
-      }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, observedDateTime_);
-      }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(17, state_);
-      }
-      if (((bitField0_ & 0x00020000) == 0x00020000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(18, type_);
-      }
-      if (((bitField0_ & 0x00040000) == 0x00040000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(19, isValidYesNo_);
-      }
-      if (((bitField0_ & 0x00080000) == 0x00080000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(20, lastModifiedUTCDateTime_);
+          .computeInt64Size(4, hasServiceRequirementId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3326,50 +3254,10 @@ public final class PubtransTableProtos {
       fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture other = (fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture) obj;
 
       boolean result = true;
-      result = result && (hasSchemaVersion() == other.hasSchemaVersion());
-      if (hasSchemaVersion()) {
-        result = result && (getSchemaVersion()
-            == other.getSchemaVersion());
-      }
-      result = result && (hasId() == other.hasId());
-      if (hasId()) {
-        result = result && (getId()
-            == other.getId());
-      }
-      result = result && (hasIsOnDatedVehicleJourneyId() == other.hasIsOnDatedVehicleJourneyId());
-      if (hasIsOnDatedVehicleJourneyId()) {
-        result = result && (getIsOnDatedVehicleJourneyId()
-            == other.getIsOnDatedVehicleJourneyId());
-      }
-      result = result && (hasIsOnMonitoredVehicleJourneyId() == other.hasIsOnMonitoredVehicleJourneyId());
-      if (hasIsOnMonitoredVehicleJourneyId()) {
-        result = result && (getIsOnMonitoredVehicleJourneyId()
-            == other.getIsOnMonitoredVehicleJourneyId());
-      }
-      result = result && (hasJourneyPatternSequenceNumber() == other.hasJourneyPatternSequenceNumber());
-      if (hasJourneyPatternSequenceNumber()) {
-        result = result && (getJourneyPatternSequenceNumber()
-            == other.getJourneyPatternSequenceNumber());
-      }
-      result = result && (hasIsTimetabledAtJourneyPatternPointGid() == other.hasIsTimetabledAtJourneyPatternPointGid());
-      if (hasIsTimetabledAtJourneyPatternPointGid()) {
-        result = result && (getIsTimetabledAtJourneyPatternPointGid()
-            == other.getIsTimetabledAtJourneyPatternPointGid());
-      }
-      result = result && (hasVisitCountNumber() == other.hasVisitCountNumber());
-      if (hasVisitCountNumber()) {
-        result = result && (getVisitCountNumber()
-            == other.getVisitCountNumber());
-      }
-      result = result && (hasIsTargetedAtJourneyPatternPointGid() == other.hasIsTargetedAtJourneyPatternPointGid());
-      if (hasIsTargetedAtJourneyPatternPointGid()) {
-        result = result && (getIsTargetedAtJourneyPatternPointGid()
-            == other.getIsTargetedAtJourneyPatternPointGid());
-      }
-      result = result && (hasWasObservedAtJourneyPatternPointGid() == other.hasWasObservedAtJourneyPatternPointGid());
-      if (hasWasObservedAtJourneyPatternPointGid()) {
-        result = result && (getWasObservedAtJourneyPatternPointGid()
-            == other.getWasObservedAtJourneyPatternPointGid());
+      result = result && (hasCommon() == other.hasCommon());
+      if (hasCommon()) {
+        result = result && getCommon()
+            .equals(other.getCommon());
       }
       result = result && (hasHasDestinationDisplayId() == other.hasHasDestinationDisplayId());
       if (hasHasDestinationDisplayId()) {
@@ -3386,46 +3274,6 @@ public final class PubtransTableProtos {
         result = result && (getHasServiceRequirementId()
             == other.getHasServiceRequirementId());
       }
-      result = result && (hasTimetabledLatestDateTime() == other.hasTimetabledLatestDateTime());
-      if (hasTimetabledLatestDateTime()) {
-        result = result && getTimetabledLatestDateTime()
-            .equals(other.getTimetabledLatestDateTime());
-      }
-      result = result && (hasTargetDateTime() == other.hasTargetDateTime());
-      if (hasTargetDateTime()) {
-        result = result && getTargetDateTime()
-            .equals(other.getTargetDateTime());
-      }
-      result = result && (hasEstimatedDateTime() == other.hasEstimatedDateTime());
-      if (hasEstimatedDateTime()) {
-        result = result && getEstimatedDateTime()
-            .equals(other.getEstimatedDateTime());
-      }
-      result = result && (hasObservedDateTime() == other.hasObservedDateTime());
-      if (hasObservedDateTime()) {
-        result = result && getObservedDateTime()
-            .equals(other.getObservedDateTime());
-      }
-      result = result && (hasState() == other.hasState());
-      if (hasState()) {
-        result = result && (getState()
-            == other.getState());
-      }
-      result = result && (hasType() == other.hasType());
-      if (hasType()) {
-        result = result && (getType()
-            == other.getType());
-      }
-      result = result && (hasIsValidYesNo() == other.hasIsValidYesNo());
-      if (hasIsValidYesNo()) {
-        result = result && (getIsValidYesNo()
-            == other.getIsValidYesNo());
-      }
-      result = result && (hasLastModifiedUTCDateTime() == other.hasLastModifiedUTCDateTime());
-      if (hasLastModifiedUTCDateTime()) {
-        result = result && (getLastModifiedUTCDateTime()
-            == other.getLastModifiedUTCDateTime());
-      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -3437,98 +3285,24 @@ public final class PubtransTableProtos {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasSchemaVersion()) {
-        hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
-        hash = (53 * hash) + getSchemaVersion();
-      }
-      if (hasId()) {
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getId());
-      }
-      if (hasIsOnDatedVehicleJourneyId()) {
-        hash = (37 * hash) + ISONDATEDVEHICLEJOURNEYID_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getIsOnDatedVehicleJourneyId());
-      }
-      if (hasIsOnMonitoredVehicleJourneyId()) {
-        hash = (37 * hash) + ISONMONITOREDVEHICLEJOURNEYID_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getIsOnMonitoredVehicleJourneyId());
-      }
-      if (hasJourneyPatternSequenceNumber()) {
-        hash = (37 * hash) + JOURNEYPATTERNSEQUENCENUMBER_FIELD_NUMBER;
-        hash = (53 * hash) + getJourneyPatternSequenceNumber();
-      }
-      if (hasIsTimetabledAtJourneyPatternPointGid()) {
-        hash = (37 * hash) + ISTIMETABLEDATJOURNEYPATTERNPOINTGID_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getIsTimetabledAtJourneyPatternPointGid());
-      }
-      if (hasVisitCountNumber()) {
-        hash = (37 * hash) + VISITCOUNTNUMBER_FIELD_NUMBER;
-        hash = (53 * hash) + getVisitCountNumber();
-      }
-      if (hasIsTargetedAtJourneyPatternPointGid()) {
-        hash = (37 * hash) + ISTARGETEDATJOURNEYPATTERNPOINTGID_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getIsTargetedAtJourneyPatternPointGid());
-      }
-      if (hasWasObservedAtJourneyPatternPointGid()) {
-        hash = (37 * hash) + WASOBSERVEDATJOURNEYPATTERNPOINTGID_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getWasObservedAtJourneyPatternPointGid());
+      if (hasCommon()) {
+        hash = (37 * hash) + COMMON_FIELD_NUMBER;
+        hash = (53 * hash) + getCommon().hashCode();
       }
       if (hasHasDestinationDisplayId()) {
-        hash = (37 * hash) + HASDESTINATIONDISPLAYID_FIELD_NUMBER;
+        hash = (37 * hash) + HAS_DESTINATION_DISPLAY_ID_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getHasDestinationDisplayId());
       }
       if (hasHasDestinationStopAreaGid()) {
-        hash = (37 * hash) + HASDESTINATIONSTOPAREAGID_FIELD_NUMBER;
+        hash = (37 * hash) + HAS_DESTINATION_STOP_AREA_GID_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getHasDestinationStopAreaGid());
       }
       if (hasHasServiceRequirementId()) {
-        hash = (37 * hash) + HASSERVICEREQUIREMENTID_FIELD_NUMBER;
+        hash = (37 * hash) + HAS_SERVICE_REQUIREMENT_ID_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getHasServiceRequirementId());
-      }
-      if (hasTimetabledLatestDateTime()) {
-        hash = (37 * hash) + TIMETABLEDLATESTDATETIME_FIELD_NUMBER;
-        hash = (53 * hash) + getTimetabledLatestDateTime().hashCode();
-      }
-      if (hasTargetDateTime()) {
-        hash = (37 * hash) + TARGETDATETIME_FIELD_NUMBER;
-        hash = (53 * hash) + getTargetDateTime().hashCode();
-      }
-      if (hasEstimatedDateTime()) {
-        hash = (37 * hash) + ESTIMATEDDATETIME_FIELD_NUMBER;
-        hash = (53 * hash) + getEstimatedDateTime().hashCode();
-      }
-      if (hasObservedDateTime()) {
-        hash = (37 * hash) + OBSERVEDDATETIME_FIELD_NUMBER;
-        hash = (53 * hash) + getObservedDateTime().hashCode();
-      }
-      if (hasState()) {
-        hash = (37 * hash) + STATE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getState());
-      }
-      if (hasType()) {
-        hash = (37 * hash) + TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getType());
-      }
-      if (hasIsValidYesNo()) {
-        hash = (37 * hash) + ISVALIDYESNO_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getIsValidYesNo());
-      }
-      if (hasLastModifiedUTCDateTime()) {
-        hash = (37 * hash) + LASTMODIFIEDUTCDATETIME_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getLastModifiedUTCDateTime());
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3658,51 +3432,24 @@ public final class PubtransTableProtos {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getCommonFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        schemaVersion_ = 0;
+        if (commonBuilder_ == null) {
+          common_ = null;
+        } else {
+          commonBuilder_.clear();
+        }
         bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        isOnDatedVehicleJourneyId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        isOnMonitoredVehicleJourneyId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        journeyPatternSequenceNumber_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000010);
-        isTimetabledAtJourneyPatternPointGid_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000020);
-        visitCountNumber_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000040);
-        isTargetedAtJourneyPatternPointGid_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000080);
-        wasObservedAtJourneyPatternPointGid_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000100);
         hasDestinationDisplayId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000002);
         hasDestinationStopAreaGid_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000004);
         hasServiceRequirementId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000800);
-        timetabledLatestDateTime_ = "";
-        bitField0_ = (bitField0_ & ~0x00001000);
-        targetDateTime_ = "";
-        bitField0_ = (bitField0_ & ~0x00002000);
-        estimatedDateTime_ = "";
-        bitField0_ = (bitField0_ & ~0x00004000);
-        observedDateTime_ = "";
-        bitField0_ = (bitField0_ & ~0x00008000);
-        state_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00010000);
-        type_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00020000);
-        isValidYesNo_ = false;
-        bitField0_ = (bitField0_ & ~0x00040000);
-        lastModifiedUTCDateTime_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -3734,83 +3481,23 @@ public final class PubtransTableProtos {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.schemaVersion_ = schemaVersion_;
+        if (commonBuilder_ == null) {
+          result.common_ = common_;
+        } else {
+          result.common_ = commonBuilder_.build();
+        }
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.id_ = id_;
+        result.hasDestinationDisplayId_ = hasDestinationDisplayId_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.isOnDatedVehicleJourneyId_ = isOnDatedVehicleJourneyId_;
+        result.hasDestinationStopAreaGid_ = hasDestinationStopAreaGid_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.isOnMonitoredVehicleJourneyId_ = isOnMonitoredVehicleJourneyId_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.journeyPatternSequenceNumber_ = journeyPatternSequenceNumber_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        result.isTimetabledAtJourneyPatternPointGid_ = isTimetabledAtJourneyPatternPointGid_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
-          to_bitField0_ |= 0x00000040;
-        }
-        result.visitCountNumber_ = visitCountNumber_;
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
-          to_bitField0_ |= 0x00000080;
-        }
-        result.isTargetedAtJourneyPatternPointGid_ = isTargetedAtJourneyPatternPointGid_;
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
-          to_bitField0_ |= 0x00000100;
-        }
-        result.wasObservedAtJourneyPatternPointGid_ = wasObservedAtJourneyPatternPointGid_;
-        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
-          to_bitField0_ |= 0x00000200;
-        }
-        result.hasDestinationDisplayId_ = hasDestinationDisplayId_;
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
-          to_bitField0_ |= 0x00000400;
-        }
-        result.hasDestinationStopAreaGid_ = hasDestinationStopAreaGid_;
-        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
-          to_bitField0_ |= 0x00000800;
-        }
         result.hasServiceRequirementId_ = hasServiceRequirementId_;
-        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
-          to_bitField0_ |= 0x00001000;
-        }
-        result.timetabledLatestDateTime_ = timetabledLatestDateTime_;
-        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
-          to_bitField0_ |= 0x00002000;
-        }
-        result.targetDateTime_ = targetDateTime_;
-        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
-          to_bitField0_ |= 0x00004000;
-        }
-        result.estimatedDateTime_ = estimatedDateTime_;
-        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
-          to_bitField0_ |= 0x00008000;
-        }
-        result.observedDateTime_ = observedDateTime_;
-        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
-          to_bitField0_ |= 0x00010000;
-        }
-        result.state_ = state_;
-        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
-          to_bitField0_ |= 0x00020000;
-        }
-        result.type_ = type_;
-        if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
-          to_bitField0_ |= 0x00040000;
-        }
-        result.isValidYesNo_ = isValidYesNo_;
-        if (((from_bitField0_ & 0x00080000) == 0x00080000)) {
-          to_bitField0_ |= 0x00080000;
-        }
-        result.lastModifiedUTCDateTime_ = lastModifiedUTCDateTime_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3860,32 +3547,8 @@ public final class PubtransTableProtos {
 
       public Builder mergeFrom(fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture other) {
         if (other == fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture.getDefaultInstance()) return this;
-        if (other.hasSchemaVersion()) {
-          setSchemaVersion(other.getSchemaVersion());
-        }
-        if (other.hasId()) {
-          setId(other.getId());
-        }
-        if (other.hasIsOnDatedVehicleJourneyId()) {
-          setIsOnDatedVehicleJourneyId(other.getIsOnDatedVehicleJourneyId());
-        }
-        if (other.hasIsOnMonitoredVehicleJourneyId()) {
-          setIsOnMonitoredVehicleJourneyId(other.getIsOnMonitoredVehicleJourneyId());
-        }
-        if (other.hasJourneyPatternSequenceNumber()) {
-          setJourneyPatternSequenceNumber(other.getJourneyPatternSequenceNumber());
-        }
-        if (other.hasIsTimetabledAtJourneyPatternPointGid()) {
-          setIsTimetabledAtJourneyPatternPointGid(other.getIsTimetabledAtJourneyPatternPointGid());
-        }
-        if (other.hasVisitCountNumber()) {
-          setVisitCountNumber(other.getVisitCountNumber());
-        }
-        if (other.hasIsTargetedAtJourneyPatternPointGid()) {
-          setIsTargetedAtJourneyPatternPointGid(other.getIsTargetedAtJourneyPatternPointGid());
-        }
-        if (other.hasWasObservedAtJourneyPatternPointGid()) {
-          setWasObservedAtJourneyPatternPointGid(other.getWasObservedAtJourneyPatternPointGid());
+        if (other.hasCommon()) {
+          mergeCommon(other.getCommon());
         }
         if (other.hasHasDestinationDisplayId()) {
           setHasDestinationDisplayId(other.getHasDestinationDisplayId());
@@ -3896,38 +3559,6 @@ public final class PubtransTableProtos {
         if (other.hasHasServiceRequirementId()) {
           setHasServiceRequirementId(other.getHasServiceRequirementId());
         }
-        if (other.hasTimetabledLatestDateTime()) {
-          bitField0_ |= 0x00001000;
-          timetabledLatestDateTime_ = other.timetabledLatestDateTime_;
-          onChanged();
-        }
-        if (other.hasTargetDateTime()) {
-          bitField0_ |= 0x00002000;
-          targetDateTime_ = other.targetDateTime_;
-          onChanged();
-        }
-        if (other.hasEstimatedDateTime()) {
-          bitField0_ |= 0x00004000;
-          estimatedDateTime_ = other.estimatedDateTime_;
-          onChanged();
-        }
-        if (other.hasObservedDateTime()) {
-          bitField0_ |= 0x00008000;
-          observedDateTime_ = other.observedDateTime_;
-          onChanged();
-        }
-        if (other.hasState()) {
-          setState(other.getState());
-        }
-        if (other.hasType()) {
-          setType(other.getType());
-        }
-        if (other.hasIsValidYesNo()) {
-          setIsValidYesNo(other.getIsValidYesNo());
-        }
-        if (other.hasLastModifiedUTCDateTime()) {
-          setLastModifiedUTCDateTime(other.getLastModifiedUTCDateTime());
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -3935,34 +3566,10 @@ public final class PubtransTableProtos {
 
       @java.lang.Override
       public final boolean isInitialized() {
-        if (!hasSchemaVersion()) {
+        if (!hasCommon()) {
           return false;
         }
-        if (!hasId()) {
-          return false;
-        }
-        if (!hasIsOnDatedVehicleJourneyId()) {
-          return false;
-        }
-        if (!hasJourneyPatternSequenceNumber()) {
-          return false;
-        }
-        if (!hasIsTimetabledAtJourneyPatternPointGid()) {
-          return false;
-        }
-        if (!hasVisitCountNumber()) {
-          return false;
-        }
-        if (!hasState()) {
-          return false;
-        }
-        if (!hasType()) {
-          return false;
-        }
-        if (!hasIsValidYesNo()) {
-          return false;
-        }
-        if (!hasLastModifiedUTCDateTime()) {
+        if (!getCommon().isInitialized()) {
           return false;
         }
         return true;
@@ -3988,321 +3595,151 @@ public final class PubtransTableProtos {
       }
       private int bitField0_;
 
-      private int schemaVersion_ ;
+      private fi.hsl.common.transitdata.proto.PubtransTableProtos.Common common_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.PubtransTableProtos.Common, fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.Builder, fi.hsl.common.transitdata.proto.PubtransTableProtos.CommonOrBuilder> commonBuilder_;
       /**
-       * <code>required int32 SchemaVersion = 1;</code>
+       * <code>required .proto.Common common = 1;</code>
        */
-      public boolean hasSchemaVersion() {
+      public boolean hasCommon() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required int32 SchemaVersion = 1;</code>
+       * <code>required .proto.Common common = 1;</code>
        */
-      public int getSchemaVersion() {
-        return schemaVersion_;
+      public fi.hsl.common.transitdata.proto.PubtransTableProtos.Common getCommon() {
+        if (commonBuilder_ == null) {
+          return common_ == null ? fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.getDefaultInstance() : common_;
+        } else {
+          return commonBuilder_.getMessage();
+        }
       }
       /**
-       * <code>required int32 SchemaVersion = 1;</code>
+       * <code>required .proto.Common common = 1;</code>
        */
-      public Builder setSchemaVersion(int value) {
+      public Builder setCommon(fi.hsl.common.transitdata.proto.PubtransTableProtos.Common value) {
+        if (commonBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          common_ = value;
+          onChanged();
+        } else {
+          commonBuilder_.setMessage(value);
+        }
         bitField0_ |= 0x00000001;
-        schemaVersion_ = value;
-        onChanged();
         return this;
       }
       /**
-       * <code>required int32 SchemaVersion = 1;</code>
+       * <code>required .proto.Common common = 1;</code>
        */
-      public Builder clearSchemaVersion() {
+      public Builder setCommon(
+          fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.Builder builderForValue) {
+        if (commonBuilder_ == null) {
+          common_ = builderForValue.build();
+          onChanged();
+        } else {
+          commonBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>required .proto.Common common = 1;</code>
+       */
+      public Builder mergeCommon(fi.hsl.common.transitdata.proto.PubtransTableProtos.Common value) {
+        if (commonBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              common_ != null &&
+              common_ != fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.getDefaultInstance()) {
+            common_ =
+              fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.newBuilder(common_).mergeFrom(value).buildPartial();
+          } else {
+            common_ = value;
+          }
+          onChanged();
+        } else {
+          commonBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>required .proto.Common common = 1;</code>
+       */
+      public Builder clearCommon() {
+        if (commonBuilder_ == null) {
+          common_ = null;
+          onChanged();
+        } else {
+          commonBuilder_.clear();
+        }
         bitField0_ = (bitField0_ & ~0x00000001);
-        schemaVersion_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long id_ ;
-      /**
-       * <code>required int64 Id = 2;</code>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required int64 Id = 2;</code>
-       */
-      public long getId() {
-        return id_;
-      }
-      /**
-       * <code>required int64 Id = 2;</code>
-       */
-      public Builder setId(long value) {
-        bitField0_ |= 0x00000002;
-        id_ = value;
-        onChanged();
         return this;
       }
       /**
-       * <code>required int64 Id = 2;</code>
+       * <code>required .proto.Common common = 1;</code>
        */
-      public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        id_ = 0L;
+      public fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.Builder getCommonBuilder() {
+        bitField0_ |= 0x00000001;
         onChanged();
-        return this;
-      }
-
-      private long isOnDatedVehicleJourneyId_ ;
-      /**
-       * <code>required int64 IsOnDatedVehicleJourneyId = 3;</code>
-       */
-      public boolean hasIsOnDatedVehicleJourneyId() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return getCommonFieldBuilder().getBuilder();
       }
       /**
-       * <code>required int64 IsOnDatedVehicleJourneyId = 3;</code>
+       * <code>required .proto.Common common = 1;</code>
        */
-      public long getIsOnDatedVehicleJourneyId() {
-        return isOnDatedVehicleJourneyId_;
+      public fi.hsl.common.transitdata.proto.PubtransTableProtos.CommonOrBuilder getCommonOrBuilder() {
+        if (commonBuilder_ != null) {
+          return commonBuilder_.getMessageOrBuilder();
+        } else {
+          return common_ == null ?
+              fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.getDefaultInstance() : common_;
+        }
       }
       /**
-       * <code>required int64 IsOnDatedVehicleJourneyId = 3;</code>
+       * <code>required .proto.Common common = 1;</code>
        */
-      public Builder setIsOnDatedVehicleJourneyId(long value) {
-        bitField0_ |= 0x00000004;
-        isOnDatedVehicleJourneyId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 IsOnDatedVehicleJourneyId = 3;</code>
-       */
-      public Builder clearIsOnDatedVehicleJourneyId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        isOnDatedVehicleJourneyId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long isOnMonitoredVehicleJourneyId_ ;
-      /**
-       * <code>optional int64 IsOnMonitoredVehicleJourneyId = 4;</code>
-       */
-      public boolean hasIsOnMonitoredVehicleJourneyId() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional int64 IsOnMonitoredVehicleJourneyId = 4;</code>
-       */
-      public long getIsOnMonitoredVehicleJourneyId() {
-        return isOnMonitoredVehicleJourneyId_;
-      }
-      /**
-       * <code>optional int64 IsOnMonitoredVehicleJourneyId = 4;</code>
-       */
-      public Builder setIsOnMonitoredVehicleJourneyId(long value) {
-        bitField0_ |= 0x00000008;
-        isOnMonitoredVehicleJourneyId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 IsOnMonitoredVehicleJourneyId = 4;</code>
-       */
-      public Builder clearIsOnMonitoredVehicleJourneyId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        isOnMonitoredVehicleJourneyId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int journeyPatternSequenceNumber_ ;
-      /**
-       * <code>required int32 JourneyPatternSequenceNumber = 5;</code>
-       */
-      public boolean hasJourneyPatternSequenceNumber() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      /**
-       * <code>required int32 JourneyPatternSequenceNumber = 5;</code>
-       */
-      public int getJourneyPatternSequenceNumber() {
-        return journeyPatternSequenceNumber_;
-      }
-      /**
-       * <code>required int32 JourneyPatternSequenceNumber = 5;</code>
-       */
-      public Builder setJourneyPatternSequenceNumber(int value) {
-        bitField0_ |= 0x00000010;
-        journeyPatternSequenceNumber_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int32 JourneyPatternSequenceNumber = 5;</code>
-       */
-      public Builder clearJourneyPatternSequenceNumber() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        journeyPatternSequenceNumber_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long isTimetabledAtJourneyPatternPointGid_ ;
-      /**
-       * <code>required int64 IsTimetabledAtJourneyPatternPointGid = 6;</code>
-       */
-      public boolean hasIsTimetabledAtJourneyPatternPointGid() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      /**
-       * <code>required int64 IsTimetabledAtJourneyPatternPointGid = 6;</code>
-       */
-      public long getIsTimetabledAtJourneyPatternPointGid() {
-        return isTimetabledAtJourneyPatternPointGid_;
-      }
-      /**
-       * <code>required int64 IsTimetabledAtJourneyPatternPointGid = 6;</code>
-       */
-      public Builder setIsTimetabledAtJourneyPatternPointGid(long value) {
-        bitField0_ |= 0x00000020;
-        isTimetabledAtJourneyPatternPointGid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 IsTimetabledAtJourneyPatternPointGid = 6;</code>
-       */
-      public Builder clearIsTimetabledAtJourneyPatternPointGid() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        isTimetabledAtJourneyPatternPointGid_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int visitCountNumber_ ;
-      /**
-       * <code>required int32 VisitCountNumber = 7;</code>
-       */
-      public boolean hasVisitCountNumber() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
-      }
-      /**
-       * <code>required int32 VisitCountNumber = 7;</code>
-       */
-      public int getVisitCountNumber() {
-        return visitCountNumber_;
-      }
-      /**
-       * <code>required int32 VisitCountNumber = 7;</code>
-       */
-      public Builder setVisitCountNumber(int value) {
-        bitField0_ |= 0x00000040;
-        visitCountNumber_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int32 VisitCountNumber = 7;</code>
-       */
-      public Builder clearVisitCountNumber() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        visitCountNumber_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long isTargetedAtJourneyPatternPointGid_ ;
-      /**
-       * <code>optional int64 IsTargetedAtJourneyPatternPointGid = 8;</code>
-       */
-      public boolean hasIsTargetedAtJourneyPatternPointGid() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
-      }
-      /**
-       * <code>optional int64 IsTargetedAtJourneyPatternPointGid = 8;</code>
-       */
-      public long getIsTargetedAtJourneyPatternPointGid() {
-        return isTargetedAtJourneyPatternPointGid_;
-      }
-      /**
-       * <code>optional int64 IsTargetedAtJourneyPatternPointGid = 8;</code>
-       */
-      public Builder setIsTargetedAtJourneyPatternPointGid(long value) {
-        bitField0_ |= 0x00000080;
-        isTargetedAtJourneyPatternPointGid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 IsTargetedAtJourneyPatternPointGid = 8;</code>
-       */
-      public Builder clearIsTargetedAtJourneyPatternPointGid() {
-        bitField0_ = (bitField0_ & ~0x00000080);
-        isTargetedAtJourneyPatternPointGid_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long wasObservedAtJourneyPatternPointGid_ ;
-      /**
-       * <code>optional int64 WasObservedAtJourneyPatternPointGid = 9;</code>
-       */
-      public boolean hasWasObservedAtJourneyPatternPointGid() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
-      }
-      /**
-       * <code>optional int64 WasObservedAtJourneyPatternPointGid = 9;</code>
-       */
-      public long getWasObservedAtJourneyPatternPointGid() {
-        return wasObservedAtJourneyPatternPointGid_;
-      }
-      /**
-       * <code>optional int64 WasObservedAtJourneyPatternPointGid = 9;</code>
-       */
-      public Builder setWasObservedAtJourneyPatternPointGid(long value) {
-        bitField0_ |= 0x00000100;
-        wasObservedAtJourneyPatternPointGid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 WasObservedAtJourneyPatternPointGid = 9;</code>
-       */
-      public Builder clearWasObservedAtJourneyPatternPointGid() {
-        bitField0_ = (bitField0_ & ~0x00000100);
-        wasObservedAtJourneyPatternPointGid_ = 0L;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.PubtransTableProtos.Common, fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.Builder, fi.hsl.common.transitdata.proto.PubtransTableProtos.CommonOrBuilder> 
+          getCommonFieldBuilder() {
+        if (commonBuilder_ == null) {
+          commonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              fi.hsl.common.transitdata.proto.PubtransTableProtos.Common, fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.Builder, fi.hsl.common.transitdata.proto.PubtransTableProtos.CommonOrBuilder>(
+                  getCommon(),
+                  getParentForChildren(),
+                  isClean());
+          common_ = null;
+        }
+        return commonBuilder_;
       }
 
       private long hasDestinationDisplayId_ ;
       /**
-       * <code>optional int64 HasDestinationDisplayId = 10;</code>
+       * <code>optional int64 has_destination_display_id = 2;</code>
        */
       public boolean hasHasDestinationDisplayId() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional int64 HasDestinationDisplayId = 10;</code>
+       * <code>optional int64 has_destination_display_id = 2;</code>
        */
       public long getHasDestinationDisplayId() {
         return hasDestinationDisplayId_;
       }
       /**
-       * <code>optional int64 HasDestinationDisplayId = 10;</code>
+       * <code>optional int64 has_destination_display_id = 2;</code>
        */
       public Builder setHasDestinationDisplayId(long value) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000002;
         hasDestinationDisplayId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 HasDestinationDisplayId = 10;</code>
+       * <code>optional int64 has_destination_display_id = 2;</code>
        */
       public Builder clearHasDestinationDisplayId() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000002);
         hasDestinationDisplayId_ = 0L;
         onChanged();
         return this;
@@ -4310,31 +3747,31 @@ public final class PubtransTableProtos {
 
       private long hasDestinationStopAreaGid_ ;
       /**
-       * <code>optional int64 HasDestinationStopAreaGid = 11;</code>
+       * <code>optional int64 has_destination_stop_area_gid = 3;</code>
        */
       public boolean hasHasDestinationStopAreaGid() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional int64 HasDestinationStopAreaGid = 11;</code>
+       * <code>optional int64 has_destination_stop_area_gid = 3;</code>
        */
       public long getHasDestinationStopAreaGid() {
         return hasDestinationStopAreaGid_;
       }
       /**
-       * <code>optional int64 HasDestinationStopAreaGid = 11;</code>
+       * <code>optional int64 has_destination_stop_area_gid = 3;</code>
        */
       public Builder setHasDestinationStopAreaGid(long value) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000004;
         hasDestinationStopAreaGid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 HasDestinationStopAreaGid = 11;</code>
+       * <code>optional int64 has_destination_stop_area_gid = 3;</code>
        */
       public Builder clearHasDestinationStopAreaGid() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000004);
         hasDestinationStopAreaGid_ = 0L;
         onChanged();
         return this;
@@ -4342,464 +3779,32 @@ public final class PubtransTableProtos {
 
       private long hasServiceRequirementId_ ;
       /**
-       * <code>optional int64 HasServiceRequirementId = 12;</code>
+       * <code>optional int64 has_service_requirement_id = 4;</code>
        */
       public boolean hasHasServiceRequirementId() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>optional int64 HasServiceRequirementId = 12;</code>
+       * <code>optional int64 has_service_requirement_id = 4;</code>
        */
       public long getHasServiceRequirementId() {
         return hasServiceRequirementId_;
       }
       /**
-       * <code>optional int64 HasServiceRequirementId = 12;</code>
+       * <code>optional int64 has_service_requirement_id = 4;</code>
        */
       public Builder setHasServiceRequirementId(long value) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000008;
         hasServiceRequirementId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 HasServiceRequirementId = 12;</code>
+       * <code>optional int64 has_service_requirement_id = 4;</code>
        */
       public Builder clearHasServiceRequirementId() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000008);
         hasServiceRequirementId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object timetabledLatestDateTime_ = "";
-      /**
-       * <code>optional string TimetabledLatestDateTime = 13;</code>
-       */
-      public boolean hasTimetabledLatestDateTime() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
-      }
-      /**
-       * <code>optional string TimetabledLatestDateTime = 13;</code>
-       */
-      public java.lang.String getTimetabledLatestDateTime() {
-        java.lang.Object ref = timetabledLatestDateTime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            timetabledLatestDateTime_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string TimetabledLatestDateTime = 13;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTimetabledLatestDateTimeBytes() {
-        java.lang.Object ref = timetabledLatestDateTime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          timetabledLatestDateTime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string TimetabledLatestDateTime = 13;</code>
-       */
-      public Builder setTimetabledLatestDateTime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00001000;
-        timetabledLatestDateTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string TimetabledLatestDateTime = 13;</code>
-       */
-      public Builder clearTimetabledLatestDateTime() {
-        bitField0_ = (bitField0_ & ~0x00001000);
-        timetabledLatestDateTime_ = getDefaultInstance().getTimetabledLatestDateTime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string TimetabledLatestDateTime = 13;</code>
-       */
-      public Builder setTimetabledLatestDateTimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00001000;
-        timetabledLatestDateTime_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object targetDateTime_ = "";
-      /**
-       * <code>optional string TargetDateTime = 14;</code>
-       */
-      public boolean hasTargetDateTime() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
-      }
-      /**
-       * <code>optional string TargetDateTime = 14;</code>
-       */
-      public java.lang.String getTargetDateTime() {
-        java.lang.Object ref = targetDateTime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            targetDateTime_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string TargetDateTime = 14;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTargetDateTimeBytes() {
-        java.lang.Object ref = targetDateTime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          targetDateTime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string TargetDateTime = 14;</code>
-       */
-      public Builder setTargetDateTime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00002000;
-        targetDateTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string TargetDateTime = 14;</code>
-       */
-      public Builder clearTargetDateTime() {
-        bitField0_ = (bitField0_ & ~0x00002000);
-        targetDateTime_ = getDefaultInstance().getTargetDateTime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string TargetDateTime = 14;</code>
-       */
-      public Builder setTargetDateTimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00002000;
-        targetDateTime_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object estimatedDateTime_ = "";
-      /**
-       * <code>optional string EstimatedDateTime = 15;</code>
-       */
-      public boolean hasEstimatedDateTime() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
-      }
-      /**
-       * <code>optional string EstimatedDateTime = 15;</code>
-       */
-      public java.lang.String getEstimatedDateTime() {
-        java.lang.Object ref = estimatedDateTime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            estimatedDateTime_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string EstimatedDateTime = 15;</code>
-       */
-      public com.google.protobuf.ByteString
-          getEstimatedDateTimeBytes() {
-        java.lang.Object ref = estimatedDateTime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          estimatedDateTime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string EstimatedDateTime = 15;</code>
-       */
-      public Builder setEstimatedDateTime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00004000;
-        estimatedDateTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string EstimatedDateTime = 15;</code>
-       */
-      public Builder clearEstimatedDateTime() {
-        bitField0_ = (bitField0_ & ~0x00004000);
-        estimatedDateTime_ = getDefaultInstance().getEstimatedDateTime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string EstimatedDateTime = 15;</code>
-       */
-      public Builder setEstimatedDateTimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00004000;
-        estimatedDateTime_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object observedDateTime_ = "";
-      /**
-       * <code>optional string ObservedDateTime = 16;</code>
-       */
-      public boolean hasObservedDateTime() {
-        return ((bitField0_ & 0x00008000) == 0x00008000);
-      }
-      /**
-       * <code>optional string ObservedDateTime = 16;</code>
-       */
-      public java.lang.String getObservedDateTime() {
-        java.lang.Object ref = observedDateTime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            observedDateTime_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string ObservedDateTime = 16;</code>
-       */
-      public com.google.protobuf.ByteString
-          getObservedDateTimeBytes() {
-        java.lang.Object ref = observedDateTime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          observedDateTime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string ObservedDateTime = 16;</code>
-       */
-      public Builder setObservedDateTime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00008000;
-        observedDateTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string ObservedDateTime = 16;</code>
-       */
-      public Builder clearObservedDateTime() {
-        bitField0_ = (bitField0_ & ~0x00008000);
-        observedDateTime_ = getDefaultInstance().getObservedDateTime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string ObservedDateTime = 16;</code>
-       */
-      public Builder setObservedDateTimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00008000;
-        observedDateTime_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long state_ ;
-      /**
-       * <code>required int64 State = 17;</code>
-       */
-      public boolean hasState() {
-        return ((bitField0_ & 0x00010000) == 0x00010000);
-      }
-      /**
-       * <code>required int64 State = 17;</code>
-       */
-      public long getState() {
-        return state_;
-      }
-      /**
-       * <code>required int64 State = 17;</code>
-       */
-      public Builder setState(long value) {
-        bitField0_ |= 0x00010000;
-        state_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 State = 17;</code>
-       */
-      public Builder clearState() {
-        bitField0_ = (bitField0_ & ~0x00010000);
-        state_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long type_ ;
-      /**
-       * <code>required int64 Type = 18;</code>
-       */
-      public boolean hasType() {
-        return ((bitField0_ & 0x00020000) == 0x00020000);
-      }
-      /**
-       * <code>required int64 Type = 18;</code>
-       */
-      public long getType() {
-        return type_;
-      }
-      /**
-       * <code>required int64 Type = 18;</code>
-       */
-      public Builder setType(long value) {
-        bitField0_ |= 0x00020000;
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 Type = 18;</code>
-       */
-      public Builder clearType() {
-        bitField0_ = (bitField0_ & ~0x00020000);
-        type_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private boolean isValidYesNo_ ;
-      /**
-       * <code>required bool IsValidYesNo = 19;</code>
-       */
-      public boolean hasIsValidYesNo() {
-        return ((bitField0_ & 0x00040000) == 0x00040000);
-      }
-      /**
-       * <code>required bool IsValidYesNo = 19;</code>
-       */
-      public boolean getIsValidYesNo() {
-        return isValidYesNo_;
-      }
-      /**
-       * <code>required bool IsValidYesNo = 19;</code>
-       */
-      public Builder setIsValidYesNo(boolean value) {
-        bitField0_ |= 0x00040000;
-        isValidYesNo_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required bool IsValidYesNo = 19;</code>
-       */
-      public Builder clearIsValidYesNo() {
-        bitField0_ = (bitField0_ & ~0x00040000);
-        isValidYesNo_ = false;
-        onChanged();
-        return this;
-      }
-
-      private long lastModifiedUTCDateTime_ ;
-      /**
-       * <code>required int64 LastModifiedUTCDateTime = 20;</code>
-       */
-      public boolean hasLastModifiedUTCDateTime() {
-        return ((bitField0_ & 0x00080000) == 0x00080000);
-      }
-      /**
-       * <code>required int64 LastModifiedUTCDateTime = 20;</code>
-       */
-      public long getLastModifiedUTCDateTime() {
-        return lastModifiedUTCDateTime_;
-      }
-      /**
-       * <code>required int64 LastModifiedUTCDateTime = 20;</code>
-       */
-      public Builder setLastModifiedUTCDateTime(long value) {
-        bitField0_ |= 0x00080000;
-        lastModifiedUTCDateTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 LastModifiedUTCDateTime = 20;</code>
-       */
-      public Builder clearLastModifiedUTCDateTime() {
-        bitField0_ = (bitField0_ & ~0x00080000);
-        lastModifiedUTCDateTime_ = 0L;
         onChanged();
         return this;
       }
@@ -4857,6 +3862,11 @@ public final class PubtransTableProtos {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_Common_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_Common_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_ROIArrival_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -4875,37 +3885,28 @@ public final class PubtransTableProtos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025pubtrans-tables.proto\022\005proto\"\203\004\n\nROIAr" +
-      "rival\022\025\n\rSchemaVersion\030\001 \002(\005\022\n\n\002Id\030\002 \002(\003" +
-      "\022!\n\031IsOnDatedVehicleJourneyId\030\003 \002(\003\022%\n\035I" +
-      "sOnMonitoredVehicleJourneyId\030\004 \001(\003\022$\n\034Jo" +
-      "urneyPatternSequenceNumber\030\005 \002(\005\022,\n$IsTi" +
-      "metabledAtJourneyPatternPointGid\030\006 \002(\003\022\030" +
-      "\n\020VisitCountNumber\030\007 \002(\005\022*\n\"IsTargetedAt" +
-      "JourneyPatternPointGid\030\010 \001(\003\022+\n#WasObser" +
-      "vedAtJourneyPatternPointGid\030\t \001(\003\022 \n\030Tim" +
-      "etabledLatestDateTime\030\n \001(\t\022\026\n\016TargetDat" +
-      "eTime\030\013 \001(\t\022\031\n\021EstimatedDateTime\030\014 \001(\t\022\030" +
-      "\n\020ObservedDateTime\030\r \001(\t\022\r\n\005State\030\016 \002(\003\022" +
-      "\014\n\004Type\030\017 \002(\003\022\024\n\014IsValidYesNo\030\020 \002(\010\022\037\n\027L" +
-      "astModifiedUTCDateTime\030\021 \002(\003\"\352\004\n\014ROIDepa" +
-      "rture\022\025\n\rSchemaVersion\030\001 \002(\005\022\n\n\002Id\030\002 \002(\003" +
-      "\022!\n\031IsOnDatedVehicleJourneyId\030\003 \002(\003\022%\n\035I" +
-      "sOnMonitoredVehicleJourneyId\030\004 \001(\003\022$\n\034Jo" +
-      "urneyPatternSequenceNumber\030\005 \002(\005\022,\n$IsTi" +
-      "metabledAtJourneyPatternPointGid\030\006 \002(\003\022\030" +
-      "\n\020VisitCountNumber\030\007 \002(\005\022*\n\"IsTargetedAt" +
-      "JourneyPatternPointGid\030\010 \001(\003\022+\n#WasObser" +
-      "vedAtJourneyPatternPointGid\030\t \001(\003\022\037\n\027Has" +
-      "DestinationDisplayId\030\n \001(\003\022!\n\031HasDestina" +
-      "tionStopAreaGid\030\013 \001(\003\022\037\n\027HasServiceRequi" +
-      "rementId\030\014 \001(\003\022 \n\030TimetabledLatestDateTi" +
-      "me\030\r \001(\t\022\026\n\016TargetDateTime\030\016 \001(\t\022\031\n\021Esti" +
-      "matedDateTime\030\017 \001(\t\022\030\n\020ObservedDateTime\030" +
-      "\020 \001(\t\022\r\n\005State\030\021 \002(\003\022\014\n\004Type\030\022 \002(\003\022\024\n\014Is" +
-      "ValidYesNo\030\023 \002(\010\022\037\n\027LastModifiedUTCDateT" +
-      "ime\030\024 \002(\003B6\n\037fi.hsl.common.transitdata.p" +
-      "rotoB\023PubtransTableProtos"
+      "\n\025pubtrans-tables.proto\022\005proto\"\264\004\n\006Commo" +
+      "n\022\031\n\016schema_version\030\001 \002(\005:\0011\022\n\n\002id\030\002 \002(\003" +
+      "\022&\n\036is_on_dated_vehicle_journey_id\030\003 \002(\003" +
+      "\022*\n\"is_on_monitored_vehicle_journey_id\030\004" +
+      " \001(\003\022\'\n\037journey_pattern_sequence_number\030" +
+      "\005 \002(\005\0222\n*is_timetabled_at_journey_patter" +
+      "n_point_gid\030\006 \002(\003\022\032\n\022visit_count_number\030" +
+      "\007 \002(\005\0220\n(is_targeted_at_journey_pattern_" +
+      "point_gid\030\010 \001(\003\0221\n)was_observed_at_journ" +
+      "ey_pattern_point_gid\030\t \001(\003\022#\n\033timetabled" +
+      "_latest_date_time\030\n \001(\t\022\030\n\020target_date_t" +
+      "ime\030\013 \001(\t\022\033\n\023estimated_date_time\030\014 \001(\t\022\032" +
+      "\n\022observed_date_time\030\r \001(\t\022\r\n\005state\030\016 \002(" +
+      "\003\022\014\n\004type\030\017 \002(\003\022\027\n\017is_valid_yes_no\030\020 \002(\010" +
+      "\022#\n\033last_modified_utc_date_time\030\021 \002(\003\"+\n" +
+      "\nROIArrival\022\035\n\006common\030\001 \002(\0132\r.proto.Comm" +
+      "on\"\234\001\n\014ROIDeparture\022\035\n\006common\030\001 \002(\0132\r.pr" +
+      "oto.Common\022\"\n\032has_destination_display_id" +
+      "\030\002 \001(\003\022%\n\035has_destination_stop_area_gid\030" +
+      "\003 \001(\003\022\"\n\032has_service_requirement_id\030\004 \001(" +
+      "\003B6\n\037fi.hsl.common.transitdata.protoB\023Pu" +
+      "btransTableProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4919,18 +3920,24 @@ public final class PubtransTableProtos {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_proto_ROIArrival_descriptor =
+    internal_static_proto_Common_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_Common_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_Common_descriptor,
+        new java.lang.String[] { "SchemaVersion", "Id", "IsOnDatedVehicleJourneyId", "IsOnMonitoredVehicleJourneyId", "JourneyPatternSequenceNumber", "IsTimetabledAtJourneyPatternPointGid", "VisitCountNumber", "IsTargetedAtJourneyPatternPointGid", "WasObservedAtJourneyPatternPointGid", "TimetabledLatestDateTime", "TargetDateTime", "EstimatedDateTime", "ObservedDateTime", "State", "Type", "IsValidYesNo", "LastModifiedUtcDateTime", });
+    internal_static_proto_ROIArrival_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ROIArrival_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ROIArrival_descriptor,
-        new java.lang.String[] { "SchemaVersion", "Id", "IsOnDatedVehicleJourneyId", "IsOnMonitoredVehicleJourneyId", "JourneyPatternSequenceNumber", "IsTimetabledAtJourneyPatternPointGid", "VisitCountNumber", "IsTargetedAtJourneyPatternPointGid", "WasObservedAtJourneyPatternPointGid", "TimetabledLatestDateTime", "TargetDateTime", "EstimatedDateTime", "ObservedDateTime", "State", "Type", "IsValidYesNo", "LastModifiedUTCDateTime", });
+        new java.lang.String[] { "Common", });
     internal_static_proto_ROIDeparture_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_proto_ROIDeparture_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ROIDeparture_descriptor,
-        new java.lang.String[] { "SchemaVersion", "Id", "IsOnDatedVehicleJourneyId", "IsOnMonitoredVehicleJourneyId", "JourneyPatternSequenceNumber", "IsTimetabledAtJourneyPatternPointGid", "VisitCountNumber", "IsTargetedAtJourneyPatternPointGid", "WasObservedAtJourneyPatternPointGid", "HasDestinationDisplayId", "HasDestinationStopAreaGid", "HasServiceRequirementId", "TimetabledLatestDateTime", "TargetDateTime", "EstimatedDateTime", "ObservedDateTime", "State", "Type", "IsValidYesNo", "LastModifiedUTCDateTime", });
+        new java.lang.String[] { "Common", "HasDestinationDisplayId", "HasDestinationStopAreaGid", "HasServiceRequirementId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

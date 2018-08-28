@@ -5,45 +5,34 @@ package proto;
 option java_package = "fi.hsl.common.transitdata.proto";
 option java_outer_classname = "PubtransTableProtos";
 
+
+message Common {
+    required int32 schema_version = 1 [default = 1]; // Remember to bump up the version when updating the scema!
+    required int64 id = 2;
+    required int64 is_on_dated_vehicle_journey_id = 3;
+    optional int64 is_on_monitored_vehicle_journey_id = 4;
+    required int32 journey_pattern_sequence_number = 5;
+    required int64 is_timetabled_at_journey_pattern_point_gid = 6;
+    required int32 visit_count_number = 7;
+    optional int64 is_targeted_at_journey_pattern_point_gid = 8;
+    optional int64 was_observed_at_journey_pattern_point_gid = 9;
+    optional string timetabled_latest_date_time = 10;
+    optional string target_date_time = 11;
+    optional string estimated_date_time = 12;
+    optional string observed_date_time = 13;
+    required int64 state = 14;
+    required int64 type = 15;
+    required bool is_valid_yes_no = 16;
+    required int64 last_modified_utc_date_time = 17;
+}
+
 message ROIArrival {
-    required int32 SchemaVersion = 1;
-    required int64 Id = 2;
-    required int64 IsOnDatedVehicleJourneyId = 3;
-    optional int64 IsOnMonitoredVehicleJourneyId = 4;
-    required int32 JourneyPatternSequenceNumber = 5;
-    required int64 IsTimetabledAtJourneyPatternPointGid = 6;
-    required int32 VisitCountNumber = 7;
-    optional int64 IsTargetedAtJourneyPatternPointGid = 8;
-    optional int64 WasObservedAtJourneyPatternPointGid = 9;
-    optional string TimetabledLatestDateTime = 10;
-    optional string TargetDateTime = 11;
-    optional string EstimatedDateTime = 12;
-    optional string ObservedDateTime = 13;
-    required int64 State = 14;
-    required int64 Type = 15;
-    required bool IsValidYesNo = 16;
-    required int64 LastModifiedUTCDateTime = 17;
+    required Common common = 1;
 }
 
 message ROIDeparture {
-    required int32 SchemaVersion = 1;
-    required int64 Id = 2;
-    required int64 IsOnDatedVehicleJourneyId = 3;
-    optional int64 IsOnMonitoredVehicleJourneyId = 4;
-    required int32 JourneyPatternSequenceNumber = 5;
-    required int64 IsTimetabledAtJourneyPatternPointGid = 6;
-    required int32 VisitCountNumber = 7;
-    optional int64 IsTargetedAtJourneyPatternPointGid = 8;
-    optional int64 WasObservedAtJourneyPatternPointGid = 9;
-    optional int64 HasDestinationDisplayId = 10;
-    optional int64 HasDestinationStopAreaGid = 11;
-    optional int64 HasServiceRequirementId = 12;
-    optional string TimetabledLatestDateTime = 13;
-    optional string TargetDateTime = 14;
-    optional string EstimatedDateTime = 15;
-    optional string ObservedDateTime = 16;
-    required int64 State = 17;
-    required int64 Type = 18;
-    required bool IsValidYesNo = 19;
-    required int64 LastModifiedUTCDateTime = 20;
+    required Common common = 1;
+    optional int64 has_destination_display_id = 2;
+    optional int64 has_destination_stop_area_gid = 3;
+    optional int64 has_service_requirement_id = 4;
 }
