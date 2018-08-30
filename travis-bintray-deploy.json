@@ -13,7 +13,7 @@
   },
   "files": [
     {
-      "includePattern": "target/common-jar-with-dependencies.jar"
+      "includePattern": "\./target/*.jar"
     }
   ]
 }
