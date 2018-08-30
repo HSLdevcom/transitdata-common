@@ -40,7 +40,7 @@ public class TransitdataUtils {
     }
 
     public static Optional<Integer> getIntEnv(String name) {
-        return Optional.ofNullable(System.getenv(name)).flatMap(TransitdataUtils::safeParseInt);
+        return getEnv(name).flatMap(TransitdataUtils::safeParseInt);
     }
 
 }
