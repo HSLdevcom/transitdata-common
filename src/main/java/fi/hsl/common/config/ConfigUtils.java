@@ -1,23 +1,14 @@
-package fi.hsl.common.transitdata;
+package fi.hsl.common.config;
 
-import java.time.OffsetDateTime;
-import java.time.ZoneOffset;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Optional;
 
-public class TransitdataUtils {
-    private TransitdataUtils() {}
+public class ConfigUtils {
+    private static final Logger log = LoggerFactory.getLogger(ConfigUtils.class);
 
-    /**
-     * GTFS-RT convention is to use UTC epoch seconds so let's use the same convention.
-     * @See https://developers.google.com/transit/gtfs-realtime/reference/#message_feedheader
-     *
-     * @return UTC epoch seconds
-     */
-    public static long currentMessageTimestamp() {
-        OffsetDateTime utc = OffsetDateTime.now(ZoneOffset.UTC);
-        return utc.toEpochSecond();
-    }
-
+    private ConfigUtils() {}
 
     public static String getEnvOrThrow(String name) throws IllegalArgumentException {
         return Optional.ofNullable(System.getenv(name))
@@ -34,13 +25,13 @@ public class TransitdataUtils {
             return Optional.of(n);
         }
         catch (NumberFormatException e) {
-            e.printStackTrace();
+            log.error("Failed to parse int from " + value, e);
             return Optional.empty();
         }
     }
 
     public static Optional<Integer> getIntEnv(String name) {
-        return getEnv(name).flatMap(TransitdataUtils::safeParseInt);
+        return getEnv(name).flatMap(ConfigUtils::safeParseInt);
     }
 
 }

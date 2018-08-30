@@ -1,4 +1,4 @@
-package fi.hsl.common;
+package fi.hsl.common.config;
 
 import java.io.File;
 import java.util.Optional;
@@ -6,7 +6,6 @@ import java.util.Optional;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigException;
 import com.typesafe.config.ConfigFactory;
-import fi.hsl.common.transitdata.TransitdataUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,7 +47,7 @@ public class ConfigParser {
      */
     private static Config parseFileConfig() throws RuntimeException {
         Config fileConfig = null;
-        Optional<String> configPath = TransitdataUtils.getEnv("CONFIG_PATH");
+        Optional<String> configPath = ConfigUtils.getEnv("CONFIG_PATH");
         if (configPath.isPresent()) {
             try {
                 fileConfig = ConfigFactory.parseFile(new File(configPath.get())).resolve();
