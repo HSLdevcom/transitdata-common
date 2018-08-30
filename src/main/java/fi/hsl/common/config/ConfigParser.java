@@ -1,18 +1,25 @@
-package fi.hsl.common;
+package fi.hsl.common.config;
 
 import java.io.File;
+import java.util.Optional;
+
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigException;
 import com.typesafe.config.ConfigFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ConfigParser {
+    private static final Logger log = LoggerFactory.getLogger(ConfigParser.class);
+
+    private ConfigParser() {}
 
     /**
      * Create a valid Config from a configuration file and environment variables using default filename "environment.conf".
      *
      * @see #createConfig(String)
      */
-    public static Config createConfig() {
+    public static Config createConfig() throws RuntimeException {
         return createConfig("environment.conf");
     }
 
@@ -26,7 +33,7 @@ public class ConfigParser {
      *
      * @return Complete and valid configuration.
      */
-    public static Config createConfig(String filename) {
+    public static Config createConfig(String filename) throws RuntimeException {
         Config fileConfig = parseFileConfig();
         Config envConfig = ConfigFactory.parseResources(filename).resolve();
         return mergeConfigs(fileConfig, envConfig);
@@ -38,16 +45,15 @@ public class ConfigParser {
      *
      * @return Either a configuration parsed from the given path or null.
      */
-    private static Config parseFileConfig() {
+    private static Config parseFileConfig() throws RuntimeException {
         Config fileConfig = null;
-        String configPath = System.getenv("CONFIG_PATH");
-        if (configPath != null) {
+        Optional<String> configPath = ConfigUtils.getEnv("CONFIG_PATH");
+        if (configPath.isPresent()) {
             try {
-                fileConfig = ConfigFactory.parseFile(new File(configPath)).resolve();
+                fileConfig = ConfigFactory.parseFile(new File(configPath.get())).resolve();
             } catch (ConfigException e) {
-                System.err.println("Parsing the configuration file from " + configPath + " failed.");
-                e.printStackTrace();
-                System.exit(1);
+                log.error("Parsing the configuration file from " + configPath + " failed.", e);
+                throw e;
             }
         }
         return fileConfig;
@@ -62,7 +68,7 @@ public class ConfigParser {
      * @param envConfig The Config read from the environment variables.
      * @return The Config resulting from merging fileConfig and envConfig.
      */
-    private static Config mergeConfigs(Config fileConfig, Config envConfig) {
+    private static Config mergeConfigs(Config fileConfig, Config envConfig) throws RuntimeException {
         Config fullConfig;
         if (fileConfig != null) {
             fullConfig = envConfig.withFallback(fileConfig);
@@ -73,9 +79,8 @@ public class ConfigParser {
         try {
             fullConfig.checkValid(ConfigFactory.parseResources("application.conf").resolve());
         } catch (ConfigException.ValidationFailed e) {
-            System.err.println("Validating the given configuration failed.");
-            e.printStackTrace();
-            System.exit(1);
+            log.error("Validating the given configuration failed.", e);
+            throw e;
         }
         return fullConfig;
     }

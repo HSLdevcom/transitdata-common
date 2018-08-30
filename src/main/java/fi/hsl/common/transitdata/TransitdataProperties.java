@@ -1,43 +1,20 @@
 package fi.hsl.common.transitdata;
 
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
+
 /**
  * Keys and corresponding values that are shared in the Transitdata pipeline.
  */
 public class TransitdataProperties {
     private TransitdataProperties() {}
 
-    /*
-    public static final String KEY_DATA_SOURCE = "data-source";
-
-    public enum DataSource {
-        PubtransRoiArrival,
-        PubtransRoiDeparture,
-        OMM_Cancellation,
-        OMM_ServiceAlert,
-        HFP,
-        TripUpdateProcessor;
-
-        public String toString() {
-            switch (this) {
-                case PubtransRoiArrival: return "pubtrans-roi-arrival";
-                default: return "";
-            }
-        }
-
-        public static DataSource fromString(String str) {
-            if (str.equals(PubtransRoiArrival.toString())) {
-                return PubtransRoiArrival;
-            }
-            throw new IllegalArgumentException();
-        }
-    }*/
-
     public static final String REDIS_PREFIX_JPP = "jpp:";
     public static final String REDIS_PREFIX_DVJ = "dvj:";
 
-
     public static final String KEY_PROTOBUF_SCHEMA = "protobuf-schema";
     public static final String KEY_SCHEMA_VERSION = "schema-version";
+    public static final String KEY_DVJ_ID = "dvj-id";
 
     /**
      * Describes the payload format for each message so that the data can be de-serialized.
@@ -92,4 +69,15 @@ public class TransitdataProperties {
         }
     }
 
+
+    /**
+     * GTFS-RT convention is to use UTC epoch seconds so let's use the same convention.
+     * @See https://developers.google.com/transit/gtfs-realtime/reference/#message_feedheader
+     *
+     * @return UTC epoch seconds
+     */
+    public static long currentTimestamp() {
+        OffsetDateTime utc = OffsetDateTime.now(ZoneOffset.UTC);
+        return utc.toEpochSecond();
+    }
 }

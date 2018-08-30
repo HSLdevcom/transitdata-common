@@ -9,6 +9,20 @@ Package [transitdata.proto](src/main/java/fi/hsl/common/transitdata/proto) conta
   `cd protos && ./generate-protos.sh`   
   
 
+## Configuration
+
+Library contains package [config](src/main/java/fi/hsl/common/config) which has tools to configure the application. 
+By default the configuration file is read from resources inside the application jar-bundle from a file named `environment.conf`.
+You can override the path with env variable `CONFIG_PATH` which merges these two (if found).
+
+This library also contains a file [common.conf](src/main/resources/common.conf) which can be used as template or even 
+included as a baseline config to your application like this:
+
+  `include "common.conf"`   
+  `<your config here..>`   
+
+
+More info can be found from [Lightbend's github pages](https://github.com/lightbend/config)
 
 ## Usage:
 
