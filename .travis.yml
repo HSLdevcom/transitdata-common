@@ -13,5 +13,7 @@ deploy:
     key: "${BINTRAY_KEY}"
     skip_cleanup: true
     on:
-      tags: true
-      all_branches: true
+      # FIXME: Comment out until upload is sorted out.
+      #tags: true
+      #all_branches: true
+      branch: master
