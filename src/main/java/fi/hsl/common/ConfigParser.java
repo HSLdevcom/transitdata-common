@@ -1,9 +1,12 @@
 package fi.hsl.common;
 
 import java.io.File;
+import java.util.Optional;
+
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigException;
 import com.typesafe.config.ConfigFactory;
+import fi.hsl.common.transitdata.TransitdataUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,7 +20,7 @@ public class ConfigParser {
      *
      * @see #createConfig(String)
      */
-    public static Config createConfig() {
+    public static Config createConfig() throws RuntimeException {
         return createConfig("environment.conf");
     }
 
@@ -31,7 +34,7 @@ public class ConfigParser {
      *
      * @return Complete and valid configuration.
      */
-    public static Config createConfig(String filename) {
+    public static Config createConfig(String filename) throws RuntimeException {
         Config fileConfig = parseFileConfig();
         Config envConfig = ConfigFactory.parseResources(filename).resolve();
         return mergeConfigs(fileConfig, envConfig);
@@ -43,12 +46,12 @@ public class ConfigParser {
      *
      * @return Either a configuration parsed from the given path or null.
      */
-    private static Config parseFileConfig() {
+    private static Config parseFileConfig() throws RuntimeException {
         Config fileConfig = null;
-        String configPath = System.getenv("CONFIG_PATH");
-        if (configPath != null) {
+        Optional<String> configPath = TransitdataUtils.getEnv("CONFIG_PATH");
+        if (configPath.isPresent()) {
             try {
-                fileConfig = ConfigFactory.parseFile(new File(configPath)).resolve();
+                fileConfig = ConfigFactory.parseFile(new File(configPath.get())).resolve();
             } catch (ConfigException e) {
                 log.error("Parsing the configuration file from " + configPath + " failed.", e);
                 throw e;
@@ -66,7 +69,7 @@ public class ConfigParser {
      * @param envConfig The Config read from the environment variables.
      * @return The Config resulting from merging fileConfig and envConfig.
      */
-    private static Config mergeConfigs(Config fileConfig, Config envConfig) {
+    private static Config mergeConfigs(Config fileConfig, Config envConfig) throws RuntimeException {
         Config fullConfig;
         if (fileConfig != null) {
             fullConfig = envConfig.withFallback(fileConfig);
