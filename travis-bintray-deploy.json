@@ -1,0 +1,19 @@
+{
+  "package": {
+    "name": "transitdata-common",
+    "repo": "maven",
+    "subject": "hsldevcom",
+    "vcs_url": "https://github.com/HSLdevcom/transitdata-common",
+    "licenses": [
+      "EUPL-1.2"
+    ]
+  },
+  "version": {
+    "name": "0.1.0"
+  },
+  "files": [
+    {
+      "includePattern": "target/common-jar-with-dependencies.jar"
+    }
+  ]
+}

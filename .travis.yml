@@ -1,0 +1,18 @@
+language: java
+jdk:
+  - openjdk10
+
+script:
+  - mvn test
+  - mvn clean package
+
+deploy:
+  - provider: bintray
+    file: "./travis-bintray-deploy.json"
+    user: "${BINTRAY_USER}"
+    key: "${BINTRAY_KEY}"
+    skip_cleanup: true
+    on:
+      tags: true
+      all_branches: true
+    dry_run: true
