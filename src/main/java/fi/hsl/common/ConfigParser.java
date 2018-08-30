@@ -4,8 +4,13 @@ import java.io.File;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigException;
 import com.typesafe.config.ConfigFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ConfigParser {
+    private static final Logger log = LoggerFactory.getLogger(ConfigParser.class);
+
+    private ConfigParser() {}
 
     /**
      * Create a valid Config from a configuration file and environment variables using default filename "environment.conf".
@@ -45,9 +50,8 @@ public class ConfigParser {
             try {
                 fileConfig = ConfigFactory.parseFile(new File(configPath)).resolve();
             } catch (ConfigException e) {
-                System.err.println("Parsing the configuration file from " + configPath + " failed.");
-                e.printStackTrace();
-                System.exit(1);
+                log.error("Parsing the configuration file from " + configPath + " failed.", e);
+                throw e;
             }
         }
         return fileConfig;
@@ -73,9 +77,8 @@ public class ConfigParser {
         try {
             fullConfig.checkValid(ConfigFactory.parseResources("application.conf").resolve());
         } catch (ConfigException.ValidationFailed e) {
-            System.err.println("Validating the given configuration failed.");
-            e.printStackTrace();
-            System.exit(1);
+            log.error("Validating the given configuration failed.", e);
+            throw e;
         }
         return fullConfig;
     }
