@@ -15,4 +15,3 @@ deploy:
     on:
       tags: true
       all_branches: true
-    dry_run: true
