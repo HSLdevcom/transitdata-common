@@ -16,6 +16,11 @@ public class TransitdataProperties {
     public static final String KEY_SCHEMA_VERSION = "schema-version";
     public static final String KEY_DVJ_ID = "dvj-id";
 
+    public static final String KEY_ROUTE_NAME = "route-name";
+    public static final String KEY_DIRECTION = "direction";
+    public static final String KEY_START_TIME = "start-time";
+    public static final String KEY_OPERATING_DAY = "operating-day";
+
     /**
      * Describes the payload format for each message so that the data can be de-serialized.
      * Each message should contain this as property KEY_PROTOBUF_SCHEMA, along with the KEY_SCHEMA_VERSION.
