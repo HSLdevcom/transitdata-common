@@ -20,6 +20,7 @@ public class TransitdataProperties {
     public static final String KEY_DIRECTION = "direction";
     public static final String KEY_START_TIME = "start-time";
     public static final String KEY_OPERATING_DAY = "operating-day";
+    public static final String KEY_STOP_ID = "stop-id";
 
     /**
      * Describes the payload format for each message so that the data can be de-serialized.
