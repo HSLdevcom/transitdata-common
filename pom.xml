@@ -11,9 +11,8 @@
         <pulsar.version>2.1.0-incubating</pulsar.version>
         <testcontainers.version>1.8.3</testcontainers.version>
     </properties>
-    <!-- See https://www.petrikainulainen.net/programming/maven/integration-testing-with-maven/ -->
     <profiles>
-        <!-- The Configuration of the development profile -->
+        <!-- The Configuration of the unit-test profile -->
         <profile>
             <id>unit-test</id>
             <activation>
@@ -21,16 +20,10 @@
             </activation>
             <properties>
                 <!--
-                    Specifies the build.profile.id property that must be equal than the name of
-                    the directory that contains the profile specific configuration file.
-                    Because the name of the directory that contains the configuration file of the
-                    development profile is dev, we must set the value of the build.profile.id
-                    property to dev.
-
+                    Build profile for unit tests.
                     Usage: mvn test -P unit-test
                 -->
                 <build.profile.id>unit-test</build.profile.id>
-                <!--Only unit tests are run when the development profile is active-->
                 <skip.integration.tests>true</skip.integration.tests>
                 <skip.unit.tests>false</skip.unit.tests>
             </properties>
@@ -40,18 +33,10 @@
             <id>integration-test</id>
             <properties>
                 <!--
-                    Specifies the build.profile.id property that must be equal than the name of
-                    the directory that contains the profile specific configuration file.
-                    Because the name of the directory that contains the configuration file of the
-                    integration-test profile is integration-test, we must set the value of the
-                    build.profile.id property to integration-test.
-
-                    Usage: mvn test -P integration-test
+                    Build profile for integration tests.
+                    Usage: mvn verify -P integration-test
                 -->
                 <build.profile.id>integration-test</build.profile.id>
-                <!--
-                    Only integration tests are run when the integration-test profile is active
-                -->
                 <skip.integration.tests>false</skip.integration.tests>
                 <skip.unit.tests>true</skip.unit.tests>
             </properties>
@@ -202,13 +187,7 @@
                             <goal>add-test-resource</goal>
                         </goals>
                         <configuration>
-                            <!-- Configures the resource directory of our integration tests -->
                             <resources>
-                                <!--
-                                    Placeholders that are found from the files located in the configured resource
-                                    directories are replaced with the property values found from the profile
-                                    specific configuration file.
-                                -->
                                 <resource>
                                     <filtering>true</filtering>
                                     <directory>src/integration-test/resources</directory>
@@ -232,14 +211,6 @@
                         <exclude>**/IT*.java</exclude>
                     </excludes>
                 </configuration>
-
-                <!--dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.surefire</groupId>
-                        <artifactId>surefire-junit47</artifactId>
-                        <version>2.22.0</version>
-                    </dependency>
-                </dependencies-->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
