@@ -13,7 +13,8 @@
   },
   "files": [
     {
-      "includePattern": "\./target/*.jar"
+      "includePattern": "\./target/*.jar",
+      "uploadPattern": "0.1.0/$1.jar"
     }
   ]
 }
