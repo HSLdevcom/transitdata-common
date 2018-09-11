@@ -18,3 +18,8 @@ deploy:
       #tags: true
       all_branches: true
       #branch: master
+  - provider: script
+    script: bash -c 'ls -laR .'
+    skip_cleanup: true
+    on:
+      all_branches: true
