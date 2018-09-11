@@ -5,6 +5,7 @@ jdk:
 script:
   - mvn test
   - mvn clean package
+  - ls -laR .
 
 deploy:
   - provider: bintray
