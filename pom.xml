@@ -1,7 +1,7 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
     <groupId>fi.hsl</groupId>
-    <artifactId>common</artifactId>
+    <artifactId>transitdata-common</artifactId>
     <version>0.1.1</version>
     <packaging>jar</packaging>
     <name>Common utilities for Transitdata projects</name>
@@ -98,7 +98,7 @@
     </dependencies>
 
     <build>
-        <finalName>common</finalName>
+        <finalName>${artifactId}-${version}</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -118,6 +118,7 @@
                             <goal>single</goal>
                         </goals>
                         <configuration>
+                            <appendAssemblyId>false</appendAssemblyId>
                             <archiveBaseDirectory>${project.basedir}</archiveBaseDirectory>
                             <descriptorRefs>
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
