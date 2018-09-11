@@ -15,5 +15,5 @@ deploy:
     on:
       # FIXME: Comment out until upload is sorted out.
       #tags: true
-      #all_branches: true
-      branch: master
+      all_branches: true
+      #branch: master
