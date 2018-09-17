@@ -5,6 +5,7 @@ jdk:
 script:
   - mvn test
   - mvn clean package
+  - ls -laR .
 
 deploy:
   - provider: bintray
@@ -15,5 +16,10 @@ deploy:
     on:
       # FIXME: Comment out until upload is sorted out.
       #tags: true
-      #all_branches: true
-      branch: master
+      all_branches: true
+      #branch: master
+  - provider: script
+    script: bash -c 'ls -laR .'
+    skip_cleanup: true
+    on:
+      all_branches: true
