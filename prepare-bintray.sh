@@ -1,6 +1,6 @@
 #!/bin/bash
 
-POM_VERSION=$(xpath pom.xml //project/version/text\(\))
+POM_VERSION=$(xpath -q -e '/project/version/text()' pom.xml)
 echo "Version from pom.xml $POM_VERSION"
 
 newRev="travis-bintray-deploy.json"
