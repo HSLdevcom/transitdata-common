@@ -2,6 +2,11 @@ language: java
 jdk:
   - openjdk8
 
+addons:
+  apt:
+    packages:
+      - xpath
+
 cache:
   directories:
     - $HOME/.m2
