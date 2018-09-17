@@ -5,7 +5,7 @@ jdk:
 script:
   - mvn test
   - mvn clean package
-  - ls -laR .
+  - ls -la target/
 
 deploy:
   - provider: bintray
@@ -19,7 +19,7 @@ deploy:
       all_branches: true
       #branch: master
   - provider: script
-    script: bash -c 'ls -laR .'
+    script: bash -c 'ls -la target/'
     skip_cleanup: true
     on:
       all_branches: true
