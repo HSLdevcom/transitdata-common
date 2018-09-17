@@ -5,7 +5,7 @@ jdk:
 addons:
   apt:
     packages:
-      - xpath
+      - libxml-xpath-perl
 
 cache:
   directories:
