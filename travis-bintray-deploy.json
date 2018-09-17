@@ -13,8 +13,8 @@
   },
   "files": [
     {
-      "includePattern": "(target\/)(transitdata-common-.*\.jar)",
-      "uploadPattern": "$2"
+      "includePattern": "target\/(.*\.jar)",
+      "uploadPattern": "$1"
     }
   ]
 }
