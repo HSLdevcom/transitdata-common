@@ -14,7 +14,7 @@
   "files": [
     {
       "includePattern": "target\/(.*\.jar)",
-      "uploadPattern": "$1"
+      "uploadPattern": "fi\/hsl\/transitdata-common\/POM_VERSION\/$1"
     }
   ]
 }
