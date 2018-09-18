@@ -9,11 +9,12 @@
     ]
   },
   "version": {
-    "name": "0.1.0"
+    "name": "POM_VERSION"
   },
   "files": [
     {
-      "includePattern": "\./target/*.jar"
+      "includePattern": "target\/(.*\.jar)",
+      "uploadPattern": "fi\/hsl\/transitdata-common\/POM_VERSION\/$1"
     }
   ]
 }
