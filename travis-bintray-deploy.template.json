@@ -13,8 +13,8 @@
   },
   "files": [
     {
-      "includePattern": "target\/(.*\.jar)",
-      "uploadPattern": "fi\/hsl\/transitdata-common\/POM_VERSION\/$1"
+      "includePattern": "target/(.*\.jar)",
+      "uploadPattern": "fi/hsl/transitdata-common/POM_VERSION/$1"
     }
   ]
 }
