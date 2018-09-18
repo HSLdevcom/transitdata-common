@@ -21,13 +21,11 @@ deploy:
     script: bash -c './prepare-bintray.sh'
     skip_cleanup: true
     on:
-      all_branches: true
-      #branch: master
+      branch: master
   - provider: bintray
     file: "./travis-bintray-deploy.json"
     user: "${BINTRAY_USER}"
     key: "${BINTRAY_KEY}"
     skip_cleanup: true
     on:
-      all_branches: true
-      #branch: master
+      branch: master
