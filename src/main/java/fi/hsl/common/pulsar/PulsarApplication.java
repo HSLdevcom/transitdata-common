@@ -20,7 +20,7 @@ public class PulsarApplication implements AutoCloseable {
     PulsarClient client;
     Jedis jedis;
 
-    private PulsarApplication() {
+    PulsarApplication() {
     }
 
     public static PulsarApplication newInstance(Config config) throws Exception {
@@ -52,12 +52,12 @@ public class PulsarApplication implements AutoCloseable {
             config.getInt("pulsar.port")
         );
 
-        if (config.getBoolean("pulsar.consumer.enabled")) {
-            consumer = createConsumer(client, config);
-        }
-
         if (config.getBoolean("pulsar.producer.enabled")) {
             producer = createProducer(client, config);
+        }
+
+        if (config.getBoolean("pulsar.consumer.enabled")) {
+            consumer = createConsumer(client, config);
         }
 
         if (config.getBoolean("redis.enabled")) {

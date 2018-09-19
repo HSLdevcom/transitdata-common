@@ -33,4 +33,18 @@ More info can be found from [Lightbend's github pages](https://github.com/lightb
 - Deploy to local artifactory, for other projects to access it
 
   `mvn install`
-  
+
+
+## Tests:
+
+We're separating our unit & integration tests using [this pattern](https://www.petrikainulainen.net/programming/maven/integration-testing-with-maven/).
+
+Unit tests:
+
+- add test classes under ./src/test with suffix *Test.java
+- `mvn clean test -P unit-test`   
+
+Integration tests:
+
+- add test classes under ./src/integration-test with prefix IT*.java
+- `mvn clean verify -P integration-test`   

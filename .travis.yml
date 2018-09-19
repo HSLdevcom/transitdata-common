@@ -1,3 +1,8 @@
+sudo: required
+
+services:
+  - docker
+
 language: java
 jdk:
   - openjdk8
@@ -13,6 +18,7 @@ cache:
 
 script:
   - mvn test
+  - mvn verify -P integration-test
   - mvn clean package
   - ls -la target/
 

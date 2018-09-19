@@ -68,7 +68,7 @@ public class ConfigParser {
      * @param envConfig The Config read from the environment variables.
      * @return The Config resulting from merging fileConfig and envConfig.
      */
-    private static Config mergeConfigs(Config fileConfig, Config envConfig) throws RuntimeException {
+    public static Config mergeConfigs(Config fileConfig, Config envConfig) throws RuntimeException {
         Config fullConfig;
         if (fileConfig != null) {
             fullConfig = envConfig.withFallback(fileConfig);
