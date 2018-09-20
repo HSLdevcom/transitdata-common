@@ -2,13 +2,46 @@
 
 # HSL Transitdata Common-library
 
-This codebase contains common code to be shared between Transitdata-projects.
+This repository contains code and constants to be shared between [Transitdata-projects](https://github.com/HSLdevcom/transitdata).
 
-Package [transitdata.proto](src/main/java/fi/hsl/common/transitdata/proto) contains protobuf-schemas that are used to describe the
- data payloads within the Transitdata pipeline. Default files are already in this repository but in case the schema changes
- use following script to generate the files:
 
-  `cd protos && ./generate-protos.sh`   
+## Including the Library
+
+Project is published as fat-jar via [bintray maven repository](https://bintray.com/hsldevcom/maven/transitdata-common).
+Add the dependency to the project by adding this snippet to your pom.xml file:
+
+  ```
+    <repositories>
+      <repository>
+        <id>bintray</id>
+        <name>bintray</name>
+        <url>https://dl.bintray.com/hsldevcom/maven</url>
+      </repository>
+    </repositories>
+    <dependencies>
+       <dependency>
+         <groupId>fi.hsl</groupId>
+         <artifactId>transitdata-common</artifactId>
+         <version>${common.version}</version>
+       </dependency>
+     </dependencies>
+     ```   
+
+
+It is also possible to compile the project yourself and use it via local maven repository.
+
+
+## Protobuf
+
+Project contains the [protobuf files](https://developers.google.com/protocol-buffers/)
+which are used within the Pulsar cluster and also to define the final
+[GTFS-RT message](https://developers.google.com/transit/gtfs-realtime/gtfs-realtime-proto) payload.
+
+The protobuf schemas are configured in [protos-folder](/protos).
+Default files are already included in the Java-package [transitdata.proto](src/main/java/fi/hsl/common/transitdata/proto)
+in this repository but you can also generate the files yourself:
+
+ `cd protos && ./generate-protos.sh`   
 
 
 ## Configuration
