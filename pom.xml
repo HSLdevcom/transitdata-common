@@ -167,7 +167,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
-                <version>1.9.1</version>
+                <version>3.0.0</version>
                 <executions>
                     <!-- Add a new source directory to our build -->
                     <execution>
