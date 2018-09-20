@@ -10,7 +10,7 @@ This repository contains code and constants to be shared between [Transitdata-pr
 Project is published as fat-jar via [bintray maven repository](https://bintray.com/hsldevcom/maven/transitdata-common).
 Add the dependency to the project by adding this snippet to your pom.xml file:
 
-  ```
+```
     <repositories>
       <repository>
         <id>bintray</id>
@@ -25,7 +25,7 @@ Add the dependency to the project by adding this snippet to your pom.xml file:
          <version>${common.version}</version>
        </dependency>
      </dependencies>
-     ```   
+```   
 
 
 It is also possible to compile the project yourself and use it via local maven repository.
