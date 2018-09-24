@@ -111,11 +111,13 @@ public class PulsarApplication implements AutoCloseable {
 
         if (config.getBoolean("pulsar.consumer.multipleTopics")) {
             String topics = config.getString("pulsar.consumer.topicsPattern");
+            log.info("Creating Pulsar consumer for multiple topics using pattern: " + topics);
             Pattern pattern = Pattern.compile(topics);
             builder = builder.topicsPattern(pattern);
         }
         else {
             String topic = config.getString("pulsar.consumer.topic");
+            log.info("Creating Pulsar consumer for single topic: " + topic);
             builder = builder.topic(topic);
         }
 

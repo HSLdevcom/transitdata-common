@@ -62,6 +62,13 @@ public class ITPulsarApplication {
         return config;
     }
 
+    private Config defaultConfigWithOverride(String key, Object value) {
+        Map<String, Object> overrides = new HashMap<>();
+        overrides.put(key, value);
+        return defaultConfigWithOverrides(overrides);
+    }
+
+
     private Config defaultConfigWithOverrides(Map<String, Object> overrides) {
         Config configOverrides = ConfigFactory.parseMap(overrides);
         return ConfigParser.mergeConfigs(defaultConfig(), configOverrides);
@@ -84,13 +91,7 @@ public class ITPulsarApplication {
         logger.info("Message sent, reading it back");
 
         Consumer<byte[]> consumer = app.getContext().getConsumer();
-        Message<byte[]> msg = consumer.receive(5, TimeUnit.SECONDS);
-
-        assertNotNull(msg);
-
-        String received = new String(msg.getData(), Charset.defaultCharset());
-        logger.info("Received: " + received);
-        assertEquals(payload, received);
+        readAndValidateMsg(consumer, payload);
 
         Jedis jedis = app.getContext().getJedis();
 
@@ -104,6 +105,51 @@ public class ITPulsarApplication {
         assertFalse(producer.isConnected());
         assertFalse(jedis.isConnected());
 
+    }
+
+    @Test
+    public void testPulsarWithMultipleTopics() throws Exception {
+
+        Map<String, Object> overrides = new HashMap<>();
+        overrides.put("pulsar.consumer.multipleTopics", true);
+        overrides.put("pulsar.consumer.topicsPattern", "test-.*");
+        overrides.put("pulsar.producer.topic", "test-first");
+
+        Config config = defaultConfigWithOverrides(overrides);
+
+        PulsarApplication app = PulsarMockApplication.newInstance(config, redis, pulsar);
+        assertNotNull(app);
+
+        Producer<byte[]> producer = app.getContext().getProducer();
+
+        //Create a second producer but bind into different topic
+        Config producerConfig = defaultConfigWithOverride("pulsar.producer.topic", "test-second");
+        Producer<byte[]> secondProducer = app.createProducer(app.client, producerConfig);
+
+        logger.info("Multi-topic Pulsar Application created, testing to send a message");
+
+        final String firstPayload = "to-topic1";
+        producer.send(firstPayload.getBytes());
+
+        final String secondPayload = "to-topic2";
+        secondProducer.send(secondPayload.getBytes());
+
+        Consumer<byte[]> consumer = app.getContext().getConsumer();
+
+        readAndValidateMsg(consumer, firstPayload);
+        readAndValidateMsg(consumer, secondPayload);
+
+        secondProducer.close();
+        app.close();
+    }
+
+    private void readAndValidateMsg(Consumer<byte[]> consumer, String correctPayload) throws Exception {
+        logger.info("Reading a message from Pulsar");
+        Message<byte[]> msg = consumer.receive(5, TimeUnit.SECONDS);
+        assertNotNull(msg);
+        String received = new String(msg.getData(), Charset.defaultCharset());
+        logger.info("Received: " + received);
+        assertEquals(correctPayload, received);
     }
 
     @Test
@@ -153,10 +199,10 @@ public class ITPulsarApplication {
 
     @Test
     public void testInitFailureOnInvalidTopicsPattern() {
-        Map<String, Object> invalid = new HashMap<>();
-        invalid.put("pulsar.consumer.multipleTopics", true);
-        invalid.put("pulsar.consumer.topicsPattern", "?transitdata/pubtrans/departure"); // ? is invalid in this regex
-        Config config = defaultConfigWithOverrides(invalid);
+        Map<String, Object> overrides = new HashMap<>();
+        overrides.put("pulsar.consumer.multipleTopics", true);
+        overrides.put("pulsar.consumer.topicsPattern", "?transitdata/pubtrans/departure"); // ? is invalid in this regex
+        Config config = defaultConfigWithOverrides(overrides);
         testInitFailure(config);
     }
 
