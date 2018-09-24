@@ -136,19 +136,37 @@ public class ITPulsarApplication {
     }
 
     @Test
-    public void testPulsarInitFailureOnRedis() {
-        Map<String, Object> invalidAddress = new HashMap<>();
-        invalidAddress.put("redis.port", 9999);
-        Config base = defaultConfigWithOverrides(invalidAddress);
+    public void testInitFailureOnRedis() {
+        Map<String, Object> invalid = new HashMap<>();
+        invalid.put("redis.port", 9999);
+        Config config = defaultConfigWithOverrides(invalid);
+        testInitFailure(config);
+    }
 
-        boolean exception = false;
-        try(PulsarApplication app = PulsarMockApplication.newInstance(base, redis, pulsar)) {
-            logger.info("Pulsar Application should never be created because of redis port");
+    @Test
+    public void testInitFailureOnPulsar() {
+        Map<String, Object> invalid = new HashMap<>();
+        invalid.put("pulsar.producer.topic", "illegal://topic name");
+        Config config = defaultConfigWithOverrides(invalid);
+        testInitFailure(config);
+    }
+
+    @Test
+    public void testInitFailureOnInvalidTopicsPattern() {
+        Map<String, Object> invalid = new HashMap<>();
+        invalid.put("pulsar.consumer.multipleTopics", true);
+        invalid.put("pulsar.consumer.topicsPattern", "?transitdata/pubtrans/departure"); // ? is invalid in this regex
+        Config config = defaultConfigWithOverrides(invalid);
+        testInitFailure(config);
+    }
+
+    public void testInitFailure(Config config) {
+        try(PulsarApplication app = PulsarMockApplication.newInstance(config, redis, pulsar)) {
+            logger.info("You should never see this message, init should throw an exception");
+            assertTrue(false);
         }
         catch (Exception e) {
-            exception = true;
-            logger.info("Exception as expected");
+            logger.debug("Exception as expected");
         }
-        assertTrue(exception);
     }
 }
