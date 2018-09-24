@@ -62,15 +62,20 @@ public class PulsarApplication implements AutoCloseable {
         }
 
         if (config.getBoolean("redis.enabled")) {
-            jedis = createRedisClient(config.getString("redis.host"));
+            jedis = createRedisClient(
+                    config.getString("redis.host"),
+                    config.getInt("redis.port"));
         }
 
         return createContext(config, client, consumer, producer, jedis);
     }
 
-    protected Jedis createRedisClient(String redisHost) {
-        log.info("Connecting to Redis at " + redisHost);
-        return new Jedis(redisHost);
+    protected Jedis createRedisClient(String redisHost, int port) {
+        log.info("Connecting to Redis at " + redisHost + ":" + port);
+        Jedis jedis = new Jedis(redisHost, port);
+        jedis.connect();
+        log.info("Redis connected: " + jedis.isConnected());
+        return jedis;
     }
 
     protected PulsarClient createPulsarClient(String pulsarHost, int pulsarPort) throws Exception {

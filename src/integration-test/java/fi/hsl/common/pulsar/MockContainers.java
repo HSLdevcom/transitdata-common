@@ -26,6 +26,7 @@ public class MockContainers {
     public static Jedis newMockJedisConnection(GenericContainer redis) {
         logger.info("Connecting to Redis container");
         Jedis jedis = new Jedis(redis.getContainerIpAddress(), redis.getMappedPort(6379));
+        jedis.connect();
         logger.info("Redis connected");
         return jedis;
     }
