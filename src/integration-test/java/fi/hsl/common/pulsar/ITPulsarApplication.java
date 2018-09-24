@@ -18,6 +18,7 @@ import org.testcontainers.containers.PulsarContainer;
 import redis.clients.jedis.Jedis;
 
 import java.nio.charset.Charset;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -26,8 +27,6 @@ import static org.junit.Assert.*;
 public class ITPulsarApplication {
 
     static final Logger logger = LoggerFactory.getLogger(ITPulsarApplication.class);
-
-    static Jedis jedis;
 
     static final boolean PRINT_PULSAR_LOG = ConfigUtils.getEnv("PRINT_PULSAR_LOG").map(Boolean::parseBoolean).orElse(false);
 
@@ -39,7 +38,6 @@ public class ITPulsarApplication {
 
     @BeforeClass
     public static void setUp() throws Exception {
-        jedis = MockContainers.newMockJedisConnection(redis);
         if (PRINT_PULSAR_LOG) {
             MockContainers.tail(pulsar, logger);
         }
@@ -47,6 +45,7 @@ public class ITPulsarApplication {
 
     @Test
     public void testRedis() {
+        Jedis jedis = MockContainers.newMockJedisConnection(redis);
         jedis.set("key", "value");
         String value = jedis.get("key");
         assertEquals(value, "value");
@@ -105,5 +104,51 @@ public class ITPulsarApplication {
         assertFalse(producer.isConnected());
         assertFalse(jedis.isConnected());
 
+    }
+
+    @Test
+    public void testPulsarAutoClose() throws Exception {
+        Config base = defaultConfig();
+
+        Producer<byte[]> producer;
+        Consumer<byte[]> consumer;
+        Jedis jedis;
+        try(PulsarApplication app = PulsarMockApplication.newInstance(base, redis, pulsar)) {
+            logger.info("Pulsar Application created within try-with-resources-block");
+            assertNotNull(app);
+
+            producer = app.getContext().getProducer();
+            assertTrue(producer.isConnected());
+
+            consumer = app.getContext().getConsumer();
+            assertTrue(consumer.isConnected());
+
+            jedis = app.getContext().getJedis();
+            assertTrue(jedis.isConnected());
+        }
+
+        logger.info("Pulsar Application out of scope, all connections should be closed");
+
+        assertFalse(consumer.isConnected());
+        assertFalse(producer.isConnected());
+        assertFalse(jedis.isConnected());
+
+    }
+
+    @Test
+    public void testPulsarInitFailureOnRedis() {
+        Map<String, Object> invalidAddress = new HashMap<>();
+        invalidAddress.put("redis.port", 9999);
+        Config base = defaultConfigWithOverrides(invalidAddress);
+
+        boolean exception = false;
+        try(PulsarApplication app = PulsarMockApplication.newInstance(base, redis, pulsar)) {
+            logger.info("Pulsar Application should never be created because of redis port");
+        }
+        catch (Exception e) {
+            exception = true;
+            logger.info("Exception as expected");
+        }
+        assertTrue(exception);
     }
 }
