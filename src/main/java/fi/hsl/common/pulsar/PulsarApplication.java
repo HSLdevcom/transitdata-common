@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class PulsarApplication implements AutoCloseable {
     private static final Logger log = LoggerFactory.getLogger(PulsarApplication.class);
@@ -99,13 +100,14 @@ public class PulsarApplication implements AutoCloseable {
 
         ConsumerBuilder<byte[]> builder = client.newConsumer()
                 .subscriptionName(subscription)
-                .readCompacted(readCompacted)  // not present in TripUpdateProcessor..
+                .readCompacted(readCompacted)
                 .receiverQueueSize(queueSize)
                 .subscriptionType(subscriptionType);
 
         if (config.getBoolean("pulsar.consumer.multipleTopics")) {
-            List<String> topics = config.getStringList("pulsar.consumer.topics");
-            builder = builder.topics(topics);
+            String topics = config.getString("pulsar.consumer.topicsPattern");
+            Pattern pattern = Pattern.compile(topics);
+            builder = builder.topicsPattern(pattern);
         }
         else {
             String topic = config.getString("pulsar.consumer.topic");
@@ -125,7 +127,7 @@ public class PulsarApplication implements AutoCloseable {
                 .compressionType(CompressionType.LZ4)
                 .maxPendingMessages(queueSize)
                 .topic(topic)
-                .enableBatching(false) // true in TripUpdateProcessor, default (true?) used in Pubtrans
+                .enableBatching(false)
                 .blockIfQueueFull(true)
                 .create();
         log.info("Pulsar producer created to topic " + topic);
