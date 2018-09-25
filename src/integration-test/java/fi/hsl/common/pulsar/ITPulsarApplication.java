@@ -20,6 +20,7 @@ import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.PulsarContainer;
 import redis.clients.jedis.Jedis;
 
+import javax.print.attribute.standard.MediaSize;
 import java.nio.charset.Charset;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -32,33 +33,22 @@ public class ITPulsarApplication {
 
     static final boolean PRINT_PULSAR_LOG = ConfigUtils.getEnv("PRINT_PULSAR_LOG").map(Boolean::parseBoolean).orElse(false);
 
+    private static final String TENANT = "hsl";
+    private static final String NAMESPACE = "transitdata";
+
     @ClassRule
     public static GenericContainer redis = MockContainers.newRedisContainer();
 
     @ClassRule
     public static PulsarContainer pulsar = MockContainers.newPulsarContainer();
 
-    private static final String TENANT = "hsl";
-    private static final String NAMESPACE = "transitdata";
-
     @BeforeClass
     public static void setUp() throws Exception {
+        MockContainers.configurePulsarContainer(pulsar, TENANT, NAMESPACE);
+
         if (PRINT_PULSAR_LOG) {
             MockContainers.tail(pulsar, logger);
         }
-
-        PulsarAdmin admin = PulsarAdmin.builder()
-                .serviceHttpUrl(pulsar.getHttpServiceUrl())
-                .build();
-
-        TenantInfo info = new TenantInfo();
-        Set<String> clusters = new HashSet<>(Arrays.asList("standalone"));
-        info.setAllowedClusters(clusters);
-        info.setAdminRoles(new HashSet<>(Arrays.asList("all")));
-        admin.tenants().createTenant(TENANT, info);
-
-        admin.namespaces().createNamespace(TENANT + "/" + NAMESPACE, clusters);
-        logger.info("Pulsar setup done");
     }
 
     @Test
