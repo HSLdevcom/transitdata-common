@@ -99,7 +99,7 @@ public class ITPulsarApplication {
         logger.info("Message sent, reading it back");
 
         Consumer<byte[]> consumer = app.getContext().getConsumer();
-        readAndValidateMsg(consumer, payload);
+        readAndValidateMsg(consumer, new HashSet<>(Arrays.asList(payload)));
 
         Jedis jedis = app.getContext().getJedis();
 
@@ -115,48 +115,64 @@ public class ITPulsarApplication {
 
     }
 
-/*
+    private static String formatTopicName(String topic) {
+        return "persistent://" + TENANT + "/" + NAMESPACE + "/" + topic;
+    }
+
     @Test
     public void testPulsarWithMultipleTopics() throws Exception {
+        Map<String, Object> o1 = new HashMap<>();
+        o1.put("pulsar.consumer.enabled", false);
+        o1.put("redis.enabled", false);
+        o1.put("pulsar.producer.topic", formatTopicName("test-1"));
+        Config producer1Config = defaultConfigWithOverrides(o1);
 
-        Map<String, Object> overrides = new HashMap<>();
-        overrides.put("pulsar.consumer.multipleTopics", true);
-        overrides.put("pulsar.consumer.topicsPattern", "persistent://hsl/transitdata/test-.*");
-        overrides.put("pulsar.producer.topic", "persistent://hsl/transitdata/test-first");
-
-        Config config = defaultConfigWithOverrides(overrides);
-
-        PulsarApplication app = PulsarMockApplication.newInstance(config, redis, pulsar);
+        PulsarApplication app = PulsarMockApplication.newInstance(producer1Config, redis, pulsar);
         assertNotNull(app);
 
         Producer<byte[]> producer = app.getContext().getProducer();
 
         //Create a second producer but bind into different topic
-        Config producerConfig = defaultConfigWithOverride("pulsar.producer.topic", "persistent://hsl/transitdata/test-second");
-        Producer<byte[]> secondProducer = app.createProducer(app.client, producerConfig);
+        Config producer2Config = defaultConfigWithOverride("pulsar.producer.topic", formatTopicName("test-2"));
+        Producer<byte[]> secondProducer = app.createProducer(app.client, producer2Config);
 
         logger.info("Multi-topic Pulsar Application created, testing to send a message");
-        Consumer<byte[]> consumer = app.getContext().getConsumer();
+
+        //Next create the consumer
+        Map<String, Object> overrides = new HashMap<>();
+        overrides.put("pulsar.consumer.multipleTopics", true);
+        overrides.put("pulsar.consumer.topicsPattern", formatTopicName("test-(1|2)"));
+        Config consumerConfig = defaultConfigWithOverrides(overrides);
+        Consumer<byte[]> consumer = app.createConsumer(app.client, consumerConfig);
+
+        logger.debug("Consumer topic: " + consumer.getTopic());
 
         final String firstPayload = "to-topic1";
         producer.send(firstPayload.getBytes());
-        readAndValidateMsg(consumer, firstPayload);
 
         final String secondPayload = "to-topic2";
         secondProducer.send(secondPayload.getBytes());
-        readAndValidateMsg(consumer, secondPayload);
+
+        Set<String> correctPayloads = new HashSet<>(Arrays.asList(firstPayload, secondPayload));
+        readAndValidateMsg(consumer, correctPayloads);
 
         secondProducer.close();
         app.close();
-    }*/
+    }
 
-    private void readAndValidateMsg(Consumer<byte[]> consumer, String correctPayload) throws Exception {
-        logger.info("Reading a message from Pulsar");
-        Message<byte[]> msg = consumer.receive(5, TimeUnit.SECONDS);
-        assertNotNull(msg);
-        String received = new String(msg.getData(), Charset.defaultCharset());
-        logger.info("Received: " + received);
-        assertEquals(correctPayload, received);
+    private void readAndValidateMsg(Consumer<byte[]> consumer, Set<String> correctPayloads) throws Exception {
+        logger.info("Reading messages from Pulsar");
+        Set<String> received = new HashSet<>();
+        //Pulsar consumer doesn't guarantee in which order messages come when reading multiple topics.
+        //They should be in order when reading from the same topic.
+        while (received.size() < correctPayloads.size()) {
+            Message<byte[]> msg = consumer.receive(5, TimeUnit.SECONDS);
+            assertNotNull(msg);
+            String receivedPayload = new String(msg.getData(), Charset.defaultCharset());
+            logger.info("Received: " + receivedPayload);
+            received.add(receivedPayload);
+        }
+        assertEquals(correctPayloads, received);
     }
 
     @Test
