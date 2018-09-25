@@ -10,7 +10,7 @@
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
         <pulsar.version>2.1.0-incubating</pulsar.version>
-        <testcontainers.version>1.8.3</testcontainers.version>
+        <testcontainers.version>1.9.0</testcontainers.version>
     </properties>
     <profiles>
         <!-- The Configuration of the unit-test profile -->
@@ -118,6 +118,13 @@
             <groupId>org.testcontainers</groupId>
             <artifactId>pulsar</artifactId>
             <version>${testcontainers.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.pulsar</groupId>
+            <artifactId>pulsar-client-admin</artifactId>
+            <version>${pulsar.version}</version>
             <scope>test</scope>
         </dependency>
 

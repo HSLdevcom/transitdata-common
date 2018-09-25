@@ -20,7 +20,7 @@ public class PulsarMockApplication extends PulsarApplication {
             Map<String, Object> overrides = new HashMap<>();
             if (pulsar != null) {
                 overrides.put("pulsar.host", pulsar.getContainerIpAddress());
-                overrides.put("pulsar.port", pulsar.getMappedPort(PulsarContainer.PULSAR_PORT));
+                overrides.put("pulsar.port", pulsar.getMappedPort(PulsarContainer.BROKER_PORT));
             }
             if (redis != null) {
                 overrides.put("redis.host", redis.getContainerIpAddress());

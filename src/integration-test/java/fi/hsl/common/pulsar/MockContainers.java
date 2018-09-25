@@ -33,6 +33,7 @@ public class MockContainers {
 
     public static PulsarContainer newPulsarContainer() {
         return new PulsarContainer("2.1.0-incubating");
+        //return new PulsarContainer();
     }
 
     public static PulsarClient newMockPulsarClient(PulsarContainer pulsar) throws Exception {
