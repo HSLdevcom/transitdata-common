@@ -52,12 +52,25 @@ public class ITPulsarApplication {
     }
 
     @Test
-    public void testRedis() {
+    public void testRedisContainer() {
         Jedis jedis = MockContainers.newMockJedisConnection(redis);
         jedis.set("key", "value");
         String value = jedis.get("key");
         assertEquals(value, "value");
     }
+
+    @Test
+    public void testPulsarApplicationRedis() throws Exception {
+        Config config = ConfigParser.createConfig("test-redis-only.conf");
+        assertNotNull(config);
+        PulsarApplication app = PulsarMockApplication.newInstance(config, redis, pulsar);
+        assertNotNull(app);
+
+        app.getContext().getJedis().set("pulsar-application-jedis", "should work");
+        String value = app.getContext().getJedis().get("pulsar-application-jedis");
+        assertEquals(value, "should work");
+    }
+
 
     @Test
     public void readConfig() {
