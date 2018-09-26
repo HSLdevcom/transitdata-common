@@ -6,7 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class PulsarApplication implements AutoCloseable {
     private static final Logger log = LoggerFactory.getLogger(PulsarApplication.class);
@@ -61,15 +63,20 @@ public class PulsarApplication implements AutoCloseable {
         }
 
         if (config.getBoolean("redis.enabled")) {
-            jedis = createRedisClient(config.getString("redis.host"));
+            jedis = createRedisClient(
+                    config.getString("redis.host"),
+                    config.getInt("redis.port"));
         }
 
         return createContext(config, client, consumer, producer, jedis);
     }
 
-    protected Jedis createRedisClient(String redisHost) {
-        log.info("Connecting to Redis at " + redisHost);
-        return new Jedis(redisHost);
+    protected Jedis createRedisClient(String redisHost, int port) {
+        log.info("Connecting to Redis at " + redisHost + ":" + port);
+        Jedis jedis = new Jedis(redisHost, port);
+        jedis.connect();
+        log.info("Redis connected: " + jedis.isConnected());
+        return jedis;
     }
 
     protected PulsarClient createPulsarClient(String pulsarHost, int pulsarPort) throws Exception {
@@ -99,16 +106,19 @@ public class PulsarApplication implements AutoCloseable {
 
         ConsumerBuilder<byte[]> builder = client.newConsumer()
                 .subscriptionName(subscription)
-                .readCompacted(readCompacted)  // not present in TripUpdateProcessor..
+                .readCompacted(readCompacted)
                 .receiverQueueSize(queueSize)
                 .subscriptionType(subscriptionType);
 
         if (config.getBoolean("pulsar.consumer.multipleTopics")) {
-            List<String> topics = config.getStringList("pulsar.consumer.topics");
-            builder = builder.topics(topics);
+            String topics = config.getString("pulsar.consumer.topicsPattern");
+            log.info("Creating Pulsar consumer for multiple topics using pattern: " + topics);
+            Pattern pattern = Pattern.compile(topics);
+            builder = builder.topicsPattern(pattern);
         }
         else {
             String topic = config.getString("pulsar.consumer.topic");
+            log.info("Creating Pulsar consumer for single topic: " + topic);
             builder = builder.topic(topic);
         }
 
@@ -125,7 +135,7 @@ public class PulsarApplication implements AutoCloseable {
                 .compressionType(CompressionType.LZ4)
                 .maxPendingMessages(queueSize)
                 .topic(topic)
-                .enableBatching(false) // true in TripUpdateProcessor, default (true?) used in Pubtrans
+                .enableBatching(false)
                 .blockIfQueueFull(true)
                 .create();
         log.info("Pulsar producer created to topic " + topic);
