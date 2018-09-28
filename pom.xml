@@ -7,8 +7,8 @@
     <name>Common utilities for Transitdata projects</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.6</maven.compiler.source>
-        <maven.compiler.target>1.6</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <pulsar.version>2.1.0-incubating</pulsar.version>
         <testcontainers.version>1.9.0</testcontainers.version>
     </properties>
@@ -130,6 +130,10 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
+                <excludes>
+                    <!-- exclude logback.xml so that we don't shadow resources for applications using this library -->
+                    <exclude>logback.xml</exclude>
+                </excludes>
             </resource>
         </resources>
 
