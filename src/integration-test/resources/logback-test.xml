@@ -11,10 +11,10 @@
             </layout>
         </encoder>
     </appender>
-    <logger name="fi.hsl.common" level="info">
+    <logger name="fi.hsl.common" level="info" additivity="false">
         <appender-ref ref="stdout" />
     </logger>
-    <root level="warn">
+    <root level="info">
         <appender-ref ref="stdout" />
     </root>
 </configuration>
