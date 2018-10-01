@@ -21,6 +21,7 @@ public class TransitdataProperties {
     public static final String KEY_START_TIME = "start-time";
     public static final String KEY_OPERATING_DAY = "operating-day";
     public static final String KEY_STOP_ID = "stop-id";
+    public static final String KEY_LAST_CACHE_UPDATE_TIMESTAMP = "cache-update-ts";
 
     /**
      * Describes the payload format for each message so that the data can be de-serialized.
