@@ -155,7 +155,6 @@ public class PulsarApplication implements AutoCloseable {
             }
         }
         catch (Exception ex) {
-            ex.printStackTrace();
             log.error("Exception in main handler loop", ex);
             //TODO throw possible high-level exception here so that invoking code can deal and close the resources.
         }
