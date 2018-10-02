@@ -129,6 +129,7 @@ public class PulsarApplication implements AutoCloseable {
 
     protected Producer<byte[]> createProducer(PulsarClient client, Config config) throws PulsarClientException {
         int queueSize = config.getInt("pulsar.producer.queueSize");
+        boolean blockIfFull = config.getBoolean("pulsar.producer.blockIfFull");
         String topic = config.getString("pulsar.producer.topic");
 
         Producer<byte[]> producer = client.newProducer()
@@ -136,7 +137,7 @@ public class PulsarApplication implements AutoCloseable {
                 .maxPendingMessages(queueSize)
                 .topic(topic)
                 .enableBatching(false)
-                .blockIfQueueFull(true)
+                .blockIfQueueFull(blockIfFull)
                 .create();
         log.info("Pulsar producer created to topic " + topic);
         return producer;
