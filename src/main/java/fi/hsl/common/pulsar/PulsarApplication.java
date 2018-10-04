@@ -6,8 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
 public class PulsarApplication implements AutoCloseable {
@@ -147,17 +146,23 @@ public class PulsarApplication implements AutoCloseable {
         if (consumer == null) {
             throw new Exception("Consumer disabled, cannot start the handler");
         }
-        //TODO think if we should abort on exception. Now we do.
         try {
             while (true) {
-                Message msg = consumer.receive();
-                handler.handleMessage(msg);
+                Message msg = consumer.receive(5, TimeUnit.SECONDS);
+                if (msg != null) {
+                    handler.handleMessage(msg);
+                }
+                else if (!consumer.isConnected()) {
+                    //Pulsar client goes into retry-mode in case the connection is lost after once acquired.
+                    //We will rather abort and handle the errors ourselves
+                    throw new PulsarClientException("Connection lost");
+                }
                 //TODO move Ack and possibly message sending to here
             }
         }
         catch (Exception ex) {
             log.error("Exception in main handler loop", ex);
-            //TODO throw possible high-level exception here so that invoking code can deal and close the resources.
+            throw ex;
         }
     }
 
