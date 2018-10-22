@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+package proto;
+
+option java_package = "fi.hsl.common.transitdata.proto";
+option java_outer_classname = "InternalMessages";
+
+message TripCancellation {
+    required int32 SchemaVersion = 1 [default = 1];
+    optional string trip_id = 2;
+    optional string route_id = 3;
+    optional uint32 direction_id = 4;
+    optional string start_time = 5;
+    optional string start_date = 6;
+
+    // This message is only used to either cancel a trip or mark a previously canceled trip as running as scheduled
+    enum Status {
+        RUNNING = 0;
+        CANCELED = 1;
+    }
+
+    required Status status = 7;
+}

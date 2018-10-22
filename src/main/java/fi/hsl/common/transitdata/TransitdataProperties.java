@@ -11,6 +11,7 @@ public class TransitdataProperties {
 
     public static final String REDIS_PREFIX_JPP = "jpp:";
     public static final String REDIS_PREFIX_DVJ = "dvj:";
+    public static final String REDIS_PREFIX_JORE_ID = "jore:";
 
     public static final String KEY_PROTOBUF_SCHEMA = "protobuf-schema";
     public static final String KEY_SCHEMA_VERSION = "schema-version";
@@ -31,19 +32,19 @@ public class TransitdataProperties {
     public enum ProtobufSchema {
         PubtransRoiArrival,
         PubtransRoiDeparture,
-        OMM_Cancellation,
         GTFS_TripUpdate,
         GTFS_ServiceAlert,
-        GTFS_VehiclePosition;
+        GTFS_VehiclePosition,
+        InternalMessagesTripCancellation;
 
         public String toString() {
             switch (this) {
                 case PubtransRoiArrival: return "pubtrans-roi-arrival";
                 case PubtransRoiDeparture: return "pubtrans-roi-departure";
-                case OMM_Cancellation: return "omm-cancellation";
                 case GTFS_TripUpdate: return "gtfs-trip-update";
                 case GTFS_ServiceAlert: return "gtfs-service-alert";
                 case GTFS_VehiclePosition: return "gtfs-vehicle-position";
+                case InternalMessagesTripCancellation: return "internal-messages-trip-cancellation";
                 default: throw new IllegalArgumentException();
             }
         }
@@ -55,27 +56,23 @@ public class TransitdataProperties {
             else if (str.equals(PubtransRoiDeparture.toString())) {
                 return PubtransRoiDeparture;
             }
-            else if (str.equals(PubtransRoiArrival.toString())) {
-                return PubtransRoiArrival;
+            else if (str.equals(GTFS_TripUpdate.toString())) {
+                return GTFS_TripUpdate;
             }
-            else if (str.equals(PubtransRoiArrival.toString())) {
-                return PubtransRoiArrival;
+            else if (str.equals(GTFS_ServiceAlert.toString())) {
+                return GTFS_ServiceAlert;
             }
-            else if (str.equals(PubtransRoiArrival.toString())) {
-                return PubtransRoiArrival;
+            else if (str.equals(GTFS_VehiclePosition.toString())) {
+                return GTFS_VehiclePosition;
             }
-            else if (str.equals(PubtransRoiArrival.toString())) {
-                return PubtransRoiArrival;
-            }
-            else if (str.equals(PubtransRoiArrival.toString())) {
-                return PubtransRoiArrival;
+            else if (str.equals(InternalMessagesTripCancellation.toString())) {
+                return InternalMessagesTripCancellation;
             }
             else {
                 throw new IllegalArgumentException();
             }
         }
     }
-
 
     /**
      * GTFS-RT convention is to use UTC epoch seconds so let's use the same convention.
