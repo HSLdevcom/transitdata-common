@@ -86,6 +86,6 @@ public class TransitdataProperties {
     }
 
     public static String formatJoreId(String route, String direction, String startDate, String startTime) {
-        return REDIS_PREFIX_JORE_ID + "-" + route + "-" + direction + "-" + startDate + "-" + startTime;
+        return REDIS_PREFIX_JORE_ID + route + "-" + direction + "-" + startDate + "-" + startTime;
     }
 }
