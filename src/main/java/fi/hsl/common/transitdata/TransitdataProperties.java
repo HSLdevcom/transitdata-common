@@ -84,4 +84,8 @@ public class TransitdataProperties {
         OffsetDateTime utc = OffsetDateTime.now(ZoneOffset.UTC);
         return utc.toEpochSecond();
     }
+
+    public static String formatJoreId(String route, String direction, String startDate, String startTime) {
+        return REDIS_PREFIX_JORE_ID + route + "-" + direction + "-" + startDate + "-" + startTime;
+    }
 }
