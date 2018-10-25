@@ -108,60 +108,48 @@ public final class PubtransTableProtos {
     long getWasObservedAtJourneyPatternPointGid();
 
     /**
-     * <code>optional string timetabled_latest_date_time = 10;</code>
+     * <pre>
+     *All timestamps are defined in UTC epochs in milliseconds
+     * </pre>
+     *
+     * <code>optional int64 timetabled_latest_utc_date_time_ms = 10;</code>
      */
-    boolean hasTimetabledLatestDateTime();
+    boolean hasTimetabledLatestUtcDateTimeMs();
     /**
-     * <code>optional string timetabled_latest_date_time = 10;</code>
+     * <pre>
+     *All timestamps are defined in UTC epochs in milliseconds
+     * </pre>
+     *
+     * <code>optional int64 timetabled_latest_utc_date_time_ms = 10;</code>
      */
-    java.lang.String getTimetabledLatestDateTime();
-    /**
-     * <code>optional string timetabled_latest_date_time = 10;</code>
-     */
-    com.google.protobuf.ByteString
-        getTimetabledLatestDateTimeBytes();
+    long getTimetabledLatestUtcDateTimeMs();
 
     /**
-     * <code>optional string target_date_time = 11;</code>
+     * <code>optional int64 target_utc_date_time_ms = 11;</code>
      */
-    boolean hasTargetDateTime();
+    boolean hasTargetUtcDateTimeMs();
     /**
-     * <code>optional string target_date_time = 11;</code>
+     * <code>optional int64 target_utc_date_time_ms = 11;</code>
      */
-    java.lang.String getTargetDateTime();
-    /**
-     * <code>optional string target_date_time = 11;</code>
-     */
-    com.google.protobuf.ByteString
-        getTargetDateTimeBytes();
+    long getTargetUtcDateTimeMs();
 
     /**
-     * <code>optional string estimated_date_time = 12;</code>
+     * <code>optional int64 estimated_utc_date_time_ms = 12;</code>
      */
-    boolean hasEstimatedDateTime();
+    boolean hasEstimatedUtcDateTimeMs();
     /**
-     * <code>optional string estimated_date_time = 12;</code>
+     * <code>optional int64 estimated_utc_date_time_ms = 12;</code>
      */
-    java.lang.String getEstimatedDateTime();
-    /**
-     * <code>optional string estimated_date_time = 12;</code>
-     */
-    com.google.protobuf.ByteString
-        getEstimatedDateTimeBytes();
+    long getEstimatedUtcDateTimeMs();
 
     /**
-     * <code>optional string observed_date_time = 13;</code>
+     * <code>optional int64 observed_utc_date_time_ms = 13;</code>
      */
-    boolean hasObservedDateTime();
+    boolean hasObservedUtcDateTimeMs();
     /**
-     * <code>optional string observed_date_time = 13;</code>
+     * <code>optional int64 observed_utc_date_time_ms = 13;</code>
      */
-    java.lang.String getObservedDateTime();
-    /**
-     * <code>optional string observed_date_time = 13;</code>
-     */
-    com.google.protobuf.ByteString
-        getObservedDateTimeBytes();
+    long getObservedUtcDateTimeMs();
 
     /**
      * <code>required int64 state = 14;</code>
@@ -191,13 +179,13 @@ public final class PubtransTableProtos {
     boolean getIsValidYesNo();
 
     /**
-     * <code>required int64 last_modified_utc_date_time = 17;</code>
+     * <code>required int64 last_modified_utc_date_time_ms = 17;</code>
      */
-    boolean hasLastModifiedUtcDateTime();
+    boolean hasLastModifiedUtcDateTimeMs();
     /**
-     * <code>required int64 last_modified_utc_date_time = 17;</code>
+     * <code>required int64 last_modified_utc_date_time_ms = 17;</code>
      */
-    long getLastModifiedUtcDateTime();
+    long getLastModifiedUtcDateTimeMs();
   }
   /**
    * Protobuf type {@code proto.Common}
@@ -221,14 +209,14 @@ public final class PubtransTableProtos {
       visitCountNumber_ = 0;
       isTargetedAtJourneyPatternPointGid_ = 0L;
       wasObservedAtJourneyPatternPointGid_ = 0L;
-      timetabledLatestDateTime_ = "";
-      targetDateTime_ = "";
-      estimatedDateTime_ = "";
-      observedDateTime_ = "";
+      timetabledLatestUtcDateTimeMs_ = 0L;
+      targetUtcDateTimeMs_ = 0L;
+      estimatedUtcDateTimeMs_ = 0L;
+      observedUtcDateTimeMs_ = 0L;
       state_ = 0L;
       type_ = 0L;
       isValidYesNo_ = false;
-      lastModifiedUtcDateTime_ = 0L;
+      lastModifiedUtcDateTimeMs_ = 0L;
     }
 
     @java.lang.Override
@@ -300,28 +288,24 @@ public final class PubtransTableProtos {
               wasObservedAtJourneyPatternPointGid_ = input.readInt64();
               break;
             }
-            case 82: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+            case 80: {
               bitField0_ |= 0x00000200;
-              timetabledLatestDateTime_ = bs;
+              timetabledLatestUtcDateTimeMs_ = input.readInt64();
               break;
             }
-            case 90: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+            case 88: {
               bitField0_ |= 0x00000400;
-              targetDateTime_ = bs;
+              targetUtcDateTimeMs_ = input.readInt64();
               break;
             }
-            case 98: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+            case 96: {
               bitField0_ |= 0x00000800;
-              estimatedDateTime_ = bs;
+              estimatedUtcDateTimeMs_ = input.readInt64();
               break;
             }
-            case 106: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+            case 104: {
               bitField0_ |= 0x00001000;
-              observedDateTime_ = bs;
+              observedUtcDateTimeMs_ = input.readInt64();
               break;
             }
             case 112: {
@@ -341,7 +325,7 @@ public final class PubtransTableProtos {
             }
             case 136: {
               bitField0_ |= 0x00010000;
-              lastModifiedUtcDateTime_ = input.readInt64();
+              lastModifiedUtcDateTimeMs_ = input.readInt64();
               break;
             }
             default: {
@@ -520,172 +504,72 @@ public final class PubtransTableProtos {
       return wasObservedAtJourneyPatternPointGid_;
     }
 
-    public static final int TIMETABLED_LATEST_DATE_TIME_FIELD_NUMBER = 10;
-    private volatile java.lang.Object timetabledLatestDateTime_;
+    public static final int TIMETABLED_LATEST_UTC_DATE_TIME_MS_FIELD_NUMBER = 10;
+    private long timetabledLatestUtcDateTimeMs_;
     /**
-     * <code>optional string timetabled_latest_date_time = 10;</code>
+     * <pre>
+     *All timestamps are defined in UTC epochs in milliseconds
+     * </pre>
+     *
+     * <code>optional int64 timetabled_latest_utc_date_time_ms = 10;</code>
      */
-    public boolean hasTimetabledLatestDateTime() {
+    public boolean hasTimetabledLatestUtcDateTimeMs() {
       return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
-     * <code>optional string timetabled_latest_date_time = 10;</code>
+     * <pre>
+     *All timestamps are defined in UTC epochs in milliseconds
+     * </pre>
+     *
+     * <code>optional int64 timetabled_latest_utc_date_time_ms = 10;</code>
      */
-    public java.lang.String getTimetabledLatestDateTime() {
-      java.lang.Object ref = timetabledLatestDateTime_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          timetabledLatestDateTime_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string timetabled_latest_date_time = 10;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTimetabledLatestDateTimeBytes() {
-      java.lang.Object ref = timetabledLatestDateTime_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        timetabledLatestDateTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getTimetabledLatestUtcDateTimeMs() {
+      return timetabledLatestUtcDateTimeMs_;
     }
 
-    public static final int TARGET_DATE_TIME_FIELD_NUMBER = 11;
-    private volatile java.lang.Object targetDateTime_;
+    public static final int TARGET_UTC_DATE_TIME_MS_FIELD_NUMBER = 11;
+    private long targetUtcDateTimeMs_;
     /**
-     * <code>optional string target_date_time = 11;</code>
+     * <code>optional int64 target_utc_date_time_ms = 11;</code>
      */
-    public boolean hasTargetDateTime() {
+    public boolean hasTargetUtcDateTimeMs() {
       return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
-     * <code>optional string target_date_time = 11;</code>
+     * <code>optional int64 target_utc_date_time_ms = 11;</code>
      */
-    public java.lang.String getTargetDateTime() {
-      java.lang.Object ref = targetDateTime_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          targetDateTime_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string target_date_time = 11;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTargetDateTimeBytes() {
-      java.lang.Object ref = targetDateTime_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        targetDateTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getTargetUtcDateTimeMs() {
+      return targetUtcDateTimeMs_;
     }
 
-    public static final int ESTIMATED_DATE_TIME_FIELD_NUMBER = 12;
-    private volatile java.lang.Object estimatedDateTime_;
+    public static final int ESTIMATED_UTC_DATE_TIME_MS_FIELD_NUMBER = 12;
+    private long estimatedUtcDateTimeMs_;
     /**
-     * <code>optional string estimated_date_time = 12;</code>
+     * <code>optional int64 estimated_utc_date_time_ms = 12;</code>
      */
-    public boolean hasEstimatedDateTime() {
+    public boolean hasEstimatedUtcDateTimeMs() {
       return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
-     * <code>optional string estimated_date_time = 12;</code>
+     * <code>optional int64 estimated_utc_date_time_ms = 12;</code>
      */
-    public java.lang.String getEstimatedDateTime() {
-      java.lang.Object ref = estimatedDateTime_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          estimatedDateTime_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string estimated_date_time = 12;</code>
-     */
-    public com.google.protobuf.ByteString
-        getEstimatedDateTimeBytes() {
-      java.lang.Object ref = estimatedDateTime_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        estimatedDateTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getEstimatedUtcDateTimeMs() {
+      return estimatedUtcDateTimeMs_;
     }
 
-    public static final int OBSERVED_DATE_TIME_FIELD_NUMBER = 13;
-    private volatile java.lang.Object observedDateTime_;
+    public static final int OBSERVED_UTC_DATE_TIME_MS_FIELD_NUMBER = 13;
+    private long observedUtcDateTimeMs_;
     /**
-     * <code>optional string observed_date_time = 13;</code>
+     * <code>optional int64 observed_utc_date_time_ms = 13;</code>
      */
-    public boolean hasObservedDateTime() {
+    public boolean hasObservedUtcDateTimeMs() {
       return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     /**
-     * <code>optional string observed_date_time = 13;</code>
+     * <code>optional int64 observed_utc_date_time_ms = 13;</code>
      */
-    public java.lang.String getObservedDateTime() {
-      java.lang.Object ref = observedDateTime_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          observedDateTime_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string observed_date_time = 13;</code>
-     */
-    public com.google.protobuf.ByteString
-        getObservedDateTimeBytes() {
-      java.lang.Object ref = observedDateTime_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        observedDateTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getObservedUtcDateTimeMs() {
+      return observedUtcDateTimeMs_;
     }
 
     public static final int STATE_FIELD_NUMBER = 14;
@@ -733,19 +617,19 @@ public final class PubtransTableProtos {
       return isValidYesNo_;
     }
 
-    public static final int LAST_MODIFIED_UTC_DATE_TIME_FIELD_NUMBER = 17;
-    private long lastModifiedUtcDateTime_;
+    public static final int LAST_MODIFIED_UTC_DATE_TIME_MS_FIELD_NUMBER = 17;
+    private long lastModifiedUtcDateTimeMs_;
     /**
-     * <code>required int64 last_modified_utc_date_time = 17;</code>
+     * <code>required int64 last_modified_utc_date_time_ms = 17;</code>
      */
-    public boolean hasLastModifiedUtcDateTime() {
+    public boolean hasLastModifiedUtcDateTimeMs() {
       return ((bitField0_ & 0x00010000) == 0x00010000);
     }
     /**
-     * <code>required int64 last_modified_utc_date_time = 17;</code>
+     * <code>required int64 last_modified_utc_date_time_ms = 17;</code>
      */
-    public long getLastModifiedUtcDateTime() {
-      return lastModifiedUtcDateTime_;
+    public long getLastModifiedUtcDateTimeMs() {
+      return lastModifiedUtcDateTimeMs_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -791,7 +675,7 @@ public final class PubtransTableProtos {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasLastModifiedUtcDateTime()) {
+      if (!hasLastModifiedUtcDateTimeMs()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -830,16 +714,16 @@ public final class PubtransTableProtos {
         output.writeInt64(9, wasObservedAtJourneyPatternPointGid_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, timetabledLatestDateTime_);
+        output.writeInt64(10, timetabledLatestUtcDateTimeMs_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, targetDateTime_);
+        output.writeInt64(11, targetUtcDateTimeMs_);
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, estimatedDateTime_);
+        output.writeInt64(12, estimatedUtcDateTimeMs_);
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, observedDateTime_);
+        output.writeInt64(13, observedUtcDateTimeMs_);
       }
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
         output.writeInt64(14, state_);
@@ -851,7 +735,7 @@ public final class PubtransTableProtos {
         output.writeBool(16, isValidYesNo_);
       }
       if (((bitField0_ & 0x00010000) == 0x00010000)) {
-        output.writeInt64(17, lastModifiedUtcDateTime_);
+        output.writeInt64(17, lastModifiedUtcDateTimeMs_);
       }
       unknownFields.writeTo(output);
     }
@@ -899,16 +783,20 @@ public final class PubtransTableProtos {
           .computeInt64Size(9, wasObservedAtJourneyPatternPointGid_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, timetabledLatestDateTime_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(10, timetabledLatestUtcDateTimeMs_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, targetDateTime_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(11, targetUtcDateTimeMs_);
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, estimatedDateTime_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(12, estimatedUtcDateTimeMs_);
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, observedDateTime_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(13, observedUtcDateTimeMs_);
       }
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
@@ -924,7 +812,7 @@ public final class PubtransTableProtos {
       }
       if (((bitField0_ & 0x00010000) == 0x00010000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(17, lastModifiedUtcDateTime_);
+          .computeInt64Size(17, lastModifiedUtcDateTimeMs_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -987,25 +875,25 @@ public final class PubtransTableProtos {
         result = result && (getWasObservedAtJourneyPatternPointGid()
             == other.getWasObservedAtJourneyPatternPointGid());
       }
-      result = result && (hasTimetabledLatestDateTime() == other.hasTimetabledLatestDateTime());
-      if (hasTimetabledLatestDateTime()) {
-        result = result && getTimetabledLatestDateTime()
-            .equals(other.getTimetabledLatestDateTime());
+      result = result && (hasTimetabledLatestUtcDateTimeMs() == other.hasTimetabledLatestUtcDateTimeMs());
+      if (hasTimetabledLatestUtcDateTimeMs()) {
+        result = result && (getTimetabledLatestUtcDateTimeMs()
+            == other.getTimetabledLatestUtcDateTimeMs());
       }
-      result = result && (hasTargetDateTime() == other.hasTargetDateTime());
-      if (hasTargetDateTime()) {
-        result = result && getTargetDateTime()
-            .equals(other.getTargetDateTime());
+      result = result && (hasTargetUtcDateTimeMs() == other.hasTargetUtcDateTimeMs());
+      if (hasTargetUtcDateTimeMs()) {
+        result = result && (getTargetUtcDateTimeMs()
+            == other.getTargetUtcDateTimeMs());
       }
-      result = result && (hasEstimatedDateTime() == other.hasEstimatedDateTime());
-      if (hasEstimatedDateTime()) {
-        result = result && getEstimatedDateTime()
-            .equals(other.getEstimatedDateTime());
+      result = result && (hasEstimatedUtcDateTimeMs() == other.hasEstimatedUtcDateTimeMs());
+      if (hasEstimatedUtcDateTimeMs()) {
+        result = result && (getEstimatedUtcDateTimeMs()
+            == other.getEstimatedUtcDateTimeMs());
       }
-      result = result && (hasObservedDateTime() == other.hasObservedDateTime());
-      if (hasObservedDateTime()) {
-        result = result && getObservedDateTime()
-            .equals(other.getObservedDateTime());
+      result = result && (hasObservedUtcDateTimeMs() == other.hasObservedUtcDateTimeMs());
+      if (hasObservedUtcDateTimeMs()) {
+        result = result && (getObservedUtcDateTimeMs()
+            == other.getObservedUtcDateTimeMs());
       }
       result = result && (hasState() == other.hasState());
       if (hasState()) {
@@ -1022,10 +910,10 @@ public final class PubtransTableProtos {
         result = result && (getIsValidYesNo()
             == other.getIsValidYesNo());
       }
-      result = result && (hasLastModifiedUtcDateTime() == other.hasLastModifiedUtcDateTime());
-      if (hasLastModifiedUtcDateTime()) {
-        result = result && (getLastModifiedUtcDateTime()
-            == other.getLastModifiedUtcDateTime());
+      result = result && (hasLastModifiedUtcDateTimeMs() == other.hasLastModifiedUtcDateTimeMs());
+      if (hasLastModifiedUtcDateTimeMs()) {
+        result = result && (getLastModifiedUtcDateTimeMs()
+            == other.getLastModifiedUtcDateTimeMs());
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -1080,21 +968,25 @@ public final class PubtransTableProtos {
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getWasObservedAtJourneyPatternPointGid());
       }
-      if (hasTimetabledLatestDateTime()) {
-        hash = (37 * hash) + TIMETABLED_LATEST_DATE_TIME_FIELD_NUMBER;
-        hash = (53 * hash) + getTimetabledLatestDateTime().hashCode();
+      if (hasTimetabledLatestUtcDateTimeMs()) {
+        hash = (37 * hash) + TIMETABLED_LATEST_UTC_DATE_TIME_MS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getTimetabledLatestUtcDateTimeMs());
       }
-      if (hasTargetDateTime()) {
-        hash = (37 * hash) + TARGET_DATE_TIME_FIELD_NUMBER;
-        hash = (53 * hash) + getTargetDateTime().hashCode();
+      if (hasTargetUtcDateTimeMs()) {
+        hash = (37 * hash) + TARGET_UTC_DATE_TIME_MS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getTargetUtcDateTimeMs());
       }
-      if (hasEstimatedDateTime()) {
-        hash = (37 * hash) + ESTIMATED_DATE_TIME_FIELD_NUMBER;
-        hash = (53 * hash) + getEstimatedDateTime().hashCode();
+      if (hasEstimatedUtcDateTimeMs()) {
+        hash = (37 * hash) + ESTIMATED_UTC_DATE_TIME_MS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getEstimatedUtcDateTimeMs());
       }
-      if (hasObservedDateTime()) {
-        hash = (37 * hash) + OBSERVED_DATE_TIME_FIELD_NUMBER;
-        hash = (53 * hash) + getObservedDateTime().hashCode();
+      if (hasObservedUtcDateTimeMs()) {
+        hash = (37 * hash) + OBSERVED_UTC_DATE_TIME_MS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getObservedUtcDateTimeMs());
       }
       if (hasState()) {
         hash = (37 * hash) + STATE_FIELD_NUMBER;
@@ -1111,10 +1003,10 @@ public final class PubtransTableProtos {
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getIsValidYesNo());
       }
-      if (hasLastModifiedUtcDateTime()) {
-        hash = (37 * hash) + LAST_MODIFIED_UTC_DATE_TIME_FIELD_NUMBER;
+      if (hasLastModifiedUtcDateTimeMs()) {
+        hash = (37 * hash) + LAST_MODIFIED_UTC_DATE_TIME_MS_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getLastModifiedUtcDateTime());
+            getLastModifiedUtcDateTimeMs());
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1267,13 +1159,13 @@ public final class PubtransTableProtos {
         bitField0_ = (bitField0_ & ~0x00000080);
         wasObservedAtJourneyPatternPointGid_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000100);
-        timetabledLatestDateTime_ = "";
+        timetabledLatestUtcDateTimeMs_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000200);
-        targetDateTime_ = "";
+        targetUtcDateTimeMs_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000400);
-        estimatedDateTime_ = "";
+        estimatedUtcDateTimeMs_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000800);
-        observedDateTime_ = "";
+        observedUtcDateTimeMs_ = 0L;
         bitField0_ = (bitField0_ & ~0x00001000);
         state_ = 0L;
         bitField0_ = (bitField0_ & ~0x00002000);
@@ -1281,7 +1173,7 @@ public final class PubtransTableProtos {
         bitField0_ = (bitField0_ & ~0x00004000);
         isValidYesNo_ = false;
         bitField0_ = (bitField0_ & ~0x00008000);
-        lastModifiedUtcDateTime_ = 0L;
+        lastModifiedUtcDateTimeMs_ = 0L;
         bitField0_ = (bitField0_ & ~0x00010000);
         return this;
       }
@@ -1350,19 +1242,19 @@ public final class PubtransTableProtos {
         if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
           to_bitField0_ |= 0x00000200;
         }
-        result.timetabledLatestDateTime_ = timetabledLatestDateTime_;
+        result.timetabledLatestUtcDateTimeMs_ = timetabledLatestUtcDateTimeMs_;
         if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
           to_bitField0_ |= 0x00000400;
         }
-        result.targetDateTime_ = targetDateTime_;
+        result.targetUtcDateTimeMs_ = targetUtcDateTimeMs_;
         if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
           to_bitField0_ |= 0x00000800;
         }
-        result.estimatedDateTime_ = estimatedDateTime_;
+        result.estimatedUtcDateTimeMs_ = estimatedUtcDateTimeMs_;
         if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
           to_bitField0_ |= 0x00001000;
         }
-        result.observedDateTime_ = observedDateTime_;
+        result.observedUtcDateTimeMs_ = observedUtcDateTimeMs_;
         if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
           to_bitField0_ |= 0x00002000;
         }
@@ -1378,7 +1270,7 @@ public final class PubtransTableProtos {
         if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
           to_bitField0_ |= 0x00010000;
         }
-        result.lastModifiedUtcDateTime_ = lastModifiedUtcDateTime_;
+        result.lastModifiedUtcDateTimeMs_ = lastModifiedUtcDateTimeMs_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1455,25 +1347,17 @@ public final class PubtransTableProtos {
         if (other.hasWasObservedAtJourneyPatternPointGid()) {
           setWasObservedAtJourneyPatternPointGid(other.getWasObservedAtJourneyPatternPointGid());
         }
-        if (other.hasTimetabledLatestDateTime()) {
-          bitField0_ |= 0x00000200;
-          timetabledLatestDateTime_ = other.timetabledLatestDateTime_;
-          onChanged();
+        if (other.hasTimetabledLatestUtcDateTimeMs()) {
+          setTimetabledLatestUtcDateTimeMs(other.getTimetabledLatestUtcDateTimeMs());
         }
-        if (other.hasTargetDateTime()) {
-          bitField0_ |= 0x00000400;
-          targetDateTime_ = other.targetDateTime_;
-          onChanged();
+        if (other.hasTargetUtcDateTimeMs()) {
+          setTargetUtcDateTimeMs(other.getTargetUtcDateTimeMs());
         }
-        if (other.hasEstimatedDateTime()) {
-          bitField0_ |= 0x00000800;
-          estimatedDateTime_ = other.estimatedDateTime_;
-          onChanged();
+        if (other.hasEstimatedUtcDateTimeMs()) {
+          setEstimatedUtcDateTimeMs(other.getEstimatedUtcDateTimeMs());
         }
-        if (other.hasObservedDateTime()) {
-          bitField0_ |= 0x00001000;
-          observedDateTime_ = other.observedDateTime_;
-          onChanged();
+        if (other.hasObservedUtcDateTimeMs()) {
+          setObservedUtcDateTimeMs(other.getObservedUtcDateTimeMs());
         }
         if (other.hasState()) {
           setState(other.getState());
@@ -1484,8 +1368,8 @@ public final class PubtransTableProtos {
         if (other.hasIsValidYesNo()) {
           setIsValidYesNo(other.getIsValidYesNo());
         }
-        if (other.hasLastModifiedUtcDateTime()) {
-          setLastModifiedUtcDateTime(other.getLastModifiedUtcDateTime());
+        if (other.hasLastModifiedUtcDateTimeMs()) {
+          setLastModifiedUtcDateTimeMs(other.getLastModifiedUtcDateTimeMs());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1521,7 +1405,7 @@ public final class PubtransTableProtos {
         if (!hasIsValidYesNo()) {
           return false;
         }
-        if (!hasLastModifiedUtcDateTime()) {
+        if (!hasLastModifiedUtcDateTimeMs()) {
           return false;
         }
         return true;
@@ -1851,306 +1735,146 @@ public final class PubtransTableProtos {
         return this;
       }
 
-      private java.lang.Object timetabledLatestDateTime_ = "";
+      private long timetabledLatestUtcDateTimeMs_ ;
       /**
-       * <code>optional string timetabled_latest_date_time = 10;</code>
+       * <pre>
+       *All timestamps are defined in UTC epochs in milliseconds
+       * </pre>
+       *
+       * <code>optional int64 timetabled_latest_utc_date_time_ms = 10;</code>
        */
-      public boolean hasTimetabledLatestDateTime() {
+      public boolean hasTimetabledLatestUtcDateTimeMs() {
         return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
-       * <code>optional string timetabled_latest_date_time = 10;</code>
+       * <pre>
+       *All timestamps are defined in UTC epochs in milliseconds
+       * </pre>
+       *
+       * <code>optional int64 timetabled_latest_utc_date_time_ms = 10;</code>
        */
-      public java.lang.String getTimetabledLatestDateTime() {
-        java.lang.Object ref = timetabledLatestDateTime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            timetabledLatestDateTime_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getTimetabledLatestUtcDateTimeMs() {
+        return timetabledLatestUtcDateTimeMs_;
       }
       /**
-       * <code>optional string timetabled_latest_date_time = 10;</code>
+       * <pre>
+       *All timestamps are defined in UTC epochs in milliseconds
+       * </pre>
+       *
+       * <code>optional int64 timetabled_latest_utc_date_time_ms = 10;</code>
        */
-      public com.google.protobuf.ByteString
-          getTimetabledLatestDateTimeBytes() {
-        java.lang.Object ref = timetabledLatestDateTime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          timetabledLatestDateTime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string timetabled_latest_date_time = 10;</code>
-       */
-      public Builder setTimetabledLatestDateTime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000200;
-        timetabledLatestDateTime_ = value;
+      public Builder setTimetabledLatestUtcDateTimeMs(long value) {
+        bitField0_ |= 0x00000200;
+        timetabledLatestUtcDateTimeMs_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string timetabled_latest_date_time = 10;</code>
+       * <pre>
+       *All timestamps are defined in UTC epochs in milliseconds
+       * </pre>
+       *
+       * <code>optional int64 timetabled_latest_utc_date_time_ms = 10;</code>
        */
-      public Builder clearTimetabledLatestDateTime() {
+      public Builder clearTimetabledLatestUtcDateTimeMs() {
         bitField0_ = (bitField0_ & ~0x00000200);
-        timetabledLatestDateTime_ = getDefaultInstance().getTimetabledLatestDateTime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string timetabled_latest_date_time = 10;</code>
-       */
-      public Builder setTimetabledLatestDateTimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000200;
-        timetabledLatestDateTime_ = value;
+        timetabledLatestUtcDateTimeMs_ = 0L;
         onChanged();
         return this;
       }
 
-      private java.lang.Object targetDateTime_ = "";
+      private long targetUtcDateTimeMs_ ;
       /**
-       * <code>optional string target_date_time = 11;</code>
+       * <code>optional int64 target_utc_date_time_ms = 11;</code>
        */
-      public boolean hasTargetDateTime() {
+      public boolean hasTargetUtcDateTimeMs() {
         return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
-       * <code>optional string target_date_time = 11;</code>
+       * <code>optional int64 target_utc_date_time_ms = 11;</code>
        */
-      public java.lang.String getTargetDateTime() {
-        java.lang.Object ref = targetDateTime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            targetDateTime_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getTargetUtcDateTimeMs() {
+        return targetUtcDateTimeMs_;
       }
       /**
-       * <code>optional string target_date_time = 11;</code>
+       * <code>optional int64 target_utc_date_time_ms = 11;</code>
        */
-      public com.google.protobuf.ByteString
-          getTargetDateTimeBytes() {
-        java.lang.Object ref = targetDateTime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          targetDateTime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string target_date_time = 11;</code>
-       */
-      public Builder setTargetDateTime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000400;
-        targetDateTime_ = value;
+      public Builder setTargetUtcDateTimeMs(long value) {
+        bitField0_ |= 0x00000400;
+        targetUtcDateTimeMs_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string target_date_time = 11;</code>
+       * <code>optional int64 target_utc_date_time_ms = 11;</code>
        */
-      public Builder clearTargetDateTime() {
+      public Builder clearTargetUtcDateTimeMs() {
         bitField0_ = (bitField0_ & ~0x00000400);
-        targetDateTime_ = getDefaultInstance().getTargetDateTime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string target_date_time = 11;</code>
-       */
-      public Builder setTargetDateTimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000400;
-        targetDateTime_ = value;
+        targetUtcDateTimeMs_ = 0L;
         onChanged();
         return this;
       }
 
-      private java.lang.Object estimatedDateTime_ = "";
+      private long estimatedUtcDateTimeMs_ ;
       /**
-       * <code>optional string estimated_date_time = 12;</code>
+       * <code>optional int64 estimated_utc_date_time_ms = 12;</code>
        */
-      public boolean hasEstimatedDateTime() {
+      public boolean hasEstimatedUtcDateTimeMs() {
         return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
-       * <code>optional string estimated_date_time = 12;</code>
+       * <code>optional int64 estimated_utc_date_time_ms = 12;</code>
        */
-      public java.lang.String getEstimatedDateTime() {
-        java.lang.Object ref = estimatedDateTime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            estimatedDateTime_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getEstimatedUtcDateTimeMs() {
+        return estimatedUtcDateTimeMs_;
       }
       /**
-       * <code>optional string estimated_date_time = 12;</code>
+       * <code>optional int64 estimated_utc_date_time_ms = 12;</code>
        */
-      public com.google.protobuf.ByteString
-          getEstimatedDateTimeBytes() {
-        java.lang.Object ref = estimatedDateTime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          estimatedDateTime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string estimated_date_time = 12;</code>
-       */
-      public Builder setEstimatedDateTime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000800;
-        estimatedDateTime_ = value;
+      public Builder setEstimatedUtcDateTimeMs(long value) {
+        bitField0_ |= 0x00000800;
+        estimatedUtcDateTimeMs_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string estimated_date_time = 12;</code>
+       * <code>optional int64 estimated_utc_date_time_ms = 12;</code>
        */
-      public Builder clearEstimatedDateTime() {
+      public Builder clearEstimatedUtcDateTimeMs() {
         bitField0_ = (bitField0_ & ~0x00000800);
-        estimatedDateTime_ = getDefaultInstance().getEstimatedDateTime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string estimated_date_time = 12;</code>
-       */
-      public Builder setEstimatedDateTimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000800;
-        estimatedDateTime_ = value;
+        estimatedUtcDateTimeMs_ = 0L;
         onChanged();
         return this;
       }
 
-      private java.lang.Object observedDateTime_ = "";
+      private long observedUtcDateTimeMs_ ;
       /**
-       * <code>optional string observed_date_time = 13;</code>
+       * <code>optional int64 observed_utc_date_time_ms = 13;</code>
        */
-      public boolean hasObservedDateTime() {
+      public boolean hasObservedUtcDateTimeMs() {
         return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
-       * <code>optional string observed_date_time = 13;</code>
+       * <code>optional int64 observed_utc_date_time_ms = 13;</code>
        */
-      public java.lang.String getObservedDateTime() {
-        java.lang.Object ref = observedDateTime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            observedDateTime_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getObservedUtcDateTimeMs() {
+        return observedUtcDateTimeMs_;
       }
       /**
-       * <code>optional string observed_date_time = 13;</code>
+       * <code>optional int64 observed_utc_date_time_ms = 13;</code>
        */
-      public com.google.protobuf.ByteString
-          getObservedDateTimeBytes() {
-        java.lang.Object ref = observedDateTime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          observedDateTime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string observed_date_time = 13;</code>
-       */
-      public Builder setObservedDateTime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00001000;
-        observedDateTime_ = value;
+      public Builder setObservedUtcDateTimeMs(long value) {
+        bitField0_ |= 0x00001000;
+        observedUtcDateTimeMs_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string observed_date_time = 13;</code>
+       * <code>optional int64 observed_utc_date_time_ms = 13;</code>
        */
-      public Builder clearObservedDateTime() {
+      public Builder clearObservedUtcDateTimeMs() {
         bitField0_ = (bitField0_ & ~0x00001000);
-        observedDateTime_ = getDefaultInstance().getObservedDateTime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string observed_date_time = 13;</code>
-       */
-      public Builder setObservedDateTimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00001000;
-        observedDateTime_ = value;
+        observedUtcDateTimeMs_ = 0L;
         onChanged();
         return this;
       }
@@ -2251,34 +1975,34 @@ public final class PubtransTableProtos {
         return this;
       }
 
-      private long lastModifiedUtcDateTime_ ;
+      private long lastModifiedUtcDateTimeMs_ ;
       /**
-       * <code>required int64 last_modified_utc_date_time = 17;</code>
+       * <code>required int64 last_modified_utc_date_time_ms = 17;</code>
        */
-      public boolean hasLastModifiedUtcDateTime() {
+      public boolean hasLastModifiedUtcDateTimeMs() {
         return ((bitField0_ & 0x00010000) == 0x00010000);
       }
       /**
-       * <code>required int64 last_modified_utc_date_time = 17;</code>
+       * <code>required int64 last_modified_utc_date_time_ms = 17;</code>
        */
-      public long getLastModifiedUtcDateTime() {
-        return lastModifiedUtcDateTime_;
+      public long getLastModifiedUtcDateTimeMs() {
+        return lastModifiedUtcDateTimeMs_;
       }
       /**
-       * <code>required int64 last_modified_utc_date_time = 17;</code>
+       * <code>required int64 last_modified_utc_date_time_ms = 17;</code>
        */
-      public Builder setLastModifiedUtcDateTime(long value) {
+      public Builder setLastModifiedUtcDateTimeMs(long value) {
         bitField0_ |= 0x00010000;
-        lastModifiedUtcDateTime_ = value;
+        lastModifiedUtcDateTimeMs_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int64 last_modified_utc_date_time = 17;</code>
+       * <code>required int64 last_modified_utc_date_time_ms = 17;</code>
        */
-      public Builder clearLastModifiedUtcDateTime() {
+      public Builder clearLastModifiedUtcDateTimeMs() {
         bitField0_ = (bitField0_ & ~0x00010000);
-        lastModifiedUtcDateTime_ = 0L;
+        lastModifiedUtcDateTimeMs_ = 0L;
         onChanged();
         return this;
       }
@@ -3885,7 +3609,7 @@ public final class PubtransTableProtos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025pubtrans-tables.proto\022\005proto\"\264\004\n\006Commo" +
+      "\n\025pubtrans-tables.proto\022\005proto\"\323\004\n\006Commo" +
       "n\022\031\n\016schema_version\030\001 \002(\005:\0011\022\n\n\002id\030\002 \002(\003" +
       "\022&\n\036is_on_dated_vehicle_journey_id\030\003 \002(\003" +
       "\022*\n\"is_on_monitored_vehicle_journey_id\030\004" +
@@ -3894,19 +3618,20 @@ public final class PubtransTableProtos {
       "n_point_gid\030\006 \002(\003\022\032\n\022visit_count_number\030" +
       "\007 \002(\005\0220\n(is_targeted_at_journey_pattern_" +
       "point_gid\030\010 \001(\003\0221\n)was_observed_at_journ" +
-      "ey_pattern_point_gid\030\t \001(\003\022#\n\033timetabled" +
-      "_latest_date_time\030\n \001(\t\022\030\n\020target_date_t" +
-      "ime\030\013 \001(\t\022\033\n\023estimated_date_time\030\014 \001(\t\022\032" +
-      "\n\022observed_date_time\030\r \001(\t\022\r\n\005state\030\016 \002(" +
-      "\003\022\014\n\004type\030\017 \002(\003\022\027\n\017is_valid_yes_no\030\020 \002(\010" +
-      "\022#\n\033last_modified_utc_date_time\030\021 \002(\003\"+\n" +
-      "\nROIArrival\022\035\n\006common\030\001 \002(\0132\r.proto.Comm" +
-      "on\"\234\001\n\014ROIDeparture\022\035\n\006common\030\001 \002(\0132\r.pr" +
-      "oto.Common\022\"\n\032has_destination_display_id" +
-      "\030\002 \001(\003\022%\n\035has_destination_stop_area_gid\030" +
-      "\003 \001(\003\022\"\n\032has_service_requirement_id\030\004 \001(" +
-      "\003B6\n\037fi.hsl.common.transitdata.protoB\023Pu" +
-      "btransTableProtos"
+      "ey_pattern_point_gid\030\t \001(\003\022*\n\"timetabled" +
+      "_latest_utc_date_time_ms\030\n \001(\003\022\037\n\027target" +
+      "_utc_date_time_ms\030\013 \001(\003\022\"\n\032estimated_utc" +
+      "_date_time_ms\030\014 \001(\003\022!\n\031observed_utc_date" +
+      "_time_ms\030\r \001(\003\022\r\n\005state\030\016 \002(\003\022\014\n\004type\030\017 " +
+      "\002(\003\022\027\n\017is_valid_yes_no\030\020 \002(\010\022&\n\036last_mod" +
+      "ified_utc_date_time_ms\030\021 \002(\003\"+\n\nROIArriv" +
+      "al\022\035\n\006common\030\001 \002(\0132\r.proto.Common\"\234\001\n\014RO" +
+      "IDeparture\022\035\n\006common\030\001 \002(\0132\r.proto.Commo" +
+      "n\022\"\n\032has_destination_display_id\030\002 \001(\003\022%\n" +
+      "\035has_destination_stop_area_gid\030\003 \001(\003\022\"\n\032" +
+      "has_service_requirement_id\030\004 \001(\003B6\n\037fi.h" +
+      "sl.common.transitdata.protoB\023PubtransTab" +
+      "leProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3925,7 +3650,7 @@ public final class PubtransTableProtos {
     internal_static_proto_Common_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Common_descriptor,
-        new java.lang.String[] { "SchemaVersion", "Id", "IsOnDatedVehicleJourneyId", "IsOnMonitoredVehicleJourneyId", "JourneyPatternSequenceNumber", "IsTimetabledAtJourneyPatternPointGid", "VisitCountNumber", "IsTargetedAtJourneyPatternPointGid", "WasObservedAtJourneyPatternPointGid", "TimetabledLatestDateTime", "TargetDateTime", "EstimatedDateTime", "ObservedDateTime", "State", "Type", "IsValidYesNo", "LastModifiedUtcDateTime", });
+        new java.lang.String[] { "SchemaVersion", "Id", "IsOnDatedVehicleJourneyId", "IsOnMonitoredVehicleJourneyId", "JourneyPatternSequenceNumber", "IsTimetabledAtJourneyPatternPointGid", "VisitCountNumber", "IsTargetedAtJourneyPatternPointGid", "WasObservedAtJourneyPatternPointGid", "TimetabledLatestUtcDateTimeMs", "TargetUtcDateTimeMs", "EstimatedUtcDateTimeMs", "ObservedUtcDateTimeMs", "State", "Type", "IsValidYesNo", "LastModifiedUtcDateTimeMs", });
     internal_static_proto_ROIArrival_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ROIArrival_fieldAccessorTable = new
