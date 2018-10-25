@@ -147,13 +147,6 @@ public final class InternalMessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               schemaVersion_ = input.readInt32();
@@ -190,12 +183,20 @@ public final class InternalMessages {
             }
             case 56: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status value = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(7, rawValue);
               } else {
                 bitField0_ |= 0x00000040;
                 status_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
               }
               break;
             }
@@ -216,6 +217,7 @@ public final class InternalMessages {
       return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_TripCancellation_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_TripCancellation_fieldAccessorTable
@@ -528,11 +530,13 @@ public final class InternalMessages {
      * <code>required .proto.TripCancellation.Status status = 7;</code>
      */
     public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status getStatus() {
+      @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status.valueOf(status_);
       return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status.RUNNING : result;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -550,6 +554,7 @@ public final class InternalMessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -576,6 +581,7 @@ public final class InternalMessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -769,6 +775,7 @@ public final class InternalMessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -776,6 +783,7 @@ public final class InternalMessages {
     public static Builder newBuilder(fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -799,6 +807,7 @@ public final class InternalMessages {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_TripCancellation_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_TripCancellation_fieldAccessorTable
@@ -821,6 +830,7 @@ public final class InternalMessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         schemaVersion_ = 1;
@@ -840,15 +850,18 @@ public final class InternalMessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_TripCancellation_descriptor;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation getDefaultInstanceForType() {
         return fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.getDefaultInstance();
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation build() {
         fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation result = buildPartial();
         if (!result.isInitialized()) {
@@ -857,6 +870,7 @@ public final class InternalMessages {
         return result;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation buildPartial() {
         fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation result = new fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation(this);
         int from_bitField0_ = bitField0_;
@@ -894,32 +908,39 @@ public final class InternalMessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation) {
           return mergeFrom((fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation)other);
@@ -965,6 +986,7 @@ public final class InternalMessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasSchemaVersion()) {
           return false;
@@ -975,6 +997,7 @@ public final class InternalMessages {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1373,6 +1396,7 @@ public final class InternalMessages {
        * <code>required .proto.TripCancellation.Status status = 7;</code>
        */
       public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status getStatus() {
+        @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status.valueOf(status_);
         return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status.RUNNING : result;
       }
@@ -1397,11 +1421,13 @@ public final class InternalMessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1423,6 +1449,7 @@ public final class InternalMessages {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<TripCancellation>
         PARSER = new com.google.protobuf.AbstractParser<TripCancellation>() {
+      @java.lang.Override
       public TripCancellation parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1440,6 +1467,7 @@ public final class InternalMessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
