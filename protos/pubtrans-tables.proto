@@ -17,14 +17,14 @@ message Common {
     optional int64 is_targeted_at_journey_pattern_point_gid = 8;
     optional int64 was_observed_at_journey_pattern_point_gid = 9;
     //All timestamps are defined in UTC epochs in milliseconds
-    optional int64 timetabled_latest_date_time_ms = 10;
-    optional int64 target_date_time_ms = 11;
-    optional int64 estimated_date_time_ms = 12;
-    optional int64 observed_date_time_ms = 13;
+    optional int64 timetabled_latest_utc_date_time_ms = 10;
+    optional int64 target_utc_date_time_ms = 11;
+    optional int64 estimated_utc_date_time_ms = 12;
+    optional int64 observed_utc_date_time_ms = 13;
     required int64 state = 14;
     required int64 type = 15;
     required bool is_valid_yes_no = 16;
-    required int64 last_modified_date_time_ms = 17;
+    required int64 last_modified_utc_date_time_ms = 17;
 }
 
 message ROIArrival {
