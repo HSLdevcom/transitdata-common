@@ -1,6 +1,7 @@
 package fi.hsl.common.pulsar;
 
 import com.typesafe.config.Config;
+import org.apache.pulsar.client.admin.PulsarAdmin;
 import org.apache.pulsar.client.api.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +20,7 @@ public class PulsarApplication implements AutoCloseable {
     Consumer<byte[]> consumer;
     Producer<byte[]> producer;
     PulsarClient client;
+    PulsarAdmin admin;
     Jedis jedis;
 
     PulsarApplication() {
@@ -61,13 +63,20 @@ public class PulsarApplication implements AutoCloseable {
             consumer = createConsumer(client, config);
         }
 
+        if (config.getBoolean("pulsar.admin.enabled")) {
+            admin = createAdmin(
+                    config.getString("pulsar.admin.host"),
+                    config.getInt("pulsar.admin.port")
+            );
+        }
+
         if (config.getBoolean("redis.enabled")) {
             jedis = createRedisClient(
                     config.getString("redis.host"),
                     config.getInt("redis.port"));
         }
 
-        return createContext(config, client, consumer, producer, jedis);
+        return createContext(config, client, consumer, producer, jedis, admin);
     }
 
     protected Jedis createRedisClient(String redisHost, int port) {
@@ -87,13 +96,16 @@ public class PulsarApplication implements AutoCloseable {
                 .build();
     }
 
-    protected PulsarApplicationContext createContext(Config config, PulsarClient client, Consumer<byte[]> consumer, Producer<byte[]> producer, Jedis jedis) {
+    protected PulsarApplicationContext createContext(Config config, PulsarClient client,
+                                                     Consumer<byte[]> consumer, Producer<byte[]> producer,
+                                                     Jedis jedis, PulsarAdmin admin) {
         PulsarApplicationContext context = new PulsarApplicationContext();
         context.setConfig(config);
         context.setClient(client);
         context.setConsumer(consumer);
         context.setProducer(producer);
         context.setJedis(jedis);
+        context.setAdmin(admin);
         return context;
     }
 
@@ -142,6 +154,14 @@ public class PulsarApplication implements AutoCloseable {
         return producer;
     }
 
+    protected PulsarAdmin createAdmin(String adminHost, int adminPort) throws PulsarClientException {
+        final String adminHttpUrl = String.format("http://%s:%d", adminHost, adminPort);
+        log.info("Connecting to Pulsar Admin at " + adminHttpUrl);
+        return PulsarAdmin.builder()
+                .serviceHttpUrl(adminHttpUrl)
+                .build();
+    }
+
     public void launchWithHandler(IMessageHandler handler) throws Exception {
         if (consumer == null) {
             throw new Exception("Consumer disabled, cannot start the handler");
@@ -186,6 +206,8 @@ public class PulsarApplication implements AutoCloseable {
         } catch (PulsarClientException e) {
             log.error("Failed to close pulsar client", e);
         }
+        if (admin != null)
+            admin.close();
         if (jedis != null)
             jedis.close();
     }
