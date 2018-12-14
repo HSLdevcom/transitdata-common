@@ -19,7 +19,7 @@ cache:
 script:
   - mvn test
   - mvn verify -P integration-test
-  - mvn clean package
+  - mvn --quiet clean package
   - ls -la target/
 
 deploy:
