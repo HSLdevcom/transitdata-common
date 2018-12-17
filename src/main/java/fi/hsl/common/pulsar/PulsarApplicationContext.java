@@ -1,6 +1,7 @@
 package fi.hsl.common.pulsar;
 
 import com.typesafe.config.Config;
+import org.apache.pulsar.client.admin.PulsarAdmin;
 import org.apache.pulsar.client.api.Consumer;
 import org.apache.pulsar.client.api.Producer;
 import org.apache.pulsar.client.api.PulsarClient;
@@ -13,6 +14,7 @@ public class PulsarApplicationContext {
     private Consumer<byte[]> consumer;
     private Producer<byte[]> producer;
     private PulsarClient client;
+    private PulsarAdmin admin;
     private Jedis jedis;
 
     public Config getConfig() {
@@ -53,5 +55,13 @@ public class PulsarApplicationContext {
 
     protected void setJedis(Jedis jedis) {
         this.jedis = jedis;
+    }
+
+    public PulsarAdmin getAdmin() {
+        return admin;
+    }
+
+    protected void setAdmin(PulsarAdmin admin) {
+        this.admin = admin;
     }
 }
