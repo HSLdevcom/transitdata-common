@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>fi.hsl</groupId>
     <artifactId>transitdata-common</artifactId>
-    <version>0.5.0</version>
+    <version>0.5.1</version>
     <packaging>jar</packaging>
     <name>Common utilities for Transitdata projects</name>
     <properties>
@@ -167,6 +167,25 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.coderplus.maven.plugins</groupId>
+                <artifactId>copy-rename-maven-plugin</artifactId>
+                <version>1.0</version>
+                <executions>
+                    <execution>
+                        <id>copy-and-rename-pom-file</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <sourceFile>${project.basedir}/pom.xml</sourceFile>
+                            <destinationFile>${project.build.directory}/${project.build.finalName}.pom</destinationFile>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
 
             <plugin>

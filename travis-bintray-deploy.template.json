@@ -14,6 +14,12 @@
   "files": [
     {
       "includePattern": "target/(.*\.jar)",
+      "excludePattern": "target/archive-tmp/.*",
+      "uploadPattern": "fi/hsl/transitdata-common/POM_VERSION/$1"
+    },
+    {
+      "includePattern": "target/(.*\.pom)",
+      "excludePattern": "target/maven-archiver/.*",
       "uploadPattern": "fi/hsl/transitdata-common/POM_VERSION/$1"
     }
   ]
