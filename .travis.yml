@@ -30,7 +30,7 @@ deploy:
     script: bash -c './prepare-bintray.sh'
     skip_cleanup: true
     on:
-      branch: master
+      branch: test-deploy
   - provider: bintray
     file: "./travis-bintray-deploy.json"
     user: "${BINTRAY_USER}"
