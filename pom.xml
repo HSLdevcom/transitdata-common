@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>fi.hsl</groupId>
     <artifactId>transitdata-common</artifactId>
-    <version>0.5.1</version>
+    <version>0.6.0</version>
     <packaging>jar</packaging>
     <name>Common utilities for Transitdata projects</name>
     <properties>
@@ -150,7 +150,7 @@
                             <goal>single</goal>
                         </goals>
                         <configuration>
-                            <appendAssemblyId>false</appendAssemblyId>
+                            <appendAssemblyId>true</appendAssemblyId>
                             <archiveBaseDirectory>${project.basedir}</archiveBaseDirectory>
                             <descriptorRefs>
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
@@ -184,6 +184,36 @@
                             <sourceFile>${project.basedir}/pom.xml</sourceFile>
                             <destinationFile>${project.build.directory}/${project.build.finalName}.pom</destinationFile>
                         </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- create a complete jar for testing in other environments -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>test-jar-with-dependencies.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
