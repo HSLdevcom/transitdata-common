@@ -36,6 +36,8 @@ public class ITPulsarApplication {
     private static final String TENANT = "hsl";
     private static final String NAMESPACE = "transitdata";
 
+    static final String CONFIG_FILE = "integration-test.conf";
+
     @ClassRule
     public static GenericContainer redis = MockContainers.newRedisContainer();
 
@@ -74,30 +76,13 @@ public class ITPulsarApplication {
 
     @Test
     public void readConfig() {
-        defaultConfig();
+        PulsarMockApplication.readConfig(CONFIG_FILE);
     }
 
-    private Config defaultConfig() {
-        Config config = ConfigParser.createConfig("integration-test.conf");
-        assertNotNull(config);
-        return config;
-    }
-
-    private Config defaultConfigWithOverride(String key, Object value) {
-        Map<String, Object> overrides = new HashMap<>();
-        overrides.put(key, value);
-        return defaultConfigWithOverrides(overrides);
-    }
-
-
-    private Config defaultConfigWithOverrides(Map<String, Object> overrides) {
-        Config configOverrides = ConfigFactory.parseMap(overrides);
-        return ConfigParser.mergeConfigs(defaultConfig(), configOverrides);
-    }
 
     @Test
     public void testPulsar() throws Exception {
-        Config base = defaultConfig();
+        Config base = PulsarMockApplication.readConfig(CONFIG_FILE);
 
         PulsarApplication app = PulsarMockApplication.newInstance(base, redis, pulsar);
         assertNotNull(app);
@@ -128,7 +113,7 @@ public class ITPulsarApplication {
 
     }
 
-    private static String formatTopicName(String topic) {
+    public static String formatTopicName(String topic) {
         return "persistent://" + TENANT + "/" + NAMESPACE + "/" + topic;
     }
 
@@ -138,7 +123,7 @@ public class ITPulsarApplication {
         o1.put("pulsar.consumer.enabled", false);
         o1.put("redis.enabled", false);
         o1.put("pulsar.producer.topic", formatTopicName("test-1"));
-        Config producer1Config = defaultConfigWithOverrides(o1);
+        Config producer1Config = PulsarMockApplication.readConfigWithOverrides(CONFIG_FILE, o1);
 
         PulsarApplication app = PulsarMockApplication.newInstance(producer1Config, redis, pulsar);
         assertNotNull(app);
@@ -146,7 +131,7 @@ public class ITPulsarApplication {
         Producer<byte[]> producer = app.getContext().getProducer();
 
         //Create a second producer but bind into different topic
-        Config producer2Config = defaultConfigWithOverride("pulsar.producer.topic", formatTopicName("test-2"));
+        Config producer2Config = PulsarMockApplication.readConfigWithOverride(CONFIG_FILE, "pulsar.producer.topic", formatTopicName("test-2"));
         Producer<byte[]> secondProducer = app.createProducer(app.client, producer2Config);
 
         logger.info("Multi-topic Pulsar Application created, testing to send a message");
@@ -155,7 +140,7 @@ public class ITPulsarApplication {
         Map<String, Object> overrides = new HashMap<>();
         overrides.put("pulsar.consumer.multipleTopics", true);
         overrides.put("pulsar.consumer.topicsPattern", formatTopicName("test-(1|2)"));
-        Config consumerConfig = defaultConfigWithOverrides(overrides);
+        Config consumerConfig = PulsarMockApplication.readConfigWithOverrides(CONFIG_FILE, overrides);
         Consumer<byte[]> consumer = app.createConsumer(app.client, consumerConfig);
 
         logger.debug("Consumer topic: " + consumer.getTopic());
@@ -190,7 +175,7 @@ public class ITPulsarApplication {
 
     @Test
     public void testPulsarAutoClose() throws Exception {
-        Config base = defaultConfig();
+        Config base = PulsarMockApplication.readConfig(CONFIG_FILE);
 
         Producer<byte[]> producer;
         Consumer<byte[]> consumer;
@@ -221,7 +206,7 @@ public class ITPulsarApplication {
     public void testInitFailureOnRedis() {
         Map<String, Object> invalid = new HashMap<>();
         invalid.put("redis.port", 9999);
-        Config config = defaultConfigWithOverrides(invalid);
+        Config config = PulsarMockApplication.readConfigWithOverrides(CONFIG_FILE, invalid);
         testInitFailure(config);
     }
 
@@ -229,7 +214,7 @@ public class ITPulsarApplication {
     public void testInitFailureOnPulsar() {
         Map<String, Object> invalid = new HashMap<>();
         invalid.put("pulsar.producer.topic", "illegal://topic name");
-        Config config = defaultConfigWithOverrides(invalid);
+        Config config = PulsarMockApplication.readConfigWithOverrides(CONFIG_FILE, invalid);
         testInitFailure(config);
     }
 
@@ -238,7 +223,7 @@ public class ITPulsarApplication {
         Map<String, Object> overrides = new HashMap<>();
         overrides.put("pulsar.consumer.multipleTopics", true);
         overrides.put("pulsar.consumer.topicsPattern", "?transitdata/pubtrans/departure"); // ? is invalid in this regex
-        Config config = defaultConfigWithOverrides(overrides);
+        Config config = PulsarMockApplication.readConfigWithOverrides(CONFIG_FILE, overrides);
         testInitFailure(config);
     }
 
