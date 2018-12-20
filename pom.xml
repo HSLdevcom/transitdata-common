@@ -12,6 +12,15 @@
         <pulsar.version>2.1.0-incubating</pulsar.version>
         <testcontainers.version>1.9.0</testcontainers.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>bintray-for-xeger</id>
+            <name>bintray</name>
+            <url>https://dl.bintray.com/lorislab/maven</url>
+        </repository>
+    </repositories>
+
     <profiles>
         <!-- The Configuration of the unit-test profile -->
         <profile>
@@ -118,6 +127,13 @@
             <groupId>org.testcontainers</groupId>
             <artifactId>pulsar</artifactId>
             <version>${testcontainers.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>nl.flotsam</groupId>
+            <artifactId>xeger</artifactId>
+            <version>1.0.0-lorislab-1</version>
             <scope>test</scope>
         </dependency>
 
