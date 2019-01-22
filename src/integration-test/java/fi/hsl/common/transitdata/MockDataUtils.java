@@ -76,7 +76,7 @@ public class MockDataUtils {
         commonBuilder.setSchemaVersion(commonBuilder.getSchemaVersion());
 
         commonBuilder.setId(generateValidJoreId());
-        commonBuilder.setIsTimetabledAtJourneyPatternPointGid(1);
+        commonBuilder.setIsTimetabledAtJourneyPatternPointGid(generateValidJoreId());
         commonBuilder.setVisitCountNumber(2);
         commonBuilder.setIsValidYesNo(true);
 
