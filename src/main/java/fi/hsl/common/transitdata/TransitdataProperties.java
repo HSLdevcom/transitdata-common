@@ -13,6 +13,9 @@ public class TransitdataProperties {
     public static final String REDIS_PREFIX_DVJ = "dvj:";
     public static final String REDIS_PREFIX_JORE_ID = "jore:";
 
+    // Timestamp as Epoch when this message has been initially fed to Pulsar by some of the source components.
+    public static final String KEY_SOURCE_MESSAGE_TIMESTAMP_MS = "source-ts";
+
     public static final String KEY_PROTOBUF_SCHEMA = "protobuf-schema";
     public static final String KEY_SCHEMA_VERSION = "schema-version";
     public static final String KEY_DVJ_ID = "dvj-id";
