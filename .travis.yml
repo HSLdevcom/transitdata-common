@@ -30,11 +30,11 @@ deploy:
     script: bash -c './prepare-bintray.sh'
     skip_cleanup: true
     on:
-      branch: bug/fix-bintray-uploads
+      branch: master
   - provider: bintray
     file: "./travis-bintray-deploy.json"
     user: "${BINTRAY_USER}"
     key: "${BINTRAY_KEY}"
     skip_cleanup: true
     on:
-      branch: bug/fix-bintray-uploads
+      branch: master
