@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>fi.hsl</groupId>
     <artifactId>transitdata-common</artifactId>
-    <version>0.6.1</version>
+    <version>0.6.2</version>
     <packaging>jar</packaging>
     <name>Common utilities for Transitdata projects</name>
     <properties>
@@ -12,6 +12,7 @@
         <pulsar.version>2.1.0-incubating</pulsar.version>
         <testcontainers.version>1.9.0</testcontainers.version>
     </properties>
+
     <profiles>
         <!-- The Configuration of the unit-test profile -->
         <profile>
