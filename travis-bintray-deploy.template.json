@@ -14,7 +14,7 @@
   "files": [
     {
       "includePattern": "target/(.*\.jar)",
-      "excludePattern": "target/archive-tmp/.*",
+      "excludePattern": "target/(.*\jar-with-dependencies.jar)",
       "uploadPattern": "fi/hsl/transitdata-common/POM_VERSION/$1"
     },
     {
