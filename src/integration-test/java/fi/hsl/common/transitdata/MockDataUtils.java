@@ -1,7 +1,6 @@
 package fi.hsl.common.transitdata;
 
 import fi.hsl.common.transitdata.proto.PubtransTableProtos;
-import nl.flotsam.xeger.Xeger;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,8 +16,18 @@ public class MockDataUtils {
     private MockDataUtils() {}
 
     public static String generateValidRouteName() {
-        Xeger generator = new Xeger(JORE_ROUTE_NAME_REGEX);
-        return generator.generate();
+        long prefix = generateLongWithMinAndMax(0, 9999);
+        char c = generateRandomUppercaseAsciiChar();
+
+        String route = String.format("%04d%c", prefix, c);
+        double random = Math.random();
+        if (random > 0.66666) {
+            route += Long.toString(generateLongWithMinAndMax(0, 9));
+        }
+        else if (random > 0.3333) {
+            route += generateRandomUppercaseAsciiChar();
+        }
+        return route;
     }
 
     public static long generateValidJoreId() {
@@ -36,6 +45,10 @@ public class MockDataUtils {
     private static long generateLongWithMinAndMax(long min, long max) {
         long add = (long)(Math.random() * (max - min));
         return min + add;
+    }
+
+    private static char generateRandomUppercaseAsciiChar() {
+        return (char) generateLongWithMinAndMax(65, 90); //From uppercase A to Z
     }
 
     public static long generateValidDateTimeMs() {

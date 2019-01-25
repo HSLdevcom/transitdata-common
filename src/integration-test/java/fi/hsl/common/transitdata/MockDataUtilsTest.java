@@ -19,11 +19,13 @@ public class MockDataUtilsTest {
 
     @Test
     public void testRouteNameGenerator() {
-        String route = MockDataUtils.generateValidRouteName();
-        Pattern p = Pattern.compile(MockDataUtils.JORE_ROUTE_NAME_REGEX);
-        Matcher matcher = p.matcher(route);
-        assertTrue(matcher.matches());
-        logger.info(route);
+        for (int n = 0; n < 10000; n++) {
+            String route = MockDataUtils.generateValidRouteName();
+            //logger.info(route);
+            Pattern p = Pattern.compile(MockDataUtils.JORE_ROUTE_NAME_REGEX);
+            Matcher matcher = p.matcher(route);
+            assertTrue("testing route name " + route, matcher.matches());
+        }
     }
 
     @Test
