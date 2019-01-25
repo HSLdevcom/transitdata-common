@@ -6,15 +6,15 @@ option java_package = "fi.hsl.common.hfp.proto";
 option java_outer_classname = "Hfp";
 
 // Message format is specified here: https://digitransit.fi/en/developers/apis/4-realtime-api/vehicle-positions/
-// Metadata is parsed from the MQTT Topic name and the Payload from the JSON-payload
+// Topic is parsed from the detailed MQTT Topic name and the Payload from the JSON-payload
 
 message Data {
     required int32 SchemaVersion = 1 [default = 1];
-    optional Metadata meta = 2; // Should this be required also?
+    optional Topic topic = 2;
     required Payload payload = 3;
 }
 
-message Metadata {
+message Topic {
     required int32 SchemaVersion = 1 [default = 1];
 
     enum JourneyType {

@@ -28,29 +28,17 @@ public final class Hfp {
     int getSchemaVersion();
 
     /**
-     * <pre>
-     * Should this be required also?
-     * </pre>
-     *
-     * <code>optional .proto.Metadata meta = 2;</code>
+     * <code>optional .proto.Topic topic = 2;</code>
      */
-    boolean hasMeta();
+    boolean hasTopic();
     /**
-     * <pre>
-     * Should this be required also?
-     * </pre>
-     *
-     * <code>optional .proto.Metadata meta = 2;</code>
+     * <code>optional .proto.Topic topic = 2;</code>
      */
-    fi.hsl.common.hfp.proto.Hfp.Metadata getMeta();
+    fi.hsl.common.hfp.proto.Hfp.Topic getTopic();
     /**
-     * <pre>
-     * Should this be required also?
-     * </pre>
-     *
-     * <code>optional .proto.Metadata meta = 2;</code>
+     * <code>optional .proto.Topic topic = 2;</code>
      */
-    fi.hsl.common.hfp.proto.Hfp.MetadataOrBuilder getMetaOrBuilder();
+    fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder getTopicOrBuilder();
 
     /**
      * <code>required .proto.Payload payload = 3;</code>
@@ -111,14 +99,14 @@ public final class Hfp {
               break;
             }
             case 18: {
-              fi.hsl.common.hfp.proto.Hfp.Metadata.Builder subBuilder = null;
+              fi.hsl.common.hfp.proto.Hfp.Topic.Builder subBuilder = null;
               if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                subBuilder = meta_.toBuilder();
+                subBuilder = topic_.toBuilder();
               }
-              meta_ = input.readMessage(fi.hsl.common.hfp.proto.Hfp.Metadata.PARSER, extensionRegistry);
+              topic_ = input.readMessage(fi.hsl.common.hfp.proto.Hfp.Topic.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(meta_);
-                meta_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(topic_);
+                topic_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000002;
               break;
@@ -184,37 +172,25 @@ public final class Hfp {
       return schemaVersion_;
     }
 
-    public static final int META_FIELD_NUMBER = 2;
-    private fi.hsl.common.hfp.proto.Hfp.Metadata meta_;
+    public static final int TOPIC_FIELD_NUMBER = 2;
+    private fi.hsl.common.hfp.proto.Hfp.Topic topic_;
     /**
-     * <pre>
-     * Should this be required also?
-     * </pre>
-     *
-     * <code>optional .proto.Metadata meta = 2;</code>
+     * <code>optional .proto.Topic topic = 2;</code>
      */
-    public boolean hasMeta() {
+    public boolean hasTopic() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <pre>
-     * Should this be required also?
-     * </pre>
-     *
-     * <code>optional .proto.Metadata meta = 2;</code>
+     * <code>optional .proto.Topic topic = 2;</code>
      */
-    public fi.hsl.common.hfp.proto.Hfp.Metadata getMeta() {
-      return meta_ == null ? fi.hsl.common.hfp.proto.Hfp.Metadata.getDefaultInstance() : meta_;
+    public fi.hsl.common.hfp.proto.Hfp.Topic getTopic() {
+      return topic_ == null ? fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance() : topic_;
     }
     /**
-     * <pre>
-     * Should this be required also?
-     * </pre>
-     *
-     * <code>optional .proto.Metadata meta = 2;</code>
+     * <code>optional .proto.Topic topic = 2;</code>
      */
-    public fi.hsl.common.hfp.proto.Hfp.MetadataOrBuilder getMetaOrBuilder() {
-      return meta_ == null ? fi.hsl.common.hfp.proto.Hfp.Metadata.getDefaultInstance() : meta_;
+    public fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder getTopicOrBuilder() {
+      return topic_ == null ? fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance() : topic_;
     }
 
     public static final int PAYLOAD_FIELD_NUMBER = 3;
@@ -253,8 +229,8 @@ public final class Hfp {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (hasMeta()) {
-        if (!getMeta().isInitialized()) {
+      if (hasTopic()) {
+        if (!getTopic().isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -274,7 +250,7 @@ public final class Hfp {
         output.writeInt32(1, schemaVersion_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeMessage(2, getMeta());
+        output.writeMessage(2, getTopic());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeMessage(3, getPayload());
@@ -294,7 +270,7 @@ public final class Hfp {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getMeta());
+          .computeMessageSize(2, getTopic());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
@@ -321,10 +297,10 @@ public final class Hfp {
         result = result && (getSchemaVersion()
             == other.getSchemaVersion());
       }
-      result = result && (hasMeta() == other.hasMeta());
-      if (hasMeta()) {
-        result = result && getMeta()
-            .equals(other.getMeta());
+      result = result && (hasTopic() == other.hasTopic());
+      if (hasTopic()) {
+        result = result && getTopic()
+            .equals(other.getTopic());
       }
       result = result && (hasPayload() == other.hasPayload());
       if (hasPayload()) {
@@ -346,9 +322,9 @@ public final class Hfp {
         hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
         hash = (53 * hash) + getSchemaVersion();
       }
-      if (hasMeta()) {
-        hash = (37 * hash) + META_FIELD_NUMBER;
-        hash = (53 * hash) + getMeta().hashCode();
+      if (hasTopic()) {
+        hash = (37 * hash) + TOPIC_FIELD_NUMBER;
+        hash = (53 * hash) + getTopic().hashCode();
       }
       if (hasPayload()) {
         hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
@@ -482,7 +458,7 @@ public final class Hfp {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getMetaFieldBuilder();
+          getTopicFieldBuilder();
           getPayloadFieldBuilder();
         }
       }
@@ -491,10 +467,10 @@ public final class Hfp {
         super.clear();
         schemaVersion_ = 1;
         bitField0_ = (bitField0_ & ~0x00000001);
-        if (metaBuilder_ == null) {
-          meta_ = null;
+        if (topicBuilder_ == null) {
+          topic_ = null;
         } else {
-          metaBuilder_.clear();
+          topicBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
         if (payloadBuilder_ == null) {
@@ -538,10 +514,10 @@ public final class Hfp {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        if (metaBuilder_ == null) {
-          result.meta_ = meta_;
+        if (topicBuilder_ == null) {
+          result.topic_ = topic_;
         } else {
-          result.meta_ = metaBuilder_.build();
+          result.topic_ = topicBuilder_.build();
         }
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
@@ -603,8 +579,8 @@ public final class Hfp {
         if (other.hasSchemaVersion()) {
           setSchemaVersion(other.getSchemaVersion());
         }
-        if (other.hasMeta()) {
-          mergeMeta(other.getMeta());
+        if (other.hasTopic()) {
+          mergeTopic(other.getTopic());
         }
         if (other.hasPayload()) {
           mergePayload(other.getPayload());
@@ -622,8 +598,8 @@ public final class Hfp {
         if (!hasPayload()) {
           return false;
         }
-        if (hasMeta()) {
-          if (!getMeta().isInitialized()) {
+        if (hasTopic()) {
+          if (!getTopic().isInitialized()) {
             return false;
           }
         }
@@ -685,158 +661,122 @@ public final class Hfp {
         return this;
       }
 
-      private fi.hsl.common.hfp.proto.Hfp.Metadata meta_ = null;
+      private fi.hsl.common.hfp.proto.Hfp.Topic topic_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          fi.hsl.common.hfp.proto.Hfp.Metadata, fi.hsl.common.hfp.proto.Hfp.Metadata.Builder, fi.hsl.common.hfp.proto.Hfp.MetadataOrBuilder> metaBuilder_;
+          fi.hsl.common.hfp.proto.Hfp.Topic, fi.hsl.common.hfp.proto.Hfp.Topic.Builder, fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder> topicBuilder_;
       /**
-       * <pre>
-       * Should this be required also?
-       * </pre>
-       *
-       * <code>optional .proto.Metadata meta = 2;</code>
+       * <code>optional .proto.Topic topic = 2;</code>
        */
-      public boolean hasMeta() {
+      public boolean hasTopic() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <pre>
-       * Should this be required also?
-       * </pre>
-       *
-       * <code>optional .proto.Metadata meta = 2;</code>
+       * <code>optional .proto.Topic topic = 2;</code>
        */
-      public fi.hsl.common.hfp.proto.Hfp.Metadata getMeta() {
-        if (metaBuilder_ == null) {
-          return meta_ == null ? fi.hsl.common.hfp.proto.Hfp.Metadata.getDefaultInstance() : meta_;
+      public fi.hsl.common.hfp.proto.Hfp.Topic getTopic() {
+        if (topicBuilder_ == null) {
+          return topic_ == null ? fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance() : topic_;
         } else {
-          return metaBuilder_.getMessage();
+          return topicBuilder_.getMessage();
         }
       }
       /**
-       * <pre>
-       * Should this be required also?
-       * </pre>
-       *
-       * <code>optional .proto.Metadata meta = 2;</code>
+       * <code>optional .proto.Topic topic = 2;</code>
        */
-      public Builder setMeta(fi.hsl.common.hfp.proto.Hfp.Metadata value) {
-        if (metaBuilder_ == null) {
+      public Builder setTopic(fi.hsl.common.hfp.proto.Hfp.Topic value) {
+        if (topicBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          meta_ = value;
+          topic_ = value;
           onChanged();
         } else {
-          metaBuilder_.setMessage(value);
+          topicBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
         return this;
       }
       /**
-       * <pre>
-       * Should this be required also?
-       * </pre>
-       *
-       * <code>optional .proto.Metadata meta = 2;</code>
+       * <code>optional .proto.Topic topic = 2;</code>
        */
-      public Builder setMeta(
-          fi.hsl.common.hfp.proto.Hfp.Metadata.Builder builderForValue) {
-        if (metaBuilder_ == null) {
-          meta_ = builderForValue.build();
+      public Builder setTopic(
+          fi.hsl.common.hfp.proto.Hfp.Topic.Builder builderForValue) {
+        if (topicBuilder_ == null) {
+          topic_ = builderForValue.build();
           onChanged();
         } else {
-          metaBuilder_.setMessage(builderForValue.build());
+          topicBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
         return this;
       }
       /**
-       * <pre>
-       * Should this be required also?
-       * </pre>
-       *
-       * <code>optional .proto.Metadata meta = 2;</code>
+       * <code>optional .proto.Topic topic = 2;</code>
        */
-      public Builder mergeMeta(fi.hsl.common.hfp.proto.Hfp.Metadata value) {
-        if (metaBuilder_ == null) {
+      public Builder mergeTopic(fi.hsl.common.hfp.proto.Hfp.Topic value) {
+        if (topicBuilder_ == null) {
           if (((bitField0_ & 0x00000002) == 0x00000002) &&
-              meta_ != null &&
-              meta_ != fi.hsl.common.hfp.proto.Hfp.Metadata.getDefaultInstance()) {
-            meta_ =
-              fi.hsl.common.hfp.proto.Hfp.Metadata.newBuilder(meta_).mergeFrom(value).buildPartial();
+              topic_ != null &&
+              topic_ != fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance()) {
+            topic_ =
+              fi.hsl.common.hfp.proto.Hfp.Topic.newBuilder(topic_).mergeFrom(value).buildPartial();
           } else {
-            meta_ = value;
+            topic_ = value;
           }
           onChanged();
         } else {
-          metaBuilder_.mergeFrom(value);
+          topicBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
         return this;
       }
       /**
-       * <pre>
-       * Should this be required also?
-       * </pre>
-       *
-       * <code>optional .proto.Metadata meta = 2;</code>
+       * <code>optional .proto.Topic topic = 2;</code>
        */
-      public Builder clearMeta() {
-        if (metaBuilder_ == null) {
-          meta_ = null;
+      public Builder clearTopic() {
+        if (topicBuilder_ == null) {
+          topic_ = null;
           onChanged();
         } else {
-          metaBuilder_.clear();
+          topicBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
-       * <pre>
-       * Should this be required also?
-       * </pre>
-       *
-       * <code>optional .proto.Metadata meta = 2;</code>
+       * <code>optional .proto.Topic topic = 2;</code>
        */
-      public fi.hsl.common.hfp.proto.Hfp.Metadata.Builder getMetaBuilder() {
+      public fi.hsl.common.hfp.proto.Hfp.Topic.Builder getTopicBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
-        return getMetaFieldBuilder().getBuilder();
+        return getTopicFieldBuilder().getBuilder();
       }
       /**
-       * <pre>
-       * Should this be required also?
-       * </pre>
-       *
-       * <code>optional .proto.Metadata meta = 2;</code>
+       * <code>optional .proto.Topic topic = 2;</code>
        */
-      public fi.hsl.common.hfp.proto.Hfp.MetadataOrBuilder getMetaOrBuilder() {
-        if (metaBuilder_ != null) {
-          return metaBuilder_.getMessageOrBuilder();
+      public fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder getTopicOrBuilder() {
+        if (topicBuilder_ != null) {
+          return topicBuilder_.getMessageOrBuilder();
         } else {
-          return meta_ == null ?
-              fi.hsl.common.hfp.proto.Hfp.Metadata.getDefaultInstance() : meta_;
+          return topic_ == null ?
+              fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance() : topic_;
         }
       }
       /**
-       * <pre>
-       * Should this be required also?
-       * </pre>
-       *
-       * <code>optional .proto.Metadata meta = 2;</code>
+       * <code>optional .proto.Topic topic = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          fi.hsl.common.hfp.proto.Hfp.Metadata, fi.hsl.common.hfp.proto.Hfp.Metadata.Builder, fi.hsl.common.hfp.proto.Hfp.MetadataOrBuilder> 
-          getMetaFieldBuilder() {
-        if (metaBuilder_ == null) {
-          metaBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              fi.hsl.common.hfp.proto.Hfp.Metadata, fi.hsl.common.hfp.proto.Hfp.Metadata.Builder, fi.hsl.common.hfp.proto.Hfp.MetadataOrBuilder>(
-                  getMeta(),
+          fi.hsl.common.hfp.proto.Hfp.Topic, fi.hsl.common.hfp.proto.Hfp.Topic.Builder, fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder> 
+          getTopicFieldBuilder() {
+        if (topicBuilder_ == null) {
+          topicBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              fi.hsl.common.hfp.proto.Hfp.Topic, fi.hsl.common.hfp.proto.Hfp.Topic.Builder, fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder>(
+                  getTopic(),
                   getParentForChildren(),
                   isClean());
-          meta_ = null;
+          topic_ = null;
         }
-        return metaBuilder_;
+        return topicBuilder_;
       }
 
       private fi.hsl.common.hfp.proto.Hfp.Payload payload_ = null;
@@ -1009,8 +949,8 @@ public final class Hfp {
 
   }
 
-  public interface MetadataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:proto.Metadata)
+  public interface TopicOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.Topic)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1068,29 +1008,29 @@ public final class Hfp {
         getTopicVersionBytes();
 
     /**
-     * <code>required .proto.Metadata.JourneyType journey_type = 5;</code>
+     * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
      */
     boolean hasJourneyType();
     /**
-     * <code>required .proto.Metadata.JourneyType journey_type = 5;</code>
+     * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
      */
-    fi.hsl.common.hfp.proto.Hfp.Metadata.JourneyType getJourneyType();
+    fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType getJourneyType();
 
     /**
-     * <code>required .proto.Metadata.TemporalType temporal_type = 6;</code>
+     * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
      */
     boolean hasTemporalType();
     /**
-     * <code>required .proto.Metadata.TemporalType temporal_type = 6;</code>
+     * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
      */
-    fi.hsl.common.hfp.proto.Hfp.Metadata.TemporalType getTemporalType();
+    fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType getTemporalType();
 
     /**
      * <pre>
      * Optional because of rare bug in data source systems
      * </pre>
      *
-     * <code>optional .proto.Metadata.TransportMode transport_mode = 7;</code>
+     * <code>optional .proto.Topic.TransportMode transport_mode = 7;</code>
      */
     boolean hasTransportMode();
     /**
@@ -1098,9 +1038,9 @@ public final class Hfp {
      * Optional because of rare bug in data source systems
      * </pre>
      *
-     * <code>optional .proto.Metadata.TransportMode transport_mode = 7;</code>
+     * <code>optional .proto.Topic.TransportMode transport_mode = 7;</code>
      */
-    fi.hsl.common.hfp.proto.Hfp.Metadata.TransportMode getTransportMode();
+    fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode getTransportMode();
 
     /**
      * <code>required int32 operator_id = 8;</code>
@@ -1227,18 +1167,18 @@ public final class Hfp {
     double getLongitude();
   }
   /**
-   * Protobuf type {@code proto.Metadata}
+   * Protobuf type {@code proto.Topic}
    */
-  public  static final class Metadata extends
+  public  static final class Topic extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:proto.Metadata)
-      MetadataOrBuilder {
+      // @@protoc_insertion_point(message_implements:proto.Topic)
+      TopicOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use Metadata.newBuilder() to construct.
-    private Metadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Topic.newBuilder() to construct.
+    private Topic(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Metadata() {
+    private Topic() {
       schemaVersion_ = 1;
       receivedAt_ = 0L;
       topicPrefix_ = "";
@@ -1264,7 +1204,7 @@ public final class Hfp {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Metadata(
+    private Topic(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1308,7 +1248,7 @@ public final class Hfp {
             case 40: {
               int rawValue = input.readEnum();
                 @SuppressWarnings("deprecation")
-              fi.hsl.common.hfp.proto.Hfp.Metadata.JourneyType value = fi.hsl.common.hfp.proto.Hfp.Metadata.JourneyType.valueOf(rawValue);
+              fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType value = fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(5, rawValue);
               } else {
@@ -1320,7 +1260,7 @@ public final class Hfp {
             case 48: {
               int rawValue = input.readEnum();
                 @SuppressWarnings("deprecation")
-              fi.hsl.common.hfp.proto.Hfp.Metadata.TemporalType value = fi.hsl.common.hfp.proto.Hfp.Metadata.TemporalType.valueOf(rawValue);
+              fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType value = fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(6, rawValue);
               } else {
@@ -1332,7 +1272,7 @@ public final class Hfp {
             case 56: {
               int rawValue = input.readEnum();
                 @SuppressWarnings("deprecation")
-              fi.hsl.common.hfp.proto.Hfp.Metadata.TransportMode value = fi.hsl.common.hfp.proto.Hfp.Metadata.TransportMode.valueOf(rawValue);
+              fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode value = fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(7, rawValue);
               } else {
@@ -1422,19 +1362,19 @@ public final class Hfp {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Metadata_descriptor;
+      return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Topic_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Metadata_fieldAccessorTable
+      return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Topic_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              fi.hsl.common.hfp.proto.Hfp.Metadata.class, fi.hsl.common.hfp.proto.Hfp.Metadata.Builder.class);
+              fi.hsl.common.hfp.proto.Hfp.Topic.class, fi.hsl.common.hfp.proto.Hfp.Topic.Builder.class);
     }
 
     /**
-     * Protobuf enum {@code proto.Metadata.JourneyType}
+     * Protobuf enum {@code proto.Topic.JourneyType}
      */
     public enum JourneyType
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -1500,7 +1440,7 @@ public final class Hfp {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return fi.hsl.common.hfp.proto.Hfp.Metadata.getDescriptor().getEnumTypes().get(0);
+        return fi.hsl.common.hfp.proto.Hfp.Topic.getDescriptor().getEnumTypes().get(0);
       }
 
       private static final JourneyType[] VALUES = values();
@@ -1520,11 +1460,11 @@ public final class Hfp {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:proto.Metadata.JourneyType)
+      // @@protoc_insertion_point(enum_scope:proto.Topic.JourneyType)
     }
 
     /**
-     * Protobuf enum {@code proto.Metadata.TemporalType}
+     * Protobuf enum {@code proto.Topic.TemporalType}
      */
     public enum TemporalType
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -1590,7 +1530,7 @@ public final class Hfp {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return fi.hsl.common.hfp.proto.Hfp.Metadata.getDescriptor().getEnumTypes().get(1);
+        return fi.hsl.common.hfp.proto.Hfp.Topic.getDescriptor().getEnumTypes().get(1);
       }
 
       private static final TemporalType[] VALUES = values();
@@ -1610,11 +1550,11 @@ public final class Hfp {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:proto.Metadata.TemporalType)
+      // @@protoc_insertion_point(enum_scope:proto.Topic.TemporalType)
     }
 
     /**
-     * Protobuf enum {@code proto.Metadata.TransportMode}
+     * Protobuf enum {@code proto.Topic.TransportMode}
      */
     public enum TransportMode
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -1707,7 +1647,7 @@ public final class Hfp {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return fi.hsl.common.hfp.proto.Hfp.Metadata.getDescriptor().getEnumTypes().get(2);
+        return fi.hsl.common.hfp.proto.Hfp.Topic.getDescriptor().getEnumTypes().get(2);
       }
 
       private static final TransportMode[] VALUES = values();
@@ -1727,7 +1667,7 @@ public final class Hfp {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:proto.Metadata.TransportMode)
+      // @@protoc_insertion_point(enum_scope:proto.Topic.TransportMode)
     }
 
     private int bitField0_;
@@ -1856,35 +1796,35 @@ public final class Hfp {
     public static final int JOURNEY_TYPE_FIELD_NUMBER = 5;
     private int journeyType_;
     /**
-     * <code>required .proto.Metadata.JourneyType journey_type = 5;</code>
+     * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
      */
     public boolean hasJourneyType() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>required .proto.Metadata.JourneyType journey_type = 5;</code>
+     * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
      */
-    public fi.hsl.common.hfp.proto.Hfp.Metadata.JourneyType getJourneyType() {
+    public fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType getJourneyType() {
       @SuppressWarnings("deprecation")
-      fi.hsl.common.hfp.proto.Hfp.Metadata.JourneyType result = fi.hsl.common.hfp.proto.Hfp.Metadata.JourneyType.valueOf(journeyType_);
-      return result == null ? fi.hsl.common.hfp.proto.Hfp.Metadata.JourneyType.journey : result;
+      fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType result = fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType.valueOf(journeyType_);
+      return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType.journey : result;
     }
 
     public static final int TEMPORAL_TYPE_FIELD_NUMBER = 6;
     private int temporalType_;
     /**
-     * <code>required .proto.Metadata.TemporalType temporal_type = 6;</code>
+     * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
      */
     public boolean hasTemporalType() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>required .proto.Metadata.TemporalType temporal_type = 6;</code>
+     * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
      */
-    public fi.hsl.common.hfp.proto.Hfp.Metadata.TemporalType getTemporalType() {
+    public fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType getTemporalType() {
       @SuppressWarnings("deprecation")
-      fi.hsl.common.hfp.proto.Hfp.Metadata.TemporalType result = fi.hsl.common.hfp.proto.Hfp.Metadata.TemporalType.valueOf(temporalType_);
-      return result == null ? fi.hsl.common.hfp.proto.Hfp.Metadata.TemporalType.ongoing : result;
+      fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType result = fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType.valueOf(temporalType_);
+      return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType.ongoing : result;
     }
 
     public static final int TRANSPORT_MODE_FIELD_NUMBER = 7;
@@ -1894,7 +1834,7 @@ public final class Hfp {
      * Optional because of rare bug in data source systems
      * </pre>
      *
-     * <code>optional .proto.Metadata.TransportMode transport_mode = 7;</code>
+     * <code>optional .proto.Topic.TransportMode transport_mode = 7;</code>
      */
     public boolean hasTransportMode() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
@@ -1904,12 +1844,12 @@ public final class Hfp {
      * Optional because of rare bug in data source systems
      * </pre>
      *
-     * <code>optional .proto.Metadata.TransportMode transport_mode = 7;</code>
+     * <code>optional .proto.Topic.TransportMode transport_mode = 7;</code>
      */
-    public fi.hsl.common.hfp.proto.Hfp.Metadata.TransportMode getTransportMode() {
+    public fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode getTransportMode() {
       @SuppressWarnings("deprecation")
-      fi.hsl.common.hfp.proto.Hfp.Metadata.TransportMode result = fi.hsl.common.hfp.proto.Hfp.Metadata.TransportMode.valueOf(transportMode_);
-      return result == null ? fi.hsl.common.hfp.proto.Hfp.Metadata.TransportMode.bus : result;
+      fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode result = fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode.valueOf(transportMode_);
+      return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode.bus : result;
     }
 
     public static final int OPERATOR_ID_FIELD_NUMBER = 8;
@@ -2400,10 +2340,10 @@ public final class Hfp {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof fi.hsl.common.hfp.proto.Hfp.Metadata)) {
+      if (!(obj instanceof fi.hsl.common.hfp.proto.Hfp.Topic)) {
         return super.equals(obj);
       }
-      fi.hsl.common.hfp.proto.Hfp.Metadata other = (fi.hsl.common.hfp.proto.Hfp.Metadata) obj;
+      fi.hsl.common.hfp.proto.Hfp.Topic other = (fi.hsl.common.hfp.proto.Hfp.Topic) obj;
 
       boolean result = true;
       result = result && (hasSchemaVersion() == other.hasSchemaVersion());
@@ -2588,69 +2528,69 @@ public final class Hfp {
       return hash;
     }
 
-    public static fi.hsl.common.hfp.proto.Hfp.Metadata parseFrom(
+    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static fi.hsl.common.hfp.proto.Hfp.Metadata parseFrom(
+    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static fi.hsl.common.hfp.proto.Hfp.Metadata parseFrom(
+    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static fi.hsl.common.hfp.proto.Hfp.Metadata parseFrom(
+    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static fi.hsl.common.hfp.proto.Hfp.Metadata parseFrom(byte[] data)
+    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static fi.hsl.common.hfp.proto.Hfp.Metadata parseFrom(
+    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static fi.hsl.common.hfp.proto.Hfp.Metadata parseFrom(java.io.InputStream input)
+    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static fi.hsl.common.hfp.proto.Hfp.Metadata parseFrom(
+    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static fi.hsl.common.hfp.proto.Hfp.Metadata parseDelimitedFrom(java.io.InputStream input)
+    public static fi.hsl.common.hfp.proto.Hfp.Topic parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static fi.hsl.common.hfp.proto.Hfp.Metadata parseDelimitedFrom(
+    public static fi.hsl.common.hfp.proto.Hfp.Topic parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static fi.hsl.common.hfp.proto.Hfp.Metadata parseFrom(
+    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static fi.hsl.common.hfp.proto.Hfp.Metadata parseFrom(
+    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2663,7 +2603,7 @@ public final class Hfp {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(fi.hsl.common.hfp.proto.Hfp.Metadata prototype) {
+    public static Builder newBuilder(fi.hsl.common.hfp.proto.Hfp.Topic prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2679,26 +2619,26 @@ public final class Hfp {
       return builder;
     }
     /**
-     * Protobuf type {@code proto.Metadata}
+     * Protobuf type {@code proto.Topic}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:proto.Metadata)
-        fi.hsl.common.hfp.proto.Hfp.MetadataOrBuilder {
+        // @@protoc_insertion_point(builder_implements:proto.Topic)
+        fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Metadata_descriptor;
+        return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Topic_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Metadata_fieldAccessorTable
+        return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Topic_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                fi.hsl.common.hfp.proto.Hfp.Metadata.class, fi.hsl.common.hfp.proto.Hfp.Metadata.Builder.class);
+                fi.hsl.common.hfp.proto.Hfp.Topic.class, fi.hsl.common.hfp.proto.Hfp.Topic.Builder.class);
       }
 
-      // Construct using fi.hsl.common.hfp.proto.Hfp.Metadata.newBuilder()
+      // Construct using fi.hsl.common.hfp.proto.Hfp.Topic.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2758,17 +2698,17 @@ public final class Hfp {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Metadata_descriptor;
+        return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Topic_descriptor;
       }
 
       @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Metadata getDefaultInstanceForType() {
-        return fi.hsl.common.hfp.proto.Hfp.Metadata.getDefaultInstance();
+      public fi.hsl.common.hfp.proto.Hfp.Topic getDefaultInstanceForType() {
+        return fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance();
       }
 
       @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Metadata build() {
-        fi.hsl.common.hfp.proto.Hfp.Metadata result = buildPartial();
+      public fi.hsl.common.hfp.proto.Hfp.Topic build() {
+        fi.hsl.common.hfp.proto.Hfp.Topic result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2776,8 +2716,8 @@ public final class Hfp {
       }
 
       @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Metadata buildPartial() {
-        fi.hsl.common.hfp.proto.Hfp.Metadata result = new fi.hsl.common.hfp.proto.Hfp.Metadata(this);
+      public fi.hsl.common.hfp.proto.Hfp.Topic buildPartial() {
+        fi.hsl.common.hfp.proto.Hfp.Topic result = new fi.hsl.common.hfp.proto.Hfp.Topic(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -2891,16 +2831,16 @@ public final class Hfp {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof fi.hsl.common.hfp.proto.Hfp.Metadata) {
-          return mergeFrom((fi.hsl.common.hfp.proto.Hfp.Metadata)other);
+        if (other instanceof fi.hsl.common.hfp.proto.Hfp.Topic) {
+          return mergeFrom((fi.hsl.common.hfp.proto.Hfp.Topic)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(fi.hsl.common.hfp.proto.Hfp.Metadata other) {
-        if (other == fi.hsl.common.hfp.proto.Hfp.Metadata.getDefaultInstance()) return this;
+      public Builder mergeFrom(fi.hsl.common.hfp.proto.Hfp.Topic other) {
+        if (other == fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance()) return this;
         if (other.hasSchemaVersion()) {
           setSchemaVersion(other.getSchemaVersion());
         }
@@ -3011,11 +2951,11 @@ public final class Hfp {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        fi.hsl.common.hfp.proto.Hfp.Metadata parsedMessage = null;
+        fi.hsl.common.hfp.proto.Hfp.Topic parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (fi.hsl.common.hfp.proto.Hfp.Metadata) e.getUnfinishedMessage();
+          parsedMessage = (fi.hsl.common.hfp.proto.Hfp.Topic) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3260,23 +3200,23 @@ public final class Hfp {
 
       private int journeyType_ = 0;
       /**
-       * <code>required .proto.Metadata.JourneyType journey_type = 5;</code>
+       * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
        */
       public boolean hasJourneyType() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>required .proto.Metadata.JourneyType journey_type = 5;</code>
+       * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
        */
-      public fi.hsl.common.hfp.proto.Hfp.Metadata.JourneyType getJourneyType() {
+      public fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType getJourneyType() {
         @SuppressWarnings("deprecation")
-        fi.hsl.common.hfp.proto.Hfp.Metadata.JourneyType result = fi.hsl.common.hfp.proto.Hfp.Metadata.JourneyType.valueOf(journeyType_);
-        return result == null ? fi.hsl.common.hfp.proto.Hfp.Metadata.JourneyType.journey : result;
+        fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType result = fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType.valueOf(journeyType_);
+        return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType.journey : result;
       }
       /**
-       * <code>required .proto.Metadata.JourneyType journey_type = 5;</code>
+       * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
        */
-      public Builder setJourneyType(fi.hsl.common.hfp.proto.Hfp.Metadata.JourneyType value) {
+      public Builder setJourneyType(fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -3286,7 +3226,7 @@ public final class Hfp {
         return this;
       }
       /**
-       * <code>required .proto.Metadata.JourneyType journey_type = 5;</code>
+       * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
        */
       public Builder clearJourneyType() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -3297,23 +3237,23 @@ public final class Hfp {
 
       private int temporalType_ = 0;
       /**
-       * <code>required .proto.Metadata.TemporalType temporal_type = 6;</code>
+       * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
        */
       public boolean hasTemporalType() {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
-       * <code>required .proto.Metadata.TemporalType temporal_type = 6;</code>
+       * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
        */
-      public fi.hsl.common.hfp.proto.Hfp.Metadata.TemporalType getTemporalType() {
+      public fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType getTemporalType() {
         @SuppressWarnings("deprecation")
-        fi.hsl.common.hfp.proto.Hfp.Metadata.TemporalType result = fi.hsl.common.hfp.proto.Hfp.Metadata.TemporalType.valueOf(temporalType_);
-        return result == null ? fi.hsl.common.hfp.proto.Hfp.Metadata.TemporalType.ongoing : result;
+        fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType result = fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType.valueOf(temporalType_);
+        return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType.ongoing : result;
       }
       /**
-       * <code>required .proto.Metadata.TemporalType temporal_type = 6;</code>
+       * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
        */
-      public Builder setTemporalType(fi.hsl.common.hfp.proto.Hfp.Metadata.TemporalType value) {
+      public Builder setTemporalType(fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -3323,7 +3263,7 @@ public final class Hfp {
         return this;
       }
       /**
-       * <code>required .proto.Metadata.TemporalType temporal_type = 6;</code>
+       * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
        */
       public Builder clearTemporalType() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -3338,7 +3278,7 @@ public final class Hfp {
        * Optional because of rare bug in data source systems
        * </pre>
        *
-       * <code>optional .proto.Metadata.TransportMode transport_mode = 7;</code>
+       * <code>optional .proto.Topic.TransportMode transport_mode = 7;</code>
        */
       public boolean hasTransportMode() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
@@ -3348,21 +3288,21 @@ public final class Hfp {
        * Optional because of rare bug in data source systems
        * </pre>
        *
-       * <code>optional .proto.Metadata.TransportMode transport_mode = 7;</code>
+       * <code>optional .proto.Topic.TransportMode transport_mode = 7;</code>
        */
-      public fi.hsl.common.hfp.proto.Hfp.Metadata.TransportMode getTransportMode() {
+      public fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode getTransportMode() {
         @SuppressWarnings("deprecation")
-        fi.hsl.common.hfp.proto.Hfp.Metadata.TransportMode result = fi.hsl.common.hfp.proto.Hfp.Metadata.TransportMode.valueOf(transportMode_);
-        return result == null ? fi.hsl.common.hfp.proto.Hfp.Metadata.TransportMode.bus : result;
+        fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode result = fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode.valueOf(transportMode_);
+        return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode.bus : result;
       }
       /**
        * <pre>
        * Optional because of rare bug in data source systems
        * </pre>
        *
-       * <code>optional .proto.Metadata.TransportMode transport_mode = 7;</code>
+       * <code>optional .proto.Topic.TransportMode transport_mode = 7;</code>
        */
-      public Builder setTransportMode(fi.hsl.common.hfp.proto.Hfp.Metadata.TransportMode value) {
+      public Builder setTransportMode(fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -3376,7 +3316,7 @@ public final class Hfp {
        * Optional because of rare bug in data source systems
        * </pre>
        *
-       * <code>optional .proto.Metadata.TransportMode transport_mode = 7;</code>
+       * <code>optional .proto.Topic.TransportMode transport_mode = 7;</code>
        */
       public Builder clearTransportMode() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -3969,41 +3909,41 @@ public final class Hfp {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:proto.Metadata)
+      // @@protoc_insertion_point(builder_scope:proto.Topic)
     }
 
-    // @@protoc_insertion_point(class_scope:proto.Metadata)
-    private static final fi.hsl.common.hfp.proto.Hfp.Metadata DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:proto.Topic)
+    private static final fi.hsl.common.hfp.proto.Hfp.Topic DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new fi.hsl.common.hfp.proto.Hfp.Metadata();
+      DEFAULT_INSTANCE = new fi.hsl.common.hfp.proto.Hfp.Topic();
     }
 
-    public static fi.hsl.common.hfp.proto.Hfp.Metadata getDefaultInstance() {
+    public static fi.hsl.common.hfp.proto.Hfp.Topic getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<Metadata>
-        PARSER = new com.google.protobuf.AbstractParser<Metadata>() {
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<Topic>
+        PARSER = new com.google.protobuf.AbstractParser<Topic>() {
       @java.lang.Override
-      public Metadata parsePartialFrom(
+      public Topic parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Metadata(input, extensionRegistry);
+        return new Topic(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<Metadata> parser() {
+    public static com.google.protobuf.Parser<Topic> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Metadata> getParserForType() {
+    public com.google.protobuf.Parser<Topic> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public fi.hsl.common.hfp.proto.Hfp.Metadata getDefaultInstanceForType() {
+    public fi.hsl.common.hfp.proto.Hfp.Topic getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6548,10 +6488,10 @@ public final class Hfp {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_Data_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_proto_Metadata_descriptor;
+    internal_static_proto_Topic_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_proto_Metadata_fieldAccessorTable;
+      internal_static_proto_Topic_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_Payload_descriptor;
   private static final 
@@ -6566,33 +6506,33 @@ public final class Hfp {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\thfp.proto\022\005proto\"`\n\004Data\022\030\n\rSchemaVers" +
-      "ion\030\001 \002(\005:\0011\022\035\n\004meta\030\002 \001(\0132\017.proto.Metad" +
-      "ata\022\037\n\007payload\030\003 \002(\0132\016.proto.Payload\"\203\005\n" +
-      "\010Metadata\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\023\n\013r" +
-      "eceived_at\030\002 \002(\003\022\024\n\014topic_prefix\030\003 \002(\t\022\025" +
-      "\n\rtopic_version\030\004 \002(\t\0221\n\014journey_type\030\005 " +
-      "\002(\0162\033.proto.Metadata.JourneyType\0223\n\rtemp" +
-      "oral_type\030\006 \002(\0162\034.proto.Metadata.Tempora" +
-      "lType\0225\n\016transport_mode\030\007 \001(\0162\035.proto.Me" +
-      "tadata.TransportMode\022\023\n\013operator_id\030\010 \002(" +
-      "\005\022\026\n\016vehicle_number\030\t \002(\005\022\031\n\021unique_vehi" +
-      "cle_id\030\n \002(\t\022\020\n\010route_id\030\013 \001(\t\022\024\n\014direct" +
-      "ion_id\030\014 \001(\005\022\020\n\010headsign\030\r \001(\t\022\022\n\nstart_" +
-      "time\030\016 \001(\t\022\021\n\tnext_stop\030\017 \001(\t\022\025\n\rgeohash" +
-      "_level\030\020 \001(\005\022\020\n\010latitude\030\021 \001(\001\022\021\n\tlongit" +
-      "ude\030\022 \001(\001\"\'\n\013JourneyType\022\013\n\007journey\020\000\022\013\n" +
-      "\007deadrun\020\001\")\n\014TemporalType\022\013\n\007ongoing\020\000\022" +
-      "\014\n\010upcoming\020\001\"C\n\rTransportMode\022\007\n\003bus\020\000\022" +
-      "\t\n\005train\020\001\022\010\n\004tram\020\002\022\t\n\005metro\020\003\022\t\n\005ferry" +
-      "\020\004\"\224\002\n\007Payload\022\030\n\rSchemaVersion\030\001 \002(\005:\0011" +
-      "\022\014\n\004desi\030\002 \001(\t\022\013\n\003dir\030\003 \001(\t\022\014\n\004oper\030\004 \001(" +
-      "\005\022\013\n\003veh\030\005 \001(\005\022\013\n\003tst\030\006 \002(\t\022\013\n\003tsi\030\007 \002(\003" +
-      "\022\013\n\003spd\030\010 \001(\001\022\013\n\003hdg\030\t \001(\001\022\013\n\003lat\030\n \001(\001\022" +
-      "\014\n\004long\030\013 \001(\001\022\013\n\003acc\030\014 \001(\001\022\n\n\002dl\030\r \001(\r\022\013" +
-      "\n\003odo\030\016 \001(\001\022\014\n\004drst\030\017 \001(\r\022\014\n\004oday\030\020 \001(\t\022" +
-      "\013\n\003jrn\030\021 \001(\005\022\014\n\004line\030\022 \001(\005\022\r\n\005start\030\023 \001(" +
-      "\tB\036\n\027fi.hsl.common.hfp.protoB\003Hfp"
+      "\n\thfp.proto\022\005proto\"^\n\004Data\022\030\n\rSchemaVers" +
+      "ion\030\001 \002(\005:\0011\022\033\n\005topic\030\002 \001(\0132\014.proto.Topi" +
+      "c\022\037\n\007payload\030\003 \002(\0132\016.proto.Payload\"\367\004\n\005T" +
+      "opic\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\023\n\013receiv" +
+      "ed_at\030\002 \002(\003\022\024\n\014topic_prefix\030\003 \002(\t\022\025\n\rtop" +
+      "ic_version\030\004 \002(\t\022.\n\014journey_type\030\005 \002(\0162\030" +
+      ".proto.Topic.JourneyType\0220\n\rtemporal_typ" +
+      "e\030\006 \002(\0162\031.proto.Topic.TemporalType\0222\n\016tr" +
+      "ansport_mode\030\007 \001(\0162\032.proto.Topic.Transpo" +
+      "rtMode\022\023\n\013operator_id\030\010 \002(\005\022\026\n\016vehicle_n" +
+      "umber\030\t \002(\005\022\031\n\021unique_vehicle_id\030\n \002(\t\022\020" +
+      "\n\010route_id\030\013 \001(\t\022\024\n\014direction_id\030\014 \001(\005\022\020" +
+      "\n\010headsign\030\r \001(\t\022\022\n\nstart_time\030\016 \001(\t\022\021\n\t" +
+      "next_stop\030\017 \001(\t\022\025\n\rgeohash_level\030\020 \001(\005\022\020" +
+      "\n\010latitude\030\021 \001(\001\022\021\n\tlongitude\030\022 \001(\001\"\'\n\013J" +
+      "ourneyType\022\013\n\007journey\020\000\022\013\n\007deadrun\020\001\")\n\014" +
+      "TemporalType\022\013\n\007ongoing\020\000\022\014\n\010upcoming\020\001\"" +
+      "C\n\rTransportMode\022\007\n\003bus\020\000\022\t\n\005train\020\001\022\010\n\004" +
+      "tram\020\002\022\t\n\005metro\020\003\022\t\n\005ferry\020\004\"\224\002\n\007Payload" +
+      "\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\014\n\004desi\030\002 \001(\t" +
+      "\022\013\n\003dir\030\003 \001(\t\022\014\n\004oper\030\004 \001(\005\022\013\n\003veh\030\005 \001(\005" +
+      "\022\013\n\003tst\030\006 \002(\t\022\013\n\003tsi\030\007 \002(\003\022\013\n\003spd\030\010 \001(\001\022" +
+      "\013\n\003hdg\030\t \001(\001\022\013\n\003lat\030\n \001(\001\022\014\n\004long\030\013 \001(\001\022" +
+      "\013\n\003acc\030\014 \001(\001\022\n\n\002dl\030\r \001(\r\022\013\n\003odo\030\016 \001(\001\022\014\n" +
+      "\004drst\030\017 \001(\r\022\014\n\004oday\030\020 \001(\t\022\013\n\003jrn\030\021 \001(\005\022\014" +
+      "\n\004line\030\022 \001(\005\022\r\n\005start\030\023 \001(\tB\036\n\027fi.hsl.co" +
+      "mmon.hfp.protoB\003Hfp"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6611,12 +6551,12 @@ public final class Hfp {
     internal_static_proto_Data_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Data_descriptor,
-        new java.lang.String[] { "SchemaVersion", "Meta", "Payload", });
-    internal_static_proto_Metadata_descriptor =
+        new java.lang.String[] { "SchemaVersion", "Topic", "Payload", });
+    internal_static_proto_Topic_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_proto_Metadata_fieldAccessorTable = new
+    internal_static_proto_Topic_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_proto_Metadata_descriptor,
+        internal_static_proto_Topic_descriptor,
         new java.lang.String[] { "SchemaVersion", "ReceivedAt", "TopicPrefix", "TopicVersion", "JourneyType", "TemporalType", "TransportMode", "OperatorId", "VehicleNumber", "UniqueVehicleId", "RouteId", "DirectionId", "Headsign", "StartTime", "NextStop", "GeohashLevel", "Latitude", "Longitude", });
     internal_static_proto_Payload_descriptor =
       getDescriptor().getMessageTypes().get(2);
