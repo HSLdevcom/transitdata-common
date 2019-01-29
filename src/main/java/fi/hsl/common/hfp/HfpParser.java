@@ -44,7 +44,7 @@ public class HfpParser {
         }
     }
 
-    public static Optional<HfpTopic> safeParseTopic(String topic) throws Exception {
+    public static Optional<HfpTopic> safeParseTopic(String topic) {
         try {
             return parseTopic(topic);
         }
