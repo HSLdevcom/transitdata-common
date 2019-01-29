@@ -154,7 +154,7 @@ public class HfpParserTest {
     }
 
     private HfpTopic parseAndValidateTopic(String topic) throws Exception {
-        OffsetDateTime now = OffsetDateTime.now();
+        long now = System.currentTimeMillis();
         Optional<HfpTopic> maybeMeta = HfpParser.parseTopic(topic, now);
         assertTrue(maybeMeta.isPresent());
         HfpTopic meta = maybeMeta.get();

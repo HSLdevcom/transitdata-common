@@ -35,7 +35,7 @@ message Topic {
         ferry = 4;
     }
 
-    required int64 received_at = 2; // Our server timestamp in ms
+    required int64 received_at = 2; // Our server timestamp as Epoch ms
     required string topic_prefix = 3;
     required string topic_version = 4;
     required JourneyType journey_type = 5;

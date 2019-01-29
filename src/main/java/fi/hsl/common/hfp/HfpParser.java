@@ -55,16 +55,16 @@ public class HfpParser {
     }
 
     public static Optional<HfpTopic> parseTopic(String topic) throws Exception {
-        return parseTopic(topic, OffsetDateTime.now());
+        return parseTopic(topic, System.currentTimeMillis());
     }
 
-    public static Optional<HfpTopic> parseTopic(String topic, OffsetDateTime receivedAt) throws Exception {
+    public static Optional<HfpTopic> parseTopic(String topic, long receivedAtMs) throws Exception {
         //log.debug("Parsing metadata from topic: " + topic);
 
         final String[] parts = topic.split("/", -1);//-1 to include empty substrings
 
         final HfpTopic meta = new HfpTopic();
-        meta.received_at = receivedAt;
+        meta.received_at = receivedAtMs;
         //We first find the index of version. The prefix topic part can consist of more complicated path
         int versionIndex = findVersionIndex(parts);
         if (versionIndex < 0) {

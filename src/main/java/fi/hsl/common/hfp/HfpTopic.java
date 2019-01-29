@@ -33,7 +33,7 @@ public class HfpTopic {
         }
     }
 
-    public OffsetDateTime received_at;
+    public long received_at; // Epoch milli
     public String topic_prefix;
     public String topic_version;
     public JourneyType journey_type;
