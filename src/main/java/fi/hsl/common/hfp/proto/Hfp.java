@@ -4086,21 +4086,13 @@ public final class Hfp {
     int getDl();
 
     /**
-     * <pre>
-     * This is an integer in the spec?
-     * </pre>
-     *
-     * <code>optional double odo = 14;</code>
+     * <code>optional int32 odo = 14;</code>
      */
     boolean hasOdo();
     /**
-     * <pre>
-     * This is an integer in the spec?
-     * </pre>
-     *
-     * <code>optional double odo = 14;</code>
+     * <code>optional int32 odo = 14;</code>
      */
-    double getOdo();
+    int getOdo();
 
     /**
      * <code>optional uint32 drst = 15;</code>
@@ -4183,7 +4175,7 @@ public final class Hfp {
       long_ = 0D;
       acc_ = 0D;
       dl_ = 0;
-      odo_ = 0D;
+      odo_ = 0;
       drst_ = 0;
       oday_ = "";
       jrn_ = 0;
@@ -4283,9 +4275,9 @@ public final class Hfp {
               dl_ = input.readUInt32();
               break;
             }
-            case 113: {
+            case 112: {
               bitField0_ |= 0x00002000;
-              odo_ = input.readDouble();
+              odo_ = input.readInt32();
               break;
             }
             case 120: {
@@ -4625,25 +4617,17 @@ public final class Hfp {
     }
 
     public static final int ODO_FIELD_NUMBER = 14;
-    private double odo_;
+    private int odo_;
     /**
-     * <pre>
-     * This is an integer in the spec?
-     * </pre>
-     *
-     * <code>optional double odo = 14;</code>
+     * <code>optional int32 odo = 14;</code>
      */
     public boolean hasOdo() {
       return ((bitField0_ & 0x00002000) == 0x00002000);
     }
     /**
-     * <pre>
-     * This is an integer in the spec?
-     * </pre>
-     *
-     * <code>optional double odo = 14;</code>
+     * <code>optional int32 odo = 14;</code>
      */
-    public double getOdo() {
+    public int getOdo() {
       return odo_;
     }
 
@@ -4842,7 +4826,7 @@ public final class Hfp {
         output.writeUInt32(13, dl_);
       }
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
-        output.writeDouble(14, odo_);
+        output.writeInt32(14, odo_);
       }
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
         output.writeUInt32(15, drst_);
@@ -4919,7 +4903,7 @@ public final class Hfp {
       }
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(14, odo_);
+          .computeInt32Size(14, odo_);
       }
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
         size += com.google.protobuf.CodedOutputStream
@@ -5032,10 +5016,8 @@ public final class Hfp {
       }
       result = result && (hasOdo() == other.hasOdo());
       if (hasOdo()) {
-        result = result && (
-            java.lang.Double.doubleToLongBits(getOdo())
-            == java.lang.Double.doubleToLongBits(
-                other.getOdo()));
+        result = result && (getOdo()
+            == other.getOdo());
       }
       result = result && (hasDrst() == other.hasDrst());
       if (hasDrst()) {
@@ -5133,8 +5115,7 @@ public final class Hfp {
       }
       if (hasOdo()) {
         hash = (37 * hash) + ODO_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getOdo()));
+        hash = (53 * hash) + getOdo();
       }
       if (hasDrst()) {
         hash = (37 * hash) + DRST_FIELD_NUMBER;
@@ -5315,7 +5296,7 @@ public final class Hfp {
         bitField0_ = (bitField0_ & ~0x00000800);
         dl_ = 0;
         bitField0_ = (bitField0_ & ~0x00001000);
-        odo_ = 0D;
+        odo_ = 0;
         bitField0_ = (bitField0_ & ~0x00002000);
         drst_ = 0;
         bitField0_ = (bitField0_ & ~0x00004000);
@@ -6134,50 +6115,34 @@ public final class Hfp {
         return this;
       }
 
-      private double odo_ ;
+      private int odo_ ;
       /**
-       * <pre>
-       * This is an integer in the spec?
-       * </pre>
-       *
-       * <code>optional double odo = 14;</code>
+       * <code>optional int32 odo = 14;</code>
        */
       public boolean hasOdo() {
         return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       /**
-       * <pre>
-       * This is an integer in the spec?
-       * </pre>
-       *
-       * <code>optional double odo = 14;</code>
+       * <code>optional int32 odo = 14;</code>
        */
-      public double getOdo() {
+      public int getOdo() {
         return odo_;
       }
       /**
-       * <pre>
-       * This is an integer in the spec?
-       * </pre>
-       *
-       * <code>optional double odo = 14;</code>
+       * <code>optional int32 odo = 14;</code>
        */
-      public Builder setOdo(double value) {
+      public Builder setOdo(int value) {
         bitField0_ |= 0x00002000;
         odo_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * This is an integer in the spec?
-       * </pre>
-       *
-       * <code>optional double odo = 14;</code>
+       * <code>optional int32 odo = 14;</code>
        */
       public Builder clearOdo() {
         bitField0_ = (bitField0_ & ~0x00002000);
-        odo_ = 0D;
+        odo_ = 0;
         onChanged();
         return this;
       }
@@ -6529,7 +6494,7 @@ public final class Hfp {
       "\022\013\n\003dir\030\003 \001(\t\022\014\n\004oper\030\004 \001(\005\022\013\n\003veh\030\005 \001(\005" +
       "\022\013\n\003tst\030\006 \002(\t\022\013\n\003tsi\030\007 \002(\003\022\013\n\003spd\030\010 \001(\001\022" +
       "\013\n\003hdg\030\t \001(\001\022\013\n\003lat\030\n \001(\001\022\014\n\004long\030\013 \001(\001\022" +
-      "\013\n\003acc\030\014 \001(\001\022\n\n\002dl\030\r \001(\r\022\013\n\003odo\030\016 \001(\001\022\014\n" +
+      "\013\n\003acc\030\014 \001(\001\022\n\n\002dl\030\r \001(\r\022\013\n\003odo\030\016 \001(\005\022\014\n" +
       "\004drst\030\017 \001(\r\022\014\n\004oday\030\020 \001(\t\022\013\n\003jrn\030\021 \001(\005\022\014" +
       "\n\004line\030\022 \001(\005\022\r\n\005start\030\023 \001(\tB\036\n\027fi.hsl.co" +
       "mmon.hfp.protoB\003Hfp"

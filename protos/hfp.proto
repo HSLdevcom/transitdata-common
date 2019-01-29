@@ -74,7 +74,7 @@ message Payload {
     optional double long = 11;
     optional double acc = 12;
     optional uint32 dl = 13;
-    optional double odo = 14; // This is an integer in the spec?
+    optional int32 odo = 14;
     optional uint32 drst = 15;
     optional string oday = 16;
     optional int32 jrn = 17;
