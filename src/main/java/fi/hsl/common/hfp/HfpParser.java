@@ -174,14 +174,14 @@ public class HfpParser {
         return -1;
     }
 
-    static String validateString(String str) {
+    public static String validateString(String str) {
         if (str == null || str.isEmpty())
             return null;
         else
             return str;
     }
 
-    static Integer safeParseInt(String n) {
+    public static Integer safeParseInt(String n) {
         if (n == null || n.isEmpty())
             return null;
         else {
@@ -195,14 +195,14 @@ public class HfpParser {
         }
     }
 
-    static Boolean safeParseBoolean(Integer n) {
+    public static Boolean safeParseBoolean(Integer n) {
         if (n == null)
             return null;
         else
             return n != 0;
     }
 
-    static Time safeParseTime(String time) {
+    public static Time safeParseTime(String time) {
         if (time == null)
             return null;
         else {
@@ -216,7 +216,7 @@ public class HfpParser {
         }
     }
 
-    static LocalTime safeParseLocalTime(String time) {
+    public static LocalTime safeParseLocalTime(String time) {
         if (time == null)
             return null;
         else {
@@ -230,7 +230,7 @@ public class HfpParser {
         }
     }
 
-    static Timestamp safeParseTimestamp(String dt) {
+    public static Timestamp safeParseTimestamp(String dt) {
         if (dt == null)
             return null;
         else {
