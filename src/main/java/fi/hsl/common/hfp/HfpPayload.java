@@ -21,7 +21,7 @@ public class HfpPayload {
     public Payload VP;
 
     @CompiledJson(onUnknown = CompiledJson.Behavior.IGNORE)
-    static class Payload {
+    public static class Payload {
 
         public String desi;
 
