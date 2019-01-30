@@ -12,7 +12,7 @@ import java.time.OffsetDateTime;
 // ignore unknown properties (default for objects).
 // to disallow unknown properties in JSON set it to FAIL which will result in exception instead
 @CompiledJson(onUnknown = CompiledJson.Behavior.IGNORE)
-public class HfpPayload {
+public class HfpJson {
     //Specification: https://digitransit.fi/en/developers/apis/4-realtime-api/vehicle-positions/
     //Example payload:
     // {"VP":{"desi":"81","dir":"2","oper":22,"veh":792,"tst":"2018-04-05T17:38:36Z","tsi":1522949916,"spd":0.16,"hdg":225,"lat":60.194481,"long":25.03095,"acc":0,"dl":-25,"odo":2819,"drst":0,"oday":"2018-04-05","jrn":636,"line":112,"start":"20:25"}}
@@ -63,7 +63,7 @@ public class HfpPayload {
 
         public Integer line;
 
-        //TODO parse to LocalTime using format %H:%M in 24 hour clock
+        //TODO parseJson to LocalTime using format %H:%M in 24 hour clock
         public String start;
     }
 

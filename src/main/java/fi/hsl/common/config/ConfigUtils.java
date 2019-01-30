@@ -25,7 +25,7 @@ public class ConfigUtils {
             return Optional.of(n);
         }
         catch (NumberFormatException e) {
-            log.error("Failed to parse int from " + value, e);
+            log.error("Failed to parseJson int from " + value, e);
             return Optional.empty();
         }
     }

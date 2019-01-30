@@ -6,7 +6,6 @@ import java.net.URL;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalTime;
-import java.time.OffsetDateTime;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -16,10 +15,10 @@ public class HfpParserTest {
 
     @Test
     public void parseTimestampSafely() {
-        Timestamp ts = HfpParser.safeParseTimestamp("2018-04-05T17:38:36Z");
+        Timestamp ts = HfpParser.safeParseTimestamp("2018-04-05T17:38:36Z").get();
         assertEquals(1522949916000L, ts.getTime());
 
-        Timestamp missingTimezone = HfpParser.safeParseTimestamp("2018-04-05T17:38:36");
+        Timestamp missingTimezone = HfpParser.safeParseTimestamp("2018-04-05T17:38:36").get();
         assertNull(missingTimezone);
 
         assertNull(HfpParser.safeParseTimestamp("datetime"));
@@ -28,17 +27,17 @@ public class HfpParserTest {
 
     @Test
     public void parseTimeSafely() {
-        Time time = HfpParser.safeParseTime("18:00");
+        Time time = HfpParser.safeParseTime("18:00").get();
         assertTrue(time.toLocalTime().equals(LocalTime.of(18, 0)));
 
-        Time earlyTime = HfpParser.safeParseTime("8:00");
+        Time earlyTime = HfpParser.safeParseTime("8:00").get();
         assertTrue(earlyTime.toLocalTime().equals(LocalTime.of(8, 0)));
 
-        Time earlyTime2 = HfpParser.safeParseTime("08:00");
+        Time earlyTime2 = HfpParser.safeParseTime("08:00").get();
         assertTrue(earlyTime2.toLocalTime().equals(LocalTime.of(8, 0)));
 
-        assertNull(HfpParser.safeParseTime("random-time"));
-        assertNull(HfpParser.safeParseTime(null));
+        assertFalse(HfpParser.safeParseTime("random-time").isPresent());
+        assertFalse(HfpParser.safeParseTime(null).isPresent());
     }
 
     @Test
@@ -48,7 +47,7 @@ public class HfpParserTest {
 
         String content = new Scanner(url.openStream(), "UTF-8").useDelimiter("\\A").next();
 
-        HfpPayload hfp = HfpParser.newInstance().parse(content.getBytes("UTF-8"));
+        HfpJson hfp = HfpParser.newInstance().parseJson(content.getBytes("UTF-8"));
         assertNotNull(hfp);
         assertEquals("81", hfp.VP.desi);
         assertEquals("2", hfp.VP.dir);

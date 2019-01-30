@@ -2,6 +2,7 @@ package fi.hsl.common.hfp;
 
 import com.dslplatform.json.DslJson;
 import com.dslplatform.json.runtime.Settings;
+import fi.hsl.common.hfp.proto.Hfp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,79 +31,90 @@ public class HfpParser {
         return new HfpParser();
     }
 
-    public HfpPayload parse(byte[] data) throws IOException {
-        return dslJson.deserialize(HfpPayload.class, data, data.length);
+    public HfpJson parseJson(byte[] data) throws IOException {
+        return dslJson.deserialize(HfpJson.class, data, data.length);
     }
 
-    public Optional<HfpPayload> safeParse(byte[] data) {
+    public Optional<HfpJson> safeParse(byte[] data) {
         try {
-            return Optional.ofNullable(parse(data));
+            return Optional.ofNullable(parseJson(data));
         }
         catch (Exception e) {
-            log.error("Failed to parse message {}", new String(data));
+            log.error("Failed to parse Json message {}", new String(data));
             return Optional.empty();
         }
     }
 
-    public static Optional<HfpTopic> safeParseTopic(String topic) {
+    public static Optional<Hfp.Topic> safeParseTopic(String topic) {
         try {
-            return parseTopic(topic);
+            return Optional.of(parseTopic(topic));
         }
         catch (Exception e) {
-            log.error("Failed to parse message metadata from topic " + topic, e);
+            log.error("Failed to parse topic " + topic, e);
             return Optional.empty();
         }
     }
 
-    public static Optional<HfpTopic> parseTopic(String topic) throws Exception {
+    public static Optional<Hfp.Topic> safeParseTopic(String topic, long receivedAtMs) {
+        try {
+            return Optional.of(parseTopic(topic, receivedAtMs));
+        }
+        catch (Exception e) {
+            log.error("Failed to parse topic " + topic, e);
+            return Optional.empty();
+        }
+    }
+
+    public static Hfp.Topic parseTopic(String topic) throws Exception {
         return parseTopic(topic, System.currentTimeMillis());
     }
 
-    public static Optional<HfpTopic> parseTopic(String topic, long receivedAtMs) throws Exception {
+    public static Hfp.Topic parseTopic(String topic, long receivedAtMs) throws Exception {
         //log.debug("Parsing metadata from topic: " + topic);
 
         final String[] parts = topic.split("/", -1);//-1 to include empty substrings
 
-        final HfpTopic meta = new HfpTopic();
-        meta.received_at = receivedAtMs;
+        final Hfp.Topic.Builder builder = Hfp.Topic.newBuilder();
+
+        builder.setReceivedAt(receivedAtMs);
         //We first find the index of version. The prefix topic part can consist of more complicated path
         int versionIndex = findVersionIndex(parts);
         if (versionIndex < 0) {
-            log.error("Failed to find topic version from topic " + topic);
-            return Optional.empty();
+            throw new Exception("Failed to find topic version from topic " + topic);
         }
-
-
-        meta.topic_prefix = joinFirstNParts(parts, versionIndex, "/");
+        builder.setTopicPrefix(joinFirstNParts(parts, versionIndex, "/"));
         int index = versionIndex;
-        meta.topic_version = parts[index++];
+        builder.setTopicVersion(parts[index++]);
 
-        meta.journey_type = HfpTopic.JourneyType.valueOf(parts[index++]);
-        meta.is_ongoing = "ongoing".equals(parts[index++]);
-        meta.mode = HfpTopic.TransportMode.fromString(parts[index++]);
-        meta.owner_operator_id = Integer.parseInt(parts[index++]);
-        meta.vehicle_number = Integer.parseInt(parts[index++]);
-        meta.unique_vehicle_id = createUniqueVehicleId(meta.owner_operator_id, meta.vehicle_number);
+        builder.setJourneyType(Hfp.Topic.JourneyType.valueOf(parts[index++]));
+        builder.setTemporalType(Hfp.Topic.TemporalType.valueOf(parts[index++]));
+        final String strTransportMode = parts[index++];
+        if (strTransportMode != null && !strTransportMode.isEmpty()) {
+            builder.setTransportMode(Hfp.Topic.TransportMode.valueOf(strTransportMode));
+        }
+        builder.setOperatorId(Integer.parseInt(parts[index++]));
+        builder.setVehicleNumber(Integer.parseInt(parts[index++]));
+        builder.setUniqueVehicleId(createUniqueVehicleId(builder.getOperatorId(), builder.getVehicleNumber()));
         if (index + 6 <= parts.length) {
-            meta.route_id = Optional.ofNullable(validateString(parts[index++]));
-            meta.direction_id = Optional.ofNullable(safeParseInt(parts[index++]));
-            meta.headsign = Optional.ofNullable(validateString(parts[index++]));
-            meta.journey_start_time = Optional.ofNullable(safeParseLocalTime(parts[index++]));
-            meta.next_stop_id = Optional.ofNullable(validateString(parts[index++]));
-            meta.geohash_level = Optional.ofNullable(safeParseInt(parts[index++]));
+            validateString(parts[index++]).ifPresent(builder::setRouteId);
+            safeParseInt(parts[index++]).ifPresent(builder::setDirectionId);
+            validateString(parts[index++]).ifPresent(builder::setHeadsign);
+            validateString(parts[index++]).ifPresent(builder::setStartTime);
+            validateString(parts[index++]).ifPresent(builder::setNextStop);
+            safeParseInt(parts[index++]).ifPresent(builder::setGeohashLevel);
         }
         else {
-            log.warn("could not parse first batch of additional fields for topic {}", topic);
+            log.warn("could not parse Json's first batch of additional fields for topic {}", topic);
         }
         if (index + 4 <= parts.length) {
             Optional<GeoHash> maybeGeoHash = parseGeoHash(parts, index);
-            meta.topic_latitude = maybeGeoHash.map(hash -> hash.latitude);
-            meta.topic_longitude = maybeGeoHash.map(hash -> hash.longitude);
+            maybeGeoHash.map(hash -> hash.latitude).ifPresent(builder::setLatitude);
+            maybeGeoHash.map(hash -> hash.longitude).ifPresent(builder::setLongitude);
         }
         else {
-            log.debug("could not parse second batch of additional fields (geohash) for topic {}", topic);
+            log.debug("could not parse Json's second batch of additional fields (geohash) for topic {}", topic);
         }
-        return Optional.of(meta);
+        return builder.build();
     }
 
     public static class GeoHash {
@@ -174,73 +186,73 @@ public class HfpParser {
         return -1;
     }
 
-    public static String validateString(String str) {
+    public static Optional<String> validateString(String str) {
         if (str == null || str.isEmpty())
-            return null;
+            return Optional.empty();
         else
-            return str;
+            return Optional.of(str);
     }
 
-    public static Integer safeParseInt(String n) {
+    public static Optional<Integer> safeParseInt(String n) {
         if (n == null || n.isEmpty())
-            return null;
+            return Optional.empty();
         else {
             try {
-                return Integer.parseInt(n);
+                return Optional.of(Integer.parseInt(n));
             }
             catch (NumberFormatException e) {
                 log.error("Failed to convert {} to integer", n);
-                return null;
+                return Optional.empty();
             }
         }
     }
 
-    public static Boolean safeParseBoolean(Integer n) {
+    public static Optional<Boolean> safeParseBoolean(Integer n) {
         if (n == null)
-            return null;
+            return Optional.empty();
         else
-            return n != 0;
+            return Optional.of(n != 0);
     }
 
-    public static Time safeParseTime(String time) {
+    public static Optional<Time> safeParseTime(String time) {
         if (time == null)
-            return null;
+            return Optional.empty();
         else {
             try {
-                return Time.valueOf(time + ":00"); // parser requires seconds also.
+                return Optional.of(Time.valueOf(time + ":00")); // parser requires seconds also.
             }
             catch (Exception e) {
                 log.error("Failed to convert {} to java.sql.Time", time);
-                return null;
+                return Optional.empty();
             }
         }
     }
 
-    public static LocalTime safeParseLocalTime(String time) {
+    public static Optional<LocalTime> safeParseLocalTime(String time) {
         if (time == null)
-            return null;
+            return Optional.empty();
         else {
             try {
-                return LocalTime.parse(time);
+                return Optional.of(LocalTime.parse(time));
             }
             catch (Exception e) {
                 log.error("Failed to convert {} to LocalTime", time);
-                return null;
+                return Optional.empty();
             }
         }
     }
 
-    public static Timestamp safeParseTimestamp(String dt) {
+    public static Optional<Timestamp> safeParseTimestamp(String dt) {
         if (dt == null)
-            return null;
+            return Optional.empty();
         else {
             try {
                 OffsetDateTime offsetDt = OffsetDateTime.parse(dt);
-                return new Timestamp(offsetDt.toEpochSecond() * 1000L);
+                return Optional.of(new Timestamp(offsetDt.toEpochSecond() * 1000L));
             }
             catch (Exception e) {
                 log.error("Failed to convert {} to java.sql.Timestamp", dt);
-                return null;
+                return Optional.empty();
             }
         }
     }
