@@ -75,6 +75,7 @@ public class HfpParser {
         final String[] parts = topic.split("/", -1);//-1 to include empty substrings
 
         final Hfp.Topic.Builder builder = Hfp.Topic.newBuilder();
+        builder.setSchemaVersion(builder.getSchemaVersion());
 
         builder.setReceivedAt(receivedAtMs);
         //We first find the index of version. The prefix topic part can consist of more complicated path

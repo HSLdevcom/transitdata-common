@@ -1,5 +1,6 @@
 package fi.hsl.common.hfp;
 
+import fi.hsl.common.hfp.proto.Hfp;
 import org.junit.Test;
 
 import java.net.URL;
@@ -18,11 +19,10 @@ public class HfpParserTest {
         Timestamp ts = HfpParser.safeParseTimestamp("2018-04-05T17:38:36Z").get();
         assertEquals(1522949916000L, ts.getTime());
 
-        Timestamp missingTimezone = HfpParser.safeParseTimestamp("2018-04-05T17:38:36").get();
-        assertNull(missingTimezone);
+        assertFalse(HfpParser.safeParseTimestamp("2018-04-05T17:38:36").isPresent());//Missing time zone
 
-        assertNull(HfpParser.safeParseTimestamp("datetime"));
-        assertNull(HfpParser.safeParseTimestamp(null));
+        assertFalse(HfpParser.safeParseTimestamp("datetime").isPresent());
+        assertFalse(HfpParser.safeParseTimestamp(null).isPresent());
     }
 
     @Test
@@ -71,95 +71,93 @@ public class HfpParserTest {
 
     @Test
     public void parseTopic() throws Exception {
-        HfpTopic meta = parseAndValidateTopic("/hfp/v1/journey/ongoing/bus/0022/00854/4555B/2/Leppävaara/19:56/4150264/5/60;24/28/65/06");
-        assertEquals(HfpTopic.JourneyType.journey, meta.journey_type);
-        assertEquals(true, meta.is_ongoing);
-        assertEquals(HfpTopic.TransportMode.bus, meta.mode.get());
-        assertEquals(22, meta.owner_operator_id);
-        assertEquals(854, meta.vehicle_number);
-        assertEquals(HfpParser.createUniqueVehicleId(22, 854), meta.unique_vehicle_id);
+        Hfp.Topic meta = parseAndValidateTopic("/hfp/v1/journey/ongoing/bus/0022/00854/4555B/2/Leppävaara/19:56/4150264/5/60;24/28/65/06");
+        assertEquals(Hfp.Topic.JourneyType.journey, meta.getJourneyType());
+        assertEquals(Hfp.Topic.TemporalType.ongoing, meta.getTemporalType());
+        assertEquals(Hfp.Topic.TransportMode.bus, meta.getTransportMode());
+        assertEquals(22, meta.getOperatorId());
+        assertEquals(854, meta.getVehicleNumber());
+        assertEquals(HfpParser.createUniqueVehicleId(22, 854), meta.getUniqueVehicleId());
 
-        assertEquals("4555B", meta.route_id.get());
-        assertEquals(2, (int)meta.direction_id.get());
-        assertEquals("Leppävaara", meta.headsign.get());
-        assertEquals(LocalTime.of(19, 56), meta.journey_start_time.get());
-        assertEquals("4150264", meta.next_stop_id.get());
-        assertEquals(5, (int)meta.geohash_level.get());
+        assertEquals("4555B", meta.getRouteId());
+        assertEquals(2, (int)meta.getDirectionId());
+        assertEquals("Leppävaara", meta.getHeadsign());
+        assertEquals(LocalTime.of(19, 56), HfpParser.safeParseLocalTime(meta.getStartTime()).get());
+        assertEquals("4150264", meta.getNextStop());
+        assertEquals(5, meta.getGeohashLevel());
 
-        assertTrue(60.260 - meta.topic_latitude.get() < 0.00001);
-        assertTrue(24.856 - meta.topic_longitude.get() < 0.00001);
+        assertTrue(60.260 - meta.getLatitude() < 0.00001);
+        assertTrue(24.856 - meta.getLongitude() < 0.00001);
     }
 
     @Test
     public void parseMissingGeohash() throws Exception {
         ///hfp/v1/journey/ongoing/bus/0012/01328/4560/1/Myyrmäki/04:57/4160299/0////
-        HfpTopic meta = parseAndValidateTopic("/hfp/v1/journey/ongoing/bus/0022/00854/4555B/2/Leppävaara/19:56/4150264/0////");
-        assertEquals(0, (int)meta.geohash_level.get());
-        assertFalse(meta.topic_latitude.isPresent());
-        assertFalse(meta.topic_longitude.isPresent());
+        Hfp.Topic meta = parseAndValidateTopic("/hfp/v1/journey/ongoing/bus/0022/00854/4555B/2/Leppävaara/19:56/4150264/0////");
+        assertEquals(0, meta.getGeohashLevel());
+        assertFalse(meta.hasLatitude());
+        assertFalse(meta.hasLongitude());
     }
 
     @Test
     public void parseGeohashWithOverloadedZeroLevel() throws Exception {
-        HfpTopic meta = parseAndValidateTopic("/hfp/v1/journey/ongoing/bus/0012/01825/1039/2/Kamppi/05:36/1320105/0/60;24/28/44/12");
-        assertEquals(0, (int)meta.geohash_level.get());
-        assertTrue(60.241 - meta.topic_latitude.get() < 0.00001);
-        assertTrue(24.842 - meta.topic_longitude.get() < 0.00001);
+        Hfp.Topic meta = parseAndValidateTopic("/hfp/v1/journey/ongoing/bus/0012/01825/1039/2/Kamppi/05:36/1320105/0/60;24/28/44/12");
+        assertEquals(0, meta.getGeohashLevel());
+        assertTrue(60.241 - meta.getLatitude() < 0.00001);
+        assertTrue(24.842 - meta.getLongitude() < 0.00001);
     }
 
     @Test
     public void parseTopicWhenItemsMissing() throws Exception {
-        HfpTopic meta = parseAndValidateTopic("/hfp/v1/journey/ongoing//0022/00854//////////");
-        assertEquals(HfpTopic.JourneyType.journey, meta.journey_type);
-        assertEquals(true, meta.is_ongoing);
-        assertFalse(meta.mode.isPresent());
+        Hfp.Topic meta = parseAndValidateTopic("/hfp/v1/journey/ongoing//0022/00854//////////");
+        assertEquals(Hfp.Topic.JourneyType.journey, meta.getJourneyType());
+        assertEquals(Hfp.Topic.TemporalType.ongoing, meta.getTemporalType());
+        assertFalse(meta.hasTransportMode());
 
-        assertEquals(22, meta.owner_operator_id);
-        assertEquals(854, meta.vehicle_number);
-        assertEquals(HfpParser.createUniqueVehicleId(22, 854), meta.unique_vehicle_id);
+        assertEquals(22, meta.getOperatorId());
+        assertEquals(854, meta.getVehicleNumber());
+        assertEquals(HfpParser.createUniqueVehicleId(22, 854), meta.getUniqueVehicleId());
 
-        assertFalse(meta.route_id.isPresent());
-        assertFalse(meta.direction_id.isPresent());
-        assertFalse(meta.headsign.isPresent());
-        assertFalse(meta.journey_start_time.isPresent());
-        assertFalse(meta.next_stop_id.isPresent());
-        assertFalse(meta.geohash_level.isPresent());
+        assertFalse(meta.hasRouteId());
+        assertFalse(meta.hasDirectionId());
+        assertFalse(meta.hasHeadsign());
+        assertFalse(meta.hasStartTime());
+        assertFalse(meta.hasNextStop());
+        assertFalse(meta.hasGeohashLevel());
 
-        assertFalse(meta.topic_latitude.isPresent());
-        assertFalse(meta.topic_longitude.isPresent());
+        assertFalse(meta.hasLatitude());
+        assertFalse(meta.hasLongitude());
     }
 
     @Test
     public void parseTopicWhenPrefixLonger() throws Exception {
-        HfpTopic meta = parseAndValidateTopic("/hsldevcom/public/hfp/v1/deadrun/ongoing/tram/0022/00854////08:08///60;24/28/65/06");
-        assertEquals(HfpTopic.JourneyType.deadrun, meta.journey_type);
-        assertEquals(true, meta.is_ongoing);
-        assertEquals(HfpTopic.TransportMode.tram, meta.mode.get());
+        Hfp.Topic meta = parseAndValidateTopic("/hsldevcom/public/hfp/v1/deadrun/upcoming/tram/0022/00854////08:08///60;24/28/65/06");
+        assertEquals(Hfp.Topic.JourneyType.deadrun, meta.getJourneyType());
+        assertEquals(Hfp.Topic.TemporalType.upcoming, meta.getTemporalType());
+        assertEquals(Hfp.Topic.TransportMode.tram, meta.getTransportMode());
 
-        assertEquals(22, meta.owner_operator_id);
-        assertEquals(854, meta.vehicle_number);
-        assertEquals(HfpParser.createUniqueVehicleId(22, 854), meta.unique_vehicle_id);
+        assertEquals(22, meta.getOperatorId());
+        assertEquals(854, meta.getVehicleNumber());
+        assertEquals(HfpParser.createUniqueVehicleId(22, 854), meta.getUniqueVehicleId());
 
-        assertFalse(meta.route_id.isPresent());
-        assertFalse(meta.direction_id.isPresent());
-        assertFalse(meta.headsign.isPresent());
-        assertEquals(LocalTime.of(8, 8), meta.journey_start_time.get());
-        assertFalse(meta.next_stop_id.isPresent());
-        assertFalse(meta.geohash_level.isPresent());
+        assertFalse(meta.hasRouteId());
+        assertFalse(meta.hasDirectionId());
+        assertFalse(meta.hasHeadsign());
+        assertEquals(LocalTime.of(8, 8), HfpParser.safeParseLocalTime(meta.getStartTime()).get());
+        assertFalse(meta.hasNextStop());
+        assertFalse(meta.hasGeohashLevel());
 
-        assertTrue(60.260 - meta.topic_latitude.get() < 0.00001);
-        assertTrue(24.856 - meta.topic_longitude.get() < 0.00001);
+        assertTrue(60.260 - meta.getLatitude() < 0.00001);
+        assertTrue(24.856 - meta.getLongitude() < 0.00001);
 
     }
 
-    private HfpTopic parseAndValidateTopic(String topic) throws Exception {
+    private Hfp.Topic parseAndValidateTopic(String topic) throws Exception {
         long now = System.currentTimeMillis();
-        Optional<HfpTopic> maybeMeta = HfpParser.parseTopic(topic, now);
-        assertTrue(maybeMeta.isPresent());
-        HfpTopic meta = maybeMeta.get();
-        assertEquals(now, meta.received_at);
-        assertEquals("v1", meta.topic_version);
-        return meta;
+        Hfp.Topic hfpTopic = HfpParser.parseTopic(topic, now);
+        assertEquals(now, hfpTopic.getReceivedAt());
+        assertEquals("v1", hfpTopic.getTopicVersion());
+        return hfpTopic;
     }
 
     @Test
