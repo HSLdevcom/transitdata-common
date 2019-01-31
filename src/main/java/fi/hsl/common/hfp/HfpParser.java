@@ -50,7 +50,7 @@ public class HfpParser {
         }
     }
 
-    public Hfp.Payload parsePayload(HfpJson json) {
+    public static Hfp.Payload parsePayload(HfpJson json) {
         final HfpJson.Payload payload = json.VP;
 
         Hfp.Payload.Builder builder = Hfp.Payload.newBuilder();
