@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package proto;
+
+option java_package = "fi.hsl.common.mqtt.proto";
+option java_outer_classname = "Mqtt";
+
+message RawMessage {
+    required int32 SchemaVersion = 1 [default = 1];
+    optional string topic = 2;
+    optional bytes payload = 3;
+}

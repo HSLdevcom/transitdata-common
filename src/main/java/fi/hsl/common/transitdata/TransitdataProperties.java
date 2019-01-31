@@ -35,7 +35,9 @@ public class TransitdataProperties {
         GTFS_TripUpdate,
         GTFS_ServiceAlert,
         GTFS_VehiclePosition,
-        InternalMessagesTripCancellation;
+        InternalMessagesTripCancellation,
+        MqttRawMessage,
+        HfpData;
 
         public String toString() {
             switch (this) {
@@ -45,6 +47,8 @@ public class TransitdataProperties {
                 case GTFS_ServiceAlert: return "gtfs-service-alert";
                 case GTFS_VehiclePosition: return "gtfs-vehicle-position";
                 case InternalMessagesTripCancellation: return "internal-messages-trip-cancellation";
+                case MqttRawMessage: return "mqtt-raw";
+                case HfpData: return "hfp-data";
                 default: throw new IllegalArgumentException();
             }
         }
@@ -67,6 +71,12 @@ public class TransitdataProperties {
             }
             else if (str.equals(InternalMessagesTripCancellation.toString())) {
                 return InternalMessagesTripCancellation;
+            }
+            else if (str.equals(MqttRawMessage.toString())) {
+                return MqttRawMessage;
+            }
+            else if (str.equals(HfpData.toString())) {
+                return HfpData;
             }
             else {
                 throw new IllegalArgumentException();
