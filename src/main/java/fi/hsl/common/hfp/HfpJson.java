@@ -31,8 +31,6 @@ public class HfpJson {
 
         public Integer veh;
 
-        //See possible use of converter directly to OffsetDateTime
-        //@JsonAttribute(converter = converter.class)
         @JsonAttribute(nullable = false)
         public String tst;
 
@@ -54,17 +52,15 @@ public class HfpJson {
 
         public Integer odo;
 
-        //Boolean:
         public Integer drst;
 
-        public Date oday;
+        public String oday;
 
         public Integer jrn;
 
         public Integer line;
 
-        //TODO parseJson to LocalTime using format %H:%M in 24 hour clock
-        public String start;
+        public String start; //%H:%M in 24 hour clock
     }
 
 }

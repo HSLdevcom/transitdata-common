@@ -63,7 +63,7 @@ public class HfpParserTest {
         assertTrue(-25 == hfp.VP.dl);
         assertTrue(2819 == hfp.VP.odo);
         assertTrue(0 == hfp.VP.drst);
-        assertEquals(java.sql.Date.valueOf("2018-04-05"), hfp.VP.oday);
+        assertEquals("2018-04-05", hfp.VP.oday);
         assertTrue(636 == hfp.VP.jrn);
         assertTrue(112 == hfp.VP.line);
         assertEquals("20:25", hfp.VP.start);

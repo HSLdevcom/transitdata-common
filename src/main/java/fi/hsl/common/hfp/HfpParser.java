@@ -31,19 +31,74 @@ public class HfpParser {
         return new HfpParser();
     }
 
+    /**
+     * Methods for parsing the Json Payload
+     **/
+
     public HfpJson parseJson(byte[] data) throws IOException {
         return dslJson.deserialize(HfpJson.class, data, data.length);
     }
 
-    public Optional<HfpJson> safeParse(byte[] data) {
+    public Optional<Hfp.Payload> safeParse(byte[] data) {
         try {
-            return Optional.ofNullable(parseJson(data));
+            HfpJson json = parseJson(data);
+            return Optional.of(parsePayload(json));
         }
         catch (Exception e) {
             log.error("Failed to parse Json message {}", new String(data));
             return Optional.empty();
         }
     }
+
+    public Hfp.Payload parsePayload(HfpJson json) {
+        final HfpJson.Payload payload = json.VP;
+
+        Hfp.Payload.Builder builder = Hfp.Payload.newBuilder();
+        // Required attributes
+        builder.setSchemaVersion(builder.getSchemaVersion());
+        builder.setTst(payload.tst); // TODO add validation for offsetdatetime format
+        builder.setTsi(payload.tsi);
+
+        // Optional attributes
+        if (payload.desi != null)
+            builder.setDesi(payload.desi);
+        if (payload.dir != null)
+            builder.setDir(payload.dir);
+        if (payload.oper != null)
+            builder.setOper(payload.oper);
+        if (payload.veh != null)
+            builder.setVeh(payload.veh);
+        if (payload.spd != null)
+            builder.setSpd(payload.spd);
+        if (payload.hdg != null)
+            builder.setHdg(payload.hdg);
+        if (payload.lat != null)
+            builder.setLat(payload.lat);
+        if (payload.longitude != null)
+            builder.setLong(payload.longitude);
+        if (payload.acc != null)
+            builder.setAcc(payload.acc);
+        if (payload.dl != null)
+            builder.setDl(payload.dl);
+        if (payload.odo != null)
+            builder.setOdo(payload.odo);
+        if (payload.drst != null)
+            builder.setDrst(payload.drst);
+        if (payload.oday != null)
+            builder.setOday(payload.oday); // TODO add validation for datetime format
+        if (payload.jrn != null)
+            builder.setJrn(payload.jrn);
+        if (payload.line != null)
+            builder.setLine(payload.line);
+        if (payload.start != null)
+            builder.setStart(payload.start); // TODO add validation for localtime format
+
+        return builder.build();
+    }
+
+    /**
+     * Methods for parsing the data from the topic
+     */
 
     public static Optional<Hfp.Topic> safeParseTopic(String topic) {
         try {
