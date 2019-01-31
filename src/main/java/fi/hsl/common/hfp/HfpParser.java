@@ -60,8 +60,8 @@ public class HfpParser {
         builder.setTsi(payload.tsi);
 
         // Optional attributes
-        if (payload.desi != null)
-            builder.setDesi(payload.desi);
+        validateString(payload.desi).ifPresent(builder::setDesi);
+        validateString(payload.dir).ifPresent(builder::setDir);
         if (payload.dir != null)
             builder.setDir(payload.dir);
         if (payload.oper != null)
@@ -84,14 +84,14 @@ public class HfpParser {
             builder.setOdo(payload.odo);
         if (payload.drst != null)
             builder.setDrst(payload.drst);
-        if (payload.oday != null)
-            builder.setOday(payload.oday); // TODO add validation for datetime format
+        validateString(payload.oday).ifPresent(builder::setOday); // TODO add validation for datetime format
         if (payload.jrn != null)
             builder.setJrn(payload.jrn);
         if (payload.line != null)
             builder.setLine(payload.line);
         if (payload.start != null)
-            builder.setStart(payload.start); // TODO add validation for localtime format
+            builder.setStart(payload.start);
+        validateString(payload.start).ifPresent(builder::setStart); // TODO add validation for localtime format
 
         return builder.build();
     }
