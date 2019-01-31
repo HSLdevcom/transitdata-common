@@ -62,8 +62,6 @@ public class HfpParser {
         // Optional attributes
         validateString(payload.desi).ifPresent(builder::setDesi);
         validateString(payload.dir).ifPresent(builder::setDir);
-        if (payload.dir != null)
-            builder.setDir(payload.dir);
         if (payload.oper != null)
             builder.setOper(payload.oper);
         if (payload.veh != null)

@@ -42,7 +42,7 @@ public class HfpParserTest {
 
     @Test
     public void parseSampleJsonFile() throws Exception {
-        HfpJson hfp =parseJsonFromResources();
+        HfpJson hfp =parseJsonFromResources("hfp-sample.json");
         assertEquals("81", hfp.VP.desi);
         assertEquals("2", hfp.VP.dir);
         assertTrue(22 == hfp.VP.oper);
@@ -65,7 +65,7 @@ public class HfpParserTest {
 
     @Test
     public void parseSampleJsonFileToProtobuf() throws Exception {
-        HfpJson json = parseJsonFromResources();
+        HfpJson json = parseJsonFromResources("hfp-sample.json");
         Hfp.Payload hfp = HfpParser.parsePayload(json);
 
         assertEquals("81", hfp.getDesi());
@@ -88,9 +88,34 @@ public class HfpParserTest {
         assertEquals("20:25", hfp.getStart());
     }
 
-    private HfpJson parseJsonFromResources() throws Exception {
+    @Test
+    public void parseGarbageDataToProtobuf() throws Exception {
+        HfpJson json = parseJsonFromResources("garbage-data.json");
+        Hfp.Payload hfp = HfpParser.parsePayload(json);
+
+        assertFalse(hfp.hasDesi());
+        assertFalse(hfp.hasDir());
+        assertFalse(hfp.hasOper());
+        assertFalse(hfp.hasVeh());
+        assertEquals("2018-04-05T17:38:36Z", hfp.getTst());
+        assertTrue(1522949916 == hfp.getTsi());
+        assertTrue(-10.0 - hfp.getSpd() < 0.00001f);
+        assertFalse(hfp.hasHdg());
+        assertFalse(hfp.hasLat());
+        assertTrue(25.03095 - hfp.getLong() < 0.00001f);
+        assertTrue(100 - hfp.getAcc() < 0.00001f);
+        assertTrue(-25 == hfp.getDl());
+        assertTrue(2819 == hfp.getOdo());
+        assertTrue(-100 == hfp.getDrst());
+        assertFalse(hfp.hasOday());
+        assertTrue(636 == hfp.getJrn());
+        assertTrue(112 == hfp.getLine());
+        assertEquals("0:0", hfp.getStart());
+    }
+
+    private HfpJson parseJsonFromResources(String filename) throws Exception {
         ClassLoader classLoader = getClass().getClassLoader();
-        URL url = classLoader.getResource("hfp-sample.json");
+        URL url = classLoader.getResource(filename);
 
         String content = new Scanner(url.openStream(), "UTF-8").useDelimiter("\\A").next();
 
