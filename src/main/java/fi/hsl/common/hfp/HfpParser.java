@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalTime;
@@ -158,7 +159,7 @@ public class HfpParser {
             safeParseInt(parts[index++]).ifPresent(builder::setGeohashLevel);
         }
         else {
-            log.warn("could not parse Json's first batch of additional fields for topic {}", topic);
+            log.debug("could not parse Json's first batch of additional fields for topic {}", topic);
         }
         if (index + 4 <= parts.length) {
             Optional<GeoHash> maybeGeoHash = parseGeoHash(parts, index);
@@ -277,6 +278,20 @@ public class HfpParser {
             }
             catch (Exception e) {
                 log.error("Failed to convert {} to java.sql.Time", time);
+                return Optional.empty();
+            }
+        }
+    }
+
+    public static Optional<Date> safeParseDate(String date) {
+        if (date == null)
+            return Optional.empty();
+        else {
+            try {
+                return Optional.of(Date.valueOf(date));
+            }
+            catch (Exception e) {
+                log.error("Failed to convert {} to java.sql.Date", date);
                 return Optional.empty();
             }
         }
