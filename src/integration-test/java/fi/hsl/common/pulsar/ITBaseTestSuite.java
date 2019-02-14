@@ -95,7 +95,7 @@ public class ITBaseTestSuite {
         }
 
         //Perform your test and assertions in here. Send via source, read via sink.
-        abstract void testImpl(TestContext context) throws Exception;
+        protected abstract void testImpl(TestContext context) throws Exception;
     }
 
     public void validatePulsarProperties(Message<byte[]> received, String expectedKey, long expectedTime, TransitdataProperties.ProtobufSchema expectedSchema) {
@@ -180,5 +180,9 @@ public class ITBaseTestSuite {
             properties.forEach(builder::property);
 
         builder.send();
+    }
+
+    protected void validateAcks(int numberOfMessagesSent, TestContext context) {
+        assertEquals(numberOfMessagesSent, context.source.getStats().getNumAcksReceived());
     }
 }
