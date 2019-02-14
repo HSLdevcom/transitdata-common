@@ -10,7 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testcontainers.containers.PulsarContainer;
 
-import java.time.format.DateTimeFormatter;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -29,7 +28,7 @@ import static org.junit.Assert.*;
  */
 public class ITBaseTestSuite {
 
-    static final Logger logger = LoggerFactory.getLogger(ITBaseTestSuite.class);
+    protected static final Logger logger = LoggerFactory.getLogger(ITBaseTestSuite.class);
 
     static final boolean PRINT_PULSAR_LOG = ConfigUtils.getEnv("PRINT_PULSAR_LOG").map(Boolean::parseBoolean).orElse(false);
 
@@ -41,7 +40,7 @@ public class ITBaseTestSuite {
 
     protected String sourceConfigFilename = "integration-test-source.conf";
     protected String sinkConfigFilename = "integration-test-sink.conf";
-    protected String processorConfigFilename = "integration-test-processor.conf";
+    protected String handlerConfigFilename = "integration-test-handler.conf";
 
     @ClassRule
     public static PulsarContainer pulsar = MockContainers.newPulsarContainer();
@@ -107,10 +106,16 @@ public class ITBaseTestSuite {
     }
 
     public void testPulsarMessageHandler(IMessageHandler handler, TestLogic logic, String testId) throws Exception {
-        testPulsarMessageHandler(handler, logic, testId, DEFAULT_TEST_TIMEOUT_MS);
+        //In case you can use the default config
+        PulsarApplication testApp = createPulsarApp(handlerConfigFilename, testId);
+        testPulsarMessageHandler(handler, testApp, logic, testId, DEFAULT_TEST_TIMEOUT_MS);
     }
 
-    public void testPulsarMessageHandler(IMessageHandler handler, TestLogic logic, String testId, long testTimeoutMs) throws Exception {
+    public void testPulsarMessageHandler(IMessageHandler handler, PulsarApplication testApp, TestLogic logic, String testId) throws Exception {
+        testPulsarMessageHandler(handler, testApp, logic, testId, DEFAULT_TEST_TIMEOUT_MS);
+    }
+
+    public void testPulsarMessageHandler(IMessageHandler handler, PulsarApplication testApp, TestLogic logic, String testId, long testTimeoutMs) throws Exception {
 
         logger.info("Initializing test resources");
         PulsarApplication sourceApp = createPulsarApp(sourceConfigFilename, testId);
@@ -122,8 +127,6 @@ public class ITBaseTestSuite {
         Consumer<byte[]> sink = sinkApp.getContext().getConsumer();
         assertNotNull(sink);
         assertTrue(sink.isConnected());
-
-        PulsarApplication testApp = createPulsarApp(processorConfigFilename, testId);
 
         TestContext context = new TestContext();
         context.sink = sink;
