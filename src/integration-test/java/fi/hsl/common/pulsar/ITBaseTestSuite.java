@@ -35,7 +35,7 @@ public class ITBaseTestSuite {
     private static final String TENANT = "hsl";
     private static final String NAMESPACE = "transitdata";
 
-    protected int recvTimeoutMs = 500;
+    public static final int DEFAULT_RECEIVE_TIMEOUT_MS = 500;
     public static final long DEFAULT_TEST_TIMEOUT_MS = 10000;
 
     protected String sourceConfigFilename = "integration-test-source.conf";
@@ -54,7 +54,7 @@ public class ITBaseTestSuite {
         }
     }
 
-    protected PulsarApplication createPulsarApp(String config, String testId) throws Exception {
+    protected static PulsarApplication createPulsarApp(String config, String testId) throws Exception {
         logger.info("Creating Pulsar Application for config " + config);
 
         Config base = PulsarMockApplication.readConfigWithTopicOverrides(config, testId);
@@ -66,10 +66,14 @@ public class ITBaseTestSuite {
     }
 
 
-    protected Message<byte[]> readOutputMessage(TestContext context) throws PulsarClientException {
+    protected static Message<byte[]> readOutputMessage(TestContext context) throws PulsarClientException {
+        return readOutputMessage(context, DEFAULT_RECEIVE_TIMEOUT_MS);
+    }
+
+    protected static Message<byte[]> readOutputMessage(TestContext context, int timeoutMs) throws PulsarClientException {
         //Our Pipeline throughput should be few milliseconds but let's not assume it here, can create unwanted assertions.
         //Rather test performance separately with load tests.
-        Message<byte[]> received = context.sink.receive(recvTimeoutMs, TimeUnit.MILLISECONDS);
+        Message<byte[]> received = context.sink.receive(timeoutMs, TimeUnit.MILLISECONDS);
         if (received != null) {
             context.sink.acknowledge(received);
         }
@@ -98,7 +102,7 @@ public class ITBaseTestSuite {
         protected abstract void testImpl(TestContext context) throws Exception;
     }
 
-    public void validatePulsarProperties(Message<byte[]> received, String expectedKey, long expectedTime, TransitdataProperties.ProtobufSchema expectedSchema) {
+    public static void validatePulsarProperties(Message<byte[]> received, String expectedKey, long expectedTime, TransitdataProperties.ProtobufSchema expectedSchema) {
         assertEquals(expectedSchema.toString(), received.getProperty(TransitdataProperties.KEY_PROTOBUF_SCHEMA));
         assertEquals(expectedKey, received.getKey());
         assertEquals(expectedTime, received.getEventTime());
@@ -165,24 +169,7 @@ public class ITBaseTestSuite {
         assertFalse(sink.isConnected());
     }
 
-
-    public static void sendPulsarMessage(Producer<byte[]> producer, String key, long eventTime,
-                                         byte[] payload, TransitdataProperties.ProtobufSchema schema,
-                                         Map<String, String> properties) throws PulsarClientException {
-        TypedMessageBuilder<byte[]> builder = producer.newMessage().value(payload);
-
-        builder.eventTime(eventTime);
-        if (key != null)
-            builder.key(key);
-        if (schema != null)
-            builder.property(TransitdataProperties.KEY_PROTOBUF_SCHEMA, schema.toString());
-        if (properties != null)
-            properties.forEach(builder::property);
-
-        builder.send();
-    }
-
-    protected void validateAcks(int numberOfMessagesSent, TestContext context) {
+    protected static void validateAcks(int numberOfMessagesSent, TestContext context) {
         assertEquals(numberOfMessagesSent, context.source.getStats().getNumAcksReceived());
     }
 }
