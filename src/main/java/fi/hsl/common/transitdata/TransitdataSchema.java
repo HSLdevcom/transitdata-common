@@ -20,6 +20,9 @@ public class TransitdataSchema {
     public static Optional<TransitdataSchema> parseFromPulsarMessage(Message received) {
         try {
             String schemaType = received.getProperty(TransitdataProperties.KEY_PROTOBUF_SCHEMA);
+            if (schemaType == null)
+                return Optional.empty();
+
             TransitdataProperties.ProtobufSchema schema = TransitdataProperties.ProtobufSchema.fromString(schemaType);
 
             String version = received.getProperty(TransitdataProperties.KEY_SCHEMA_VERSION);

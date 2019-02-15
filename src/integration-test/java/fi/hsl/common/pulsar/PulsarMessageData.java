@@ -1,6 +1,8 @@
 package fi.hsl.common.pulsar;
 
 import fi.hsl.common.transitdata.TransitdataProperties;
+import fi.hsl.common.transitdata.TransitdataSchema;
+import org.apache.pulsar.client.api.Message;
 import org.apache.pulsar.client.api.Producer;
 import org.apache.pulsar.client.api.PulsarClientException;
 import org.apache.pulsar.client.api.TypedMessageBuilder;
@@ -41,6 +43,11 @@ public class PulsarMessageData {
     }
 
     @Override
+    public int hashCode() {
+        return Arrays.hashCode(payload);
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (o == this)
             return true;
@@ -59,7 +66,7 @@ public class PulsarMessageData {
     }
 
     public static TypedMessageBuilder<byte[]> toPulsarMessage(Producer<byte[]> producer,
-                                                              PulsarMessageData data) throws PulsarClientException {
+                                                              PulsarMessageData data) {
         TypedMessageBuilder<byte[]> builder = producer.newMessage().value(data.payload);
         data.eventTime.ifPresent(builder::eventTime);
         data.key.ifPresent(builder::key);
@@ -70,4 +77,14 @@ public class PulsarMessageData {
         return builder;
     }
 
+    public static PulsarMessageData fromPulsarMessage(Message<byte[]> msg)  {
+        PulsarMessageData data = new PulsarMessageData(
+                msg.getData(),
+                msg.getEventTime(),
+                msg.getKey(),
+                msg.getProperties());
+        data.schema = TransitdataSchema.parseFromPulsarMessage(msg)
+                .map(fullSchema -> fullSchema.schema);
+        return data;
+    }
 }
