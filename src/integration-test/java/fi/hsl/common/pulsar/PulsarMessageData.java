@@ -7,23 +7,21 @@ import org.apache.pulsar.client.api.Producer;
 import org.apache.pulsar.client.api.PulsarClientException;
 import org.apache.pulsar.client.api.TypedMessageBuilder;
 
-import java.util.Arrays;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class PulsarMessageData {
     public byte[] payload;
     public Optional<String> key = Optional.empty();
     public Optional<Long> eventTime = Optional.empty();
-    public Optional<Map<String, String>> properties = Optional.empty();
+    public Map<String, String> properties;
     public Optional<TransitdataProperties.ProtobufSchema> schema = Optional.empty();
 
     public PulsarMessageData(byte[] payload, Long eventTime) {
-        this(payload, eventTime, null, null, null);
+        this(payload, eventTime, null, new HashMap<>(), null);
     }
 
     public PulsarMessageData(byte[] payload, Long eventTime, String key) {
-        this(payload, eventTime, key, null, null);
+        this(payload, eventTime, key, new HashMap<>(), null);
     }
 
     public PulsarMessageData(byte[] payload, Long eventTime, String key, Map<String, String> props) {
@@ -31,14 +29,14 @@ public class PulsarMessageData {
     }
 
     public PulsarMessageData(byte[] payload, Long eventTime, String key, TransitdataProperties.ProtobufSchema schema) {
-        this(payload, eventTime, key, null, schema);
+        this(payload, eventTime, key, new HashMap<>(), schema);
     }
 
     public PulsarMessageData(byte[] payload, Long eventTime, String key, Map<String, String> props, TransitdataProperties.ProtobufSchema schema) {
         this.payload = payload;
         this.eventTime =  Optional.ofNullable(eventTime);
         this.key = Optional.ofNullable(key);
-        this.properties = Optional.ofNullable(props);
+        this.properties = props;
         this.schema = Optional.ofNullable(schema);
     }
 
@@ -58,10 +56,24 @@ public class PulsarMessageData {
             return false;
         if (!other.eventTime.equals(this.eventTime))
             return false;
-        if (!other.properties.equals(this.properties))
-            return false;
         if (!other.schema.equals(this.schema))
             return false;
+        return propertiesEqual(other);
+    }
+
+    boolean propertiesEqual(PulsarMessageData other) {
+        if (other.properties.size() != this.properties.size())
+            return false;
+
+        Iterator<String> keyItr = other.properties.keySet().iterator();
+        while(keyItr.hasNext()) {
+            String key = keyItr.next();
+
+            Optional<String> otherValue =  Optional.ofNullable(other.properties.get(key));
+            Optional<String> myValue =  Optional.ofNullable(this.properties.get(key));
+            if (!otherValue.equals(myValue))
+                return false;
+        }
         return true;
     }
 
@@ -73,7 +85,7 @@ public class PulsarMessageData {
         data.schema.ifPresent(
                 s -> builder.property(TransitdataProperties.KEY_PROTOBUF_SCHEMA, s.toString())
         );
-        data.properties.ifPresent(map -> map.forEach(builder::property));
+        data.properties.forEach(builder::property);
         return builder;
     }
 
