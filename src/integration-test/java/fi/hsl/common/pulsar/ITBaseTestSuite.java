@@ -35,7 +35,6 @@ public class ITBaseTestSuite {
     private static final String TENANT = "hsl";
     private static final String NAMESPACE = "transitdata";
 
-    public static final int DEFAULT_RECEIVE_TIMEOUT_MS = 500;
     public static final long DEFAULT_TEST_TIMEOUT_MS = 10000;
 
     protected String sourceConfigFilename = "integration-test-source.conf";
@@ -65,43 +64,6 @@ public class ITBaseTestSuite {
         return app;
     }
 
-
-    protected static Message<byte[]> readOutputMessage(TestContext context) throws PulsarClientException {
-        return readOutputMessage(context, DEFAULT_RECEIVE_TIMEOUT_MS);
-    }
-
-    protected static Message<byte[]> readOutputMessage(TestContext context, int timeoutMs) throws PulsarClientException {
-        //Our Pipeline throughput should be few milliseconds but let's not assume it here, can create unwanted assertions.
-        //Rather test performance separately with load tests.
-        Message<byte[]> received = context.sink.receive(timeoutMs, TimeUnit.MILLISECONDS);
-        if (received != null) {
-            context.sink.acknowledge(received);
-        }
-        return received;
-    }
-
-
-    public static class TestContext {
-        public Producer<byte[]> source;
-        public Consumer<byte[]> sink;
-        public PulsarApplication testApp;
-    }
-
-    public static abstract class TestLogic {
-        public void test(TestContext context) {
-            try {
-                testImpl(context);
-            }
-            catch (Exception e) {
-                logger.error("Test failed!", e);
-                assertTrue(false);
-            }
-        }
-
-        //Perform your test and assertions in here. Send via source, read via sink.
-        protected abstract void testImpl(TestContext context) throws Exception;
-    }
-
     public static void validatePulsarProperties(Message<byte[]> received, String expectedKey, long expectedTime, TransitdataProperties.ProtobufSchema expectedSchema) {
         assertEquals(expectedSchema.toString(), received.getProperty(TransitdataProperties.KEY_PROTOBUF_SCHEMA));
         assertEquals(expectedKey, received.getKey());
@@ -109,17 +71,17 @@ public class ITBaseTestSuite {
 
     }
 
-    public void testPulsarMessageHandler(IMessageHandler handler, TestLogic logic, String testId) throws Exception {
+    public void testPulsarMessageHandler(IMessageHandler handler, TestPipeline.TestLogic logic, String testId) throws Exception {
         //In case you can use the default config
         PulsarApplication testApp = createPulsarApp(handlerConfigFilename, testId);
         testPulsarMessageHandler(handler, testApp, logic, testId, DEFAULT_TEST_TIMEOUT_MS);
     }
 
-    public void testPulsarMessageHandler(IMessageHandler handler, PulsarApplication testApp, TestLogic logic, String testId) throws Exception {
+    public void testPulsarMessageHandler(IMessageHandler handler, PulsarApplication testApp, TestPipeline.TestLogic logic, String testId) throws Exception {
         testPulsarMessageHandler(handler, testApp, logic, testId, DEFAULT_TEST_TIMEOUT_MS);
     }
 
-    public void testPulsarMessageHandler(IMessageHandler handler, PulsarApplication testApp, TestLogic logic, String testId, long testTimeoutMs) throws Exception {
+    public void testPulsarMessageHandler(IMessageHandler handler, PulsarApplication testApp, TestPipeline.TestLogic logic, String testId, long testTimeoutMs) throws Exception {
 
         logger.info("Initializing test resources");
         PulsarApplication sourceApp = createPulsarApp(sourceConfigFilename, testId);
@@ -132,7 +94,7 @@ public class ITBaseTestSuite {
         assertNotNull(sink);
         assertTrue(sink.isConnected());
 
-        TestContext context = new TestContext();
+        TestPipeline.TestContext context = new TestPipeline.TestContext();
         context.sink = sink;
         context.source = source;
         context.testApp = testApp;
@@ -169,7 +131,4 @@ public class ITBaseTestSuite {
         assertFalse(sink.isConnected());
     }
 
-    protected static void validateAcks(int numberOfMessagesSent, TestContext context) {
-        assertEquals(numberOfMessagesSent, context.source.getStats().getNumAcksReceived());
-    }
 }
