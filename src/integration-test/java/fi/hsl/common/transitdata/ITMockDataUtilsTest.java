@@ -5,17 +5,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 
-public class MockDataUtilsTest {
-    static final Logger logger = LoggerFactory.getLogger(MockDataUtilsTest.class);
+public class ITMockDataUtilsTest {
+    static final Logger logger = LoggerFactory.getLogger(ITMockDataUtilsTest.class);
 
     @Test
     public void testRouteNameGenerator() {
