@@ -14,30 +14,20 @@ public class PulsarMessageData {
     public Optional<String> key = Optional.empty();
     public Optional<Long> eventTime = Optional.empty();
     public Map<String, String> properties;
-    public Optional<TransitdataProperties.ProtobufSchema> schema = Optional.empty();
 
     public PulsarMessageData(byte[] payload, Long eventTime) {
-        this(payload, eventTime, null, new HashMap<>(), null);
+        this(payload, eventTime, null, new HashMap<>());
     }
 
     public PulsarMessageData(byte[] payload, Long eventTime, String key) {
-        this(payload, eventTime, key, new HashMap<>(), null);
+        this(payload, eventTime, key, new HashMap<>());
     }
 
     public PulsarMessageData(byte[] payload, Long eventTime, String key, Map<String, String> props) {
-        this(payload, eventTime, key, props, null);
-    }
-
-    public PulsarMessageData(byte[] payload, Long eventTime, String key, TransitdataProperties.ProtobufSchema schema) {
-        this(payload, eventTime, key, new HashMap<>(), schema);
-    }
-
-    public PulsarMessageData(byte[] payload, Long eventTime, String key, Map<String, String> props, TransitdataProperties.ProtobufSchema schema) {
         this.payload = payload;
         this.eventTime =  Optional.ofNullable(eventTime);
         this.key = Optional.ofNullable(key);
         this.properties = props;
-        this.schema = Optional.ofNullable(schema);
     }
 
     @Override
@@ -55,8 +45,6 @@ public class PulsarMessageData {
         if (!other.key.equals(this.key))
             return false;
         if (!other.eventTime.equals(this.eventTime))
-            return false;
-        if (!other.schema.equals(this.schema))
             return false;
         return propertiesEqual(other);
     }
@@ -82,9 +70,6 @@ public class PulsarMessageData {
         TypedMessageBuilder<byte[]> builder = producer.newMessage().value(data.payload);
         data.eventTime.ifPresent(builder::eventTime);
         data.key.ifPresent(builder::key);
-        data.schema.ifPresent(
-                s -> builder.property(TransitdataProperties.KEY_PROTOBUF_SCHEMA, s.toString())
-        );
         data.properties.forEach(builder::property);
         return builder;
     }
@@ -95,8 +80,6 @@ public class PulsarMessageData {
                 msg.getEventTime(),
                 msg.getKey(),
                 msg.getProperties());
-        data.schema = TransitdataSchema.parseFromPulsarMessage(msg)
-                .map(fullSchema -> fullSchema.schema);
         return data;
     }
 }
