@@ -47,11 +47,11 @@ public class TestPipeline {
     }
 
 
-    protected static Message<byte[]> readOutputMessage(TestPipeline.TestContext context) throws PulsarClientException {
+    public static Message<byte[]> readOutputMessage(TestPipeline.TestContext context) throws PulsarClientException {
         return readOutputMessage(context, DEFAULT_RECEIVE_TIMEOUT_MS);
     }
 
-    protected static Message<byte[]> readOutputMessage(TestPipeline.TestContext context, int timeoutMs) throws PulsarClientException {
+    public static Message<byte[]> readOutputMessage(TestPipeline.TestContext context, int timeoutMs) throws PulsarClientException {
         //Our Pipeline throughput should be few milliseconds but let's not assume it here, can create unwanted assertions.
         //Rather test performance separately with load tests.
         Message<byte[]> received = context.sink.receive(timeoutMs, TimeUnit.MILLISECONDS);
@@ -103,7 +103,7 @@ public class TestPipeline {
             validateOutput(buffer);
         }
 
-        protected void validateOutput(ArrayList<Message<byte[]>> receivedQueue) {
+        public void validateOutput(ArrayList<Message<byte[]>> receivedQueue) {
             assertEquals(expectedOutput.size(), receivedQueue.size());
             ListIterator<Message<byte[]>> itrRecv = receivedQueue.listIterator();
             ListIterator<PulsarMessageData> itrExp = expectedOutput.listIterator();
@@ -120,7 +120,7 @@ public class TestPipeline {
         /**
          * Override this for your own check if needed
          */
-        protected void validateMessage(PulsarMessageData expected, PulsarMessageData received) {
+        public void validateMessage(PulsarMessageData expected, PulsarMessageData received) {
             assertNotNull(expected);
             assertNotNull(received);
             assertEquals(expected, received);
