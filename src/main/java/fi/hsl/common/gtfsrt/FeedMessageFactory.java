@@ -4,8 +4,8 @@ import com.google.transit.realtime.GtfsRealtime;
 
 import java.util.List;
 
-public class GtfsRtUtils {
-    private GtfsRtUtils(){}
+public class FeedMessageFactory {
+    private FeedMessageFactory(){}
 
     public static GtfsRealtime.FeedMessage createDifferentialFeedMessage(String id, GtfsRealtime.TripUpdate tripUpdate, long timestampUtcSecs) {
         GtfsRealtime.FeedHeader header = createFeedHeader(GtfsRealtime.FeedHeader.Incrementality.DIFFERENTIAL, timestampUtcSecs);
@@ -15,7 +15,10 @@ public class GtfsRtUtils {
                 .setId(id)
                 .build();
 
-        return GtfsRealtime.FeedMessage.newBuilder().addEntity(entity).setHeader(header).build();
+        return GtfsRealtime.FeedMessage.newBuilder()
+                .addEntity(entity)
+                .setHeader(header)
+                .build();
     }
 
 
