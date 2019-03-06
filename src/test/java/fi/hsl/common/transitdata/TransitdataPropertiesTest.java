@@ -13,6 +13,7 @@ public class TransitdataPropertiesTest {
         testProtobufSchemaConverter(TransitdataProperties.ProtobufSchema.GTFS_ServiceAlert);
         testProtobufSchemaConverter(TransitdataProperties.ProtobufSchema.GTFS_VehiclePosition);
         testProtobufSchemaConverter(TransitdataProperties.ProtobufSchema.InternalMessagesTripCancellation);
+        testProtobufSchemaConverter(TransitdataProperties.ProtobufSchema.InternalMessagesStopEstimate);
         testProtobufSchemaConverter(TransitdataProperties.ProtobufSchema.MqttRawMessage);
         testProtobufSchemaConverter(TransitdataProperties.ProtobufSchema.HfpData);
     }
