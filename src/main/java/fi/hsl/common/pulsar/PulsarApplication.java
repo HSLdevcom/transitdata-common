@@ -134,6 +134,11 @@ public class PulsarApplication implements AutoCloseable {
         }
 
         Consumer<byte[]> consumer = builder.subscribe();
+
+        if (config.getBoolean("pulsar.consumer.cursor.resetToLatest")) {
+            consumer.seek(MessageId.latest);
+        }
+
         log.info("Pulsar consumer created with subscription " + subscription + " (" + subscriptionType + ")");
         return consumer;
     }
