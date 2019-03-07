@@ -5,6 +5,22 @@ package proto;
 option java_package = "fi.hsl.common.transitdata.proto";
 option java_outer_classname = "InternalMessages";
 
+message TripInfo {
+    // Unique key for the trip
+    // For example: Dated Vehicle Journey ID or Journey Section ID
+    required string trip_id = 1;
+    // All fields in JORE-format
+    required string operating_day = 2;
+    required string route_id = 3;
+    required uint32 direction_id = 4;
+    required string start_time = 5;
+}
+
+enum Status {
+    SCHEDULED = 0;
+    CANCELED = 1;
+}
+
 message TripCancellation {
     required int32 SchemaVersion = 1 [default = 1];
     optional string trip_id = 2;
@@ -20,4 +36,24 @@ message TripCancellation {
     }
 
     required Status status = 7;
+}
+
+message StopEstimate {
+    required int32 SchemaVersion = 1 [default = 1];
+    required TripInfo trip_info = 2;
+
+    required string stop_id = 3;
+    required uint32 stop_sequence = 4;
+    required Status status = 5;
+
+    enum Type {
+        ARRIVAL = 0;
+        DEPARTURE = 1;
+    }
+
+    required Type type = 6;
+    required int64 estimated_time_utc_ms = 7;
+    optional int64 scheduled_time_utc_ms = 8;
+    required int64 last_modified_utc_ms = 9;
+
 }

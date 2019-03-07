@@ -964,7 +964,7 @@ public final class Hfp {
 
     /**
      * <pre>
-     * Our server timestamp in ms
+     * Our server timestamp as Epoch ms
      * </pre>
      *
      * <code>required int64 received_at = 2;</code>
@@ -972,7 +972,7 @@ public final class Hfp {
     boolean hasReceivedAt();
     /**
      * <pre>
-     * Our server timestamp in ms
+     * Our server timestamp as Epoch ms
      * </pre>
      *
      * <code>required int64 received_at = 2;</code>
@@ -1690,7 +1690,7 @@ public final class Hfp {
     private long receivedAt_;
     /**
      * <pre>
-     * Our server timestamp in ms
+     * Our server timestamp as Epoch ms
      * </pre>
      *
      * <code>required int64 received_at = 2;</code>
@@ -1700,7 +1700,7 @@ public final class Hfp {
     }
     /**
      * <pre>
-     * Our server timestamp in ms
+     * Our server timestamp as Epoch ms
      * </pre>
      *
      * <code>required int64 received_at = 2;</code>
@@ -3001,7 +3001,7 @@ public final class Hfp {
       private long receivedAt_ ;
       /**
        * <pre>
-       * Our server timestamp in ms
+       * Our server timestamp as Epoch ms
        * </pre>
        *
        * <code>required int64 received_at = 2;</code>
@@ -3011,7 +3011,7 @@ public final class Hfp {
       }
       /**
        * <pre>
-       * Our server timestamp in ms
+       * Our server timestamp as Epoch ms
        * </pre>
        *
        * <code>required int64 received_at = 2;</code>
@@ -3021,7 +3021,7 @@ public final class Hfp {
       }
       /**
        * <pre>
-       * Our server timestamp in ms
+       * Our server timestamp as Epoch ms
        * </pre>
        *
        * <code>required int64 received_at = 2;</code>
@@ -3034,7 +3034,7 @@ public final class Hfp {
       }
       /**
        * <pre>
-       * Our server timestamp in ms
+       * Our server timestamp as Epoch ms
        * </pre>
        *
        * <code>required int64 received_at = 2;</code>
