@@ -34,7 +34,7 @@ message DOITripInfo {
     required string route_id = 3;
     required uint32 direction_id = 4;
     required string start_time = 5;
-    required int64 stop_id = 6;
+    required string stop_id = 6;
 }
 
 message ROIArrival {

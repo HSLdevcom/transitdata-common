@@ -2132,13 +2132,18 @@ public final class PubtransTableProtos {
         getStartTimeBytes();
 
     /**
-     * <code>required int64 stop_id = 6;</code>
+     * <code>required string stop_id = 6;</code>
      */
     boolean hasStopId();
     /**
-     * <code>required int64 stop_id = 6;</code>
+     * <code>required string stop_id = 6;</code>
      */
-    long getStopId();
+    java.lang.String getStopId();
+    /**
+     * <code>required string stop_id = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getStopIdBytes();
   }
   /**
    * Protobuf type {@code proto.DOITripInfo}
@@ -2158,7 +2163,7 @@ public final class PubtransTableProtos {
       routeId_ = "";
       directionId_ = 0;
       startTime_ = "";
-      stopId_ = 0L;
+      stopId_ = "";
     }
 
     @java.lang.Override
@@ -2213,9 +2218,10 @@ public final class PubtransTableProtos {
               startTime_ = bs;
               break;
             }
-            case 48: {
+            case 50: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000020;
-              stopId_ = input.readInt64();
+              stopId_ = bs;
               break;
             }
             default: {
@@ -2416,18 +2422,45 @@ public final class PubtransTableProtos {
     }
 
     public static final int STOP_ID_FIELD_NUMBER = 6;
-    private long stopId_;
+    private volatile java.lang.Object stopId_;
     /**
-     * <code>required int64 stop_id = 6;</code>
+     * <code>required string stop_id = 6;</code>
      */
     public boolean hasStopId() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>required int64 stop_id = 6;</code>
+     * <code>required string stop_id = 6;</code>
      */
-    public long getStopId() {
-      return stopId_;
+    public java.lang.String getStopId() {
+      java.lang.Object ref = stopId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          stopId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string stop_id = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStopIdBytes() {
+      java.lang.Object ref = stopId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        stopId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2484,7 +2517,7 @@ public final class PubtransTableProtos {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, startTime_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeInt64(6, stopId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, stopId_);
       }
       unknownFields.writeTo(output);
     }
@@ -2513,8 +2546,7 @@ public final class PubtransTableProtos {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, startTime_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, stopId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, stopId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2559,8 +2591,8 @@ public final class PubtransTableProtos {
       }
       result = result && (hasStopId() == other.hasStopId());
       if (hasStopId()) {
-        result = result && (getStopId()
-            == other.getStopId());
+        result = result && getStopId()
+            .equals(other.getStopId());
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -2596,8 +2628,7 @@ public final class PubtransTableProtos {
       }
       if (hasStopId()) {
         hash = (37 * hash) + STOP_ID_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getStopId());
+        hash = (53 * hash) + getStopId().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2742,7 +2773,7 @@ public final class PubtransTableProtos {
         bitField0_ = (bitField0_ & ~0x00000008);
         startTime_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
-        stopId_ = 0L;
+        stopId_ = "";
         bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
@@ -2867,7 +2898,9 @@ public final class PubtransTableProtos {
           onChanged();
         }
         if (other.hasStopId()) {
-          setStopId(other.getStopId());
+          bitField0_ |= 0x00000020;
+          stopId_ = other.stopId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3225,34 +3258,78 @@ public final class PubtransTableProtos {
         return this;
       }
 
-      private long stopId_ ;
+      private java.lang.Object stopId_ = "";
       /**
-       * <code>required int64 stop_id = 6;</code>
+       * <code>required string stop_id = 6;</code>
        */
       public boolean hasStopId() {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
-       * <code>required int64 stop_id = 6;</code>
+       * <code>required string stop_id = 6;</code>
        */
-      public long getStopId() {
-        return stopId_;
+      public java.lang.String getStopId() {
+        java.lang.Object ref = stopId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            stopId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>required int64 stop_id = 6;</code>
+       * <code>required string stop_id = 6;</code>
        */
-      public Builder setStopId(long value) {
-        bitField0_ |= 0x00000020;
+      public com.google.protobuf.ByteString
+          getStopIdBytes() {
+        java.lang.Object ref = stopId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          stopId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string stop_id = 6;</code>
+       */
+      public Builder setStopId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
         stopId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int64 stop_id = 6;</code>
+       * <code>required string stop_id = 6;</code>
        */
       public Builder clearStopId() {
         bitField0_ = (bitField0_ & ~0x00000020);
-        stopId_ = 0L;
+        stopId_ = getDefaultInstance().getStopId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string stop_id = 6;</code>
+       */
+      public Builder setStopIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        stopId_ = value;
         onChanged();
         return this;
       }
@@ -5560,7 +5637,7 @@ public final class PubtransTableProtos {
       "ified_utc_date_time_ms\030\021 \002(\003\"\201\001\n\013DOITrip" +
       "Info\022\016\n\006dvj_id\030\001 \002(\003\022\025\n\roperating_day\030\002 " +
       "\002(\t\022\020\n\010route_id\030\003 \002(\t\022\024\n\014direction_id\030\004 " +
-      "\002(\r\022\022\n\nstart_time\030\005 \002(\t\022\017\n\007stop_id\030\006 \002(\003" +
+      "\002(\r\022\022\n\nstart_time\030\005 \002(\t\022\017\n\007stop_id\030\006 \002(\t" +
       "\"m\n\nROIArrival\022\031\n\016schema_version\030\001 \002(\005:\001" +
       "1\022\035\n\006common\030\002 \002(\0132\r.proto.Common\022%\n\ttrip" +
       "_info\030\003 \002(\0132\022.proto.DOITripInfo\"\336\001\n\014ROID" +
