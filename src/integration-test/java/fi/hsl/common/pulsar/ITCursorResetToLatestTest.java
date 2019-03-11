@@ -1,7 +1,6 @@
-package fi.hsl.common.transitdata;
+package fi.hsl.common.pulsar;
 
 import com.typesafe.config.Config;
-import fi.hsl.common.pulsar.*;
 import org.apache.pulsar.client.api.Consumer;
 import org.apache.pulsar.client.api.Message;
 import org.apache.pulsar.client.api.Producer;
