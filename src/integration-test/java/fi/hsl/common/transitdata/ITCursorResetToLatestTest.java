@@ -1,5 +1,6 @@
 package fi.hsl.common.transitdata;
 
+import com.typesafe.config.Config;
 import fi.hsl.common.pulsar.*;
 import org.apache.pulsar.client.api.Consumer;
 import org.apache.pulsar.client.api.Message;
@@ -59,7 +60,7 @@ public class ITCursorResetToLatestTest extends ITBaseTestSuite {
     @Test
     public void testInitialMessages() throws Exception {
         final String testId = "-test-initial-messages";
-        final String config = "integration-test-without-cursor-reset-to-latest.conf";
+        final String config = "integration-test-handler.conf";
         PulsarApplication app = createPulsarApp(config, testId);
         // send initial messages to topic
         ArrayList<PulsarMessageData> initialMessages = getInitialMessages();
@@ -77,7 +78,7 @@ public class ITCursorResetToLatestTest extends ITBaseTestSuite {
     @Test
     public void testWithoutCursorResetToLatest() throws Exception {
         final String testId = "-test-without-cursor-reset-to-latest";
-        final String config = "integration-test-without-cursor-reset-to-latest.conf";
+        final String config = "integration-test-handler.conf";
         PulsarApplication app = createPulsarApp(config, testId);
         // send initial messages to topic
         ArrayList<PulsarMessageData> initialMessages = getInitialMessages();
@@ -98,7 +99,8 @@ public class ITCursorResetToLatestTest extends ITBaseTestSuite {
     @Test
     public void testWithCursorResetToLatest() throws Exception {
         final String testId = "-test-with-cursor-reset-to-latest";
-        final String config = "integration-test-with-cursor-reset-to-latest.conf";
+        final String config = "integration-test-handler.conf";
+        Config appConfig = PulsarMockApplication.readConfigWithOverride(config, "pulsar.consumer.cursor.resetToLatest", true);
         // send initial messages to topic
         ArrayList<PulsarMessageData> initialMessages = getInitialMessages();
         ArrayList<PulsarMessageData> runtimeMessages = getRuntimeMessages();
@@ -107,7 +109,7 @@ public class ITCursorResetToLatestTest extends ITBaseTestSuite {
         ArrayList<PulsarMessageData> input = runtimeMessages;
         ArrayList<PulsarMessageData> output =  runtimeMessages;
         // test output
-        PulsarApplication app = createPulsarApp(config, testId);
+        PulsarApplication app = createPulsarApp(appConfig, testId);
         NoopMessageHandler handler = new NoopMessageHandler(app.getContext());
         TestPipeline.MultiMessageTestLogic logic = new TestPipeline.MultiMessageTestLogic(input, output);
         testPulsarMessageHandler(handler, app, logic, testId);

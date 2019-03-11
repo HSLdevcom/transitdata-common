@@ -54,8 +54,13 @@ public class PulsarMockApplication extends PulsarApplication {
     }
 
     public static Config readConfigWithOverrides(String filename, Map<String, Object> overrides) {
+        Config config = readConfig(filename);
+        return readConfigWithOverrides(config, overrides);
+    }
+
+    public static Config readConfigWithOverrides(Config config, Map<String, Object> overrides) {
         Config configOverrides = ConfigFactory.parseMap(overrides);
-        return ConfigParser.mergeConfigs(readConfig(filename), configOverrides);
+        return ConfigParser.mergeConfigs(config, configOverrides);
     }
 
     /**
@@ -63,6 +68,13 @@ public class PulsarMockApplication extends PulsarApplication {
      */
     public static Config readConfigWithTopicOverrides(String filename, String suffix) {
         Config config = readConfig(filename);
+        return readConfigWithTopicOverrides(config, suffix);
+    }
+
+    /**
+     * Occasionally it's good to create unique topic names so we can segregate the tests easier.
+     */
+    public static Config readConfigWithTopicOverrides(Config config, String suffix) {
         Map<String, Object> overrides = new HashMap<>();
         if (config.getBoolean("pulsar.producer.enabled")) {
             String topic = config.getString("pulsar.producer.topic");
@@ -72,7 +84,7 @@ public class PulsarMockApplication extends PulsarApplication {
             String topic = config.getString("pulsar.consumer.topic");
             overrides.put("pulsar.consumer.topic", topic + suffix);
         }
-        return readConfigWithOverrides(filename, overrides);
+        return readConfigWithOverrides(config, overrides);
     }
 
 }

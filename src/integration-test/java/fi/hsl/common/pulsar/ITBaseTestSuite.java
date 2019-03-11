@@ -55,7 +55,11 @@ public class ITBaseTestSuite {
 
     protected static PulsarApplication createPulsarApp(String config, String testId) throws Exception {
         logger.info("Creating Pulsar Application for config " + config);
+        Config configObj = PulsarMockApplication.readConfig(config);
+        return createPulsarApp(configObj, testId);
+    }
 
+    protected static PulsarApplication createPulsarApp(Config config, String testId) throws Exception {
         Config base = PulsarMockApplication.readConfigWithTopicOverrides(config, testId);
         assertNotNull(base);
         // No Redis atm. TODO add later if needed
