@@ -16,11 +16,6 @@ message TripInfo {
     required string start_time = 5;
 }
 
-enum Status {
-    SCHEDULED = 0;
-    CANCELED = 1;
-}
-
 message TripCancellation {
     required int32 SchemaVersion = 1 [default = 1];
     optional string trip_id = 2;
@@ -44,6 +39,11 @@ message StopEstimate {
 
     required string stop_id = 3;
     required uint32 stop_sequence = 4;
+
+    enum Status {
+        SCHEDULED = 0;
+        SKIPPED = 1;
+    }
     required Status status = 5;
 
     enum Type {
