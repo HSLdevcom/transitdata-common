@@ -50,6 +50,11 @@ public class ThirtyHourTimeTest {
         ThirtyHourTime.timeStringToSeconds("12:3:45");
     }
 
+    @Test(expected = ParseException.class)
+    public void testTimeStringToSecondsException7() throws ParseException {
+        ThirtyHourTime.timeStringToSeconds("12:34");
+    }
+
     @Test
     public void testSecondsToTimeString1() {
         assertEquals("00:00:00", ThirtyHourTime.secondsToTimeString(0));
