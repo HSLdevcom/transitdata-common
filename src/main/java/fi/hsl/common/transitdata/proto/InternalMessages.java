@@ -216,6 +216,7 @@ public final class InternalMessages {
       tripId_ = "";
       operatingDay_ = "";
       routeId_ = "";
+      directionId_ = 0;
       startTime_ = "";
     }
 
@@ -316,7 +317,7 @@ public final class InternalMessages {
      * <code>required string trip_id = 1;</code>
      */
     public boolean hasTripId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -372,7 +373,7 @@ public final class InternalMessages {
      * <code>required string operating_day = 2;</code>
      */
     public boolean hasOperatingDay() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -422,7 +423,7 @@ public final class InternalMessages {
      * <code>required string route_id = 3;</code>
      */
     public boolean hasRouteId() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>required string route_id = 3;</code>
@@ -464,7 +465,7 @@ public final class InternalMessages {
      * <code>required uint32 direction_id = 4;</code>
      */
     public boolean hasDirectionId() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <code>required uint32 direction_id = 4;</code>
@@ -479,7 +480,7 @@ public final class InternalMessages {
      * <code>required string start_time = 5;</code>
      */
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <code>required string start_time = 5;</code>
@@ -549,19 +550,19 @@ public final class InternalMessages {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tripId_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, operatingDay_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, routeId_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeUInt32(4, directionId_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, startTime_);
       }
       unknownFields.writeTo(output);
@@ -573,20 +574,20 @@ public final class InternalMessages {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tripId_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, operatingDay_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, routeId_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, directionId_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, startTime_);
       }
       size += unknownFields.getSerializedSize();
@@ -604,33 +605,34 @@ public final class InternalMessages {
       }
       fi.hsl.common.transitdata.proto.InternalMessages.TripInfo other = (fi.hsl.common.transitdata.proto.InternalMessages.TripInfo) obj;
 
-      if (hasTripId() != other.hasTripId()) return false;
+      boolean result = true;
+      result = result && (hasTripId() == other.hasTripId());
       if (hasTripId()) {
-        if (!getTripId()
-            .equals(other.getTripId())) return false;
+        result = result && getTripId()
+            .equals(other.getTripId());
       }
-      if (hasOperatingDay() != other.hasOperatingDay()) return false;
+      result = result && (hasOperatingDay() == other.hasOperatingDay());
       if (hasOperatingDay()) {
-        if (!getOperatingDay()
-            .equals(other.getOperatingDay())) return false;
+        result = result && getOperatingDay()
+            .equals(other.getOperatingDay());
       }
-      if (hasRouteId() != other.hasRouteId()) return false;
+      result = result && (hasRouteId() == other.hasRouteId());
       if (hasRouteId()) {
-        if (!getRouteId()
-            .equals(other.getRouteId())) return false;
+        result = result && getRouteId()
+            .equals(other.getRouteId());
       }
-      if (hasDirectionId() != other.hasDirectionId()) return false;
+      result = result && (hasDirectionId() == other.hasDirectionId());
       if (hasDirectionId()) {
-        if (getDirectionId()
-            != other.getDirectionId()) return false;
+        result = result && (getDirectionId()
+            == other.getDirectionId());
       }
-      if (hasStartTime() != other.hasStartTime()) return false;
+      result = result && (hasStartTime() == other.hasStartTime());
       if (hasStartTime()) {
-        if (!getStartTime()
-            .equals(other.getStartTime())) return false;
+        result = result && getStartTime()
+            .equals(other.getStartTime());
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -831,23 +833,23 @@ public final class InternalMessages {
         fi.hsl.common.transitdata.proto.InternalMessages.TripInfo result = new fi.hsl.common.transitdata.proto.InternalMessages.TripInfo(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
         result.tripId_ = tripId_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
         result.operatingDay_ = operatingDay_;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
         result.routeId_ = routeId_;
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.directionId_ = directionId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.directionId_ = directionId_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
         result.startTime_ = startTime_;
@@ -858,35 +860,35 @@ public final class InternalMessages {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -978,7 +980,7 @@ public final class InternalMessages {
        * <code>required string trip_id = 1;</code>
        */
       public boolean hasTripId() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -1083,7 +1085,7 @@ public final class InternalMessages {
        * <code>required string operating_day = 2;</code>
        */
       public boolean hasOperatingDay() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -1179,7 +1181,7 @@ public final class InternalMessages {
        * <code>required string route_id = 3;</code>
        */
       public boolean hasRouteId() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>required string route_id = 3;</code>
@@ -1255,7 +1257,7 @@ public final class InternalMessages {
        * <code>required uint32 direction_id = 4;</code>
        */
       public boolean hasDirectionId() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <code>required uint32 direction_id = 4;</code>
@@ -1287,7 +1289,7 @@ public final class InternalMessages {
        * <code>required string start_time = 5;</code>
        */
       public boolean hasStartTime() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <code>required string start_time = 5;</code>
@@ -1513,6 +1515,7 @@ public final class InternalMessages {
       schemaVersion_ = 1;
       tripId_ = "";
       routeId_ = "";
+      directionId_ = 0;
       startTime_ = "";
       startDate_ = "";
       status_ = 0;
@@ -1721,7 +1724,7 @@ public final class InternalMessages {
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
      */
     public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
@@ -1736,7 +1739,7 @@ public final class InternalMessages {
      * <code>optional string trip_id = 2;</code>
      */
     public boolean hasTripId() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>optional string trip_id = 2;</code>
@@ -1778,7 +1781,7 @@ public final class InternalMessages {
      * <code>optional string route_id = 3;</code>
      */
     public boolean hasRouteId() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>optional string route_id = 3;</code>
@@ -1820,7 +1823,7 @@ public final class InternalMessages {
      * <code>optional uint32 direction_id = 4;</code>
      */
     public boolean hasDirectionId() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <code>optional uint32 direction_id = 4;</code>
@@ -1835,7 +1838,7 @@ public final class InternalMessages {
      * <code>optional string start_time = 5;</code>
      */
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <code>optional string start_time = 5;</code>
@@ -1877,7 +1880,7 @@ public final class InternalMessages {
      * <code>optional string start_date = 6;</code>
      */
     public boolean hasStartDate() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <code>optional string start_date = 6;</code>
@@ -1919,7 +1922,7 @@ public final class InternalMessages {
      * <code>required .proto.TripCancellation.Status status = 7;</code>
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
      * <code>required .proto.TripCancellation.Status status = 7;</code>
@@ -1952,25 +1955,25 @@ public final class InternalMessages {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeInt32(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tripId_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, routeId_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeUInt32(4, directionId_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, startTime_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, startDate_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeEnum(7, status_);
       }
       unknownFields.writeTo(output);
@@ -1982,27 +1985,27 @@ public final class InternalMessages {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tripId_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, routeId_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, directionId_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, startTime_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, startDate_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, status_);
       }
@@ -2021,42 +2024,43 @@ public final class InternalMessages {
       }
       fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation other = (fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation) obj;
 
-      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
+      boolean result = true;
+      result = result && (hasSchemaVersion() == other.hasSchemaVersion());
       if (hasSchemaVersion()) {
-        if (getSchemaVersion()
-            != other.getSchemaVersion()) return false;
+        result = result && (getSchemaVersion()
+            == other.getSchemaVersion());
       }
-      if (hasTripId() != other.hasTripId()) return false;
+      result = result && (hasTripId() == other.hasTripId());
       if (hasTripId()) {
-        if (!getTripId()
-            .equals(other.getTripId())) return false;
+        result = result && getTripId()
+            .equals(other.getTripId());
       }
-      if (hasRouteId() != other.hasRouteId()) return false;
+      result = result && (hasRouteId() == other.hasRouteId());
       if (hasRouteId()) {
-        if (!getRouteId()
-            .equals(other.getRouteId())) return false;
+        result = result && getRouteId()
+            .equals(other.getRouteId());
       }
-      if (hasDirectionId() != other.hasDirectionId()) return false;
+      result = result && (hasDirectionId() == other.hasDirectionId());
       if (hasDirectionId()) {
-        if (getDirectionId()
-            != other.getDirectionId()) return false;
+        result = result && (getDirectionId()
+            == other.getDirectionId());
       }
-      if (hasStartTime() != other.hasStartTime()) return false;
+      result = result && (hasStartTime() == other.hasStartTime());
       if (hasStartTime()) {
-        if (!getStartTime()
-            .equals(other.getStartTime())) return false;
+        result = result && getStartTime()
+            .equals(other.getStartTime());
       }
-      if (hasStartDate() != other.hasStartDate()) return false;
+      result = result && (hasStartDate() == other.hasStartDate());
       if (hasStartDate()) {
-        if (!getStartDate()
-            .equals(other.getStartDate())) return false;
+        result = result && getStartDate()
+            .equals(other.getStartDate());
       }
-      if (hasStatus() != other.hasStatus()) return false;
+      result = result && (hasStatus() == other.hasStatus());
       if (hasStatus()) {
-        if (status_ != other.status_) return false;
+        result = result && status_ == other.status_;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -2269,31 +2273,31 @@ public final class InternalMessages {
         fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation result = new fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
         result.schemaVersion_ = schemaVersion_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
         result.tripId_ = tripId_;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
         result.routeId_ = routeId_;
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.directionId_ = directionId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.directionId_ = directionId_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
         result.startTime_ = startTime_;
-        if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
         result.startDate_ = startDate_;
-        if (((from_bitField0_ & 0x00000040) != 0)) {
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
         result.status_ = status_;
@@ -2304,35 +2308,35 @@ public final class InternalMessages {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2416,7 +2420,7 @@ public final class InternalMessages {
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
        */
       public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
@@ -2448,7 +2452,7 @@ public final class InternalMessages {
        * <code>optional string trip_id = 2;</code>
        */
       public boolean hasTripId() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>optional string trip_id = 2;</code>
@@ -2524,7 +2528,7 @@ public final class InternalMessages {
        * <code>optional string route_id = 3;</code>
        */
       public boolean hasRouteId() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>optional string route_id = 3;</code>
@@ -2600,7 +2604,7 @@ public final class InternalMessages {
        * <code>optional uint32 direction_id = 4;</code>
        */
       public boolean hasDirectionId() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <code>optional uint32 direction_id = 4;</code>
@@ -2632,7 +2636,7 @@ public final class InternalMessages {
        * <code>optional string start_time = 5;</code>
        */
       public boolean hasStartTime() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <code>optional string start_time = 5;</code>
@@ -2708,7 +2712,7 @@ public final class InternalMessages {
        * <code>optional string start_date = 6;</code>
        */
       public boolean hasStartDate() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <code>optional string start_date = 6;</code>
@@ -2784,7 +2788,7 @@ public final class InternalMessages {
        * <code>required .proto.TripCancellation.Status status = 7;</code>
        */
       public boolean hasStatus() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
        * <code>required .proto.TripCancellation.Status status = 7;</code>
@@ -2977,8 +2981,12 @@ public final class InternalMessages {
     private StopEstimate() {
       schemaVersion_ = 1;
       stopId_ = "";
+      stopSequence_ = 0;
       status_ = 0;
       type_ = 0;
+      estimatedTimeUtcMs_ = 0L;
+      scheduledTimeUtcMs_ = 0L;
+      lastModifiedUtcMs_ = 0L;
     }
 
     @java.lang.Override
@@ -3012,7 +3020,7 @@ public final class InternalMessages {
             }
             case 18: {
               fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) != 0)) {
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
                 subBuilder = tripInfo_.toBuilder();
               }
               tripInfo_ = input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.PARSER, extensionRegistry);
@@ -3202,7 +3210,7 @@ public final class InternalMessages {
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
      */
     public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
@@ -3217,7 +3225,7 @@ public final class InternalMessages {
      * <code>required .proto.TripInfo trip_info = 2;</code>
      */
     public boolean hasTripInfo() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>required .proto.TripInfo trip_info = 2;</code>
@@ -3238,7 +3246,7 @@ public final class InternalMessages {
      * <code>required string stop_id = 3;</code>
      */
     public boolean hasStopId() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>required string stop_id = 3;</code>
@@ -3280,7 +3288,7 @@ public final class InternalMessages {
      * <code>required uint32 stop_sequence = 4;</code>
      */
     public boolean hasStopSequence() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <code>required uint32 stop_sequence = 4;</code>
@@ -3295,7 +3303,7 @@ public final class InternalMessages {
      * <code>required .proto.Status status = 5;</code>
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <code>required .proto.Status status = 5;</code>
@@ -3312,7 +3320,7 @@ public final class InternalMessages {
      * <code>required .proto.StopEstimate.Type type = 6;</code>
      */
     public boolean hasType() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <code>required .proto.StopEstimate.Type type = 6;</code>
@@ -3329,7 +3337,7 @@ public final class InternalMessages {
      * <code>required int64 estimated_time_utc_ms = 7;</code>
      */
     public boolean hasEstimatedTimeUtcMs() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
      * <code>required int64 estimated_time_utc_ms = 7;</code>
@@ -3344,7 +3352,7 @@ public final class InternalMessages {
      * <code>optional int64 scheduled_time_utc_ms = 8;</code>
      */
     public boolean hasScheduledTimeUtcMs() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
      * <code>optional int64 scheduled_time_utc_ms = 8;</code>
@@ -3359,7 +3367,7 @@ public final class InternalMessages {
      * <code>required int64 last_modified_utc_ms = 9;</code>
      */
     public boolean hasLastModifiedUtcMs() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
      * <code>required int64 last_modified_utc_ms = 9;</code>
@@ -3418,31 +3426,31 @@ public final class InternalMessages {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeInt32(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, getTripInfo());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, stopId_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeUInt32(4, stopSequence_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeEnum(5, status_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeEnum(6, type_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeInt64(7, estimatedTimeUtcMs_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeInt64(8, scheduledTimeUtcMs_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeInt64(9, lastModifiedUtcMs_);
       }
       unknownFields.writeTo(output);
@@ -3454,38 +3462,38 @@ public final class InternalMessages {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getTripInfo());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, stopId_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, stopSequence_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, status_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, type_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(7, estimatedTimeUtcMs_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(8, scheduledTimeUtcMs_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(9, lastModifiedUtcMs_);
       }
@@ -3504,51 +3512,52 @@ public final class InternalMessages {
       }
       fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate other = (fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate) obj;
 
-      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
+      boolean result = true;
+      result = result && (hasSchemaVersion() == other.hasSchemaVersion());
       if (hasSchemaVersion()) {
-        if (getSchemaVersion()
-            != other.getSchemaVersion()) return false;
+        result = result && (getSchemaVersion()
+            == other.getSchemaVersion());
       }
-      if (hasTripInfo() != other.hasTripInfo()) return false;
+      result = result && (hasTripInfo() == other.hasTripInfo());
       if (hasTripInfo()) {
-        if (!getTripInfo()
-            .equals(other.getTripInfo())) return false;
+        result = result && getTripInfo()
+            .equals(other.getTripInfo());
       }
-      if (hasStopId() != other.hasStopId()) return false;
+      result = result && (hasStopId() == other.hasStopId());
       if (hasStopId()) {
-        if (!getStopId()
-            .equals(other.getStopId())) return false;
+        result = result && getStopId()
+            .equals(other.getStopId());
       }
-      if (hasStopSequence() != other.hasStopSequence()) return false;
+      result = result && (hasStopSequence() == other.hasStopSequence());
       if (hasStopSequence()) {
-        if (getStopSequence()
-            != other.getStopSequence()) return false;
+        result = result && (getStopSequence()
+            == other.getStopSequence());
       }
-      if (hasStatus() != other.hasStatus()) return false;
+      result = result && (hasStatus() == other.hasStatus());
       if (hasStatus()) {
-        if (status_ != other.status_) return false;
+        result = result && status_ == other.status_;
       }
-      if (hasType() != other.hasType()) return false;
+      result = result && (hasType() == other.hasType());
       if (hasType()) {
-        if (type_ != other.type_) return false;
+        result = result && type_ == other.type_;
       }
-      if (hasEstimatedTimeUtcMs() != other.hasEstimatedTimeUtcMs()) return false;
+      result = result && (hasEstimatedTimeUtcMs() == other.hasEstimatedTimeUtcMs());
       if (hasEstimatedTimeUtcMs()) {
-        if (getEstimatedTimeUtcMs()
-            != other.getEstimatedTimeUtcMs()) return false;
+        result = result && (getEstimatedTimeUtcMs()
+            == other.getEstimatedTimeUtcMs());
       }
-      if (hasScheduledTimeUtcMs() != other.hasScheduledTimeUtcMs()) return false;
+      result = result && (hasScheduledTimeUtcMs() == other.hasScheduledTimeUtcMs());
       if (hasScheduledTimeUtcMs()) {
-        if (getScheduledTimeUtcMs()
-            != other.getScheduledTimeUtcMs()) return false;
+        result = result && (getScheduledTimeUtcMs()
+            == other.getScheduledTimeUtcMs());
       }
-      if (hasLastModifiedUtcMs() != other.hasLastModifiedUtcMs()) return false;
+      result = result && (hasLastModifiedUtcMs() == other.hasLastModifiedUtcMs());
       if (hasLastModifiedUtcMs()) {
-        if (getLastModifiedUtcMs()
-            != other.getLastModifiedUtcMs()) return false;
+        result = result && (getLastModifiedUtcMs()
+            == other.getLastModifiedUtcMs());
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -3781,46 +3790,46 @@ public final class InternalMessages {
         fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate result = new fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
         result.schemaVersion_ = schemaVersion_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          if (tripInfoBuilder_ == null) {
-            result.tripInfo_ = tripInfo_;
-          } else {
-            result.tripInfo_ = tripInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (tripInfoBuilder_ == null) {
+          result.tripInfo_ = tripInfo_;
+        } else {
+          result.tripInfo_ = tripInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
         result.stopId_ = stopId_;
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.stopSequence_ = stopSequence_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.stopSequence_ = stopSequence_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
         result.status_ = status_;
-        if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
         result.type_ = type_;
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.estimatedTimeUtcMs_ = estimatedTimeUtcMs_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.scheduledTimeUtcMs_ = scheduledTimeUtcMs_;
+        result.estimatedTimeUtcMs_ = estimatedTimeUtcMs_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
         }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.lastModifiedUtcMs_ = lastModifiedUtcMs_;
+        result.scheduledTimeUtcMs_ = scheduledTimeUtcMs_;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000100;
         }
+        result.lastModifiedUtcMs_ = lastModifiedUtcMs_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3828,35 +3837,35 @@ public final class InternalMessages {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -3961,7 +3970,7 @@ public final class InternalMessages {
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
        */
       public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
@@ -3988,14 +3997,14 @@ public final class InternalMessages {
         return this;
       }
 
-      private fi.hsl.common.transitdata.proto.InternalMessages.TripInfo tripInfo_;
+      private fi.hsl.common.transitdata.proto.InternalMessages.TripInfo tripInfo_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           fi.hsl.common.transitdata.proto.InternalMessages.TripInfo, fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.Builder, fi.hsl.common.transitdata.proto.InternalMessages.TripInfoOrBuilder> tripInfoBuilder_;
       /**
        * <code>required .proto.TripInfo trip_info = 2;</code>
        */
       public boolean hasTripInfo() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>required .proto.TripInfo trip_info = 2;</code>
@@ -4042,7 +4051,7 @@ public final class InternalMessages {
        */
       public Builder mergeTripInfo(fi.hsl.common.transitdata.proto.InternalMessages.TripInfo value) {
         if (tripInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
               tripInfo_ != null &&
               tripInfo_ != fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.getDefaultInstance()) {
             tripInfo_ =
@@ -4111,7 +4120,7 @@ public final class InternalMessages {
        * <code>required string stop_id = 3;</code>
        */
       public boolean hasStopId() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>required string stop_id = 3;</code>
@@ -4187,7 +4196,7 @@ public final class InternalMessages {
        * <code>required uint32 stop_sequence = 4;</code>
        */
       public boolean hasStopSequence() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <code>required uint32 stop_sequence = 4;</code>
@@ -4219,7 +4228,7 @@ public final class InternalMessages {
        * <code>required .proto.Status status = 5;</code>
        */
       public boolean hasStatus() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <code>required .proto.Status status = 5;</code>
@@ -4256,7 +4265,7 @@ public final class InternalMessages {
        * <code>required .proto.StopEstimate.Type type = 6;</code>
        */
       public boolean hasType() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <code>required .proto.StopEstimate.Type type = 6;</code>
@@ -4293,7 +4302,7 @@ public final class InternalMessages {
        * <code>required int64 estimated_time_utc_ms = 7;</code>
        */
       public boolean hasEstimatedTimeUtcMs() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
        * <code>required int64 estimated_time_utc_ms = 7;</code>
@@ -4325,7 +4334,7 @@ public final class InternalMessages {
        * <code>optional int64 scheduled_time_utc_ms = 8;</code>
        */
       public boolean hasScheduledTimeUtcMs() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
        * <code>optional int64 scheduled_time_utc_ms = 8;</code>
@@ -4357,7 +4366,7 @@ public final class InternalMessages {
        * <code>required int64 last_modified_utc_ms = 9;</code>
        */
       public boolean hasLastModifiedUtcMs() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
        * <code>required int64 last_modified_utc_ms = 9;</code>

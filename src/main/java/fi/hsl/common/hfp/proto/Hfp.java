@@ -100,7 +100,7 @@ public final class Hfp {
             }
             case 18: {
               fi.hsl.common.hfp.proto.Hfp.Topic.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) != 0)) {
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
                 subBuilder = topic_.toBuilder();
               }
               topic_ = input.readMessage(fi.hsl.common.hfp.proto.Hfp.Topic.PARSER, extensionRegistry);
@@ -113,7 +113,7 @@ public final class Hfp {
             }
             case 26: {
               fi.hsl.common.hfp.proto.Hfp.Payload.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) != 0)) {
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
                 subBuilder = payload_.toBuilder();
               }
               payload_ = input.readMessage(fi.hsl.common.hfp.proto.Hfp.Payload.PARSER, extensionRegistry);
@@ -163,7 +163,7 @@ public final class Hfp {
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
      */
     public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
@@ -178,7 +178,7 @@ public final class Hfp {
      * <code>optional .proto.Topic topic = 2;</code>
      */
     public boolean hasTopic() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>optional .proto.Topic topic = 2;</code>
@@ -199,7 +199,7 @@ public final class Hfp {
      * <code>required .proto.Payload payload = 3;</code>
      */
     public boolean hasPayload() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>required .proto.Payload payload = 3;</code>
@@ -246,13 +246,13 @@ public final class Hfp {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeInt32(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, getTopic());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeMessage(3, getPayload());
       }
       unknownFields.writeTo(output);
@@ -264,15 +264,15 @@ public final class Hfp {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getTopic());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getPayload());
       }
@@ -291,23 +291,24 @@ public final class Hfp {
       }
       fi.hsl.common.hfp.proto.Hfp.Data other = (fi.hsl.common.hfp.proto.Hfp.Data) obj;
 
-      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
+      boolean result = true;
+      result = result && (hasSchemaVersion() == other.hasSchemaVersion());
       if (hasSchemaVersion()) {
-        if (getSchemaVersion()
-            != other.getSchemaVersion()) return false;
+        result = result && (getSchemaVersion()
+            == other.getSchemaVersion());
       }
-      if (hasTopic() != other.hasTopic()) return false;
+      result = result && (hasTopic() == other.hasTopic());
       if (hasTopic()) {
-        if (!getTopic()
-            .equals(other.getTopic())) return false;
+        result = result && getTopic()
+            .equals(other.getTopic());
       }
-      if (hasPayload() != other.hasPayload()) return false;
+      result = result && (hasPayload() == other.hasPayload());
       if (hasPayload()) {
-        if (!getPayload()
-            .equals(other.getPayload())) return false;
+        result = result && getPayload()
+            .equals(other.getPayload());
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -506,25 +507,25 @@ public final class Hfp {
         fi.hsl.common.hfp.proto.Hfp.Data result = new fi.hsl.common.hfp.proto.Hfp.Data(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
         result.schemaVersion_ = schemaVersion_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          if (topicBuilder_ == null) {
-            result.topic_ = topic_;
-          } else {
-            result.topic_ = topicBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          if (payloadBuilder_ == null) {
-            result.payload_ = payload_;
-          } else {
-            result.payload_ = payloadBuilder_.build();
-          }
+        if (topicBuilder_ == null) {
+          result.topic_ = topic_;
+        } else {
+          result.topic_ = topicBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
+        }
+        if (payloadBuilder_ == null) {
+          result.payload_ = payload_;
+        } else {
+          result.payload_ = payloadBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -533,35 +534,35 @@ public final class Hfp {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -633,7 +634,7 @@ public final class Hfp {
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
        */
       public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
@@ -660,14 +661,14 @@ public final class Hfp {
         return this;
       }
 
-      private fi.hsl.common.hfp.proto.Hfp.Topic topic_;
+      private fi.hsl.common.hfp.proto.Hfp.Topic topic_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           fi.hsl.common.hfp.proto.Hfp.Topic, fi.hsl.common.hfp.proto.Hfp.Topic.Builder, fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder> topicBuilder_;
       /**
        * <code>optional .proto.Topic topic = 2;</code>
        */
       public boolean hasTopic() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>optional .proto.Topic topic = 2;</code>
@@ -714,7 +715,7 @@ public final class Hfp {
        */
       public Builder mergeTopic(fi.hsl.common.hfp.proto.Hfp.Topic value) {
         if (topicBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
               topic_ != null &&
               topic_ != fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance()) {
             topic_ =
@@ -778,14 +779,14 @@ public final class Hfp {
         return topicBuilder_;
       }
 
-      private fi.hsl.common.hfp.proto.Hfp.Payload payload_;
+      private fi.hsl.common.hfp.proto.Hfp.Payload payload_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           fi.hsl.common.hfp.proto.Hfp.Payload, fi.hsl.common.hfp.proto.Hfp.Payload.Builder, fi.hsl.common.hfp.proto.Hfp.PayloadOrBuilder> payloadBuilder_;
       /**
        * <code>required .proto.Payload payload = 3;</code>
        */
       public boolean hasPayload() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>required .proto.Payload payload = 3;</code>
@@ -832,7 +833,7 @@ public final class Hfp {
        */
       public Builder mergePayload(fi.hsl.common.hfp.proto.Hfp.Payload value) {
         if (payloadBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
               payload_ != null &&
               payload_ != fi.hsl.common.hfp.proto.Hfp.Payload.getDefaultInstance()) {
             payload_ =
@@ -1179,16 +1180,23 @@ public final class Hfp {
     }
     private Topic() {
       schemaVersion_ = 1;
+      receivedAt_ = 0L;
       topicPrefix_ = "";
       topicVersion_ = "";
       journeyType_ = 0;
       temporalType_ = 0;
       transportMode_ = 0;
+      operatorId_ = 0;
+      vehicleNumber_ = 0;
       uniqueVehicleId_ = "";
       routeId_ = "";
+      directionId_ = 0;
       headsign_ = "";
       startTime_ = "";
       nextStop_ = "";
+      geohashLevel_ = 0;
+      latitude_ = 0D;
+      longitude_ = 0D;
     }
 
     @java.lang.Override
@@ -1669,7 +1677,7 @@ public final class Hfp {
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
      */
     public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
@@ -1688,7 +1696,7 @@ public final class Hfp {
      * <code>required int64 received_at = 2;</code>
      */
     public boolean hasReceivedAt() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
@@ -1707,7 +1715,7 @@ public final class Hfp {
      * <code>required string topic_prefix = 3;</code>
      */
     public boolean hasTopicPrefix() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>required string topic_prefix = 3;</code>
@@ -1749,7 +1757,7 @@ public final class Hfp {
      * <code>required string topic_version = 4;</code>
      */
     public boolean hasTopicVersion() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <code>required string topic_version = 4;</code>
@@ -1791,7 +1799,7 @@ public final class Hfp {
      * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
      */
     public boolean hasJourneyType() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
@@ -1808,7 +1816,7 @@ public final class Hfp {
      * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
      */
     public boolean hasTemporalType() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
@@ -1829,7 +1837,7 @@ public final class Hfp {
      * <code>optional .proto.Topic.TransportMode transport_mode = 7;</code>
      */
     public boolean hasTransportMode() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
      * <pre>
@@ -1850,7 +1858,7 @@ public final class Hfp {
      * <code>required int32 operator_id = 8;</code>
      */
     public boolean hasOperatorId() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
      * <code>required int32 operator_id = 8;</code>
@@ -1865,7 +1873,7 @@ public final class Hfp {
      * <code>required int32 vehicle_number = 9;</code>
      */
     public boolean hasVehicleNumber() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
      * <code>required int32 vehicle_number = 9;</code>
@@ -1880,7 +1888,7 @@ public final class Hfp {
      * <code>required string unique_vehicle_id = 10;</code>
      */
     public boolean hasUniqueVehicleId() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
      * <code>required string unique_vehicle_id = 10;</code>
@@ -1922,7 +1930,7 @@ public final class Hfp {
      * <code>optional string route_id = 11;</code>
      */
     public boolean hasRouteId() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
      * <code>optional string route_id = 11;</code>
@@ -1964,7 +1972,7 @@ public final class Hfp {
      * <code>optional int32 direction_id = 12;</code>
      */
     public boolean hasDirectionId() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
      * <code>optional int32 direction_id = 12;</code>
@@ -1979,7 +1987,7 @@ public final class Hfp {
      * <code>optional string headsign = 13;</code>
      */
     public boolean hasHeadsign() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     /**
      * <code>optional string headsign = 13;</code>
@@ -2021,7 +2029,7 @@ public final class Hfp {
      * <code>optional string start_time = 14;</code>
      */
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00002000) == 0x00002000);
     }
     /**
      * <code>optional string start_time = 14;</code>
@@ -2063,7 +2071,7 @@ public final class Hfp {
      * <code>optional string next_stop = 15;</code>
      */
     public boolean hasNextStop() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00004000) == 0x00004000);
     }
     /**
      * <code>optional string next_stop = 15;</code>
@@ -2105,7 +2113,7 @@ public final class Hfp {
      * <code>optional int32 geohash_level = 16;</code>
      */
     public boolean hasGeohashLevel() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00008000) == 0x00008000);
     }
     /**
      * <code>optional int32 geohash_level = 16;</code>
@@ -2120,7 +2128,7 @@ public final class Hfp {
      * <code>optional double latitude = 17;</code>
      */
     public boolean hasLatitude() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00010000) == 0x00010000);
     }
     /**
      * <code>optional double latitude = 17;</code>
@@ -2135,7 +2143,7 @@ public final class Hfp {
      * <code>optional double longitude = 18;</code>
      */
     public boolean hasLongitude() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00020000) == 0x00020000);
     }
     /**
      * <code>optional double longitude = 18;</code>
@@ -2194,58 +2202,58 @@ public final class Hfp {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeInt32(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeInt64(2, receivedAt_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, topicPrefix_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, topicVersion_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeEnum(5, journeyType_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeEnum(6, temporalType_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeEnum(7, transportMode_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeInt32(8, operatorId_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeInt32(9, vehicleNumber_);
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, uniqueVehicleId_);
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, routeId_);
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         output.writeInt32(12, directionId_);
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, headsign_);
       }
-      if (((bitField0_ & 0x00002000) != 0)) {
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 14, startTime_);
       }
-      if (((bitField0_ & 0x00004000) != 0)) {
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, nextStop_);
       }
-      if (((bitField0_ & 0x00008000) != 0)) {
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
         output.writeInt32(16, geohashLevel_);
       }
-      if (((bitField0_ & 0x00010000) != 0)) {
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
         output.writeDouble(17, latitude_);
       }
-      if (((bitField0_ & 0x00020000) != 0)) {
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
         output.writeDouble(18, longitude_);
       }
       unknownFields.writeTo(output);
@@ -2257,68 +2265,68 @@ public final class Hfp {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, receivedAt_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, topicPrefix_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, topicVersion_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, journeyType_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, temporalType_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, transportMode_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(8, operatorId_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(9, vehicleNumber_);
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, uniqueVehicleId_);
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, routeId_);
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(12, directionId_);
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, headsign_);
       }
-      if (((bitField0_ & 0x00002000) != 0)) {
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, startTime_);
       }
-      if (((bitField0_ & 0x00004000) != 0)) {
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, nextStop_);
       }
-      if (((bitField0_ & 0x00008000) != 0)) {
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(16, geohashLevel_);
       }
-      if (((bitField0_ & 0x00010000) != 0)) {
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(17, latitude_);
       }
-      if (((bitField0_ & 0x00020000) != 0)) {
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(18, longitude_);
       }
@@ -2337,97 +2345,100 @@ public final class Hfp {
       }
       fi.hsl.common.hfp.proto.Hfp.Topic other = (fi.hsl.common.hfp.proto.Hfp.Topic) obj;
 
-      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
+      boolean result = true;
+      result = result && (hasSchemaVersion() == other.hasSchemaVersion());
       if (hasSchemaVersion()) {
-        if (getSchemaVersion()
-            != other.getSchemaVersion()) return false;
+        result = result && (getSchemaVersion()
+            == other.getSchemaVersion());
       }
-      if (hasReceivedAt() != other.hasReceivedAt()) return false;
+      result = result && (hasReceivedAt() == other.hasReceivedAt());
       if (hasReceivedAt()) {
-        if (getReceivedAt()
-            != other.getReceivedAt()) return false;
+        result = result && (getReceivedAt()
+            == other.getReceivedAt());
       }
-      if (hasTopicPrefix() != other.hasTopicPrefix()) return false;
+      result = result && (hasTopicPrefix() == other.hasTopicPrefix());
       if (hasTopicPrefix()) {
-        if (!getTopicPrefix()
-            .equals(other.getTopicPrefix())) return false;
+        result = result && getTopicPrefix()
+            .equals(other.getTopicPrefix());
       }
-      if (hasTopicVersion() != other.hasTopicVersion()) return false;
+      result = result && (hasTopicVersion() == other.hasTopicVersion());
       if (hasTopicVersion()) {
-        if (!getTopicVersion()
-            .equals(other.getTopicVersion())) return false;
+        result = result && getTopicVersion()
+            .equals(other.getTopicVersion());
       }
-      if (hasJourneyType() != other.hasJourneyType()) return false;
+      result = result && (hasJourneyType() == other.hasJourneyType());
       if (hasJourneyType()) {
-        if (journeyType_ != other.journeyType_) return false;
+        result = result && journeyType_ == other.journeyType_;
       }
-      if (hasTemporalType() != other.hasTemporalType()) return false;
+      result = result && (hasTemporalType() == other.hasTemporalType());
       if (hasTemporalType()) {
-        if (temporalType_ != other.temporalType_) return false;
+        result = result && temporalType_ == other.temporalType_;
       }
-      if (hasTransportMode() != other.hasTransportMode()) return false;
+      result = result && (hasTransportMode() == other.hasTransportMode());
       if (hasTransportMode()) {
-        if (transportMode_ != other.transportMode_) return false;
+        result = result && transportMode_ == other.transportMode_;
       }
-      if (hasOperatorId() != other.hasOperatorId()) return false;
+      result = result && (hasOperatorId() == other.hasOperatorId());
       if (hasOperatorId()) {
-        if (getOperatorId()
-            != other.getOperatorId()) return false;
+        result = result && (getOperatorId()
+            == other.getOperatorId());
       }
-      if (hasVehicleNumber() != other.hasVehicleNumber()) return false;
+      result = result && (hasVehicleNumber() == other.hasVehicleNumber());
       if (hasVehicleNumber()) {
-        if (getVehicleNumber()
-            != other.getVehicleNumber()) return false;
+        result = result && (getVehicleNumber()
+            == other.getVehicleNumber());
       }
-      if (hasUniqueVehicleId() != other.hasUniqueVehicleId()) return false;
+      result = result && (hasUniqueVehicleId() == other.hasUniqueVehicleId());
       if (hasUniqueVehicleId()) {
-        if (!getUniqueVehicleId()
-            .equals(other.getUniqueVehicleId())) return false;
+        result = result && getUniqueVehicleId()
+            .equals(other.getUniqueVehicleId());
       }
-      if (hasRouteId() != other.hasRouteId()) return false;
+      result = result && (hasRouteId() == other.hasRouteId());
       if (hasRouteId()) {
-        if (!getRouteId()
-            .equals(other.getRouteId())) return false;
+        result = result && getRouteId()
+            .equals(other.getRouteId());
       }
-      if (hasDirectionId() != other.hasDirectionId()) return false;
+      result = result && (hasDirectionId() == other.hasDirectionId());
       if (hasDirectionId()) {
-        if (getDirectionId()
-            != other.getDirectionId()) return false;
+        result = result && (getDirectionId()
+            == other.getDirectionId());
       }
-      if (hasHeadsign() != other.hasHeadsign()) return false;
+      result = result && (hasHeadsign() == other.hasHeadsign());
       if (hasHeadsign()) {
-        if (!getHeadsign()
-            .equals(other.getHeadsign())) return false;
+        result = result && getHeadsign()
+            .equals(other.getHeadsign());
       }
-      if (hasStartTime() != other.hasStartTime()) return false;
+      result = result && (hasStartTime() == other.hasStartTime());
       if (hasStartTime()) {
-        if (!getStartTime()
-            .equals(other.getStartTime())) return false;
+        result = result && getStartTime()
+            .equals(other.getStartTime());
       }
-      if (hasNextStop() != other.hasNextStop()) return false;
+      result = result && (hasNextStop() == other.hasNextStop());
       if (hasNextStop()) {
-        if (!getNextStop()
-            .equals(other.getNextStop())) return false;
+        result = result && getNextStop()
+            .equals(other.getNextStop());
       }
-      if (hasGeohashLevel() != other.hasGeohashLevel()) return false;
+      result = result && (hasGeohashLevel() == other.hasGeohashLevel());
       if (hasGeohashLevel()) {
-        if (getGeohashLevel()
-            != other.getGeohashLevel()) return false;
+        result = result && (getGeohashLevel()
+            == other.getGeohashLevel());
       }
-      if (hasLatitude() != other.hasLatitude()) return false;
+      result = result && (hasLatitude() == other.hasLatitude());
       if (hasLatitude()) {
-        if (java.lang.Double.doubleToLongBits(getLatitude())
-            != java.lang.Double.doubleToLongBits(
-                other.getLatitude())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getLatitude())
+            == java.lang.Double.doubleToLongBits(
+                other.getLatitude()));
       }
-      if (hasLongitude() != other.hasLongitude()) return false;
+      result = result && (hasLongitude() == other.hasLongitude());
       if (hasLongitude()) {
-        if (java.lang.Double.doubleToLongBits(getLongitude())
-            != java.lang.Double.doubleToLongBits(
-                other.getLongitude())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getLongitude())
+            == java.lang.Double.doubleToLongBits(
+                other.getLongitude()));
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -2709,78 +2720,78 @@ public final class Hfp {
         fi.hsl.common.hfp.proto.Hfp.Topic result = new fi.hsl.common.hfp.proto.Hfp.Topic(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
         result.schemaVersion_ = schemaVersion_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.receivedAt_ = receivedAt_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.receivedAt_ = receivedAt_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
         result.topicPrefix_ = topicPrefix_;
-        if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
         result.topicVersion_ = topicVersion_;
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
         result.journeyType_ = journeyType_;
-        if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
         result.temporalType_ = temporalType_;
-        if (((from_bitField0_ & 0x00000040) != 0)) {
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
         result.transportMode_ = transportMode_;
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.operatorId_ = operatorId_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
         }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.vehicleNumber_ = vehicleNumber_;
+        result.operatorId_ = operatorId_;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000100;
         }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.vehicleNumber_ = vehicleNumber_;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
           to_bitField0_ |= 0x00000200;
         }
         result.uniqueVehicleId_ = uniqueVehicleId_;
-        if (((from_bitField0_ & 0x00000400) != 0)) {
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
           to_bitField0_ |= 0x00000400;
         }
         result.routeId_ = routeId_;
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.directionId_ = directionId_;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
           to_bitField0_ |= 0x00000800;
         }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.directionId_ = directionId_;
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
           to_bitField0_ |= 0x00001000;
         }
         result.headsign_ = headsign_;
-        if (((from_bitField0_ & 0x00002000) != 0)) {
+        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
           to_bitField0_ |= 0x00002000;
         }
         result.startTime_ = startTime_;
-        if (((from_bitField0_ & 0x00004000) != 0)) {
+        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
           to_bitField0_ |= 0x00004000;
         }
         result.nextStop_ = nextStop_;
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.geohashLevel_ = geohashLevel_;
+        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
           to_bitField0_ |= 0x00008000;
         }
-        if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.latitude_ = latitude_;
+        result.geohashLevel_ = geohashLevel_;
+        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
           to_bitField0_ |= 0x00010000;
         }
-        if (((from_bitField0_ & 0x00020000) != 0)) {
-          result.longitude_ = longitude_;
+        result.latitude_ = latitude_;
+        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
           to_bitField0_ |= 0x00020000;
         }
+        result.longitude_ = longitude_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -2788,35 +2799,35 @@ public final class Hfp {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2960,7 +2971,7 @@ public final class Hfp {
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
        */
       public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
@@ -2996,7 +3007,7 @@ public final class Hfp {
        * <code>required int64 received_at = 2;</code>
        */
       public boolean hasReceivedAt() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
@@ -3040,7 +3051,7 @@ public final class Hfp {
        * <code>required string topic_prefix = 3;</code>
        */
       public boolean hasTopicPrefix() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>required string topic_prefix = 3;</code>
@@ -3116,7 +3127,7 @@ public final class Hfp {
        * <code>required string topic_version = 4;</code>
        */
       public boolean hasTopicVersion() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <code>required string topic_version = 4;</code>
@@ -3192,7 +3203,7 @@ public final class Hfp {
        * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
        */
       public boolean hasJourneyType() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
@@ -3229,7 +3240,7 @@ public final class Hfp {
        * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
        */
       public boolean hasTemporalType() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
@@ -3270,7 +3281,7 @@ public final class Hfp {
        * <code>optional .proto.Topic.TransportMode transport_mode = 7;</code>
        */
       public boolean hasTransportMode() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
        * <pre>
@@ -3319,7 +3330,7 @@ public final class Hfp {
        * <code>required int32 operator_id = 8;</code>
        */
       public boolean hasOperatorId() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
        * <code>required int32 operator_id = 8;</code>
@@ -3351,7 +3362,7 @@ public final class Hfp {
        * <code>required int32 vehicle_number = 9;</code>
        */
       public boolean hasVehicleNumber() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
        * <code>required int32 vehicle_number = 9;</code>
@@ -3383,7 +3394,7 @@ public final class Hfp {
        * <code>required string unique_vehicle_id = 10;</code>
        */
       public boolean hasUniqueVehicleId() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
        * <code>required string unique_vehicle_id = 10;</code>
@@ -3459,7 +3470,7 @@ public final class Hfp {
        * <code>optional string route_id = 11;</code>
        */
       public boolean hasRouteId() {
-        return ((bitField0_ & 0x00000400) != 0);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
        * <code>optional string route_id = 11;</code>
@@ -3535,7 +3546,7 @@ public final class Hfp {
        * <code>optional int32 direction_id = 12;</code>
        */
       public boolean hasDirectionId() {
-        return ((bitField0_ & 0x00000800) != 0);
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
        * <code>optional int32 direction_id = 12;</code>
@@ -3567,7 +3578,7 @@ public final class Hfp {
        * <code>optional string headsign = 13;</code>
        */
       public boolean hasHeadsign() {
-        return ((bitField0_ & 0x00001000) != 0);
+        return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
        * <code>optional string headsign = 13;</code>
@@ -3643,7 +3654,7 @@ public final class Hfp {
        * <code>optional string start_time = 14;</code>
        */
       public boolean hasStartTime() {
-        return ((bitField0_ & 0x00002000) != 0);
+        return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       /**
        * <code>optional string start_time = 14;</code>
@@ -3719,7 +3730,7 @@ public final class Hfp {
        * <code>optional string next_stop = 15;</code>
        */
       public boolean hasNextStop() {
-        return ((bitField0_ & 0x00004000) != 0);
+        return ((bitField0_ & 0x00004000) == 0x00004000);
       }
       /**
        * <code>optional string next_stop = 15;</code>
@@ -3795,7 +3806,7 @@ public final class Hfp {
        * <code>optional int32 geohash_level = 16;</code>
        */
       public boolean hasGeohashLevel() {
-        return ((bitField0_ & 0x00008000) != 0);
+        return ((bitField0_ & 0x00008000) == 0x00008000);
       }
       /**
        * <code>optional int32 geohash_level = 16;</code>
@@ -3827,7 +3838,7 @@ public final class Hfp {
        * <code>optional double latitude = 17;</code>
        */
       public boolean hasLatitude() {
-        return ((bitField0_ & 0x00010000) != 0);
+        return ((bitField0_ & 0x00010000) == 0x00010000);
       }
       /**
        * <code>optional double latitude = 17;</code>
@@ -3859,7 +3870,7 @@ public final class Hfp {
        * <code>optional double longitude = 18;</code>
        */
       public boolean hasLongitude() {
-        return ((bitField0_ & 0x00020000) != 0);
+        return ((bitField0_ & 0x00020000) == 0x00020000);
       }
       /**
        * <code>optional double longitude = 18;</code>
@@ -4154,8 +4165,21 @@ public final class Hfp {
       schemaVersion_ = 1;
       desi_ = "";
       dir_ = "";
+      oper_ = 0;
+      veh_ = 0;
       tst_ = "";
+      tsi_ = 0L;
+      spd_ = 0D;
+      hdg_ = 0D;
+      lat_ = 0D;
+      long_ = 0D;
+      acc_ = 0D;
+      dl_ = 0;
+      odo_ = 0;
+      drst_ = 0;
       oday_ = "";
+      jrn_ = 0;
+      line_ = 0;
       start_ = "";
     }
 
@@ -4322,7 +4346,7 @@ public final class Hfp {
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
      */
     public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
@@ -4337,7 +4361,7 @@ public final class Hfp {
      * <code>optional string desi = 2;</code>
      */
     public boolean hasDesi() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>optional string desi = 2;</code>
@@ -4379,7 +4403,7 @@ public final class Hfp {
      * <code>optional string dir = 3;</code>
      */
     public boolean hasDir() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>optional string dir = 3;</code>
@@ -4421,7 +4445,7 @@ public final class Hfp {
      * <code>optional int32 oper = 4;</code>
      */
     public boolean hasOper() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <code>optional int32 oper = 4;</code>
@@ -4436,7 +4460,7 @@ public final class Hfp {
      * <code>optional int32 veh = 5;</code>
      */
     public boolean hasVeh() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <code>optional int32 veh = 5;</code>
@@ -4451,7 +4475,7 @@ public final class Hfp {
      * <code>required string tst = 6;</code>
      */
     public boolean hasTst() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <code>required string tst = 6;</code>
@@ -4493,7 +4517,7 @@ public final class Hfp {
      * <code>required int64 tsi = 7;</code>
      */
     public boolean hasTsi() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
      * <code>required int64 tsi = 7;</code>
@@ -4508,7 +4532,7 @@ public final class Hfp {
      * <code>optional double spd = 8;</code>
      */
     public boolean hasSpd() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
      * <code>optional double spd = 8;</code>
@@ -4523,7 +4547,7 @@ public final class Hfp {
      * <code>optional double hdg = 9;</code>
      */
     public boolean hasHdg() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
      * <code>optional double hdg = 9;</code>
@@ -4538,7 +4562,7 @@ public final class Hfp {
      * <code>optional double lat = 10;</code>
      */
     public boolean hasLat() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
      * <code>optional double lat = 10;</code>
@@ -4553,7 +4577,7 @@ public final class Hfp {
      * <code>optional double long = 11;</code>
      */
     public boolean hasLong() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
      * <code>optional double long = 11;</code>
@@ -4568,7 +4592,7 @@ public final class Hfp {
      * <code>optional double acc = 12;</code>
      */
     public boolean hasAcc() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
      * <code>optional double acc = 12;</code>
@@ -4583,7 +4607,7 @@ public final class Hfp {
      * <code>optional uint32 dl = 13;</code>
      */
     public boolean hasDl() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     /**
      * <code>optional uint32 dl = 13;</code>
@@ -4598,7 +4622,7 @@ public final class Hfp {
      * <code>optional int32 odo = 14;</code>
      */
     public boolean hasOdo() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00002000) == 0x00002000);
     }
     /**
      * <code>optional int32 odo = 14;</code>
@@ -4613,7 +4637,7 @@ public final class Hfp {
      * <code>optional uint32 drst = 15;</code>
      */
     public boolean hasDrst() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00004000) == 0x00004000);
     }
     /**
      * <code>optional uint32 drst = 15;</code>
@@ -4628,7 +4652,7 @@ public final class Hfp {
      * <code>optional string oday = 16;</code>
      */
     public boolean hasOday() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00008000) == 0x00008000);
     }
     /**
      * <code>optional string oday = 16;</code>
@@ -4670,7 +4694,7 @@ public final class Hfp {
      * <code>optional int32 jrn = 17;</code>
      */
     public boolean hasJrn() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00010000) == 0x00010000);
     }
     /**
      * <code>optional int32 jrn = 17;</code>
@@ -4685,7 +4709,7 @@ public final class Hfp {
      * <code>optional int32 line = 18;</code>
      */
     public boolean hasLine() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00020000) == 0x00020000);
     }
     /**
      * <code>optional int32 line = 18;</code>
@@ -4700,7 +4724,7 @@ public final class Hfp {
      * <code>optional string start = 19;</code>
      */
     public boolean hasStart() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00040000) == 0x00040000);
     }
     /**
      * <code>optional string start = 19;</code>
@@ -4762,61 +4786,61 @@ public final class Hfp {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeInt32(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, desi_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, dir_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeInt32(4, oper_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeInt32(5, veh_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, tst_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeInt64(7, tsi_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeDouble(8, spd_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeDouble(9, hdg_);
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         output.writeDouble(10, lat_);
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         output.writeDouble(11, long_);
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         output.writeDouble(12, acc_);
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         output.writeUInt32(13, dl_);
       }
-      if (((bitField0_ & 0x00002000) != 0)) {
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
         output.writeInt32(14, odo_);
       }
-      if (((bitField0_ & 0x00004000) != 0)) {
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
         output.writeUInt32(15, drst_);
       }
-      if (((bitField0_ & 0x00008000) != 0)) {
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 16, oday_);
       }
-      if (((bitField0_ & 0x00010000) != 0)) {
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
         output.writeInt32(17, jrn_);
       }
-      if (((bitField0_ & 0x00020000) != 0)) {
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
         output.writeInt32(18, line_);
       }
-      if (((bitField0_ & 0x00040000) != 0)) {
+      if (((bitField0_ & 0x00040000) == 0x00040000)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 19, start_);
       }
       unknownFields.writeTo(output);
@@ -4828,75 +4852,75 @@ public final class Hfp {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, desi_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, dir_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, oper_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, veh_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, tst_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(7, tsi_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(8, spd_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(9, hdg_);
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(10, lat_);
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(11, long_);
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(12, acc_);
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, dl_);
       }
-      if (((bitField0_ & 0x00002000) != 0)) {
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(14, odo_);
       }
-      if (((bitField0_ & 0x00004000) != 0)) {
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, drst_);
       }
-      if (((bitField0_ & 0x00008000) != 0)) {
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, oday_);
       }
-      if (((bitField0_ & 0x00010000) != 0)) {
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(17, jrn_);
       }
-      if (((bitField0_ & 0x00020000) != 0)) {
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(18, line_);
       }
-      if (((bitField0_ & 0x00040000) != 0)) {
+      if (((bitField0_ & 0x00040000) == 0x00040000)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, start_);
       }
       size += unknownFields.getSerializedSize();
@@ -4914,108 +4938,114 @@ public final class Hfp {
       }
       fi.hsl.common.hfp.proto.Hfp.Payload other = (fi.hsl.common.hfp.proto.Hfp.Payload) obj;
 
-      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
+      boolean result = true;
+      result = result && (hasSchemaVersion() == other.hasSchemaVersion());
       if (hasSchemaVersion()) {
-        if (getSchemaVersion()
-            != other.getSchemaVersion()) return false;
+        result = result && (getSchemaVersion()
+            == other.getSchemaVersion());
       }
-      if (hasDesi() != other.hasDesi()) return false;
+      result = result && (hasDesi() == other.hasDesi());
       if (hasDesi()) {
-        if (!getDesi()
-            .equals(other.getDesi())) return false;
+        result = result && getDesi()
+            .equals(other.getDesi());
       }
-      if (hasDir() != other.hasDir()) return false;
+      result = result && (hasDir() == other.hasDir());
       if (hasDir()) {
-        if (!getDir()
-            .equals(other.getDir())) return false;
+        result = result && getDir()
+            .equals(other.getDir());
       }
-      if (hasOper() != other.hasOper()) return false;
+      result = result && (hasOper() == other.hasOper());
       if (hasOper()) {
-        if (getOper()
-            != other.getOper()) return false;
+        result = result && (getOper()
+            == other.getOper());
       }
-      if (hasVeh() != other.hasVeh()) return false;
+      result = result && (hasVeh() == other.hasVeh());
       if (hasVeh()) {
-        if (getVeh()
-            != other.getVeh()) return false;
+        result = result && (getVeh()
+            == other.getVeh());
       }
-      if (hasTst() != other.hasTst()) return false;
+      result = result && (hasTst() == other.hasTst());
       if (hasTst()) {
-        if (!getTst()
-            .equals(other.getTst())) return false;
+        result = result && getTst()
+            .equals(other.getTst());
       }
-      if (hasTsi() != other.hasTsi()) return false;
+      result = result && (hasTsi() == other.hasTsi());
       if (hasTsi()) {
-        if (getTsi()
-            != other.getTsi()) return false;
+        result = result && (getTsi()
+            == other.getTsi());
       }
-      if (hasSpd() != other.hasSpd()) return false;
+      result = result && (hasSpd() == other.hasSpd());
       if (hasSpd()) {
-        if (java.lang.Double.doubleToLongBits(getSpd())
-            != java.lang.Double.doubleToLongBits(
-                other.getSpd())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getSpd())
+            == java.lang.Double.doubleToLongBits(
+                other.getSpd()));
       }
-      if (hasHdg() != other.hasHdg()) return false;
+      result = result && (hasHdg() == other.hasHdg());
       if (hasHdg()) {
-        if (java.lang.Double.doubleToLongBits(getHdg())
-            != java.lang.Double.doubleToLongBits(
-                other.getHdg())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getHdg())
+            == java.lang.Double.doubleToLongBits(
+                other.getHdg()));
       }
-      if (hasLat() != other.hasLat()) return false;
+      result = result && (hasLat() == other.hasLat());
       if (hasLat()) {
-        if (java.lang.Double.doubleToLongBits(getLat())
-            != java.lang.Double.doubleToLongBits(
-                other.getLat())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getLat())
+            == java.lang.Double.doubleToLongBits(
+                other.getLat()));
       }
-      if (hasLong() != other.hasLong()) return false;
+      result = result && (hasLong() == other.hasLong());
       if (hasLong()) {
-        if (java.lang.Double.doubleToLongBits(getLong())
-            != java.lang.Double.doubleToLongBits(
-                other.getLong())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getLong())
+            == java.lang.Double.doubleToLongBits(
+                other.getLong()));
       }
-      if (hasAcc() != other.hasAcc()) return false;
+      result = result && (hasAcc() == other.hasAcc());
       if (hasAcc()) {
-        if (java.lang.Double.doubleToLongBits(getAcc())
-            != java.lang.Double.doubleToLongBits(
-                other.getAcc())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getAcc())
+            == java.lang.Double.doubleToLongBits(
+                other.getAcc()));
       }
-      if (hasDl() != other.hasDl()) return false;
+      result = result && (hasDl() == other.hasDl());
       if (hasDl()) {
-        if (getDl()
-            != other.getDl()) return false;
+        result = result && (getDl()
+            == other.getDl());
       }
-      if (hasOdo() != other.hasOdo()) return false;
+      result = result && (hasOdo() == other.hasOdo());
       if (hasOdo()) {
-        if (getOdo()
-            != other.getOdo()) return false;
+        result = result && (getOdo()
+            == other.getOdo());
       }
-      if (hasDrst() != other.hasDrst()) return false;
+      result = result && (hasDrst() == other.hasDrst());
       if (hasDrst()) {
-        if (getDrst()
-            != other.getDrst()) return false;
+        result = result && (getDrst()
+            == other.getDrst());
       }
-      if (hasOday() != other.hasOday()) return false;
+      result = result && (hasOday() == other.hasOday());
       if (hasOday()) {
-        if (!getOday()
-            .equals(other.getOday())) return false;
+        result = result && getOday()
+            .equals(other.getOday());
       }
-      if (hasJrn() != other.hasJrn()) return false;
+      result = result && (hasJrn() == other.hasJrn());
       if (hasJrn()) {
-        if (getJrn()
-            != other.getJrn()) return false;
+        result = result && (getJrn()
+            == other.getJrn());
       }
-      if (hasLine() != other.hasLine()) return false;
+      result = result && (hasLine() == other.hasLine());
       if (hasLine()) {
-        if (getLine()
-            != other.getLine()) return false;
+        result = result && (getLine()
+            == other.getLine());
       }
-      if (hasStart() != other.hasStart()) return false;
+      result = result && (hasStart() == other.hasStart());
       if (hasStart()) {
-        if (!getStart()
-            .equals(other.getStart())) return false;
+        result = result && getStart()
+            .equals(other.getStart());
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -5306,79 +5336,79 @@ public final class Hfp {
         fi.hsl.common.hfp.proto.Hfp.Payload result = new fi.hsl.common.hfp.proto.Hfp.Payload(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
         result.schemaVersion_ = schemaVersion_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
         result.desi_ = desi_;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
         result.dir_ = dir_;
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.oper_ = oper_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.veh_ = veh_;
+        result.oper_ = oper_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.veh_ = veh_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
         result.tst_ = tst_;
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.tsi_ = tsi_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.spd_ = spd_;
+        result.tsi_ = tsi_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
         }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.hdg_ = hdg_;
+        result.spd_ = spd_;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000100;
         }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.lat_ = lat_;
+        result.hdg_ = hdg_;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
           to_bitField0_ |= 0x00000200;
         }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.long_ = long_;
+        result.lat_ = lat_;
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
           to_bitField0_ |= 0x00000400;
         }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.acc_ = acc_;
+        result.long_ = long_;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
           to_bitField0_ |= 0x00000800;
         }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.dl_ = dl_;
+        result.acc_ = acc_;
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
           to_bitField0_ |= 0x00001000;
         }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.odo_ = odo_;
+        result.dl_ = dl_;
+        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
           to_bitField0_ |= 0x00002000;
         }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.drst_ = drst_;
+        result.odo_ = odo_;
+        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
           to_bitField0_ |= 0x00004000;
         }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.drst_ = drst_;
+        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
           to_bitField0_ |= 0x00008000;
         }
         result.oday_ = oday_;
-        if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.jrn_ = jrn_;
+        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
           to_bitField0_ |= 0x00010000;
         }
-        if (((from_bitField0_ & 0x00020000) != 0)) {
-          result.line_ = line_;
+        result.jrn_ = jrn_;
+        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
           to_bitField0_ |= 0x00020000;
         }
-        if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.line_ = line_;
+        if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
           to_bitField0_ |= 0x00040000;
         }
         result.start_ = start_;
@@ -5389,35 +5419,35 @@ public final class Hfp {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -5542,7 +5572,7 @@ public final class Hfp {
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
        */
       public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
@@ -5574,7 +5604,7 @@ public final class Hfp {
        * <code>optional string desi = 2;</code>
        */
       public boolean hasDesi() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>optional string desi = 2;</code>
@@ -5650,7 +5680,7 @@ public final class Hfp {
        * <code>optional string dir = 3;</code>
        */
       public boolean hasDir() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>optional string dir = 3;</code>
@@ -5726,7 +5756,7 @@ public final class Hfp {
        * <code>optional int32 oper = 4;</code>
        */
       public boolean hasOper() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <code>optional int32 oper = 4;</code>
@@ -5758,7 +5788,7 @@ public final class Hfp {
        * <code>optional int32 veh = 5;</code>
        */
       public boolean hasVeh() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <code>optional int32 veh = 5;</code>
@@ -5790,7 +5820,7 @@ public final class Hfp {
        * <code>required string tst = 6;</code>
        */
       public boolean hasTst() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <code>required string tst = 6;</code>
@@ -5866,7 +5896,7 @@ public final class Hfp {
        * <code>required int64 tsi = 7;</code>
        */
       public boolean hasTsi() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
        * <code>required int64 tsi = 7;</code>
@@ -5898,7 +5928,7 @@ public final class Hfp {
        * <code>optional double spd = 8;</code>
        */
       public boolean hasSpd() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
        * <code>optional double spd = 8;</code>
@@ -5930,7 +5960,7 @@ public final class Hfp {
        * <code>optional double hdg = 9;</code>
        */
       public boolean hasHdg() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
        * <code>optional double hdg = 9;</code>
@@ -5962,7 +5992,7 @@ public final class Hfp {
        * <code>optional double lat = 10;</code>
        */
       public boolean hasLat() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
        * <code>optional double lat = 10;</code>
@@ -5994,7 +6024,7 @@ public final class Hfp {
        * <code>optional double long = 11;</code>
        */
       public boolean hasLong() {
-        return ((bitField0_ & 0x00000400) != 0);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
        * <code>optional double long = 11;</code>
@@ -6026,7 +6056,7 @@ public final class Hfp {
        * <code>optional double acc = 12;</code>
        */
       public boolean hasAcc() {
-        return ((bitField0_ & 0x00000800) != 0);
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
        * <code>optional double acc = 12;</code>
@@ -6058,7 +6088,7 @@ public final class Hfp {
        * <code>optional uint32 dl = 13;</code>
        */
       public boolean hasDl() {
-        return ((bitField0_ & 0x00001000) != 0);
+        return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
        * <code>optional uint32 dl = 13;</code>
@@ -6090,7 +6120,7 @@ public final class Hfp {
        * <code>optional int32 odo = 14;</code>
        */
       public boolean hasOdo() {
-        return ((bitField0_ & 0x00002000) != 0);
+        return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       /**
        * <code>optional int32 odo = 14;</code>
@@ -6122,7 +6152,7 @@ public final class Hfp {
        * <code>optional uint32 drst = 15;</code>
        */
       public boolean hasDrst() {
-        return ((bitField0_ & 0x00004000) != 0);
+        return ((bitField0_ & 0x00004000) == 0x00004000);
       }
       /**
        * <code>optional uint32 drst = 15;</code>
@@ -6154,7 +6184,7 @@ public final class Hfp {
        * <code>optional string oday = 16;</code>
        */
       public boolean hasOday() {
-        return ((bitField0_ & 0x00008000) != 0);
+        return ((bitField0_ & 0x00008000) == 0x00008000);
       }
       /**
        * <code>optional string oday = 16;</code>
@@ -6230,7 +6260,7 @@ public final class Hfp {
        * <code>optional int32 jrn = 17;</code>
        */
       public boolean hasJrn() {
-        return ((bitField0_ & 0x00010000) != 0);
+        return ((bitField0_ & 0x00010000) == 0x00010000);
       }
       /**
        * <code>optional int32 jrn = 17;</code>
@@ -6262,7 +6292,7 @@ public final class Hfp {
        * <code>optional int32 line = 18;</code>
        */
       public boolean hasLine() {
-        return ((bitField0_ & 0x00020000) != 0);
+        return ((bitField0_ & 0x00020000) == 0x00020000);
       }
       /**
        * <code>optional int32 line = 18;</code>
@@ -6294,7 +6324,7 @@ public final class Hfp {
        * <code>optional string start = 19;</code>
        */
       public boolean hasStart() {
-        return ((bitField0_ & 0x00040000) != 0);
+        return ((bitField0_ & 0x00040000) == 0x00040000);
       }
       /**
        * <code>optional string start = 19;</code>
