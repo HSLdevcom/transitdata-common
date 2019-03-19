@@ -20,6 +20,36 @@ public class ThirtyHourTimeTest {
         assertEquals(131696, ThirtyHourTime.timeStringToSeconds("36:34:56"));
     }
 
+    @Test(expected = ParseException.class)
+    public void testTimeStringToSecondsException1() throws ParseException {
+        ThirtyHourTime.timeStringToSeconds("asd");
+    }
+
+    @Test(expected = ParseException.class)
+    public void testTimeStringToSecondsException2() throws ParseException {
+        ThirtyHourTime.timeStringToSeconds("-12:34:56");
+    }
+
+    @Test(expected = ParseException.class)
+    public void testTimeStringToSecondsException3() throws ParseException {
+        ThirtyHourTime.timeStringToSeconds("12.0:34:56");
+    }
+
+    @Test(expected = ParseException.class)
+    public void testTimeStringToSecondsException4() throws ParseException {
+        ThirtyHourTime.timeStringToSeconds("12:60:00");
+    }
+
+    @Test(expected = ParseException.class)
+    public void testTimeStringToSecondsException5() throws ParseException {
+        ThirtyHourTime.timeStringToSeconds("1:23:45");
+    }
+
+    @Test(expected = ParseException.class)
+    public void testTimeStringToSecondsException6() throws ParseException {
+        ThirtyHourTime.timeStringToSeconds("12:3:45");
+    }
+
     @Test
     public void testSecondsToTimeString1() {
         assertEquals("00:00:00", ThirtyHourTime.secondsToTimeString(0));
