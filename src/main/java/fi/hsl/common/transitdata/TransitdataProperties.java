@@ -1,5 +1,7 @@
 package fi.hsl.common.transitdata;
 
+import fi.hsl.common.gtfsrt.ThirtyHourTime;
+
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 
@@ -102,5 +104,9 @@ public class TransitdataProperties {
 
     public static String formatJoreId(String route, String direction, String startDate, String startTime) {
         return REDIS_PREFIX_JORE_ID + route + "-" + direction + "-" + startDate + "-" + startTime;
+    }
+
+    public static String formatJoreId(String route, String direction, String startDate, ThirtyHourTime startTime) {
+        return formatJoreId(route, direction, startDate, startTime.getTimeString());
     }
 }
