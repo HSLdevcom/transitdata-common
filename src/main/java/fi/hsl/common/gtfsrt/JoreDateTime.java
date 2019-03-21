@@ -55,6 +55,18 @@ public class JoreDateTime {
         return dateTime;
     }
 
+    public boolean isBefore(final JoreDateTime other) {
+        return dateTime.isBefore(other.getDateTime());
+    }
+
+    public boolean isAfter(final JoreDateTime other) {
+        return dateTime.isAfter(other.getDateTime());
+    }
+
+    public boolean isEqual(final JoreDateTime other) {
+        return dateTime.isEqual(other.getDateTime());
+    }
+
     public static int timeStringToSeconds(String timeString) throws ParseException {
         Matcher matcher = pattern.matcher(timeString);
         if (!matcher.matches()) {
