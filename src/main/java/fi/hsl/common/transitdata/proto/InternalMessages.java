@@ -14,96 +14,6 @@ public final class InternalMessages {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  /**
-   * Protobuf enum {@code proto.Status}
-   */
-  public enum Status
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>SCHEDULED = 0;</code>
-     */
-    SCHEDULED(0),
-    /**
-     * <code>CANCELED = 1;</code>
-     */
-    CANCELED(1),
-    ;
-
-    /**
-     * <code>SCHEDULED = 0;</code>
-     */
-    public static final int SCHEDULED_VALUE = 0;
-    /**
-     * <code>CANCELED = 1;</code>
-     */
-    public static final int CANCELED_VALUE = 1;
-
-
-    public final int getNumber() {
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static Status valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static Status forNumber(int value) {
-      switch (value) {
-        case 0: return SCHEDULED;
-        case 1: return CANCELED;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<Status>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Status> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Status>() {
-            public Status findValueByNumber(int number) {
-              return Status.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return fi.hsl.common.transitdata.proto.InternalMessages.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final Status[] VALUES = values();
-
-    public static Status valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private Status(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:proto.Status)
-  }
-
   public interface TripInfoOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.TripInfo)
       com.google.protobuf.MessageOrBuilder {
@@ -2922,13 +2832,13 @@ public final class InternalMessages {
     int getStopSequence();
 
     /**
-     * <code>required .proto.Status status = 5;</code>
+     * <code>required .proto.StopEstimate.Status status = 5;</code>
      */
     boolean hasStatus();
     /**
-     * <code>required .proto.Status status = 5;</code>
+     * <code>required .proto.StopEstimate.Status status = 5;</code>
      */
-    fi.hsl.common.transitdata.proto.InternalMessages.Status getStatus();
+    fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status getStatus();
 
     /**
      * <code>required .proto.StopEstimate.Type type = 6;</code>
@@ -3045,7 +2955,7 @@ public final class InternalMessages {
             case 40: {
               int rawValue = input.readEnum();
                 @SuppressWarnings("deprecation")
-              fi.hsl.common.transitdata.proto.InternalMessages.Status value = fi.hsl.common.transitdata.proto.InternalMessages.Status.valueOf(rawValue);
+              fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status value = fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(5, rawValue);
               } else {
@@ -3111,6 +3021,96 @@ public final class InternalMessages {
       return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_StopEstimate_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.class, fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code proto.StopEstimate.Status}
+     */
+    public enum Status
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>SCHEDULED = 0;</code>
+       */
+      SCHEDULED(0),
+      /**
+       * <code>SKIPPED = 1;</code>
+       */
+      SKIPPED(1),
+      ;
+
+      /**
+       * <code>SCHEDULED = 0;</code>
+       */
+      public static final int SCHEDULED_VALUE = 0;
+      /**
+       * <code>SKIPPED = 1;</code>
+       */
+      public static final int SKIPPED_VALUE = 1;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Status valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Status forNumber(int value) {
+        switch (value) {
+          case 0: return SCHEDULED;
+          case 1: return SKIPPED;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Status>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Status> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Status>() {
+              public Status findValueByNumber(int number) {
+                return Status.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Status[] VALUES = values();
+
+      public static Status valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Status(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.StopEstimate.Status)
     }
 
     /**
@@ -3180,7 +3180,7 @@ public final class InternalMessages {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.getDescriptor().getEnumTypes().get(0);
+        return fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.getDescriptor().getEnumTypes().get(1);
       }
 
       private static final Type[] VALUES = values();
@@ -3300,18 +3300,18 @@ public final class InternalMessages {
     public static final int STATUS_FIELD_NUMBER = 5;
     private int status_;
     /**
-     * <code>required .proto.Status status = 5;</code>
+     * <code>required .proto.StopEstimate.Status status = 5;</code>
      */
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>required .proto.Status status = 5;</code>
+     * <code>required .proto.StopEstimate.Status status = 5;</code>
      */
-    public fi.hsl.common.transitdata.proto.InternalMessages.Status getStatus() {
+    public fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status getStatus() {
       @SuppressWarnings("deprecation")
-      fi.hsl.common.transitdata.proto.InternalMessages.Status result = fi.hsl.common.transitdata.proto.InternalMessages.Status.valueOf(status_);
-      return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.Status.SCHEDULED : result;
+      fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status result = fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status.valueOf(status_);
+      return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status.SCHEDULED : result;
     }
 
     public static final int TYPE_FIELD_NUMBER = 6;
@@ -4225,23 +4225,23 @@ public final class InternalMessages {
 
       private int status_ = 0;
       /**
-       * <code>required .proto.Status status = 5;</code>
+       * <code>required .proto.StopEstimate.Status status = 5;</code>
        */
       public boolean hasStatus() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>required .proto.Status status = 5;</code>
+       * <code>required .proto.StopEstimate.Status status = 5;</code>
        */
-      public fi.hsl.common.transitdata.proto.InternalMessages.Status getStatus() {
+      public fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status getStatus() {
         @SuppressWarnings("deprecation")
-        fi.hsl.common.transitdata.proto.InternalMessages.Status result = fi.hsl.common.transitdata.proto.InternalMessages.Status.valueOf(status_);
-        return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.Status.SCHEDULED : result;
+        fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status result = fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status.valueOf(status_);
+        return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status.SCHEDULED : result;
       }
       /**
-       * <code>required .proto.Status status = 5;</code>
+       * <code>required .proto.StopEstimate.Status status = 5;</code>
        */
-      public Builder setStatus(fi.hsl.common.transitdata.proto.InternalMessages.Status value) {
+      public Builder setStatus(fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -4251,7 +4251,7 @@ public final class InternalMessages {
         return this;
       }
       /**
-       * <code>required .proto.Status status = 5;</code>
+       * <code>required .proto.StopEstimate.Status status = 5;</code>
        */
       public Builder clearStatus() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -4478,17 +4478,17 @@ public final class InternalMessages {
       "id\030\004 \001(\r\022\022\n\nstart_time\030\005 \001(\t\022\022\n\nstart_da" +
       "te\030\006 \001(\t\022.\n\006status\030\007 \002(\0162\036.proto.TripCan" +
       "cellation.Status\"#\n\006Status\022\013\n\007RUNNING\020\000\022" +
-      "\014\n\010CANCELED\020\001\"\273\002\n\014StopEstimate\022\030\n\rSchema" +
+      "\014\n\010CANCELED\020\001\"\356\002\n\014StopEstimate\022\030\n\rSchema" +
       "Version\030\001 \002(\005:\0011\022\"\n\ttrip_info\030\002 \002(\0132\017.pr" +
       "oto.TripInfo\022\017\n\007stop_id\030\003 \002(\t\022\025\n\rstop_se" +
-      "quence\030\004 \002(\r\022\035\n\006status\030\005 \002(\0162\r.proto.Sta" +
-      "tus\022&\n\004type\030\006 \002(\0162\030.proto.StopEstimate.T" +
-      "ype\022\035\n\025estimated_time_utc_ms\030\007 \002(\003\022\035\n\025sc" +
-      "heduled_time_utc_ms\030\010 \001(\003\022\034\n\024last_modifi" +
-      "ed_utc_ms\030\t \002(\003\"\"\n\004Type\022\013\n\007ARRIVAL\020\000\022\r\n\t" +
-      "DEPARTURE\020\001*%\n\006Status\022\r\n\tSCHEDULED\020\000\022\014\n\010" +
-      "CANCELED\020\001B3\n\037fi.hsl.common.transitdata." +
-      "protoB\020InternalMessages"
+      "quence\030\004 \002(\r\022*\n\006status\030\005 \002(\0162\032.proto.Sto" +
+      "pEstimate.Status\022&\n\004type\030\006 \002(\0162\030.proto.S" +
+      "topEstimate.Type\022\035\n\025estimated_time_utc_m" +
+      "s\030\007 \002(\003\022\035\n\025scheduled_time_utc_ms\030\010 \001(\003\022\034" +
+      "\n\024last_modified_utc_ms\030\t \002(\003\"$\n\006Status\022\r" +
+      "\n\tSCHEDULED\020\000\022\013\n\007SKIPPED\020\001\"\"\n\004Type\022\013\n\007AR" +
+      "RIVAL\020\000\022\r\n\tDEPARTURE\020\001B3\n\037fi.hsl.common." +
+      "transitdata.protoB\020InternalMessages"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

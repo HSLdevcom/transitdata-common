@@ -89,11 +89,13 @@ public class TestPipeline {
             final long expectedCount = expectedOutput.size();
             ArrayList<Message<byte[]>> buffer = new ArrayList<>();
             now = System.currentTimeMillis();
-            while (buffer.size() < expectedCount) {
-                Message<byte[]> read = readOutputMessage(context);
-                assertNotNull("Was expecting more messages but got null!", read);
+
+            Message<byte[]> read = null;
+            // Read as many messages as there is, quit once times out
+            while ((read = readOutputMessage(context)) != null) {
                 buffer.add(read);
             }
+
             logger.info("{} messages read back in {} ms", buffer.size(), (System.currentTimeMillis() - now));
 
             assertEquals(expectedCount, buffer.size());
