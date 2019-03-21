@@ -160,7 +160,7 @@ public class MockDataUtils {
         builder.setTripInfo(info);
 
         builder.setHasDestinationDisplayId(0);
-        builder.setHasDestinationDisplayId(0);
+        builder.setHasDestinationStopAreaGid(0);
         builder.setHasServiceRequirementId(0);
         return builder.build();
     }
