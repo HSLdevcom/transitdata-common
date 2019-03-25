@@ -239,37 +239,49 @@ public class MockDataUtils {
     }
 
     public static InternalMessages.TripCancellation mockTripCancellation(String routeId) {
-        return mockTripCancellation(routeId, MOCK_DIRECTION_ID, MOCK_START_DATE, MOCK_START_TIME, InternalMessages.TripCancellation.Status.CANCELED);
+        return mockTripCancellation(routeId,
+                MOCK_DIRECTION_ID, MOCK_START_DATE, MOCK_START_TIME,
+                InternalMessages.TripCancellation.Status.CANCELED,
+                Long.toString(generateValidJoreId()));
     }
 
     public static InternalMessages.TripCancellation mockTripCancellation(String routeId, int joreDirectionId,
-                                                                         LocalDateTime startTime) {
-        return mockTripCancellation(routeId, joreDirectionId, startTime, InternalMessages.TripCancellation.Status.CANCELED);
+                                                                         LocalDateTime startTime, String dvjId) {
+        return mockTripCancellation(routeId, joreDirectionId, startTime, InternalMessages.TripCancellation.Status.CANCELED, dvjId);
     }
 
     public static InternalMessages.TripCancellation mockTripCancellation(String routeId, int joreDirectionId,
                                                                          LocalDateTime startTime,
-                                                                         InternalMessages.TripCancellation.Status status) {
+                                                                         InternalMessages.TripCancellation.Status status,
+                                                                         String dvjId) {
 
         String date = DateTimeFormatter.ofPattern("yyyyMMdd").format(startTime);
         String time = DateTimeFormatter.ofPattern("HH:mm:ss").format(startTime);
-        return mockTripCancellation(routeId, joreDirectionId, date, time, status);
+        return mockTripCancellation(routeId, joreDirectionId, date, time, status, dvjId);
     }
 
     public static InternalMessages.TripCancellation mockTripCancellation(String routeId, int joreDirectionId,
                                                                          String startDate, String startTime,
-                                                                         InternalMessages.TripCancellation.Status status) {
+                                                                         InternalMessages.TripCancellation.Status status,
+                                                                         String dvjId) {
+        return mockTripCancellationBuilder(routeId, joreDirectionId, startDate, startTime, status, dvjId).build();
+    }
+
+    public static InternalMessages.TripCancellation.Builder mockTripCancellationBuilder(String routeId, int joreDirectionId,
+                                                                         String startDate, String startTime,
+                                                                         InternalMessages.TripCancellation.Status status,
+                                                                         String dvjId) {
 
         InternalMessages.TripCancellation.Builder tripCancellationBuilder = InternalMessages.TripCancellation.newBuilder();
 
         tripCancellationBuilder.setRouteId(routeId)
+                .setTripId(dvjId)
                 .setDirectionId(joreDirectionId)
                 .setStartDate(startDate)
                 .setStartTime(startTime)
                 .setSchemaVersion(tripCancellationBuilder.getSchemaVersion())
                 .setStatus(status);
-
-        return tripCancellationBuilder.build();
+        return tripCancellationBuilder;
     }
 
 }
