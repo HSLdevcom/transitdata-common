@@ -1,0 +1,66 @@
+syntax = "proto2";
+
+package proto;
+
+option java_package = "fi.hsl.common.transitdata.proto";
+option java_outer_classname = "MetroMessages";
+
+enum TrainType {
+    M = 0;
+    T = 1;
+}
+
+enum Progress {
+    SCHEDULED = 0;
+    INPROGRESS = 1;
+    COMPLETED = 2;
+    CANCELLED = 3;
+}
+
+message Schedule {
+    required int32 schema_version = 1 [default = 1];
+    required string route_name = 2;
+    required TrainType train_type = 3;
+    required Progress journey_section_progress = 4;
+    required string begin_time = 5;
+    required string end_time = 6;
+    repeated RouteRow route_rows = 7;
+}
+
+message RouteRow {
+    required int64 route_row_id = 1;
+    required string station = 2;
+    required string platform = 3; // Is this string or int or enum?
+    required string arrival_time_planned = 4;
+    required string arrival_time_forecast = 5;
+    required string arrival_time_measured = 6;
+    required string departure_time_planned = 7;
+    required string departure_time_forecast = 8;
+    required string departure_time_measured = 9;
+    required string source = 10;
+    required Progress row_progress = 11;
+}
+
+message Forecast {
+    required int32 schema_version = 1 [default = 1];
+    repeated Train trains = 2;
+}
+
+message Train {
+    required string shift_number = 1;
+    required string origin_station = 2;
+    required string destination_station = 3;
+    required string js_id = 4;
+    required string arrival_time_forecast = 5;
+    required string departure_time_forecast = 6;
+    enum TrainState {
+        PLANNED = 0;
+        APPROACHING = 1;
+        ARRIVING = 2;
+        ARRIVED = 3;
+        DEPARTING = 4;
+        DEPARTED = 5;
+    }
+    required TrainState train_state = 7;
+    required TrainType train_type = 8;
+}
