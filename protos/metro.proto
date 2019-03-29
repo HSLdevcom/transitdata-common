@@ -21,14 +21,14 @@ message Schedule {
     required int32 schema_version = 1 [default = 1];
     required string route_name = 2;
     required TrainType train_type = 3;
-    required Progress journey_section_progress = 4;
+    required Progress journey_sectionprogress = 4;
     required string begin_time = 5;
     required string end_time = 6;
     repeated RouteRow route_rows = 7;
 }
 
 message RouteRow {
-    required int64 route_row_id = 1;
+    required int64 routerow_id = 1;
     required string station = 2;
     required string platform = 3; // Is this string or int or enum?
     required string arrival_time_planned = 4;
