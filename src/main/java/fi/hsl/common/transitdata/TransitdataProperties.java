@@ -40,7 +40,9 @@ public class TransitdataProperties {
         InternalMessagesTripCancellation,
         InternalMessagesStopEstimate,
         MqttRawMessage,
-        HfpData;
+        HfpData,
+        MetroSchedule,
+        MetroForecast;
 
         public String toString() {
             switch (this) {
@@ -53,6 +55,8 @@ public class TransitdataProperties {
                 case InternalMessagesStopEstimate: return "internal-messages-stop-estimate";
                 case MqttRawMessage: return "mqtt-raw";
                 case HfpData: return "hfp-data";
+                case MetroSchedule: return "metro-schedule";
+                case MetroForecast: return "metro-forecast";
                 default: throw new IllegalArgumentException();
             }
         }
@@ -84,6 +88,12 @@ public class TransitdataProperties {
             }
             else if (str.equals(HfpData.toString())) {
                 return HfpData;
+            }
+            else if (str.equals(MetroSchedule.toString())) {
+                return MetroSchedule;
+            }
+            else if (str.equals(MetroForecast.toString())) {
+                return MetroForecast;
             }
             else {
                 throw new IllegalArgumentException();
