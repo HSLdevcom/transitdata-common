@@ -25,12 +25,14 @@ message Schedule {
     required string begin_time = 5;
     required string end_time = 6;
     repeated RouteRow route_rows = 7;
+    optional string shift_number = 8;
+    optional string js_id = 9;
 }
 
 message RouteRow {
     required int64 routerow_id = 1;
     required string station = 2;
-    required string platform = 3; // Is this string or int or enum?
+    required string platform = 3;
     required string arrival_time_planned = 4;
     required string arrival_time_forecast = 5;
     required string arrival_time_measured = 6;
@@ -44,6 +46,8 @@ message RouteRow {
 message Forecast {
     required int32 schema_version = 1 [default = 1];
     repeated Train trains = 2;
+    optional string station = 3;
+    optional string platform = 4;
 }
 
 message Train {

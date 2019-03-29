@@ -249,13 +249,13 @@ public final class MetroMessages {
     fi.hsl.common.transitdata.proto.MetroMessages.TrainType getTrainType();
 
     /**
-     * <code>required .proto.Progress journey_section_progress = 4;</code>
+     * <code>required .proto.Progress journey_sectionprogress = 4;</code>
      */
-    boolean hasJourneySectionProgress();
+    boolean hasJourneySectionprogress();
     /**
-     * <code>required .proto.Progress journey_section_progress = 4;</code>
+     * <code>required .proto.Progress journey_sectionprogress = 4;</code>
      */
-    fi.hsl.common.transitdata.proto.MetroMessages.Progress getJourneySectionProgress();
+    fi.hsl.common.transitdata.proto.MetroMessages.Progress getJourneySectionprogress();
 
     /**
      * <code>required string begin_time = 5;</code>
@@ -308,6 +308,34 @@ public final class MetroMessages {
      */
     fi.hsl.common.transitdata.proto.MetroMessages.RouteRowOrBuilder getRouteRowsOrBuilder(
         int index);
+
+    /**
+     * <code>optional string shift_number = 8;</code>
+     */
+    boolean hasShiftNumber();
+    /**
+     * <code>optional string shift_number = 8;</code>
+     */
+    java.lang.String getShiftNumber();
+    /**
+     * <code>optional string shift_number = 8;</code>
+     */
+    com.google.protobuf.ByteString
+        getShiftNumberBytes();
+
+    /**
+     * <code>optional string js_id = 9;</code>
+     */
+    boolean hasJsId();
+    /**
+     * <code>optional string js_id = 9;</code>
+     */
+    java.lang.String getJsId();
+    /**
+     * <code>optional string js_id = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getJsIdBytes();
   }
   /**
    * Protobuf type {@code proto.Schedule}
@@ -325,10 +353,12 @@ public final class MetroMessages {
       schemaVersion_ = 1;
       routeName_ = "";
       trainType_ = 0;
-      journeySectionProgress_ = 0;
+      journeySectionprogress_ = 0;
       beginTime_ = "";
       endTime_ = "";
       routeRows_ = java.util.Collections.emptyList();
+      shiftNumber_ = "";
+      jsId_ = "";
     }
 
     @java.lang.Override
@@ -386,7 +416,7 @@ public final class MetroMessages {
                 unknownFields.mergeVarintField(4, rawValue);
               } else {
                 bitField0_ |= 0x00000008;
-                journeySectionProgress_ = rawValue;
+                journeySectionprogress_ = rawValue;
               }
               break;
             }
@@ -409,6 +439,18 @@ public final class MetroMessages {
               }
               routeRows_.add(
                   input.readMessage(fi.hsl.common.transitdata.proto.MetroMessages.RouteRow.PARSER, extensionRegistry));
+              break;
+            }
+            case 66: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000040;
+              shiftNumber_ = bs;
+              break;
+            }
+            case 74: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000080;
+              jsId_ = bs;
               break;
             }
             default: {
@@ -521,20 +563,20 @@ public final class MetroMessages {
       return result == null ? fi.hsl.common.transitdata.proto.MetroMessages.TrainType.M : result;
     }
 
-    public static final int JOURNEY_SECTION_PROGRESS_FIELD_NUMBER = 4;
-    private int journeySectionProgress_;
+    public static final int JOURNEY_SECTIONPROGRESS_FIELD_NUMBER = 4;
+    private int journeySectionprogress_;
     /**
-     * <code>required .proto.Progress journey_section_progress = 4;</code>
+     * <code>required .proto.Progress journey_sectionprogress = 4;</code>
      */
-    public boolean hasJourneySectionProgress() {
+    public boolean hasJourneySectionprogress() {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>required .proto.Progress journey_section_progress = 4;</code>
+     * <code>required .proto.Progress journey_sectionprogress = 4;</code>
      */
-    public fi.hsl.common.transitdata.proto.MetroMessages.Progress getJourneySectionProgress() {
+    public fi.hsl.common.transitdata.proto.MetroMessages.Progress getJourneySectionprogress() {
       @SuppressWarnings("deprecation")
-      fi.hsl.common.transitdata.proto.MetroMessages.Progress result = fi.hsl.common.transitdata.proto.MetroMessages.Progress.valueOf(journeySectionProgress_);
+      fi.hsl.common.transitdata.proto.MetroMessages.Progress result = fi.hsl.common.transitdata.proto.MetroMessages.Progress.valueOf(journeySectionprogress_);
       return result == null ? fi.hsl.common.transitdata.proto.MetroMessages.Progress.SCHEDULED : result;
     }
 
@@ -657,6 +699,90 @@ public final class MetroMessages {
       return routeRows_.get(index);
     }
 
+    public static final int SHIFT_NUMBER_FIELD_NUMBER = 8;
+    private volatile java.lang.Object shiftNumber_;
+    /**
+     * <code>optional string shift_number = 8;</code>
+     */
+    public boolean hasShiftNumber() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>optional string shift_number = 8;</code>
+     */
+    public java.lang.String getShiftNumber() {
+      java.lang.Object ref = shiftNumber_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          shiftNumber_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string shift_number = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getShiftNumberBytes() {
+      java.lang.Object ref = shiftNumber_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        shiftNumber_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int JS_ID_FIELD_NUMBER = 9;
+    private volatile java.lang.Object jsId_;
+    /**
+     * <code>optional string js_id = 9;</code>
+     */
+    public boolean hasJsId() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <code>optional string js_id = 9;</code>
+     */
+    public java.lang.String getJsId() {
+      java.lang.Object ref = jsId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          jsId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string js_id = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getJsIdBytes() {
+      java.lang.Object ref = jsId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        jsId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -676,7 +802,7 @@ public final class MetroMessages {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasJourneySectionProgress()) {
+      if (!hasJourneySectionprogress()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -711,7 +837,7 @@ public final class MetroMessages {
         output.writeEnum(3, trainType_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
-        output.writeEnum(4, journeySectionProgress_);
+        output.writeEnum(4, journeySectionprogress_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, beginTime_);
@@ -721,6 +847,12 @@ public final class MetroMessages {
       }
       for (int i = 0; i < routeRows_.size(); i++) {
         output.writeMessage(7, routeRows_.get(i));
+      }
+      if (((bitField0_ & 0x00000040) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, shiftNumber_);
+      }
+      if (((bitField0_ & 0x00000080) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, jsId_);
       }
       unknownFields.writeTo(output);
     }
@@ -744,7 +876,7 @@ public final class MetroMessages {
       }
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, journeySectionProgress_);
+          .computeEnumSize(4, journeySectionprogress_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, beginTime_);
@@ -755,6 +887,12 @@ public final class MetroMessages {
       for (int i = 0; i < routeRows_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, routeRows_.get(i));
+      }
+      if (((bitField0_ & 0x00000040) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, shiftNumber_);
+      }
+      if (((bitField0_ & 0x00000080) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, jsId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -785,9 +923,9 @@ public final class MetroMessages {
       if (hasTrainType()) {
         if (trainType_ != other.trainType_) return false;
       }
-      if (hasJourneySectionProgress() != other.hasJourneySectionProgress()) return false;
-      if (hasJourneySectionProgress()) {
-        if (journeySectionProgress_ != other.journeySectionProgress_) return false;
+      if (hasJourneySectionprogress() != other.hasJourneySectionprogress()) return false;
+      if (hasJourneySectionprogress()) {
+        if (journeySectionprogress_ != other.journeySectionprogress_) return false;
       }
       if (hasBeginTime() != other.hasBeginTime()) return false;
       if (hasBeginTime()) {
@@ -801,6 +939,16 @@ public final class MetroMessages {
       }
       if (!getRouteRowsList()
           .equals(other.getRouteRowsList())) return false;
+      if (hasShiftNumber() != other.hasShiftNumber()) return false;
+      if (hasShiftNumber()) {
+        if (!getShiftNumber()
+            .equals(other.getShiftNumber())) return false;
+      }
+      if (hasJsId() != other.hasJsId()) return false;
+      if (hasJsId()) {
+        if (!getJsId()
+            .equals(other.getJsId())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -824,9 +972,9 @@ public final class MetroMessages {
         hash = (37 * hash) + TRAIN_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + trainType_;
       }
-      if (hasJourneySectionProgress()) {
-        hash = (37 * hash) + JOURNEY_SECTION_PROGRESS_FIELD_NUMBER;
-        hash = (53 * hash) + journeySectionProgress_;
+      if (hasJourneySectionprogress()) {
+        hash = (37 * hash) + JOURNEY_SECTIONPROGRESS_FIELD_NUMBER;
+        hash = (53 * hash) + journeySectionprogress_;
       }
       if (hasBeginTime()) {
         hash = (37 * hash) + BEGIN_TIME_FIELD_NUMBER;
@@ -839,6 +987,14 @@ public final class MetroMessages {
       if (getRouteRowsCount() > 0) {
         hash = (37 * hash) + ROUTE_ROWS_FIELD_NUMBER;
         hash = (53 * hash) + getRouteRowsList().hashCode();
+      }
+      if (hasShiftNumber()) {
+        hash = (37 * hash) + SHIFT_NUMBER_FIELD_NUMBER;
+        hash = (53 * hash) + getShiftNumber().hashCode();
+      }
+      if (hasJsId()) {
+        hash = (37 * hash) + JS_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getJsId().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -980,7 +1136,7 @@ public final class MetroMessages {
         bitField0_ = (bitField0_ & ~0x00000002);
         trainType_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
-        journeySectionProgress_ = 0;
+        journeySectionprogress_ = 0;
         bitField0_ = (bitField0_ & ~0x00000008);
         beginTime_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -992,6 +1148,10 @@ public final class MetroMessages {
         } else {
           routeRowsBuilder_.clear();
         }
+        shiftNumber_ = "";
+        bitField0_ = (bitField0_ & ~0x00000080);
+        jsId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
 
@@ -1035,7 +1195,7 @@ public final class MetroMessages {
         if (((from_bitField0_ & 0x00000008) != 0)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.journeySectionProgress_ = journeySectionProgress_;
+        result.journeySectionprogress_ = journeySectionprogress_;
         if (((from_bitField0_ & 0x00000010) != 0)) {
           to_bitField0_ |= 0x00000010;
         }
@@ -1053,6 +1213,14 @@ public final class MetroMessages {
         } else {
           result.routeRows_ = routeRowsBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.shiftNumber_ = shiftNumber_;
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.jsId_ = jsId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1113,8 +1281,8 @@ public final class MetroMessages {
         if (other.hasTrainType()) {
           setTrainType(other.getTrainType());
         }
-        if (other.hasJourneySectionProgress()) {
-          setJourneySectionProgress(other.getJourneySectionProgress());
+        if (other.hasJourneySectionprogress()) {
+          setJourneySectionprogress(other.getJourneySectionprogress());
         }
         if (other.hasBeginTime()) {
           bitField0_ |= 0x00000010;
@@ -1152,6 +1320,16 @@ public final class MetroMessages {
             }
           }
         }
+        if (other.hasShiftNumber()) {
+          bitField0_ |= 0x00000080;
+          shiftNumber_ = other.shiftNumber_;
+          onChanged();
+        }
+        if (other.hasJsId()) {
+          bitField0_ |= 0x00000100;
+          jsId_ = other.jsId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1168,7 +1346,7 @@ public final class MetroMessages {
         if (!hasTrainType()) {
           return false;
         }
-        if (!hasJourneySectionProgress()) {
+        if (!hasJourneySectionprogress()) {
           return false;
         }
         if (!hasBeginTime()) {
@@ -1350,39 +1528,39 @@ public final class MetroMessages {
         return this;
       }
 
-      private int journeySectionProgress_ = 0;
+      private int journeySectionprogress_ = 0;
       /**
-       * <code>required .proto.Progress journey_section_progress = 4;</code>
+       * <code>required .proto.Progress journey_sectionprogress = 4;</code>
        */
-      public boolean hasJourneySectionProgress() {
+      public boolean hasJourneySectionprogress() {
         return ((bitField0_ & 0x00000008) != 0);
       }
       /**
-       * <code>required .proto.Progress journey_section_progress = 4;</code>
+       * <code>required .proto.Progress journey_sectionprogress = 4;</code>
        */
-      public fi.hsl.common.transitdata.proto.MetroMessages.Progress getJourneySectionProgress() {
+      public fi.hsl.common.transitdata.proto.MetroMessages.Progress getJourneySectionprogress() {
         @SuppressWarnings("deprecation")
-        fi.hsl.common.transitdata.proto.MetroMessages.Progress result = fi.hsl.common.transitdata.proto.MetroMessages.Progress.valueOf(journeySectionProgress_);
+        fi.hsl.common.transitdata.proto.MetroMessages.Progress result = fi.hsl.common.transitdata.proto.MetroMessages.Progress.valueOf(journeySectionprogress_);
         return result == null ? fi.hsl.common.transitdata.proto.MetroMessages.Progress.SCHEDULED : result;
       }
       /**
-       * <code>required .proto.Progress journey_section_progress = 4;</code>
+       * <code>required .proto.Progress journey_sectionprogress = 4;</code>
        */
-      public Builder setJourneySectionProgress(fi.hsl.common.transitdata.proto.MetroMessages.Progress value) {
+      public Builder setJourneySectionprogress(fi.hsl.common.transitdata.proto.MetroMessages.Progress value) {
         if (value == null) {
           throw new NullPointerException();
         }
         bitField0_ |= 0x00000008;
-        journeySectionProgress_ = value.getNumber();
+        journeySectionprogress_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>required .proto.Progress journey_section_progress = 4;</code>
+       * <code>required .proto.Progress journey_sectionprogress = 4;</code>
        */
-      public Builder clearJourneySectionProgress() {
+      public Builder clearJourneySectionprogress() {
         bitField0_ = (bitField0_ & ~0x00000008);
-        journeySectionProgress_ = 0;
+        journeySectionprogress_ = 0;
         onChanged();
         return this;
       }
@@ -1778,6 +1956,158 @@ public final class MetroMessages {
         }
         return routeRowsBuilder_;
       }
+
+      private java.lang.Object shiftNumber_ = "";
+      /**
+       * <code>optional string shift_number = 8;</code>
+       */
+      public boolean hasShiftNumber() {
+        return ((bitField0_ & 0x00000080) != 0);
+      }
+      /**
+       * <code>optional string shift_number = 8;</code>
+       */
+      public java.lang.String getShiftNumber() {
+        java.lang.Object ref = shiftNumber_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            shiftNumber_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string shift_number = 8;</code>
+       */
+      public com.google.protobuf.ByteString
+          getShiftNumberBytes() {
+        java.lang.Object ref = shiftNumber_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          shiftNumber_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string shift_number = 8;</code>
+       */
+      public Builder setShiftNumber(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        shiftNumber_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string shift_number = 8;</code>
+       */
+      public Builder clearShiftNumber() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        shiftNumber_ = getDefaultInstance().getShiftNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string shift_number = 8;</code>
+       */
+      public Builder setShiftNumberBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        shiftNumber_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object jsId_ = "";
+      /**
+       * <code>optional string js_id = 9;</code>
+       */
+      public boolean hasJsId() {
+        return ((bitField0_ & 0x00000100) != 0);
+      }
+      /**
+       * <code>optional string js_id = 9;</code>
+       */
+      public java.lang.String getJsId() {
+        java.lang.Object ref = jsId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            jsId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string js_id = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getJsIdBytes() {
+        java.lang.Object ref = jsId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          jsId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string js_id = 9;</code>
+       */
+      public Builder setJsId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000100;
+        jsId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string js_id = 9;</code>
+       */
+      public Builder clearJsId() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        jsId_ = getDefaultInstance().getJsId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string js_id = 9;</code>
+       */
+      public Builder setJsIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000100;
+        jsId_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1836,13 +2166,13 @@ public final class MetroMessages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required int64 route_row_id = 1;</code>
+     * <code>required int64 routerow_id = 1;</code>
      */
-    boolean hasRouteRowId();
+    boolean hasRouterowId();
     /**
-     * <code>required int64 route_row_id = 1;</code>
+     * <code>required int64 routerow_id = 1;</code>
      */
-    long getRouteRowId();
+    long getRouterowId();
 
     /**
      * <code>required string station = 2;</code>
@@ -1859,26 +2189,14 @@ public final class MetroMessages {
         getStationBytes();
 
     /**
-     * <pre>
-     * Is this string or int or enum?
-     * </pre>
-     *
      * <code>required string platform = 3;</code>
      */
     boolean hasPlatform();
     /**
-     * <pre>
-     * Is this string or int or enum?
-     * </pre>
-     *
      * <code>required string platform = 3;</code>
      */
     java.lang.String getPlatform();
     /**
-     * <pre>
-     * Is this string or int or enum?
-     * </pre>
-     *
      * <code>required string platform = 3;</code>
      */
     com.google.protobuf.ByteString
@@ -2042,7 +2360,7 @@ public final class MetroMessages {
               break;
             case 8: {
               bitField0_ |= 0x00000001;
-              routeRowId_ = input.readInt64();
+              routerowId_ = input.readInt64();
               break;
             }
             case 18: {
@@ -2144,19 +2462,19 @@ public final class MetroMessages {
     }
 
     private int bitField0_;
-    public static final int ROUTE_ROW_ID_FIELD_NUMBER = 1;
-    private long routeRowId_;
+    public static final int ROUTEROW_ID_FIELD_NUMBER = 1;
+    private long routerowId_;
     /**
-     * <code>required int64 route_row_id = 1;</code>
+     * <code>required int64 routerow_id = 1;</code>
      */
-    public boolean hasRouteRowId() {
+    public boolean hasRouterowId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>required int64 route_row_id = 1;</code>
+     * <code>required int64 routerow_id = 1;</code>
      */
-    public long getRouteRowId() {
-      return routeRowId_;
+    public long getRouterowId() {
+      return routerowId_;
     }
 
     public static final int STATION_FIELD_NUMBER = 2;
@@ -2204,20 +2522,12 @@ public final class MetroMessages {
     public static final int PLATFORM_FIELD_NUMBER = 3;
     private volatile java.lang.Object platform_;
     /**
-     * <pre>
-     * Is this string or int or enum?
-     * </pre>
-     *
      * <code>required string platform = 3;</code>
      */
     public boolean hasPlatform() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <pre>
-     * Is this string or int or enum?
-     * </pre>
-     *
      * <code>required string platform = 3;</code>
      */
     public java.lang.String getPlatform() {
@@ -2235,10 +2545,6 @@ public final class MetroMessages {
       }
     }
     /**
-     * <pre>
-     * Is this string or int or enum?
-     * </pre>
-     *
      * <code>required string platform = 3;</code>
      */
     public com.google.protobuf.ByteString
@@ -2573,7 +2879,7 @@ public final class MetroMessages {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasRouteRowId()) {
+      if (!hasRouterowId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -2625,7 +2931,7 @@ public final class MetroMessages {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeInt64(1, routeRowId_);
+        output.writeInt64(1, routerowId_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, station_);
@@ -2668,7 +2974,7 @@ public final class MetroMessages {
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, routeRowId_);
+          .computeInt64Size(1, routerowId_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, station_);
@@ -2716,10 +3022,10 @@ public final class MetroMessages {
       }
       fi.hsl.common.transitdata.proto.MetroMessages.RouteRow other = (fi.hsl.common.transitdata.proto.MetroMessages.RouteRow) obj;
 
-      if (hasRouteRowId() != other.hasRouteRowId()) return false;
-      if (hasRouteRowId()) {
-        if (getRouteRowId()
-            != other.getRouteRowId()) return false;
+      if (hasRouterowId() != other.hasRouterowId()) return false;
+      if (hasRouterowId()) {
+        if (getRouterowId()
+            != other.getRouterowId()) return false;
       }
       if (hasStation() != other.hasStation()) return false;
       if (hasStation()) {
@@ -2781,10 +3087,10 @@ public final class MetroMessages {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasRouteRowId()) {
-        hash = (37 * hash) + ROUTE_ROW_ID_FIELD_NUMBER;
+      if (hasRouterowId()) {
+        hash = (37 * hash) + ROUTEROW_ID_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getRouteRowId());
+            getRouterowId());
       }
       if (hasStation()) {
         hash = (37 * hash) + STATION_FIELD_NUMBER;
@@ -2959,7 +3265,7 @@ public final class MetroMessages {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        routeRowId_ = 0L;
+        routerowId_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
         station_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -3010,7 +3316,7 @@ public final class MetroMessages {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.routeRowId_ = routeRowId_;
+          result.routerowId_ = routerowId_;
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
@@ -3102,8 +3408,8 @@ public final class MetroMessages {
 
       public Builder mergeFrom(fi.hsl.common.transitdata.proto.MetroMessages.RouteRow other) {
         if (other == fi.hsl.common.transitdata.proto.MetroMessages.RouteRow.getDefaultInstance()) return this;
-        if (other.hasRouteRowId()) {
-          setRouteRowId(other.getRouteRowId());
+        if (other.hasRouterowId()) {
+          setRouterowId(other.getRouterowId());
         }
         if (other.hasStation()) {
           bitField0_ |= 0x00000002;
@@ -3160,7 +3466,7 @@ public final class MetroMessages {
 
       @java.lang.Override
       public final boolean isInitialized() {
-        if (!hasRouteRowId()) {
+        if (!hasRouterowId()) {
           return false;
         }
         if (!hasStation()) {
@@ -3216,34 +3522,34 @@ public final class MetroMessages {
       }
       private int bitField0_;
 
-      private long routeRowId_ ;
+      private long routerowId_ ;
       /**
-       * <code>required int64 route_row_id = 1;</code>
+       * <code>required int64 routerow_id = 1;</code>
        */
-      public boolean hasRouteRowId() {
+      public boolean hasRouterowId() {
         return ((bitField0_ & 0x00000001) != 0);
       }
       /**
-       * <code>required int64 route_row_id = 1;</code>
+       * <code>required int64 routerow_id = 1;</code>
        */
-      public long getRouteRowId() {
-        return routeRowId_;
+      public long getRouterowId() {
+        return routerowId_;
       }
       /**
-       * <code>required int64 route_row_id = 1;</code>
+       * <code>required int64 routerow_id = 1;</code>
        */
-      public Builder setRouteRowId(long value) {
+      public Builder setRouterowId(long value) {
         bitField0_ |= 0x00000001;
-        routeRowId_ = value;
+        routerowId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int64 route_row_id = 1;</code>
+       * <code>required int64 routerow_id = 1;</code>
        */
-      public Builder clearRouteRowId() {
+      public Builder clearRouterowId() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        routeRowId_ = 0L;
+        routerowId_ = 0L;
         onChanged();
         return this;
       }
@@ -3326,20 +3632,12 @@ public final class MetroMessages {
 
       private java.lang.Object platform_ = "";
       /**
-       * <pre>
-       * Is this string or int or enum?
-       * </pre>
-       *
        * <code>required string platform = 3;</code>
        */
       public boolean hasPlatform() {
         return ((bitField0_ & 0x00000004) != 0);
       }
       /**
-       * <pre>
-       * Is this string or int or enum?
-       * </pre>
-       *
        * <code>required string platform = 3;</code>
        */
       public java.lang.String getPlatform() {
@@ -3357,10 +3655,6 @@ public final class MetroMessages {
         }
       }
       /**
-       * <pre>
-       * Is this string or int or enum?
-       * </pre>
-       *
        * <code>required string platform = 3;</code>
        */
       public com.google.protobuf.ByteString
@@ -3377,10 +3671,6 @@ public final class MetroMessages {
         }
       }
       /**
-       * <pre>
-       * Is this string or int or enum?
-       * </pre>
-       *
        * <code>required string platform = 3;</code>
        */
       public Builder setPlatform(
@@ -3394,10 +3684,6 @@ public final class MetroMessages {
         return this;
       }
       /**
-       * <pre>
-       * Is this string or int or enum?
-       * </pre>
-       *
        * <code>required string platform = 3;</code>
        */
       public Builder clearPlatform() {
@@ -3407,10 +3693,6 @@ public final class MetroMessages {
         return this;
       }
       /**
-       * <pre>
-       * Is this string or int or enum?
-       * </pre>
-       *
        * <code>required string platform = 3;</code>
        */
       public Builder setPlatformBytes(
@@ -4081,6 +4363,34 @@ public final class MetroMessages {
      */
     fi.hsl.common.transitdata.proto.MetroMessages.TrainOrBuilder getTrainsOrBuilder(
         int index);
+
+    /**
+     * <code>optional string station = 3;</code>
+     */
+    boolean hasStation();
+    /**
+     * <code>optional string station = 3;</code>
+     */
+    java.lang.String getStation();
+    /**
+     * <code>optional string station = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getStationBytes();
+
+    /**
+     * <code>optional string platform = 4;</code>
+     */
+    boolean hasPlatform();
+    /**
+     * <code>optional string platform = 4;</code>
+     */
+    java.lang.String getPlatform();
+    /**
+     * <code>optional string platform = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getPlatformBytes();
   }
   /**
    * Protobuf type {@code proto.Forecast}
@@ -4097,6 +4407,8 @@ public final class MetroMessages {
     private Forecast() {
       schemaVersion_ = 1;
       trains_ = java.util.Collections.emptyList();
+      station_ = "";
+      platform_ = "";
     }
 
     @java.lang.Override
@@ -4135,6 +4447,18 @@ public final class MetroMessages {
               }
               trains_.add(
                   input.readMessage(fi.hsl.common.transitdata.proto.MetroMessages.Train.PARSER, extensionRegistry));
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              station_ = bs;
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              platform_ = bs;
               break;
             }
             default: {
@@ -4223,6 +4547,90 @@ public final class MetroMessages {
       return trains_.get(index);
     }
 
+    public static final int STATION_FIELD_NUMBER = 3;
+    private volatile java.lang.Object station_;
+    /**
+     * <code>optional string station = 3;</code>
+     */
+    public boolean hasStation() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional string station = 3;</code>
+     */
+    public java.lang.String getStation() {
+      java.lang.Object ref = station_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          station_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string station = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStationBytes() {
+      java.lang.Object ref = station_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        station_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PLATFORM_FIELD_NUMBER = 4;
+    private volatile java.lang.Object platform_;
+    /**
+     * <code>optional string platform = 4;</code>
+     */
+    public boolean hasPlatform() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional string platform = 4;</code>
+     */
+    public java.lang.String getPlatform() {
+      java.lang.Object ref = platform_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          platform_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string platform = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPlatformBytes() {
+      java.lang.Object ref = platform_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        platform_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4253,6 +4661,12 @@ public final class MetroMessages {
       for (int i = 0; i < trains_.size(); i++) {
         output.writeMessage(2, trains_.get(i));
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, station_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, platform_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4269,6 +4683,12 @@ public final class MetroMessages {
       for (int i = 0; i < trains_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, trains_.get(i));
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, station_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, platform_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4292,6 +4712,16 @@ public final class MetroMessages {
       }
       if (!getTrainsList()
           .equals(other.getTrainsList())) return false;
+      if (hasStation() != other.hasStation()) return false;
+      if (hasStation()) {
+        if (!getStation()
+            .equals(other.getStation())) return false;
+      }
+      if (hasPlatform() != other.hasPlatform()) return false;
+      if (hasPlatform()) {
+        if (!getPlatform()
+            .equals(other.getPlatform())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4310,6 +4740,14 @@ public final class MetroMessages {
       if (getTrainsCount() > 0) {
         hash = (37 * hash) + TRAINS_FIELD_NUMBER;
         hash = (53 * hash) + getTrainsList().hashCode();
+      }
+      if (hasStation()) {
+        hash = (37 * hash) + STATION_FIELD_NUMBER;
+        hash = (53 * hash) + getStation().hashCode();
+      }
+      if (hasPlatform()) {
+        hash = (37 * hash) + PLATFORM_FIELD_NUMBER;
+        hash = (53 * hash) + getPlatform().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4453,6 +4891,10 @@ public final class MetroMessages {
         } else {
           trainsBuilder_.clear();
         }
+        station_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        platform_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -4494,6 +4936,14 @@ public final class MetroMessages {
         } else {
           result.trains_ = trainsBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.station_ = station_;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.platform_ = platform_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -4571,6 +5021,16 @@ public final class MetroMessages {
               trainsBuilder_.addAllMessages(other.trains_);
             }
           }
+        }
+        if (other.hasStation()) {
+          bitField0_ |= 0x00000004;
+          station_ = other.station_;
+          onChanged();
+        }
+        if (other.hasPlatform()) {
+          bitField0_ |= 0x00000008;
+          platform_ = other.platform_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4880,6 +5340,158 @@ public final class MetroMessages {
           trains_ = null;
         }
         return trainsBuilder_;
+      }
+
+      private java.lang.Object station_ = "";
+      /**
+       * <code>optional string station = 3;</code>
+       */
+      public boolean hasStation() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>optional string station = 3;</code>
+       */
+      public java.lang.String getStation() {
+        java.lang.Object ref = station_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            station_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string station = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStationBytes() {
+        java.lang.Object ref = station_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          station_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string station = 3;</code>
+       */
+      public Builder setStation(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        station_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string station = 3;</code>
+       */
+      public Builder clearStation() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        station_ = getDefaultInstance().getStation();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string station = 3;</code>
+       */
+      public Builder setStationBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        station_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object platform_ = "";
+      /**
+       * <code>optional string platform = 4;</code>
+       */
+      public boolean hasPlatform() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       * <code>optional string platform = 4;</code>
+       */
+      public java.lang.String getPlatform() {
+        java.lang.Object ref = platform_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            platform_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string platform = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPlatformBytes() {
+        java.lang.Object ref = platform_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          platform_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string platform = 4;</code>
+       */
+      public Builder setPlatform(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        platform_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string platform = 4;</code>
+       */
+      public Builder clearPlatform() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        platform_ = getDefaultInstance().getPlatform();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string platform = 4;</code>
+       */
+      public Builder setPlatformBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        platform_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6752,35 +7364,36 @@ public final class MetroMessages {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013metro.proto\022\005proto\"\335\001\n\010Schedule\022\031\n\016sch" +
+      "\n\013metro.proto\022\005proto\"\201\002\n\010Schedule\022\031\n\016sch" +
       "ema_version\030\001 \002(\005:\0011\022\022\n\nroute_name\030\002 \002(\t" +
-      "\022$\n\ntrain_type\030\003 \002(\0162\020.proto.TrainType\0221" +
-      "\n\030journey_section_progress\030\004 \002(\0162\017.proto" +
-      ".Progress\022\022\n\nbegin_time\030\005 \002(\t\022\020\n\010end_tim" +
-      "e\030\006 \002(\t\022#\n\nroute_rows\030\007 \003(\0132\017.proto.Rout" +
-      "eRow\"\270\002\n\010RouteRow\022\024\n\014route_row_id\030\001 \002(\003\022" +
-      "\017\n\007station\030\002 \002(\t\022\020\n\010platform\030\003 \002(\t\022\034\n\024ar" +
-      "rival_time_planned\030\004 \002(\t\022\035\n\025arrival_time" +
-      "_forecast\030\005 \002(\t\022\035\n\025arrival_time_measured" +
-      "\030\006 \002(\t\022\036\n\026departure_time_planned\030\007 \002(\t\022\037" +
-      "\n\027departure_time_forecast\030\010 \002(\t\022\037\n\027depar" +
-      "ture_time_measured\030\t \002(\t\022\016\n\006source\030\n \002(\t" +
-      "\022%\n\014row_progress\030\013 \002(\0162\017.proto.Progress\"" +
-      "C\n\010Forecast\022\031\n\016schema_version\030\001 \002(\005:\0011\022\034" +
-      "\n\006trains\030\002 \003(\0132\014.proto.Train\"\331\002\n\005Train\022\024" +
-      "\n\014shift_number\030\001 \002(\t\022\026\n\016origin_station\030\002" +
-      " \002(\t\022\033\n\023destination_station\030\003 \002(\t\022\r\n\005js_" +
-      "id\030\004 \002(\t\022\035\n\025arrival_time_forecast\030\005 \002(\t\022" +
-      "\037\n\027departure_time_forecast\030\006 \002(\t\022,\n\013trai" +
-      "n_state\030\007 \002(\0162\027.proto.Train.TrainState\022$" +
-      "\n\ntrain_type\030\010 \002(\0162\020.proto.TrainType\"b\n\n" +
-      "TrainState\022\013\n\007PLANNED\020\000\022\017\n\013APPROACHING\020\001" +
-      "\022\014\n\010ARRIVING\020\002\022\013\n\007ARRIVED\020\003\022\r\n\tDEPARTING" +
-      "\020\004\022\014\n\010DEPARTED\020\005*\031\n\tTrainType\022\005\n\001M\020\000\022\005\n\001" +
-      "T\020\001*G\n\010Progress\022\r\n\tSCHEDULED\020\000\022\016\n\nINPROG" +
-      "RESS\020\001\022\r\n\tCOMPLETED\020\002\022\r\n\tCANCELLED\020\003B0\n\037" +
-      "fi.hsl.common.transitdata.protoB\rMetroMe" +
-      "ssages"
+      "\022$\n\ntrain_type\030\003 \002(\0162\020.proto.TrainType\0220" +
+      "\n\027journey_sectionprogress\030\004 \002(\0162\017.proto." +
+      "Progress\022\022\n\nbegin_time\030\005 \002(\t\022\020\n\010end_time" +
+      "\030\006 \002(\t\022#\n\nroute_rows\030\007 \003(\0132\017.proto.Route" +
+      "Row\022\024\n\014shift_number\030\010 \001(\t\022\r\n\005js_id\030\t \001(\t" +
+      "\"\267\002\n\010RouteRow\022\023\n\013routerow_id\030\001 \002(\003\022\017\n\007st" +
+      "ation\030\002 \002(\t\022\020\n\010platform\030\003 \002(\t\022\034\n\024arrival" +
+      "_time_planned\030\004 \002(\t\022\035\n\025arrival_time_fore" +
+      "cast\030\005 \002(\t\022\035\n\025arrival_time_measured\030\006 \002(" +
+      "\t\022\036\n\026departure_time_planned\030\007 \002(\t\022\037\n\027dep" +
+      "arture_time_forecast\030\010 \002(\t\022\037\n\027departure_" +
+      "time_measured\030\t \002(\t\022\016\n\006source\030\n \002(\t\022%\n\014r" +
+      "ow_progress\030\013 \002(\0162\017.proto.Progress\"f\n\010Fo" +
+      "recast\022\031\n\016schema_version\030\001 \002(\005:\0011\022\034\n\006tra" +
+      "ins\030\002 \003(\0132\014.proto.Train\022\017\n\007station\030\003 \001(\t" +
+      "\022\020\n\010platform\030\004 \001(\t\"\331\002\n\005Train\022\024\n\014shift_nu" +
+      "mber\030\001 \002(\t\022\026\n\016origin_station\030\002 \002(\t\022\033\n\023de" +
+      "stination_station\030\003 \002(\t\022\r\n\005js_id\030\004 \002(\t\022\035" +
+      "\n\025arrival_time_forecast\030\005 \002(\t\022\037\n\027departu" +
+      "re_time_forecast\030\006 \002(\t\022,\n\013train_state\030\007 " +
+      "\002(\0162\027.proto.Train.TrainState\022$\n\ntrain_ty" +
+      "pe\030\010 \002(\0162\020.proto.TrainType\"b\n\nTrainState" +
+      "\022\013\n\007PLANNED\020\000\022\017\n\013APPROACHING\020\001\022\014\n\010ARRIVI" +
+      "NG\020\002\022\013\n\007ARRIVED\020\003\022\r\n\tDEPARTING\020\004\022\014\n\010DEPA" +
+      "RTED\020\005*\031\n\tTrainType\022\005\n\001M\020\000\022\005\n\001T\020\001*G\n\010Pro" +
+      "gress\022\r\n\tSCHEDULED\020\000\022\016\n\nINPROGRESS\020\001\022\r\n\t" +
+      "COMPLETED\020\002\022\r\n\tCANCELLED\020\003B0\n\037fi.hsl.com" +
+      "mon.transitdata.protoB\rMetroMessages"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6799,19 +7412,19 @@ public final class MetroMessages {
     internal_static_proto_Schedule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Schedule_descriptor,
-        new java.lang.String[] { "SchemaVersion", "RouteName", "TrainType", "JourneySectionProgress", "BeginTime", "EndTime", "RouteRows", });
+        new java.lang.String[] { "SchemaVersion", "RouteName", "TrainType", "JourneySectionprogress", "BeginTime", "EndTime", "RouteRows", "ShiftNumber", "JsId", });
     internal_static_proto_RouteRow_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_RouteRow_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_RouteRow_descriptor,
-        new java.lang.String[] { "RouteRowId", "Station", "Platform", "ArrivalTimePlanned", "ArrivalTimeForecast", "ArrivalTimeMeasured", "DepartureTimePlanned", "DepartureTimeForecast", "DepartureTimeMeasured", "Source", "RowProgress", });
+        new java.lang.String[] { "RouterowId", "Station", "Platform", "ArrivalTimePlanned", "ArrivalTimeForecast", "ArrivalTimeMeasured", "DepartureTimePlanned", "DepartureTimeForecast", "DepartureTimeMeasured", "Source", "RowProgress", });
     internal_static_proto_Forecast_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_proto_Forecast_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Forecast_descriptor,
-        new java.lang.String[] { "SchemaVersion", "Trains", });
+        new java.lang.String[] { "SchemaVersion", "Trains", "Station", "Platform", });
     internal_static_proto_Train_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_proto_Train_fieldAccessorTable = new
