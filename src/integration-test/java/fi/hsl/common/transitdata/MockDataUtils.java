@@ -239,43 +239,40 @@ public class MockDataUtils {
     }
 
     public static InternalMessages.TripCancellation mockTripCancellation(String routeId) {
-        return mockTripCancellation(routeId,
+        return mockTripCancellation(
+                generateValidJoreId(), routeId,
                 MOCK_DIRECTION_ID, MOCK_START_DATE, MOCK_START_TIME,
-                InternalMessages.TripCancellation.Status.CANCELED,
-                Long.toString(generateValidJoreId()));
+                InternalMessages.TripCancellation.Status.CANCELED);
     }
 
-    public static InternalMessages.TripCancellation mockTripCancellation(String routeId, int joreDirectionId,
-                                                                         LocalDateTime startTime, String dvjId) {
-        return mockTripCancellation(routeId, joreDirectionId, startTime, InternalMessages.TripCancellation.Status.CANCELED, dvjId);
+    public static InternalMessages.TripCancellation mockTripCancellation(long dvjId, String routeId, int joreDirectionId,
+                                                                         LocalDateTime startTime) {
+        return mockTripCancellation(dvjId, routeId, joreDirectionId, startTime, InternalMessages.TripCancellation.Status.CANCELED);
     }
 
-    public static InternalMessages.TripCancellation mockTripCancellation(String routeId, int joreDirectionId,
+    public static InternalMessages.TripCancellation mockTripCancellation(long dvjId, String routeId, int joreDirectionId,
                                                                          LocalDateTime startTime,
-                                                                         InternalMessages.TripCancellation.Status status,
-                                                                         String dvjId) {
+                                                                         InternalMessages.TripCancellation.Status status) {
 
         String date = DateTimeFormatter.ofPattern("yyyyMMdd").format(startTime);
         String time = DateTimeFormatter.ofPattern("HH:mm:ss").format(startTime);
-        return mockTripCancellation(routeId, joreDirectionId, date, time, status, dvjId);
+        return mockTripCancellation(dvjId, routeId, joreDirectionId, date, time, status);
     }
 
-    public static InternalMessages.TripCancellation mockTripCancellation(String routeId, int joreDirectionId,
+    public static InternalMessages.TripCancellation mockTripCancellation(long dvjId, String routeId, int joreDirectionId,
                                                                          String startDate, String startTime,
-                                                                         InternalMessages.TripCancellation.Status status,
-                                                                         String dvjId) {
-        return mockTripCancellationBuilder(routeId, joreDirectionId, startDate, startTime, status, dvjId).build();
+                                                                         InternalMessages.TripCancellation.Status status) {
+        return mockTripCancellationBuilder(dvjId, routeId, joreDirectionId, startDate, startTime, status).build();
     }
 
-    public static InternalMessages.TripCancellation.Builder mockTripCancellationBuilder(String routeId, int joreDirectionId,
+    public static InternalMessages.TripCancellation.Builder mockTripCancellationBuilder(long dvjId, String routeId, int joreDirectionId,
                                                                          String startDate, String startTime,
-                                                                         InternalMessages.TripCancellation.Status status,
-                                                                         String dvjId) {
+                                                                         InternalMessages.TripCancellation.Status status) {
 
         InternalMessages.TripCancellation.Builder tripCancellationBuilder = InternalMessages.TripCancellation.newBuilder();
 
         tripCancellationBuilder.setRouteId(routeId)
-                .setTripId(dvjId)
+                .setTripId(Long.toString(dvjId))
                 .setDirectionId(joreDirectionId)
                 .setStartDate(startDate)
                 .setStartTime(startTime)
