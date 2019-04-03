@@ -14,6 +14,7 @@ public class TransitdataProperties {
     public static final String REDIS_PREFIX_JPP = "jpp:";
     public static final String REDIS_PREFIX_DVJ = "dvj:";
     public static final String REDIS_PREFIX_JORE_ID = "jore:";
+    public static final String REDIS_PREFIX_METRO = "metro:";
 
     public static final String KEY_PROTOBUF_SCHEMA = "protobuf-schema";
     public static final String KEY_SCHEMA_VERSION = "schema-version";
@@ -25,6 +26,9 @@ public class TransitdataProperties {
     public static final String KEY_OPERATING_DAY = "operating-day";
     public static final String KEY_STOP_ID = "stop-id";
     public static final String KEY_LAST_CACHE_UPDATE_TIMESTAMP = "cache-update-ts";
+    public static final String KEY_START_DATETIME = "start-datetime";
+    public static final String KEY_START_STOP_NUMBER = "start-stop-number";
+    public static final String KEY_START_STOP_SHORT_NAME = "start-stop-short-name";
 
     /**
      * Describes the payload format for each message so that the data can be de-serialized.
