@@ -8,14 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 
 public class MetroStops {
-    private static final MetroStops ourInstance = new MetroStops();
-
     private static final HashMap<String, String> shortNameByStopNumber = new HashMap<>();
     private static final ArrayListMultimap<String, String> stopNumbersByShortName = ArrayListMultimap.create();
-
-    public static MetroStops getInstance() {
-        return ourInstance;
-    }
 
     static {
         final Config stopsConfig = ConfigParser.createConfig("metro_stops.conf");
