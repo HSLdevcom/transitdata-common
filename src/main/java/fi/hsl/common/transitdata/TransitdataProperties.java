@@ -113,4 +113,14 @@ public class TransitdataProperties {
     public static String formatJoreId(String route, String direction, JoreDateTime startDateTime) {
         return formatJoreId(route, direction, startDateTime.getJoreDateString(), startDateTime.getJoreTimeString());
     }
+
+    /**
+     *
+     * @param stopShortName e.g. MAK
+     * @param startDatetime e.g. 2019-12-20T15:12:56.000Z
+     * @return
+     */
+    public static String formatMetroId(final String stopShortName, final String startDatetime) {
+        return REDIS_PREFIX_METRO + stopShortName + "_" + startDatetime;
+    }
 }
