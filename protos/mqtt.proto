@@ -9,5 +9,4 @@ message RawMessage {
     required int32 SchemaVersion = 1 [default = 1];
     optional string topic = 2;
     optional bytes payload = 3;
-    optional int64 last_modified_utc_date_time_ms = 4;
 }
