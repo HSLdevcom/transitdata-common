@@ -2,6 +2,7 @@ package fi.hsl.common.metro;
 
 import com.typesafe.config.Config;
 import fi.hsl.common.config.ConfigParser;
+import fi.hsl.common.transitdata.PubtransFactory;
 import org.apache.pulsar.shade.com.google.common.collect.ArrayListMultimap;
 
 import java.util.ArrayList;
@@ -46,7 +47,7 @@ public class MetroStops {
         if (startStopIndex == -1 || endStopIndex == -1 || startStopIndex == endStopIndex) {
             return Optional.empty();
         }
-        return Optional.of(startStopIndex < endStopIndex ? 1 : 2);
+        return Optional.of(startStopIndex < endStopIndex ? PubtransFactory.JORE_DIRECTION_ID_OUTBOUND : PubtransFactory.JORE_DIRECTION_ID_INBOUND);
     }
 
     public static Optional<String> getStopNumber(final String shortName, final int joreDirection) {
