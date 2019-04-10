@@ -17,11 +17,11 @@ public class MetroStopsTest {
 
     @Test
     public void getStopNumbers() {
-        final List<String> stopNumbers = MetroStops.getStopNumbers("MAK").get();
+        final List<String> stopNumbers = MetroStops.getStopNumbers("MAK");
         assertEquals(2, stopNumbers.size());
         assertEquals("2314601", stopNumbers.get(0));
         assertEquals("2314602", stopNumbers.get(1));
-        assertFalse(MetroStops.getStopNumbers("FOO").isPresent());
+        assertTrue(MetroStops.getStopNumbers("FOO").isEmpty());
     }
 
     @Test

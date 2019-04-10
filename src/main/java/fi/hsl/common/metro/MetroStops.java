@@ -36,9 +36,8 @@ public class MetroStops {
         return Optional.ofNullable(shortNameByStopNumber.get(stopNumber));
     }
 
-    public static Optional<List<String>> getStopNumbers(final String shortName) {
-        List<String> stopNumbers = stopNumbersByShortName.get(shortName);
-        return stopNumbers.size() > 0 ? Optional.ofNullable(stopNumbers) : Optional.empty();
+    public static List<String> getStopNumbers(final String shortName) {
+        return stopNumbersByShortName.get(shortName);
     }
 
     public static Optional<Integer> getJoreDirection(final String startStop, final String endStop) {
@@ -51,14 +50,14 @@ public class MetroStops {
     }
 
     public static Optional<String> getStopNumber(final String shortName, final int joreDirection) {
-        Optional<List<String>> stopNumbers = getStopNumbers(shortName);
-        if (joreDirection < 1 || joreDirection > 2 || !stopNumbers.isPresent()) {
+        List<String> stopNumbers = getStopNumbers(shortName);
+        if (joreDirection < 1 || joreDirection > 2 || stopNumbers.isEmpty()) {
             return Optional.empty();
         }
         // The first stop number corresponds Jore direction 1 and the second stop number corresponds Jore direction 2
         String stopNumber;
         try {
-            stopNumber = stopNumbers.get().get(joreDirection - 1);
+            stopNumber = stopNumbers.get(joreDirection - 1);
         } catch (Exception e) {
             return Optional.empty();
         }
