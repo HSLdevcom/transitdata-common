@@ -1,5 +1,7 @@
 package fi.hsl.common.transitdata;
 
+import fi.hsl.common.gtfsrt.JoreDateTime;
+
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 
@@ -36,6 +38,7 @@ public class TransitdataProperties {
         GTFS_ServiceAlert,
         GTFS_VehiclePosition,
         InternalMessagesTripCancellation,
+        InternalMessagesStopEstimate,
         MqttRawMessage,
         HfpData;
 
@@ -47,6 +50,7 @@ public class TransitdataProperties {
                 case GTFS_ServiceAlert: return "gtfs-service-alert";
                 case GTFS_VehiclePosition: return "gtfs-vehicle-position";
                 case InternalMessagesTripCancellation: return "internal-messages-trip-cancellation";
+                case InternalMessagesStopEstimate: return "internal-messages-stop-estimate";
                 case MqttRawMessage: return "mqtt-raw";
                 case HfpData: return "hfp-data";
                 default: throw new IllegalArgumentException();
@@ -71,6 +75,9 @@ public class TransitdataProperties {
             }
             else if (str.equals(InternalMessagesTripCancellation.toString())) {
                 return InternalMessagesTripCancellation;
+            }
+            else if (str.equals(InternalMessagesStopEstimate.toString())) {
+                return InternalMessagesStopEstimate;
             }
             else if (str.equals(MqttRawMessage.toString())) {
                 return MqttRawMessage;
@@ -97,5 +104,9 @@ public class TransitdataProperties {
 
     public static String formatJoreId(String route, String direction, String startDate, String startTime) {
         return REDIS_PREFIX_JORE_ID + route + "-" + direction + "-" + startDate + "-" + startTime;
+    }
+
+    public static String formatJoreId(String route, String direction, JoreDateTime startDateTime) {
+        return formatJoreId(route, direction, startDateTime.getJoreDateString(), startDateTime.getJoreTimeString());
     }
 }
