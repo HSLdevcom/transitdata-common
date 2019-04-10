@@ -1,6 +1,5 @@
 package fi.hsl.common.transitdata;
 
-import com.google.transit.realtime.GtfsRealtime;
 import fi.hsl.common.transitdata.proto.InternalMessages;
 import fi.hsl.common.transitdata.proto.PubtransTableProtos;
 
@@ -8,7 +7,6 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -70,23 +68,23 @@ public class MockDataUtils {
         return generateLongWithMinAndMax(START_OF_2018, END_OF_2018);
     }
 
-    public static PubtransTableProtos.Common.Builder generateValidCommon() {
-        return generateValidCommon(generateValidJoreId());
+    public static PubtransTableProtos.Common.Builder mockCommon() {
+        return mockCommon(generateValidJoreId());
     }
 
-    public static PubtransTableProtos.Common.Builder generateValidCommon(long dvjId) {
-        return generateValidCommon(dvjId, generateValidStopSequenceId());
+    public static PubtransTableProtos.Common.Builder mockCommon(long dvjId) {
+        return mockCommon(dvjId, generateValidStopSequenceId());
     }
 
-    public static PubtransTableProtos.Common.Builder generateValidCommon(long dvjId, int stopSequence) {
-        return generateValidCommon(dvjId, stopSequence, generateValidDateTimeMs());
+    public static PubtransTableProtos.Common.Builder mockCommon(long dvjId, int stopSequence) {
+        return mockCommon(dvjId, stopSequence, generateValidDateTimeMs());
     }
 
-    public static PubtransTableProtos.Common.Builder generateValidCommon(long dvjId, int stopSequence, long targetDateTimeMs) {
-        return generateValidCommon(dvjId, stopSequence, targetDateTimeMs, System.currentTimeMillis());
+    public static PubtransTableProtos.Common.Builder mockCommon(long dvjId, int stopSequence, long targetDateTimeMs) {
+        return mockCommon(dvjId, stopSequence, targetDateTimeMs, System.currentTimeMillis());
     }
 
-    public static PubtransTableProtos.Common.Builder generateValidCommon(long dvjId, int stopSequence, long targetDateTimeMs, long lastModifiedMs) {
+    public static PubtransTableProtos.Common.Builder mockCommon(long dvjId, int stopSequence, long targetDateTimeMs, long lastModifiedMs) {
         return commonBoilerplate()
                 .setIsOnDatedVehicleJourneyId(dvjId)
                 .setJourneyPatternSequenceNumber(stopSequence)
@@ -130,17 +128,21 @@ public class MockDataUtils {
     }
 
     public static PubtransTableProtos.ROIArrival mockROIArrival(long dvjId, String routeName, int joreDirection, int stopSequence, long targetDateTimeMs) throws Exception {
-        PubtransTableProtos.Common common = generateValidCommon(dvjId, stopSequence, targetDateTimeMs).build();
+        PubtransTableProtos.Common common = mockCommon(dvjId, stopSequence, targetDateTimeMs).build();
         PubtransTableProtos.DOITripInfo info = mockDOITripInfo(dvjId, routeName, joreDirection);
         return mockROIArrival(common, info);
     }
 
     public static PubtransTableProtos.ROIArrival mockROIArrival(PubtransTableProtos.Common common, PubtransTableProtos.DOITripInfo info) throws Exception {
+        return mockROIArrivalBuilder(common, info).build();
+    }
+
+    public static PubtransTableProtos.ROIArrival.Builder mockROIArrivalBuilder(PubtransTableProtos.Common common, PubtransTableProtos.DOITripInfo info) {
         PubtransTableProtos.ROIArrival.Builder builder = PubtransTableProtos.ROIArrival.newBuilder();
         builder.setSchemaVersion(builder.getSchemaVersion());
         builder.setCommon(common);
         builder.setTripInfo(info);
-        return builder.build();
+        return builder;
     }
 
     public static PubtransTableProtos.ROIDeparture mockROIDeparture(long dvjId, String routeName, long targetDateTimeMs) throws Exception {
@@ -148,12 +150,16 @@ public class MockDataUtils {
     }
 
     public static PubtransTableProtos.ROIDeparture mockROIDeparture(long dvjId, String routeName, int joreDirection, int stopSequence, long targetDateTimeMs) throws Exception {
-        PubtransTableProtos.Common common = generateValidCommon(dvjId, stopSequence, targetDateTimeMs).build();
+        PubtransTableProtos.Common common = mockCommon(dvjId, stopSequence, targetDateTimeMs).build();
         PubtransTableProtos.DOITripInfo info = mockDOITripInfo(dvjId, routeName, joreDirection);
         return mockROIDeparture(common, info);
     }
 
     public static PubtransTableProtos.ROIDeparture mockROIDeparture(PubtransTableProtos.Common common, PubtransTableProtos.DOITripInfo info) throws Exception {
+        return mockROIDepartureBuilder(common, info).build();
+    }
+
+    public static PubtransTableProtos.ROIDeparture.Builder mockROIDepartureBuilder(PubtransTableProtos.Common common, PubtransTableProtos.DOITripInfo info) {
         PubtransTableProtos.ROIDeparture.Builder builder = PubtransTableProtos.ROIDeparture.newBuilder();
         builder.setSchemaVersion(builder.getSchemaVersion());
         builder.setCommon(common);
@@ -162,7 +168,7 @@ public class MockDataUtils {
         builder.setHasDestinationDisplayId(0);
         builder.setHasDestinationStopAreaGid(0);
         builder.setHasServiceRequirementId(0);
-        return builder.build();
+        return builder;
     }
 
     public static InternalMessages.StopEstimate mockStopEstimate(String routeName) throws Exception {
@@ -175,7 +181,7 @@ public class MockDataUtils {
 
     public static InternalMessages.StopEstimate mockStopEstimate(long dvjId, String routeName) throws Exception {
         PubtransTableProtos.DOITripInfo mockTripInfo = mockDOITripInfo(dvjId, routeName);
-        PubtransTableProtos.Common mockCommon = MockDataUtils.generateValidCommon(dvjId).build();
+        PubtransTableProtos.Common mockCommon = MockDataUtils.mockCommon(dvjId).build();
         return PubtransFactory.createStopEstimate(mockCommon, mockTripInfo, InternalMessages.StopEstimate.Type.ARRIVAL);
     }
 
@@ -184,17 +190,17 @@ public class MockDataUtils {
                                                                  long stopId,
                                                                  int stopSequence,
                                                                  long startTimeEpochMs) throws Exception {
-        PubtransTableProtos.Common common = MockDataUtils.generateValidCommon(dvjId, stopSequence, startTimeEpochMs).build();
+        PubtransTableProtos.Common common = MockDataUtils.mockCommon(dvjId, stopSequence, startTimeEpochMs).build();
         PubtransTableProtos.DOITripInfo mockTripInfo = mockDOITripInfo(dvjId, generateValidRouteName(),
                 stopId, startTimeEpochMs);
         return PubtransFactory.createStopEstimate(common, mockTripInfo, eventType);
     }
 
-    public static PubtransTableProtos.DOITripInfo mockDOITripInfo(long dvjId, String routeName) {
+    public static PubtransTableProtos.DOITripInfo mockDOITripInfo(long dvjId, String routeName) throws Exception {
         return mockDOITripInfo(dvjId, routeName, generateValidJoreId());
     }
 
-    public static PubtransTableProtos.DOITripInfo mockDOITripInfo(long dvjId, String routeName, int joreDirection) {
+    public static PubtransTableProtos.DOITripInfo mockDOITripInfo(long dvjId, String routeName, int joreDirection) throws Exception {
         long stopId = generateValidJoreId();
         return mockDOITripInfo(dvjId,
                 routeName,
@@ -203,7 +209,7 @@ public class MockDataUtils {
                 MOCK_START_DATE, MOCK_START_TIME);
     }
 
-    public static PubtransTableProtos.DOITripInfo mockDOITripInfo(long dvjId, String routeName, long stopId) {
+    public static PubtransTableProtos.DOITripInfo mockDOITripInfo(long dvjId, String routeName, long stopId) throws Exception {
         return mockDOITripInfo(dvjId,
                 routeName,
                 stopId,
@@ -211,7 +217,8 @@ public class MockDataUtils {
                 MOCK_START_DATE, MOCK_START_TIME);
     }
 
-    public static PubtransTableProtos.DOITripInfo mockDOITripInfo(long dvjId, String routeName, long stopId, long startTimeEpochMs) {
+    public static PubtransTableProtos.DOITripInfo mockDOITripInfo(long dvjId, String routeName,
+                                                                  long stopId, long startTimeEpochMs) throws Exception {
         String startTimeAsString = START_TIME_FORMAT.format(startTimeEpochMs);
         String[] dateAndTime = startTimeAsString.split(" ");
         String operatingDay = dateAndTime[0];
@@ -226,8 +233,13 @@ public class MockDataUtils {
 
 
     public static PubtransTableProtos.DOITripInfo mockDOITripInfo(long dvjId, String routeName, long stopId,
-                                                           int joreDirection, String startDate,
-                                                           String startTime) {
+                                                           int joreDirection, String startDate, String startTime) throws Exception {
+        return mockDOITripInfoBuilder(dvjId, routeName, stopId, joreDirection, startDate, startTime).build();
+    }
+
+    public static PubtransTableProtos.DOITripInfo.Builder mockDOITripInfoBuilder(long dvjId, String routeName, long stopId,
+                                                                  int joreDirection, String startDate,
+                                                                  String startTime) {
         PubtransTableProtos.DOITripInfo.Builder builder = PubtransTableProtos.DOITripInfo.newBuilder();
         builder.setStopId(Long.toString(stopId));
         builder.setDirectionId(joreDirection);
@@ -235,10 +247,10 @@ public class MockDataUtils {
         builder.setStartTime(startTime);
         builder.setOperatingDay(startDate);
         builder.setDvjId(dvjId);
-        return builder.build();
+        return builder;
     }
 
-    public static InternalMessages.TripCancellation mockTripCancellation(String routeId) {
+    public static InternalMessages.TripCancellation mockTripCancellation(String routeId) throws Exception {
         return mockTripCancellation(
                 generateValidJoreId(), routeId,
                 MOCK_DIRECTION_ID, MOCK_START_DATE, MOCK_START_TIME,
@@ -246,13 +258,13 @@ public class MockDataUtils {
     }
 
     public static InternalMessages.TripCancellation mockTripCancellation(long dvjId, String routeId, int joreDirectionId,
-                                                                         LocalDateTime startTime) {
+                                                                         LocalDateTime startTime) throws Exception {
         return mockTripCancellation(dvjId, routeId, joreDirectionId, startTime, InternalMessages.TripCancellation.Status.CANCELED);
     }
 
     public static InternalMessages.TripCancellation mockTripCancellation(long dvjId, String routeId, int joreDirectionId,
                                                                          LocalDateTime startTime,
-                                                                         InternalMessages.TripCancellation.Status status) {
+                                                                         InternalMessages.TripCancellation.Status status) throws Exception {
 
         String date = DateTimeFormatter.ofPattern("yyyyMMdd").format(startTime);
         String time = DateTimeFormatter.ofPattern("HH:mm:ss").format(startTime);
@@ -261,7 +273,7 @@ public class MockDataUtils {
 
     public static InternalMessages.TripCancellation mockTripCancellation(long dvjId, String routeId, int joreDirectionId,
                                                                          String startDate, String startTime,
-                                                                         InternalMessages.TripCancellation.Status status) {
+                                                                         InternalMessages.TripCancellation.Status status) throws Exception {
         return mockTripCancellationBuilder(dvjId, routeId, joreDirectionId, startDate, startTime, status).build();
     }
 
