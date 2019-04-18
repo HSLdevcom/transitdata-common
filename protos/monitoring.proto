@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package proto;
+
+option java_package = "fi.hsl.common.monitoring.proto";
+option java_outer_classname = "Monitoring";
+
+message MonitoringMessage {
+    required int32 SchemaVersion = 1 [default = 1];
+    optional int64 timestamp = 2;
+    required string key = 3;
+    required double value = 4;
+}

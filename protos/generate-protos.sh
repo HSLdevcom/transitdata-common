@@ -11,3 +11,5 @@ protoc internal-messages.proto --java_out=../src/main/java/
 protoc mqtt.proto --java_out=../src/main/java/
 
 protoc hfp.proto --java_out=../src/main/java/
+
+protoc monitoring.proto --java_out=../src/main/java/
