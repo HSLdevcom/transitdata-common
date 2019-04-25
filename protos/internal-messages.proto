@@ -31,6 +31,102 @@ message TripCancellation {
     }
 
     required Status status = 7;
+
+    enum DeviationCasesType {
+        CANCEL_DEPARTURE = 0;
+        DETOUR = 1;
+        LATE_DEPARTURE = 2;
+        SKIPPED_STOP_CALLS = 3;
+        TIS_ERROR = 4;
+    }
+
+    optional DeviationCasesType deviation_cases_type = 8;
+
+    enum AffectedDeparturesType {
+        CANCEL_STOPS_FROM_MIDDLE = 0;
+        CANCEL_ENTIRE_DEPARTURE = 1;
+        CANCEL_STOPS_FROM_END = 2;
+    }
+
+    optional AffectedDeparturesType affected_departures_type = 9;
+    optional string title = 10;
+    optional string description = 11;
+
+    enum Category {
+        OTHER_DRIVER_ERROR = 0;
+        ITS_SYSTEM_ERROR = 1;
+        TOO_MANY_PASSENGERS = 2;
+        MISPARKED_VEHICLE = 3;
+        STRIKE = 4;
+        TEST = 5;
+        VEHICLE_OFF_THE_ROAD = 6;
+        NO_DRIVER = 7;
+        TRAFFIC_ACCIDENT = 8;
+        SWITCH_FAILURE = 9;
+        SEIZURE = 10;
+        WEATHER = 11;
+        STATE_VISIT = 12;
+        ROAD_MAINTENANCE = 13;
+        ROAD_CLOSED = 14;
+        TRACK_BLOCKED = 15;
+        WEATHER_CONDITIONS = 16;
+        ASSAULT = 17;
+        TRACK_MAINTENANCE = 18;
+        MEDICAL_INCIDENT = 19;
+        EARLIER_DISRUPTION = 20;
+        TECHNICAL_FAILURE = 21;
+        TRAFFIC_JAM = 22;
+        OTHER = 23;
+        NO_TRAFFIC_DISRUPTION = 24;
+        ACCIDENT = 25;
+        PUBLIC_EVENT = 26;
+        ROAD_TRENCH = 27;
+        VEHICLE_BREAKDOWN = 28;
+        POWER_FAILURE = 29;
+    }
+
+    optional Category category = 12;
+
+    enum SubCategory {
+        OUT_OF_FUEL = 0;
+        WRONG_INFORMATION_IN_DEVICE = 1;
+        DOOR_MALFUNCTION = 2;
+        PASSENGER_SEIZURE = 3;
+        OWN_FAULT = 4;
+        DEVICE_ERROR = 5;
+        CONGESTION_CAUSED_BY_WEATHER = 6;
+        OTHER_STRIKE = 7;
+        VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON = 8;
+        CONGESTION_CAUSED_BY_ACCIDENT = 9;
+        NULL = 10;
+        CONGESTION_REASON_UKNOWN = 11;
+        ELECTRIC_MALFUNCTION = 12;
+        PASSENGER_INJURED = 13;
+        ENGINE_MALFUNCTION = 14;
+        MISSPARKED_VEHICLE = 15;
+        INSUFFICIENT_CAPASITY = 16;
+        OTHER_ITS_ERROR = 17;
+        OTHER_MALFUNCTION = 18;
+        UNKNOWN_CAUSE = 19;
+        BREAK_MALFUNCTION = 20;
+        SLIPPERY_TRACK = 21;
+        STUCK_CAUSED_BY_SLIPPERY = 22;
+        OPERATOR_PERSONNEL_ON_STRIKE = 23;
+        ROAD_BLOCKED = 24;
+        UNDRIVEABLE_CONDITIONS = 25;
+        OTHER_OPERATOR_REASON = 26;
+        FALSE_ALARM = 27;
+        ASSAULT_ON_DRIVER = 28;
+        DRIVER_ERROR = 29;
+        STAFF_SHORTAGE = 30;
+        ASSAULT_ON_VEHICLE = 31;
+        OPPOSITE_FAULT = 32;
+        USER_ERROR = 33;
+        FAULT_UNKNOWN = 34;
+        OTHER_ASSAULT = 35;
+    }
+
+    optional SubCategory sub_category = 13;
 }
 
 message StopEstimate {

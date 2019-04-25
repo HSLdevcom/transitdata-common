@@ -126,7 +126,6 @@ public final class InternalMessages {
       tripId_ = "";
       operatingDay_ = "";
       routeId_ = "";
-      directionId_ = 0;
       startTime_ = "";
     }
 
@@ -227,7 +226,7 @@ public final class InternalMessages {
      * <code>required string trip_id = 1;</code>
      */
     public boolean hasTripId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
@@ -283,7 +282,7 @@ public final class InternalMessages {
      * <code>required string operating_day = 2;</code>
      */
     public boolean hasOperatingDay() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <pre>
@@ -333,7 +332,7 @@ public final class InternalMessages {
      * <code>required string route_id = 3;</code>
      */
     public boolean hasRouteId() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>required string route_id = 3;</code>
@@ -375,7 +374,7 @@ public final class InternalMessages {
      * <code>required uint32 direction_id = 4;</code>
      */
     public boolean hasDirectionId() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>required uint32 direction_id = 4;</code>
@@ -390,7 +389,7 @@ public final class InternalMessages {
      * <code>required string start_time = 5;</code>
      */
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <code>required string start_time = 5;</code>
@@ -460,19 +459,19 @@ public final class InternalMessages {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tripId_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, operatingDay_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, routeId_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         output.writeUInt32(4, directionId_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, startTime_);
       }
       unknownFields.writeTo(output);
@@ -484,20 +483,20 @@ public final class InternalMessages {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tripId_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, operatingDay_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, routeId_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, directionId_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, startTime_);
       }
       size += unknownFields.getSerializedSize();
@@ -515,34 +514,33 @@ public final class InternalMessages {
       }
       fi.hsl.common.transitdata.proto.InternalMessages.TripInfo other = (fi.hsl.common.transitdata.proto.InternalMessages.TripInfo) obj;
 
-      boolean result = true;
-      result = result && (hasTripId() == other.hasTripId());
+      if (hasTripId() != other.hasTripId()) return false;
       if (hasTripId()) {
-        result = result && getTripId()
-            .equals(other.getTripId());
+        if (!getTripId()
+            .equals(other.getTripId())) return false;
       }
-      result = result && (hasOperatingDay() == other.hasOperatingDay());
+      if (hasOperatingDay() != other.hasOperatingDay()) return false;
       if (hasOperatingDay()) {
-        result = result && getOperatingDay()
-            .equals(other.getOperatingDay());
+        if (!getOperatingDay()
+            .equals(other.getOperatingDay())) return false;
       }
-      result = result && (hasRouteId() == other.hasRouteId());
+      if (hasRouteId() != other.hasRouteId()) return false;
       if (hasRouteId()) {
-        result = result && getRouteId()
-            .equals(other.getRouteId());
+        if (!getRouteId()
+            .equals(other.getRouteId())) return false;
       }
-      result = result && (hasDirectionId() == other.hasDirectionId());
+      if (hasDirectionId() != other.hasDirectionId()) return false;
       if (hasDirectionId()) {
-        result = result && (getDirectionId()
-            == other.getDirectionId());
+        if (getDirectionId()
+            != other.getDirectionId()) return false;
       }
-      result = result && (hasStartTime() == other.hasStartTime());
+      if (hasStartTime() != other.hasStartTime()) return false;
       if (hasStartTime()) {
-        result = result && getStartTime()
-            .equals(other.getStartTime());
+        if (!getStartTime()
+            .equals(other.getStartTime())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -743,23 +741,23 @@ public final class InternalMessages {
         fi.hsl.common.transitdata.proto.InternalMessages.TripInfo result = new fi.hsl.common.transitdata.proto.InternalMessages.TripInfo(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.tripId_ = tripId_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           to_bitField0_ |= 0x00000002;
         }
         result.operatingDay_ = operatingDay_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           to_bitField0_ |= 0x00000004;
         }
         result.routeId_ = routeId_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.directionId_ = directionId_;
           to_bitField0_ |= 0x00000008;
         }
-        result.directionId_ = directionId_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           to_bitField0_ |= 0x00000010;
         }
         result.startTime_ = startTime_;
@@ -770,35 +768,35 @@ public final class InternalMessages {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -890,7 +888,7 @@ public final class InternalMessages {
        * <code>required string trip_id = 1;</code>
        */
       public boolean hasTripId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <pre>
@@ -995,7 +993,7 @@ public final class InternalMessages {
        * <code>required string operating_day = 2;</code>
        */
       public boolean hasOperatingDay() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <pre>
@@ -1091,7 +1089,7 @@ public final class InternalMessages {
        * <code>required string route_id = 3;</code>
        */
       public boolean hasRouteId() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>required string route_id = 3;</code>
@@ -1167,7 +1165,7 @@ public final class InternalMessages {
        * <code>required uint32 direction_id = 4;</code>
        */
       public boolean hasDirectionId() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>required uint32 direction_id = 4;</code>
@@ -1199,7 +1197,7 @@ public final class InternalMessages {
        * <code>required string start_time = 5;</code>
        */
       public boolean hasStartTime() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>required string start_time = 5;</code>
@@ -1408,6 +1406,70 @@ public final class InternalMessages {
      * <code>required .proto.TripCancellation.Status status = 7;</code>
      */
     fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status getStatus();
+
+    /**
+     * <code>optional .proto.TripCancellation.DeviationCasesType deviation_cases_type = 8;</code>
+     */
+    boolean hasDeviationCasesType();
+    /**
+     * <code>optional .proto.TripCancellation.DeviationCasesType deviation_cases_type = 8;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType getDeviationCasesType();
+
+    /**
+     * <code>optional .proto.TripCancellation.AffectedDeparturesType affected_departures_type = 9;</code>
+     */
+    boolean hasAffectedDeparturesType();
+    /**
+     * <code>optional .proto.TripCancellation.AffectedDeparturesType affected_departures_type = 9;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType getAffectedDeparturesType();
+
+    /**
+     * <code>optional string title = 10;</code>
+     */
+    boolean hasTitle();
+    /**
+     * <code>optional string title = 10;</code>
+     */
+    java.lang.String getTitle();
+    /**
+     * <code>optional string title = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getTitleBytes();
+
+    /**
+     * <code>optional string description = 11;</code>
+     */
+    boolean hasDescription();
+    /**
+     * <code>optional string description = 11;</code>
+     */
+    java.lang.String getDescription();
+    /**
+     * <code>optional string description = 11;</code>
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
+
+    /**
+     * <code>optional .proto.TripCancellation.Category category = 12;</code>
+     */
+    boolean hasCategory();
+    /**
+     * <code>optional .proto.TripCancellation.Category category = 12;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category getCategory();
+
+    /**
+     * <code>optional .proto.TripCancellation.SubCategory sub_category = 13;</code>
+     */
+    boolean hasSubCategory();
+    /**
+     * <code>optional .proto.TripCancellation.SubCategory sub_category = 13;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory getSubCategory();
   }
   /**
    * Protobuf type {@code proto.TripCancellation}
@@ -1425,10 +1487,15 @@ public final class InternalMessages {
       schemaVersion_ = 1;
       tripId_ = "";
       routeId_ = "";
-      directionId_ = 0;
       startTime_ = "";
       startDate_ = "";
       status_ = 0;
+      deviationCasesType_ = 0;
+      affectedDeparturesType_ = 0;
+      title_ = "";
+      description_ = "";
+      category_ = 0;
+      subCategory_ = 0;
     }
 
     @java.lang.Override
@@ -1498,6 +1565,66 @@ public final class InternalMessages {
               } else {
                 bitField0_ |= 0x00000040;
                 status_ = rawValue;
+              }
+              break;
+            }
+            case 64: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType value = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(8, rawValue);
+              } else {
+                bitField0_ |= 0x00000080;
+                deviationCasesType_ = rawValue;
+              }
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType value = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(9, rawValue);
+              } else {
+                bitField0_ |= 0x00000100;
+                affectedDeparturesType_ = rawValue;
+              }
+              break;
+            }
+            case 82: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000200;
+              title_ = bs;
+              break;
+            }
+            case 90: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000400;
+              description_ = bs;
+              break;
+            }
+            case 96: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category value = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(12, rawValue);
+              } else {
+                bitField0_ |= 0x00000800;
+                category_ = rawValue;
+              }
+              break;
+            }
+            case 104: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory value = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(13, rawValue);
+              } else {
+                bitField0_ |= 0x00001000;
+                subCategory_ = rawValue;
               }
               break;
             }
@@ -1627,6 +1754,960 @@ public final class InternalMessages {
       // @@protoc_insertion_point(enum_scope:proto.TripCancellation.Status)
     }
 
+    /**
+     * Protobuf enum {@code proto.TripCancellation.DeviationCasesType}
+     */
+    public enum DeviationCasesType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>CANCEL_DEPARTURE = 0;</code>
+       */
+      CANCEL_DEPARTURE(0),
+      /**
+       * <code>DETOUR = 1;</code>
+       */
+      DETOUR(1),
+      /**
+       * <code>LATE_DEPARTURE = 2;</code>
+       */
+      LATE_DEPARTURE(2),
+      /**
+       * <code>SKIPPED_STOP_CALLS = 3;</code>
+       */
+      SKIPPED_STOP_CALLS(3),
+      /**
+       * <code>TIS_ERROR = 4;</code>
+       */
+      TIS_ERROR(4),
+      ;
+
+      /**
+       * <code>CANCEL_DEPARTURE = 0;</code>
+       */
+      public static final int CANCEL_DEPARTURE_VALUE = 0;
+      /**
+       * <code>DETOUR = 1;</code>
+       */
+      public static final int DETOUR_VALUE = 1;
+      /**
+       * <code>LATE_DEPARTURE = 2;</code>
+       */
+      public static final int LATE_DEPARTURE_VALUE = 2;
+      /**
+       * <code>SKIPPED_STOP_CALLS = 3;</code>
+       */
+      public static final int SKIPPED_STOP_CALLS_VALUE = 3;
+      /**
+       * <code>TIS_ERROR = 4;</code>
+       */
+      public static final int TIS_ERROR_VALUE = 4;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DeviationCasesType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static DeviationCasesType forNumber(int value) {
+        switch (value) {
+          case 0: return CANCEL_DEPARTURE;
+          case 1: return DETOUR;
+          case 2: return LATE_DEPARTURE;
+          case 3: return SKIPPED_STOP_CALLS;
+          case 4: return TIS_ERROR;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<DeviationCasesType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          DeviationCasesType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<DeviationCasesType>() {
+              public DeviationCasesType findValueByNumber(int number) {
+                return DeviationCasesType.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.getDescriptor().getEnumTypes().get(1);
+      }
+
+      private static final DeviationCasesType[] VALUES = values();
+
+      public static DeviationCasesType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private DeviationCasesType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.TripCancellation.DeviationCasesType)
+    }
+
+    /**
+     * Protobuf enum {@code proto.TripCancellation.AffectedDeparturesType}
+     */
+    public enum AffectedDeparturesType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>CANCEL_STOPS_FROM_MIDDLE = 0;</code>
+       */
+      CANCEL_STOPS_FROM_MIDDLE(0),
+      /**
+       * <code>CANCEL_ENTIRE_DEPARTURE = 1;</code>
+       */
+      CANCEL_ENTIRE_DEPARTURE(1),
+      /**
+       * <code>CANCEL_STOPS_FROM_END = 2;</code>
+       */
+      CANCEL_STOPS_FROM_END(2),
+      ;
+
+      /**
+       * <code>CANCEL_STOPS_FROM_MIDDLE = 0;</code>
+       */
+      public static final int CANCEL_STOPS_FROM_MIDDLE_VALUE = 0;
+      /**
+       * <code>CANCEL_ENTIRE_DEPARTURE = 1;</code>
+       */
+      public static final int CANCEL_ENTIRE_DEPARTURE_VALUE = 1;
+      /**
+       * <code>CANCEL_STOPS_FROM_END = 2;</code>
+       */
+      public static final int CANCEL_STOPS_FROM_END_VALUE = 2;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static AffectedDeparturesType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static AffectedDeparturesType forNumber(int value) {
+        switch (value) {
+          case 0: return CANCEL_STOPS_FROM_MIDDLE;
+          case 1: return CANCEL_ENTIRE_DEPARTURE;
+          case 2: return CANCEL_STOPS_FROM_END;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<AffectedDeparturesType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          AffectedDeparturesType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<AffectedDeparturesType>() {
+              public AffectedDeparturesType findValueByNumber(int number) {
+                return AffectedDeparturesType.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.getDescriptor().getEnumTypes().get(2);
+      }
+
+      private static final AffectedDeparturesType[] VALUES = values();
+
+      public static AffectedDeparturesType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private AffectedDeparturesType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.TripCancellation.AffectedDeparturesType)
+    }
+
+    /**
+     * Protobuf enum {@code proto.TripCancellation.Category}
+     */
+    public enum Category
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>OTHER_DRIVER_ERROR = 0;</code>
+       */
+      OTHER_DRIVER_ERROR(0),
+      /**
+       * <code>ITS_SYSTEM_ERROR = 1;</code>
+       */
+      ITS_SYSTEM_ERROR(1),
+      /**
+       * <code>TOO_MANY_PASSENGERS = 2;</code>
+       */
+      TOO_MANY_PASSENGERS(2),
+      /**
+       * <code>MISPARKED_VEHICLE = 3;</code>
+       */
+      MISPARKED_VEHICLE(3),
+      /**
+       * <code>STRIKE = 4;</code>
+       */
+      STRIKE(4),
+      /**
+       * <code>TEST = 5;</code>
+       */
+      TEST(5),
+      /**
+       * <code>VEHICLE_OFF_THE_ROAD = 6;</code>
+       */
+      VEHICLE_OFF_THE_ROAD(6),
+      /**
+       * <code>NO_DRIVER = 7;</code>
+       */
+      NO_DRIVER(7),
+      /**
+       * <code>TRAFFIC_ACCIDENT = 8;</code>
+       */
+      TRAFFIC_ACCIDENT(8),
+      /**
+       * <code>SWITCH_FAILURE = 9;</code>
+       */
+      SWITCH_FAILURE(9),
+      /**
+       * <code>SEIZURE = 10;</code>
+       */
+      SEIZURE(10),
+      /**
+       * <code>WEATHER = 11;</code>
+       */
+      WEATHER(11),
+      /**
+       * <code>STATE_VISIT = 12;</code>
+       */
+      STATE_VISIT(12),
+      /**
+       * <code>ROAD_MAINTENANCE = 13;</code>
+       */
+      ROAD_MAINTENANCE(13),
+      /**
+       * <code>ROAD_CLOSED = 14;</code>
+       */
+      ROAD_CLOSED(14),
+      /**
+       * <code>TRACK_BLOCKED = 15;</code>
+       */
+      TRACK_BLOCKED(15),
+      /**
+       * <code>WEATHER_CONDITIONS = 16;</code>
+       */
+      WEATHER_CONDITIONS(16),
+      /**
+       * <code>ASSAULT = 17;</code>
+       */
+      ASSAULT(17),
+      /**
+       * <code>TRACK_MAINTENANCE = 18;</code>
+       */
+      TRACK_MAINTENANCE(18),
+      /**
+       * <code>MEDICAL_INCIDENT = 19;</code>
+       */
+      MEDICAL_INCIDENT(19),
+      /**
+       * <code>EARLIER_DISRUPTION = 20;</code>
+       */
+      EARLIER_DISRUPTION(20),
+      /**
+       * <code>TECHNICAL_FAILURE = 21;</code>
+       */
+      TECHNICAL_FAILURE(21),
+      /**
+       * <code>TRAFFIC_JAM = 22;</code>
+       */
+      TRAFFIC_JAM(22),
+      /**
+       * <code>OTHER = 23;</code>
+       */
+      OTHER(23),
+      /**
+       * <code>NO_TRAFFIC_DISRUPTION = 24;</code>
+       */
+      NO_TRAFFIC_DISRUPTION(24),
+      /**
+       * <code>ACCIDENT = 25;</code>
+       */
+      ACCIDENT(25),
+      /**
+       * <code>PUBLIC_EVENT = 26;</code>
+       */
+      PUBLIC_EVENT(26),
+      /**
+       * <code>ROAD_TRENCH = 27;</code>
+       */
+      ROAD_TRENCH(27),
+      /**
+       * <code>VEHICLE_BREAKDOWN = 28;</code>
+       */
+      VEHICLE_BREAKDOWN(28),
+      /**
+       * <code>POWER_FAILURE = 29;</code>
+       */
+      POWER_FAILURE(29),
+      ;
+
+      /**
+       * <code>OTHER_DRIVER_ERROR = 0;</code>
+       */
+      public static final int OTHER_DRIVER_ERROR_VALUE = 0;
+      /**
+       * <code>ITS_SYSTEM_ERROR = 1;</code>
+       */
+      public static final int ITS_SYSTEM_ERROR_VALUE = 1;
+      /**
+       * <code>TOO_MANY_PASSENGERS = 2;</code>
+       */
+      public static final int TOO_MANY_PASSENGERS_VALUE = 2;
+      /**
+       * <code>MISPARKED_VEHICLE = 3;</code>
+       */
+      public static final int MISPARKED_VEHICLE_VALUE = 3;
+      /**
+       * <code>STRIKE = 4;</code>
+       */
+      public static final int STRIKE_VALUE = 4;
+      /**
+       * <code>TEST = 5;</code>
+       */
+      public static final int TEST_VALUE = 5;
+      /**
+       * <code>VEHICLE_OFF_THE_ROAD = 6;</code>
+       */
+      public static final int VEHICLE_OFF_THE_ROAD_VALUE = 6;
+      /**
+       * <code>NO_DRIVER = 7;</code>
+       */
+      public static final int NO_DRIVER_VALUE = 7;
+      /**
+       * <code>TRAFFIC_ACCIDENT = 8;</code>
+       */
+      public static final int TRAFFIC_ACCIDENT_VALUE = 8;
+      /**
+       * <code>SWITCH_FAILURE = 9;</code>
+       */
+      public static final int SWITCH_FAILURE_VALUE = 9;
+      /**
+       * <code>SEIZURE = 10;</code>
+       */
+      public static final int SEIZURE_VALUE = 10;
+      /**
+       * <code>WEATHER = 11;</code>
+       */
+      public static final int WEATHER_VALUE = 11;
+      /**
+       * <code>STATE_VISIT = 12;</code>
+       */
+      public static final int STATE_VISIT_VALUE = 12;
+      /**
+       * <code>ROAD_MAINTENANCE = 13;</code>
+       */
+      public static final int ROAD_MAINTENANCE_VALUE = 13;
+      /**
+       * <code>ROAD_CLOSED = 14;</code>
+       */
+      public static final int ROAD_CLOSED_VALUE = 14;
+      /**
+       * <code>TRACK_BLOCKED = 15;</code>
+       */
+      public static final int TRACK_BLOCKED_VALUE = 15;
+      /**
+       * <code>WEATHER_CONDITIONS = 16;</code>
+       */
+      public static final int WEATHER_CONDITIONS_VALUE = 16;
+      /**
+       * <code>ASSAULT = 17;</code>
+       */
+      public static final int ASSAULT_VALUE = 17;
+      /**
+       * <code>TRACK_MAINTENANCE = 18;</code>
+       */
+      public static final int TRACK_MAINTENANCE_VALUE = 18;
+      /**
+       * <code>MEDICAL_INCIDENT = 19;</code>
+       */
+      public static final int MEDICAL_INCIDENT_VALUE = 19;
+      /**
+       * <code>EARLIER_DISRUPTION = 20;</code>
+       */
+      public static final int EARLIER_DISRUPTION_VALUE = 20;
+      /**
+       * <code>TECHNICAL_FAILURE = 21;</code>
+       */
+      public static final int TECHNICAL_FAILURE_VALUE = 21;
+      /**
+       * <code>TRAFFIC_JAM = 22;</code>
+       */
+      public static final int TRAFFIC_JAM_VALUE = 22;
+      /**
+       * <code>OTHER = 23;</code>
+       */
+      public static final int OTHER_VALUE = 23;
+      /**
+       * <code>NO_TRAFFIC_DISRUPTION = 24;</code>
+       */
+      public static final int NO_TRAFFIC_DISRUPTION_VALUE = 24;
+      /**
+       * <code>ACCIDENT = 25;</code>
+       */
+      public static final int ACCIDENT_VALUE = 25;
+      /**
+       * <code>PUBLIC_EVENT = 26;</code>
+       */
+      public static final int PUBLIC_EVENT_VALUE = 26;
+      /**
+       * <code>ROAD_TRENCH = 27;</code>
+       */
+      public static final int ROAD_TRENCH_VALUE = 27;
+      /**
+       * <code>VEHICLE_BREAKDOWN = 28;</code>
+       */
+      public static final int VEHICLE_BREAKDOWN_VALUE = 28;
+      /**
+       * <code>POWER_FAILURE = 29;</code>
+       */
+      public static final int POWER_FAILURE_VALUE = 29;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Category valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Category forNumber(int value) {
+        switch (value) {
+          case 0: return OTHER_DRIVER_ERROR;
+          case 1: return ITS_SYSTEM_ERROR;
+          case 2: return TOO_MANY_PASSENGERS;
+          case 3: return MISPARKED_VEHICLE;
+          case 4: return STRIKE;
+          case 5: return TEST;
+          case 6: return VEHICLE_OFF_THE_ROAD;
+          case 7: return NO_DRIVER;
+          case 8: return TRAFFIC_ACCIDENT;
+          case 9: return SWITCH_FAILURE;
+          case 10: return SEIZURE;
+          case 11: return WEATHER;
+          case 12: return STATE_VISIT;
+          case 13: return ROAD_MAINTENANCE;
+          case 14: return ROAD_CLOSED;
+          case 15: return TRACK_BLOCKED;
+          case 16: return WEATHER_CONDITIONS;
+          case 17: return ASSAULT;
+          case 18: return TRACK_MAINTENANCE;
+          case 19: return MEDICAL_INCIDENT;
+          case 20: return EARLIER_DISRUPTION;
+          case 21: return TECHNICAL_FAILURE;
+          case 22: return TRAFFIC_JAM;
+          case 23: return OTHER;
+          case 24: return NO_TRAFFIC_DISRUPTION;
+          case 25: return ACCIDENT;
+          case 26: return PUBLIC_EVENT;
+          case 27: return ROAD_TRENCH;
+          case 28: return VEHICLE_BREAKDOWN;
+          case 29: return POWER_FAILURE;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Category>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Category> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Category>() {
+              public Category findValueByNumber(int number) {
+                return Category.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.getDescriptor().getEnumTypes().get(3);
+      }
+
+      private static final Category[] VALUES = values();
+
+      public static Category valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Category(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.TripCancellation.Category)
+    }
+
+    /**
+     * Protobuf enum {@code proto.TripCancellation.SubCategory}
+     */
+    public enum SubCategory
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>OUT_OF_FUEL = 0;</code>
+       */
+      OUT_OF_FUEL(0),
+      /**
+       * <code>WRONG_INFORMATION_IN_DEVICE = 1;</code>
+       */
+      WRONG_INFORMATION_IN_DEVICE(1),
+      /**
+       * <code>DOOR_MALFUNCTION = 2;</code>
+       */
+      DOOR_MALFUNCTION(2),
+      /**
+       * <code>PASSENGER_SEIZURE = 3;</code>
+       */
+      PASSENGER_SEIZURE(3),
+      /**
+       * <code>OWN_FAULT = 4;</code>
+       */
+      OWN_FAULT(4),
+      /**
+       * <code>DEVICE_ERROR = 5;</code>
+       */
+      DEVICE_ERROR(5),
+      /**
+       * <code>CONGESTION_CAUSED_BY_WEATHER = 6;</code>
+       */
+      CONGESTION_CAUSED_BY_WEATHER(6),
+      /**
+       * <code>OTHER_STRIKE = 7;</code>
+       */
+      OTHER_STRIKE(7),
+      /**
+       * <code>VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON = 8;</code>
+       */
+      VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON(8),
+      /**
+       * <code>CONGESTION_CAUSED_BY_ACCIDENT = 9;</code>
+       */
+      CONGESTION_CAUSED_BY_ACCIDENT(9),
+      /**
+       * <code>NULL = 10;</code>
+       */
+      NULL(10),
+      /**
+       * <code>CONGESTION_REASON_UKNOWN = 11;</code>
+       */
+      CONGESTION_REASON_UKNOWN(11),
+      /**
+       * <code>ELECTRIC_MALFUNCTION = 12;</code>
+       */
+      ELECTRIC_MALFUNCTION(12),
+      /**
+       * <code>PASSENGER_INJURED = 13;</code>
+       */
+      PASSENGER_INJURED(13),
+      /**
+       * <code>ENGINE_MALFUNCTION = 14;</code>
+       */
+      ENGINE_MALFUNCTION(14),
+      /**
+       * <code>MISSPARKED_VEHICLE = 15;</code>
+       */
+      MISSPARKED_VEHICLE(15),
+      /**
+       * <code>INSUFFICIENT_CAPASITY = 16;</code>
+       */
+      INSUFFICIENT_CAPASITY(16),
+      /**
+       * <code>OTHER_ITS_ERROR = 17;</code>
+       */
+      OTHER_ITS_ERROR(17),
+      /**
+       * <code>OTHER_MALFUNCTION = 18;</code>
+       */
+      OTHER_MALFUNCTION(18),
+      /**
+       * <code>UNKNOWN_CAUSE = 19;</code>
+       */
+      UNKNOWN_CAUSE(19),
+      /**
+       * <code>BREAK_MALFUNCTION = 20;</code>
+       */
+      BREAK_MALFUNCTION(20),
+      /**
+       * <code>SLIPPERY_TRACK = 21;</code>
+       */
+      SLIPPERY_TRACK(21),
+      /**
+       * <code>STUCK_CAUSED_BY_SLIPPERY = 22;</code>
+       */
+      STUCK_CAUSED_BY_SLIPPERY(22),
+      /**
+       * <code>OPERATOR_PERSONNEL_ON_STRIKE = 23;</code>
+       */
+      OPERATOR_PERSONNEL_ON_STRIKE(23),
+      /**
+       * <code>ROAD_BLOCKED = 24;</code>
+       */
+      ROAD_BLOCKED(24),
+      /**
+       * <code>UNDRIVEABLE_CONDITIONS = 25;</code>
+       */
+      UNDRIVEABLE_CONDITIONS(25),
+      /**
+       * <code>OTHER_OPERATOR_REASON = 26;</code>
+       */
+      OTHER_OPERATOR_REASON(26),
+      /**
+       * <code>FALSE_ALARM = 27;</code>
+       */
+      FALSE_ALARM(27),
+      /**
+       * <code>ASSAULT_ON_DRIVER = 28;</code>
+       */
+      ASSAULT_ON_DRIVER(28),
+      /**
+       * <code>DRIVER_ERROR = 29;</code>
+       */
+      DRIVER_ERROR(29),
+      /**
+       * <code>STAFF_SHORTAGE = 30;</code>
+       */
+      STAFF_SHORTAGE(30),
+      /**
+       * <code>ASSAULT_ON_VEHICLE = 31;</code>
+       */
+      ASSAULT_ON_VEHICLE(31),
+      /**
+       * <code>OPPOSITE_FAULT = 32;</code>
+       */
+      OPPOSITE_FAULT(32),
+      /**
+       * <code>USER_ERROR = 33;</code>
+       */
+      USER_ERROR(33),
+      /**
+       * <code>FAULT_UNKNOWN = 34;</code>
+       */
+      FAULT_UNKNOWN(34),
+      /**
+       * <code>OTHER_ASSAULT = 35;</code>
+       */
+      OTHER_ASSAULT(35),
+      ;
+
+      /**
+       * <code>OUT_OF_FUEL = 0;</code>
+       */
+      public static final int OUT_OF_FUEL_VALUE = 0;
+      /**
+       * <code>WRONG_INFORMATION_IN_DEVICE = 1;</code>
+       */
+      public static final int WRONG_INFORMATION_IN_DEVICE_VALUE = 1;
+      /**
+       * <code>DOOR_MALFUNCTION = 2;</code>
+       */
+      public static final int DOOR_MALFUNCTION_VALUE = 2;
+      /**
+       * <code>PASSENGER_SEIZURE = 3;</code>
+       */
+      public static final int PASSENGER_SEIZURE_VALUE = 3;
+      /**
+       * <code>OWN_FAULT = 4;</code>
+       */
+      public static final int OWN_FAULT_VALUE = 4;
+      /**
+       * <code>DEVICE_ERROR = 5;</code>
+       */
+      public static final int DEVICE_ERROR_VALUE = 5;
+      /**
+       * <code>CONGESTION_CAUSED_BY_WEATHER = 6;</code>
+       */
+      public static final int CONGESTION_CAUSED_BY_WEATHER_VALUE = 6;
+      /**
+       * <code>OTHER_STRIKE = 7;</code>
+       */
+      public static final int OTHER_STRIKE_VALUE = 7;
+      /**
+       * <code>VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON = 8;</code>
+       */
+      public static final int VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON_VALUE = 8;
+      /**
+       * <code>CONGESTION_CAUSED_BY_ACCIDENT = 9;</code>
+       */
+      public static final int CONGESTION_CAUSED_BY_ACCIDENT_VALUE = 9;
+      /**
+       * <code>NULL = 10;</code>
+       */
+      public static final int NULL_VALUE = 10;
+      /**
+       * <code>CONGESTION_REASON_UKNOWN = 11;</code>
+       */
+      public static final int CONGESTION_REASON_UKNOWN_VALUE = 11;
+      /**
+       * <code>ELECTRIC_MALFUNCTION = 12;</code>
+       */
+      public static final int ELECTRIC_MALFUNCTION_VALUE = 12;
+      /**
+       * <code>PASSENGER_INJURED = 13;</code>
+       */
+      public static final int PASSENGER_INJURED_VALUE = 13;
+      /**
+       * <code>ENGINE_MALFUNCTION = 14;</code>
+       */
+      public static final int ENGINE_MALFUNCTION_VALUE = 14;
+      /**
+       * <code>MISSPARKED_VEHICLE = 15;</code>
+       */
+      public static final int MISSPARKED_VEHICLE_VALUE = 15;
+      /**
+       * <code>INSUFFICIENT_CAPASITY = 16;</code>
+       */
+      public static final int INSUFFICIENT_CAPASITY_VALUE = 16;
+      /**
+       * <code>OTHER_ITS_ERROR = 17;</code>
+       */
+      public static final int OTHER_ITS_ERROR_VALUE = 17;
+      /**
+       * <code>OTHER_MALFUNCTION = 18;</code>
+       */
+      public static final int OTHER_MALFUNCTION_VALUE = 18;
+      /**
+       * <code>UNKNOWN_CAUSE = 19;</code>
+       */
+      public static final int UNKNOWN_CAUSE_VALUE = 19;
+      /**
+       * <code>BREAK_MALFUNCTION = 20;</code>
+       */
+      public static final int BREAK_MALFUNCTION_VALUE = 20;
+      /**
+       * <code>SLIPPERY_TRACK = 21;</code>
+       */
+      public static final int SLIPPERY_TRACK_VALUE = 21;
+      /**
+       * <code>STUCK_CAUSED_BY_SLIPPERY = 22;</code>
+       */
+      public static final int STUCK_CAUSED_BY_SLIPPERY_VALUE = 22;
+      /**
+       * <code>OPERATOR_PERSONNEL_ON_STRIKE = 23;</code>
+       */
+      public static final int OPERATOR_PERSONNEL_ON_STRIKE_VALUE = 23;
+      /**
+       * <code>ROAD_BLOCKED = 24;</code>
+       */
+      public static final int ROAD_BLOCKED_VALUE = 24;
+      /**
+       * <code>UNDRIVEABLE_CONDITIONS = 25;</code>
+       */
+      public static final int UNDRIVEABLE_CONDITIONS_VALUE = 25;
+      /**
+       * <code>OTHER_OPERATOR_REASON = 26;</code>
+       */
+      public static final int OTHER_OPERATOR_REASON_VALUE = 26;
+      /**
+       * <code>FALSE_ALARM = 27;</code>
+       */
+      public static final int FALSE_ALARM_VALUE = 27;
+      /**
+       * <code>ASSAULT_ON_DRIVER = 28;</code>
+       */
+      public static final int ASSAULT_ON_DRIVER_VALUE = 28;
+      /**
+       * <code>DRIVER_ERROR = 29;</code>
+       */
+      public static final int DRIVER_ERROR_VALUE = 29;
+      /**
+       * <code>STAFF_SHORTAGE = 30;</code>
+       */
+      public static final int STAFF_SHORTAGE_VALUE = 30;
+      /**
+       * <code>ASSAULT_ON_VEHICLE = 31;</code>
+       */
+      public static final int ASSAULT_ON_VEHICLE_VALUE = 31;
+      /**
+       * <code>OPPOSITE_FAULT = 32;</code>
+       */
+      public static final int OPPOSITE_FAULT_VALUE = 32;
+      /**
+       * <code>USER_ERROR = 33;</code>
+       */
+      public static final int USER_ERROR_VALUE = 33;
+      /**
+       * <code>FAULT_UNKNOWN = 34;</code>
+       */
+      public static final int FAULT_UNKNOWN_VALUE = 34;
+      /**
+       * <code>OTHER_ASSAULT = 35;</code>
+       */
+      public static final int OTHER_ASSAULT_VALUE = 35;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SubCategory valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static SubCategory forNumber(int value) {
+        switch (value) {
+          case 0: return OUT_OF_FUEL;
+          case 1: return WRONG_INFORMATION_IN_DEVICE;
+          case 2: return DOOR_MALFUNCTION;
+          case 3: return PASSENGER_SEIZURE;
+          case 4: return OWN_FAULT;
+          case 5: return DEVICE_ERROR;
+          case 6: return CONGESTION_CAUSED_BY_WEATHER;
+          case 7: return OTHER_STRIKE;
+          case 8: return VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON;
+          case 9: return CONGESTION_CAUSED_BY_ACCIDENT;
+          case 10: return NULL;
+          case 11: return CONGESTION_REASON_UKNOWN;
+          case 12: return ELECTRIC_MALFUNCTION;
+          case 13: return PASSENGER_INJURED;
+          case 14: return ENGINE_MALFUNCTION;
+          case 15: return MISSPARKED_VEHICLE;
+          case 16: return INSUFFICIENT_CAPASITY;
+          case 17: return OTHER_ITS_ERROR;
+          case 18: return OTHER_MALFUNCTION;
+          case 19: return UNKNOWN_CAUSE;
+          case 20: return BREAK_MALFUNCTION;
+          case 21: return SLIPPERY_TRACK;
+          case 22: return STUCK_CAUSED_BY_SLIPPERY;
+          case 23: return OPERATOR_PERSONNEL_ON_STRIKE;
+          case 24: return ROAD_BLOCKED;
+          case 25: return UNDRIVEABLE_CONDITIONS;
+          case 26: return OTHER_OPERATOR_REASON;
+          case 27: return FALSE_ALARM;
+          case 28: return ASSAULT_ON_DRIVER;
+          case 29: return DRIVER_ERROR;
+          case 30: return STAFF_SHORTAGE;
+          case 31: return ASSAULT_ON_VEHICLE;
+          case 32: return OPPOSITE_FAULT;
+          case 33: return USER_ERROR;
+          case 34: return FAULT_UNKNOWN;
+          case 35: return OTHER_ASSAULT;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<SubCategory>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          SubCategory> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<SubCategory>() {
+              public SubCategory findValueByNumber(int number) {
+                return SubCategory.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.getDescriptor().getEnumTypes().get(4);
+      }
+
+      private static final SubCategory[] VALUES = values();
+
+      public static SubCategory valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private SubCategory(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.TripCancellation.SubCategory)
+    }
+
     private int bitField0_;
     public static final int SCHEMAVERSION_FIELD_NUMBER = 1;
     private int schemaVersion_;
@@ -1634,7 +2715,7 @@ public final class InternalMessages {
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
      */
     public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
@@ -1649,7 +2730,7 @@ public final class InternalMessages {
      * <code>optional string trip_id = 2;</code>
      */
     public boolean hasTripId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>optional string trip_id = 2;</code>
@@ -1691,7 +2772,7 @@ public final class InternalMessages {
      * <code>optional string route_id = 3;</code>
      */
     public boolean hasRouteId() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>optional string route_id = 3;</code>
@@ -1733,7 +2814,7 @@ public final class InternalMessages {
      * <code>optional uint32 direction_id = 4;</code>
      */
     public boolean hasDirectionId() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>optional uint32 direction_id = 4;</code>
@@ -1748,7 +2829,7 @@ public final class InternalMessages {
      * <code>optional string start_time = 5;</code>
      */
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <code>optional string start_time = 5;</code>
@@ -1790,7 +2871,7 @@ public final class InternalMessages {
      * <code>optional string start_date = 6;</code>
      */
     public boolean hasStartDate() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <code>optional string start_date = 6;</code>
@@ -1832,7 +2913,7 @@ public final class InternalMessages {
      * <code>required .proto.TripCancellation.Status status = 7;</code>
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      * <code>required .proto.TripCancellation.Status status = 7;</code>
@@ -1841,6 +2922,158 @@ public final class InternalMessages {
       @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status.valueOf(status_);
       return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status.RUNNING : result;
+    }
+
+    public static final int DEVIATION_CASES_TYPE_FIELD_NUMBER = 8;
+    private int deviationCasesType_;
+    /**
+     * <code>optional .proto.TripCancellation.DeviationCasesType deviation_cases_type = 8;</code>
+     */
+    public boolean hasDeviationCasesType() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <code>optional .proto.TripCancellation.DeviationCasesType deviation_cases_type = 8;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType getDeviationCasesType() {
+      @SuppressWarnings("deprecation")
+      fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType.valueOf(deviationCasesType_);
+      return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType.CANCEL_DEPARTURE : result;
+    }
+
+    public static final int AFFECTED_DEPARTURES_TYPE_FIELD_NUMBER = 9;
+    private int affectedDeparturesType_;
+    /**
+     * <code>optional .proto.TripCancellation.AffectedDeparturesType affected_departures_type = 9;</code>
+     */
+    public boolean hasAffectedDeparturesType() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <code>optional .proto.TripCancellation.AffectedDeparturesType affected_departures_type = 9;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType getAffectedDeparturesType() {
+      @SuppressWarnings("deprecation")
+      fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType.valueOf(affectedDeparturesType_);
+      return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType.CANCEL_STOPS_FROM_MIDDLE : result;
+    }
+
+    public static final int TITLE_FIELD_NUMBER = 10;
+    private volatile java.lang.Object title_;
+    /**
+     * <code>optional string title = 10;</code>
+     */
+    public boolean hasTitle() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     * <code>optional string title = 10;</code>
+     */
+    public java.lang.String getTitle() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          title_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string title = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTitleBytes() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        title_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 11;
+    private volatile java.lang.Object description_;
+    /**
+     * <code>optional string description = 11;</code>
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     * <code>optional string description = 11;</code>
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          description_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string description = 11;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CATEGORY_FIELD_NUMBER = 12;
+    private int category_;
+    /**
+     * <code>optional .proto.TripCancellation.Category category = 12;</code>
+     */
+    public boolean hasCategory() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     * <code>optional .proto.TripCancellation.Category category = 12;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category getCategory() {
+      @SuppressWarnings("deprecation")
+      fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category.valueOf(category_);
+      return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category.OTHER_DRIVER_ERROR : result;
+    }
+
+    public static final int SUB_CATEGORY_FIELD_NUMBER = 13;
+    private int subCategory_;
+    /**
+     * <code>optional .proto.TripCancellation.SubCategory sub_category = 13;</code>
+     */
+    public boolean hasSubCategory() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     * <code>optional .proto.TripCancellation.SubCategory sub_category = 13;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory getSubCategory() {
+      @SuppressWarnings("deprecation")
+      fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory.valueOf(subCategory_);
+      return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory.OUT_OF_FUEL : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1865,26 +3098,44 @@ public final class InternalMessages {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt32(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tripId_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, routeId_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         output.writeUInt32(4, directionId_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, startTime_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, startDate_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         output.writeEnum(7, status_);
+      }
+      if (((bitField0_ & 0x00000080) != 0)) {
+        output.writeEnum(8, deviationCasesType_);
+      }
+      if (((bitField0_ & 0x00000100) != 0)) {
+        output.writeEnum(9, affectedDeparturesType_);
+      }
+      if (((bitField0_ & 0x00000200) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, title_);
+      }
+      if (((bitField0_ & 0x00000400) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, description_);
+      }
+      if (((bitField0_ & 0x00000800) != 0)) {
+        output.writeEnum(12, category_);
+      }
+      if (((bitField0_ & 0x00001000) != 0)) {
+        output.writeEnum(13, subCategory_);
       }
       unknownFields.writeTo(output);
     }
@@ -1895,29 +3146,51 @@ public final class InternalMessages {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tripId_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, routeId_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, directionId_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, startTime_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, startDate_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, status_);
+      }
+      if (((bitField0_ & 0x00000080) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(8, deviationCasesType_);
+      }
+      if (((bitField0_ & 0x00000100) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(9, affectedDeparturesType_);
+      }
+      if (((bitField0_ & 0x00000200) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, title_);
+      }
+      if (((bitField0_ & 0x00000400) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, description_);
+      }
+      if (((bitField0_ & 0x00000800) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(12, category_);
+      }
+      if (((bitField0_ & 0x00001000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(13, subCategory_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1934,43 +3207,68 @@ public final class InternalMessages {
       }
       fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation other = (fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation) obj;
 
-      boolean result = true;
-      result = result && (hasSchemaVersion() == other.hasSchemaVersion());
+      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
       if (hasSchemaVersion()) {
-        result = result && (getSchemaVersion()
-            == other.getSchemaVersion());
+        if (getSchemaVersion()
+            != other.getSchemaVersion()) return false;
       }
-      result = result && (hasTripId() == other.hasTripId());
+      if (hasTripId() != other.hasTripId()) return false;
       if (hasTripId()) {
-        result = result && getTripId()
-            .equals(other.getTripId());
+        if (!getTripId()
+            .equals(other.getTripId())) return false;
       }
-      result = result && (hasRouteId() == other.hasRouteId());
+      if (hasRouteId() != other.hasRouteId()) return false;
       if (hasRouteId()) {
-        result = result && getRouteId()
-            .equals(other.getRouteId());
+        if (!getRouteId()
+            .equals(other.getRouteId())) return false;
       }
-      result = result && (hasDirectionId() == other.hasDirectionId());
+      if (hasDirectionId() != other.hasDirectionId()) return false;
       if (hasDirectionId()) {
-        result = result && (getDirectionId()
-            == other.getDirectionId());
+        if (getDirectionId()
+            != other.getDirectionId()) return false;
       }
-      result = result && (hasStartTime() == other.hasStartTime());
+      if (hasStartTime() != other.hasStartTime()) return false;
       if (hasStartTime()) {
-        result = result && getStartTime()
-            .equals(other.getStartTime());
+        if (!getStartTime()
+            .equals(other.getStartTime())) return false;
       }
-      result = result && (hasStartDate() == other.hasStartDate());
+      if (hasStartDate() != other.hasStartDate()) return false;
       if (hasStartDate()) {
-        result = result && getStartDate()
-            .equals(other.getStartDate());
+        if (!getStartDate()
+            .equals(other.getStartDate())) return false;
       }
-      result = result && (hasStatus() == other.hasStatus());
+      if (hasStatus() != other.hasStatus()) return false;
       if (hasStatus()) {
-        result = result && status_ == other.status_;
+        if (status_ != other.status_) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (hasDeviationCasesType() != other.hasDeviationCasesType()) return false;
+      if (hasDeviationCasesType()) {
+        if (deviationCasesType_ != other.deviationCasesType_) return false;
+      }
+      if (hasAffectedDeparturesType() != other.hasAffectedDeparturesType()) return false;
+      if (hasAffectedDeparturesType()) {
+        if (affectedDeparturesType_ != other.affectedDeparturesType_) return false;
+      }
+      if (hasTitle() != other.hasTitle()) return false;
+      if (hasTitle()) {
+        if (!getTitle()
+            .equals(other.getTitle())) return false;
+      }
+      if (hasDescription() != other.hasDescription()) return false;
+      if (hasDescription()) {
+        if (!getDescription()
+            .equals(other.getDescription())) return false;
+      }
+      if (hasCategory() != other.hasCategory()) return false;
+      if (hasCategory()) {
+        if (category_ != other.category_) return false;
+      }
+      if (hasSubCategory() != other.hasSubCategory()) return false;
+      if (hasSubCategory()) {
+        if (subCategory_ != other.subCategory_) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2007,6 +3305,30 @@ public final class InternalMessages {
       if (hasStatus()) {
         hash = (37 * hash) + STATUS_FIELD_NUMBER;
         hash = (53 * hash) + status_;
+      }
+      if (hasDeviationCasesType()) {
+        hash = (37 * hash) + DEVIATION_CASES_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + deviationCasesType_;
+      }
+      if (hasAffectedDeparturesType()) {
+        hash = (37 * hash) + AFFECTED_DEPARTURES_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + affectedDeparturesType_;
+      }
+      if (hasTitle()) {
+        hash = (37 * hash) + TITLE_FIELD_NUMBER;
+        hash = (53 * hash) + getTitle().hashCode();
+      }
+      if (hasDescription()) {
+        hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+        hash = (53 * hash) + getDescription().hashCode();
+      }
+      if (hasCategory()) {
+        hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
+        hash = (53 * hash) + category_;
+      }
+      if (hasSubCategory()) {
+        hash = (37 * hash) + SUB_CATEGORY_FIELD_NUMBER;
+        hash = (53 * hash) + subCategory_;
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2155,6 +3477,18 @@ public final class InternalMessages {
         bitField0_ = (bitField0_ & ~0x00000020);
         status_ = 0;
         bitField0_ = (bitField0_ & ~0x00000040);
+        deviationCasesType_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000080);
+        affectedDeparturesType_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000100);
+        title_ = "";
+        bitField0_ = (bitField0_ & ~0x00000200);
+        description_ = "";
+        bitField0_ = (bitField0_ & ~0x00000400);
+        category_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000800);
+        subCategory_ = 0;
+        bitField0_ = (bitField0_ & ~0x00001000);
         return this;
       }
 
@@ -2183,34 +3517,58 @@ public final class InternalMessages {
         fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation result = new fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.schemaVersion_ = schemaVersion_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           to_bitField0_ |= 0x00000002;
         }
         result.tripId_ = tripId_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           to_bitField0_ |= 0x00000004;
         }
         result.routeId_ = routeId_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.directionId_ = directionId_;
           to_bitField0_ |= 0x00000008;
         }
-        result.directionId_ = directionId_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           to_bitField0_ |= 0x00000010;
         }
         result.startTime_ = startTime_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           to_bitField0_ |= 0x00000020;
         }
         result.startDate_ = startDate_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
           to_bitField0_ |= 0x00000040;
         }
         result.status_ = status_;
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.deviationCasesType_ = deviationCasesType_;
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          to_bitField0_ |= 0x00000100;
+        }
+        result.affectedDeparturesType_ = affectedDeparturesType_;
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          to_bitField0_ |= 0x00000200;
+        }
+        result.title_ = title_;
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          to_bitField0_ |= 0x00000400;
+        }
+        result.description_ = description_;
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          to_bitField0_ |= 0x00000800;
+        }
+        result.category_ = category_;
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          to_bitField0_ |= 0x00001000;
+        }
+        result.subCategory_ = subCategory_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -2218,35 +3576,35 @@ public final class InternalMessages {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2289,6 +3647,28 @@ public final class InternalMessages {
         if (other.hasStatus()) {
           setStatus(other.getStatus());
         }
+        if (other.hasDeviationCasesType()) {
+          setDeviationCasesType(other.getDeviationCasesType());
+        }
+        if (other.hasAffectedDeparturesType()) {
+          setAffectedDeparturesType(other.getAffectedDeparturesType());
+        }
+        if (other.hasTitle()) {
+          bitField0_ |= 0x00000200;
+          title_ = other.title_;
+          onChanged();
+        }
+        if (other.hasDescription()) {
+          bitField0_ |= 0x00000400;
+          description_ = other.description_;
+          onChanged();
+        }
+        if (other.hasCategory()) {
+          setCategory(other.getCategory());
+        }
+        if (other.hasSubCategory()) {
+          setSubCategory(other.getSubCategory());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -2330,7 +3710,7 @@ public final class InternalMessages {
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
        */
       public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
@@ -2362,7 +3742,7 @@ public final class InternalMessages {
        * <code>optional string trip_id = 2;</code>
        */
       public boolean hasTripId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>optional string trip_id = 2;</code>
@@ -2438,7 +3818,7 @@ public final class InternalMessages {
        * <code>optional string route_id = 3;</code>
        */
       public boolean hasRouteId() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>optional string route_id = 3;</code>
@@ -2514,7 +3894,7 @@ public final class InternalMessages {
        * <code>optional uint32 direction_id = 4;</code>
        */
       public boolean hasDirectionId() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>optional uint32 direction_id = 4;</code>
@@ -2546,7 +3926,7 @@ public final class InternalMessages {
        * <code>optional string start_time = 5;</code>
        */
       public boolean hasStartTime() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>optional string start_time = 5;</code>
@@ -2622,7 +4002,7 @@ public final class InternalMessages {
        * <code>optional string start_date = 6;</code>
        */
       public boolean hasStartDate() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <code>optional string start_date = 6;</code>
@@ -2698,7 +4078,7 @@ public final class InternalMessages {
        * <code>required .proto.TripCancellation.Status status = 7;</code>
        */
       public boolean hasStatus() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        * <code>required .proto.TripCancellation.Status status = 7;</code>
@@ -2726,6 +4106,306 @@ public final class InternalMessages {
       public Builder clearStatus() {
         bitField0_ = (bitField0_ & ~0x00000040);
         status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int deviationCasesType_ = 0;
+      /**
+       * <code>optional .proto.TripCancellation.DeviationCasesType deviation_cases_type = 8;</code>
+       */
+      public boolean hasDeviationCasesType() {
+        return ((bitField0_ & 0x00000080) != 0);
+      }
+      /**
+       * <code>optional .proto.TripCancellation.DeviationCasesType deviation_cases_type = 8;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType getDeviationCasesType() {
+        @SuppressWarnings("deprecation")
+        fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType.valueOf(deviationCasesType_);
+        return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType.CANCEL_DEPARTURE : result;
+      }
+      /**
+       * <code>optional .proto.TripCancellation.DeviationCasesType deviation_cases_type = 8;</code>
+       */
+      public Builder setDeviationCasesType(fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000080;
+        deviationCasesType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.TripCancellation.DeviationCasesType deviation_cases_type = 8;</code>
+       */
+      public Builder clearDeviationCasesType() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        deviationCasesType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int affectedDeparturesType_ = 0;
+      /**
+       * <code>optional .proto.TripCancellation.AffectedDeparturesType affected_departures_type = 9;</code>
+       */
+      public boolean hasAffectedDeparturesType() {
+        return ((bitField0_ & 0x00000100) != 0);
+      }
+      /**
+       * <code>optional .proto.TripCancellation.AffectedDeparturesType affected_departures_type = 9;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType getAffectedDeparturesType() {
+        @SuppressWarnings("deprecation")
+        fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType.valueOf(affectedDeparturesType_);
+        return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType.CANCEL_STOPS_FROM_MIDDLE : result;
+      }
+      /**
+       * <code>optional .proto.TripCancellation.AffectedDeparturesType affected_departures_type = 9;</code>
+       */
+      public Builder setAffectedDeparturesType(fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000100;
+        affectedDeparturesType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.TripCancellation.AffectedDeparturesType affected_departures_type = 9;</code>
+       */
+      public Builder clearAffectedDeparturesType() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        affectedDeparturesType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object title_ = "";
+      /**
+       * <code>optional string title = 10;</code>
+       */
+      public boolean hasTitle() {
+        return ((bitField0_ & 0x00000200) != 0);
+      }
+      /**
+       * <code>optional string title = 10;</code>
+       */
+      public java.lang.String getTitle() {
+        java.lang.Object ref = title_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            title_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string title = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTitleBytes() {
+        java.lang.Object ref = title_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          title_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string title = 10;</code>
+       */
+      public Builder setTitle(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        title_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string title = 10;</code>
+       */
+      public Builder clearTitle() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        title_ = getDefaultInstance().getTitle();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string title = 10;</code>
+       */
+      public Builder setTitleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        title_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <code>optional string description = 11;</code>
+       */
+      public boolean hasDescription() {
+        return ((bitField0_ & 0x00000400) != 0);
+      }
+      /**
+       * <code>optional string description = 11;</code>
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            description_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string description = 11;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string description = 11;</code>
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000400;
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string description = 11;</code>
+       */
+      public Builder clearDescription() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string description = 11;</code>
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000400;
+        description_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int category_ = 0;
+      /**
+       * <code>optional .proto.TripCancellation.Category category = 12;</code>
+       */
+      public boolean hasCategory() {
+        return ((bitField0_ & 0x00000800) != 0);
+      }
+      /**
+       * <code>optional .proto.TripCancellation.Category category = 12;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category getCategory() {
+        @SuppressWarnings("deprecation")
+        fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category.valueOf(category_);
+        return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category.OTHER_DRIVER_ERROR : result;
+      }
+      /**
+       * <code>optional .proto.TripCancellation.Category category = 12;</code>
+       */
+      public Builder setCategory(fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000800;
+        category_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.TripCancellation.Category category = 12;</code>
+       */
+      public Builder clearCategory() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        category_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int subCategory_ = 0;
+      /**
+       * <code>optional .proto.TripCancellation.SubCategory sub_category = 13;</code>
+       */
+      public boolean hasSubCategory() {
+        return ((bitField0_ & 0x00001000) != 0);
+      }
+      /**
+       * <code>optional .proto.TripCancellation.SubCategory sub_category = 13;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory getSubCategory() {
+        @SuppressWarnings("deprecation")
+        fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory.valueOf(subCategory_);
+        return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory.OUT_OF_FUEL : result;
+      }
+      /**
+       * <code>optional .proto.TripCancellation.SubCategory sub_category = 13;</code>
+       */
+      public Builder setSubCategory(fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00001000;
+        subCategory_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.TripCancellation.SubCategory sub_category = 13;</code>
+       */
+      public Builder clearSubCategory() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        subCategory_ = 0;
         onChanged();
         return this;
       }
@@ -2891,12 +4571,8 @@ public final class InternalMessages {
     private StopEstimate() {
       schemaVersion_ = 1;
       stopId_ = "";
-      stopSequence_ = 0;
       status_ = 0;
       type_ = 0;
-      estimatedTimeUtcMs_ = 0L;
-      scheduledTimeUtcMs_ = 0L;
-      lastModifiedUtcMs_ = 0L;
     }
 
     @java.lang.Override
@@ -2930,7 +4606,7 @@ public final class InternalMessages {
             }
             case 18: {
               fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+              if (((bitField0_ & 0x00000002) != 0)) {
                 subBuilder = tripInfo_.toBuilder();
               }
               tripInfo_ = input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.PARSER, extensionRegistry);
@@ -3210,7 +4886,7 @@ public final class InternalMessages {
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
      */
     public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
@@ -3225,7 +4901,7 @@ public final class InternalMessages {
      * <code>required .proto.TripInfo trip_info = 2;</code>
      */
     public boolean hasTripInfo() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>required .proto.TripInfo trip_info = 2;</code>
@@ -3246,7 +4922,7 @@ public final class InternalMessages {
      * <code>required string stop_id = 3;</code>
      */
     public boolean hasStopId() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>required string stop_id = 3;</code>
@@ -3288,7 +4964,7 @@ public final class InternalMessages {
      * <code>required uint32 stop_sequence = 4;</code>
      */
     public boolean hasStopSequence() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>required uint32 stop_sequence = 4;</code>
@@ -3303,7 +4979,7 @@ public final class InternalMessages {
      * <code>required .proto.StopEstimate.Status status = 5;</code>
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <code>required .proto.StopEstimate.Status status = 5;</code>
@@ -3320,7 +4996,7 @@ public final class InternalMessages {
      * <code>required .proto.StopEstimate.Type type = 6;</code>
      */
     public boolean hasType() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <code>required .proto.StopEstimate.Type type = 6;</code>
@@ -3337,7 +5013,7 @@ public final class InternalMessages {
      * <code>required int64 estimated_time_utc_ms = 7;</code>
      */
     public boolean hasEstimatedTimeUtcMs() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      * <code>required int64 estimated_time_utc_ms = 7;</code>
@@ -3352,7 +5028,7 @@ public final class InternalMessages {
      * <code>optional int64 scheduled_time_utc_ms = 8;</code>
      */
     public boolean hasScheduledTimeUtcMs() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      * <code>optional int64 scheduled_time_utc_ms = 8;</code>
@@ -3367,7 +5043,7 @@ public final class InternalMessages {
      * <code>required int64 last_modified_utc_ms = 9;</code>
      */
     public boolean hasLastModifiedUtcMs() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <code>required int64 last_modified_utc_ms = 9;</code>
@@ -3426,31 +5102,31 @@ public final class InternalMessages {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt32(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(2, getTripInfo());
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, stopId_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         output.writeUInt32(4, stopSequence_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         output.writeEnum(5, status_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         output.writeEnum(6, type_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         output.writeInt64(7, estimatedTimeUtcMs_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         output.writeInt64(8, scheduledTimeUtcMs_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         output.writeInt64(9, lastModifiedUtcMs_);
       }
       unknownFields.writeTo(output);
@@ -3462,38 +5138,38 @@ public final class InternalMessages {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getTripInfo());
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, stopId_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, stopSequence_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, status_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, type_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(7, estimatedTimeUtcMs_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(8, scheduledTimeUtcMs_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(9, lastModifiedUtcMs_);
       }
@@ -3512,52 +5188,51 @@ public final class InternalMessages {
       }
       fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate other = (fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate) obj;
 
-      boolean result = true;
-      result = result && (hasSchemaVersion() == other.hasSchemaVersion());
+      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
       if (hasSchemaVersion()) {
-        result = result && (getSchemaVersion()
-            == other.getSchemaVersion());
+        if (getSchemaVersion()
+            != other.getSchemaVersion()) return false;
       }
-      result = result && (hasTripInfo() == other.hasTripInfo());
+      if (hasTripInfo() != other.hasTripInfo()) return false;
       if (hasTripInfo()) {
-        result = result && getTripInfo()
-            .equals(other.getTripInfo());
+        if (!getTripInfo()
+            .equals(other.getTripInfo())) return false;
       }
-      result = result && (hasStopId() == other.hasStopId());
+      if (hasStopId() != other.hasStopId()) return false;
       if (hasStopId()) {
-        result = result && getStopId()
-            .equals(other.getStopId());
+        if (!getStopId()
+            .equals(other.getStopId())) return false;
       }
-      result = result && (hasStopSequence() == other.hasStopSequence());
+      if (hasStopSequence() != other.hasStopSequence()) return false;
       if (hasStopSequence()) {
-        result = result && (getStopSequence()
-            == other.getStopSequence());
+        if (getStopSequence()
+            != other.getStopSequence()) return false;
       }
-      result = result && (hasStatus() == other.hasStatus());
+      if (hasStatus() != other.hasStatus()) return false;
       if (hasStatus()) {
-        result = result && status_ == other.status_;
+        if (status_ != other.status_) return false;
       }
-      result = result && (hasType() == other.hasType());
+      if (hasType() != other.hasType()) return false;
       if (hasType()) {
-        result = result && type_ == other.type_;
+        if (type_ != other.type_) return false;
       }
-      result = result && (hasEstimatedTimeUtcMs() == other.hasEstimatedTimeUtcMs());
+      if (hasEstimatedTimeUtcMs() != other.hasEstimatedTimeUtcMs()) return false;
       if (hasEstimatedTimeUtcMs()) {
-        result = result && (getEstimatedTimeUtcMs()
-            == other.getEstimatedTimeUtcMs());
+        if (getEstimatedTimeUtcMs()
+            != other.getEstimatedTimeUtcMs()) return false;
       }
-      result = result && (hasScheduledTimeUtcMs() == other.hasScheduledTimeUtcMs());
+      if (hasScheduledTimeUtcMs() != other.hasScheduledTimeUtcMs()) return false;
       if (hasScheduledTimeUtcMs()) {
-        result = result && (getScheduledTimeUtcMs()
-            == other.getScheduledTimeUtcMs());
+        if (getScheduledTimeUtcMs()
+            != other.getScheduledTimeUtcMs()) return false;
       }
-      result = result && (hasLastModifiedUtcMs() == other.hasLastModifiedUtcMs());
+      if (hasLastModifiedUtcMs() != other.hasLastModifiedUtcMs()) return false;
       if (hasLastModifiedUtcMs()) {
-        result = result && (getLastModifiedUtcMs()
-            == other.getLastModifiedUtcMs());
+        if (getLastModifiedUtcMs()
+            != other.getLastModifiedUtcMs()) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3790,46 +5465,46 @@ public final class InternalMessages {
         fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate result = new fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.schemaVersion_ = schemaVersion_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          if (tripInfoBuilder_ == null) {
+            result.tripInfo_ = tripInfo_;
+          } else {
+            result.tripInfo_ = tripInfoBuilder_.build();
+          }
           to_bitField0_ |= 0x00000002;
         }
-        if (tripInfoBuilder_ == null) {
-          result.tripInfo_ = tripInfo_;
-        } else {
-          result.tripInfo_ = tripInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           to_bitField0_ |= 0x00000004;
         }
         result.stopId_ = stopId_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.stopSequence_ = stopSequence_;
           to_bitField0_ |= 0x00000008;
         }
-        result.stopSequence_ = stopSequence_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           to_bitField0_ |= 0x00000010;
         }
         result.status_ = status_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           to_bitField0_ |= 0x00000020;
         }
         result.type_ = type_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.estimatedTimeUtcMs_ = estimatedTimeUtcMs_;
           to_bitField0_ |= 0x00000040;
         }
-        result.estimatedTimeUtcMs_ = estimatedTimeUtcMs_;
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.scheduledTimeUtcMs_ = scheduledTimeUtcMs_;
           to_bitField0_ |= 0x00000080;
         }
-        result.scheduledTimeUtcMs_ = scheduledTimeUtcMs_;
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.lastModifiedUtcMs_ = lastModifiedUtcMs_;
           to_bitField0_ |= 0x00000100;
         }
-        result.lastModifiedUtcMs_ = lastModifiedUtcMs_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3837,35 +5512,35 @@ public final class InternalMessages {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -3970,7 +5645,7 @@ public final class InternalMessages {
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
        */
       public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
@@ -3997,14 +5672,14 @@ public final class InternalMessages {
         return this;
       }
 
-      private fi.hsl.common.transitdata.proto.InternalMessages.TripInfo tripInfo_ = null;
+      private fi.hsl.common.transitdata.proto.InternalMessages.TripInfo tripInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           fi.hsl.common.transitdata.proto.InternalMessages.TripInfo, fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.Builder, fi.hsl.common.transitdata.proto.InternalMessages.TripInfoOrBuilder> tripInfoBuilder_;
       /**
        * <code>required .proto.TripInfo trip_info = 2;</code>
        */
       public boolean hasTripInfo() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>required .proto.TripInfo trip_info = 2;</code>
@@ -4051,7 +5726,7 @@ public final class InternalMessages {
        */
       public Builder mergeTripInfo(fi.hsl.common.transitdata.proto.InternalMessages.TripInfo value) {
         if (tripInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+          if (((bitField0_ & 0x00000002) != 0) &&
               tripInfo_ != null &&
               tripInfo_ != fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.getDefaultInstance()) {
             tripInfo_ =
@@ -4120,7 +5795,7 @@ public final class InternalMessages {
        * <code>required string stop_id = 3;</code>
        */
       public boolean hasStopId() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>required string stop_id = 3;</code>
@@ -4196,7 +5871,7 @@ public final class InternalMessages {
        * <code>required uint32 stop_sequence = 4;</code>
        */
       public boolean hasStopSequence() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>required uint32 stop_sequence = 4;</code>
@@ -4228,7 +5903,7 @@ public final class InternalMessages {
        * <code>required .proto.StopEstimate.Status status = 5;</code>
        */
       public boolean hasStatus() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>required .proto.StopEstimate.Status status = 5;</code>
@@ -4265,7 +5940,7 @@ public final class InternalMessages {
        * <code>required .proto.StopEstimate.Type type = 6;</code>
        */
       public boolean hasType() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <code>required .proto.StopEstimate.Type type = 6;</code>
@@ -4302,7 +5977,7 @@ public final class InternalMessages {
        * <code>required int64 estimated_time_utc_ms = 7;</code>
        */
       public boolean hasEstimatedTimeUtcMs() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        * <code>required int64 estimated_time_utc_ms = 7;</code>
@@ -4334,7 +6009,7 @@ public final class InternalMessages {
        * <code>optional int64 scheduled_time_utc_ms = 8;</code>
        */
       public boolean hasScheduledTimeUtcMs() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
        * <code>optional int64 scheduled_time_utc_ms = 8;</code>
@@ -4366,7 +6041,7 @@ public final class InternalMessages {
        * <code>required int64 last_modified_utc_ms = 9;</code>
        */
       public boolean hasLastModifiedUtcMs() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
        * <code>required int64 last_modified_utc_ms = 9;</code>
@@ -4472,23 +6147,73 @@ public final class InternalMessages {
       "\n\027internal-messages.proto\022\005proto\"n\n\010Trip" +
       "Info\022\017\n\007trip_id\030\001 \002(\t\022\025\n\roperating_day\030\002" +
       " \002(\t\022\020\n\010route_id\030\003 \002(\t\022\024\n\014direction_id\030\004" +
-      " \002(\r\022\022\n\nstart_time\030\005 \002(\t\"\342\001\n\020TripCancell" +
+      " \002(\r\022\022\n\nstart_time\030\005 \002(\t\"\230\021\n\020TripCancell" +
       "ation\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\017\n\007trip_" +
       "id\030\002 \001(\t\022\020\n\010route_id\030\003 \001(\t\022\024\n\014direction_" +
       "id\030\004 \001(\r\022\022\n\nstart_time\030\005 \001(\t\022\022\n\nstart_da" +
       "te\030\006 \001(\t\022.\n\006status\030\007 \002(\0162\036.proto.TripCan" +
-      "cellation.Status\"#\n\006Status\022\013\n\007RUNNING\020\000\022" +
-      "\014\n\010CANCELED\020\001\"\356\002\n\014StopEstimate\022\030\n\rSchema" +
-      "Version\030\001 \002(\005:\0011\022\"\n\ttrip_info\030\002 \002(\0132\017.pr" +
-      "oto.TripInfo\022\017\n\007stop_id\030\003 \002(\t\022\025\n\rstop_se" +
-      "quence\030\004 \002(\r\022*\n\006status\030\005 \002(\0162\032.proto.Sto" +
-      "pEstimate.Status\022&\n\004type\030\006 \002(\0162\030.proto.S" +
-      "topEstimate.Type\022\035\n\025estimated_time_utc_m" +
-      "s\030\007 \002(\003\022\035\n\025scheduled_time_utc_ms\030\010 \001(\003\022\034" +
-      "\n\024last_modified_utc_ms\030\t \002(\003\"$\n\006Status\022\r" +
-      "\n\tSCHEDULED\020\000\022\013\n\007SKIPPED\020\001\"\"\n\004Type\022\013\n\007AR" +
-      "RIVAL\020\000\022\r\n\tDEPARTURE\020\001B3\n\037fi.hsl.common." +
-      "transitdata.protoB\020InternalMessages"
+      "cellation.Status\022H\n\024deviation_cases_type" +
+      "\030\010 \001(\0162*.proto.TripCancellation.Deviatio" +
+      "nCasesType\022P\n\030affected_departures_type\030\t" +
+      " \001(\0162..proto.TripCancellation.AffectedDe" +
+      "parturesType\022\r\n\005title\030\n \001(\t\022\023\n\013descripti" +
+      "on\030\013 \001(\t\0222\n\010category\030\014 \001(\0162 .proto.TripC" +
+      "ancellation.Category\0229\n\014sub_category\030\r \001" +
+      "(\0162#.proto.TripCancellation.SubCategory\"" +
+      "#\n\006Status\022\013\n\007RUNNING\020\000\022\014\n\010CANCELED\020\001\"q\n\022" +
+      "DeviationCasesType\022\024\n\020CANCEL_DEPARTURE\020\000" +
+      "\022\n\n\006DETOUR\020\001\022\022\n\016LATE_DEPARTURE\020\002\022\026\n\022SKIP" +
+      "PED_STOP_CALLS\020\003\022\r\n\tTIS_ERROR\020\004\"n\n\026Affec" +
+      "tedDeparturesType\022\034\n\030CANCEL_STOPS_FROM_M" +
+      "IDDLE\020\000\022\033\n\027CANCEL_ENTIRE_DEPARTURE\020\001\022\031\n\025" +
+      "CANCEL_STOPS_FROM_END\020\002\"\311\004\n\010Category\022\026\n\022" +
+      "OTHER_DRIVER_ERROR\020\000\022\024\n\020ITS_SYSTEM_ERROR" +
+      "\020\001\022\027\n\023TOO_MANY_PASSENGERS\020\002\022\025\n\021MISPARKED" +
+      "_VEHICLE\020\003\022\n\n\006STRIKE\020\004\022\010\n\004TEST\020\005\022\030\n\024VEHI" +
+      "CLE_OFF_THE_ROAD\020\006\022\r\n\tNO_DRIVER\020\007\022\024\n\020TRA" +
+      "FFIC_ACCIDENT\020\010\022\022\n\016SWITCH_FAILURE\020\t\022\013\n\007S" +
+      "EIZURE\020\n\022\013\n\007WEATHER\020\013\022\017\n\013STATE_VISIT\020\014\022\024" +
+      "\n\020ROAD_MAINTENANCE\020\r\022\017\n\013ROAD_CLOSED\020\016\022\021\n" +
+      "\rTRACK_BLOCKED\020\017\022\026\n\022WEATHER_CONDITIONS\020\020" +
+      "\022\013\n\007ASSAULT\020\021\022\025\n\021TRACK_MAINTENANCE\020\022\022\024\n\020" +
+      "MEDICAL_INCIDENT\020\023\022\026\n\022EARLIER_DISRUPTION" +
+      "\020\024\022\025\n\021TECHNICAL_FAILURE\020\025\022\017\n\013TRAFFIC_JAM" +
+      "\020\026\022\t\n\005OTHER\020\027\022\031\n\025NO_TRAFFIC_DISRUPTION\020\030" +
+      "\022\014\n\010ACCIDENT\020\031\022\020\n\014PUBLIC_EVENT\020\032\022\017\n\013ROAD" +
+      "_TRENCH\020\033\022\025\n\021VEHICLE_BREAKDOWN\020\034\022\021\n\rPOWE" +
+      "R_FAILURE\020\035\"\325\006\n\013SubCategory\022\017\n\013OUT_OF_FU" +
+      "EL\020\000\022\037\n\033WRONG_INFORMATION_IN_DEVICE\020\001\022\024\n" +
+      "\020DOOR_MALFUNCTION\020\002\022\025\n\021PASSENGER_SEIZURE" +
+      "\020\003\022\r\n\tOWN_FAULT\020\004\022\020\n\014DEVICE_ERROR\020\005\022 \n\034C" +
+      "ONGESTION_CAUSED_BY_WEATHER\020\006\022\020\n\014OTHER_S" +
+      "TRIKE\020\007\022(\n$VEHICLE_OFF_THE_ROAD_BY_OTHER" +
+      "_REASON\020\010\022!\n\035CONGESTION_CAUSED_BY_ACCIDE" +
+      "NT\020\t\022\010\n\004NULL\020\n\022\034\n\030CONGESTION_REASON_UKNO" +
+      "WN\020\013\022\030\n\024ELECTRIC_MALFUNCTION\020\014\022\025\n\021PASSEN" +
+      "GER_INJURED\020\r\022\026\n\022ENGINE_MALFUNCTION\020\016\022\026\n" +
+      "\022MISSPARKED_VEHICLE\020\017\022\031\n\025INSUFFICIENT_CA" +
+      "PASITY\020\020\022\023\n\017OTHER_ITS_ERROR\020\021\022\025\n\021OTHER_M" +
+      "ALFUNCTION\020\022\022\021\n\rUNKNOWN_CAUSE\020\023\022\025\n\021BREAK" +
+      "_MALFUNCTION\020\024\022\022\n\016SLIPPERY_TRACK\020\025\022\034\n\030ST" +
+      "UCK_CAUSED_BY_SLIPPERY\020\026\022 \n\034OPERATOR_PER" +
+      "SONNEL_ON_STRIKE\020\027\022\020\n\014ROAD_BLOCKED\020\030\022\032\n\026" +
+      "UNDRIVEABLE_CONDITIONS\020\031\022\031\n\025OTHER_OPERAT" +
+      "OR_REASON\020\032\022\017\n\013FALSE_ALARM\020\033\022\025\n\021ASSAULT_" +
+      "ON_DRIVER\020\034\022\020\n\014DRIVER_ERROR\020\035\022\022\n\016STAFF_S" +
+      "HORTAGE\020\036\022\026\n\022ASSAULT_ON_VEHICLE\020\037\022\022\n\016OPP" +
+      "OSITE_FAULT\020 \022\016\n\nUSER_ERROR\020!\022\021\n\rFAULT_U" +
+      "NKNOWN\020\"\022\021\n\rOTHER_ASSAULT\020#\"\356\002\n\014StopEsti" +
+      "mate\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\"\n\ttrip_i" +
+      "nfo\030\002 \002(\0132\017.proto.TripInfo\022\017\n\007stop_id\030\003 " +
+      "\002(\t\022\025\n\rstop_sequence\030\004 \002(\r\022*\n\006status\030\005 \002" +
+      "(\0162\032.proto.StopEstimate.Status\022&\n\004type\030\006" +
+      " \002(\0162\030.proto.StopEstimate.Type\022\035\n\025estima" +
+      "ted_time_utc_ms\030\007 \002(\003\022\035\n\025scheduled_time_" +
+      "utc_ms\030\010 \001(\003\022\034\n\024last_modified_utc_ms\030\t \002" +
+      "(\003\"$\n\006Status\022\r\n\tSCHEDULED\020\000\022\013\n\007SKIPPED\020\001" +
+      "\"\"\n\004Type\022\013\n\007ARRIVAL\020\000\022\r\n\tDEPARTURE\020\001B3\n\037" +
+      "fi.hsl.common.transitdata.protoB\020Interna" +
+      "lMessages"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4513,7 +6238,7 @@ public final class InternalMessages {
     internal_static_proto_TripCancellation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_TripCancellation_descriptor,
-        new java.lang.String[] { "SchemaVersion", "TripId", "RouteId", "DirectionId", "StartTime", "StartDate", "Status", });
+        new java.lang.String[] { "SchemaVersion", "TripId", "RouteId", "DirectionId", "StartTime", "StartDate", "Status", "DeviationCasesType", "AffectedDeparturesType", "Title", "Description", "Category", "SubCategory", });
     internal_static_proto_StopEstimate_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_proto_StopEstimate_fieldAccessorTable = new
