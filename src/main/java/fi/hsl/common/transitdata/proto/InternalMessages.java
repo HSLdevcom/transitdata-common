@@ -1768,17 +1768,33 @@ public final class InternalMessages {
        */
       DETOUR(1),
       /**
-       * <code>LATE_DEPARTURE = 2;</code>
+       * <code>SKIPPED_STOP_CALLS = 2;</code>
        */
-      LATE_DEPARTURE(2),
+      SKIPPED_STOP_CALLS(2),
       /**
-       * <code>SKIPPED_STOP_CALLS = 3;</code>
+       * <code>EARLY_DEPARTURE = 3;</code>
        */
-      SKIPPED_STOP_CALLS(3),
+      EARLY_DEPARTURE(3),
       /**
-       * <code>TIS_ERROR = 4;</code>
+       * <code>EARLY_DEPARTURE_FROM_TIMING_POINT = 4;</code>
        */
-      TIS_ERROR(4),
+      EARLY_DEPARTURE_FROM_TIMING_POINT(4),
+      /**
+       * <code>LATE_DEPARTURE = 5;</code>
+       */
+      LATE_DEPARTURE(5),
+      /**
+       * <code>DEPARTURED_AFTER_NEXT_JOURNEY = 6;</code>
+       */
+      DEPARTURED_AFTER_NEXT_JOURNEY(6),
+      /**
+       * <code>BLOCK_FIRST_DEPARTURE_LATE = 7;</code>
+       */
+      BLOCK_FIRST_DEPARTURE_LATE(7),
+      /**
+       * <code>TIS_ERROR = 8;</code>
+       */
+      TIS_ERROR(8),
       ;
 
       /**
@@ -1790,17 +1806,33 @@ public final class InternalMessages {
        */
       public static final int DETOUR_VALUE = 1;
       /**
-       * <code>LATE_DEPARTURE = 2;</code>
+       * <code>SKIPPED_STOP_CALLS = 2;</code>
        */
-      public static final int LATE_DEPARTURE_VALUE = 2;
+      public static final int SKIPPED_STOP_CALLS_VALUE = 2;
       /**
-       * <code>SKIPPED_STOP_CALLS = 3;</code>
+       * <code>EARLY_DEPARTURE = 3;</code>
        */
-      public static final int SKIPPED_STOP_CALLS_VALUE = 3;
+      public static final int EARLY_DEPARTURE_VALUE = 3;
       /**
-       * <code>TIS_ERROR = 4;</code>
+       * <code>EARLY_DEPARTURE_FROM_TIMING_POINT = 4;</code>
        */
-      public static final int TIS_ERROR_VALUE = 4;
+      public static final int EARLY_DEPARTURE_FROM_TIMING_POINT_VALUE = 4;
+      /**
+       * <code>LATE_DEPARTURE = 5;</code>
+       */
+      public static final int LATE_DEPARTURE_VALUE = 5;
+      /**
+       * <code>DEPARTURED_AFTER_NEXT_JOURNEY = 6;</code>
+       */
+      public static final int DEPARTURED_AFTER_NEXT_JOURNEY_VALUE = 6;
+      /**
+       * <code>BLOCK_FIRST_DEPARTURE_LATE = 7;</code>
+       */
+      public static final int BLOCK_FIRST_DEPARTURE_LATE_VALUE = 7;
+      /**
+       * <code>TIS_ERROR = 8;</code>
+       */
+      public static final int TIS_ERROR_VALUE = 8;
 
 
       public final int getNumber() {
@@ -1819,9 +1851,13 @@ public final class InternalMessages {
         switch (value) {
           case 0: return CANCEL_DEPARTURE;
           case 1: return DETOUR;
-          case 2: return LATE_DEPARTURE;
-          case 3: return SKIPPED_STOP_CALLS;
-          case 4: return TIS_ERROR;
+          case 2: return SKIPPED_STOP_CALLS;
+          case 3: return EARLY_DEPARTURE;
+          case 4: return EARLY_DEPARTURE_FROM_TIMING_POINT;
+          case 5: return LATE_DEPARTURE;
+          case 6: return DEPARTURED_AFTER_NEXT_JOURNEY;
+          case 7: return BLOCK_FIRST_DEPARTURE_LATE;
+          case 8: return TIS_ERROR;
           default: return null;
         }
       }
@@ -1877,31 +1913,39 @@ public final class InternalMessages {
     public enum AffectedDeparturesType
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>CANCEL_STOPS_FROM_MIDDLE = 0;</code>
+       * <code>CANCEL_ENTIRE_DEPARTURE = 0;</code>
        */
-      CANCEL_STOPS_FROM_MIDDLE(0),
+      CANCEL_ENTIRE_DEPARTURE(0),
       /**
-       * <code>CANCEL_ENTIRE_DEPARTURE = 1;</code>
+       * <code>CANCEL_STOPS_FROM_START = 1;</code>
        */
-      CANCEL_ENTIRE_DEPARTURE(1),
+      CANCEL_STOPS_FROM_START(1),
       /**
-       * <code>CANCEL_STOPS_FROM_END = 2;</code>
+       * <code>CANCEL_STOPS_FROM_MIDDLE = 2;</code>
        */
-      CANCEL_STOPS_FROM_END(2),
+      CANCEL_STOPS_FROM_MIDDLE(2),
+      /**
+       * <code>CANCEL_STOPS_FROM_END = 3;</code>
+       */
+      CANCEL_STOPS_FROM_END(3),
       ;
 
       /**
-       * <code>CANCEL_STOPS_FROM_MIDDLE = 0;</code>
+       * <code>CANCEL_ENTIRE_DEPARTURE = 0;</code>
        */
-      public static final int CANCEL_STOPS_FROM_MIDDLE_VALUE = 0;
+      public static final int CANCEL_ENTIRE_DEPARTURE_VALUE = 0;
       /**
-       * <code>CANCEL_ENTIRE_DEPARTURE = 1;</code>
+       * <code>CANCEL_STOPS_FROM_START = 1;</code>
        */
-      public static final int CANCEL_ENTIRE_DEPARTURE_VALUE = 1;
+      public static final int CANCEL_STOPS_FROM_START_VALUE = 1;
       /**
-       * <code>CANCEL_STOPS_FROM_END = 2;</code>
+       * <code>CANCEL_STOPS_FROM_MIDDLE = 2;</code>
        */
-      public static final int CANCEL_STOPS_FROM_END_VALUE = 2;
+      public static final int CANCEL_STOPS_FROM_MIDDLE_VALUE = 2;
+      /**
+       * <code>CANCEL_STOPS_FROM_END = 3;</code>
+       */
+      public static final int CANCEL_STOPS_FROM_END_VALUE = 3;
 
 
       public final int getNumber() {
@@ -1918,9 +1962,10 @@ public final class InternalMessages {
 
       public static AffectedDeparturesType forNumber(int value) {
         switch (value) {
-          case 0: return CANCEL_STOPS_FROM_MIDDLE;
-          case 1: return CANCEL_ENTIRE_DEPARTURE;
-          case 2: return CANCEL_STOPS_FROM_END;
+          case 0: return CANCEL_ENTIRE_DEPARTURE;
+          case 1: return CANCEL_STOPS_FROM_START;
+          case 2: return CANCEL_STOPS_FROM_MIDDLE;
+          case 3: return CANCEL_STOPS_FROM_END;
           default: return null;
         }
       }
@@ -1976,247 +2021,271 @@ public final class InternalMessages {
     public enum Category
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>OTHER_DRIVER_ERROR = 0;</code>
+       * <code>VEHICLE_BREAKDOWN = 0;</code>
        */
-      OTHER_DRIVER_ERROR(0),
+      VEHICLE_BREAKDOWN(0),
       /**
-       * <code>ITS_SYSTEM_ERROR = 1;</code>
+       * <code>ACCIDENT = 1;</code>
        */
-      ITS_SYSTEM_ERROR(1),
+      ACCIDENT(1),
       /**
-       * <code>TOO_MANY_PASSENGERS = 2;</code>
+       * <code>NO_DRIVER = 2;</code>
        */
-      TOO_MANY_PASSENGERS(2),
+      NO_DRIVER(2),
       /**
-       * <code>MISPARKED_VEHICLE = 3;</code>
+       * <code>ASSAULT = 3;</code>
        */
-      MISPARKED_VEHICLE(3),
+      ASSAULT(3),
       /**
-       * <code>STRIKE = 4;</code>
+       * <code>WEATHER = 4;</code>
        */
-      STRIKE(4),
+      WEATHER(4),
       /**
-       * <code>TEST = 5;</code>
+       * <code>VEHICLE_OFF_THE_ROAD = 5;</code>
        */
-      TEST(5),
+      VEHICLE_OFF_THE_ROAD(5),
       /**
-       * <code>VEHICLE_OFF_THE_ROAD = 6;</code>
+       * <code>SEIZURE = 6;</code>
        */
-      VEHICLE_OFF_THE_ROAD(6),
+      SEIZURE(6),
       /**
-       * <code>NO_DRIVER = 7;</code>
+       * <code>ITS_SYSTEM_ERROR = 7;</code>
        */
-      NO_DRIVER(7),
+      ITS_SYSTEM_ERROR(7),
       /**
-       * <code>TRAFFIC_ACCIDENT = 8;</code>
+       * <code>OTHER_DRIVER_ERROR = 8;</code>
        */
-      TRAFFIC_ACCIDENT(8),
+      OTHER_DRIVER_ERROR(8),
       /**
-       * <code>SWITCH_FAILURE = 9;</code>
+       * <code>TOO_MANY_PASSENGERS = 9;</code>
        */
-      SWITCH_FAILURE(9),
+      TOO_MANY_PASSENGERS(9),
       /**
-       * <code>SEIZURE = 10;</code>
+       * <code>STRIKE = 10;</code>
        */
-      SEIZURE(10),
+      STRIKE(10),
       /**
-       * <code>WEATHER = 11;</code>
+       * <code>OTHER = 11;</code>
        */
-      WEATHER(11),
+      OTHER(11),
       /**
-       * <code>STATE_VISIT = 12;</code>
+       * <code>EARLIER_DISRUPTION = 12;</code>
        */
-      STATE_VISIT(12),
+      EARLIER_DISRUPTION(12),
       /**
-       * <code>ROAD_MAINTENANCE = 13;</code>
+       * <code>NO_TRAFFIC_DISRUPTION = 13;</code>
        */
-      ROAD_MAINTENANCE(13),
+      NO_TRAFFIC_DISRUPTION(13),
       /**
-       * <code>ROAD_CLOSED = 14;</code>
+       * <code>TRACK_BLOCKED = 14;</code>
        */
-      ROAD_CLOSED(14),
+      TRACK_BLOCKED(14),
       /**
-       * <code>TRACK_BLOCKED = 15;</code>
+       * <code>STAFF_DEFICIT = 15;</code>
        */
-      TRACK_BLOCKED(15),
+      STAFF_DEFICIT(15),
       /**
-       * <code>WEATHER_CONDITIONS = 16;</code>
+       * <code>DISTURBANCE = 16;</code>
        */
-      WEATHER_CONDITIONS(16),
+      DISTURBANCE(16),
       /**
-       * <code>ASSAULT = 17;</code>
+       * <code>VEHICLE_DEFICIT = 17;</code>
        */
-      ASSAULT(17),
+      VEHICLE_DEFICIT(17),
       /**
-       * <code>TRACK_MAINTENANCE = 18;</code>
+       * <code>ROAD_CLOSED = 18;</code>
        */
-      TRACK_MAINTENANCE(18),
+      ROAD_CLOSED(18),
       /**
-       * <code>MEDICAL_INCIDENT = 19;</code>
+       * <code>ROAD_TRENCH = 19;</code>
        */
-      MEDICAL_INCIDENT(19),
+      ROAD_TRENCH(19),
       /**
-       * <code>EARLIER_DISRUPTION = 20;</code>
+       * <code>TRACK_MAINTENANCE = 20;</code>
        */
-      EARLIER_DISRUPTION(20),
+      TRACK_MAINTENANCE(20),
       /**
-       * <code>TECHNICAL_FAILURE = 21;</code>
+       * <code>TRAFFIC_ACCIDENT = 21;</code>
        */
-      TECHNICAL_FAILURE(21),
+      TRAFFIC_ACCIDENT(21),
       /**
        * <code>TRAFFIC_JAM = 22;</code>
        */
       TRAFFIC_JAM(22),
       /**
-       * <code>OTHER = 23;</code>
+       * <code>MEDICAL_INCIDENT = 23;</code>
        */
-      OTHER(23),
+      MEDICAL_INCIDENT(23),
       /**
-       * <code>NO_TRAFFIC_DISRUPTION = 24;</code>
+       * <code>WEATHER_CONDITIONS = 24;</code>
        */
-      NO_TRAFFIC_DISRUPTION(24),
+      WEATHER_CONDITIONS(24),
       /**
-       * <code>ACCIDENT = 25;</code>
+       * <code>TECHNICAL_FAILURE = 25;</code>
        */
-      ACCIDENT(25),
+      TECHNICAL_FAILURE(25),
       /**
-       * <code>PUBLIC_EVENT = 26;</code>
+       * <code>TEST = 26;</code>
        */
-      PUBLIC_EVENT(26),
+      TEST(26),
       /**
-       * <code>ROAD_TRENCH = 27;</code>
+       * <code>ROAD_MAINTENANCE = 27;</code>
        */
-      ROAD_TRENCH(27),
+      ROAD_MAINTENANCE(27),
       /**
-       * <code>VEHICLE_BREAKDOWN = 28;</code>
+       * <code>SWITCH_FAILURE = 28;</code>
        */
-      VEHICLE_BREAKDOWN(28),
+      SWITCH_FAILURE(28),
       /**
-       * <code>POWER_FAILURE = 29;</code>
+       * <code>STATE_VISIT = 29;</code>
        */
-      POWER_FAILURE(29),
+      STATE_VISIT(29),
+      /**
+       * <code>POWER_FAILURE = 30;</code>
+       */
+      POWER_FAILURE(30),
+      /**
+       * <code>MISPARKED_VEHICLE = 31;</code>
+       */
+      MISPARKED_VEHICLE(31),
+      /**
+       * <code>PUBLIC_EVENT = 32;</code>
+       */
+      PUBLIC_EVENT(32),
       ;
 
       /**
-       * <code>OTHER_DRIVER_ERROR = 0;</code>
+       * <code>VEHICLE_BREAKDOWN = 0;</code>
        */
-      public static final int OTHER_DRIVER_ERROR_VALUE = 0;
+      public static final int VEHICLE_BREAKDOWN_VALUE = 0;
       /**
-       * <code>ITS_SYSTEM_ERROR = 1;</code>
+       * <code>ACCIDENT = 1;</code>
        */
-      public static final int ITS_SYSTEM_ERROR_VALUE = 1;
+      public static final int ACCIDENT_VALUE = 1;
       /**
-       * <code>TOO_MANY_PASSENGERS = 2;</code>
+       * <code>NO_DRIVER = 2;</code>
        */
-      public static final int TOO_MANY_PASSENGERS_VALUE = 2;
+      public static final int NO_DRIVER_VALUE = 2;
       /**
-       * <code>MISPARKED_VEHICLE = 3;</code>
+       * <code>ASSAULT = 3;</code>
        */
-      public static final int MISPARKED_VEHICLE_VALUE = 3;
+      public static final int ASSAULT_VALUE = 3;
       /**
-       * <code>STRIKE = 4;</code>
+       * <code>WEATHER = 4;</code>
        */
-      public static final int STRIKE_VALUE = 4;
+      public static final int WEATHER_VALUE = 4;
       /**
-       * <code>TEST = 5;</code>
+       * <code>VEHICLE_OFF_THE_ROAD = 5;</code>
        */
-      public static final int TEST_VALUE = 5;
+      public static final int VEHICLE_OFF_THE_ROAD_VALUE = 5;
       /**
-       * <code>VEHICLE_OFF_THE_ROAD = 6;</code>
+       * <code>SEIZURE = 6;</code>
        */
-      public static final int VEHICLE_OFF_THE_ROAD_VALUE = 6;
+      public static final int SEIZURE_VALUE = 6;
       /**
-       * <code>NO_DRIVER = 7;</code>
+       * <code>ITS_SYSTEM_ERROR = 7;</code>
        */
-      public static final int NO_DRIVER_VALUE = 7;
+      public static final int ITS_SYSTEM_ERROR_VALUE = 7;
       /**
-       * <code>TRAFFIC_ACCIDENT = 8;</code>
+       * <code>OTHER_DRIVER_ERROR = 8;</code>
        */
-      public static final int TRAFFIC_ACCIDENT_VALUE = 8;
+      public static final int OTHER_DRIVER_ERROR_VALUE = 8;
       /**
-       * <code>SWITCH_FAILURE = 9;</code>
+       * <code>TOO_MANY_PASSENGERS = 9;</code>
        */
-      public static final int SWITCH_FAILURE_VALUE = 9;
+      public static final int TOO_MANY_PASSENGERS_VALUE = 9;
       /**
-       * <code>SEIZURE = 10;</code>
+       * <code>STRIKE = 10;</code>
        */
-      public static final int SEIZURE_VALUE = 10;
+      public static final int STRIKE_VALUE = 10;
       /**
-       * <code>WEATHER = 11;</code>
+       * <code>OTHER = 11;</code>
        */
-      public static final int WEATHER_VALUE = 11;
+      public static final int OTHER_VALUE = 11;
       /**
-       * <code>STATE_VISIT = 12;</code>
+       * <code>EARLIER_DISRUPTION = 12;</code>
        */
-      public static final int STATE_VISIT_VALUE = 12;
+      public static final int EARLIER_DISRUPTION_VALUE = 12;
       /**
-       * <code>ROAD_MAINTENANCE = 13;</code>
+       * <code>NO_TRAFFIC_DISRUPTION = 13;</code>
        */
-      public static final int ROAD_MAINTENANCE_VALUE = 13;
+      public static final int NO_TRAFFIC_DISRUPTION_VALUE = 13;
       /**
-       * <code>ROAD_CLOSED = 14;</code>
+       * <code>TRACK_BLOCKED = 14;</code>
        */
-      public static final int ROAD_CLOSED_VALUE = 14;
+      public static final int TRACK_BLOCKED_VALUE = 14;
       /**
-       * <code>TRACK_BLOCKED = 15;</code>
+       * <code>STAFF_DEFICIT = 15;</code>
        */
-      public static final int TRACK_BLOCKED_VALUE = 15;
+      public static final int STAFF_DEFICIT_VALUE = 15;
       /**
-       * <code>WEATHER_CONDITIONS = 16;</code>
+       * <code>DISTURBANCE = 16;</code>
        */
-      public static final int WEATHER_CONDITIONS_VALUE = 16;
+      public static final int DISTURBANCE_VALUE = 16;
       /**
-       * <code>ASSAULT = 17;</code>
+       * <code>VEHICLE_DEFICIT = 17;</code>
        */
-      public static final int ASSAULT_VALUE = 17;
+      public static final int VEHICLE_DEFICIT_VALUE = 17;
       /**
-       * <code>TRACK_MAINTENANCE = 18;</code>
+       * <code>ROAD_CLOSED = 18;</code>
        */
-      public static final int TRACK_MAINTENANCE_VALUE = 18;
+      public static final int ROAD_CLOSED_VALUE = 18;
       /**
-       * <code>MEDICAL_INCIDENT = 19;</code>
+       * <code>ROAD_TRENCH = 19;</code>
        */
-      public static final int MEDICAL_INCIDENT_VALUE = 19;
+      public static final int ROAD_TRENCH_VALUE = 19;
       /**
-       * <code>EARLIER_DISRUPTION = 20;</code>
+       * <code>TRACK_MAINTENANCE = 20;</code>
        */
-      public static final int EARLIER_DISRUPTION_VALUE = 20;
+      public static final int TRACK_MAINTENANCE_VALUE = 20;
       /**
-       * <code>TECHNICAL_FAILURE = 21;</code>
+       * <code>TRAFFIC_ACCIDENT = 21;</code>
        */
-      public static final int TECHNICAL_FAILURE_VALUE = 21;
+      public static final int TRAFFIC_ACCIDENT_VALUE = 21;
       /**
        * <code>TRAFFIC_JAM = 22;</code>
        */
       public static final int TRAFFIC_JAM_VALUE = 22;
       /**
-       * <code>OTHER = 23;</code>
+       * <code>MEDICAL_INCIDENT = 23;</code>
        */
-      public static final int OTHER_VALUE = 23;
+      public static final int MEDICAL_INCIDENT_VALUE = 23;
       /**
-       * <code>NO_TRAFFIC_DISRUPTION = 24;</code>
+       * <code>WEATHER_CONDITIONS = 24;</code>
        */
-      public static final int NO_TRAFFIC_DISRUPTION_VALUE = 24;
+      public static final int WEATHER_CONDITIONS_VALUE = 24;
       /**
-       * <code>ACCIDENT = 25;</code>
+       * <code>TECHNICAL_FAILURE = 25;</code>
        */
-      public static final int ACCIDENT_VALUE = 25;
+      public static final int TECHNICAL_FAILURE_VALUE = 25;
       /**
-       * <code>PUBLIC_EVENT = 26;</code>
+       * <code>TEST = 26;</code>
        */
-      public static final int PUBLIC_EVENT_VALUE = 26;
+      public static final int TEST_VALUE = 26;
       /**
-       * <code>ROAD_TRENCH = 27;</code>
+       * <code>ROAD_MAINTENANCE = 27;</code>
        */
-      public static final int ROAD_TRENCH_VALUE = 27;
+      public static final int ROAD_MAINTENANCE_VALUE = 27;
       /**
-       * <code>VEHICLE_BREAKDOWN = 28;</code>
+       * <code>SWITCH_FAILURE = 28;</code>
        */
-      public static final int VEHICLE_BREAKDOWN_VALUE = 28;
+      public static final int SWITCH_FAILURE_VALUE = 28;
       /**
-       * <code>POWER_FAILURE = 29;</code>
+       * <code>STATE_VISIT = 29;</code>
        */
-      public static final int POWER_FAILURE_VALUE = 29;
+      public static final int STATE_VISIT_VALUE = 29;
+      /**
+       * <code>POWER_FAILURE = 30;</code>
+       */
+      public static final int POWER_FAILURE_VALUE = 30;
+      /**
+       * <code>MISPARKED_VEHICLE = 31;</code>
+       */
+      public static final int MISPARKED_VEHICLE_VALUE = 31;
+      /**
+       * <code>PUBLIC_EVENT = 32;</code>
+       */
+      public static final int PUBLIC_EVENT_VALUE = 32;
 
 
       public final int getNumber() {
@@ -2233,36 +2302,39 @@ public final class InternalMessages {
 
       public static Category forNumber(int value) {
         switch (value) {
-          case 0: return OTHER_DRIVER_ERROR;
-          case 1: return ITS_SYSTEM_ERROR;
-          case 2: return TOO_MANY_PASSENGERS;
-          case 3: return MISPARKED_VEHICLE;
-          case 4: return STRIKE;
-          case 5: return TEST;
-          case 6: return VEHICLE_OFF_THE_ROAD;
-          case 7: return NO_DRIVER;
-          case 8: return TRAFFIC_ACCIDENT;
-          case 9: return SWITCH_FAILURE;
-          case 10: return SEIZURE;
-          case 11: return WEATHER;
-          case 12: return STATE_VISIT;
-          case 13: return ROAD_MAINTENANCE;
-          case 14: return ROAD_CLOSED;
-          case 15: return TRACK_BLOCKED;
-          case 16: return WEATHER_CONDITIONS;
-          case 17: return ASSAULT;
-          case 18: return TRACK_MAINTENANCE;
-          case 19: return MEDICAL_INCIDENT;
-          case 20: return EARLIER_DISRUPTION;
-          case 21: return TECHNICAL_FAILURE;
+          case 0: return VEHICLE_BREAKDOWN;
+          case 1: return ACCIDENT;
+          case 2: return NO_DRIVER;
+          case 3: return ASSAULT;
+          case 4: return WEATHER;
+          case 5: return VEHICLE_OFF_THE_ROAD;
+          case 6: return SEIZURE;
+          case 7: return ITS_SYSTEM_ERROR;
+          case 8: return OTHER_DRIVER_ERROR;
+          case 9: return TOO_MANY_PASSENGERS;
+          case 10: return STRIKE;
+          case 11: return OTHER;
+          case 12: return EARLIER_DISRUPTION;
+          case 13: return NO_TRAFFIC_DISRUPTION;
+          case 14: return TRACK_BLOCKED;
+          case 15: return STAFF_DEFICIT;
+          case 16: return DISTURBANCE;
+          case 17: return VEHICLE_DEFICIT;
+          case 18: return ROAD_CLOSED;
+          case 19: return ROAD_TRENCH;
+          case 20: return TRACK_MAINTENANCE;
+          case 21: return TRAFFIC_ACCIDENT;
           case 22: return TRAFFIC_JAM;
-          case 23: return OTHER;
-          case 24: return NO_TRAFFIC_DISRUPTION;
-          case 25: return ACCIDENT;
-          case 26: return PUBLIC_EVENT;
-          case 27: return ROAD_TRENCH;
-          case 28: return VEHICLE_BREAKDOWN;
-          case 29: return POWER_FAILURE;
+          case 23: return MEDICAL_INCIDENT;
+          case 24: return WEATHER_CONDITIONS;
+          case 25: return TECHNICAL_FAILURE;
+          case 26: return TEST;
+          case 27: return ROAD_MAINTENANCE;
+          case 28: return SWITCH_FAILURE;
+          case 29: return STATE_VISIT;
+          case 30: return POWER_FAILURE;
+          case 31: return MISPARKED_VEHICLE;
+          case 32: return PUBLIC_EVENT;
           default: return null;
         }
       }
@@ -2318,295 +2390,383 @@ public final class InternalMessages {
     public enum SubCategory
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>OUT_OF_FUEL = 0;</code>
+       * <code>BREAK_MALFUNCTION = 0;</code>
        */
-      OUT_OF_FUEL(0),
+      BREAK_MALFUNCTION(0),
       /**
-       * <code>WRONG_INFORMATION_IN_DEVICE = 1;</code>
+       * <code>OUT_OF_FUEL = 1;</code>
        */
-      WRONG_INFORMATION_IN_DEVICE(1),
+      OUT_OF_FUEL(1),
       /**
-       * <code>DOOR_MALFUNCTION = 2;</code>
+       * <code>FLUID_LEAKAGE = 2;</code>
        */
-      DOOR_MALFUNCTION(2),
+      FLUID_LEAKAGE(2),
       /**
-       * <code>PASSENGER_SEIZURE = 3;</code>
+       * <code>ELECTRIC_MALFUNCTION = 3;</code>
        */
-      PASSENGER_SEIZURE(3),
+      ELECTRIC_MALFUNCTION(3),
       /**
-       * <code>OWN_FAULT = 4;</code>
+       * <code>ENGINE_MALFUNCTION = 4;</code>
        */
-      OWN_FAULT(4),
+      ENGINE_MALFUNCTION(4),
       /**
-       * <code>DEVICE_ERROR = 5;</code>
+       * <code>OTHER_MALFUNCTION = 5;</code>
        */
-      DEVICE_ERROR(5),
+      OTHER_MALFUNCTION(5),
       /**
-       * <code>CONGESTION_CAUSED_BY_WEATHER = 6;</code>
+       * <code>OWN_FAULT = 6;</code>
        */
-      CONGESTION_CAUSED_BY_WEATHER(6),
+      OWN_FAULT(6),
       /**
-       * <code>OTHER_STRIKE = 7;</code>
+       * <code>OPPOSITE_FAULT = 7;</code>
        */
-      OTHER_STRIKE(7),
+      OPPOSITE_FAULT(7),
       /**
-       * <code>VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON = 8;</code>
+       * <code>FAULT_UNKNOWN = 8;</code>
        */
-      VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON(8),
+      FAULT_UNKNOWN(8),
       /**
-       * <code>CONGESTION_CAUSED_BY_ACCIDENT = 9;</code>
+       * <code>STAFF_SHORTAGE = 9;</code>
        */
-      CONGESTION_CAUSED_BY_ACCIDENT(9),
+      STAFF_SHORTAGE(9),
       /**
-       * <code>NULL = 10;</code>
+       * <code>ND_OPERATOR_PLANNING_ERROR = 10;</code>
        */
-      NULL(10),
+      ND_OPERATOR_PLANNING_ERROR(10),
       /**
-       * <code>CONGESTION_REASON_UKNOWN = 11;</code>
+       * <code>DRIVER_LATE = 11;</code>
        */
-      CONGESTION_REASON_UKNOWN(11),
+      DRIVER_LATE(11),
       /**
-       * <code>ELECTRIC_MALFUNCTION = 12;</code>
+       * <code>INSUFFICIENT_INSTRUCTIONS_BY_OPERATOR = 12;</code>
        */
-      ELECTRIC_MALFUNCTION(12),
+      INSUFFICIENT_INSTRUCTIONS_BY_OPERATOR(12),
       /**
-       * <code>PASSENGER_INJURED = 13;</code>
+       * <code>INSUFFICIENT_INSTRUCTIONS_BY_AUTHORITY = 13;</code>
        */
-      PASSENGER_INJURED(13),
+      INSUFFICIENT_INSTRUCTIONS_BY_AUTHORITY(13),
       /**
-       * <code>ENGINE_MALFUNCTION = 14;</code>
+       * <code>NO_VEHICLE_AVAILABLE = 14;</code>
        */
-      ENGINE_MALFUNCTION(14),
+      NO_VEHICLE_AVAILABLE(14),
       /**
-       * <code>MISSPARKED_VEHICLE = 15;</code>
+       * <code>ASSAULT_ON_DRIVER = 15;</code>
        */
-      MISSPARKED_VEHICLE(15),
+      ASSAULT_ON_DRIVER(15),
       /**
-       * <code>INSUFFICIENT_CAPASITY = 16;</code>
+       * <code>ASSAULT_ON_PASSENGER = 16;</code>
        */
-      INSUFFICIENT_CAPASITY(16),
+      ASSAULT_ON_PASSENGER(16),
       /**
-       * <code>OTHER_ITS_ERROR = 17;</code>
+       * <code>ASSAULT_ON_VEHICLE = 17;</code>
        */
-      OTHER_ITS_ERROR(17),
+      ASSAULT_ON_VEHICLE(17),
       /**
-       * <code>OTHER_MALFUNCTION = 18;</code>
+       * <code>PASSED_OUT_PASSENGER = 18;</code>
        */
-      OTHER_MALFUNCTION(18),
+      PASSED_OUT_PASSENGER(18),
       /**
-       * <code>UNKNOWN_CAUSE = 19;</code>
+       * <code>OTHER_ASSAULT = 19;</code>
        */
-      UNKNOWN_CAUSE(19),
+      OTHER_ASSAULT(19),
       /**
-       * <code>BREAK_MALFUNCTION = 20;</code>
+       * <code>UNDRIVEABLE_CONDITIONS = 20;</code>
        */
-      BREAK_MALFUNCTION(20),
+      UNDRIVEABLE_CONDITIONS(20),
       /**
-       * <code>SLIPPERY_TRACK = 21;</code>
+       * <code>STUCK_CAUSED_BY_SLIPPERY = 21;</code>
        */
-      SLIPPERY_TRACK(21),
+      STUCK_CAUSED_BY_SLIPPERY(21),
       /**
-       * <code>STUCK_CAUSED_BY_SLIPPERY = 22;</code>
+       * <code>CONGESTION_CAUSED_BY_WEATHER = 22;</code>
        */
-      STUCK_CAUSED_BY_SLIPPERY(22),
+      CONGESTION_CAUSED_BY_WEATHER(22),
       /**
-       * <code>OPERATOR_PERSONNEL_ON_STRIKE = 23;</code>
+       * <code>SLIPPERY_TRACK = 23;</code>
        */
-      OPERATOR_PERSONNEL_ON_STRIKE(23),
+      SLIPPERY_TRACK(23),
       /**
        * <code>ROAD_BLOCKED = 24;</code>
        */
       ROAD_BLOCKED(24),
       /**
-       * <code>UNDRIVEABLE_CONDITIONS = 25;</code>
+       * <code>VEHICLE_OFF_THE_ROAD_BY_DRIVER_ERROR = 25;</code>
        */
-      UNDRIVEABLE_CONDITIONS(25),
+      VEHICLE_OFF_THE_ROAD_BY_DRIVER_ERROR(25),
       /**
-       * <code>OTHER_OPERATOR_REASON = 26;</code>
+       * <code>VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON = 26;</code>
        */
-      OTHER_OPERATOR_REASON(26),
+      VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON(26),
       /**
-       * <code>FALSE_ALARM = 27;</code>
+       * <code>MISSPARKED_VEHICLE = 27;</code>
        */
-      FALSE_ALARM(27),
+      MISSPARKED_VEHICLE(27),
       /**
-       * <code>ASSAULT_ON_DRIVER = 28;</code>
+       * <code>CONGESTION_REASON_UKNOWN = 28;</code>
        */
-      ASSAULT_ON_DRIVER(28),
+      CONGESTION_REASON_UKNOWN(28),
       /**
-       * <code>DRIVER_ERROR = 29;</code>
+       * <code>CONGESTION_CAUSED_BY_ACCIDENT = 29;</code>
        */
-      DRIVER_ERROR(29),
+      CONGESTION_CAUSED_BY_ACCIDENT(29),
       /**
-       * <code>STAFF_SHORTAGE = 30;</code>
+       * <code>DRIVER_SEIZURE = 30;</code>
        */
-      STAFF_SHORTAGE(30),
+      DRIVER_SEIZURE(30),
       /**
-       * <code>ASSAULT_ON_VEHICLE = 31;</code>
+       * <code>PASSENGER_SEIZURE = 31;</code>
        */
-      ASSAULT_ON_VEHICLE(31),
+      PASSENGER_SEIZURE(31),
       /**
-       * <code>OPPOSITE_FAULT = 32;</code>
+       * <code>PASSENGER_INJURED = 32;</code>
        */
-      OPPOSITE_FAULT(32),
+      PASSENGER_INJURED(32),
       /**
-       * <code>USER_ERROR = 33;</code>
+       * <code>OTHER_SEIZURE = 33;</code>
        */
-      USER_ERROR(33),
+      OTHER_SEIZURE(33),
       /**
-       * <code>FAULT_UNKNOWN = 34;</code>
+       * <code>DEVICE_ERROR = 34;</code>
        */
-      FAULT_UNKNOWN(34),
+      DEVICE_ERROR(34),
       /**
-       * <code>OTHER_ASSAULT = 35;</code>
+       * <code>OPERATOR_DEVICE_ERROR = 35;</code>
        */
-      OTHER_ASSAULT(35),
+      OPERATOR_DEVICE_ERROR(35),
+      /**
+       * <code>WRONG_INFORMATION_IN_DEVICE = 36;</code>
+       */
+      WRONG_INFORMATION_IN_DEVICE(36),
+      /**
+       * <code>ITS_SYSTEM_NOT_INSTALLED = 37;</code>
+       */
+      ITS_SYSTEM_NOT_INSTALLED(37),
+      /**
+       * <code>USER_ERROR = 38;</code>
+       */
+      USER_ERROR(38),
+      /**
+       * <code>FALSE_ALARM = 39;</code>
+       */
+      FALSE_ALARM(39),
+      /**
+       * <code>OTHER_ITS_ERROR = 40;</code>
+       */
+      OTHER_ITS_ERROR(40),
+      /**
+       * <code>DRIVER_ERROR = 41;</code>
+       */
+      DRIVER_ERROR(41),
+      /**
+       * <code>INSUFFICIENT_CAPASITY = 42;</code>
+       */
+      INSUFFICIENT_CAPASITY(42),
+      /**
+       * <code>OPERATOR_PERSONNEL_ON_STRIKE = 43;</code>
+       */
+      OPERATOR_PERSONNEL_ON_STRIKE(43),
+      /**
+       * <code>OTHER_STRIKE = 44;</code>
+       */
+      OTHER_STRIKE(44),
+      /**
+       * <code>OTHER_OPERATOR_REASON = 45;</code>
+       */
+      OTHER_OPERATOR_REASON(45),
+      /**
+       * <code>UNKNOWN_CAUSE = 46;</code>
+       */
+      UNKNOWN_CAUSE(46),
       ;
 
       /**
-       * <code>OUT_OF_FUEL = 0;</code>
+       * <code>BREAK_MALFUNCTION = 0;</code>
        */
-      public static final int OUT_OF_FUEL_VALUE = 0;
+      public static final int BREAK_MALFUNCTION_VALUE = 0;
       /**
-       * <code>WRONG_INFORMATION_IN_DEVICE = 1;</code>
+       * <code>OUT_OF_FUEL = 1;</code>
        */
-      public static final int WRONG_INFORMATION_IN_DEVICE_VALUE = 1;
+      public static final int OUT_OF_FUEL_VALUE = 1;
       /**
-       * <code>DOOR_MALFUNCTION = 2;</code>
+       * <code>FLUID_LEAKAGE = 2;</code>
        */
-      public static final int DOOR_MALFUNCTION_VALUE = 2;
+      public static final int FLUID_LEAKAGE_VALUE = 2;
       /**
-       * <code>PASSENGER_SEIZURE = 3;</code>
+       * <code>ELECTRIC_MALFUNCTION = 3;</code>
        */
-      public static final int PASSENGER_SEIZURE_VALUE = 3;
+      public static final int ELECTRIC_MALFUNCTION_VALUE = 3;
       /**
-       * <code>OWN_FAULT = 4;</code>
+       * <code>ENGINE_MALFUNCTION = 4;</code>
        */
-      public static final int OWN_FAULT_VALUE = 4;
+      public static final int ENGINE_MALFUNCTION_VALUE = 4;
       /**
-       * <code>DEVICE_ERROR = 5;</code>
+       * <code>OTHER_MALFUNCTION = 5;</code>
        */
-      public static final int DEVICE_ERROR_VALUE = 5;
+      public static final int OTHER_MALFUNCTION_VALUE = 5;
       /**
-       * <code>CONGESTION_CAUSED_BY_WEATHER = 6;</code>
+       * <code>OWN_FAULT = 6;</code>
        */
-      public static final int CONGESTION_CAUSED_BY_WEATHER_VALUE = 6;
+      public static final int OWN_FAULT_VALUE = 6;
       /**
-       * <code>OTHER_STRIKE = 7;</code>
+       * <code>OPPOSITE_FAULT = 7;</code>
        */
-      public static final int OTHER_STRIKE_VALUE = 7;
+      public static final int OPPOSITE_FAULT_VALUE = 7;
       /**
-       * <code>VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON = 8;</code>
+       * <code>FAULT_UNKNOWN = 8;</code>
        */
-      public static final int VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON_VALUE = 8;
+      public static final int FAULT_UNKNOWN_VALUE = 8;
       /**
-       * <code>CONGESTION_CAUSED_BY_ACCIDENT = 9;</code>
+       * <code>STAFF_SHORTAGE = 9;</code>
        */
-      public static final int CONGESTION_CAUSED_BY_ACCIDENT_VALUE = 9;
+      public static final int STAFF_SHORTAGE_VALUE = 9;
       /**
-       * <code>NULL = 10;</code>
+       * <code>ND_OPERATOR_PLANNING_ERROR = 10;</code>
        */
-      public static final int NULL_VALUE = 10;
+      public static final int ND_OPERATOR_PLANNING_ERROR_VALUE = 10;
       /**
-       * <code>CONGESTION_REASON_UKNOWN = 11;</code>
+       * <code>DRIVER_LATE = 11;</code>
        */
-      public static final int CONGESTION_REASON_UKNOWN_VALUE = 11;
+      public static final int DRIVER_LATE_VALUE = 11;
       /**
-       * <code>ELECTRIC_MALFUNCTION = 12;</code>
+       * <code>INSUFFICIENT_INSTRUCTIONS_BY_OPERATOR = 12;</code>
        */
-      public static final int ELECTRIC_MALFUNCTION_VALUE = 12;
+      public static final int INSUFFICIENT_INSTRUCTIONS_BY_OPERATOR_VALUE = 12;
       /**
-       * <code>PASSENGER_INJURED = 13;</code>
+       * <code>INSUFFICIENT_INSTRUCTIONS_BY_AUTHORITY = 13;</code>
        */
-      public static final int PASSENGER_INJURED_VALUE = 13;
+      public static final int INSUFFICIENT_INSTRUCTIONS_BY_AUTHORITY_VALUE = 13;
       /**
-       * <code>ENGINE_MALFUNCTION = 14;</code>
+       * <code>NO_VEHICLE_AVAILABLE = 14;</code>
        */
-      public static final int ENGINE_MALFUNCTION_VALUE = 14;
+      public static final int NO_VEHICLE_AVAILABLE_VALUE = 14;
       /**
-       * <code>MISSPARKED_VEHICLE = 15;</code>
+       * <code>ASSAULT_ON_DRIVER = 15;</code>
        */
-      public static final int MISSPARKED_VEHICLE_VALUE = 15;
+      public static final int ASSAULT_ON_DRIVER_VALUE = 15;
       /**
-       * <code>INSUFFICIENT_CAPASITY = 16;</code>
+       * <code>ASSAULT_ON_PASSENGER = 16;</code>
        */
-      public static final int INSUFFICIENT_CAPASITY_VALUE = 16;
+      public static final int ASSAULT_ON_PASSENGER_VALUE = 16;
       /**
-       * <code>OTHER_ITS_ERROR = 17;</code>
+       * <code>ASSAULT_ON_VEHICLE = 17;</code>
        */
-      public static final int OTHER_ITS_ERROR_VALUE = 17;
+      public static final int ASSAULT_ON_VEHICLE_VALUE = 17;
       /**
-       * <code>OTHER_MALFUNCTION = 18;</code>
+       * <code>PASSED_OUT_PASSENGER = 18;</code>
        */
-      public static final int OTHER_MALFUNCTION_VALUE = 18;
+      public static final int PASSED_OUT_PASSENGER_VALUE = 18;
       /**
-       * <code>UNKNOWN_CAUSE = 19;</code>
+       * <code>OTHER_ASSAULT = 19;</code>
        */
-      public static final int UNKNOWN_CAUSE_VALUE = 19;
+      public static final int OTHER_ASSAULT_VALUE = 19;
       /**
-       * <code>BREAK_MALFUNCTION = 20;</code>
+       * <code>UNDRIVEABLE_CONDITIONS = 20;</code>
        */
-      public static final int BREAK_MALFUNCTION_VALUE = 20;
+      public static final int UNDRIVEABLE_CONDITIONS_VALUE = 20;
       /**
-       * <code>SLIPPERY_TRACK = 21;</code>
+       * <code>STUCK_CAUSED_BY_SLIPPERY = 21;</code>
        */
-      public static final int SLIPPERY_TRACK_VALUE = 21;
+      public static final int STUCK_CAUSED_BY_SLIPPERY_VALUE = 21;
       /**
-       * <code>STUCK_CAUSED_BY_SLIPPERY = 22;</code>
+       * <code>CONGESTION_CAUSED_BY_WEATHER = 22;</code>
        */
-      public static final int STUCK_CAUSED_BY_SLIPPERY_VALUE = 22;
+      public static final int CONGESTION_CAUSED_BY_WEATHER_VALUE = 22;
       /**
-       * <code>OPERATOR_PERSONNEL_ON_STRIKE = 23;</code>
+       * <code>SLIPPERY_TRACK = 23;</code>
        */
-      public static final int OPERATOR_PERSONNEL_ON_STRIKE_VALUE = 23;
+      public static final int SLIPPERY_TRACK_VALUE = 23;
       /**
        * <code>ROAD_BLOCKED = 24;</code>
        */
       public static final int ROAD_BLOCKED_VALUE = 24;
       /**
-       * <code>UNDRIVEABLE_CONDITIONS = 25;</code>
+       * <code>VEHICLE_OFF_THE_ROAD_BY_DRIVER_ERROR = 25;</code>
        */
-      public static final int UNDRIVEABLE_CONDITIONS_VALUE = 25;
+      public static final int VEHICLE_OFF_THE_ROAD_BY_DRIVER_ERROR_VALUE = 25;
       /**
-       * <code>OTHER_OPERATOR_REASON = 26;</code>
+       * <code>VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON = 26;</code>
        */
-      public static final int OTHER_OPERATOR_REASON_VALUE = 26;
+      public static final int VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON_VALUE = 26;
       /**
-       * <code>FALSE_ALARM = 27;</code>
+       * <code>MISSPARKED_VEHICLE = 27;</code>
        */
-      public static final int FALSE_ALARM_VALUE = 27;
+      public static final int MISSPARKED_VEHICLE_VALUE = 27;
       /**
-       * <code>ASSAULT_ON_DRIVER = 28;</code>
+       * <code>CONGESTION_REASON_UKNOWN = 28;</code>
        */
-      public static final int ASSAULT_ON_DRIVER_VALUE = 28;
+      public static final int CONGESTION_REASON_UKNOWN_VALUE = 28;
       /**
-       * <code>DRIVER_ERROR = 29;</code>
+       * <code>CONGESTION_CAUSED_BY_ACCIDENT = 29;</code>
        */
-      public static final int DRIVER_ERROR_VALUE = 29;
+      public static final int CONGESTION_CAUSED_BY_ACCIDENT_VALUE = 29;
       /**
-       * <code>STAFF_SHORTAGE = 30;</code>
+       * <code>DRIVER_SEIZURE = 30;</code>
        */
-      public static final int STAFF_SHORTAGE_VALUE = 30;
+      public static final int DRIVER_SEIZURE_VALUE = 30;
       /**
-       * <code>ASSAULT_ON_VEHICLE = 31;</code>
+       * <code>PASSENGER_SEIZURE = 31;</code>
        */
-      public static final int ASSAULT_ON_VEHICLE_VALUE = 31;
+      public static final int PASSENGER_SEIZURE_VALUE = 31;
       /**
-       * <code>OPPOSITE_FAULT = 32;</code>
+       * <code>PASSENGER_INJURED = 32;</code>
        */
-      public static final int OPPOSITE_FAULT_VALUE = 32;
+      public static final int PASSENGER_INJURED_VALUE = 32;
       /**
-       * <code>USER_ERROR = 33;</code>
+       * <code>OTHER_SEIZURE = 33;</code>
        */
-      public static final int USER_ERROR_VALUE = 33;
+      public static final int OTHER_SEIZURE_VALUE = 33;
       /**
-       * <code>FAULT_UNKNOWN = 34;</code>
+       * <code>DEVICE_ERROR = 34;</code>
        */
-      public static final int FAULT_UNKNOWN_VALUE = 34;
+      public static final int DEVICE_ERROR_VALUE = 34;
       /**
-       * <code>OTHER_ASSAULT = 35;</code>
+       * <code>OPERATOR_DEVICE_ERROR = 35;</code>
        */
-      public static final int OTHER_ASSAULT_VALUE = 35;
+      public static final int OPERATOR_DEVICE_ERROR_VALUE = 35;
+      /**
+       * <code>WRONG_INFORMATION_IN_DEVICE = 36;</code>
+       */
+      public static final int WRONG_INFORMATION_IN_DEVICE_VALUE = 36;
+      /**
+       * <code>ITS_SYSTEM_NOT_INSTALLED = 37;</code>
+       */
+      public static final int ITS_SYSTEM_NOT_INSTALLED_VALUE = 37;
+      /**
+       * <code>USER_ERROR = 38;</code>
+       */
+      public static final int USER_ERROR_VALUE = 38;
+      /**
+       * <code>FALSE_ALARM = 39;</code>
+       */
+      public static final int FALSE_ALARM_VALUE = 39;
+      /**
+       * <code>OTHER_ITS_ERROR = 40;</code>
+       */
+      public static final int OTHER_ITS_ERROR_VALUE = 40;
+      /**
+       * <code>DRIVER_ERROR = 41;</code>
+       */
+      public static final int DRIVER_ERROR_VALUE = 41;
+      /**
+       * <code>INSUFFICIENT_CAPASITY = 42;</code>
+       */
+      public static final int INSUFFICIENT_CAPASITY_VALUE = 42;
+      /**
+       * <code>OPERATOR_PERSONNEL_ON_STRIKE = 43;</code>
+       */
+      public static final int OPERATOR_PERSONNEL_ON_STRIKE_VALUE = 43;
+      /**
+       * <code>OTHER_STRIKE = 44;</code>
+       */
+      public static final int OTHER_STRIKE_VALUE = 44;
+      /**
+       * <code>OTHER_OPERATOR_REASON = 45;</code>
+       */
+      public static final int OTHER_OPERATOR_REASON_VALUE = 45;
+      /**
+       * <code>UNKNOWN_CAUSE = 46;</code>
+       */
+      public static final int UNKNOWN_CAUSE_VALUE = 46;
 
 
       public final int getNumber() {
@@ -2623,42 +2783,53 @@ public final class InternalMessages {
 
       public static SubCategory forNumber(int value) {
         switch (value) {
-          case 0: return OUT_OF_FUEL;
-          case 1: return WRONG_INFORMATION_IN_DEVICE;
-          case 2: return DOOR_MALFUNCTION;
-          case 3: return PASSENGER_SEIZURE;
-          case 4: return OWN_FAULT;
-          case 5: return DEVICE_ERROR;
-          case 6: return CONGESTION_CAUSED_BY_WEATHER;
-          case 7: return OTHER_STRIKE;
-          case 8: return VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON;
-          case 9: return CONGESTION_CAUSED_BY_ACCIDENT;
-          case 10: return NULL;
-          case 11: return CONGESTION_REASON_UKNOWN;
-          case 12: return ELECTRIC_MALFUNCTION;
-          case 13: return PASSENGER_INJURED;
-          case 14: return ENGINE_MALFUNCTION;
-          case 15: return MISSPARKED_VEHICLE;
-          case 16: return INSUFFICIENT_CAPASITY;
-          case 17: return OTHER_ITS_ERROR;
-          case 18: return OTHER_MALFUNCTION;
-          case 19: return UNKNOWN_CAUSE;
-          case 20: return BREAK_MALFUNCTION;
-          case 21: return SLIPPERY_TRACK;
-          case 22: return STUCK_CAUSED_BY_SLIPPERY;
-          case 23: return OPERATOR_PERSONNEL_ON_STRIKE;
+          case 0: return BREAK_MALFUNCTION;
+          case 1: return OUT_OF_FUEL;
+          case 2: return FLUID_LEAKAGE;
+          case 3: return ELECTRIC_MALFUNCTION;
+          case 4: return ENGINE_MALFUNCTION;
+          case 5: return OTHER_MALFUNCTION;
+          case 6: return OWN_FAULT;
+          case 7: return OPPOSITE_FAULT;
+          case 8: return FAULT_UNKNOWN;
+          case 9: return STAFF_SHORTAGE;
+          case 10: return ND_OPERATOR_PLANNING_ERROR;
+          case 11: return DRIVER_LATE;
+          case 12: return INSUFFICIENT_INSTRUCTIONS_BY_OPERATOR;
+          case 13: return INSUFFICIENT_INSTRUCTIONS_BY_AUTHORITY;
+          case 14: return NO_VEHICLE_AVAILABLE;
+          case 15: return ASSAULT_ON_DRIVER;
+          case 16: return ASSAULT_ON_PASSENGER;
+          case 17: return ASSAULT_ON_VEHICLE;
+          case 18: return PASSED_OUT_PASSENGER;
+          case 19: return OTHER_ASSAULT;
+          case 20: return UNDRIVEABLE_CONDITIONS;
+          case 21: return STUCK_CAUSED_BY_SLIPPERY;
+          case 22: return CONGESTION_CAUSED_BY_WEATHER;
+          case 23: return SLIPPERY_TRACK;
           case 24: return ROAD_BLOCKED;
-          case 25: return UNDRIVEABLE_CONDITIONS;
-          case 26: return OTHER_OPERATOR_REASON;
-          case 27: return FALSE_ALARM;
-          case 28: return ASSAULT_ON_DRIVER;
-          case 29: return DRIVER_ERROR;
-          case 30: return STAFF_SHORTAGE;
-          case 31: return ASSAULT_ON_VEHICLE;
-          case 32: return OPPOSITE_FAULT;
-          case 33: return USER_ERROR;
-          case 34: return FAULT_UNKNOWN;
-          case 35: return OTHER_ASSAULT;
+          case 25: return VEHICLE_OFF_THE_ROAD_BY_DRIVER_ERROR;
+          case 26: return VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON;
+          case 27: return MISSPARKED_VEHICLE;
+          case 28: return CONGESTION_REASON_UKNOWN;
+          case 29: return CONGESTION_CAUSED_BY_ACCIDENT;
+          case 30: return DRIVER_SEIZURE;
+          case 31: return PASSENGER_SEIZURE;
+          case 32: return PASSENGER_INJURED;
+          case 33: return OTHER_SEIZURE;
+          case 34: return DEVICE_ERROR;
+          case 35: return OPERATOR_DEVICE_ERROR;
+          case 36: return WRONG_INFORMATION_IN_DEVICE;
+          case 37: return ITS_SYSTEM_NOT_INSTALLED;
+          case 38: return USER_ERROR;
+          case 39: return FALSE_ALARM;
+          case 40: return OTHER_ITS_ERROR;
+          case 41: return DRIVER_ERROR;
+          case 42: return INSUFFICIENT_CAPASITY;
+          case 43: return OPERATOR_PERSONNEL_ON_STRIKE;
+          case 44: return OTHER_STRIKE;
+          case 45: return OTHER_OPERATOR_REASON;
+          case 46: return UNKNOWN_CAUSE;
           default: return null;
         }
       }
@@ -2955,7 +3126,7 @@ public final class InternalMessages {
     public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType getAffectedDeparturesType() {
       @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType.valueOf(affectedDeparturesType_);
-      return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType.CANCEL_STOPS_FROM_MIDDLE : result;
+      return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType.CANCEL_ENTIRE_DEPARTURE : result;
     }
 
     public static final int TITLE_FIELD_NUMBER = 10;
@@ -3056,7 +3227,7 @@ public final class InternalMessages {
     public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category getCategory() {
       @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category.valueOf(category_);
-      return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category.OTHER_DRIVER_ERROR : result;
+      return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category.VEHICLE_BREAKDOWN : result;
     }
 
     public static final int SUB_CATEGORY_FIELD_NUMBER = 13;
@@ -3073,7 +3244,7 @@ public final class InternalMessages {
     public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory getSubCategory() {
       @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory.valueOf(subCategory_);
-      return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory.OUT_OF_FUEL : result;
+      return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory.BREAK_MALFUNCTION : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4160,7 +4331,7 @@ public final class InternalMessages {
       public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType getAffectedDeparturesType() {
         @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType.valueOf(affectedDeparturesType_);
-        return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType.CANCEL_STOPS_FROM_MIDDLE : result;
+        return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType.CANCEL_ENTIRE_DEPARTURE : result;
       }
       /**
        * <code>optional .proto.TripCancellation.AffectedDeparturesType affected_departures_type = 9;</code>
@@ -4349,7 +4520,7 @@ public final class InternalMessages {
       public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category getCategory() {
         @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category.valueOf(category_);
-        return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category.OTHER_DRIVER_ERROR : result;
+        return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category.VEHICLE_BREAKDOWN : result;
       }
       /**
        * <code>optional .proto.TripCancellation.Category category = 12;</code>
@@ -4386,7 +4557,7 @@ public final class InternalMessages {
       public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory getSubCategory() {
         @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory.valueOf(subCategory_);
-        return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory.OUT_OF_FUEL : result;
+        return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory.BREAK_MALFUNCTION : result;
       }
       /**
        * <code>optional .proto.TripCancellation.SubCategory sub_category = 13;</code>
@@ -6147,7 +6318,7 @@ public final class InternalMessages {
       "\n\027internal-messages.proto\022\005proto\"n\n\010Trip" +
       "Info\022\017\n\007trip_id\030\001 \002(\t\022\025\n\roperating_day\030\002" +
       " \002(\t\022\020\n\010route_id\030\003 \002(\t\022\024\n\014direction_id\030\004" +
-      " \002(\r\022\022\n\nstart_time\030\005 \002(\t\"\230\021\n\020TripCancell" +
+      " \002(\r\022\022\n\nstart_time\030\005 \002(\t\"\302\025\n\020TripCancell" +
       "ation\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\017\n\007trip_" +
       "id\030\002 \001(\t\022\020\n\010route_id\030\003 \001(\t\022\024\n\014direction_" +
       "id\030\004 \001(\r\022\022\n\nstart_time\030\005 \001(\t\022\022\n\nstart_da" +
@@ -6160,60 +6331,74 @@ public final class InternalMessages {
       "on\030\013 \001(\t\0222\n\010category\030\014 \001(\0162 .proto.TripC" +
       "ancellation.Category\0229\n\014sub_category\030\r \001" +
       "(\0162#.proto.TripCancellation.SubCategory\"" +
-      "#\n\006Status\022\013\n\007RUNNING\020\000\022\014\n\010CANCELED\020\001\"q\n\022" +
-      "DeviationCasesType\022\024\n\020CANCEL_DEPARTURE\020\000" +
-      "\022\n\n\006DETOUR\020\001\022\022\n\016LATE_DEPARTURE\020\002\022\026\n\022SKIP" +
-      "PED_STOP_CALLS\020\003\022\r\n\tTIS_ERROR\020\004\"n\n\026Affec" +
-      "tedDeparturesType\022\034\n\030CANCEL_STOPS_FROM_M" +
-      "IDDLE\020\000\022\033\n\027CANCEL_ENTIRE_DEPARTURE\020\001\022\031\n\025" +
-      "CANCEL_STOPS_FROM_END\020\002\"\311\004\n\010Category\022\026\n\022" +
-      "OTHER_DRIVER_ERROR\020\000\022\024\n\020ITS_SYSTEM_ERROR" +
-      "\020\001\022\027\n\023TOO_MANY_PASSENGERS\020\002\022\025\n\021MISPARKED" +
-      "_VEHICLE\020\003\022\n\n\006STRIKE\020\004\022\010\n\004TEST\020\005\022\030\n\024VEHI" +
-      "CLE_OFF_THE_ROAD\020\006\022\r\n\tNO_DRIVER\020\007\022\024\n\020TRA" +
-      "FFIC_ACCIDENT\020\010\022\022\n\016SWITCH_FAILURE\020\t\022\013\n\007S" +
-      "EIZURE\020\n\022\013\n\007WEATHER\020\013\022\017\n\013STATE_VISIT\020\014\022\024" +
-      "\n\020ROAD_MAINTENANCE\020\r\022\017\n\013ROAD_CLOSED\020\016\022\021\n" +
-      "\rTRACK_BLOCKED\020\017\022\026\n\022WEATHER_CONDITIONS\020\020" +
-      "\022\013\n\007ASSAULT\020\021\022\025\n\021TRACK_MAINTENANCE\020\022\022\024\n\020" +
-      "MEDICAL_INCIDENT\020\023\022\026\n\022EARLIER_DISRUPTION" +
-      "\020\024\022\025\n\021TECHNICAL_FAILURE\020\025\022\017\n\013TRAFFIC_JAM" +
-      "\020\026\022\t\n\005OTHER\020\027\022\031\n\025NO_TRAFFIC_DISRUPTION\020\030" +
-      "\022\014\n\010ACCIDENT\020\031\022\020\n\014PUBLIC_EVENT\020\032\022\017\n\013ROAD" +
-      "_TRENCH\020\033\022\025\n\021VEHICLE_BREAKDOWN\020\034\022\021\n\rPOWE" +
-      "R_FAILURE\020\035\"\325\006\n\013SubCategory\022\017\n\013OUT_OF_FU" +
-      "EL\020\000\022\037\n\033WRONG_INFORMATION_IN_DEVICE\020\001\022\024\n" +
-      "\020DOOR_MALFUNCTION\020\002\022\025\n\021PASSENGER_SEIZURE" +
-      "\020\003\022\r\n\tOWN_FAULT\020\004\022\020\n\014DEVICE_ERROR\020\005\022 \n\034C" +
-      "ONGESTION_CAUSED_BY_WEATHER\020\006\022\020\n\014OTHER_S" +
-      "TRIKE\020\007\022(\n$VEHICLE_OFF_THE_ROAD_BY_OTHER" +
-      "_REASON\020\010\022!\n\035CONGESTION_CAUSED_BY_ACCIDE" +
-      "NT\020\t\022\010\n\004NULL\020\n\022\034\n\030CONGESTION_REASON_UKNO" +
-      "WN\020\013\022\030\n\024ELECTRIC_MALFUNCTION\020\014\022\025\n\021PASSEN" +
-      "GER_INJURED\020\r\022\026\n\022ENGINE_MALFUNCTION\020\016\022\026\n" +
-      "\022MISSPARKED_VEHICLE\020\017\022\031\n\025INSUFFICIENT_CA" +
-      "PASITY\020\020\022\023\n\017OTHER_ITS_ERROR\020\021\022\025\n\021OTHER_M" +
-      "ALFUNCTION\020\022\022\021\n\rUNKNOWN_CAUSE\020\023\022\025\n\021BREAK" +
-      "_MALFUNCTION\020\024\022\022\n\016SLIPPERY_TRACK\020\025\022\034\n\030ST" +
-      "UCK_CAUSED_BY_SLIPPERY\020\026\022 \n\034OPERATOR_PER" +
-      "SONNEL_ON_STRIKE\020\027\022\020\n\014ROAD_BLOCKED\020\030\022\032\n\026" +
-      "UNDRIVEABLE_CONDITIONS\020\031\022\031\n\025OTHER_OPERAT" +
-      "OR_REASON\020\032\022\017\n\013FALSE_ALARM\020\033\022\025\n\021ASSAULT_" +
-      "ON_DRIVER\020\034\022\020\n\014DRIVER_ERROR\020\035\022\022\n\016STAFF_S" +
-      "HORTAGE\020\036\022\026\n\022ASSAULT_ON_VEHICLE\020\037\022\022\n\016OPP" +
-      "OSITE_FAULT\020 \022\016\n\nUSER_ERROR\020!\022\021\n\rFAULT_U" +
-      "NKNOWN\020\"\022\021\n\rOTHER_ASSAULT\020#\"\356\002\n\014StopEsti" +
-      "mate\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\"\n\ttrip_i" +
-      "nfo\030\002 \002(\0132\017.proto.TripInfo\022\017\n\007stop_id\030\003 " +
-      "\002(\t\022\025\n\rstop_sequence\030\004 \002(\r\022*\n\006status\030\005 \002" +
-      "(\0162\032.proto.StopEstimate.Status\022&\n\004type\030\006" +
-      " \002(\0162\030.proto.StopEstimate.Type\022\035\n\025estima" +
-      "ted_time_utc_ms\030\007 \002(\003\022\035\n\025scheduled_time_" +
-      "utc_ms\030\010 \001(\003\022\034\n\024last_modified_utc_ms\030\t \002" +
-      "(\003\"$\n\006Status\022\r\n\tSCHEDULED\020\000\022\013\n\007SKIPPED\020\001" +
-      "\"\"\n\004Type\022\013\n\007ARRIVAL\020\000\022\r\n\tDEPARTURE\020\001B3\n\037" +
-      "fi.hsl.common.transitdata.protoB\020Interna" +
-      "lMessages"
+      "#\n\006Status\022\013\n\007RUNNING\020\000\022\014\n\010CANCELED\020\001\"\360\001\n" +
+      "\022DeviationCasesType\022\024\n\020CANCEL_DEPARTURE\020" +
+      "\000\022\n\n\006DETOUR\020\001\022\026\n\022SKIPPED_STOP_CALLS\020\002\022\023\n" +
+      "\017EARLY_DEPARTURE\020\003\022%\n!EARLY_DEPARTURE_FR" +
+      "OM_TIMING_POINT\020\004\022\022\n\016LATE_DEPARTURE\020\005\022!\n" +
+      "\035DEPARTURED_AFTER_NEXT_JOURNEY\020\006\022\036\n\032BLOC" +
+      "K_FIRST_DEPARTURE_LATE\020\007\022\r\n\tTIS_ERROR\020\010\"" +
+      "\213\001\n\026AffectedDeparturesType\022\033\n\027CANCEL_ENT" +
+      "IRE_DEPARTURE\020\000\022\033\n\027CANCEL_STOPS_FROM_STA" +
+      "RT\020\001\022\034\n\030CANCEL_STOPS_FROM_MIDDLE\020\002\022\031\n\025CA" +
+      "NCEL_STOPS_FROM_END\020\003\"\202\005\n\010Category\022\025\n\021VE" +
+      "HICLE_BREAKDOWN\020\000\022\014\n\010ACCIDENT\020\001\022\r\n\tNO_DR" +
+      "IVER\020\002\022\013\n\007ASSAULT\020\003\022\013\n\007WEATHER\020\004\022\030\n\024VEHI" +
+      "CLE_OFF_THE_ROAD\020\005\022\013\n\007SEIZURE\020\006\022\024\n\020ITS_S" +
+      "YSTEM_ERROR\020\007\022\026\n\022OTHER_DRIVER_ERROR\020\010\022\027\n" +
+      "\023TOO_MANY_PASSENGERS\020\t\022\n\n\006STRIKE\020\n\022\t\n\005OT" +
+      "HER\020\013\022\026\n\022EARLIER_DISRUPTION\020\014\022\031\n\025NO_TRAF" +
+      "FIC_DISRUPTION\020\r\022\021\n\rTRACK_BLOCKED\020\016\022\021\n\rS" +
+      "TAFF_DEFICIT\020\017\022\017\n\013DISTURBANCE\020\020\022\023\n\017VEHIC" +
+      "LE_DEFICIT\020\021\022\017\n\013ROAD_CLOSED\020\022\022\017\n\013ROAD_TR" +
+      "ENCH\020\023\022\025\n\021TRACK_MAINTENANCE\020\024\022\024\n\020TRAFFIC" +
+      "_ACCIDENT\020\025\022\017\n\013TRAFFIC_JAM\020\026\022\024\n\020MEDICAL_" +
+      "INCIDENT\020\027\022\026\n\022WEATHER_CONDITIONS\020\030\022\025\n\021TE" +
+      "CHNICAL_FAILURE\020\031\022\010\n\004TEST\020\032\022\024\n\020ROAD_MAIN" +
+      "TENANCE\020\033\022\022\n\016SWITCH_FAILURE\020\034\022\017\n\013STATE_V" +
+      "ISIT\020\035\022\021\n\rPOWER_FAILURE\020\036\022\025\n\021MISPARKED_V" +
+      "EHICLE\020\037\022\020\n\014PUBLIC_EVENT\020 \"\250\t\n\013SubCatego" +
+      "ry\022\025\n\021BREAK_MALFUNCTION\020\000\022\017\n\013OUT_OF_FUEL" +
+      "\020\001\022\021\n\rFLUID_LEAKAGE\020\002\022\030\n\024ELECTRIC_MALFUN" +
+      "CTION\020\003\022\026\n\022ENGINE_MALFUNCTION\020\004\022\025\n\021OTHER" +
+      "_MALFUNCTION\020\005\022\r\n\tOWN_FAULT\020\006\022\022\n\016OPPOSIT" +
+      "E_FAULT\020\007\022\021\n\rFAULT_UNKNOWN\020\010\022\022\n\016STAFF_SH" +
+      "ORTAGE\020\t\022\036\n\032ND_OPERATOR_PLANNING_ERROR\020\n" +
+      "\022\017\n\013DRIVER_LATE\020\013\022)\n%INSUFFICIENT_INSTRU" +
+      "CTIONS_BY_OPERATOR\020\014\022*\n&INSUFFICIENT_INS" +
+      "TRUCTIONS_BY_AUTHORITY\020\r\022\030\n\024NO_VEHICLE_A" +
+      "VAILABLE\020\016\022\025\n\021ASSAULT_ON_DRIVER\020\017\022\030\n\024ASS" +
+      "AULT_ON_PASSENGER\020\020\022\026\n\022ASSAULT_ON_VEHICL" +
+      "E\020\021\022\030\n\024PASSED_OUT_PASSENGER\020\022\022\021\n\rOTHER_A" +
+      "SSAULT\020\023\022\032\n\026UNDRIVEABLE_CONDITIONS\020\024\022\034\n\030" +
+      "STUCK_CAUSED_BY_SLIPPERY\020\025\022 \n\034CONGESTION" +
+      "_CAUSED_BY_WEATHER\020\026\022\022\n\016SLIPPERY_TRACK\020\027" +
+      "\022\020\n\014ROAD_BLOCKED\020\030\022(\n$VEHICLE_OFF_THE_RO" +
+      "AD_BY_DRIVER_ERROR\020\031\022(\n$VEHICLE_OFF_THE_" +
+      "ROAD_BY_OTHER_REASON\020\032\022\026\n\022MISSPARKED_VEH" +
+      "ICLE\020\033\022\034\n\030CONGESTION_REASON_UKNOWN\020\034\022!\n\035" +
+      "CONGESTION_CAUSED_BY_ACCIDENT\020\035\022\022\n\016DRIVE" +
+      "R_SEIZURE\020\036\022\025\n\021PASSENGER_SEIZURE\020\037\022\025\n\021PA" +
+      "SSENGER_INJURED\020 \022\021\n\rOTHER_SEIZURE\020!\022\020\n\014" +
+      "DEVICE_ERROR\020\"\022\031\n\025OPERATOR_DEVICE_ERROR\020" +
+      "#\022\037\n\033WRONG_INFORMATION_IN_DEVICE\020$\022\034\n\030IT" +
+      "S_SYSTEM_NOT_INSTALLED\020%\022\016\n\nUSER_ERROR\020&" +
+      "\022\017\n\013FALSE_ALARM\020\'\022\023\n\017OTHER_ITS_ERROR\020(\022\020" +
+      "\n\014DRIVER_ERROR\020)\022\031\n\025INSUFFICIENT_CAPASIT" +
+      "Y\020*\022 \n\034OPERATOR_PERSONNEL_ON_STRIKE\020+\022\020\n" +
+      "\014OTHER_STRIKE\020,\022\031\n\025OTHER_OPERATOR_REASON" +
+      "\020-\022\021\n\rUNKNOWN_CAUSE\020.\"\356\002\n\014StopEstimate\022\030" +
+      "\n\rSchemaVersion\030\001 \002(\005:\0011\022\"\n\ttrip_info\030\002 " +
+      "\002(\0132\017.proto.TripInfo\022\017\n\007stop_id\030\003 \002(\t\022\025\n" +
+      "\rstop_sequence\030\004 \002(\r\022*\n\006status\030\005 \002(\0162\032.p" +
+      "roto.StopEstimate.Status\022&\n\004type\030\006 \002(\0162\030" +
+      ".proto.StopEstimate.Type\022\035\n\025estimated_ti" +
+      "me_utc_ms\030\007 \002(\003\022\035\n\025scheduled_time_utc_ms" +
+      "\030\010 \001(\003\022\034\n\024last_modified_utc_ms\030\t \002(\003\"$\n\006" +
+      "Status\022\r\n\tSCHEDULED\020\000\022\013\n\007SKIPPED\020\001\"\"\n\004Ty" +
+      "pe\022\013\n\007ARRIVAL\020\000\022\r\n\tDEPARTURE\020\001B3\n\037fi.hsl" +
+      ".common.transitdata.protoB\020InternalMessa" +
+      "ges"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
