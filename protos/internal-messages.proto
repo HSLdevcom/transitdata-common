@@ -31,6 +31,121 @@ message TripCancellation {
     }
 
     required Status status = 7;
+
+    enum DeviationCasesType {
+        CANCEL_DEPARTURE = 0;
+        DETOUR = 1;
+        SKIPPED_STOP_CALLS = 2;
+        EARLY_DEPARTURE = 3;
+        EARLY_DEPARTURE_FROM_TIMING_POINT = 4;
+        LATE_DEPARTURE = 5;
+        DEPARTURED_AFTER_NEXT_JOURNEY = 6;
+        BLOCK_FIRST_DEPARTURE_LATE = 7;
+        TIS_ERROR = 8;
+    }
+
+    optional DeviationCasesType deviation_cases_type = 8;
+
+    enum AffectedDeparturesType {
+        CANCEL_ENTIRE_DEPARTURE = 0;
+        CANCEL_STOPS_FROM_START = 1;
+        CANCEL_STOPS_FROM_MIDDLE = 2;
+        CANCEL_STOPS_FROM_END = 3;
+    }
+
+    optional AffectedDeparturesType affected_departures_type = 9;
+    optional string title = 10;
+    optional string description = 11;
+
+    enum Category {
+        VEHICLE_BREAKDOWN = 0;
+        ACCIDENT = 1;
+        NO_DRIVER = 2;
+        ASSAULT = 3;
+        WEATHER = 4;
+        VEHICLE_OFF_THE_ROAD = 5;
+        SEIZURE = 6;
+        ITS_SYSTEM_ERROR = 7;
+        OTHER_DRIVER_ERROR = 8;
+        TOO_MANY_PASSENGERS = 9;
+        STRIKE = 10;
+        OTHER = 11;
+        EARLIER_DISRUPTION = 12;
+        NO_TRAFFIC_DISRUPTION = 13;
+        TRACK_BLOCKED = 14;
+        STAFF_DEFICIT = 15;
+        DISTURBANCE = 16;
+        VEHICLE_DEFICIT = 17;
+        ROAD_CLOSED = 18;
+        ROAD_TRENCH = 19;
+        TRACK_MAINTENANCE = 20;
+        TRAFFIC_ACCIDENT = 21;
+        TRAFFIC_JAM = 22;
+        MEDICAL_INCIDENT = 23;
+        WEATHER_CONDITIONS = 24;
+        TECHNICAL_FAILURE = 25;
+        TEST = 26;
+        ROAD_MAINTENANCE = 27;
+        SWITCH_FAILURE = 28;
+        STATE_VISIT = 29;
+        POWER_FAILURE = 30;
+        MISPARKED_VEHICLE = 31;
+        PUBLIC_EVENT = 32;
+    }
+
+    optional Category category = 12;
+
+    enum SubCategory {
+        BREAK_MALFUNCTION = 0;
+        OUT_OF_FUEL = 1;
+        FLUID_LEAKAGE = 2;
+        ELECTRIC_MALFUNCTION = 3;
+        ENGINE_MALFUNCTION = 4;
+        OTHER_MALFUNCTION = 5;
+        OWN_FAULT = 6;
+        OPPOSITE_FAULT = 7;
+        FAULT_UNKNOWN = 8;
+        STAFF_SHORTAGE = 9;
+        ND_OPERATOR_PLANNING_ERROR = 10;
+        DRIVER_LATE = 11;
+        INSUFFICIENT_INSTRUCTIONS_BY_OPERATOR = 12;
+        INSUFFICIENT_INSTRUCTIONS_BY_AUTHORITY = 13;
+        NO_VEHICLE_AVAILABLE = 14;
+        ASSAULT_ON_DRIVER = 15;
+        ASSAULT_ON_PASSENGER = 16;
+        ASSAULT_ON_VEHICLE = 17;
+        PASSED_OUT_PASSENGER = 18;
+        OTHER_ASSAULT = 19;
+        UNDRIVEABLE_CONDITIONS = 20;
+        STUCK_CAUSED_BY_SLIPPERY = 21;
+        CONGESTION_CAUSED_BY_WEATHER = 22;
+        SLIPPERY_TRACK = 23;
+        ROAD_BLOCKED = 24;
+        VEHICLE_OFF_THE_ROAD_BY_DRIVER_ERROR = 25;
+        VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON = 26;
+        MISSPARKED_VEHICLE = 27;
+        CONGESTION_REASON_UKNOWN = 28;
+        CONGESTION_CAUSED_BY_ACCIDENT = 29;
+        DRIVER_SEIZURE = 30;
+        PASSENGER_SEIZURE = 31;
+        PASSENGER_INJURED = 32;
+        OTHER_SEIZURE = 33;
+        DEVICE_ERROR = 34;
+        OPERATOR_DEVICE_ERROR = 35;
+        WRONG_INFORMATION_IN_DEVICE = 36;
+        ITS_SYSTEM_NOT_INSTALLED = 37;
+        USER_ERROR = 38;
+        FALSE_ALARM = 39;
+        OTHER_ITS_ERROR = 40;
+        DRIVER_ERROR = 41;
+        INSUFFICIENT_CAPASITY = 42;
+        OPERATOR_PERSONNEL_ON_STRIKE = 43;
+        OTHER_STRIKE = 44;
+        OTHER_OPERATOR_REASON = 45;
+        UNKNOWN_CAUSE = 46;
+    }
+
+    optional SubCategory sub_category = 13;
 }
 
 message StopEstimate {
