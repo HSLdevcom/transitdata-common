@@ -16,6 +16,42 @@ message TripInfo {
     required string start_time = 5;
 }
 
+enum Category {
+    VEHICLE_BREAKDOWN = 0;
+    ACCIDENT = 1;
+    NO_DRIVER = 2;
+    ASSAULT = 3;
+    WEATHER = 4;
+    VEHICLE_OFF_THE_ROAD = 5;
+    SEIZURE = 6;
+    ITS_SYSTEM_ERROR = 7;
+    OTHER_DRIVER_ERROR = 8;
+    TOO_MANY_PASSENGERS = 9;
+    STRIKE = 10;
+    OTHER = 11;
+    EARLIER_DISRUPTION = 12;
+    NO_TRAFFIC_DISRUPTION = 13;
+    TRACK_BLOCKED = 14;
+    STAFF_DEFICIT = 15;
+    DISTURBANCE = 16;
+    VEHICLE_DEFICIT = 17;
+    ROAD_CLOSED = 18;
+    ROAD_TRENCH = 19;
+    TRACK_MAINTENANCE = 20;
+    TRAFFIC_ACCIDENT = 21;
+    TRAFFIC_JAM = 22;
+    MEDICAL_INCIDENT = 23;
+    WEATHER_CONDITIONS = 24;
+    TECHNICAL_FAILURE = 25;
+    TEST = 26;
+    ROAD_MAINTENANCE = 27;
+    SWITCH_FAILURE = 28;
+    STATE_VISIT = 29;
+    POWER_FAILURE = 30;
+    MISPARKED_VEHICLE = 31;
+    PUBLIC_EVENT = 32;
+}
+
 message TripCancellation {
     required int32 SchemaVersion = 1 [default = 1];
     optional string trip_id = 2;
@@ -56,42 +92,6 @@ message TripCancellation {
     optional AffectedDeparturesType affected_departures_type = 9;
     optional string title = 10;
     optional string description = 11;
-
-    enum Category {
-        VEHICLE_BREAKDOWN = 0;
-        ACCIDENT = 1;
-        NO_DRIVER = 2;
-        ASSAULT = 3;
-        WEATHER = 4;
-        VEHICLE_OFF_THE_ROAD = 5;
-        SEIZURE = 6;
-        ITS_SYSTEM_ERROR = 7;
-        OTHER_DRIVER_ERROR = 8;
-        TOO_MANY_PASSENGERS = 9;
-        STRIKE = 10;
-        OTHER = 11;
-        EARLIER_DISRUPTION = 12;
-        NO_TRAFFIC_DISRUPTION = 13;
-        TRACK_BLOCKED = 14;
-        STAFF_DEFICIT = 15;
-        DISTURBANCE = 16;
-        VEHICLE_DEFICIT = 17;
-        ROAD_CLOSED = 18;
-        ROAD_TRENCH = 19;
-        TRACK_MAINTENANCE = 20;
-        TRAFFIC_ACCIDENT = 21;
-        TRAFFIC_JAM = 22;
-        MEDICAL_INCIDENT = 23;
-        WEATHER_CONDITIONS = 24;
-        TECHNICAL_FAILURE = 25;
-        TEST = 26;
-        ROAD_MAINTENANCE = 27;
-        SWITCH_FAILURE = 28;
-        STATE_VISIT = 29;
-        POWER_FAILURE = 30;
-        MISPARKED_VEHICLE = 31;
-        PUBLIC_EVENT = 32;
-    }
 
     optional Category category = 12;
 
@@ -170,5 +170,50 @@ message StopEstimate {
     required int64 estimated_time_utc_ms = 7;
     optional int64 scheduled_time_utc_ms = 8;
     required int64 last_modified_utc_ms = 9;
+}
 
+message Bulletin {
+    optional string bulletin_id = 1;
+    optional Category category = 2;
+    required int64 last_modified_utc_ms = 3;
+    required int64 valid_from_utc_ms = 4;
+    required int64 valid_to_utc_ms = 5;
+    optional bool affects_all_routes = 6;
+    optional bool affects_all_stops = 7;
+
+    message AffectedEntity {
+        required string entity_id = 1;
+    }
+    repeated AffectedEntity affected_routes = 8;
+    repeated AffectedEntity affected_stops = 9;
+
+    enum Impact {
+        CANCELLED = 0;
+        DELAYED = 1;
+        DEVIATING_SCHEDULE = 2;
+        DISRUPTION_ROUTE = 3;
+        IRREGULAR_DEPARTURES = 4;
+        POSSIBLE_DEVIATIONS = 5;
+        POSSIBLY_DELAYED = 6;
+        REDUCED_TRANSPORT = 7;
+        RETURNING_TO_NORMAL = 8;
+        VENDING_MACHINE_OUT_OF_ORDER = 9;
+        NULL = 10;
+        OTHER = 11;
+        NO_TRAFFIC_IMPACT = 12;
+        UNKNOWN = 13;
+    }
+    optional Impact impact = 10;
+
+    enum Priority {
+        INFO = 0;
+        WARNING = 1;
+        SEVERE = 2;
+    }
+    optional Priority priority = 11;
+}
+
+message ServiceAlert {
+    required int32 SchemaVersion = 1 [default = 1];
+    repeated Bulletin bulletins = 2;
 }
