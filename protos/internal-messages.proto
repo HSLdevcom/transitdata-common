@@ -211,6 +211,13 @@ message Bulletin {
         SEVERE = 2;
     }
     optional Priority priority = 11;
+
+    message Translation {
+        required string text = 1;
+        optional string language = 2;
+    }
+    repeated Translation titles = 12;
+    repeated Translation descriptions = 13;
 }
 
 message ServiceAlert {
