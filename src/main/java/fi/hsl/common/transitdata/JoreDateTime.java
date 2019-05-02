@@ -1,4 +1,4 @@
-package fi.hsl.common.gtfsrt;
+package fi.hsl.common.transitdata;
 
 import java.text.ParseException;
 import java.time.LocalDate;

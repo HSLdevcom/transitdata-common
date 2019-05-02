@@ -1,4 +1,4 @@
-package fi.hsl.common.gtfsrt;
+package fi.hsl.common.transitdata;
 
 import org.junit.Test;
 import java.text.ParseException;
