@@ -1,4 +1,4 @@
-package fi.hsl.common.gtfsrt;
+package fi.hsl.common.transitdata;
 
 import org.junit.Test;
 import java.text.ParseException;
@@ -92,7 +92,7 @@ public class JoreDateTimeTest {
 
     @Test
     public void testJoreDateTime4() {
-        final JoreDateTime time = new JoreDateTime("04:30:00", "1970-01-01", "00:10:00");
+        final JoreDateTime time = new JoreDateTime("04:30:00", "1970-01-02", "00:10:00");
         assertEquals("24:10:00", time.getJoreTimeString());
         assertEquals("1970-01-01", time.getJoreDateString());
         assertEquals("1970-01-02", time.getDateTime().toLocalDate().format(DateTimeFormatter.ISO_LOCAL_DATE));
@@ -101,7 +101,7 @@ public class JoreDateTimeTest {
 
     @Test
     public void testJoreDateTime5() {
-        final JoreDateTime time = new JoreDateTime("04:30:00", "1970-01-01", "04:29:00");
+        final JoreDateTime time = new JoreDateTime("04:30:00", "1970-01-02", "04:29:00");
         assertEquals("28:29:00", time.getJoreTimeString());
         assertEquals("1970-01-01", time.getJoreDateString());
         assertEquals("1970-01-02", time.getDateTime().toLocalDate().format(DateTimeFormatter.ISO_LOCAL_DATE));
@@ -110,10 +110,10 @@ public class JoreDateTimeTest {
 
     @Test
     public void testJoreDateTime6() {
-        final JoreDateTime time = new JoreDateTime("04:30:00", "1970-01-01", "04:30:00");
+        final JoreDateTime time = new JoreDateTime("04:30:00", "1970-01-02", "04:30:00");
         assertEquals("04:30:00", time.getJoreTimeString());
-        assertEquals("1970-01-01", time.getJoreDateString());
-        assertEquals("1970-01-01", time.getDateTime().toLocalDate().format(DateTimeFormatter.ISO_LOCAL_DATE));
-        assertEquals(16200, time.getEpochSeconds());
+        assertEquals("1970-01-02", time.getJoreDateString());
+        assertEquals("1970-01-02", time.getDateTime().toLocalDate().format(DateTimeFormatter.ISO_LOCAL_DATE));
+        assertEquals(102600, time.getEpochSeconds());
     }
 }
