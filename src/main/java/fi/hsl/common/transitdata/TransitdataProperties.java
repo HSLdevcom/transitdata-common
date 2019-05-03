@@ -1,7 +1,5 @@
 package fi.hsl.common.transitdata;
 
-import fi.hsl.common.gtfsrt.JoreDateTime;
-
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 

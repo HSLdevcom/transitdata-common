@@ -1,4 +1,4 @@
-package fi.hsl.common.gtfsrt;
+package fi.hsl.common.transitdata;
 
 import java.text.ParseException;
 import java.time.LocalDate;
@@ -19,13 +19,12 @@ public class JoreDateTime {
     private int joreSeconds;
     private LocalDateTime dateTime;
 
-    public JoreDateTime(final String serviceDayStartTimeString, final String dateString, final String timeString) {
+    public JoreDateTime(final String serviceDayStartTimeString, final String date24h, final String time24h) {
         int serviceDayStartTimeSeconds = LocalTime.parse(serviceDayStartTimeString).toSecondOfDay();
-        LocalTime time = LocalTime.parse(timeString);
+        LocalDate date = LocalDate.parse(date24h);
+        LocalTime time = LocalTime.parse(time24h);
         joreSeconds = time.toSecondOfDay();
-        LocalDate date = LocalDate.parse(dateString);
         if (joreSeconds < serviceDayStartTimeSeconds) {
-            date = date.plusDays(1);
             joreSeconds += DAY_IN_SECONDS;
         }
         dateTime = LocalDateTime.of(date, time);
