@@ -14,6 +14,375 @@ public final class InternalMessages {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code proto.Category}
+   */
+  public enum Category
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>VEHICLE_BREAKDOWN = 0;</code>
+     */
+    VEHICLE_BREAKDOWN(0),
+    /**
+     * <code>ACCIDENT = 1;</code>
+     */
+    ACCIDENT(1),
+    /**
+     * <code>NO_DRIVER = 2;</code>
+     */
+    NO_DRIVER(2),
+    /**
+     * <code>ASSAULT = 3;</code>
+     */
+    ASSAULT(3),
+    /**
+     * <code>WEATHER = 4;</code>
+     */
+    WEATHER(4),
+    /**
+     * <code>VEHICLE_OFF_THE_ROAD = 5;</code>
+     */
+    VEHICLE_OFF_THE_ROAD(5),
+    /**
+     * <code>SEIZURE = 6;</code>
+     */
+    SEIZURE(6),
+    /**
+     * <code>ITS_SYSTEM_ERROR = 7;</code>
+     */
+    ITS_SYSTEM_ERROR(7),
+    /**
+     * <code>OTHER_DRIVER_ERROR = 8;</code>
+     */
+    OTHER_DRIVER_ERROR(8),
+    /**
+     * <code>TOO_MANY_PASSENGERS = 9;</code>
+     */
+    TOO_MANY_PASSENGERS(9),
+    /**
+     * <code>STRIKE = 10;</code>
+     */
+    STRIKE(10),
+    /**
+     * <code>OTHER = 11;</code>
+     */
+    OTHER(11),
+    /**
+     * <code>EARLIER_DISRUPTION = 12;</code>
+     */
+    EARLIER_DISRUPTION(12),
+    /**
+     * <code>NO_TRAFFIC_DISRUPTION = 13;</code>
+     */
+    NO_TRAFFIC_DISRUPTION(13),
+    /**
+     * <code>TRACK_BLOCKED = 14;</code>
+     */
+    TRACK_BLOCKED(14),
+    /**
+     * <code>STAFF_DEFICIT = 15;</code>
+     */
+    STAFF_DEFICIT(15),
+    /**
+     * <code>DISTURBANCE = 16;</code>
+     */
+    DISTURBANCE(16),
+    /**
+     * <code>VEHICLE_DEFICIT = 17;</code>
+     */
+    VEHICLE_DEFICIT(17),
+    /**
+     * <code>ROAD_CLOSED = 18;</code>
+     */
+    ROAD_CLOSED(18),
+    /**
+     * <code>ROAD_TRENCH = 19;</code>
+     */
+    ROAD_TRENCH(19),
+    /**
+     * <code>TRACK_MAINTENANCE = 20;</code>
+     */
+    TRACK_MAINTENANCE(20),
+    /**
+     * <code>TRAFFIC_ACCIDENT = 21;</code>
+     */
+    TRAFFIC_ACCIDENT(21),
+    /**
+     * <code>TRAFFIC_JAM = 22;</code>
+     */
+    TRAFFIC_JAM(22),
+    /**
+     * <code>MEDICAL_INCIDENT = 23;</code>
+     */
+    MEDICAL_INCIDENT(23),
+    /**
+     * <code>WEATHER_CONDITIONS = 24;</code>
+     */
+    WEATHER_CONDITIONS(24),
+    /**
+     * <code>TECHNICAL_FAILURE = 25;</code>
+     */
+    TECHNICAL_FAILURE(25),
+    /**
+     * <code>TEST = 26;</code>
+     */
+    TEST(26),
+    /**
+     * <code>ROAD_MAINTENANCE = 27;</code>
+     */
+    ROAD_MAINTENANCE(27),
+    /**
+     * <code>SWITCH_FAILURE = 28;</code>
+     */
+    SWITCH_FAILURE(28),
+    /**
+     * <code>STATE_VISIT = 29;</code>
+     */
+    STATE_VISIT(29),
+    /**
+     * <code>POWER_FAILURE = 30;</code>
+     */
+    POWER_FAILURE(30),
+    /**
+     * <code>MISPARKED_VEHICLE = 31;</code>
+     */
+    MISPARKED_VEHICLE(31),
+    /**
+     * <code>PUBLIC_EVENT = 32;</code>
+     */
+    PUBLIC_EVENT(32),
+    ;
+
+    /**
+     * <code>VEHICLE_BREAKDOWN = 0;</code>
+     */
+    public static final int VEHICLE_BREAKDOWN_VALUE = 0;
+    /**
+     * <code>ACCIDENT = 1;</code>
+     */
+    public static final int ACCIDENT_VALUE = 1;
+    /**
+     * <code>NO_DRIVER = 2;</code>
+     */
+    public static final int NO_DRIVER_VALUE = 2;
+    /**
+     * <code>ASSAULT = 3;</code>
+     */
+    public static final int ASSAULT_VALUE = 3;
+    /**
+     * <code>WEATHER = 4;</code>
+     */
+    public static final int WEATHER_VALUE = 4;
+    /**
+     * <code>VEHICLE_OFF_THE_ROAD = 5;</code>
+     */
+    public static final int VEHICLE_OFF_THE_ROAD_VALUE = 5;
+    /**
+     * <code>SEIZURE = 6;</code>
+     */
+    public static final int SEIZURE_VALUE = 6;
+    /**
+     * <code>ITS_SYSTEM_ERROR = 7;</code>
+     */
+    public static final int ITS_SYSTEM_ERROR_VALUE = 7;
+    /**
+     * <code>OTHER_DRIVER_ERROR = 8;</code>
+     */
+    public static final int OTHER_DRIVER_ERROR_VALUE = 8;
+    /**
+     * <code>TOO_MANY_PASSENGERS = 9;</code>
+     */
+    public static final int TOO_MANY_PASSENGERS_VALUE = 9;
+    /**
+     * <code>STRIKE = 10;</code>
+     */
+    public static final int STRIKE_VALUE = 10;
+    /**
+     * <code>OTHER = 11;</code>
+     */
+    public static final int OTHER_VALUE = 11;
+    /**
+     * <code>EARLIER_DISRUPTION = 12;</code>
+     */
+    public static final int EARLIER_DISRUPTION_VALUE = 12;
+    /**
+     * <code>NO_TRAFFIC_DISRUPTION = 13;</code>
+     */
+    public static final int NO_TRAFFIC_DISRUPTION_VALUE = 13;
+    /**
+     * <code>TRACK_BLOCKED = 14;</code>
+     */
+    public static final int TRACK_BLOCKED_VALUE = 14;
+    /**
+     * <code>STAFF_DEFICIT = 15;</code>
+     */
+    public static final int STAFF_DEFICIT_VALUE = 15;
+    /**
+     * <code>DISTURBANCE = 16;</code>
+     */
+    public static final int DISTURBANCE_VALUE = 16;
+    /**
+     * <code>VEHICLE_DEFICIT = 17;</code>
+     */
+    public static final int VEHICLE_DEFICIT_VALUE = 17;
+    /**
+     * <code>ROAD_CLOSED = 18;</code>
+     */
+    public static final int ROAD_CLOSED_VALUE = 18;
+    /**
+     * <code>ROAD_TRENCH = 19;</code>
+     */
+    public static final int ROAD_TRENCH_VALUE = 19;
+    /**
+     * <code>TRACK_MAINTENANCE = 20;</code>
+     */
+    public static final int TRACK_MAINTENANCE_VALUE = 20;
+    /**
+     * <code>TRAFFIC_ACCIDENT = 21;</code>
+     */
+    public static final int TRAFFIC_ACCIDENT_VALUE = 21;
+    /**
+     * <code>TRAFFIC_JAM = 22;</code>
+     */
+    public static final int TRAFFIC_JAM_VALUE = 22;
+    /**
+     * <code>MEDICAL_INCIDENT = 23;</code>
+     */
+    public static final int MEDICAL_INCIDENT_VALUE = 23;
+    /**
+     * <code>WEATHER_CONDITIONS = 24;</code>
+     */
+    public static final int WEATHER_CONDITIONS_VALUE = 24;
+    /**
+     * <code>TECHNICAL_FAILURE = 25;</code>
+     */
+    public static final int TECHNICAL_FAILURE_VALUE = 25;
+    /**
+     * <code>TEST = 26;</code>
+     */
+    public static final int TEST_VALUE = 26;
+    /**
+     * <code>ROAD_MAINTENANCE = 27;</code>
+     */
+    public static final int ROAD_MAINTENANCE_VALUE = 27;
+    /**
+     * <code>SWITCH_FAILURE = 28;</code>
+     */
+    public static final int SWITCH_FAILURE_VALUE = 28;
+    /**
+     * <code>STATE_VISIT = 29;</code>
+     */
+    public static final int STATE_VISIT_VALUE = 29;
+    /**
+     * <code>POWER_FAILURE = 30;</code>
+     */
+    public static final int POWER_FAILURE_VALUE = 30;
+    /**
+     * <code>MISPARKED_VEHICLE = 31;</code>
+     */
+    public static final int MISPARKED_VEHICLE_VALUE = 31;
+    /**
+     * <code>PUBLIC_EVENT = 32;</code>
+     */
+    public static final int PUBLIC_EVENT_VALUE = 32;
+
+
+    public final int getNumber() {
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Category valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static Category forNumber(int value) {
+      switch (value) {
+        case 0: return VEHICLE_BREAKDOWN;
+        case 1: return ACCIDENT;
+        case 2: return NO_DRIVER;
+        case 3: return ASSAULT;
+        case 4: return WEATHER;
+        case 5: return VEHICLE_OFF_THE_ROAD;
+        case 6: return SEIZURE;
+        case 7: return ITS_SYSTEM_ERROR;
+        case 8: return OTHER_DRIVER_ERROR;
+        case 9: return TOO_MANY_PASSENGERS;
+        case 10: return STRIKE;
+        case 11: return OTHER;
+        case 12: return EARLIER_DISRUPTION;
+        case 13: return NO_TRAFFIC_DISRUPTION;
+        case 14: return TRACK_BLOCKED;
+        case 15: return STAFF_DEFICIT;
+        case 16: return DISTURBANCE;
+        case 17: return VEHICLE_DEFICIT;
+        case 18: return ROAD_CLOSED;
+        case 19: return ROAD_TRENCH;
+        case 20: return TRACK_MAINTENANCE;
+        case 21: return TRAFFIC_ACCIDENT;
+        case 22: return TRAFFIC_JAM;
+        case 23: return MEDICAL_INCIDENT;
+        case 24: return WEATHER_CONDITIONS;
+        case 25: return TECHNICAL_FAILURE;
+        case 26: return TEST;
+        case 27: return ROAD_MAINTENANCE;
+        case 28: return SWITCH_FAILURE;
+        case 29: return STATE_VISIT;
+        case 30: return POWER_FAILURE;
+        case 31: return MISPARKED_VEHICLE;
+        case 32: return PUBLIC_EVENT;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Category>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Category> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Category>() {
+            public Category findValueByNumber(int number) {
+              return Category.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return fi.hsl.common.transitdata.proto.InternalMessages.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Category[] VALUES = values();
+
+    public static Category valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Category(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:proto.Category)
+  }
+
   public interface TripInfoOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.TripInfo)
       com.google.protobuf.MessageOrBuilder {
@@ -1454,13 +1823,13 @@ public final class InternalMessages {
         getDescriptionBytes();
 
     /**
-     * <code>optional .proto.TripCancellation.Category category = 12;</code>
+     * <code>optional .proto.Category category = 12;</code>
      */
     boolean hasCategory();
     /**
-     * <code>optional .proto.TripCancellation.Category category = 12;</code>
+     * <code>optional .proto.Category category = 12;</code>
      */
-    fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category getCategory();
+    fi.hsl.common.transitdata.proto.InternalMessages.Category getCategory();
 
     /**
      * <code>optional .proto.TripCancellation.SubCategory sub_category = 13;</code>
@@ -1607,7 +1976,7 @@ public final class InternalMessages {
             case 96: {
               int rawValue = input.readEnum();
                 @SuppressWarnings("deprecation")
-              fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category value = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category.valueOf(rawValue);
+              fi.hsl.common.transitdata.proto.InternalMessages.Category value = fi.hsl.common.transitdata.proto.InternalMessages.Category.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(12, rawValue);
               } else {
@@ -2013,375 +2382,6 @@ public final class InternalMessages {
       }
 
       // @@protoc_insertion_point(enum_scope:proto.TripCancellation.AffectedDeparturesType)
-    }
-
-    /**
-     * Protobuf enum {@code proto.TripCancellation.Category}
-     */
-    public enum Category
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>VEHICLE_BREAKDOWN = 0;</code>
-       */
-      VEHICLE_BREAKDOWN(0),
-      /**
-       * <code>ACCIDENT = 1;</code>
-       */
-      ACCIDENT(1),
-      /**
-       * <code>NO_DRIVER = 2;</code>
-       */
-      NO_DRIVER(2),
-      /**
-       * <code>ASSAULT = 3;</code>
-       */
-      ASSAULT(3),
-      /**
-       * <code>WEATHER = 4;</code>
-       */
-      WEATHER(4),
-      /**
-       * <code>VEHICLE_OFF_THE_ROAD = 5;</code>
-       */
-      VEHICLE_OFF_THE_ROAD(5),
-      /**
-       * <code>SEIZURE = 6;</code>
-       */
-      SEIZURE(6),
-      /**
-       * <code>ITS_SYSTEM_ERROR = 7;</code>
-       */
-      ITS_SYSTEM_ERROR(7),
-      /**
-       * <code>OTHER_DRIVER_ERROR = 8;</code>
-       */
-      OTHER_DRIVER_ERROR(8),
-      /**
-       * <code>TOO_MANY_PASSENGERS = 9;</code>
-       */
-      TOO_MANY_PASSENGERS(9),
-      /**
-       * <code>STRIKE = 10;</code>
-       */
-      STRIKE(10),
-      /**
-       * <code>OTHER = 11;</code>
-       */
-      OTHER(11),
-      /**
-       * <code>EARLIER_DISRUPTION = 12;</code>
-       */
-      EARLIER_DISRUPTION(12),
-      /**
-       * <code>NO_TRAFFIC_DISRUPTION = 13;</code>
-       */
-      NO_TRAFFIC_DISRUPTION(13),
-      /**
-       * <code>TRACK_BLOCKED = 14;</code>
-       */
-      TRACK_BLOCKED(14),
-      /**
-       * <code>STAFF_DEFICIT = 15;</code>
-       */
-      STAFF_DEFICIT(15),
-      /**
-       * <code>DISTURBANCE = 16;</code>
-       */
-      DISTURBANCE(16),
-      /**
-       * <code>VEHICLE_DEFICIT = 17;</code>
-       */
-      VEHICLE_DEFICIT(17),
-      /**
-       * <code>ROAD_CLOSED = 18;</code>
-       */
-      ROAD_CLOSED(18),
-      /**
-       * <code>ROAD_TRENCH = 19;</code>
-       */
-      ROAD_TRENCH(19),
-      /**
-       * <code>TRACK_MAINTENANCE = 20;</code>
-       */
-      TRACK_MAINTENANCE(20),
-      /**
-       * <code>TRAFFIC_ACCIDENT = 21;</code>
-       */
-      TRAFFIC_ACCIDENT(21),
-      /**
-       * <code>TRAFFIC_JAM = 22;</code>
-       */
-      TRAFFIC_JAM(22),
-      /**
-       * <code>MEDICAL_INCIDENT = 23;</code>
-       */
-      MEDICAL_INCIDENT(23),
-      /**
-       * <code>WEATHER_CONDITIONS = 24;</code>
-       */
-      WEATHER_CONDITIONS(24),
-      /**
-       * <code>TECHNICAL_FAILURE = 25;</code>
-       */
-      TECHNICAL_FAILURE(25),
-      /**
-       * <code>TEST = 26;</code>
-       */
-      TEST(26),
-      /**
-       * <code>ROAD_MAINTENANCE = 27;</code>
-       */
-      ROAD_MAINTENANCE(27),
-      /**
-       * <code>SWITCH_FAILURE = 28;</code>
-       */
-      SWITCH_FAILURE(28),
-      /**
-       * <code>STATE_VISIT = 29;</code>
-       */
-      STATE_VISIT(29),
-      /**
-       * <code>POWER_FAILURE = 30;</code>
-       */
-      POWER_FAILURE(30),
-      /**
-       * <code>MISPARKED_VEHICLE = 31;</code>
-       */
-      MISPARKED_VEHICLE(31),
-      /**
-       * <code>PUBLIC_EVENT = 32;</code>
-       */
-      PUBLIC_EVENT(32),
-      ;
-
-      /**
-       * <code>VEHICLE_BREAKDOWN = 0;</code>
-       */
-      public static final int VEHICLE_BREAKDOWN_VALUE = 0;
-      /**
-       * <code>ACCIDENT = 1;</code>
-       */
-      public static final int ACCIDENT_VALUE = 1;
-      /**
-       * <code>NO_DRIVER = 2;</code>
-       */
-      public static final int NO_DRIVER_VALUE = 2;
-      /**
-       * <code>ASSAULT = 3;</code>
-       */
-      public static final int ASSAULT_VALUE = 3;
-      /**
-       * <code>WEATHER = 4;</code>
-       */
-      public static final int WEATHER_VALUE = 4;
-      /**
-       * <code>VEHICLE_OFF_THE_ROAD = 5;</code>
-       */
-      public static final int VEHICLE_OFF_THE_ROAD_VALUE = 5;
-      /**
-       * <code>SEIZURE = 6;</code>
-       */
-      public static final int SEIZURE_VALUE = 6;
-      /**
-       * <code>ITS_SYSTEM_ERROR = 7;</code>
-       */
-      public static final int ITS_SYSTEM_ERROR_VALUE = 7;
-      /**
-       * <code>OTHER_DRIVER_ERROR = 8;</code>
-       */
-      public static final int OTHER_DRIVER_ERROR_VALUE = 8;
-      /**
-       * <code>TOO_MANY_PASSENGERS = 9;</code>
-       */
-      public static final int TOO_MANY_PASSENGERS_VALUE = 9;
-      /**
-       * <code>STRIKE = 10;</code>
-       */
-      public static final int STRIKE_VALUE = 10;
-      /**
-       * <code>OTHER = 11;</code>
-       */
-      public static final int OTHER_VALUE = 11;
-      /**
-       * <code>EARLIER_DISRUPTION = 12;</code>
-       */
-      public static final int EARLIER_DISRUPTION_VALUE = 12;
-      /**
-       * <code>NO_TRAFFIC_DISRUPTION = 13;</code>
-       */
-      public static final int NO_TRAFFIC_DISRUPTION_VALUE = 13;
-      /**
-       * <code>TRACK_BLOCKED = 14;</code>
-       */
-      public static final int TRACK_BLOCKED_VALUE = 14;
-      /**
-       * <code>STAFF_DEFICIT = 15;</code>
-       */
-      public static final int STAFF_DEFICIT_VALUE = 15;
-      /**
-       * <code>DISTURBANCE = 16;</code>
-       */
-      public static final int DISTURBANCE_VALUE = 16;
-      /**
-       * <code>VEHICLE_DEFICIT = 17;</code>
-       */
-      public static final int VEHICLE_DEFICIT_VALUE = 17;
-      /**
-       * <code>ROAD_CLOSED = 18;</code>
-       */
-      public static final int ROAD_CLOSED_VALUE = 18;
-      /**
-       * <code>ROAD_TRENCH = 19;</code>
-       */
-      public static final int ROAD_TRENCH_VALUE = 19;
-      /**
-       * <code>TRACK_MAINTENANCE = 20;</code>
-       */
-      public static final int TRACK_MAINTENANCE_VALUE = 20;
-      /**
-       * <code>TRAFFIC_ACCIDENT = 21;</code>
-       */
-      public static final int TRAFFIC_ACCIDENT_VALUE = 21;
-      /**
-       * <code>TRAFFIC_JAM = 22;</code>
-       */
-      public static final int TRAFFIC_JAM_VALUE = 22;
-      /**
-       * <code>MEDICAL_INCIDENT = 23;</code>
-       */
-      public static final int MEDICAL_INCIDENT_VALUE = 23;
-      /**
-       * <code>WEATHER_CONDITIONS = 24;</code>
-       */
-      public static final int WEATHER_CONDITIONS_VALUE = 24;
-      /**
-       * <code>TECHNICAL_FAILURE = 25;</code>
-       */
-      public static final int TECHNICAL_FAILURE_VALUE = 25;
-      /**
-       * <code>TEST = 26;</code>
-       */
-      public static final int TEST_VALUE = 26;
-      /**
-       * <code>ROAD_MAINTENANCE = 27;</code>
-       */
-      public static final int ROAD_MAINTENANCE_VALUE = 27;
-      /**
-       * <code>SWITCH_FAILURE = 28;</code>
-       */
-      public static final int SWITCH_FAILURE_VALUE = 28;
-      /**
-       * <code>STATE_VISIT = 29;</code>
-       */
-      public static final int STATE_VISIT_VALUE = 29;
-      /**
-       * <code>POWER_FAILURE = 30;</code>
-       */
-      public static final int POWER_FAILURE_VALUE = 30;
-      /**
-       * <code>MISPARKED_VEHICLE = 31;</code>
-       */
-      public static final int MISPARKED_VEHICLE_VALUE = 31;
-      /**
-       * <code>PUBLIC_EVENT = 32;</code>
-       */
-      public static final int PUBLIC_EVENT_VALUE = 32;
-
-
-      public final int getNumber() {
-        return value;
-      }
-
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static Category valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static Category forNumber(int value) {
-        switch (value) {
-          case 0: return VEHICLE_BREAKDOWN;
-          case 1: return ACCIDENT;
-          case 2: return NO_DRIVER;
-          case 3: return ASSAULT;
-          case 4: return WEATHER;
-          case 5: return VEHICLE_OFF_THE_ROAD;
-          case 6: return SEIZURE;
-          case 7: return ITS_SYSTEM_ERROR;
-          case 8: return OTHER_DRIVER_ERROR;
-          case 9: return TOO_MANY_PASSENGERS;
-          case 10: return STRIKE;
-          case 11: return OTHER;
-          case 12: return EARLIER_DISRUPTION;
-          case 13: return NO_TRAFFIC_DISRUPTION;
-          case 14: return TRACK_BLOCKED;
-          case 15: return STAFF_DEFICIT;
-          case 16: return DISTURBANCE;
-          case 17: return VEHICLE_DEFICIT;
-          case 18: return ROAD_CLOSED;
-          case 19: return ROAD_TRENCH;
-          case 20: return TRACK_MAINTENANCE;
-          case 21: return TRAFFIC_ACCIDENT;
-          case 22: return TRAFFIC_JAM;
-          case 23: return MEDICAL_INCIDENT;
-          case 24: return WEATHER_CONDITIONS;
-          case 25: return TECHNICAL_FAILURE;
-          case 26: return TEST;
-          case 27: return ROAD_MAINTENANCE;
-          case 28: return SWITCH_FAILURE;
-          case 29: return STATE_VISIT;
-          case 30: return POWER_FAILURE;
-          case 31: return MISPARKED_VEHICLE;
-          case 32: return PUBLIC_EVENT;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<Category>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          Category> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Category>() {
-              public Category findValueByNumber(int number) {
-                return Category.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.getDescriptor().getEnumTypes().get(3);
-      }
-
-      private static final Category[] VALUES = values();
-
-      public static Category valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private Category(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:proto.TripCancellation.Category)
     }
 
     /**
@@ -2856,7 +2856,7 @@ public final class InternalMessages {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.getDescriptor().getEnumTypes().get(4);
+        return fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.getDescriptor().getEnumTypes().get(3);
       }
 
       private static final SubCategory[] VALUES = values();
@@ -3216,18 +3216,18 @@ public final class InternalMessages {
     public static final int CATEGORY_FIELD_NUMBER = 12;
     private int category_;
     /**
-     * <code>optional .proto.TripCancellation.Category category = 12;</code>
+     * <code>optional .proto.Category category = 12;</code>
      */
     public boolean hasCategory() {
       return ((bitField0_ & 0x00000800) != 0);
     }
     /**
-     * <code>optional .proto.TripCancellation.Category category = 12;</code>
+     * <code>optional .proto.Category category = 12;</code>
      */
-    public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category getCategory() {
+    public fi.hsl.common.transitdata.proto.InternalMessages.Category getCategory() {
       @SuppressWarnings("deprecation")
-      fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category.valueOf(category_);
-      return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category.VEHICLE_BREAKDOWN : result;
+      fi.hsl.common.transitdata.proto.InternalMessages.Category result = fi.hsl.common.transitdata.proto.InternalMessages.Category.valueOf(category_);
+      return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.Category.VEHICLE_BREAKDOWN : result;
     }
 
     public static final int SUB_CATEGORY_FIELD_NUMBER = 13;
@@ -4509,23 +4509,23 @@ public final class InternalMessages {
 
       private int category_ = 0;
       /**
-       * <code>optional .proto.TripCancellation.Category category = 12;</code>
+       * <code>optional .proto.Category category = 12;</code>
        */
       public boolean hasCategory() {
         return ((bitField0_ & 0x00000800) != 0);
       }
       /**
-       * <code>optional .proto.TripCancellation.Category category = 12;</code>
+       * <code>optional .proto.Category category = 12;</code>
        */
-      public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category getCategory() {
+      public fi.hsl.common.transitdata.proto.InternalMessages.Category getCategory() {
         @SuppressWarnings("deprecation")
-        fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category.valueOf(category_);
-        return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category.VEHICLE_BREAKDOWN : result;
+        fi.hsl.common.transitdata.proto.InternalMessages.Category result = fi.hsl.common.transitdata.proto.InternalMessages.Category.valueOf(category_);
+        return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.Category.VEHICLE_BREAKDOWN : result;
       }
       /**
-       * <code>optional .proto.TripCancellation.Category category = 12;</code>
+       * <code>optional .proto.Category category = 12;</code>
        */
-      public Builder setCategory(fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Category value) {
+      public Builder setCategory(fi.hsl.common.transitdata.proto.InternalMessages.Category value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -4535,7 +4535,7 @@ public final class InternalMessages {
         return this;
       }
       /**
-       * <code>optional .proto.TripCancellation.Category category = 12;</code>
+       * <code>optional .proto.Category category = 12;</code>
        */
       public Builder clearCategory() {
         bitField0_ = (bitField0_ & ~0x00000800);
@@ -6291,6 +6291,5385 @@ public final class InternalMessages {
 
   }
 
+  public interface BulletinOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.Bulletin)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string bulletin_id = 1;</code>
+     */
+    boolean hasBulletinId();
+    /**
+     * <code>optional string bulletin_id = 1;</code>
+     */
+    java.lang.String getBulletinId();
+    /**
+     * <code>optional string bulletin_id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getBulletinIdBytes();
+
+    /**
+     * <code>optional .proto.Category category = 2;</code>
+     */
+    boolean hasCategory();
+    /**
+     * <code>optional .proto.Category category = 2;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.Category getCategory();
+
+    /**
+     * <code>required int64 last_modified_utc_ms = 3;</code>
+     */
+    boolean hasLastModifiedUtcMs();
+    /**
+     * <code>required int64 last_modified_utc_ms = 3;</code>
+     */
+    long getLastModifiedUtcMs();
+
+    /**
+     * <code>required int64 valid_from_utc_ms = 4;</code>
+     */
+    boolean hasValidFromUtcMs();
+    /**
+     * <code>required int64 valid_from_utc_ms = 4;</code>
+     */
+    long getValidFromUtcMs();
+
+    /**
+     * <code>required int64 valid_to_utc_ms = 5;</code>
+     */
+    boolean hasValidToUtcMs();
+    /**
+     * <code>required int64 valid_to_utc_ms = 5;</code>
+     */
+    long getValidToUtcMs();
+
+    /**
+     * <code>optional bool affects_all_routes = 6;</code>
+     */
+    boolean hasAffectsAllRoutes();
+    /**
+     * <code>optional bool affects_all_routes = 6;</code>
+     */
+    boolean getAffectsAllRoutes();
+
+    /**
+     * <code>optional bool affects_all_stops = 7;</code>
+     */
+    boolean hasAffectsAllStops();
+    /**
+     * <code>optional bool affects_all_stops = 7;</code>
+     */
+    boolean getAffectsAllStops();
+
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+     */
+    java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> 
+        getAffectedRoutesList();
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity getAffectedRoutes(int index);
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+     */
+    int getAffectedRoutesCount();
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+     */
+    java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder> 
+        getAffectedRoutesOrBuilderList();
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder getAffectedRoutesOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+     */
+    java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> 
+        getAffectedStopsList();
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity getAffectedStops(int index);
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+     */
+    int getAffectedStopsCount();
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+     */
+    java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder> 
+        getAffectedStopsOrBuilderList();
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder getAffectedStopsOrBuilder(
+        int index);
+
+    /**
+     * <code>optional .proto.Bulletin.Impact impact = 10;</code>
+     */
+    boolean hasImpact();
+    /**
+     * <code>optional .proto.Bulletin.Impact impact = 10;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact getImpact();
+
+    /**
+     * <code>optional .proto.Bulletin.Priority priority = 11;</code>
+     */
+    boolean hasPriority();
+    /**
+     * <code>optional .proto.Bulletin.Priority priority = 11;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority getPriority();
+
+    /**
+     * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+     */
+    java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> 
+        getTitlesList();
+    /**
+     * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation getTitles(int index);
+    /**
+     * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+     */
+    int getTitlesCount();
+    /**
+     * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+     */
+    java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder> 
+        getTitlesOrBuilderList();
+    /**
+     * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder getTitlesOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+     */
+    java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> 
+        getDescriptionsList();
+    /**
+     * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation getDescriptions(int index);
+    /**
+     * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+     */
+    int getDescriptionsCount();
+    /**
+     * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+     */
+    java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder> 
+        getDescriptionsOrBuilderList();
+    /**
+     * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder getDescriptionsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code proto.Bulletin}
+   */
+  public  static final class Bulletin extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.Bulletin)
+      BulletinOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Bulletin.newBuilder() to construct.
+    private Bulletin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Bulletin() {
+      bulletinId_ = "";
+      category_ = 0;
+      affectedRoutes_ = java.util.Collections.emptyList();
+      affectedStops_ = java.util.Collections.emptyList();
+      impact_ = 0;
+      priority_ = 0;
+      titles_ = java.util.Collections.emptyList();
+      descriptions_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Bulletin(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              bulletinId_ = bs;
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              fi.hsl.common.transitdata.proto.InternalMessages.Category value = fi.hsl.common.transitdata.proto.InternalMessages.Category.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(2, rawValue);
+              } else {
+                bitField0_ |= 0x00000002;
+                category_ = rawValue;
+              }
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              lastModifiedUtcMs_ = input.readInt64();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              validFromUtcMs_ = input.readInt64();
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              validToUtcMs_ = input.readInt64();
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000020;
+              affectsAllRoutes_ = input.readBool();
+              break;
+            }
+            case 56: {
+              bitField0_ |= 0x00000040;
+              affectsAllStops_ = input.readBool();
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                affectedRoutes_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              affectedRoutes_.add(
+                  input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.PARSER, extensionRegistry));
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+                affectedStops_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity>();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              affectedStops_.add(
+                  input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.PARSER, extensionRegistry));
+              break;
+            }
+            case 80: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact value = fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(10, rawValue);
+              } else {
+                bitField0_ |= 0x00000080;
+                impact_ = rawValue;
+              }
+              break;
+            }
+            case 88: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority value = fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(11, rawValue);
+              } else {
+                bitField0_ |= 0x00000100;
+                priority_ = rawValue;
+              }
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+                titles_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation>();
+                mutable_bitField0_ |= 0x00000800;
+              }
+              titles_.add(
+                  input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.PARSER, extensionRegistry));
+              break;
+            }
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
+                descriptions_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation>();
+                mutable_bitField0_ |= 0x00001000;
+              }
+              descriptions_.add(
+                  input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.PARSER, extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000080) != 0)) {
+          affectedRoutes_ = java.util.Collections.unmodifiableList(affectedRoutes_);
+        }
+        if (((mutable_bitField0_ & 0x00000100) != 0)) {
+          affectedStops_ = java.util.Collections.unmodifiableList(affectedStops_);
+        }
+        if (((mutable_bitField0_ & 0x00000800) != 0)) {
+          titles_ = java.util.Collections.unmodifiableList(titles_);
+        }
+        if (((mutable_bitField0_ & 0x00001000) != 0)) {
+          descriptions_ = java.util.Collections.unmodifiableList(descriptions_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.class, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code proto.Bulletin.Impact}
+     */
+    public enum Impact
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>CANCELLED = 0;</code>
+       */
+      CANCELLED(0),
+      /**
+       * <code>DELAYED = 1;</code>
+       */
+      DELAYED(1),
+      /**
+       * <code>DEVIATING_SCHEDULE = 2;</code>
+       */
+      DEVIATING_SCHEDULE(2),
+      /**
+       * <code>DISRUPTION_ROUTE = 3;</code>
+       */
+      DISRUPTION_ROUTE(3),
+      /**
+       * <code>IRREGULAR_DEPARTURES = 4;</code>
+       */
+      IRREGULAR_DEPARTURES(4),
+      /**
+       * <code>POSSIBLE_DEVIATIONS = 5;</code>
+       */
+      POSSIBLE_DEVIATIONS(5),
+      /**
+       * <code>POSSIBLY_DELAYED = 6;</code>
+       */
+      POSSIBLY_DELAYED(6),
+      /**
+       * <code>REDUCED_TRANSPORT = 7;</code>
+       */
+      REDUCED_TRANSPORT(7),
+      /**
+       * <code>RETURNING_TO_NORMAL = 8;</code>
+       */
+      RETURNING_TO_NORMAL(8),
+      /**
+       * <code>VENDING_MACHINE_OUT_OF_ORDER = 9;</code>
+       */
+      VENDING_MACHINE_OUT_OF_ORDER(9),
+      /**
+       * <code>NULL = 10;</code>
+       */
+      NULL(10),
+      /**
+       * <code>OTHER = 11;</code>
+       */
+      OTHER(11),
+      /**
+       * <code>NO_TRAFFIC_IMPACT = 12;</code>
+       */
+      NO_TRAFFIC_IMPACT(12),
+      /**
+       * <code>UNKNOWN = 13;</code>
+       */
+      UNKNOWN(13),
+      ;
+
+      /**
+       * <code>CANCELLED = 0;</code>
+       */
+      public static final int CANCELLED_VALUE = 0;
+      /**
+       * <code>DELAYED = 1;</code>
+       */
+      public static final int DELAYED_VALUE = 1;
+      /**
+       * <code>DEVIATING_SCHEDULE = 2;</code>
+       */
+      public static final int DEVIATING_SCHEDULE_VALUE = 2;
+      /**
+       * <code>DISRUPTION_ROUTE = 3;</code>
+       */
+      public static final int DISRUPTION_ROUTE_VALUE = 3;
+      /**
+       * <code>IRREGULAR_DEPARTURES = 4;</code>
+       */
+      public static final int IRREGULAR_DEPARTURES_VALUE = 4;
+      /**
+       * <code>POSSIBLE_DEVIATIONS = 5;</code>
+       */
+      public static final int POSSIBLE_DEVIATIONS_VALUE = 5;
+      /**
+       * <code>POSSIBLY_DELAYED = 6;</code>
+       */
+      public static final int POSSIBLY_DELAYED_VALUE = 6;
+      /**
+       * <code>REDUCED_TRANSPORT = 7;</code>
+       */
+      public static final int REDUCED_TRANSPORT_VALUE = 7;
+      /**
+       * <code>RETURNING_TO_NORMAL = 8;</code>
+       */
+      public static final int RETURNING_TO_NORMAL_VALUE = 8;
+      /**
+       * <code>VENDING_MACHINE_OUT_OF_ORDER = 9;</code>
+       */
+      public static final int VENDING_MACHINE_OUT_OF_ORDER_VALUE = 9;
+      /**
+       * <code>NULL = 10;</code>
+       */
+      public static final int NULL_VALUE = 10;
+      /**
+       * <code>OTHER = 11;</code>
+       */
+      public static final int OTHER_VALUE = 11;
+      /**
+       * <code>NO_TRAFFIC_IMPACT = 12;</code>
+       */
+      public static final int NO_TRAFFIC_IMPACT_VALUE = 12;
+      /**
+       * <code>UNKNOWN = 13;</code>
+       */
+      public static final int UNKNOWN_VALUE = 13;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Impact valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Impact forNumber(int value) {
+        switch (value) {
+          case 0: return CANCELLED;
+          case 1: return DELAYED;
+          case 2: return DEVIATING_SCHEDULE;
+          case 3: return DISRUPTION_ROUTE;
+          case 4: return IRREGULAR_DEPARTURES;
+          case 5: return POSSIBLE_DEVIATIONS;
+          case 6: return POSSIBLY_DELAYED;
+          case 7: return REDUCED_TRANSPORT;
+          case 8: return RETURNING_TO_NORMAL;
+          case 9: return VENDING_MACHINE_OUT_OF_ORDER;
+          case 10: return NULL;
+          case 11: return OTHER;
+          case 12: return NO_TRAFFIC_IMPACT;
+          case 13: return UNKNOWN;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Impact>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Impact> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Impact>() {
+              public Impact findValueByNumber(int number) {
+                return Impact.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Impact[] VALUES = values();
+
+      public static Impact valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Impact(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.Bulletin.Impact)
+    }
+
+    /**
+     * Protobuf enum {@code proto.Bulletin.Priority}
+     */
+    public enum Priority
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>INFO = 0;</code>
+       */
+      INFO(0),
+      /**
+       * <code>WARNING = 1;</code>
+       */
+      WARNING(1),
+      /**
+       * <code>SEVERE = 2;</code>
+       */
+      SEVERE(2),
+      ;
+
+      /**
+       * <code>INFO = 0;</code>
+       */
+      public static final int INFO_VALUE = 0;
+      /**
+       * <code>WARNING = 1;</code>
+       */
+      public static final int WARNING_VALUE = 1;
+      /**
+       * <code>SEVERE = 2;</code>
+       */
+      public static final int SEVERE_VALUE = 2;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Priority valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Priority forNumber(int value) {
+        switch (value) {
+          case 0: return INFO;
+          case 1: return WARNING;
+          case 2: return SEVERE;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Priority>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Priority> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Priority>() {
+              public Priority findValueByNumber(int number) {
+                return Priority.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.getDescriptor().getEnumTypes().get(1);
+      }
+
+      private static final Priority[] VALUES = values();
+
+      public static Priority valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Priority(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.Bulletin.Priority)
+    }
+
+    public interface AffectedEntityOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:proto.Bulletin.AffectedEntity)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>required string entity_id = 1;</code>
+       */
+      boolean hasEntityId();
+      /**
+       * <code>required string entity_id = 1;</code>
+       */
+      java.lang.String getEntityId();
+      /**
+       * <code>required string entity_id = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getEntityIdBytes();
+    }
+    /**
+     * Protobuf type {@code proto.Bulletin.AffectedEntity}
+     */
+    public  static final class AffectedEntity extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:proto.Bulletin.AffectedEntity)
+        AffectedEntityOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use AffectedEntity.newBuilder() to construct.
+      private AffectedEntity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private AffectedEntity() {
+        entityId_ = "";
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private AffectedEntity(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00000001;
+                entityId_ = bs;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_AffectedEntity_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_AffectedEntity_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.class, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int ENTITY_ID_FIELD_NUMBER = 1;
+      private volatile java.lang.Object entityId_;
+      /**
+       * <code>required string entity_id = 1;</code>
+       */
+      public boolean hasEntityId() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>required string entity_id = 1;</code>
+       */
+      public java.lang.String getEntityId() {
+        java.lang.Object ref = entityId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            entityId_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>required string entity_id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getEntityIdBytes() {
+        java.lang.Object ref = entityId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          entityId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        if (!hasEntityId()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, entityId_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, entityId_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity)) {
+          return super.equals(obj);
+        }
+        fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity other = (fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity) obj;
+
+        if (hasEntityId() != other.hasEntityId()) return false;
+        if (hasEntityId()) {
+          if (!getEntityId()
+              .equals(other.getEntityId())) return false;
+        }
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasEntityId()) {
+          hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+          hash = (53 * hash) + getEntityId().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code proto.Bulletin.AffectedEntity}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:proto.Bulletin.AffectedEntity)
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_AffectedEntity_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_AffectedEntity_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.class, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder.class);
+        }
+
+        // Construct using fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          entityId_ = "";
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_AffectedEntity_descriptor;
+        }
+
+        @java.lang.Override
+        public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity getDefaultInstanceForType() {
+          return fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity build() {
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity buildPartial() {
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity result = new fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.entityId_ = entityId_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity) {
+            return mergeFrom((fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity other) {
+          if (other == fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.getDefaultInstance()) return this;
+          if (other.hasEntityId()) {
+            bitField0_ |= 0x00000001;
+            entityId_ = other.entityId_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          if (!hasEntityId()) {
+            return false;
+          }
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private java.lang.Object entityId_ = "";
+        /**
+         * <code>required string entity_id = 1;</code>
+         */
+        public boolean hasEntityId() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         * <code>required string entity_id = 1;</code>
+         */
+        public java.lang.String getEntityId() {
+          java.lang.Object ref = entityId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              entityId_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>required string entity_id = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getEntityIdBytes() {
+          java.lang.Object ref = entityId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            entityId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>required string entity_id = 1;</code>
+         */
+        public Builder setEntityId(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          entityId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required string entity_id = 1;</code>
+         */
+        public Builder clearEntityId() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          entityId_ = getDefaultInstance().getEntityId();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required string entity_id = 1;</code>
+         */
+        public Builder setEntityIdBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          entityId_ = value;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:proto.Bulletin.AffectedEntity)
+      }
+
+      // @@protoc_insertion_point(class_scope:proto.Bulletin.AffectedEntity)
+      private static final fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity();
+      }
+
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<AffectedEntity>
+          PARSER = new com.google.protobuf.AbstractParser<AffectedEntity>() {
+        @java.lang.Override
+        public AffectedEntity parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AffectedEntity(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<AffectedEntity> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<AffectedEntity> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public interface TranslationOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:proto.Bulletin.Translation)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>required string text = 1;</code>
+       */
+      boolean hasText();
+      /**
+       * <code>required string text = 1;</code>
+       */
+      java.lang.String getText();
+      /**
+       * <code>required string text = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getTextBytes();
+
+      /**
+       * <code>optional string language = 2;</code>
+       */
+      boolean hasLanguage();
+      /**
+       * <code>optional string language = 2;</code>
+       */
+      java.lang.String getLanguage();
+      /**
+       * <code>optional string language = 2;</code>
+       */
+      com.google.protobuf.ByteString
+          getLanguageBytes();
+    }
+    /**
+     * Protobuf type {@code proto.Bulletin.Translation}
+     */
+    public  static final class Translation extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:proto.Bulletin.Translation)
+        TranslationOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Translation.newBuilder() to construct.
+      private Translation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Translation() {
+        text_ = "";
+        language_ = "";
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Translation(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00000001;
+                text_ = bs;
+                break;
+              }
+              case 18: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00000002;
+                language_ = bs;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_Translation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_Translation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.class, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int TEXT_FIELD_NUMBER = 1;
+      private volatile java.lang.Object text_;
+      /**
+       * <code>required string text = 1;</code>
+       */
+      public boolean hasText() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>required string text = 1;</code>
+       */
+      public java.lang.String getText() {
+        java.lang.Object ref = text_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            text_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>required string text = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTextBytes() {
+        java.lang.Object ref = text_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          text_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int LANGUAGE_FIELD_NUMBER = 2;
+      private volatile java.lang.Object language_;
+      /**
+       * <code>optional string language = 2;</code>
+       */
+      public boolean hasLanguage() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <code>optional string language = 2;</code>
+       */
+      public java.lang.String getLanguage() {
+        java.lang.Object ref = language_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            language_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>optional string language = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLanguageBytes() {
+        java.lang.Object ref = language_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          language_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        if (!hasText()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, text_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, language_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, text_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, language_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation)) {
+          return super.equals(obj);
+        }
+        fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation other = (fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation) obj;
+
+        if (hasText() != other.hasText()) return false;
+        if (hasText()) {
+          if (!getText()
+              .equals(other.getText())) return false;
+        }
+        if (hasLanguage() != other.hasLanguage()) return false;
+        if (hasLanguage()) {
+          if (!getLanguage()
+              .equals(other.getLanguage())) return false;
+        }
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasText()) {
+          hash = (37 * hash) + TEXT_FIELD_NUMBER;
+          hash = (53 * hash) + getText().hashCode();
+        }
+        if (hasLanguage()) {
+          hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
+          hash = (53 * hash) + getLanguage().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code proto.Bulletin.Translation}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:proto.Bulletin.Translation)
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_Translation_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_Translation_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.class, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder.class);
+        }
+
+        // Construct using fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          text_ = "";
+          bitField0_ = (bitField0_ & ~0x00000001);
+          language_ = "";
+          bitField0_ = (bitField0_ & ~0x00000002);
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_Translation_descriptor;
+        }
+
+        @java.lang.Override
+        public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation getDefaultInstanceForType() {
+          return fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation build() {
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation buildPartial() {
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation result = new fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.text_ = text_;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            to_bitField0_ |= 0x00000002;
+          }
+          result.language_ = language_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation) {
+            return mergeFrom((fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation other) {
+          if (other == fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.getDefaultInstance()) return this;
+          if (other.hasText()) {
+            bitField0_ |= 0x00000001;
+            text_ = other.text_;
+            onChanged();
+          }
+          if (other.hasLanguage()) {
+            bitField0_ |= 0x00000002;
+            language_ = other.language_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          if (!hasText()) {
+            return false;
+          }
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private java.lang.Object text_ = "";
+        /**
+         * <code>required string text = 1;</code>
+         */
+        public boolean hasText() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         * <code>required string text = 1;</code>
+         */
+        public java.lang.String getText() {
+          java.lang.Object ref = text_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              text_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>required string text = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getTextBytes() {
+          java.lang.Object ref = text_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            text_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>required string text = 1;</code>
+         */
+        public Builder setText(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          text_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required string text = 1;</code>
+         */
+        public Builder clearText() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          text_ = getDefaultInstance().getText();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required string text = 1;</code>
+         */
+        public Builder setTextBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          text_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object language_ = "";
+        /**
+         * <code>optional string language = 2;</code>
+         */
+        public boolean hasLanguage() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         * <code>optional string language = 2;</code>
+         */
+        public java.lang.String getLanguage() {
+          java.lang.Object ref = language_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              language_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>optional string language = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+            getLanguageBytes() {
+          java.lang.Object ref = language_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            language_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string language = 2;</code>
+         */
+        public Builder setLanguage(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+          language_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string language = 2;</code>
+         */
+        public Builder clearLanguage() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          language_ = getDefaultInstance().getLanguage();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string language = 2;</code>
+         */
+        public Builder setLanguageBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+          language_ = value;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:proto.Bulletin.Translation)
+      }
+
+      // @@protoc_insertion_point(class_scope:proto.Bulletin.Translation)
+      private static final fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation();
+      }
+
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<Translation>
+          PARSER = new com.google.protobuf.AbstractParser<Translation>() {
+        @java.lang.Override
+        public Translation parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Translation(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<Translation> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Translation> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    private int bitField0_;
+    public static final int BULLETIN_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object bulletinId_;
+    /**
+     * <code>optional string bulletin_id = 1;</code>
+     */
+    public boolean hasBulletinId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional string bulletin_id = 1;</code>
+     */
+    public java.lang.String getBulletinId() {
+      java.lang.Object ref = bulletinId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          bulletinId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string bulletin_id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getBulletinIdBytes() {
+      java.lang.Object ref = bulletinId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bulletinId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CATEGORY_FIELD_NUMBER = 2;
+    private int category_;
+    /**
+     * <code>optional .proto.Category category = 2;</code>
+     */
+    public boolean hasCategory() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional .proto.Category category = 2;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.Category getCategory() {
+      @SuppressWarnings("deprecation")
+      fi.hsl.common.transitdata.proto.InternalMessages.Category result = fi.hsl.common.transitdata.proto.InternalMessages.Category.valueOf(category_);
+      return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.Category.VEHICLE_BREAKDOWN : result;
+    }
+
+    public static final int LAST_MODIFIED_UTC_MS_FIELD_NUMBER = 3;
+    private long lastModifiedUtcMs_;
+    /**
+     * <code>required int64 last_modified_utc_ms = 3;</code>
+     */
+    public boolean hasLastModifiedUtcMs() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>required int64 last_modified_utc_ms = 3;</code>
+     */
+    public long getLastModifiedUtcMs() {
+      return lastModifiedUtcMs_;
+    }
+
+    public static final int VALID_FROM_UTC_MS_FIELD_NUMBER = 4;
+    private long validFromUtcMs_;
+    /**
+     * <code>required int64 valid_from_utc_ms = 4;</code>
+     */
+    public boolean hasValidFromUtcMs() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>required int64 valid_from_utc_ms = 4;</code>
+     */
+    public long getValidFromUtcMs() {
+      return validFromUtcMs_;
+    }
+
+    public static final int VALID_TO_UTC_MS_FIELD_NUMBER = 5;
+    private long validToUtcMs_;
+    /**
+     * <code>required int64 valid_to_utc_ms = 5;</code>
+     */
+    public boolean hasValidToUtcMs() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>required int64 valid_to_utc_ms = 5;</code>
+     */
+    public long getValidToUtcMs() {
+      return validToUtcMs_;
+    }
+
+    public static final int AFFECTS_ALL_ROUTES_FIELD_NUMBER = 6;
+    private boolean affectsAllRoutes_;
+    /**
+     * <code>optional bool affects_all_routes = 6;</code>
+     */
+    public boolean hasAffectsAllRoutes() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <code>optional bool affects_all_routes = 6;</code>
+     */
+    public boolean getAffectsAllRoutes() {
+      return affectsAllRoutes_;
+    }
+
+    public static final int AFFECTS_ALL_STOPS_FIELD_NUMBER = 7;
+    private boolean affectsAllStops_;
+    /**
+     * <code>optional bool affects_all_stops = 7;</code>
+     */
+    public boolean hasAffectsAllStops() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>optional bool affects_all_stops = 7;</code>
+     */
+    public boolean getAffectsAllStops() {
+      return affectsAllStops_;
+    }
+
+    public static final int AFFECTED_ROUTES_FIELD_NUMBER = 8;
+    private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> affectedRoutes_;
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+     */
+    public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> getAffectedRoutesList() {
+      return affectedRoutes_;
+    }
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+     */
+    public java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder> 
+        getAffectedRoutesOrBuilderList() {
+      return affectedRoutes_;
+    }
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+     */
+    public int getAffectedRoutesCount() {
+      return affectedRoutes_.size();
+    }
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity getAffectedRoutes(int index) {
+      return affectedRoutes_.get(index);
+    }
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder getAffectedRoutesOrBuilder(
+        int index) {
+      return affectedRoutes_.get(index);
+    }
+
+    public static final int AFFECTED_STOPS_FIELD_NUMBER = 9;
+    private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> affectedStops_;
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+     */
+    public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> getAffectedStopsList() {
+      return affectedStops_;
+    }
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+     */
+    public java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder> 
+        getAffectedStopsOrBuilderList() {
+      return affectedStops_;
+    }
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+     */
+    public int getAffectedStopsCount() {
+      return affectedStops_.size();
+    }
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity getAffectedStops(int index) {
+      return affectedStops_.get(index);
+    }
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder getAffectedStopsOrBuilder(
+        int index) {
+      return affectedStops_.get(index);
+    }
+
+    public static final int IMPACT_FIELD_NUMBER = 10;
+    private int impact_;
+    /**
+     * <code>optional .proto.Bulletin.Impact impact = 10;</code>
+     */
+    public boolean hasImpact() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <code>optional .proto.Bulletin.Impact impact = 10;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact getImpact() {
+      @SuppressWarnings("deprecation")
+      fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact result = fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact.valueOf(impact_);
+      return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact.CANCELLED : result;
+    }
+
+    public static final int PRIORITY_FIELD_NUMBER = 11;
+    private int priority_;
+    /**
+     * <code>optional .proto.Bulletin.Priority priority = 11;</code>
+     */
+    public boolean hasPriority() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <code>optional .proto.Bulletin.Priority priority = 11;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority getPriority() {
+      @SuppressWarnings("deprecation")
+      fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority result = fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority.valueOf(priority_);
+      return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority.INFO : result;
+    }
+
+    public static final int TITLES_FIELD_NUMBER = 12;
+    private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> titles_;
+    /**
+     * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+     */
+    public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> getTitlesList() {
+      return titles_;
+    }
+    /**
+     * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+     */
+    public java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder> 
+        getTitlesOrBuilderList() {
+      return titles_;
+    }
+    /**
+     * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+     */
+    public int getTitlesCount() {
+      return titles_.size();
+    }
+    /**
+     * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation getTitles(int index) {
+      return titles_.get(index);
+    }
+    /**
+     * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder getTitlesOrBuilder(
+        int index) {
+      return titles_.get(index);
+    }
+
+    public static final int DESCRIPTIONS_FIELD_NUMBER = 13;
+    private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> descriptions_;
+    /**
+     * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+     */
+    public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> getDescriptionsList() {
+      return descriptions_;
+    }
+    /**
+     * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+     */
+    public java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder> 
+        getDescriptionsOrBuilderList() {
+      return descriptions_;
+    }
+    /**
+     * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+     */
+    public int getDescriptionsCount() {
+      return descriptions_.size();
+    }
+    /**
+     * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation getDescriptions(int index) {
+      return descriptions_.get(index);
+    }
+    /**
+     * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder getDescriptionsOrBuilder(
+        int index) {
+      return descriptions_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasLastModifiedUtcMs()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasValidFromUtcMs()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasValidToUtcMs()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      for (int i = 0; i < getAffectedRoutesCount(); i++) {
+        if (!getAffectedRoutes(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getAffectedStopsCount(); i++) {
+        if (!getAffectedStops(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getTitlesCount(); i++) {
+        if (!getTitles(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getDescriptionsCount(); i++) {
+        if (!getDescriptions(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, bulletinId_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeEnum(2, category_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeInt64(3, lastModifiedUtcMs_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeInt64(4, validFromUtcMs_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        output.writeInt64(5, validToUtcMs_);
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        output.writeBool(6, affectsAllRoutes_);
+      }
+      if (((bitField0_ & 0x00000040) != 0)) {
+        output.writeBool(7, affectsAllStops_);
+      }
+      for (int i = 0; i < affectedRoutes_.size(); i++) {
+        output.writeMessage(8, affectedRoutes_.get(i));
+      }
+      for (int i = 0; i < affectedStops_.size(); i++) {
+        output.writeMessage(9, affectedStops_.get(i));
+      }
+      if (((bitField0_ & 0x00000080) != 0)) {
+        output.writeEnum(10, impact_);
+      }
+      if (((bitField0_ & 0x00000100) != 0)) {
+        output.writeEnum(11, priority_);
+      }
+      for (int i = 0; i < titles_.size(); i++) {
+        output.writeMessage(12, titles_.get(i));
+      }
+      for (int i = 0; i < descriptions_.size(); i++) {
+        output.writeMessage(13, descriptions_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, bulletinId_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, category_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, lastModifiedUtcMs_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, validFromUtcMs_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, validToUtcMs_);
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, affectsAllRoutes_);
+      }
+      if (((bitField0_ & 0x00000040) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, affectsAllStops_);
+      }
+      for (int i = 0; i < affectedRoutes_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, affectedRoutes_.get(i));
+      }
+      for (int i = 0; i < affectedStops_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, affectedStops_.get(i));
+      }
+      if (((bitField0_ & 0x00000080) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(10, impact_);
+      }
+      if (((bitField0_ & 0x00000100) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(11, priority_);
+      }
+      for (int i = 0; i < titles_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, titles_.get(i));
+      }
+      for (int i = 0; i < descriptions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, descriptions_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof fi.hsl.common.transitdata.proto.InternalMessages.Bulletin)) {
+        return super.equals(obj);
+      }
+      fi.hsl.common.transitdata.proto.InternalMessages.Bulletin other = (fi.hsl.common.transitdata.proto.InternalMessages.Bulletin) obj;
+
+      if (hasBulletinId() != other.hasBulletinId()) return false;
+      if (hasBulletinId()) {
+        if (!getBulletinId()
+            .equals(other.getBulletinId())) return false;
+      }
+      if (hasCategory() != other.hasCategory()) return false;
+      if (hasCategory()) {
+        if (category_ != other.category_) return false;
+      }
+      if (hasLastModifiedUtcMs() != other.hasLastModifiedUtcMs()) return false;
+      if (hasLastModifiedUtcMs()) {
+        if (getLastModifiedUtcMs()
+            != other.getLastModifiedUtcMs()) return false;
+      }
+      if (hasValidFromUtcMs() != other.hasValidFromUtcMs()) return false;
+      if (hasValidFromUtcMs()) {
+        if (getValidFromUtcMs()
+            != other.getValidFromUtcMs()) return false;
+      }
+      if (hasValidToUtcMs() != other.hasValidToUtcMs()) return false;
+      if (hasValidToUtcMs()) {
+        if (getValidToUtcMs()
+            != other.getValidToUtcMs()) return false;
+      }
+      if (hasAffectsAllRoutes() != other.hasAffectsAllRoutes()) return false;
+      if (hasAffectsAllRoutes()) {
+        if (getAffectsAllRoutes()
+            != other.getAffectsAllRoutes()) return false;
+      }
+      if (hasAffectsAllStops() != other.hasAffectsAllStops()) return false;
+      if (hasAffectsAllStops()) {
+        if (getAffectsAllStops()
+            != other.getAffectsAllStops()) return false;
+      }
+      if (!getAffectedRoutesList()
+          .equals(other.getAffectedRoutesList())) return false;
+      if (!getAffectedStopsList()
+          .equals(other.getAffectedStopsList())) return false;
+      if (hasImpact() != other.hasImpact()) return false;
+      if (hasImpact()) {
+        if (impact_ != other.impact_) return false;
+      }
+      if (hasPriority() != other.hasPriority()) return false;
+      if (hasPriority()) {
+        if (priority_ != other.priority_) return false;
+      }
+      if (!getTitlesList()
+          .equals(other.getTitlesList())) return false;
+      if (!getDescriptionsList()
+          .equals(other.getDescriptionsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBulletinId()) {
+        hash = (37 * hash) + BULLETIN_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getBulletinId().hashCode();
+      }
+      if (hasCategory()) {
+        hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
+        hash = (53 * hash) + category_;
+      }
+      if (hasLastModifiedUtcMs()) {
+        hash = (37 * hash) + LAST_MODIFIED_UTC_MS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getLastModifiedUtcMs());
+      }
+      if (hasValidFromUtcMs()) {
+        hash = (37 * hash) + VALID_FROM_UTC_MS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getValidFromUtcMs());
+      }
+      if (hasValidToUtcMs()) {
+        hash = (37 * hash) + VALID_TO_UTC_MS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getValidToUtcMs());
+      }
+      if (hasAffectsAllRoutes()) {
+        hash = (37 * hash) + AFFECTS_ALL_ROUTES_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getAffectsAllRoutes());
+      }
+      if (hasAffectsAllStops()) {
+        hash = (37 * hash) + AFFECTS_ALL_STOPS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getAffectsAllStops());
+      }
+      if (getAffectedRoutesCount() > 0) {
+        hash = (37 * hash) + AFFECTED_ROUTES_FIELD_NUMBER;
+        hash = (53 * hash) + getAffectedRoutesList().hashCode();
+      }
+      if (getAffectedStopsCount() > 0) {
+        hash = (37 * hash) + AFFECTED_STOPS_FIELD_NUMBER;
+        hash = (53 * hash) + getAffectedStopsList().hashCode();
+      }
+      if (hasImpact()) {
+        hash = (37 * hash) + IMPACT_FIELD_NUMBER;
+        hash = (53 * hash) + impact_;
+      }
+      if (hasPriority()) {
+        hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+        hash = (53 * hash) + priority_;
+      }
+      if (getTitlesCount() > 0) {
+        hash = (37 * hash) + TITLES_FIELD_NUMBER;
+        hash = (53 * hash) + getTitlesList().hashCode();
+      }
+      if (getDescriptionsCount() > 0) {
+        hash = (37 * hash) + DESCRIPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getDescriptionsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.Bulletin}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.Bulletin)
+        fi.hsl.common.transitdata.proto.InternalMessages.BulletinOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.class, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Builder.class);
+      }
+
+      // Construct using fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAffectedRoutesFieldBuilder();
+          getAffectedStopsFieldBuilder();
+          getTitlesFieldBuilder();
+          getDescriptionsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bulletinId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        category_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        lastModifiedUtcMs_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        validFromUtcMs_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        validToUtcMs_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        affectsAllRoutes_ = false;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        affectsAllStops_ = false;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        if (affectedRoutesBuilder_ == null) {
+          affectedRoutes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+        } else {
+          affectedRoutesBuilder_.clear();
+        }
+        if (affectedStopsBuilder_ == null) {
+          affectedStops_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
+        } else {
+          affectedStopsBuilder_.clear();
+        }
+        impact_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000200);
+        priority_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000400);
+        if (titlesBuilder_ == null) {
+          titles_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000800);
+        } else {
+          titlesBuilder_.clear();
+        }
+        if (descriptionsBuilder_ == null) {
+          descriptions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00001000);
+        } else {
+          descriptionsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_descriptor;
+      }
+
+      @java.lang.Override
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin getDefaultInstanceForType() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin build() {
+        fi.hsl.common.transitdata.proto.InternalMessages.Bulletin result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin buildPartial() {
+        fi.hsl.common.transitdata.proto.InternalMessages.Bulletin result = new fi.hsl.common.transitdata.proto.InternalMessages.Bulletin(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bulletinId_ = bulletinId_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.category_ = category_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.lastModifiedUtcMs_ = lastModifiedUtcMs_;
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.validFromUtcMs_ = validFromUtcMs_;
+          to_bitField0_ |= 0x00000008;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.validToUtcMs_ = validToUtcMs_;
+          to_bitField0_ |= 0x00000010;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.affectsAllRoutes_ = affectsAllRoutes_;
+          to_bitField0_ |= 0x00000020;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.affectsAllStops_ = affectsAllStops_;
+          to_bitField0_ |= 0x00000040;
+        }
+        if (affectedRoutesBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0)) {
+            affectedRoutes_ = java.util.Collections.unmodifiableList(affectedRoutes_);
+            bitField0_ = (bitField0_ & ~0x00000080);
+          }
+          result.affectedRoutes_ = affectedRoutes_;
+        } else {
+          result.affectedRoutes_ = affectedRoutesBuilder_.build();
+        }
+        if (affectedStopsBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) != 0)) {
+            affectedStops_ = java.util.Collections.unmodifiableList(affectedStops_);
+            bitField0_ = (bitField0_ & ~0x00000100);
+          }
+          result.affectedStops_ = affectedStops_;
+        } else {
+          result.affectedStops_ = affectedStopsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.impact_ = impact_;
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          to_bitField0_ |= 0x00000100;
+        }
+        result.priority_ = priority_;
+        if (titlesBuilder_ == null) {
+          if (((bitField0_ & 0x00000800) != 0)) {
+            titles_ = java.util.Collections.unmodifiableList(titles_);
+            bitField0_ = (bitField0_ & ~0x00000800);
+          }
+          result.titles_ = titles_;
+        } else {
+          result.titles_ = titlesBuilder_.build();
+        }
+        if (descriptionsBuilder_ == null) {
+          if (((bitField0_ & 0x00001000) != 0)) {
+            descriptions_ = java.util.Collections.unmodifiableList(descriptions_);
+            bitField0_ = (bitField0_ & ~0x00001000);
+          }
+          result.descriptions_ = descriptions_;
+        } else {
+          result.descriptions_ = descriptionsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof fi.hsl.common.transitdata.proto.InternalMessages.Bulletin) {
+          return mergeFrom((fi.hsl.common.transitdata.proto.InternalMessages.Bulletin)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin other) {
+        if (other == fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.getDefaultInstance()) return this;
+        if (other.hasBulletinId()) {
+          bitField0_ |= 0x00000001;
+          bulletinId_ = other.bulletinId_;
+          onChanged();
+        }
+        if (other.hasCategory()) {
+          setCategory(other.getCategory());
+        }
+        if (other.hasLastModifiedUtcMs()) {
+          setLastModifiedUtcMs(other.getLastModifiedUtcMs());
+        }
+        if (other.hasValidFromUtcMs()) {
+          setValidFromUtcMs(other.getValidFromUtcMs());
+        }
+        if (other.hasValidToUtcMs()) {
+          setValidToUtcMs(other.getValidToUtcMs());
+        }
+        if (other.hasAffectsAllRoutes()) {
+          setAffectsAllRoutes(other.getAffectsAllRoutes());
+        }
+        if (other.hasAffectsAllStops()) {
+          setAffectsAllStops(other.getAffectsAllStops());
+        }
+        if (affectedRoutesBuilder_ == null) {
+          if (!other.affectedRoutes_.isEmpty()) {
+            if (affectedRoutes_.isEmpty()) {
+              affectedRoutes_ = other.affectedRoutes_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+            } else {
+              ensureAffectedRoutesIsMutable();
+              affectedRoutes_.addAll(other.affectedRoutes_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.affectedRoutes_.isEmpty()) {
+            if (affectedRoutesBuilder_.isEmpty()) {
+              affectedRoutesBuilder_.dispose();
+              affectedRoutesBuilder_ = null;
+              affectedRoutes_ = other.affectedRoutes_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+              affectedRoutesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAffectedRoutesFieldBuilder() : null;
+            } else {
+              affectedRoutesBuilder_.addAllMessages(other.affectedRoutes_);
+            }
+          }
+        }
+        if (affectedStopsBuilder_ == null) {
+          if (!other.affectedStops_.isEmpty()) {
+            if (affectedStops_.isEmpty()) {
+              affectedStops_ = other.affectedStops_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+            } else {
+              ensureAffectedStopsIsMutable();
+              affectedStops_.addAll(other.affectedStops_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.affectedStops_.isEmpty()) {
+            if (affectedStopsBuilder_.isEmpty()) {
+              affectedStopsBuilder_.dispose();
+              affectedStopsBuilder_ = null;
+              affectedStops_ = other.affectedStops_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+              affectedStopsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAffectedStopsFieldBuilder() : null;
+            } else {
+              affectedStopsBuilder_.addAllMessages(other.affectedStops_);
+            }
+          }
+        }
+        if (other.hasImpact()) {
+          setImpact(other.getImpact());
+        }
+        if (other.hasPriority()) {
+          setPriority(other.getPriority());
+        }
+        if (titlesBuilder_ == null) {
+          if (!other.titles_.isEmpty()) {
+            if (titles_.isEmpty()) {
+              titles_ = other.titles_;
+              bitField0_ = (bitField0_ & ~0x00000800);
+            } else {
+              ensureTitlesIsMutable();
+              titles_.addAll(other.titles_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.titles_.isEmpty()) {
+            if (titlesBuilder_.isEmpty()) {
+              titlesBuilder_.dispose();
+              titlesBuilder_ = null;
+              titles_ = other.titles_;
+              bitField0_ = (bitField0_ & ~0x00000800);
+              titlesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getTitlesFieldBuilder() : null;
+            } else {
+              titlesBuilder_.addAllMessages(other.titles_);
+            }
+          }
+        }
+        if (descriptionsBuilder_ == null) {
+          if (!other.descriptions_.isEmpty()) {
+            if (descriptions_.isEmpty()) {
+              descriptions_ = other.descriptions_;
+              bitField0_ = (bitField0_ & ~0x00001000);
+            } else {
+              ensureDescriptionsIsMutable();
+              descriptions_.addAll(other.descriptions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.descriptions_.isEmpty()) {
+            if (descriptionsBuilder_.isEmpty()) {
+              descriptionsBuilder_.dispose();
+              descriptionsBuilder_ = null;
+              descriptions_ = other.descriptions_;
+              bitField0_ = (bitField0_ & ~0x00001000);
+              descriptionsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getDescriptionsFieldBuilder() : null;
+            } else {
+              descriptionsBuilder_.addAllMessages(other.descriptions_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        if (!hasLastModifiedUtcMs()) {
+          return false;
+        }
+        if (!hasValidFromUtcMs()) {
+          return false;
+        }
+        if (!hasValidToUtcMs()) {
+          return false;
+        }
+        for (int i = 0; i < getAffectedRoutesCount(); i++) {
+          if (!getAffectedRoutes(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getAffectedStopsCount(); i++) {
+          if (!getAffectedStops(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getTitlesCount(); i++) {
+          if (!getTitles(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getDescriptionsCount(); i++) {
+          if (!getDescriptions(i).isInitialized()) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        fi.hsl.common.transitdata.proto.InternalMessages.Bulletin parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (fi.hsl.common.transitdata.proto.InternalMessages.Bulletin) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object bulletinId_ = "";
+      /**
+       * <code>optional string bulletin_id = 1;</code>
+       */
+      public boolean hasBulletinId() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>optional string bulletin_id = 1;</code>
+       */
+      public java.lang.String getBulletinId() {
+        java.lang.Object ref = bulletinId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            bulletinId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string bulletin_id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getBulletinIdBytes() {
+        java.lang.Object ref = bulletinId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          bulletinId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string bulletin_id = 1;</code>
+       */
+      public Builder setBulletinId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        bulletinId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string bulletin_id = 1;</code>
+       */
+      public Builder clearBulletinId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        bulletinId_ = getDefaultInstance().getBulletinId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string bulletin_id = 1;</code>
+       */
+      public Builder setBulletinIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        bulletinId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int category_ = 0;
+      /**
+       * <code>optional .proto.Category category = 2;</code>
+       */
+      public boolean hasCategory() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <code>optional .proto.Category category = 2;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Category getCategory() {
+        @SuppressWarnings("deprecation")
+        fi.hsl.common.transitdata.proto.InternalMessages.Category result = fi.hsl.common.transitdata.proto.InternalMessages.Category.valueOf(category_);
+        return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.Category.VEHICLE_BREAKDOWN : result;
+      }
+      /**
+       * <code>optional .proto.Category category = 2;</code>
+       */
+      public Builder setCategory(fi.hsl.common.transitdata.proto.InternalMessages.Category value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        category_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.Category category = 2;</code>
+       */
+      public Builder clearCategory() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        category_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long lastModifiedUtcMs_ ;
+      /**
+       * <code>required int64 last_modified_utc_ms = 3;</code>
+       */
+      public boolean hasLastModifiedUtcMs() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>required int64 last_modified_utc_ms = 3;</code>
+       */
+      public long getLastModifiedUtcMs() {
+        return lastModifiedUtcMs_;
+      }
+      /**
+       * <code>required int64 last_modified_utc_ms = 3;</code>
+       */
+      public Builder setLastModifiedUtcMs(long value) {
+        bitField0_ |= 0x00000004;
+        lastModifiedUtcMs_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 last_modified_utc_ms = 3;</code>
+       */
+      public Builder clearLastModifiedUtcMs() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        lastModifiedUtcMs_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long validFromUtcMs_ ;
+      /**
+       * <code>required int64 valid_from_utc_ms = 4;</code>
+       */
+      public boolean hasValidFromUtcMs() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       * <code>required int64 valid_from_utc_ms = 4;</code>
+       */
+      public long getValidFromUtcMs() {
+        return validFromUtcMs_;
+      }
+      /**
+       * <code>required int64 valid_from_utc_ms = 4;</code>
+       */
+      public Builder setValidFromUtcMs(long value) {
+        bitField0_ |= 0x00000008;
+        validFromUtcMs_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 valid_from_utc_ms = 4;</code>
+       */
+      public Builder clearValidFromUtcMs() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        validFromUtcMs_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long validToUtcMs_ ;
+      /**
+       * <code>required int64 valid_to_utc_ms = 5;</code>
+       */
+      public boolean hasValidToUtcMs() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       * <code>required int64 valid_to_utc_ms = 5;</code>
+       */
+      public long getValidToUtcMs() {
+        return validToUtcMs_;
+      }
+      /**
+       * <code>required int64 valid_to_utc_ms = 5;</code>
+       */
+      public Builder setValidToUtcMs(long value) {
+        bitField0_ |= 0x00000010;
+        validToUtcMs_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 valid_to_utc_ms = 5;</code>
+       */
+      public Builder clearValidToUtcMs() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        validToUtcMs_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private boolean affectsAllRoutes_ ;
+      /**
+       * <code>optional bool affects_all_routes = 6;</code>
+       */
+      public boolean hasAffectsAllRoutes() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       * <code>optional bool affects_all_routes = 6;</code>
+       */
+      public boolean getAffectsAllRoutes() {
+        return affectsAllRoutes_;
+      }
+      /**
+       * <code>optional bool affects_all_routes = 6;</code>
+       */
+      public Builder setAffectsAllRoutes(boolean value) {
+        bitField0_ |= 0x00000020;
+        affectsAllRoutes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool affects_all_routes = 6;</code>
+       */
+      public Builder clearAffectsAllRoutes() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        affectsAllRoutes_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean affectsAllStops_ ;
+      /**
+       * <code>optional bool affects_all_stops = 7;</code>
+       */
+      public boolean hasAffectsAllStops() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       * <code>optional bool affects_all_stops = 7;</code>
+       */
+      public boolean getAffectsAllStops() {
+        return affectsAllStops_;
+      }
+      /**
+       * <code>optional bool affects_all_stops = 7;</code>
+       */
+      public Builder setAffectsAllStops(boolean value) {
+        bitField0_ |= 0x00000040;
+        affectsAllStops_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool affects_all_stops = 7;</code>
+       */
+      public Builder clearAffectsAllStops() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        affectsAllStops_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> affectedRoutes_ =
+        java.util.Collections.emptyList();
+      private void ensureAffectedRoutesIsMutable() {
+        if (!((bitField0_ & 0x00000080) != 0)) {
+          affectedRoutes_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity>(affectedRoutes_);
+          bitField0_ |= 0x00000080;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder> affectedRoutesBuilder_;
+
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+       */
+      public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> getAffectedRoutesList() {
+        if (affectedRoutesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(affectedRoutes_);
+        } else {
+          return affectedRoutesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+       */
+      public int getAffectedRoutesCount() {
+        if (affectedRoutesBuilder_ == null) {
+          return affectedRoutes_.size();
+        } else {
+          return affectedRoutesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity getAffectedRoutes(int index) {
+        if (affectedRoutesBuilder_ == null) {
+          return affectedRoutes_.get(index);
+        } else {
+          return affectedRoutesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+       */
+      public Builder setAffectedRoutes(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity value) {
+        if (affectedRoutesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAffectedRoutesIsMutable();
+          affectedRoutes_.set(index, value);
+          onChanged();
+        } else {
+          affectedRoutesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+       */
+      public Builder setAffectedRoutes(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder builderForValue) {
+        if (affectedRoutesBuilder_ == null) {
+          ensureAffectedRoutesIsMutable();
+          affectedRoutes_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          affectedRoutesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+       */
+      public Builder addAffectedRoutes(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity value) {
+        if (affectedRoutesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAffectedRoutesIsMutable();
+          affectedRoutes_.add(value);
+          onChanged();
+        } else {
+          affectedRoutesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+       */
+      public Builder addAffectedRoutes(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity value) {
+        if (affectedRoutesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAffectedRoutesIsMutable();
+          affectedRoutes_.add(index, value);
+          onChanged();
+        } else {
+          affectedRoutesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+       */
+      public Builder addAffectedRoutes(
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder builderForValue) {
+        if (affectedRoutesBuilder_ == null) {
+          ensureAffectedRoutesIsMutable();
+          affectedRoutes_.add(builderForValue.build());
+          onChanged();
+        } else {
+          affectedRoutesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+       */
+      public Builder addAffectedRoutes(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder builderForValue) {
+        if (affectedRoutesBuilder_ == null) {
+          ensureAffectedRoutesIsMutable();
+          affectedRoutes_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          affectedRoutesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+       */
+      public Builder addAllAffectedRoutes(
+          java.lang.Iterable<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> values) {
+        if (affectedRoutesBuilder_ == null) {
+          ensureAffectedRoutesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, affectedRoutes_);
+          onChanged();
+        } else {
+          affectedRoutesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+       */
+      public Builder clearAffectedRoutes() {
+        if (affectedRoutesBuilder_ == null) {
+          affectedRoutes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+          onChanged();
+        } else {
+          affectedRoutesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+       */
+      public Builder removeAffectedRoutes(int index) {
+        if (affectedRoutesBuilder_ == null) {
+          ensureAffectedRoutesIsMutable();
+          affectedRoutes_.remove(index);
+          onChanged();
+        } else {
+          affectedRoutesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder getAffectedRoutesBuilder(
+          int index) {
+        return getAffectedRoutesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder getAffectedRoutesOrBuilder(
+          int index) {
+        if (affectedRoutesBuilder_ == null) {
+          return affectedRoutes_.get(index);  } else {
+          return affectedRoutesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+       */
+      public java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder> 
+           getAffectedRoutesOrBuilderList() {
+        if (affectedRoutesBuilder_ != null) {
+          return affectedRoutesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(affectedRoutes_);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder addAffectedRoutesBuilder() {
+        return getAffectedRoutesFieldBuilder().addBuilder(
+            fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder addAffectedRoutesBuilder(
+          int index) {
+        return getAffectedRoutesFieldBuilder().addBuilder(
+            index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_routes = 8;</code>
+       */
+      public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder> 
+           getAffectedRoutesBuilderList() {
+        return getAffectedRoutesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder> 
+          getAffectedRoutesFieldBuilder() {
+        if (affectedRoutesBuilder_ == null) {
+          affectedRoutesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder>(
+                  affectedRoutes_,
+                  ((bitField0_ & 0x00000080) != 0),
+                  getParentForChildren(),
+                  isClean());
+          affectedRoutes_ = null;
+        }
+        return affectedRoutesBuilder_;
+      }
+
+      private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> affectedStops_ =
+        java.util.Collections.emptyList();
+      private void ensureAffectedStopsIsMutable() {
+        if (!((bitField0_ & 0x00000100) != 0)) {
+          affectedStops_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity>(affectedStops_);
+          bitField0_ |= 0x00000100;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder> affectedStopsBuilder_;
+
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+       */
+      public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> getAffectedStopsList() {
+        if (affectedStopsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(affectedStops_);
+        } else {
+          return affectedStopsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+       */
+      public int getAffectedStopsCount() {
+        if (affectedStopsBuilder_ == null) {
+          return affectedStops_.size();
+        } else {
+          return affectedStopsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity getAffectedStops(int index) {
+        if (affectedStopsBuilder_ == null) {
+          return affectedStops_.get(index);
+        } else {
+          return affectedStopsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+       */
+      public Builder setAffectedStops(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity value) {
+        if (affectedStopsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAffectedStopsIsMutable();
+          affectedStops_.set(index, value);
+          onChanged();
+        } else {
+          affectedStopsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+       */
+      public Builder setAffectedStops(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder builderForValue) {
+        if (affectedStopsBuilder_ == null) {
+          ensureAffectedStopsIsMutable();
+          affectedStops_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          affectedStopsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+       */
+      public Builder addAffectedStops(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity value) {
+        if (affectedStopsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAffectedStopsIsMutable();
+          affectedStops_.add(value);
+          onChanged();
+        } else {
+          affectedStopsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+       */
+      public Builder addAffectedStops(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity value) {
+        if (affectedStopsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAffectedStopsIsMutable();
+          affectedStops_.add(index, value);
+          onChanged();
+        } else {
+          affectedStopsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+       */
+      public Builder addAffectedStops(
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder builderForValue) {
+        if (affectedStopsBuilder_ == null) {
+          ensureAffectedStopsIsMutable();
+          affectedStops_.add(builderForValue.build());
+          onChanged();
+        } else {
+          affectedStopsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+       */
+      public Builder addAffectedStops(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder builderForValue) {
+        if (affectedStopsBuilder_ == null) {
+          ensureAffectedStopsIsMutable();
+          affectedStops_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          affectedStopsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+       */
+      public Builder addAllAffectedStops(
+          java.lang.Iterable<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> values) {
+        if (affectedStopsBuilder_ == null) {
+          ensureAffectedStopsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, affectedStops_);
+          onChanged();
+        } else {
+          affectedStopsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+       */
+      public Builder clearAffectedStops() {
+        if (affectedStopsBuilder_ == null) {
+          affectedStops_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
+          onChanged();
+        } else {
+          affectedStopsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+       */
+      public Builder removeAffectedStops(int index) {
+        if (affectedStopsBuilder_ == null) {
+          ensureAffectedStopsIsMutable();
+          affectedStops_.remove(index);
+          onChanged();
+        } else {
+          affectedStopsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder getAffectedStopsBuilder(
+          int index) {
+        return getAffectedStopsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder getAffectedStopsOrBuilder(
+          int index) {
+        if (affectedStopsBuilder_ == null) {
+          return affectedStops_.get(index);  } else {
+          return affectedStopsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+       */
+      public java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder> 
+           getAffectedStopsOrBuilderList() {
+        if (affectedStopsBuilder_ != null) {
+          return affectedStopsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(affectedStops_);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder addAffectedStopsBuilder() {
+        return getAffectedStopsFieldBuilder().addBuilder(
+            fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder addAffectedStopsBuilder(
+          int index) {
+        return getAffectedStopsFieldBuilder().addBuilder(
+            index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_stops = 9;</code>
+       */
+      public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder> 
+           getAffectedStopsBuilderList() {
+        return getAffectedStopsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder> 
+          getAffectedStopsFieldBuilder() {
+        if (affectedStopsBuilder_ == null) {
+          affectedStopsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder>(
+                  affectedStops_,
+                  ((bitField0_ & 0x00000100) != 0),
+                  getParentForChildren(),
+                  isClean());
+          affectedStops_ = null;
+        }
+        return affectedStopsBuilder_;
+      }
+
+      private int impact_ = 0;
+      /**
+       * <code>optional .proto.Bulletin.Impact impact = 10;</code>
+       */
+      public boolean hasImpact() {
+        return ((bitField0_ & 0x00000200) != 0);
+      }
+      /**
+       * <code>optional .proto.Bulletin.Impact impact = 10;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact getImpact() {
+        @SuppressWarnings("deprecation")
+        fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact result = fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact.valueOf(impact_);
+        return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact.CANCELLED : result;
+      }
+      /**
+       * <code>optional .proto.Bulletin.Impact impact = 10;</code>
+       */
+      public Builder setImpact(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000200;
+        impact_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.Bulletin.Impact impact = 10;</code>
+       */
+      public Builder clearImpact() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        impact_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int priority_ = 0;
+      /**
+       * <code>optional .proto.Bulletin.Priority priority = 11;</code>
+       */
+      public boolean hasPriority() {
+        return ((bitField0_ & 0x00000400) != 0);
+      }
+      /**
+       * <code>optional .proto.Bulletin.Priority priority = 11;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority getPriority() {
+        @SuppressWarnings("deprecation")
+        fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority result = fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority.valueOf(priority_);
+        return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority.INFO : result;
+      }
+      /**
+       * <code>optional .proto.Bulletin.Priority priority = 11;</code>
+       */
+      public Builder setPriority(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000400;
+        priority_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.Bulletin.Priority priority = 11;</code>
+       */
+      public Builder clearPriority() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        priority_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> titles_ =
+        java.util.Collections.emptyList();
+      private void ensureTitlesIsMutable() {
+        if (!((bitField0_ & 0x00000800) != 0)) {
+          titles_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation>(titles_);
+          bitField0_ |= 0x00000800;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder> titlesBuilder_;
+
+      /**
+       * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+       */
+      public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> getTitlesList() {
+        if (titlesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(titles_);
+        } else {
+          return titlesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+       */
+      public int getTitlesCount() {
+        if (titlesBuilder_ == null) {
+          return titles_.size();
+        } else {
+          return titlesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation getTitles(int index) {
+        if (titlesBuilder_ == null) {
+          return titles_.get(index);
+        } else {
+          return titlesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+       */
+      public Builder setTitles(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation value) {
+        if (titlesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTitlesIsMutable();
+          titles_.set(index, value);
+          onChanged();
+        } else {
+          titlesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+       */
+      public Builder setTitles(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder builderForValue) {
+        if (titlesBuilder_ == null) {
+          ensureTitlesIsMutable();
+          titles_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          titlesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+       */
+      public Builder addTitles(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation value) {
+        if (titlesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTitlesIsMutable();
+          titles_.add(value);
+          onChanged();
+        } else {
+          titlesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+       */
+      public Builder addTitles(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation value) {
+        if (titlesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTitlesIsMutable();
+          titles_.add(index, value);
+          onChanged();
+        } else {
+          titlesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+       */
+      public Builder addTitles(
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder builderForValue) {
+        if (titlesBuilder_ == null) {
+          ensureTitlesIsMutable();
+          titles_.add(builderForValue.build());
+          onChanged();
+        } else {
+          titlesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+       */
+      public Builder addTitles(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder builderForValue) {
+        if (titlesBuilder_ == null) {
+          ensureTitlesIsMutable();
+          titles_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          titlesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+       */
+      public Builder addAllTitles(
+          java.lang.Iterable<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> values) {
+        if (titlesBuilder_ == null) {
+          ensureTitlesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, titles_);
+          onChanged();
+        } else {
+          titlesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+       */
+      public Builder clearTitles() {
+        if (titlesBuilder_ == null) {
+          titles_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000800);
+          onChanged();
+        } else {
+          titlesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+       */
+      public Builder removeTitles(int index) {
+        if (titlesBuilder_ == null) {
+          ensureTitlesIsMutable();
+          titles_.remove(index);
+          onChanged();
+        } else {
+          titlesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder getTitlesBuilder(
+          int index) {
+        return getTitlesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder getTitlesOrBuilder(
+          int index) {
+        if (titlesBuilder_ == null) {
+          return titles_.get(index);  } else {
+          return titlesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+       */
+      public java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder> 
+           getTitlesOrBuilderList() {
+        if (titlesBuilder_ != null) {
+          return titlesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(titles_);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder addTitlesBuilder() {
+        return getTitlesFieldBuilder().addBuilder(
+            fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder addTitlesBuilder(
+          int index) {
+        return getTitlesFieldBuilder().addBuilder(
+            index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation titles = 12;</code>
+       */
+      public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder> 
+           getTitlesBuilderList() {
+        return getTitlesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder> 
+          getTitlesFieldBuilder() {
+        if (titlesBuilder_ == null) {
+          titlesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder>(
+                  titles_,
+                  ((bitField0_ & 0x00000800) != 0),
+                  getParentForChildren(),
+                  isClean());
+          titles_ = null;
+        }
+        return titlesBuilder_;
+      }
+
+      private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> descriptions_ =
+        java.util.Collections.emptyList();
+      private void ensureDescriptionsIsMutable() {
+        if (!((bitField0_ & 0x00001000) != 0)) {
+          descriptions_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation>(descriptions_);
+          bitField0_ |= 0x00001000;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder> descriptionsBuilder_;
+
+      /**
+       * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+       */
+      public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> getDescriptionsList() {
+        if (descriptionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(descriptions_);
+        } else {
+          return descriptionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+       */
+      public int getDescriptionsCount() {
+        if (descriptionsBuilder_ == null) {
+          return descriptions_.size();
+        } else {
+          return descriptionsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation getDescriptions(int index) {
+        if (descriptionsBuilder_ == null) {
+          return descriptions_.get(index);
+        } else {
+          return descriptionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+       */
+      public Builder setDescriptions(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation value) {
+        if (descriptionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDescriptionsIsMutable();
+          descriptions_.set(index, value);
+          onChanged();
+        } else {
+          descriptionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+       */
+      public Builder setDescriptions(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder builderForValue) {
+        if (descriptionsBuilder_ == null) {
+          ensureDescriptionsIsMutable();
+          descriptions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          descriptionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+       */
+      public Builder addDescriptions(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation value) {
+        if (descriptionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDescriptionsIsMutable();
+          descriptions_.add(value);
+          onChanged();
+        } else {
+          descriptionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+       */
+      public Builder addDescriptions(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation value) {
+        if (descriptionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDescriptionsIsMutable();
+          descriptions_.add(index, value);
+          onChanged();
+        } else {
+          descriptionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+       */
+      public Builder addDescriptions(
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder builderForValue) {
+        if (descriptionsBuilder_ == null) {
+          ensureDescriptionsIsMutable();
+          descriptions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          descriptionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+       */
+      public Builder addDescriptions(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder builderForValue) {
+        if (descriptionsBuilder_ == null) {
+          ensureDescriptionsIsMutable();
+          descriptions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          descriptionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+       */
+      public Builder addAllDescriptions(
+          java.lang.Iterable<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> values) {
+        if (descriptionsBuilder_ == null) {
+          ensureDescriptionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, descriptions_);
+          onChanged();
+        } else {
+          descriptionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+       */
+      public Builder clearDescriptions() {
+        if (descriptionsBuilder_ == null) {
+          descriptions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00001000);
+          onChanged();
+        } else {
+          descriptionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+       */
+      public Builder removeDescriptions(int index) {
+        if (descriptionsBuilder_ == null) {
+          ensureDescriptionsIsMutable();
+          descriptions_.remove(index);
+          onChanged();
+        } else {
+          descriptionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder getDescriptionsBuilder(
+          int index) {
+        return getDescriptionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder getDescriptionsOrBuilder(
+          int index) {
+        if (descriptionsBuilder_ == null) {
+          return descriptions_.get(index);  } else {
+          return descriptionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+       */
+      public java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder> 
+           getDescriptionsOrBuilderList() {
+        if (descriptionsBuilder_ != null) {
+          return descriptionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(descriptions_);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder addDescriptionsBuilder() {
+        return getDescriptionsFieldBuilder().addBuilder(
+            fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder addDescriptionsBuilder(
+          int index) {
+        return getDescriptionsFieldBuilder().addBuilder(
+            index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation descriptions = 13;</code>
+       */
+      public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder> 
+           getDescriptionsBuilderList() {
+        return getDescriptionsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder> 
+          getDescriptionsFieldBuilder() {
+        if (descriptionsBuilder_ == null) {
+          descriptionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder>(
+                  descriptions_,
+                  ((bitField0_ & 0x00001000) != 0),
+                  getParentForChildren(),
+                  isClean());
+          descriptions_ = null;
+        }
+        return descriptionsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.Bulletin)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.Bulletin)
+    private static final fi.hsl.common.transitdata.proto.InternalMessages.Bulletin DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new fi.hsl.common.transitdata.proto.InternalMessages.Bulletin();
+    }
+
+    public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<Bulletin>
+        PARSER = new com.google.protobuf.AbstractParser<Bulletin>() {
+      @java.lang.Override
+      public Bulletin parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Bulletin(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Bulletin> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Bulletin> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ServiceAlertOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.ServiceAlert)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     */
+    boolean hasSchemaVersion();
+    /**
+     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     */
+    int getSchemaVersion();
+
+    /**
+     * <code>repeated .proto.Bulletin bulletins = 2;</code>
+     */
+    java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin> 
+        getBulletinsList();
+    /**
+     * <code>repeated .proto.Bulletin bulletins = 2;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.Bulletin getBulletins(int index);
+    /**
+     * <code>repeated .proto.Bulletin bulletins = 2;</code>
+     */
+    int getBulletinsCount();
+    /**
+     * <code>repeated .proto.Bulletin bulletins = 2;</code>
+     */
+    java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.BulletinOrBuilder> 
+        getBulletinsOrBuilderList();
+    /**
+     * <code>repeated .proto.Bulletin bulletins = 2;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.BulletinOrBuilder getBulletinsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code proto.ServiceAlert}
+   */
+  public  static final class ServiceAlert extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.ServiceAlert)
+      ServiceAlertOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ServiceAlert.newBuilder() to construct.
+    private ServiceAlert(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ServiceAlert() {
+      schemaVersion_ = 1;
+      bulletins_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ServiceAlert(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              schemaVersion_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                bulletins_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              bulletins_.add(
+                  input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.PARSER, extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          bulletins_ = java.util.Collections.unmodifiableList(bulletins_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_ServiceAlert_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_ServiceAlert_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert.class, fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int SCHEMAVERSION_FIELD_NUMBER = 1;
+    private int schemaVersion_;
+    /**
+     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     */
+    public boolean hasSchemaVersion() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     */
+    public int getSchemaVersion() {
+      return schemaVersion_;
+    }
+
+    public static final int BULLETINS_FIELD_NUMBER = 2;
+    private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin> bulletins_;
+    /**
+     * <code>repeated .proto.Bulletin bulletins = 2;</code>
+     */
+    public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin> getBulletinsList() {
+      return bulletins_;
+    }
+    /**
+     * <code>repeated .proto.Bulletin bulletins = 2;</code>
+     */
+    public java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.BulletinOrBuilder> 
+        getBulletinsOrBuilderList() {
+      return bulletins_;
+    }
+    /**
+     * <code>repeated .proto.Bulletin bulletins = 2;</code>
+     */
+    public int getBulletinsCount() {
+      return bulletins_.size();
+    }
+    /**
+     * <code>repeated .proto.Bulletin bulletins = 2;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin getBulletins(int index) {
+      return bulletins_.get(index);
+    }
+    /**
+     * <code>repeated .proto.Bulletin bulletins = 2;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.BulletinOrBuilder getBulletinsOrBuilder(
+        int index) {
+      return bulletins_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasSchemaVersion()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      for (int i = 0; i < getBulletinsCount(); i++) {
+        if (!getBulletins(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeInt32(1, schemaVersion_);
+      }
+      for (int i = 0; i < bulletins_.size(); i++) {
+        output.writeMessage(2, bulletins_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, schemaVersion_);
+      }
+      for (int i = 0; i < bulletins_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, bulletins_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert)) {
+        return super.equals(obj);
+      }
+      fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert other = (fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert) obj;
+
+      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
+      if (hasSchemaVersion()) {
+        if (getSchemaVersion()
+            != other.getSchemaVersion()) return false;
+      }
+      if (!getBulletinsList()
+          .equals(other.getBulletinsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasSchemaVersion()) {
+        hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
+        hash = (53 * hash) + getSchemaVersion();
+      }
+      if (getBulletinsCount() > 0) {
+        hash = (37 * hash) + BULLETINS_FIELD_NUMBER;
+        hash = (53 * hash) + getBulletinsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.ServiceAlert}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.ServiceAlert)
+        fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlertOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_ServiceAlert_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_ServiceAlert_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert.class, fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert.Builder.class);
+      }
+
+      // Construct using fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getBulletinsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        schemaVersion_ = 1;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (bulletinsBuilder_ == null) {
+          bulletins_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          bulletinsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_ServiceAlert_descriptor;
+      }
+
+      @java.lang.Override
+      public fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert getDefaultInstanceForType() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert build() {
+        fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert buildPartial() {
+        fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert result = new fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.schemaVersion_ = schemaVersion_;
+        if (bulletinsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            bulletins_ = java.util.Collections.unmodifiableList(bulletins_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.bulletins_ = bulletins_;
+        } else {
+          result.bulletins_ = bulletinsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert) {
+          return mergeFrom((fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert other) {
+        if (other == fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert.getDefaultInstance()) return this;
+        if (other.hasSchemaVersion()) {
+          setSchemaVersion(other.getSchemaVersion());
+        }
+        if (bulletinsBuilder_ == null) {
+          if (!other.bulletins_.isEmpty()) {
+            if (bulletins_.isEmpty()) {
+              bulletins_ = other.bulletins_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureBulletinsIsMutable();
+              bulletins_.addAll(other.bulletins_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.bulletins_.isEmpty()) {
+            if (bulletinsBuilder_.isEmpty()) {
+              bulletinsBuilder_.dispose();
+              bulletinsBuilder_ = null;
+              bulletins_ = other.bulletins_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              bulletinsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getBulletinsFieldBuilder() : null;
+            } else {
+              bulletinsBuilder_.addAllMessages(other.bulletins_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        if (!hasSchemaVersion()) {
+          return false;
+        }
+        for (int i = 0; i < getBulletinsCount(); i++) {
+          if (!getBulletins(i).isInitialized()) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int schemaVersion_ = 1;
+      /**
+       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       */
+      public boolean hasSchemaVersion() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       */
+      public int getSchemaVersion() {
+        return schemaVersion_;
+      }
+      /**
+       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       */
+      public Builder setSchemaVersion(int value) {
+        bitField0_ |= 0x00000001;
+        schemaVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       */
+      public Builder clearSchemaVersion() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        schemaVersion_ = 1;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin> bulletins_ =
+        java.util.Collections.emptyList();
+      private void ensureBulletinsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          bulletins_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin>(bulletins_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Builder, fi.hsl.common.transitdata.proto.InternalMessages.BulletinOrBuilder> bulletinsBuilder_;
+
+      /**
+       * <code>repeated .proto.Bulletin bulletins = 2;</code>
+       */
+      public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin> getBulletinsList() {
+        if (bulletinsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(bulletins_);
+        } else {
+          return bulletinsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin bulletins = 2;</code>
+       */
+      public int getBulletinsCount() {
+        if (bulletinsBuilder_ == null) {
+          return bulletins_.size();
+        } else {
+          return bulletinsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin bulletins = 2;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin getBulletins(int index) {
+        if (bulletinsBuilder_ == null) {
+          return bulletins_.get(index);
+        } else {
+          return bulletinsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin bulletins = 2;</code>
+       */
+      public Builder setBulletins(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin value) {
+        if (bulletinsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBulletinsIsMutable();
+          bulletins_.set(index, value);
+          onChanged();
+        } else {
+          bulletinsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin bulletins = 2;</code>
+       */
+      public Builder setBulletins(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Builder builderForValue) {
+        if (bulletinsBuilder_ == null) {
+          ensureBulletinsIsMutable();
+          bulletins_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          bulletinsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin bulletins = 2;</code>
+       */
+      public Builder addBulletins(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin value) {
+        if (bulletinsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBulletinsIsMutable();
+          bulletins_.add(value);
+          onChanged();
+        } else {
+          bulletinsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin bulletins = 2;</code>
+       */
+      public Builder addBulletins(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin value) {
+        if (bulletinsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBulletinsIsMutable();
+          bulletins_.add(index, value);
+          onChanged();
+        } else {
+          bulletinsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin bulletins = 2;</code>
+       */
+      public Builder addBulletins(
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Builder builderForValue) {
+        if (bulletinsBuilder_ == null) {
+          ensureBulletinsIsMutable();
+          bulletins_.add(builderForValue.build());
+          onChanged();
+        } else {
+          bulletinsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin bulletins = 2;</code>
+       */
+      public Builder addBulletins(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Builder builderForValue) {
+        if (bulletinsBuilder_ == null) {
+          ensureBulletinsIsMutable();
+          bulletins_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          bulletinsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin bulletins = 2;</code>
+       */
+      public Builder addAllBulletins(
+          java.lang.Iterable<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin> values) {
+        if (bulletinsBuilder_ == null) {
+          ensureBulletinsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, bulletins_);
+          onChanged();
+        } else {
+          bulletinsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin bulletins = 2;</code>
+       */
+      public Builder clearBulletins() {
+        if (bulletinsBuilder_ == null) {
+          bulletins_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          bulletinsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin bulletins = 2;</code>
+       */
+      public Builder removeBulletins(int index) {
+        if (bulletinsBuilder_ == null) {
+          ensureBulletinsIsMutable();
+          bulletins_.remove(index);
+          onChanged();
+        } else {
+          bulletinsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin bulletins = 2;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Builder getBulletinsBuilder(
+          int index) {
+        return getBulletinsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.Bulletin bulletins = 2;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.BulletinOrBuilder getBulletinsOrBuilder(
+          int index) {
+        if (bulletinsBuilder_ == null) {
+          return bulletins_.get(index);  } else {
+          return bulletinsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin bulletins = 2;</code>
+       */
+      public java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.BulletinOrBuilder> 
+           getBulletinsOrBuilderList() {
+        if (bulletinsBuilder_ != null) {
+          return bulletinsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(bulletins_);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin bulletins = 2;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Builder addBulletinsBuilder() {
+        return getBulletinsFieldBuilder().addBuilder(
+            fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Bulletin bulletins = 2;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Builder addBulletinsBuilder(
+          int index) {
+        return getBulletinsFieldBuilder().addBuilder(
+            index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Bulletin bulletins = 2;</code>
+       */
+      public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Builder> 
+           getBulletinsBuilderList() {
+        return getBulletinsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Builder, fi.hsl.common.transitdata.proto.InternalMessages.BulletinOrBuilder> 
+          getBulletinsFieldBuilder() {
+        if (bulletinsBuilder_ == null) {
+          bulletinsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              fi.hsl.common.transitdata.proto.InternalMessages.Bulletin, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Builder, fi.hsl.common.transitdata.proto.InternalMessages.BulletinOrBuilder>(
+                  bulletins_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          bulletins_ = null;
+        }
+        return bulletinsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.ServiceAlert)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.ServiceAlert)
+    private static final fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert();
+    }
+
+    public static fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<ServiceAlert>
+        PARSER = new com.google.protobuf.AbstractParser<ServiceAlert>() {
+      @java.lang.Override
+      public ServiceAlert parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ServiceAlert(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ServiceAlert> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ServiceAlert> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_TripInfo_descriptor;
   private static final 
@@ -6306,6 +11685,26 @@ public final class InternalMessages {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_StopEstimate_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_Bulletin_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_Bulletin_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_Bulletin_AffectedEntity_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_Bulletin_AffectedEntity_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_Bulletin_Translation_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_Bulletin_Translation_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ServiceAlert_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ServiceAlert_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -6318,7 +11717,7 @@ public final class InternalMessages {
       "\n\027internal-messages.proto\022\005proto\"n\n\010Trip" +
       "Info\022\017\n\007trip_id\030\001 \002(\t\022\025\n\roperating_day\030\002" +
       " \002(\t\022\020\n\010route_id\030\003 \002(\t\022\024\n\014direction_id\030\004" +
-      " \002(\r\022\022\n\nstart_time\030\005 \002(\t\"\302\025\n\020TripCancell" +
+      " \002(\r\022\022\n\nstart_time\030\005 \002(\t\"\254\020\n\020TripCancell" +
       "ation\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\017\n\007trip_" +
       "id\030\002 \001(\t\022\020\n\010route_id\030\003 \001(\t\022\024\n\014direction_" +
       "id\030\004 \001(\r\022\022\n\nstart_time\030\005 \001(\t\022\022\n\nstart_da" +
@@ -6328,77 +11727,101 @@ public final class InternalMessages {
       "nCasesType\022P\n\030affected_departures_type\030\t" +
       " \001(\0162..proto.TripCancellation.AffectedDe" +
       "parturesType\022\r\n\005title\030\n \001(\t\022\023\n\013descripti" +
-      "on\030\013 \001(\t\0222\n\010category\030\014 \001(\0162 .proto.TripC" +
-      "ancellation.Category\0229\n\014sub_category\030\r \001" +
-      "(\0162#.proto.TripCancellation.SubCategory\"" +
-      "#\n\006Status\022\013\n\007RUNNING\020\000\022\014\n\010CANCELED\020\001\"\360\001\n" +
-      "\022DeviationCasesType\022\024\n\020CANCEL_DEPARTURE\020" +
-      "\000\022\n\n\006DETOUR\020\001\022\026\n\022SKIPPED_STOP_CALLS\020\002\022\023\n" +
-      "\017EARLY_DEPARTURE\020\003\022%\n!EARLY_DEPARTURE_FR" +
-      "OM_TIMING_POINT\020\004\022\022\n\016LATE_DEPARTURE\020\005\022!\n" +
-      "\035DEPARTURED_AFTER_NEXT_JOURNEY\020\006\022\036\n\032BLOC" +
-      "K_FIRST_DEPARTURE_LATE\020\007\022\r\n\tTIS_ERROR\020\010\"" +
-      "\213\001\n\026AffectedDeparturesType\022\033\n\027CANCEL_ENT" +
-      "IRE_DEPARTURE\020\000\022\033\n\027CANCEL_STOPS_FROM_STA" +
-      "RT\020\001\022\034\n\030CANCEL_STOPS_FROM_MIDDLE\020\002\022\031\n\025CA" +
-      "NCEL_STOPS_FROM_END\020\003\"\202\005\n\010Category\022\025\n\021VE" +
-      "HICLE_BREAKDOWN\020\000\022\014\n\010ACCIDENT\020\001\022\r\n\tNO_DR" +
-      "IVER\020\002\022\013\n\007ASSAULT\020\003\022\013\n\007WEATHER\020\004\022\030\n\024VEHI" +
-      "CLE_OFF_THE_ROAD\020\005\022\013\n\007SEIZURE\020\006\022\024\n\020ITS_S" +
-      "YSTEM_ERROR\020\007\022\026\n\022OTHER_DRIVER_ERROR\020\010\022\027\n" +
-      "\023TOO_MANY_PASSENGERS\020\t\022\n\n\006STRIKE\020\n\022\t\n\005OT" +
-      "HER\020\013\022\026\n\022EARLIER_DISRUPTION\020\014\022\031\n\025NO_TRAF" +
-      "FIC_DISRUPTION\020\r\022\021\n\rTRACK_BLOCKED\020\016\022\021\n\rS" +
-      "TAFF_DEFICIT\020\017\022\017\n\013DISTURBANCE\020\020\022\023\n\017VEHIC" +
-      "LE_DEFICIT\020\021\022\017\n\013ROAD_CLOSED\020\022\022\017\n\013ROAD_TR" +
-      "ENCH\020\023\022\025\n\021TRACK_MAINTENANCE\020\024\022\024\n\020TRAFFIC" +
-      "_ACCIDENT\020\025\022\017\n\013TRAFFIC_JAM\020\026\022\024\n\020MEDICAL_" +
-      "INCIDENT\020\027\022\026\n\022WEATHER_CONDITIONS\020\030\022\025\n\021TE" +
-      "CHNICAL_FAILURE\020\031\022\010\n\004TEST\020\032\022\024\n\020ROAD_MAIN" +
-      "TENANCE\020\033\022\022\n\016SWITCH_FAILURE\020\034\022\017\n\013STATE_V" +
-      "ISIT\020\035\022\021\n\rPOWER_FAILURE\020\036\022\025\n\021MISPARKED_V" +
-      "EHICLE\020\037\022\020\n\014PUBLIC_EVENT\020 \"\250\t\n\013SubCatego" +
-      "ry\022\025\n\021BREAK_MALFUNCTION\020\000\022\017\n\013OUT_OF_FUEL" +
-      "\020\001\022\021\n\rFLUID_LEAKAGE\020\002\022\030\n\024ELECTRIC_MALFUN" +
-      "CTION\020\003\022\026\n\022ENGINE_MALFUNCTION\020\004\022\025\n\021OTHER" +
-      "_MALFUNCTION\020\005\022\r\n\tOWN_FAULT\020\006\022\022\n\016OPPOSIT" +
-      "E_FAULT\020\007\022\021\n\rFAULT_UNKNOWN\020\010\022\022\n\016STAFF_SH" +
-      "ORTAGE\020\t\022\036\n\032ND_OPERATOR_PLANNING_ERROR\020\n" +
-      "\022\017\n\013DRIVER_LATE\020\013\022)\n%INSUFFICIENT_INSTRU" +
-      "CTIONS_BY_OPERATOR\020\014\022*\n&INSUFFICIENT_INS" +
-      "TRUCTIONS_BY_AUTHORITY\020\r\022\030\n\024NO_VEHICLE_A" +
-      "VAILABLE\020\016\022\025\n\021ASSAULT_ON_DRIVER\020\017\022\030\n\024ASS" +
-      "AULT_ON_PASSENGER\020\020\022\026\n\022ASSAULT_ON_VEHICL" +
-      "E\020\021\022\030\n\024PASSED_OUT_PASSENGER\020\022\022\021\n\rOTHER_A" +
-      "SSAULT\020\023\022\032\n\026UNDRIVEABLE_CONDITIONS\020\024\022\034\n\030" +
-      "STUCK_CAUSED_BY_SLIPPERY\020\025\022 \n\034CONGESTION" +
-      "_CAUSED_BY_WEATHER\020\026\022\022\n\016SLIPPERY_TRACK\020\027" +
-      "\022\020\n\014ROAD_BLOCKED\020\030\022(\n$VEHICLE_OFF_THE_RO" +
-      "AD_BY_DRIVER_ERROR\020\031\022(\n$VEHICLE_OFF_THE_" +
-      "ROAD_BY_OTHER_REASON\020\032\022\026\n\022MISSPARKED_VEH" +
-      "ICLE\020\033\022\034\n\030CONGESTION_REASON_UKNOWN\020\034\022!\n\035" +
-      "CONGESTION_CAUSED_BY_ACCIDENT\020\035\022\022\n\016DRIVE" +
-      "R_SEIZURE\020\036\022\025\n\021PASSENGER_SEIZURE\020\037\022\025\n\021PA" +
-      "SSENGER_INJURED\020 \022\021\n\rOTHER_SEIZURE\020!\022\020\n\014" +
-      "DEVICE_ERROR\020\"\022\031\n\025OPERATOR_DEVICE_ERROR\020" +
-      "#\022\037\n\033WRONG_INFORMATION_IN_DEVICE\020$\022\034\n\030IT" +
-      "S_SYSTEM_NOT_INSTALLED\020%\022\016\n\nUSER_ERROR\020&" +
-      "\022\017\n\013FALSE_ALARM\020\'\022\023\n\017OTHER_ITS_ERROR\020(\022\020" +
-      "\n\014DRIVER_ERROR\020)\022\031\n\025INSUFFICIENT_CAPASIT" +
-      "Y\020*\022 \n\034OPERATOR_PERSONNEL_ON_STRIKE\020+\022\020\n" +
-      "\014OTHER_STRIKE\020,\022\031\n\025OTHER_OPERATOR_REASON" +
-      "\020-\022\021\n\rUNKNOWN_CAUSE\020.\"\356\002\n\014StopEstimate\022\030" +
-      "\n\rSchemaVersion\030\001 \002(\005:\0011\022\"\n\ttrip_info\030\002 " +
-      "\002(\0132\017.proto.TripInfo\022\017\n\007stop_id\030\003 \002(\t\022\025\n" +
-      "\rstop_sequence\030\004 \002(\r\022*\n\006status\030\005 \002(\0162\032.p" +
-      "roto.StopEstimate.Status\022&\n\004type\030\006 \002(\0162\030" +
-      ".proto.StopEstimate.Type\022\035\n\025estimated_ti" +
-      "me_utc_ms\030\007 \002(\003\022\035\n\025scheduled_time_utc_ms" +
-      "\030\010 \001(\003\022\034\n\024last_modified_utc_ms\030\t \002(\003\"$\n\006" +
-      "Status\022\r\n\tSCHEDULED\020\000\022\013\n\007SKIPPED\020\001\"\"\n\004Ty" +
-      "pe\022\013\n\007ARRIVAL\020\000\022\r\n\tDEPARTURE\020\001B3\n\037fi.hsl" +
-      ".common.transitdata.protoB\020InternalMessa" +
-      "ges"
+      "on\030\013 \001(\t\022!\n\010category\030\014 \001(\0162\017.proto.Categ" +
+      "ory\0229\n\014sub_category\030\r \001(\0162#.proto.TripCa" +
+      "ncellation.SubCategory\"#\n\006Status\022\013\n\007RUNN" +
+      "ING\020\000\022\014\n\010CANCELED\020\001\"\360\001\n\022DeviationCasesTy" +
+      "pe\022\024\n\020CANCEL_DEPARTURE\020\000\022\n\n\006DETOUR\020\001\022\026\n\022" +
+      "SKIPPED_STOP_CALLS\020\002\022\023\n\017EARLY_DEPARTURE\020" +
+      "\003\022%\n!EARLY_DEPARTURE_FROM_TIMING_POINT\020\004" +
+      "\022\022\n\016LATE_DEPARTURE\020\005\022!\n\035DEPARTURED_AFTER" +
+      "_NEXT_JOURNEY\020\006\022\036\n\032BLOCK_FIRST_DEPARTURE" +
+      "_LATE\020\007\022\r\n\tTIS_ERROR\020\010\"\213\001\n\026AffectedDepar" +
+      "turesType\022\033\n\027CANCEL_ENTIRE_DEPARTURE\020\000\022\033" +
+      "\n\027CANCEL_STOPS_FROM_START\020\001\022\034\n\030CANCEL_ST" +
+      "OPS_FROM_MIDDLE\020\002\022\031\n\025CANCEL_STOPS_FROM_E" +
+      "ND\020\003\"\250\t\n\013SubCategory\022\025\n\021BREAK_MALFUNCTIO" +
+      "N\020\000\022\017\n\013OUT_OF_FUEL\020\001\022\021\n\rFLUID_LEAKAGE\020\002\022" +
+      "\030\n\024ELECTRIC_MALFUNCTION\020\003\022\026\n\022ENGINE_MALF" +
+      "UNCTION\020\004\022\025\n\021OTHER_MALFUNCTION\020\005\022\r\n\tOWN_" +
+      "FAULT\020\006\022\022\n\016OPPOSITE_FAULT\020\007\022\021\n\rFAULT_UNK" +
+      "NOWN\020\010\022\022\n\016STAFF_SHORTAGE\020\t\022\036\n\032ND_OPERATO" +
+      "R_PLANNING_ERROR\020\n\022\017\n\013DRIVER_LATE\020\013\022)\n%I" +
+      "NSUFFICIENT_INSTRUCTIONS_BY_OPERATOR\020\014\022*" +
+      "\n&INSUFFICIENT_INSTRUCTIONS_BY_AUTHORITY" +
+      "\020\r\022\030\n\024NO_VEHICLE_AVAILABLE\020\016\022\025\n\021ASSAULT_" +
+      "ON_DRIVER\020\017\022\030\n\024ASSAULT_ON_PASSENGER\020\020\022\026\n" +
+      "\022ASSAULT_ON_VEHICLE\020\021\022\030\n\024PASSED_OUT_PASS" +
+      "ENGER\020\022\022\021\n\rOTHER_ASSAULT\020\023\022\032\n\026UNDRIVEABL" +
+      "E_CONDITIONS\020\024\022\034\n\030STUCK_CAUSED_BY_SLIPPE" +
+      "RY\020\025\022 \n\034CONGESTION_CAUSED_BY_WEATHER\020\026\022\022" +
+      "\n\016SLIPPERY_TRACK\020\027\022\020\n\014ROAD_BLOCKED\020\030\022(\n$" +
+      "VEHICLE_OFF_THE_ROAD_BY_DRIVER_ERROR\020\031\022(" +
+      "\n$VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON\020\032" +
+      "\022\026\n\022MISSPARKED_VEHICLE\020\033\022\034\n\030CONGESTION_R" +
+      "EASON_UKNOWN\020\034\022!\n\035CONGESTION_CAUSED_BY_A" +
+      "CCIDENT\020\035\022\022\n\016DRIVER_SEIZURE\020\036\022\025\n\021PASSENG" +
+      "ER_SEIZURE\020\037\022\025\n\021PASSENGER_INJURED\020 \022\021\n\rO" +
+      "THER_SEIZURE\020!\022\020\n\014DEVICE_ERROR\020\"\022\031\n\025OPER" +
+      "ATOR_DEVICE_ERROR\020#\022\037\n\033WRONG_INFORMATION" +
+      "_IN_DEVICE\020$\022\034\n\030ITS_SYSTEM_NOT_INSTALLED" +
+      "\020%\022\016\n\nUSER_ERROR\020&\022\017\n\013FALSE_ALARM\020\'\022\023\n\017O" +
+      "THER_ITS_ERROR\020(\022\020\n\014DRIVER_ERROR\020)\022\031\n\025IN" +
+      "SUFFICIENT_CAPASITY\020*\022 \n\034OPERATOR_PERSON" +
+      "NEL_ON_STRIKE\020+\022\020\n\014OTHER_STRIKE\020,\022\031\n\025OTH" +
+      "ER_OPERATOR_REASON\020-\022\021\n\rUNKNOWN_CAUSE\020.\"" +
+      "\356\002\n\014StopEstimate\022\030\n\rSchemaVersion\030\001 \002(\005:" +
+      "\0011\022\"\n\ttrip_info\030\002 \002(\0132\017.proto.TripInfo\022\017" +
+      "\n\007stop_id\030\003 \002(\t\022\025\n\rstop_sequence\030\004 \002(\r\022*" +
+      "\n\006status\030\005 \002(\0162\032.proto.StopEstimate.Stat" +
+      "us\022&\n\004type\030\006 \002(\0162\030.proto.StopEstimate.Ty" +
+      "pe\022\035\n\025estimated_time_utc_ms\030\007 \002(\003\022\035\n\025sch" +
+      "eduled_time_utc_ms\030\010 \001(\003\022\034\n\024last_modifie" +
+      "d_utc_ms\030\t \002(\003\"$\n\006Status\022\r\n\tSCHEDULED\020\000\022" +
+      "\013\n\007SKIPPED\020\001\"\"\n\004Type\022\013\n\007ARRIVAL\020\000\022\r\n\tDEP" +
+      "ARTURE\020\001\"\234\007\n\010Bulletin\022\023\n\013bulletin_id\030\001 \001" +
+      "(\t\022!\n\010category\030\002 \001(\0162\017.proto.Category\022\034\n" +
+      "\024last_modified_utc_ms\030\003 \002(\003\022\031\n\021valid_fro" +
+      "m_utc_ms\030\004 \002(\003\022\027\n\017valid_to_utc_ms\030\005 \002(\003\022" +
+      "\032\n\022affects_all_routes\030\006 \001(\010\022\031\n\021affects_a" +
+      "ll_stops\030\007 \001(\010\0227\n\017affected_routes\030\010 \003(\0132" +
+      "\036.proto.Bulletin.AffectedEntity\0226\n\016affec" +
+      "ted_stops\030\t \003(\0132\036.proto.Bulletin.Affecte" +
+      "dEntity\022&\n\006impact\030\n \001(\0162\026.proto.Bulletin" +
+      ".Impact\022*\n\010priority\030\013 \001(\0162\030.proto.Bullet" +
+      "in.Priority\022+\n\006titles\030\014 \003(\0132\033.proto.Bull" +
+      "etin.Translation\0221\n\014descriptions\030\r \003(\0132\033" +
+      ".proto.Bulletin.Translation\032#\n\016AffectedE" +
+      "ntity\022\021\n\tentity_id\030\001 \002(\t\032-\n\013Translation\022" +
+      "\014\n\004text\030\001 \002(\t\022\020\n\010language\030\002 \001(\t\"\246\002\n\006Impa" +
+      "ct\022\r\n\tCANCELLED\020\000\022\013\n\007DELAYED\020\001\022\026\n\022DEVIAT" +
+      "ING_SCHEDULE\020\002\022\024\n\020DISRUPTION_ROUTE\020\003\022\030\n\024" +
+      "IRREGULAR_DEPARTURES\020\004\022\027\n\023POSSIBLE_DEVIA" +
+      "TIONS\020\005\022\024\n\020POSSIBLY_DELAYED\020\006\022\025\n\021REDUCED" +
+      "_TRANSPORT\020\007\022\027\n\023RETURNING_TO_NORMAL\020\010\022 \n" +
+      "\034VENDING_MACHINE_OUT_OF_ORDER\020\t\022\010\n\004NULL\020" +
+      "\n\022\t\n\005OTHER\020\013\022\025\n\021NO_TRAFFIC_IMPACT\020\014\022\013\n\007U" +
+      "NKNOWN\020\r\"-\n\010Priority\022\010\n\004INFO\020\000\022\013\n\007WARNIN" +
+      "G\020\001\022\n\n\006SEVERE\020\002\"L\n\014ServiceAlert\022\030\n\rSchem" +
+      "aVersion\030\001 \002(\005:\0011\022\"\n\tbulletins\030\002 \003(\0132\017.p" +
+      "roto.Bulletin*\202\005\n\010Category\022\025\n\021VEHICLE_BR" +
+      "EAKDOWN\020\000\022\014\n\010ACCIDENT\020\001\022\r\n\tNO_DRIVER\020\002\022\013" +
+      "\n\007ASSAULT\020\003\022\013\n\007WEATHER\020\004\022\030\n\024VEHICLE_OFF_" +
+      "THE_ROAD\020\005\022\013\n\007SEIZURE\020\006\022\024\n\020ITS_SYSTEM_ER" +
+      "ROR\020\007\022\026\n\022OTHER_DRIVER_ERROR\020\010\022\027\n\023TOO_MAN" +
+      "Y_PASSENGERS\020\t\022\n\n\006STRIKE\020\n\022\t\n\005OTHER\020\013\022\026\n" +
+      "\022EARLIER_DISRUPTION\020\014\022\031\n\025NO_TRAFFIC_DISR" +
+      "UPTION\020\r\022\021\n\rTRACK_BLOCKED\020\016\022\021\n\rSTAFF_DEF" +
+      "ICIT\020\017\022\017\n\013DISTURBANCE\020\020\022\023\n\017VEHICLE_DEFIC" +
+      "IT\020\021\022\017\n\013ROAD_CLOSED\020\022\022\017\n\013ROAD_TRENCH\020\023\022\025" +
+      "\n\021TRACK_MAINTENANCE\020\024\022\024\n\020TRAFFIC_ACCIDEN" +
+      "T\020\025\022\017\n\013TRAFFIC_JAM\020\026\022\024\n\020MEDICAL_INCIDENT" +
+      "\020\027\022\026\n\022WEATHER_CONDITIONS\020\030\022\025\n\021TECHNICAL_" +
+      "FAILURE\020\031\022\010\n\004TEST\020\032\022\024\n\020ROAD_MAINTENANCE\020" +
+      "\033\022\022\n\016SWITCH_FAILURE\020\034\022\017\n\013STATE_VISIT\020\035\022\021" +
+      "\n\rPOWER_FAILURE\020\036\022\025\n\021MISPARKED_VEHICLE\020\037" +
+      "\022\020\n\014PUBLIC_EVENT\020 B3\n\037fi.hsl.common.tran" +
+      "sitdata.protoB\020InternalMessages"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6430,6 +11853,30 @@ public final class InternalMessages {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_StopEstimate_descriptor,
         new java.lang.String[] { "SchemaVersion", "TripInfo", "StopId", "StopSequence", "Status", "Type", "EstimatedTimeUtcMs", "ScheduledTimeUtcMs", "LastModifiedUtcMs", });
+    internal_static_proto_Bulletin_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_proto_Bulletin_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_Bulletin_descriptor,
+        new java.lang.String[] { "BulletinId", "Category", "LastModifiedUtcMs", "ValidFromUtcMs", "ValidToUtcMs", "AffectsAllRoutes", "AffectsAllStops", "AffectedRoutes", "AffectedStops", "Impact", "Priority", "Titles", "Descriptions", });
+    internal_static_proto_Bulletin_AffectedEntity_descriptor =
+      internal_static_proto_Bulletin_descriptor.getNestedTypes().get(0);
+    internal_static_proto_Bulletin_AffectedEntity_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_Bulletin_AffectedEntity_descriptor,
+        new java.lang.String[] { "EntityId", });
+    internal_static_proto_Bulletin_Translation_descriptor =
+      internal_static_proto_Bulletin_descriptor.getNestedTypes().get(1);
+    internal_static_proto_Bulletin_Translation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_Bulletin_Translation_descriptor,
+        new java.lang.String[] { "Text", "Language", });
+    internal_static_proto_ServiceAlert_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_proto_ServiceAlert_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ServiceAlert_descriptor,
+        new java.lang.String[] { "SchemaVersion", "Bulletins", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
