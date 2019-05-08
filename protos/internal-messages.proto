@@ -218,6 +218,7 @@ message Bulletin {
     }
     repeated Translation titles = 12;
     repeated Translation descriptions = 13;
+    repeated Translation urls = 14;
 }
 
 message ServiceAlert {
