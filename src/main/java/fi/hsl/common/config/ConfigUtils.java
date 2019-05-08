@@ -36,19 +36,35 @@ public class ConfigUtils {
         return getEnv(name).flatMap(ConfigUtils::safeParseInt);
     }
 
-    public static String getConnectionStringFromFile() throws Exception {
-        return getSecretFromFile("FILEPATH_CONNECTION_STRING", Optional.empty());
+    public static String getConnectionStringFromFileOrThrow() throws Exception {
+        return getSecretFromFileOrThrow("FILEPATH_CONNECTION_STRING", Optional.empty());
     }
 
-    public static String getConnectionStringFromFile(final Optional<String> defaultPath) throws Exception {
-        return getSecretFromFile("FILEPATH_CONNECTION_STRING", defaultPath);
+    public static String getConnectionStringFromFileOrThrow(final Optional<String> defaultPath) throws Exception {
+        return getSecretFromFileOrThrow("FILEPATH_CONNECTION_STRING", defaultPath);
     }
 
-    public static String getSecretFromFile(final String envName) throws Exception {
-        return getSecretFromFile(envName, Optional.empty());
+    public static String getUsernameFromFileOrThrow() throws Exception {
+        return getSecretFromFileOrThrow("FILEPATH_USERNAME_SECRET", Optional.empty());
     }
 
-    public static String getSecretFromFile(final String envName, final Optional<String> defaultPath) throws Exception {
+    public static String getUsernameFromFileOrThrow(final Optional<String> defaultPath) throws Exception {
+        return getSecretFromFileOrThrow("FILEPATH_USERNAME_SECRET", defaultPath);
+    }
+
+    public static String getPasswordFromFileOrThrow() throws Exception {
+        return getSecretFromFileOrThrow("FILEPATH_PASSWORD_SECRET", Optional.empty());
+    }
+
+    public static String getPasswordFromFileOrThrow(final Optional<String> defaultPath) throws Exception {
+        return getSecretFromFileOrThrow("FILEPATH_PASSWORD_SECRET", defaultPath);
+    }
+
+    public static String getSecretFromFileOrThrow(final String envName) throws Exception {
+        return getSecretFromFileOrThrow(envName, Optional.empty());
+    }
+
+    public static String getSecretFromFileOrThrow(final String envName, final Optional<String> defaultPath) throws Exception {
         String secretFilePath;
         final Optional<String> maybeSecretFilePath = getEnv(envName);
         if (maybeSecretFilePath.isPresent()) {
