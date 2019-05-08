@@ -277,9 +277,9 @@
                     <environmentVariables>
                         <ENV1>VAL1</ENV1>
                         <ENV2>123</ENV2>
-                        <FILEPATH_CONNECTION_STRING>./src/test/resources/secret.secret</FILEPATH_CONNECTION_STRING>
-                        <FILEPATH_USERNAME_SECRET>./src/test/resources/username.secret</FILEPATH_USERNAME_SECRET>
-                        <FILEPATH_PASSWORD_SECRET>./src/test/resources/password.secret</FILEPATH_PASSWORD_SECRET>
+                        <FILEPATH_CONNECTION_STRING>./src/test/resources/secret.testsecret</FILEPATH_CONNECTION_STRING>
+                        <FILEPATH_USERNAME_SECRET>./src/test/resources/username.testsecret</FILEPATH_USERNAME_SECRET>
+                        <FILEPATH_PASSWORD_SECRET>./src/test/resources/password.testsecret</FILEPATH_PASSWORD_SECRET>
                     </environmentVariables>
                 </configuration>
             </plugin>

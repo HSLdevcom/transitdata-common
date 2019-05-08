@@ -69,7 +69,7 @@ public class ConfigUtilsTest {
     public void getSecretFromFileOrThrow() throws Exception {
         String secret = ConfigUtils.getSecretFromFileOrThrow("FILEPATH_CONNECTION_STRING", Optional.empty());
         assertEquals("secret", secret);
-        secret = ConfigUtils.getSecretFromFileOrThrow("ENV0", Optional.of("./src/test/resources/secret.secret"));
+        secret = ConfigUtils.getSecretFromFileOrThrow("ENV0", Optional.of("./src/test/resources/secret.testsecret"));
         assertEquals("secret", secret);
     }
 
@@ -100,11 +100,11 @@ public class ConfigUtilsTest {
 
     @Test(expected = Exception.class)
     public void getSecretFromFileOrThrow6() throws Exception {
-        ConfigUtils.getSecretFromFileOrThrow(null, Optional.of("./src/test/resources/secret.secret"));
+        ConfigUtils.getSecretFromFileOrThrow(null, Optional.of("./src/test/resources/secret.testsecret"));
     }
 
     @Test(expected = Exception.class)
     public void getSecretFromFileOrThrow7() throws Exception {
-        ConfigUtils.getSecretFromFileOrThrow("ENV1", Optional.of("./src/test/resources/secret.secret"));
+        ConfigUtils.getSecretFromFileOrThrow("ENV1", Optional.of("./src/test/resources/secret.testsecret"));
     }
 }
