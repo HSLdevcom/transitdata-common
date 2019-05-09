@@ -6476,6 +6476,30 @@ public final class InternalMessages {
      */
     fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder getDescriptionsOrBuilder(
         int index);
+
+    /**
+     * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+     */
+    java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> 
+        getUrlsList();
+    /**
+     * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation getUrls(int index);
+    /**
+     * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+     */
+    int getUrlsCount();
+    /**
+     * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+     */
+    java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder> 
+        getUrlsOrBuilderList();
+    /**
+     * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder getUrlsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code proto.Bulletin}
@@ -6498,6 +6522,7 @@ public final class InternalMessages {
       priority_ = 0;
       titles_ = java.util.Collections.emptyList();
       descriptions_ = java.util.Collections.emptyList();
+      urls_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -6627,6 +6652,15 @@ public final class InternalMessages {
                   input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.PARSER, extensionRegistry));
               break;
             }
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
+                urls_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation>();
+                mutable_bitField0_ |= 0x00002000;
+              }
+              urls_.add(
+                  input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.PARSER, extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -6653,6 +6687,9 @@ public final class InternalMessages {
         }
         if (((mutable_bitField0_ & 0x00001000) != 0)) {
           descriptions_ = java.util.Collections.unmodifiableList(descriptions_);
+        }
+        if (((mutable_bitField0_ & 0x00002000) != 0)) {
+          urls_ = java.util.Collections.unmodifiableList(urls_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -8620,6 +8657,41 @@ public final class InternalMessages {
       return descriptions_.get(index);
     }
 
+    public static final int URLS_FIELD_NUMBER = 14;
+    private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> urls_;
+    /**
+     * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+     */
+    public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> getUrlsList() {
+      return urls_;
+    }
+    /**
+     * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+     */
+    public java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder> 
+        getUrlsOrBuilderList() {
+      return urls_;
+    }
+    /**
+     * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+     */
+    public int getUrlsCount() {
+      return urls_.size();
+    }
+    /**
+     * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation getUrls(int index) {
+      return urls_.get(index);
+    }
+    /**
+     * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder getUrlsOrBuilder(
+        int index) {
+      return urls_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8659,6 +8731,12 @@ public final class InternalMessages {
       }
       for (int i = 0; i < getDescriptionsCount(); i++) {
         if (!getDescriptions(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getUrlsCount(); i++) {
+        if (!getUrls(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -8708,6 +8786,9 @@ public final class InternalMessages {
       }
       for (int i = 0; i < descriptions_.size(); i++) {
         output.writeMessage(13, descriptions_.get(i));
+      }
+      for (int i = 0; i < urls_.size(); i++) {
+        output.writeMessage(14, urls_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -8768,6 +8849,10 @@ public final class InternalMessages {
       for (int i = 0; i < descriptions_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, descriptions_.get(i));
+      }
+      for (int i = 0; i < urls_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, urls_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8834,6 +8919,8 @@ public final class InternalMessages {
           .equals(other.getTitlesList())) return false;
       if (!getDescriptionsList()
           .equals(other.getDescriptionsList())) return false;
+      if (!getUrlsList()
+          .equals(other.getUrlsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8901,6 +8988,10 @@ public final class InternalMessages {
       if (getDescriptionsCount() > 0) {
         hash = (37 * hash) + DESCRIPTIONS_FIELD_NUMBER;
         hash = (53 * hash) + getDescriptionsList().hashCode();
+      }
+      if (getUrlsCount() > 0) {
+        hash = (37 * hash) + URLS_FIELD_NUMBER;
+        hash = (53 * hash) + getUrlsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -9034,6 +9125,7 @@ public final class InternalMessages {
           getAffectedStopsFieldBuilder();
           getTitlesFieldBuilder();
           getDescriptionsFieldBuilder();
+          getUrlsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -9080,6 +9172,12 @@ public final class InternalMessages {
           bitField0_ = (bitField0_ & ~0x00001000);
         } else {
           descriptionsBuilder_.clear();
+        }
+        if (urlsBuilder_ == null) {
+          urls_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00002000);
+        } else {
+          urlsBuilder_.clear();
         }
         return this;
       }
@@ -9180,6 +9278,15 @@ public final class InternalMessages {
           result.descriptions_ = descriptions_;
         } else {
           result.descriptions_ = descriptionsBuilder_.build();
+        }
+        if (urlsBuilder_ == null) {
+          if (((bitField0_ & 0x00002000) != 0)) {
+            urls_ = java.util.Collections.unmodifiableList(urls_);
+            bitField0_ = (bitField0_ & ~0x00002000);
+          }
+          result.urls_ = urls_;
+        } else {
+          result.urls_ = urlsBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -9363,6 +9470,32 @@ public final class InternalMessages {
             }
           }
         }
+        if (urlsBuilder_ == null) {
+          if (!other.urls_.isEmpty()) {
+            if (urls_.isEmpty()) {
+              urls_ = other.urls_;
+              bitField0_ = (bitField0_ & ~0x00002000);
+            } else {
+              ensureUrlsIsMutable();
+              urls_.addAll(other.urls_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.urls_.isEmpty()) {
+            if (urlsBuilder_.isEmpty()) {
+              urlsBuilder_.dispose();
+              urlsBuilder_ = null;
+              urls_ = other.urls_;
+              bitField0_ = (bitField0_ & ~0x00002000);
+              urlsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getUrlsFieldBuilder() : null;
+            } else {
+              urlsBuilder_.addAllMessages(other.urls_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -9396,6 +9529,11 @@ public final class InternalMessages {
         }
         for (int i = 0; i < getDescriptionsCount(); i++) {
           if (!getDescriptions(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getUrlsCount(); i++) {
+          if (!getUrls(i).isInitialized()) {
             return false;
           }
         }
@@ -10728,6 +10866,246 @@ public final class InternalMessages {
         }
         return descriptionsBuilder_;
       }
+
+      private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> urls_ =
+        java.util.Collections.emptyList();
+      private void ensureUrlsIsMutable() {
+        if (!((bitField0_ & 0x00002000) != 0)) {
+          urls_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation>(urls_);
+          bitField0_ |= 0x00002000;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder> urlsBuilder_;
+
+      /**
+       * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+       */
+      public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> getUrlsList() {
+        if (urlsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(urls_);
+        } else {
+          return urlsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+       */
+      public int getUrlsCount() {
+        if (urlsBuilder_ == null) {
+          return urls_.size();
+        } else {
+          return urlsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation getUrls(int index) {
+        if (urlsBuilder_ == null) {
+          return urls_.get(index);
+        } else {
+          return urlsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+       */
+      public Builder setUrls(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation value) {
+        if (urlsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUrlsIsMutable();
+          urls_.set(index, value);
+          onChanged();
+        } else {
+          urlsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+       */
+      public Builder setUrls(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder builderForValue) {
+        if (urlsBuilder_ == null) {
+          ensureUrlsIsMutable();
+          urls_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          urlsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+       */
+      public Builder addUrls(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation value) {
+        if (urlsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUrlsIsMutable();
+          urls_.add(value);
+          onChanged();
+        } else {
+          urlsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+       */
+      public Builder addUrls(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation value) {
+        if (urlsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUrlsIsMutable();
+          urls_.add(index, value);
+          onChanged();
+        } else {
+          urlsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+       */
+      public Builder addUrls(
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder builderForValue) {
+        if (urlsBuilder_ == null) {
+          ensureUrlsIsMutable();
+          urls_.add(builderForValue.build());
+          onChanged();
+        } else {
+          urlsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+       */
+      public Builder addUrls(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder builderForValue) {
+        if (urlsBuilder_ == null) {
+          ensureUrlsIsMutable();
+          urls_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          urlsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+       */
+      public Builder addAllUrls(
+          java.lang.Iterable<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> values) {
+        if (urlsBuilder_ == null) {
+          ensureUrlsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, urls_);
+          onChanged();
+        } else {
+          urlsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+       */
+      public Builder clearUrls() {
+        if (urlsBuilder_ == null) {
+          urls_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00002000);
+          onChanged();
+        } else {
+          urlsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+       */
+      public Builder removeUrls(int index) {
+        if (urlsBuilder_ == null) {
+          ensureUrlsIsMutable();
+          urls_.remove(index);
+          onChanged();
+        } else {
+          urlsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder getUrlsBuilder(
+          int index) {
+        return getUrlsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder getUrlsOrBuilder(
+          int index) {
+        if (urlsBuilder_ == null) {
+          return urls_.get(index);  } else {
+          return urlsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+       */
+      public java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder> 
+           getUrlsOrBuilderList() {
+        if (urlsBuilder_ != null) {
+          return urlsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(urls_);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder addUrlsBuilder() {
+        return getUrlsFieldBuilder().addBuilder(
+            fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder addUrlsBuilder(
+          int index) {
+        return getUrlsFieldBuilder().addBuilder(
+            index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Bulletin.Translation urls = 14;</code>
+       */
+      public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder> 
+           getUrlsBuilderList() {
+        return getUrlsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder> 
+          getUrlsFieldBuilder() {
+        if (urlsBuilder_ == null) {
+          urlsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder>(
+                  urls_,
+                  ((bitField0_ & 0x00002000) != 0),
+                  getParentForChildren(),
+                  isClean());
+          urls_ = null;
+        }
+        return urlsBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -11779,7 +12157,7 @@ public final class InternalMessages {
       "eduled_time_utc_ms\030\010 \001(\003\022\034\n\024last_modifie" +
       "d_utc_ms\030\t \002(\003\"$\n\006Status\022\r\n\tSCHEDULED\020\000\022" +
       "\013\n\007SKIPPED\020\001\"\"\n\004Type\022\013\n\007ARRIVAL\020\000\022\r\n\tDEP" +
-      "ARTURE\020\001\"\234\007\n\010Bulletin\022\023\n\013bulletin_id\030\001 \001" +
+      "ARTURE\020\001\"\307\007\n\010Bulletin\022\023\n\013bulletin_id\030\001 \001" +
       "(\t\022!\n\010category\030\002 \001(\0162\017.proto.Category\022\034\n" +
       "\024last_modified_utc_ms\030\003 \002(\003\022\031\n\021valid_fro" +
       "m_utc_ms\030\004 \002(\003\022\027\n\017valid_to_utc_ms\030\005 \002(\003\022" +
@@ -11791,37 +12169,38 @@ public final class InternalMessages {
       ".Impact\022*\n\010priority\030\013 \001(\0162\030.proto.Bullet" +
       "in.Priority\022+\n\006titles\030\014 \003(\0132\033.proto.Bull" +
       "etin.Translation\0221\n\014descriptions\030\r \003(\0132\033" +
-      ".proto.Bulletin.Translation\032#\n\016AffectedE" +
-      "ntity\022\021\n\tentity_id\030\001 \002(\t\032-\n\013Translation\022" +
-      "\014\n\004text\030\001 \002(\t\022\020\n\010language\030\002 \001(\t\"\246\002\n\006Impa" +
-      "ct\022\r\n\tCANCELLED\020\000\022\013\n\007DELAYED\020\001\022\026\n\022DEVIAT" +
-      "ING_SCHEDULE\020\002\022\024\n\020DISRUPTION_ROUTE\020\003\022\030\n\024" +
-      "IRREGULAR_DEPARTURES\020\004\022\027\n\023POSSIBLE_DEVIA" +
-      "TIONS\020\005\022\024\n\020POSSIBLY_DELAYED\020\006\022\025\n\021REDUCED" +
-      "_TRANSPORT\020\007\022\027\n\023RETURNING_TO_NORMAL\020\010\022 \n" +
-      "\034VENDING_MACHINE_OUT_OF_ORDER\020\t\022\010\n\004NULL\020" +
-      "\n\022\t\n\005OTHER\020\013\022\025\n\021NO_TRAFFIC_IMPACT\020\014\022\013\n\007U" +
-      "NKNOWN\020\r\"-\n\010Priority\022\010\n\004INFO\020\000\022\013\n\007WARNIN" +
-      "G\020\001\022\n\n\006SEVERE\020\002\"L\n\014ServiceAlert\022\030\n\rSchem" +
-      "aVersion\030\001 \002(\005:\0011\022\"\n\tbulletins\030\002 \003(\0132\017.p" +
-      "roto.Bulletin*\202\005\n\010Category\022\025\n\021VEHICLE_BR" +
-      "EAKDOWN\020\000\022\014\n\010ACCIDENT\020\001\022\r\n\tNO_DRIVER\020\002\022\013" +
-      "\n\007ASSAULT\020\003\022\013\n\007WEATHER\020\004\022\030\n\024VEHICLE_OFF_" +
-      "THE_ROAD\020\005\022\013\n\007SEIZURE\020\006\022\024\n\020ITS_SYSTEM_ER" +
-      "ROR\020\007\022\026\n\022OTHER_DRIVER_ERROR\020\010\022\027\n\023TOO_MAN" +
-      "Y_PASSENGERS\020\t\022\n\n\006STRIKE\020\n\022\t\n\005OTHER\020\013\022\026\n" +
-      "\022EARLIER_DISRUPTION\020\014\022\031\n\025NO_TRAFFIC_DISR" +
-      "UPTION\020\r\022\021\n\rTRACK_BLOCKED\020\016\022\021\n\rSTAFF_DEF" +
-      "ICIT\020\017\022\017\n\013DISTURBANCE\020\020\022\023\n\017VEHICLE_DEFIC" +
-      "IT\020\021\022\017\n\013ROAD_CLOSED\020\022\022\017\n\013ROAD_TRENCH\020\023\022\025" +
-      "\n\021TRACK_MAINTENANCE\020\024\022\024\n\020TRAFFIC_ACCIDEN" +
-      "T\020\025\022\017\n\013TRAFFIC_JAM\020\026\022\024\n\020MEDICAL_INCIDENT" +
-      "\020\027\022\026\n\022WEATHER_CONDITIONS\020\030\022\025\n\021TECHNICAL_" +
-      "FAILURE\020\031\022\010\n\004TEST\020\032\022\024\n\020ROAD_MAINTENANCE\020" +
-      "\033\022\022\n\016SWITCH_FAILURE\020\034\022\017\n\013STATE_VISIT\020\035\022\021" +
-      "\n\rPOWER_FAILURE\020\036\022\025\n\021MISPARKED_VEHICLE\020\037" +
-      "\022\020\n\014PUBLIC_EVENT\020 B3\n\037fi.hsl.common.tran" +
-      "sitdata.protoB\020InternalMessages"
+      ".proto.Bulletin.Translation\022)\n\004urls\030\016 \003(" +
+      "\0132\033.proto.Bulletin.Translation\032#\n\016Affect" +
+      "edEntity\022\021\n\tentity_id\030\001 \002(\t\032-\n\013Translati" +
+      "on\022\014\n\004text\030\001 \002(\t\022\020\n\010language\030\002 \001(\t\"\246\002\n\006I" +
+      "mpact\022\r\n\tCANCELLED\020\000\022\013\n\007DELAYED\020\001\022\026\n\022DEV" +
+      "IATING_SCHEDULE\020\002\022\024\n\020DISRUPTION_ROUTE\020\003\022" +
+      "\030\n\024IRREGULAR_DEPARTURES\020\004\022\027\n\023POSSIBLE_DE" +
+      "VIATIONS\020\005\022\024\n\020POSSIBLY_DELAYED\020\006\022\025\n\021REDU" +
+      "CED_TRANSPORT\020\007\022\027\n\023RETURNING_TO_NORMAL\020\010" +
+      "\022 \n\034VENDING_MACHINE_OUT_OF_ORDER\020\t\022\010\n\004NU" +
+      "LL\020\n\022\t\n\005OTHER\020\013\022\025\n\021NO_TRAFFIC_IMPACT\020\014\022\013" +
+      "\n\007UNKNOWN\020\r\"-\n\010Priority\022\010\n\004INFO\020\000\022\013\n\007WAR" +
+      "NING\020\001\022\n\n\006SEVERE\020\002\"L\n\014ServiceAlert\022\030\n\rSc" +
+      "hemaVersion\030\001 \002(\005:\0011\022\"\n\tbulletins\030\002 \003(\0132" +
+      "\017.proto.Bulletin*\202\005\n\010Category\022\025\n\021VEHICLE" +
+      "_BREAKDOWN\020\000\022\014\n\010ACCIDENT\020\001\022\r\n\tNO_DRIVER\020" +
+      "\002\022\013\n\007ASSAULT\020\003\022\013\n\007WEATHER\020\004\022\030\n\024VEHICLE_O" +
+      "FF_THE_ROAD\020\005\022\013\n\007SEIZURE\020\006\022\024\n\020ITS_SYSTEM" +
+      "_ERROR\020\007\022\026\n\022OTHER_DRIVER_ERROR\020\010\022\027\n\023TOO_" +
+      "MANY_PASSENGERS\020\t\022\n\n\006STRIKE\020\n\022\t\n\005OTHER\020\013" +
+      "\022\026\n\022EARLIER_DISRUPTION\020\014\022\031\n\025NO_TRAFFIC_D" +
+      "ISRUPTION\020\r\022\021\n\rTRACK_BLOCKED\020\016\022\021\n\rSTAFF_" +
+      "DEFICIT\020\017\022\017\n\013DISTURBANCE\020\020\022\023\n\017VEHICLE_DE" +
+      "FICIT\020\021\022\017\n\013ROAD_CLOSED\020\022\022\017\n\013ROAD_TRENCH\020" +
+      "\023\022\025\n\021TRACK_MAINTENANCE\020\024\022\024\n\020TRAFFIC_ACCI" +
+      "DENT\020\025\022\017\n\013TRAFFIC_JAM\020\026\022\024\n\020MEDICAL_INCID" +
+      "ENT\020\027\022\026\n\022WEATHER_CONDITIONS\020\030\022\025\n\021TECHNIC" +
+      "AL_FAILURE\020\031\022\010\n\004TEST\020\032\022\024\n\020ROAD_MAINTENAN" +
+      "CE\020\033\022\022\n\016SWITCH_FAILURE\020\034\022\017\n\013STATE_VISIT\020" +
+      "\035\022\021\n\rPOWER_FAILURE\020\036\022\025\n\021MISPARKED_VEHICL" +
+      "E\020\037\022\020\n\014PUBLIC_EVENT\020 B3\n\037fi.hsl.common.t" +
+      "ransitdata.protoB\020InternalMessages"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -11858,7 +12237,7 @@ public final class InternalMessages {
     internal_static_proto_Bulletin_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Bulletin_descriptor,
-        new java.lang.String[] { "BulletinId", "Category", "LastModifiedUtcMs", "ValidFromUtcMs", "ValidToUtcMs", "AffectsAllRoutes", "AffectsAllStops", "AffectedRoutes", "AffectedStops", "Impact", "Priority", "Titles", "Descriptions", });
+        new java.lang.String[] { "BulletinId", "Category", "LastModifiedUtcMs", "ValidFromUtcMs", "ValidToUtcMs", "AffectsAllRoutes", "AffectsAllStops", "AffectedRoutes", "AffectedStops", "Impact", "Priority", "Titles", "Descriptions", "Urls", });
     internal_static_proto_Bulletin_AffectedEntity_descriptor =
       internal_static_proto_Bulletin_descriptor.getNestedTypes().get(0);
     internal_static_proto_Bulletin_AffectedEntity_fieldAccessorTable = new
