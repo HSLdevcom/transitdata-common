@@ -286,6 +286,15 @@ public class MockDataUtils {
 
     public static InternalMessages.TripCancellation mockTripCancellation(long dvjId, String routeId, int joreDirectionId,
                                                                          String startDate, String startTime,
+                                                                         InternalMessages.TripCancellation.Status status) throws Exception {
+        return mockTripCancellation(dvjId, routeId, joreDirectionId, startDate, startTime, status,
+                Optional.of(MOCK_DEVIATION_CASES_TYPE), Optional.of(MOCK_AFFECTED_DEPARTURES_TYPE),
+                Optional.of(MOCK_TITLE), Optional.of(MOCK_DESCRIPTION),
+                Optional.of(MOCK_CATEGORY), Optional.of(MOCK_SUB_CATEGORY));
+    }
+
+    public static InternalMessages.TripCancellation mockTripCancellation(long dvjId, String routeId, int joreDirectionId,
+                                                                         String startDate, String startTime,
                                                                          InternalMessages.TripCancellation.Status status,
                                                                          final Optional<InternalMessages.TripCancellation.DeviationCasesType> maybeDeviationCasesType,
                                                                          final Optional<InternalMessages.TripCancellation.AffectedDeparturesType> maybeAffectedDeparturesType,
