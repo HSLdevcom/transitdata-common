@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -21,6 +22,12 @@ public class MockDataUtils {
 
     public static final String MOCK_START_DATE = "20180101";
     public static final String MOCK_START_TIME = "11:22:00";
+    public static final InternalMessages.TripCancellation.DeviationCasesType MOCK_DEVIATION_CASES_TYPE = InternalMessages.TripCancellation.DeviationCasesType.CANCEL_DEPARTURE;
+    public static final InternalMessages.TripCancellation.AffectedDeparturesType MOCK_AFFECTED_DEPARTURES_TYPE = InternalMessages.TripCancellation.AffectedDeparturesType.CANCEL_ENTIRE_DEPARTURE;
+    public static final String MOCK_TITLE = "title";
+    public static final String MOCK_DESCRIPTION = "description";
+    public static final InternalMessages.Category MOCK_CATEGORY = InternalMessages.Category.VEHICLE_BREAKDOWN;
+    public static final InternalMessages.TripCancellation.SubCategory MOCK_SUB_CATEGORY = InternalMessages.TripCancellation.SubCategory.BREAK_MALFUNCTION;
 
     public static final int MOCK_DIRECTION_ID = PubtransFactory.JORE_DIRECTION_ID_INBOUND; // Let's use inbound so it differs from GTFS-RT constants.
     private MockDataUtils() {}
@@ -254,7 +261,10 @@ public class MockDataUtils {
         return mockTripCancellation(
                 generateValidJoreId(), routeId,
                 MOCK_DIRECTION_ID, MOCK_START_DATE, MOCK_START_TIME,
-                InternalMessages.TripCancellation.Status.CANCELED);
+                InternalMessages.TripCancellation.Status.CANCELED,
+                Optional.of(MOCK_DEVIATION_CASES_TYPE), Optional.of(MOCK_AFFECTED_DEPARTURES_TYPE),
+                Optional.of(MOCK_TITLE), Optional.of(MOCK_DESCRIPTION),
+                Optional.of(MOCK_CATEGORY), Optional.of(MOCK_SUB_CATEGORY));
     }
 
     public static InternalMessages.TripCancellation mockTripCancellation(long dvjId, String routeId, int joreDirectionId,
@@ -268,18 +278,36 @@ public class MockDataUtils {
 
         String date = DateTimeFormatter.ofPattern("yyyyMMdd").format(startTime);
         String time = DateTimeFormatter.ofPattern("HH:mm:ss").format(startTime);
-        return mockTripCancellation(dvjId, routeId, joreDirectionId, date, time, status);
+        return mockTripCancellation(dvjId, routeId, joreDirectionId, date, time, status,
+                Optional.of(MOCK_DEVIATION_CASES_TYPE), Optional.of(MOCK_AFFECTED_DEPARTURES_TYPE),
+                Optional.of(MOCK_TITLE), Optional.of(MOCK_DESCRIPTION),
+                Optional.of(MOCK_CATEGORY), Optional.of(MOCK_SUB_CATEGORY));
     }
 
     public static InternalMessages.TripCancellation mockTripCancellation(long dvjId, String routeId, int joreDirectionId,
                                                                          String startDate, String startTime,
-                                                                         InternalMessages.TripCancellation.Status status) throws Exception {
-        return mockTripCancellationBuilder(dvjId, routeId, joreDirectionId, startDate, startTime, status).build();
+                                                                         InternalMessages.TripCancellation.Status status,
+                                                                         final Optional<InternalMessages.TripCancellation.DeviationCasesType> maybeDeviationCasesType,
+                                                                         final Optional<InternalMessages.TripCancellation.AffectedDeparturesType> maybeAffectedDeparturesType,
+                                                                         final Optional<String> maybeTitle,
+                                                                         final Optional<String> maybeDescription,
+                                                                         final Optional<InternalMessages.Category> maybeCategory,
+                                                                         final Optional<InternalMessages.TripCancellation.SubCategory> maybeSubCategory) throws Exception {
+        return mockTripCancellationBuilder(dvjId, routeId, joreDirectionId, startDate, startTime, status,
+                maybeDeviationCasesType, maybeAffectedDeparturesType,
+                maybeTitle, maybeDescription,
+                maybeCategory, maybeSubCategory).build();
     }
 
     public static InternalMessages.TripCancellation.Builder mockTripCancellationBuilder(long dvjId, String routeId, int joreDirectionId,
-                                                                         String startDate, String startTime,
-                                                                         InternalMessages.TripCancellation.Status status) {
+                                                                                        String startDate, String startTime,
+                                                                                        InternalMessages.TripCancellation.Status status,
+                                                                                        final Optional<InternalMessages.TripCancellation.DeviationCasesType> maybeDeviationCasesType,
+                                                                                        final Optional<InternalMessages.TripCancellation.AffectedDeparturesType> maybeAffectedDeparturesType,
+                                                                                        final Optional<String> maybeTitle,
+                                                                                        final Optional<String> maybeDescription,
+                                                                                        final Optional<InternalMessages.Category> maybeCategory,
+                                                                                        final Optional<InternalMessages.TripCancellation.SubCategory> maybeSubCategory) {
 
         InternalMessages.TripCancellation.Builder tripCancellationBuilder = InternalMessages.TripCancellation.newBuilder();
 
@@ -290,7 +318,87 @@ public class MockDataUtils {
                 .setStartTime(startTime)
                 .setSchemaVersion(tripCancellationBuilder.getSchemaVersion())
                 .setStatus(status);
+        if (maybeDeviationCasesType.isPresent()) {
+            tripCancellationBuilder.setDeviationCasesType(maybeDeviationCasesType.get());
+        }
+        if (maybeAffectedDeparturesType.isPresent()) {
+            tripCancellationBuilder.setAffectedDeparturesType(maybeAffectedDeparturesType.get());
+        }
+        if (maybeTitle.isPresent()) {
+            tripCancellationBuilder.setTitle(maybeTitle.get());
+        }
+        if (maybeDescription.isPresent()) {
+            tripCancellationBuilder.setDescription(maybeDescription.get());
+        }
+        if (maybeCategory.isPresent()) {
+            tripCancellationBuilder.setCategory(maybeCategory.get());
+        }
+        if (maybeSubCategory.isPresent()) {
+            tripCancellationBuilder.setSubCategory(maybeSubCategory.get());
+        }
         return tripCancellationBuilder;
     }
 
+    public static InternalMessages.Bulletin.AffectedEntity mockAffectedEntity(final String entityId) {
+        return InternalMessages.Bulletin.AffectedEntity.newBuilder().setEntityId(entityId).build();
+    }
+
+    public static InternalMessages.Bulletin.Translation mockTranslation(final String text, final String language) {
+        return InternalMessages.Bulletin.Translation.newBuilder().setText(text).setLanguage(language).build();
+    }
+
+    public static InternalMessages.Bulletin mockBulletin(final String bulletinId, final long lastModifiedMs,
+                                                                        final long validFromMs, final long validToMs,
+                                                                        final boolean affectsAllRoutes, final boolean affectsAllStops,
+                                                                        final List<InternalMessages.Bulletin.AffectedEntity> affectedRoutes,
+                                                                        final List<InternalMessages.Bulletin.AffectedEntity> affectedStops,
+                                                                        final Optional<InternalMessages.Category> maybeCategory,
+                                                                        final Optional<InternalMessages.Bulletin.Impact> maybeImpact,
+                                                                        final Optional<InternalMessages.Bulletin.Priority> maybePriority,
+                                                                        final List<InternalMessages.Bulletin.Translation> titles,
+                                                                        final List<InternalMessages.Bulletin.Translation> descriptions,
+                                                                        final List<InternalMessages.Bulletin.Translation> urls) {
+        return mockBulletinBuilder(bulletinId, lastModifiedMs, validFromMs, validToMs, affectsAllRoutes, affectsAllStops,
+                affectedRoutes, affectedStops, maybeCategory, maybeImpact, maybePriority, titles, descriptions, urls).build();
+    }
+
+    public static InternalMessages.Bulletin.Builder mockBulletinBuilder(final String bulletinId, final long lastModifiedMs,
+                                                                        final long validFromMs, final long validToMs,
+                                                                        final boolean affectsAllRoutes, final boolean affectsAllStops,
+                                                                        final List<InternalMessages.Bulletin.AffectedEntity> affectedRoutes,
+                                                                        final List<InternalMessages.Bulletin.AffectedEntity> affectedStops,
+                                                                        final Optional<InternalMessages.Category> maybeCategory,
+                                                                        final Optional<InternalMessages.Bulletin.Impact> maybeImpact,
+                                                                        final Optional<InternalMessages.Bulletin.Priority> maybePriority,
+                                                                        final List<InternalMessages.Bulletin.Translation> titles,
+                                                                        final List<InternalMessages.Bulletin.Translation> descriptions,
+                                                                        final List<InternalMessages.Bulletin.Translation> urls) {
+        InternalMessages.Bulletin.Builder builder = InternalMessages.Bulletin.newBuilder();
+        builder.setBulletinId(bulletinId)
+                .setLastModifiedUtcMs(lastModifiedMs)
+                .setValidFromUtcMs(validFromMs)
+                .setValidToUtcMs(validToMs)
+                .setAffectsAllRoutes(affectsAllRoutes)
+                .setAffectsAllStops(affectsAllStops)
+                .addAllAffectedRoutes(affectedRoutes)
+                .addAllAffectedStops(affectedStops)
+                .addAllTitles(titles)
+                .addAllDescriptions(descriptions)
+                .addAllUrls(urls);
+        if (maybeCategory.isPresent()) {
+            builder.setCategory(maybeCategory.get());
+        }
+        if (maybeImpact.isPresent()) {
+            builder.setImpact(maybeImpact.get());
+        }
+        if (maybePriority.isPresent()) {
+            builder.setPriority(maybePriority.get());
+        }
+        return builder;
+    }
+
+    public static InternalMessages.ServiceAlert mockAlert(final List<InternalMessages.Bulletin> bulletins) {
+        InternalMessages.ServiceAlert.Builder builder = InternalMessages.ServiceAlert.newBuilder();
+        return builder.addAllBulletins(bulletins).setSchemaVersion(builder.getSchemaVersion()).build();
+    }
 }
