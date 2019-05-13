@@ -74,45 +74,45 @@ public class JoreDateTimeTest {
 
     @Test
     public void testJoreDateTime1() {
-        final JoreDateTime time = new JoreDateTime("00:00:00", "1970-01-01", "12:34:56");
+        final JoreDateTime time = new JoreDateTime("00:00:00", "19700101", "12:34:56");
         assertEquals("12:34:56", time.getJoreTimeString());
     }
 
     @Test
     public void testJoreDateTime2() {
-        final JoreDateTime time = new JoreDateTime("12:34:56", "1970-01-01", "12:34:56");
+        final JoreDateTime time = new JoreDateTime("12:34:56", "19700101", "12:34:56");
         assertEquals("12:34:56", time.getJoreTimeString());
     }
 
     @Test
     public void testJoreDateTime3() {
-        final JoreDateTime time = new JoreDateTime("12:34:57", "1970-01-01", "12:34:56");
+        final JoreDateTime time = new JoreDateTime("12:34:57", "19700101", "12:34:56");
         assertEquals("36:34:56", time.getJoreTimeString());
     }
 
     @Test
     public void testJoreDateTime4() {
-        final JoreDateTime time = new JoreDateTime("04:30:00", "1970-01-02", "00:10:00");
+        final JoreDateTime time = new JoreDateTime("04:30:00", "19700102", "00:10:00");
         assertEquals("24:10:00", time.getJoreTimeString());
-        assertEquals("1970-01-01", time.getJoreDateString());
+        assertEquals("19700101", time.getJoreDateString());
         assertEquals("1970-01-02", time.getDateTime().toLocalDate().format(DateTimeFormatter.ISO_LOCAL_DATE));
         assertEquals(87000, time.getEpochSeconds());
     }
 
     @Test
     public void testJoreDateTime5() {
-        final JoreDateTime time = new JoreDateTime("04:30:00", "1970-01-02", "04:29:00");
+        final JoreDateTime time = new JoreDateTime("04:30:00", "19700102", "04:29:00");
         assertEquals("28:29:00", time.getJoreTimeString());
-        assertEquals("1970-01-01", time.getJoreDateString());
+        assertEquals("19700101", time.getJoreDateString());
         assertEquals("1970-01-02", time.getDateTime().toLocalDate().format(DateTimeFormatter.ISO_LOCAL_DATE));
         assertEquals(102540, time.getEpochSeconds());
     }
 
     @Test
     public void testJoreDateTime6() {
-        final JoreDateTime time = new JoreDateTime("04:30:00", "1970-01-02", "04:30:00");
+        final JoreDateTime time = new JoreDateTime("04:30:00", "19700102", "04:30:00");
         assertEquals("04:30:00", time.getJoreTimeString());
-        assertEquals("1970-01-02", time.getJoreDateString());
+        assertEquals("19700102", time.getJoreDateString());
         assertEquals("1970-01-02", time.getDateTime().toLocalDate().format(DateTimeFormatter.ISO_LOCAL_DATE));
         assertEquals(102600, time.getEpochSeconds());
     }
