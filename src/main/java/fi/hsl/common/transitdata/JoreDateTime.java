@@ -21,7 +21,7 @@ public class JoreDateTime {
 
     public JoreDateTime(final String serviceDayStartTimeString, final String date24h, final String time24h) {
         int serviceDayStartTimeSeconds = LocalTime.parse(serviceDayStartTimeString).toSecondOfDay();
-        LocalDate date = LocalDate.parse(date24h);
+        LocalDate date = LocalDate.parse(date24h, DateTimeFormatter.ofPattern("yyyyMMdd"));
         LocalTime time = LocalTime.parse(time24h);
         joreSeconds = time.toSecondOfDay();
         if (joreSeconds < serviceDayStartTimeSeconds) {
@@ -43,7 +43,7 @@ public class JoreDateTime {
         if (joreSeconds > DAY_IN_SECONDS) {
             date = date.minusDays(1);
         }
-        return date.format(DateTimeFormatter.ISO_LOCAL_DATE);
+        return date.format(DateTimeFormatter.BASIC_ISO_DATE);
     }
 
     public long getEpochSeconds() {
