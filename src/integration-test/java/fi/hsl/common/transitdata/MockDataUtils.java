@@ -318,34 +318,22 @@ public class MockDataUtils {
                                                                                         final Optional<InternalMessages.Category> maybeCategory,
                                                                                         final Optional<InternalMessages.TripCancellation.SubCategory> maybeSubCategory) {
 
-        InternalMessages.TripCancellation.Builder tripCancellationBuilder = InternalMessages.TripCancellation.newBuilder();
+        InternalMessages.TripCancellation.Builder builder = InternalMessages.TripCancellation.newBuilder();
 
-        tripCancellationBuilder.setRouteId(routeId)
+        builder.setRouteId(routeId)
                 .setTripId(Long.toString(dvjId))
                 .setDirectionId(joreDirectionId)
                 .setStartDate(startDate)
                 .setStartTime(startTime)
-                .setSchemaVersion(tripCancellationBuilder.getSchemaVersion())
+                .setSchemaVersion(builder.getSchemaVersion())
                 .setStatus(status);
-        if (maybeDeviationCasesType.isPresent()) {
-            tripCancellationBuilder.setDeviationCasesType(maybeDeviationCasesType.get());
-        }
-        if (maybeAffectedDeparturesType.isPresent()) {
-            tripCancellationBuilder.setAffectedDeparturesType(maybeAffectedDeparturesType.get());
-        }
-        if (maybeTitle.isPresent()) {
-            tripCancellationBuilder.setTitle(maybeTitle.get());
-        }
-        if (maybeDescription.isPresent()) {
-            tripCancellationBuilder.setDescription(maybeDescription.get());
-        }
-        if (maybeCategory.isPresent()) {
-            tripCancellationBuilder.setCategory(maybeCategory.get());
-        }
-        if (maybeSubCategory.isPresent()) {
-            tripCancellationBuilder.setSubCategory(maybeSubCategory.get());
-        }
-        return tripCancellationBuilder;
+        maybeDeviationCasesType.ifPresent(builder::setDeviationCasesType);
+        maybeAffectedDeparturesType.ifPresent(builder::setAffectedDeparturesType);
+        maybeTitle.ifPresent(builder::setTitle);
+        maybeDescription.ifPresent(builder::setDescription);
+        maybeCategory.ifPresent(builder::setCategory);
+        maybeSubCategory.ifPresent(builder::setSubCategory);
+        return builder;
     }
 
     public static InternalMessages.Bulletin.AffectedEntity mockAffectedEntity(final String entityId) {
@@ -394,15 +382,9 @@ public class MockDataUtils {
                 .addAllTitles(titles)
                 .addAllDescriptions(descriptions)
                 .addAllUrls(urls);
-        if (maybeCategory.isPresent()) {
-            builder.setCategory(maybeCategory.get());
-        }
-        if (maybeImpact.isPresent()) {
-            builder.setImpact(maybeImpact.get());
-        }
-        if (maybePriority.isPresent()) {
-            builder.setPriority(maybePriority.get());
-        }
+        maybeCategory.ifPresent(builder::setCategory);
+        maybeImpact.ifPresent(builder::setImpact);
+        maybePriority.ifPresent(builder::setPriority);
         return builder;
     }
 
