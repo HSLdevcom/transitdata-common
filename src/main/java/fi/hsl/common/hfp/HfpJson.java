@@ -1,9 +1,9 @@
 package fi.hsl.common.hfp;
 
-import com.dslplatform.json.CompiledJson;
-import com.dslplatform.json.JsonAttribute;
+import com.dslplatform.json.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.io.IOException;
 import java.sql.Date;
 import java.sql.Time;
 import java.time.LocalTime;
@@ -50,6 +50,7 @@ public class HfpJson {
 
         public Integer dl;
 
+        @JsonAttribute(converter = Odo.class)
         public Double odo;
 
         public Integer drst;
@@ -62,13 +63,31 @@ public class HfpJson {
 
         public String start; //%H:%M in 24 hour clock
 
+        @JsonAttribute(ignore = true)
         public String loc;
 
+        @JsonAttribute(ignore = true)
         public Integer stop;
 
+        @JsonAttribute(ignore = true)
         public String route;
 
+        @JsonAttribute(ignore = true)
         public Integer occu;
+    }
+
+    public static abstract class Odo {
+        public static final JsonReader.ReadObject<Double> JSON_READER = new JsonReader.ReadObject<Double>() {
+            public Double read(JsonReader reader) throws IOException {
+                return NumberConverter.deserializeDouble(reader);
+            }
+        };
+
+        public static final JsonWriter.WriteObject<Double> JSON_WRITER = new JsonWriter.WriteObject<Double>() {
+            public void write(JsonWriter writer, Double value) {
+                NumberConverter.serializeNullable(value.intValue(), writer);
+            }
+        };
     }
 
 }
