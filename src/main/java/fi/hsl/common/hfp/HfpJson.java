@@ -50,7 +50,7 @@ public class HfpJson {
 
         public Integer dl;
 
-        public Integer odo;
+        public Double odo;
 
         public Integer drst;
 
@@ -61,6 +61,14 @@ public class HfpJson {
         public Integer line;
 
         public String start; //%H:%M in 24 hour clock
+
+        public String loc;
+
+        public Integer stop;
+
+        public String route;
+
+        public Integer occu;
     }
 
 }

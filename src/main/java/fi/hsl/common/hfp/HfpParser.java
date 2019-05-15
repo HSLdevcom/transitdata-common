@@ -92,6 +92,18 @@ public class HfpParser {
             builder.setStart(payload.start);
         validateString(payload.start).ifPresent(builder::setStart); // TODO add validation for localtime format
 
+        if (payload.loc != null && !payload.loc.isEmpty()) {
+            final String locStr = payload.loc.equals("N/A") ? "NA" : payload.loc;
+            builder.setLoc(Hfp.Payload.LocationQualityMethod.valueOf(locStr));
+        }
+        if (payload.stop != null)
+            builder.setStop(payload.stop);
+        if (payload.route != null)
+            builder.setRoute(payload.route);
+        validateString(payload.route).ifPresent(builder::setRoute);
+        if (payload.occu != null)
+            builder.setOccu(payload.occu);
+
         return builder.build();
     }
 
@@ -139,10 +151,19 @@ public class HfpParser {
         }
         builder.setTopicPrefix(joinFirstNParts(parts, versionIndex, "/"));
         int index = versionIndex;
-        builder.setTopicVersion(parts[index++]);
+        final String versionStr = parts[index++];
+        builder.setTopicVersion(versionStr);
 
         builder.setJourneyType(Hfp.Topic.JourneyType.valueOf(parts[index++]));
         builder.setTemporalType(Hfp.Topic.TemporalType.valueOf(parts[index++]));
+
+        if (versionStr.equals("v2")) {
+            final String eventTypeStr = parts[index++];
+            if (eventTypeStr != null && !eventTypeStr.isEmpty()) {
+                builder.setEventType(Hfp.Topic.EventType.valueOf(eventTypeStr));
+            }
+        }
+
         final String strTransportMode = parts[index++];
         if (strTransportMode != null && !strTransportMode.isEmpty()) {
             builder.setTransportMode(Hfp.Topic.TransportMode.valueOf(strTransportMode));
