@@ -85,7 +85,11 @@ public class HfpJson {
 
         public static final JsonWriter.WriteObject<Double> JSON_WRITER = new JsonWriter.WriteObject<Double>() {
             public void write(JsonWriter writer, Double value) {
-                NumberConverter.serializeNullable(value.intValue(), writer);
+                if (value == null) {
+                    writer.writeNull();
+                } else {
+                    NumberConverter.serializeNullable(value.intValue(), writer);
+                }
             }
         };
     }
