@@ -39,7 +39,7 @@ public class HfpJson {
 
         public Double spd;
 
-        public Double hdg;
+        public Integer hdg;
 
         public Double lat;
 
