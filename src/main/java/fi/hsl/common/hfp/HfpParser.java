@@ -14,6 +14,7 @@ import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.util.Optional;
 import java.util.regex.Pattern;
+import java.io.ByteArrayOutputStream;
 
 public class HfpParser {
     private static final Logger log = LoggerFactory.getLogger(HfpParser.class);
@@ -38,6 +39,18 @@ public class HfpParser {
 
     public HfpJson parseJson(byte[] data) throws IOException {
         return dslJson.deserialize(HfpJson.class, data, data.length);
+    }
+
+    public String serializeToString(final HfpJson json) throws IOException {
+        final ByteArrayOutputStream os = new ByteArrayOutputStream();
+        dslJson.serialize(json, os);
+        return os.toString("UTF-8");
+    }
+
+    public byte[] serializeToByteArray(final HfpJson json) throws IOException {
+        final ByteArrayOutputStream os = new ByteArrayOutputStream();
+        dslJson.serialize(json, os);
+        return os.toByteArray();
     }
 
     public Optional<Hfp.Payload> safeParse(byte[] data) {
@@ -92,6 +105,18 @@ public class HfpParser {
             builder.setStart(payload.start);
         validateString(payload.start).ifPresent(builder::setStart); // TODO add validation for localtime format
 
+        if (payload.loc != null && !payload.loc.isEmpty()) {
+            final String locStr = payload.loc.equals("N/A") ? "NA" : payload.loc;
+            builder.setLoc(Hfp.Payload.LocationQualityMethod.valueOf(locStr));
+        }
+        if (payload.stop != null)
+            builder.setStop(payload.stop);
+        if (payload.route != null)
+            builder.setRoute(payload.route);
+        validateString(payload.route).ifPresent(builder::setRoute);
+        if (payload.occu != null)
+            builder.setOccu(payload.occu);
+
         return builder.build();
     }
 
@@ -139,10 +164,19 @@ public class HfpParser {
         }
         builder.setTopicPrefix(joinFirstNParts(parts, versionIndex, "/"));
         int index = versionIndex;
-        builder.setTopicVersion(parts[index++]);
+        final String versionStr = parts[index++];
+        builder.setTopicVersion(versionStr);
 
         builder.setJourneyType(Hfp.Topic.JourneyType.valueOf(parts[index++]));
         builder.setTemporalType(Hfp.Topic.TemporalType.valueOf(parts[index++]));
+
+        if (versionStr.equals("v2")) {
+            final String eventTypeStr = parts[index++];
+            if (eventTypeStr != null && !eventTypeStr.isEmpty()) {
+                builder.setEventType(Hfp.Topic.EventType.valueOf(eventTypeStr));
+            }
+        }
+
         final String strTransportMode = parts[index++];
         if (strTransportMode != null && !strTransportMode.isEmpty()) {
             builder.setTransportMode(Hfp.Topic.TransportMode.valueOf(strTransportMode));
