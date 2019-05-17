@@ -1,13 +1,8 @@
 package fi.hsl.common.hfp;
 
 import com.dslplatform.json.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.io.IOException;
-import java.sql.Date;
-import java.sql.Time;
-import java.time.LocalTime;
-import java.time.OffsetDateTime;
 
 // ignore unknown properties (default for objects).
 // to disallow unknown properties in JSON set it to FAIL which will result in exception instead
@@ -79,17 +74,14 @@ public class HfpJson {
     public static abstract class Odo {
         public static final JsonReader.ReadObject<Double> JSON_READER = new JsonReader.ReadObject<Double>() {
             public Double read(JsonReader reader) throws IOException {
-                return NumberConverter.deserializeDouble(reader);
+                return reader.wasNull() ? null : NumberConverter.deserializeDouble(reader);
             }
         };
 
         public static final JsonWriter.WriteObject<Double> JSON_WRITER = new JsonWriter.WriteObject<Double>() {
             public void write(JsonWriter writer, Double value) {
-                if (value == null) {
-                    writer.writeNull();
-                } else {
-                    NumberConverter.serializeNullable(value.intValue(), writer);
-                }
+                if (value == null) writer.writeNull();
+                else NumberConverter.serializeNullable(value.intValue(), writer);
             }
         };
     }
