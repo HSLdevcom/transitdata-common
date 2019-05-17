@@ -99,7 +99,7 @@ message Payload {
     required int64 tsi = 7;
 
     optional double spd = 8;
-    optional double hdg = 9;
+    optional int32 hdg = 9;
     optional double lat = 10;
     optional double long = 11;
     optional double acc = 12;

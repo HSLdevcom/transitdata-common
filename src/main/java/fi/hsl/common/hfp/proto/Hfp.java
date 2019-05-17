@@ -4396,13 +4396,13 @@ public final class Hfp {
     double getSpd();
 
     /**
-     * <code>optional double hdg = 9;</code>
+     * <code>optional int32 hdg = 9;</code>
      */
     boolean hasHdg();
     /**
-     * <code>optional double hdg = 9;</code>
+     * <code>optional int32 hdg = 9;</code>
      */
-    double getHdg();
+    int getHdg();
 
     /**
      * <code>optional double lat = 10;</code>
@@ -4671,9 +4671,9 @@ public final class Hfp {
               spd_ = input.readDouble();
               break;
             }
-            case 73: {
+            case 72: {
               bitField0_ |= 0x00000100;
-              hdg_ = input.readDouble();
+              hdg_ = input.readInt32();
               break;
             }
             case 81: {
@@ -5099,17 +5099,17 @@ public final class Hfp {
     }
 
     public static final int HDG_FIELD_NUMBER = 9;
-    private double hdg_;
+    private int hdg_;
     /**
-     * <code>optional double hdg = 9;</code>
+     * <code>optional int32 hdg = 9;</code>
      */
     public boolean hasHdg() {
       return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <code>optional double hdg = 9;</code>
+     * <code>optional int32 hdg = 9;</code>
      */
-    public double getHdg() {
+    public int getHdg() {
       return hdg_;
     }
 
@@ -5493,7 +5493,7 @@ public final class Hfp {
         output.writeDouble(8, spd_);
       }
       if (((bitField0_ & 0x00000100) != 0)) {
-        output.writeDouble(9, hdg_);
+        output.writeInt32(9, hdg_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
         output.writeDouble(10, lat_);
@@ -5577,7 +5577,7 @@ public final class Hfp {
       }
       if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(9, hdg_);
+          .computeInt32Size(9, hdg_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
         size += com.google.protobuf.CodedOutputStream
@@ -5690,9 +5690,8 @@ public final class Hfp {
       }
       if (hasHdg() != other.hasHdg()) return false;
       if (hasHdg()) {
-        if (java.lang.Double.doubleToLongBits(getHdg())
-            != java.lang.Double.doubleToLongBits(
-                other.getHdg())) return false;
+        if (getHdg()
+            != other.getHdg()) return false;
       }
       if (hasLat() != other.hasLat()) return false;
       if (hasLat()) {
@@ -5814,8 +5813,7 @@ public final class Hfp {
       }
       if (hasHdg()) {
         hash = (37 * hash) + HDG_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getHdg()));
+        hash = (53 * hash) + getHdg();
       }
       if (hasLat()) {
         hash = (37 * hash) + LAT_FIELD_NUMBER;
@@ -6026,7 +6024,7 @@ public final class Hfp {
         bitField0_ = (bitField0_ & ~0x00000040);
         spd_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000080);
-        hdg_ = 0D;
+        hdg_ = 0;
         bitField0_ = (bitField0_ & ~0x00000100);
         lat_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000200);
@@ -6733,34 +6731,34 @@ public final class Hfp {
         return this;
       }
 
-      private double hdg_ ;
+      private int hdg_ ;
       /**
-       * <code>optional double hdg = 9;</code>
+       * <code>optional int32 hdg = 9;</code>
        */
       public boolean hasHdg() {
         return ((bitField0_ & 0x00000100) != 0);
       }
       /**
-       * <code>optional double hdg = 9;</code>
+       * <code>optional int32 hdg = 9;</code>
        */
-      public double getHdg() {
+      public int getHdg() {
         return hdg_;
       }
       /**
-       * <code>optional double hdg = 9;</code>
+       * <code>optional int32 hdg = 9;</code>
        */
-      public Builder setHdg(double value) {
+      public Builder setHdg(int value) {
         bitField0_ |= 0x00000100;
         hdg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double hdg = 9;</code>
+       * <code>optional int32 hdg = 9;</code>
        */
       public Builder clearHdg() {
         bitField0_ = (bitField0_ & ~0x00000100);
-        hdg_ = 0D;
+        hdg_ = 0;
         onChanged();
         return this;
       }
@@ -7525,7 +7523,7 @@ public final class Hfp {
       "\t\n\005ferry\020\004\"\256\003\n\007Payload\022\030\n\rSchemaVersion\030" +
       "\001 \002(\005:\0011\022\014\n\004desi\030\002 \001(\t\022\013\n\003dir\030\003 \001(\t\022\014\n\004o" +
       "per\030\004 \001(\005\022\013\n\003veh\030\005 \001(\005\022\013\n\003tst\030\006 \002(\t\022\013\n\003t" +
-      "si\030\007 \002(\003\022\013\n\003spd\030\010 \001(\001\022\013\n\003hdg\030\t \001(\001\022\013\n\003la" +
+      "si\030\007 \002(\003\022\013\n\003spd\030\010 \001(\001\022\013\n\003hdg\030\t \001(\005\022\013\n\003la" +
       "t\030\n \001(\001\022\014\n\004long\030\013 \001(\001\022\013\n\003acc\030\014 \001(\001\022\n\n\002dl" +
       "\030\r \001(\r\022\013\n\003odo\030\016 \001(\001\022\014\n\004drst\030\017 \001(\r\022\014\n\004oda" +
       "y\030\020 \001(\t\022\013\n\003jrn\030\021 \001(\005\022\014\n\004line\030\022 \001(\005\022\r\n\005st" +
