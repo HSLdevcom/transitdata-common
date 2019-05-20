@@ -1,5 +1,6 @@
 package fi.hsl.common.pulsar;
 
+import com.sun.net.httpserver.HttpServer;
 import com.typesafe.config.Config;
 import org.apache.pulsar.client.admin.PulsarAdmin;
 import org.apache.pulsar.client.api.Consumer;
@@ -16,6 +17,7 @@ public class PulsarApplicationContext {
     private PulsarClient client;
     private PulsarAdmin admin;
     private Jedis jedis;
+    private HttpServer httpServer;
 
     public Config getConfig() {
         return config;
@@ -63,5 +65,13 @@ public class PulsarApplicationContext {
 
     protected void setAdmin(PulsarAdmin admin) {
         this.admin = admin;
+    }
+
+    public HttpServer getHttpServer() {
+        return httpServer;
+    }
+
+    protected void setHttpServer(HttpServer httpServer) {
+        this.httpServer = httpServer;
     }
 }
