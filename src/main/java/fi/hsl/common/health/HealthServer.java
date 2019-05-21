@@ -1,6 +1,5 @@
 package fi.hsl.common.health;
 
-import com.sun.net.httpserver.HttpContext;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
@@ -10,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BooleanSupplier;
@@ -21,7 +19,6 @@ public class HealthServer {
     public final int port;
     public final String endpoint;
     public final HttpServer httpServer;
-    public final HttpContext httpContext;
     private List<BooleanSupplier> checks = new ArrayList<>();
 
     public HealthServer(final int port, final String endpoint) throws IOException {
@@ -29,35 +26,44 @@ public class HealthServer {
         this.endpoint = endpoint;
         log.info("Creating HealthServer, listening port {}, with endpoint {}", port, endpoint);
         httpServer = HttpServer.create(new InetSocketAddress(port), 0);
-        httpContext = httpServer.createContext(endpoint, createHandler());
+        httpServer.createContext("/", createDefaultHandler());
+        httpServer.createContext(endpoint, createHandler());
         httpServer.setExecutor(null);
         httpServer.start();
         log.info("HealthServer started");
     }
 
+    private void writeResponse(final HttpExchange httpExchange, final int responseCode, final String responseBody) throws IOException {
+        final byte[] response = responseBody.getBytes("UTF-8");
+        httpExchange.getResponseHeaders().add("Content-Type", "text/plain; charset=UTF-8");
+        httpExchange.sendResponseHeaders(responseCode, response.length);
+        final OutputStream out = httpExchange.getResponseBody();
+        out.write(response);
+        out.close();
+    }
+
+    private HttpHandler createDefaultHandler() {
+        return httpExchange -> {
+            final int responseCode = 404;
+            final String responseBody = "Not Found";
+            writeResponse(httpExchange, responseCode, responseBody);
+        };
+    }
+
     private HttpHandler createHandler() {
         return httpExchange -> {
             String method = httpExchange.getRequestMethod();
-            URI uri = httpExchange.getRequestURI();
             int responseCode;
             String responseBody;
             if (!method.equals("GET")) {
                 responseCode = 405;
                 responseBody = "Method Not Allowed";
-            } else if (!uri.toString().matches(endpoint + "\\/?$")) {
-                responseCode = 404;
-                responseBody = "Not Found";
             } else {
                 final boolean isHealthy = checkHealth();
                 responseCode = isHealthy ? 200 : 503;
                 responseBody = isHealthy ? "OK" : "FAIL";
             }
-            final byte[] response = responseBody.getBytes("UTF-8");
-            httpExchange.getResponseHeaders().add("Content-Type", "text/plain; charset=UTF-8");
-            httpExchange.sendResponseHeaders(responseCode, response.length);
-            final OutputStream out = httpExchange.getResponseBody();
-            out.write(response);
-            out.close();
+            writeResponse(httpExchange, responseCode, responseBody);
         };
     }
 
