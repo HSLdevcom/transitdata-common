@@ -1,24 +1,15 @@
 package fi.hsl.common.pulsar;
 
-import com.sun.net.httpserver.HttpContext;
-import com.sun.net.httpserver.HttpServer;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.typesafe.config.Config;
+import fi.hsl.common.health.HealthServer;
 import org.apache.pulsar.client.admin.PulsarAdmin;
 import org.apache.pulsar.client.api.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.exceptions.JedisConnectionException;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.InetSocketAddress;
 import java.util.concurrent.TimeUnit;
 import java.util.function.BooleanSupplier;
-import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.regex.Pattern;
 
 public class PulsarApplication implements AutoCloseable {
@@ -33,7 +24,7 @@ public class PulsarApplication implements AutoCloseable {
     PulsarClient client;
     PulsarAdmin admin;
     Jedis jedis;
-    HttpServer httpServer;
+    HealthServer healthServer;
 
     PulsarApplication() {
     }
@@ -92,7 +83,7 @@ public class PulsarApplication implements AutoCloseable {
             final int port = config.getInt("health.port");
             final String endpoint = config.getString("health.endpoint");
 
-            final BooleanSupplier fn = () -> {
+            final BooleanSupplier healthCheck = () -> {
                 boolean status = true;
                 if (producer != null) status &= producer.isConnected();
                 if (consumer != null) status &= consumer.isConnected();
@@ -100,29 +91,11 @@ public class PulsarApplication implements AutoCloseable {
                 return status;
             };
 
-            httpServer = createHttpServer(port, endpoint, fn);
+            healthServer = new HealthServer(port, endpoint);
+            healthServer.addCheck(healthCheck);
         }
 
-        return createContext(config, client, consumer, producer, jedis, admin, httpServer);
-    }
-
-    protected HttpServer createHttpServer(final int port, final String endpoint, final BooleanSupplier fn) throws IOException {
-        log.info("Creating HTTP server with endpoint {} listening port {}", endpoint, port);
-        final HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
-        final HttpContext httpContext = server.createContext(endpoint, httpExchange -> {
-            boolean status = fn.getAsBoolean();
-            final int responseCode = status ? 200 : 503;
-            final String responseBody = status ? "OK" : "FAIL";
-            final byte[] response = responseBody.getBytes("UTF-8");
-            httpExchange.getResponseHeaders().add("Content-Type", "text/plain; charset=UTF-8");
-            httpExchange.sendResponseHeaders(responseCode, response.length);
-            final OutputStream out = httpExchange.getResponseBody();
-            out.write(response);
-            out.close();
-        });
-        server.start();
-        log.info("HTTP server started");
-        return server;
+        return createContext(config, client, consumer, producer, jedis, admin, healthServer);
     }
 
     protected Jedis createRedisClient(String redisHost, int port) {
@@ -144,7 +117,7 @@ public class PulsarApplication implements AutoCloseable {
 
     protected PulsarApplicationContext createContext(Config config, PulsarClient client,
                                                      Consumer<byte[]> consumer, Producer<byte[]> producer,
-                                                     Jedis jedis, PulsarAdmin admin, HttpServer httpServer) {
+                                                     Jedis jedis, PulsarAdmin admin, HealthServer healthServer) {
         PulsarApplicationContext context = new PulsarApplicationContext();
         context.setConfig(config);
         context.setClient(client);
@@ -152,7 +125,7 @@ public class PulsarApplication implements AutoCloseable {
         context.setProducer(producer);
         context.setJedis(jedis);
         context.setAdmin(admin);
-        context.setHttpServer(httpServer);
+        context.setHealthServer(healthServer);
         return context;
     }
 
@@ -262,7 +235,7 @@ public class PulsarApplication implements AutoCloseable {
             admin.close();
         if (jedis != null)
             jedis.close();
-        if (httpServer != null)
-            httpServer.stop(0);
+        if (healthServer != null)
+            healthServer.close();
     }
 }

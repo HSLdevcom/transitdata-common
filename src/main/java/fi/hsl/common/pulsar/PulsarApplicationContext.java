@@ -1,7 +1,7 @@
 package fi.hsl.common.pulsar;
 
-import com.sun.net.httpserver.HttpServer;
 import com.typesafe.config.Config;
+import fi.hsl.common.health.HealthServer;
 import org.apache.pulsar.client.admin.PulsarAdmin;
 import org.apache.pulsar.client.api.Consumer;
 import org.apache.pulsar.client.api.Producer;
@@ -17,7 +17,7 @@ public class PulsarApplicationContext {
     private PulsarClient client;
     private PulsarAdmin admin;
     private Jedis jedis;
-    private HttpServer httpServer;
+    private HealthServer healthServer;
 
     public Config getConfig() {
         return config;
@@ -67,11 +67,11 @@ public class PulsarApplicationContext {
         this.admin = admin;
     }
 
-    public HttpServer getHttpServer() {
-        return httpServer;
+    public HealthServer getHealthServer() {
+        return healthServer;
     }
 
-    protected void setHttpServer(HttpServer httpServer) {
-        this.httpServer = httpServer;
+    protected void setHealthServer(HealthServer healthServer) {
+        this.healthServer = healthServer;
     }
 }
