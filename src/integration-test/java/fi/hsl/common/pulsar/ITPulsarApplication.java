@@ -305,6 +305,11 @@ public class ITPulsarApplication {
         assertEquals(HttpStatus.SC_NOT_FOUND, response.getStatusLine().getStatusCode());
         assertEquals("Not Found", getContent(response));
 
+        url = "http://localhost:" + healthServer.port + healthServer.endpoint + "foo";
+        response = makeRequest(url);
+        assertEquals(HttpStatus.SC_NOT_FOUND, response.getStatusLine().getStatusCode());
+        assertEquals("Not Found", getContent(response));
+
         app.close();
         assertFalse(consumer.isConnected());
         assertFalse(producer.isConnected());
