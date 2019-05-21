@@ -1,16 +1,17 @@
 package fi.hsl.common.pulsar;
 
 import com.typesafe.config.Config;
-import com.typesafe.config.ConfigFactory;
-import com.typesafe.config.ConfigValue;
 import fi.hsl.common.config.ConfigParser;
 import fi.hsl.common.config.ConfigUtils;
-import org.apache.pulsar.client.admin.PulsarAdmin;
-import org.apache.pulsar.client.admin.PulsarAdminBuilder;
+import fi.hsl.common.health.HealthServer;
 import org.apache.pulsar.client.api.Consumer;
 import org.apache.pulsar.client.api.Message;
 import org.apache.pulsar.client.api.Producer;
-import org.apache.pulsar.common.policies.data.TenantInfo;
+import org.apache.pulsar.shade.org.apache.http.HttpResponse;
+import org.apache.pulsar.shade.org.apache.http.HttpStatus;
+import org.apache.pulsar.shade.org.apache.http.client.HttpClient;
+import org.apache.pulsar.shade.org.apache.http.client.methods.HttpGet;
+import org.apache.pulsar.shade.org.apache.http.impl.client.HttpClientBuilder;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Test;
@@ -20,10 +21,13 @@ import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.PulsarContainer;
 import redis.clients.jedis.Jedis;
 
-import javax.print.attribute.standard.MediaSize;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
+import java.util.function.BooleanSupplier;
 
 import static org.junit.Assert.*;
 
@@ -65,7 +69,7 @@ public class ITPulsarApplication {
     public void testPulsarApplicationRedis() throws Exception {
         Config config = ConfigParser.createConfig("test-redis-only.conf");
         assertNotNull(config);
-        PulsarApplication app = PulsarMockApplication.newInstance(config, redis, pulsar);
+        PulsarApplication app = PulsarMockApplication.newInstance(config, redis, pulsar, null);
         assertNotNull(app);
 
         app.getContext().getJedis().set("pulsar-application-jedis", "should work");
@@ -84,7 +88,7 @@ public class ITPulsarApplication {
     public void testPulsar() throws Exception {
         Config base = PulsarMockApplication.readConfig(CONFIG_FILE);
 
-        PulsarApplication app = PulsarMockApplication.newInstance(base, redis, pulsar);
+        PulsarApplication app = PulsarMockApplication.newInstance(base, redis, pulsar, null);
         assertNotNull(app);
 
         logger.info("Pulsar Application created, testing to send a message");
@@ -125,7 +129,7 @@ public class ITPulsarApplication {
         o1.put("pulsar.producer.topic", formatTopicName("test-1"));
         Config producer1Config = PulsarMockApplication.readConfigWithOverrides(CONFIG_FILE, o1);
 
-        PulsarApplication app = PulsarMockApplication.newInstance(producer1Config, redis, pulsar);
+        PulsarApplication app = PulsarMockApplication.newInstance(producer1Config, redis, pulsar, null);
         assertNotNull(app);
 
         Producer<byte[]> producer = app.getContext().getProducer();
@@ -180,7 +184,7 @@ public class ITPulsarApplication {
         Producer<byte[]> producer;
         Consumer<byte[]> consumer;
         Jedis jedis;
-        try(PulsarApplication app = PulsarMockApplication.newInstance(base, redis, pulsar)) {
+        try(PulsarApplication app = PulsarMockApplication.newInstance(base, redis, pulsar, null)) {
             logger.info("Pulsar Application created within try-with-resources-block");
             assertNotNull(app);
 
@@ -228,12 +232,98 @@ public class ITPulsarApplication {
     }
 
     public void testInitFailure(Config config) {
-        try(PulsarApplication app = PulsarMockApplication.newInstance(config, redis, pulsar)) {
+        try(PulsarApplication app = PulsarMockApplication.newInstance(config, redis, pulsar, null)) {
             logger.info("You should never see this message, init should throw an exception");
             assertTrue(false);
         }
         catch (Exception e) {
             logger.debug("Exception as expected");
         }
+    }
+
+    @Test
+    public void testHttpServer() throws Exception {
+        Config base = PulsarMockApplication.readConfig(CONFIG_FILE);
+
+        PulsarApplication app = PulsarMockApplication.newInstance(base, redis, pulsar, null);
+        assertNotNull(app);
+
+        logger.info("Pulsar Application created, testing HealthServer");
+
+        final Producer<byte[]> producer = app.getContext().getProducer();
+        final Consumer<byte[]> consumer = app.getContext().getConsumer();
+        final Jedis jedis = app.getContext().getJedis();
+        final HealthServer healthServer = app.getContext().getHealthServer();
+
+        assertTrue(consumer.isConnected());
+        assertTrue(producer.isConnected());
+        assertTrue(jedis.isConnected());
+
+        logger.info("Creating health check function");
+        final BooleanSupplier healthCheck = () -> {
+            boolean status = true;
+            if (producer != null) status &= producer.isConnected();
+            if (consumer != null) status &= consumer.isConnected();
+            if (jedis != null) status &= jedis.isConnected();
+            return status;
+        };
+        healthServer.addCheck(healthCheck);
+
+        String url = "http://localhost:" + healthServer.port + healthServer.endpoint;
+
+        logger.info("Checking health");
+        HttpResponse response = makeRequest(url);
+        assertEquals(HttpStatus.SC_OK, response.getStatusLine().getStatusCode());
+        assertEquals("OK", getContent(response));
+
+        logger.info("Disconnecting Jedis and checking health");
+        jedis.disconnect();
+        assertFalse(jedis.isConnected());
+
+        response = makeRequest(url);
+        assertEquals(HttpStatus.SC_SERVICE_UNAVAILABLE, response.getStatusLine().getStatusCode());
+        assertEquals("FAIL", getContent(response));
+
+        logger.info("Reconnecting Jedis and checking health");
+        jedis.connect();
+        assertTrue(jedis.isConnected());
+
+        response = makeRequest(url);
+        assertEquals(HttpStatus.SC_OK, response.getStatusLine().getStatusCode());
+        assertEquals("OK", getContent(response));
+
+        logger.info("Closing Pulsar consumer and checking health");
+        consumer.close();
+        assertFalse(consumer.isConnected());
+
+        response = makeRequest(url);
+        assertEquals(HttpStatus.SC_SERVICE_UNAVAILABLE, response.getStatusLine().getStatusCode());
+        assertEquals("FAIL", getContent(response));
+
+        url = "http://localhost:" + healthServer.port + "/foo";
+        response = makeRequest(url);
+        assertEquals(HttpStatus.SC_NOT_FOUND, response.getStatusLine().getStatusCode());
+        assertEquals("Not Found", getContent(response));
+
+        app.close();
+        assertFalse(consumer.isConnected());
+        assertFalse(producer.isConnected());
+        assertFalse(jedis.isConnected());
+    }
+
+    private HttpResponse makeRequest(final String urlString) throws IOException {
+        HttpClient client = HttpClientBuilder.create().build();
+        HttpResponse response = client.execute(new HttpGet(urlString));
+        return response;
+    }
+
+    private String getContent(final HttpResponse response) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        StringBuffer content = new StringBuffer();
+        String line;
+        while ((line = reader.readLine()) != null) {
+            content.append(line);
+        }
+        return content.toString();
     }
 }
