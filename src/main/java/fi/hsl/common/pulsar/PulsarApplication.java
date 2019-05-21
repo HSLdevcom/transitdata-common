@@ -96,7 +96,7 @@ public class PulsarApplication implements AutoCloseable {
                 boolean status = true;
                 if (producer != null) status &= producer.isConnected();
                 if (consumer != null) status &= consumer.isConnected();
-                if (jedis != null) status &= jedis.getClient().isConnected();
+                if (jedis != null) status &= jedis.isConnected();
                 return status;
             };
 
