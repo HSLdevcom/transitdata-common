@@ -55,7 +55,12 @@ public class HealthServer {
             String method = httpExchange.getRequestMethod();
             int responseCode;
             String responseBody;
-            if (!method.equals("GET")) {
+            final String requestEndpoint = httpExchange.getRequestURI().toString().replaceAll("(?:^\\/|\\/$)", "");
+            final String expectedEndpoint = endpoint.replaceAll("(?:^\\/|\\/$)", "");
+            if (!expectedEndpoint.equals(requestEndpoint)) {
+                responseCode = 404;
+                responseBody = "Not Found";
+            } else if (!method.equals("GET")) {
                 responseCode = 405;
                 responseBody = "Method Not Allowed";
             } else {
