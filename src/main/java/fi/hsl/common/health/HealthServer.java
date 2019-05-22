@@ -29,7 +29,7 @@ public class HealthServer {
         httpServer = HttpServer.create(new InetSocketAddress(port), 0);
         httpServer.createContext("/", createDefaultHandler());
         httpServer.createContext(endpoint, createHandler());
-        httpServer.setExecutor(Executors.newFixedThreadPool(1));
+        httpServer.setExecutor(Executors.newSingleThreadExecutor());
         httpServer.start();
         log.info("HealthServer started");
     }
