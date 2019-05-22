@@ -1,10 +1,10 @@
 package fi.hsl.common.monitoring;
 
-import fi.hsl.common.monitoring.proto.Monitoring;
-
 public abstract class AbstractMonitoringHandler<T> {
 
     protected String key;
+
+    protected AbstractMonitoringHandler() {}
 
     public AbstractMonitoringHandler(final String key) {
         this.key = key;
@@ -14,27 +14,25 @@ public abstract class AbstractMonitoringHandler<T> {
         return key;
     }
 
-    public final synchronized void handleMessageSync(final T message) {
-        handleMessage(message);
+    public final synchronized void handleMessage(final T message) { handleMessageImpl(message); }
+
+    protected abstract void handleMessageImpl(final T message);
+
+    public final synchronized double getValue() {
+        return getValueImpl();
     }
 
-    protected abstract void handleMessage(final T message);
+    protected abstract double getValueImpl();
 
-    public final synchronized double getValueSync() {
-        return getValue();
+    public final synchronized void clearValue() {
+        clearValueImpl();
     }
 
-    protected abstract double getValue();
+    protected abstract void clearValueImpl();
 
-    public final synchronized void clearValueSync() {
-        clearValue();
+    public final synchronized double getValueAndClear() {
+        return getValueAndClearImpl();
     }
 
-    protected abstract void clearValue();
-
-    public final synchronized double getValueAndClearSync() {
-        return getValueAndClear();
-    }
-
-    protected abstract double getValueAndClear();
+    protected abstract double getValueAndClearImpl();
 }
