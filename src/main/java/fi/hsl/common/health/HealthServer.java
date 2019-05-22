@@ -11,6 +11,7 @@ import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
 import java.util.function.BooleanSupplier;
 
 public class HealthServer {
@@ -28,7 +29,7 @@ public class HealthServer {
         httpServer = HttpServer.create(new InetSocketAddress(port), 0);
         httpServer.createContext("/", createDefaultHandler());
         httpServer.createContext(endpoint, createHandler());
-        httpServer.setExecutor(null);
+        httpServer.setExecutor(Executors.newFixedThreadPool(1));
         httpServer.start();
         log.info("HealthServer started");
     }
