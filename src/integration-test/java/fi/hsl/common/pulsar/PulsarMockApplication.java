@@ -3,7 +3,6 @@ package fi.hsl.common.pulsar;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 import fi.hsl.common.config.ConfigParser;
-import fi.hsl.common.health.HealthServer;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.PulsarContainer;
 
@@ -15,7 +14,7 @@ public class PulsarMockApplication extends PulsarApplication {
     PulsarMockApplication() {
     }
 
-    public static PulsarApplication newInstance(Config baseConfig, GenericContainer redis, PulsarContainer pulsar, HealthServer healthServer) throws Exception {
+    public static PulsarApplication newInstance(Config baseConfig, GenericContainer redis, PulsarContainer pulsar) throws Exception {
         PulsarApplication app = null;
         try {
             Map<String, Object> overrides = new HashMap<>();
@@ -26,10 +25,6 @@ public class PulsarMockApplication extends PulsarApplication {
             if (redis != null) {
                 overrides.put("redis.host", redis.getContainerIpAddress());
                 overrides.put("redis.port", redis.getMappedPort(baseConfig.getInt("redis.port")));
-            }
-            if (healthServer != null) {
-                overrides.put("health.port", healthServer.port);
-                overrides.put("health.endpoint", healthServer.endpoint);
             }
 
             Config config = ConfigFactory.parseMap(overrides);

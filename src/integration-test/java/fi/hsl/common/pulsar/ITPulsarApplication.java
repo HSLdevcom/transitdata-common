@@ -10,7 +10,7 @@ import org.apache.pulsar.client.api.Producer;
 import org.apache.pulsar.shade.org.apache.http.HttpResponse;
 import org.apache.pulsar.shade.org.apache.http.HttpStatus;
 import org.apache.pulsar.shade.org.apache.http.client.HttpClient;
-import org.apache.pulsar.shade.org.apache.http.client.methods.HttpGet;
+import org.apache.pulsar.shade.org.apache.http.client.methods.*;
 import org.apache.pulsar.shade.org.apache.http.impl.client.HttpClientBuilder;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
@@ -69,7 +69,7 @@ public class ITPulsarApplication {
     public void testPulsarApplicationRedis() throws Exception {
         Config config = ConfigParser.createConfig("test-redis-only.conf");
         assertNotNull(config);
-        PulsarApplication app = PulsarMockApplication.newInstance(config, redis, pulsar, null);
+        PulsarApplication app = PulsarMockApplication.newInstance(config, redis, pulsar);
         assertNotNull(app);
 
         app.getContext().getJedis().set("pulsar-application-jedis", "should work");
@@ -88,7 +88,7 @@ public class ITPulsarApplication {
     public void testPulsar() throws Exception {
         Config base = PulsarMockApplication.readConfig(CONFIG_FILE);
 
-        PulsarApplication app = PulsarMockApplication.newInstance(base, redis, pulsar, null);
+        PulsarApplication app = PulsarMockApplication.newInstance(base, redis, pulsar);
         assertNotNull(app);
 
         logger.info("Pulsar Application created, testing to send a message");
@@ -129,7 +129,7 @@ public class ITPulsarApplication {
         o1.put("pulsar.producer.topic", formatTopicName("test-1"));
         Config producer1Config = PulsarMockApplication.readConfigWithOverrides(CONFIG_FILE, o1);
 
-        PulsarApplication app = PulsarMockApplication.newInstance(producer1Config, redis, pulsar, null);
+        PulsarApplication app = PulsarMockApplication.newInstance(producer1Config, redis, pulsar);
         assertNotNull(app);
 
         Producer<byte[]> producer = app.getContext().getProducer();
@@ -184,7 +184,7 @@ public class ITPulsarApplication {
         Producer<byte[]> producer;
         Consumer<byte[]> consumer;
         Jedis jedis;
-        try(PulsarApplication app = PulsarMockApplication.newInstance(base, redis, pulsar, null)) {
+        try(PulsarApplication app = PulsarMockApplication.newInstance(base, redis, pulsar)) {
             logger.info("Pulsar Application created within try-with-resources-block");
             assertNotNull(app);
 
@@ -232,7 +232,7 @@ public class ITPulsarApplication {
     }
 
     public void testInitFailure(Config config) {
-        try(PulsarApplication app = PulsarMockApplication.newInstance(config, redis, pulsar, null)) {
+        try(PulsarApplication app = PulsarMockApplication.newInstance(config, redis, pulsar)) {
             logger.info("You should never see this message, init should throw an exception");
             assertTrue(false);
         }
@@ -245,7 +245,7 @@ public class ITPulsarApplication {
     public void testHttpServer() throws Exception {
         Config base = PulsarMockApplication.readConfig(CONFIG_FILE);
 
-        PulsarApplication app = PulsarMockApplication.newInstance(base, redis, pulsar, null);
+        PulsarApplication app = PulsarMockApplication.newInstance(base, redis, pulsar);
         assertNotNull(app);
 
         logger.info("Pulsar Application created, testing HealthServer");
@@ -272,7 +272,7 @@ public class ITPulsarApplication {
         String url = "http://localhost:" + healthServer.port + healthServer.endpoint;
 
         logger.info("Checking health");
-        HttpResponse response = makeRequest(url);
+        HttpResponse response = makeGetRequest(url);
         assertEquals(HttpStatus.SC_OK, response.getStatusLine().getStatusCode());
         assertEquals("OK", getContent(response));
 
@@ -280,7 +280,7 @@ public class ITPulsarApplication {
         jedis.disconnect();
         assertFalse(jedis.isConnected());
 
-        response = makeRequest(url);
+        response = makeGetRequest(url);
         assertEquals(HttpStatus.SC_SERVICE_UNAVAILABLE, response.getStatusLine().getStatusCode());
         assertEquals("FAIL", getContent(response));
 
@@ -288,7 +288,7 @@ public class ITPulsarApplication {
         jedis.connect();
         assertTrue(jedis.isConnected());
 
-        response = makeRequest(url);
+        response = makeGetRequest(url);
         assertEquals(HttpStatus.SC_OK, response.getStatusLine().getStatusCode());
         assertEquals("OK", getContent(response));
 
@@ -296,17 +296,21 @@ public class ITPulsarApplication {
         consumer.close();
         assertFalse(consumer.isConnected());
 
-        response = makeRequest(url);
+        response = makeGetRequest(url);
         assertEquals(HttpStatus.SC_SERVICE_UNAVAILABLE, response.getStatusLine().getStatusCode());
         assertEquals("FAIL", getContent(response));
 
+        response = makePostRequest(url);
+        assertEquals(HttpStatus.SC_METHOD_NOT_ALLOWED, response.getStatusLine().getStatusCode());
+        assertEquals("Method Not Allowed", getContent(response));
+
         url = "http://localhost:" + healthServer.port + "/foo";
-        response = makeRequest(url);
+        response = makeGetRequest(url);
         assertEquals(HttpStatus.SC_NOT_FOUND, response.getStatusLine().getStatusCode());
         assertEquals("Not Found", getContent(response));
 
         url = "http://localhost:" + healthServer.port + healthServer.endpoint + "foo";
-        response = makeRequest(url);
+        response = makeGetRequest(url);
         assertEquals(HttpStatus.SC_NOT_FOUND, response.getStatusLine().getStatusCode());
         assertEquals("Not Found", getContent(response));
 
@@ -316,9 +320,29 @@ public class ITPulsarApplication {
         assertFalse(jedis.isConnected());
     }
 
-    private HttpResponse makeRequest(final String urlString) throws IOException {
+    private HttpResponse makeGetRequest(final String url) throws IOException {
+        return makeRequest("GET", url);
+    }
+
+    private HttpResponse makePostRequest(final String url) throws IOException {
+        return makeRequest("POST", url);
+    }
+
+    private HttpResponse makeRequest(final String method, final String url) throws IOException {
         HttpClient client = HttpClientBuilder.create().build();
-        HttpResponse response = client.execute(new HttpGet(urlString));
+        HttpUriRequest request;
+        switch (method.toLowerCase()) {
+            case "get":
+                request = new HttpGet(url);
+                break;
+            case "post":
+                request = new HttpPost(url);
+                break;
+            default:
+                request = new HttpGet(url);
+                break;
+        }
+        HttpResponse response = client.execute(request);
         return response;
     }
 

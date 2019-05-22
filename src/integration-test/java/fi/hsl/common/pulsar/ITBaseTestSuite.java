@@ -60,7 +60,7 @@ public class ITBaseTestSuite {
         Config base = PulsarMockApplication.readConfigWithTopicOverrides(config, testId);
         assertNotNull(base);
         // No Redis atm. TODO add later if needed
-        PulsarApplication app = PulsarMockApplication.newInstance(base, null, pulsar, null);
+        PulsarApplication app = PulsarMockApplication.newInstance(base, null, pulsar);
         assertNotNull(app);
         return app;
     }
