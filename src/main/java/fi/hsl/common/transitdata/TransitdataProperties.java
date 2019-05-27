@@ -1,7 +1,5 @@
 package fi.hsl.common.transitdata;
 
-import fi.hsl.common.gtfsrt.JoreDateTime;
-
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 
@@ -44,7 +42,8 @@ public class TransitdataProperties {
         InternalMessagesTripCancellation,
         InternalMessagesStopEstimate,
         MqttRawMessage,
-        HfpData;
+        HfpData,
+        TransitdataServiceAlert;
 
         public String toString() {
             switch (this) {
@@ -57,6 +56,7 @@ public class TransitdataProperties {
                 case InternalMessagesStopEstimate: return "internal-messages-stop-estimate";
                 case MqttRawMessage: return "mqtt-raw";
                 case HfpData: return "hfp-data";
+                case TransitdataServiceAlert: return "transitdata-service-alert";
                 default: throw new IllegalArgumentException();
             }
         }
@@ -88,6 +88,9 @@ public class TransitdataProperties {
             }
             else if (str.equals(HfpData.toString())) {
                 return HfpData;
+            }
+            else if (str.equals(TransitdataServiceAlert.toString())) {
+                return TransitdataServiceAlert;
             }
             else {
                 throw new IllegalArgumentException();
