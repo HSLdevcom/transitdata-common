@@ -1,6 +1,7 @@
 package fi.hsl.common.pulsar;
 
 import com.typesafe.config.Config;
+import fi.hsl.common.health.HealthServer;
 import org.apache.pulsar.client.admin.PulsarAdmin;
 import org.apache.pulsar.client.api.*;
 import org.slf4j.Logger;
@@ -8,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
 
 import java.util.concurrent.TimeUnit;
+import java.util.function.BooleanSupplier;
 import java.util.regex.Pattern;
 
 public class PulsarApplication implements AutoCloseable {
@@ -22,6 +24,7 @@ public class PulsarApplication implements AutoCloseable {
     PulsarClient client;
     PulsarAdmin admin;
     Jedis jedis;
+    HealthServer healthServer;
 
     PulsarApplication() {
     }
@@ -76,7 +79,23 @@ public class PulsarApplication implements AutoCloseable {
                     config.getInt("redis.port"));
         }
 
-        return createContext(config, client, consumer, producer, jedis, admin);
+        if (config.getBoolean("health.enabled")) {
+            final int port = config.getInt("health.port");
+            final String endpoint = config.getString("health.endpoint");
+
+            final BooleanSupplier healthCheck = () -> {
+                boolean status = true;
+                if (producer != null) status &= producer.isConnected();
+                if (consumer != null) status &= consumer.isConnected();
+                if (jedis != null) status &= jedis.isConnected();
+                return status;
+            };
+
+            healthServer = new HealthServer(port, endpoint);
+            healthServer.addCheck(healthCheck);
+        }
+
+        return createContext(config, client, consumer, producer, jedis, admin, healthServer);
     }
 
     protected Jedis createRedisClient(String redisHost, int port) {
@@ -98,7 +117,7 @@ public class PulsarApplication implements AutoCloseable {
 
     protected PulsarApplicationContext createContext(Config config, PulsarClient client,
                                                      Consumer<byte[]> consumer, Producer<byte[]> producer,
-                                                     Jedis jedis, PulsarAdmin admin) {
+                                                     Jedis jedis, PulsarAdmin admin, HealthServer healthServer) {
         PulsarApplicationContext context = new PulsarApplicationContext();
         context.setConfig(config);
         context.setClient(client);
@@ -106,6 +125,7 @@ public class PulsarApplication implements AutoCloseable {
         context.setProducer(producer);
         context.setJedis(jedis);
         context.setAdmin(admin);
+        context.setHealthServer(healthServer);
         return context;
     }
 
@@ -215,5 +235,7 @@ public class PulsarApplication implements AutoCloseable {
             admin.close();
         if (jedis != null)
             jedis.close();
+        if (healthServer != null)
+            healthServer.close();
     }
 }

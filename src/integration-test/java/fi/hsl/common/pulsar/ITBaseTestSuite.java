@@ -10,9 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testcontainers.containers.PulsarContainer;
 
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-
 import static org.junit.Assert.*;
 
 /**
