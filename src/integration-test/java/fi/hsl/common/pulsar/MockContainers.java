@@ -42,7 +42,7 @@ public class MockContainers {
      * For using the "real" tenant/namespace/topicname pattern @see MockContainers#configurePulsarContainer(PulsarContainer, String, String)
      */
     public static PulsarContainer newPulsarContainer() {
-        return new PulsarContainer("2.2.1");
+        return new PulsarContainer("2.3.1");
     }
 
     public static PulsarContainer configurePulsarContainer(PulsarContainer pulsar, final String tenant, final String namespace) throws Exception {
