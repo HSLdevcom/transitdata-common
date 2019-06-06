@@ -19,7 +19,7 @@ cache:
 install: true
 
 script:
-  - mvn clean package --quiet -Dmaven.javadoc.skip=true -B -V
+  - mvn clean package -Dmaven.javadoc.skip=true -B -V
   - mvn failsafe:integration-test
   - mvn failsafe:verify
   - ls -la target/
