@@ -16,13 +16,12 @@ cache:
   directories:
     - $HOME/.m2
 
-before_install:
-  - mvn install --quiet -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+install: true
 
 script:
-  - mvn test
-  - mvn verify -P integration-test
-  - mvn --quiet clean package
+  - mvn clean package -Dmaven.javadoc.skip=true -B -V
+  - mvn failsafe:integration-test
+  - mvn failsafe:verify
   - ls -la target/
 
 deploy:
