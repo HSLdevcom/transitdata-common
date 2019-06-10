@@ -143,6 +143,7 @@ message TripCancellation {
         OTHER_STRIKE = 44;
         OTHER_OPERATOR_REASON = 45;
         UNKNOWN_CAUSE = 46;
+        DOOR_MALFUNCTION = 47;
     }
 
     optional SubCategory sub_category = 13;
