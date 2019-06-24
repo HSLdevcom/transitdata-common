@@ -3,27 +3,22 @@ package fi.hsl.common.files;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.net.URL;
+import java.io.*;
 
 public class FileUtils {
 
     private static final Logger log = LoggerFactory.getLogger(FileUtils.class);
 
     /**
-     * Get e.g. resource with:
-     * URL resource = getClass().getClassLoader().getResource(fileName)
+     * e.g. get resource as stream with:
+     * InputStream stream = getClass().getResourceAsStream("/routes.sql");
      */
-    public static String readFileFromURLOrThrow(URL url) throws Exception {
+    public static String readFileFromStreamOrThrow(InputStream stream) throws Exception {
         try {
-            File file = new File(url.getFile());
-            FileReader fr = new FileReader(file);
-            BufferedReader bufferedReader = new BufferedReader(fr);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
             StringBuilder sb = new StringBuilder();
             String line;
-            while ((line = bufferedReader.readLine()) != null) {
+            while ((line = reader.readLine()) != null) {
                 sb.append(line);
             }
             return sb.toString();
