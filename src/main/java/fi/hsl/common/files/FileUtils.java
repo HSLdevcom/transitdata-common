@@ -28,7 +28,6 @@ public class FileUtils {
             }
             return sb.toString();
         } catch (Exception e) {
-            log.error("Could not read text from file at " + url, e);
             throw e;
         }
     }
