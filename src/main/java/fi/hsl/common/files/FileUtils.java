@@ -16,14 +16,9 @@ public class FileUtils {
      * Get e.g. resource with:
      * URL resource = getClass().getClassLoader().getResource(fileName)
      */
-    public static String readFileFromURLOrThrow(URL url) {
-        File file;
-        if (url == null) {
-            throw new IllegalArgumentException("file is not found!");
-        } else {
-            file = new File(url.getFile());
-        }
+    public static String readFileFromURLOrThrow(URL url) throws Exception {
         try {
+            File file = new File(url.getFile());
             FileReader fr = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fr);
             StringBuilder sb = new StringBuilder();
@@ -33,8 +28,8 @@ public class FileUtils {
             }
             return sb.toString();
         } catch (Exception e) {
-            System.out.println(e);
-            return null;
+            log.error("Could not read text from file at " + url, e);
+            throw e;
         }
     }
 
