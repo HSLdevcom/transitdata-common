@@ -173,7 +173,7 @@ public class HfpParser {
         if (versionStr.equals("v2")) {
             final String eventTypeStr = parts[index++];
             if (eventTypeStr != null && !eventTypeStr.isEmpty()) {
-                builder.setEventType(Hfp.Topic.EventType.valueOf(eventTypeStr));
+                builder.setEventType(Hfp.Topic.EventType.valueOf(eventTypeStr.toUpperCase()));
             }
         }
 
