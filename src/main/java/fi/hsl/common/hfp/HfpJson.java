@@ -58,17 +58,13 @@ public class HfpJson {
 
         public String start; //%H:%M in 24 hour clock
 
-        @JsonAttribute(ignore = true)
-        public String loc;
+        public String loc; // v2
 
-        @JsonAttribute(ignore = true)
-        public Integer stop;
+        public Integer stop; // v2
 
-        @JsonAttribute(ignore = true)
-        public String route;
+        public String route; // v2
 
-        @JsonAttribute(ignore = true)
-        public Integer occu;
+        public Integer occu; // v2
     }
 
     public static abstract class Odo {
