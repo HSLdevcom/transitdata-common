@@ -7,7 +7,6 @@ import java.net.URL;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalTime;
-import java.util.Optional;
 import java.util.Scanner;
 
 import static org.junit.Assert.*;
@@ -41,31 +40,58 @@ public class HfpParserTest {
     }
 
     @Test
-    public void parseSampleJsonFile() throws Exception {
-        HfpJson hfp =parseJsonFromResources("hfp-sample.json");
-        assertEquals("81", hfp.VP.desi);
-        assertEquals("2", hfp.VP.dir);
-        assertTrue(22 == hfp.VP.oper);
-        assertTrue(792 == hfp.VP.veh);
-        assertEquals("2018-04-05T17:38:36Z", hfp.VP.tst);
-        assertTrue(1522949916 == hfp.VP.tsi);
-        assertTrue(0.16 - hfp.VP.spd < 0.00001f);
-        assertTrue(225 == hfp.VP.hdg);
-        assertTrue(60.194481 - hfp.VP.lat < 0.00001f);
-        assertTrue(25.03095 - hfp.VP.longitude < 0.00001f);
-        assertTrue(0 == hfp.VP.acc);
-        assertTrue(-25 == hfp.VP.dl);
-        assertTrue(2819 == hfp.VP.odo);
-        assertTrue(0 == hfp.VP.drst);
-        assertEquals("2018-04-05", hfp.VP.oday);
-        assertTrue(636 == hfp.VP.jrn);
-        assertTrue(112 == hfp.VP.line);
-        assertEquals("20:25", hfp.VP.start);
+    public void parseSampleVpJsonFile() throws Exception {
+        HfpJson hfp = parseJsonFromResources("hfp-sample-vp.json");
+        assertEquals("81", hfp.payload.desi);
+        assertEquals("2", hfp.payload.dir);
+        assertTrue(22 == hfp.payload.oper);
+        assertTrue(792 == hfp.payload.veh);
+        assertEquals("2018-04-05T17:38:36Z", hfp.payload.tst);
+        assertTrue(1522949916 == hfp.payload.tsi);
+        assertTrue(0.16 - hfp.payload.spd < 0.00001f);
+        assertTrue(225 == hfp.payload.hdg);
+        assertTrue(60.194481 - hfp.payload.lat < 0.00001f);
+        assertTrue(25.03095 - hfp.payload.longitude < 0.00001f);
+        assertTrue(0 == hfp.payload.acc);
+        assertTrue(-25 == hfp.payload.dl);
+        assertTrue(2819 == hfp.payload.odo);
+        assertTrue(0 == hfp.payload.drst);
+        assertEquals("2018-04-05", hfp.payload.oday);
+        assertTrue(636 == hfp.payload.jrn);
+        assertTrue(112 == hfp.payload.line);
+        assertEquals("20:25", hfp.payload.start);
+    }
+
+    @Test
+    public void parseSamplePasJsonFile() throws Exception {
+        HfpJson hfp = parseJsonFromResources("hfp-sample-pas.json");
+        assertEquals("413", hfp.payload.desi);
+        assertEquals("2", hfp.payload.dir);
+        assertEquals(22, (int)hfp.payload.oper);
+        assertEquals(817, (int)hfp.payload.veh);
+        assertEquals("2019-06-27T11:53:24.541Z", hfp.payload.tst);
+        assertEquals(1561636404, hfp.payload.tsi);
+        assertEquals(11.33, hfp.payload.spd, 0.00001f);
+        assertEquals(245, (int)hfp.payload.hdg);
+        assertEquals(60.274556, hfp.payload.lat, 0.00001f);
+        assertEquals(24.840979, hfp.payload.longitude, 0.00001f);
+        assertEquals(-0.15, hfp.payload.acc, 0.00001f);
+        assertEquals(102, (int)hfp.payload.dl);
+        assertEquals(15160, hfp.payload.odo, 0.00001f);
+        assertEquals(0, (int)hfp.payload.drst);
+        assertEquals("2019-06-27", hfp.payload.oday);
+        assertEquals(6, (int)hfp.payload.jrn);
+        assertEquals(835, (int)hfp.payload.line);
+        assertEquals("14:05", hfp.payload.start);
+        assertEquals("GPS", hfp.payload.loc);
+        assertEquals(4170203, (int)hfp.payload.stop);
+        assertEquals("4413", hfp.payload.route);
+        assertEquals(0, (int)hfp.payload.occu);
     }
 
     @Test
     public void parseSampleJsonFileToProtobuf() throws Exception {
-        HfpJson json = parseJsonFromResources("hfp-sample.json");
+        HfpJson json = parseJsonFromResources("hfp-sample-vp.json");
         Hfp.Payload hfp = HfpParser.parsePayload(json);
 
         assertEquals("81", hfp.getDesi());
