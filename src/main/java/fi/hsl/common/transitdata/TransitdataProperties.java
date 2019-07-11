@@ -1,13 +1,19 @@
 package fi.hsl.common.transitdata;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Keys and corresponding values that are shared in the Transitdata pipeline.
  */
 public class TransitdataProperties {
     private TransitdataProperties() {}
+    private static final Pattern matchTimestampSecondsAndMillisecondsPattern = Pattern.compile("\\d{2}.\\d{3}Z$");
 
     public static final String REDIS_PREFIX_JPP = "jpp:";
     public static final String REDIS_PREFIX_DVJ = "dvj:";
@@ -41,6 +47,7 @@ public class TransitdataProperties {
         GTFS_VehiclePosition,
         InternalMessagesTripCancellation,
         InternalMessagesStopEstimate,
+        MetroAtsEstimate,
         MqttRawMessage,
         HfpData,
         TransitdataServiceAlert;
@@ -54,6 +61,7 @@ public class TransitdataProperties {
                 case GTFS_VehiclePosition: return "gtfs-vehicle-position";
                 case InternalMessagesTripCancellation: return "internal-messages-trip-cancellation";
                 case InternalMessagesStopEstimate: return "internal-messages-stop-estimate";
+                case MetroAtsEstimate: return "metro-ats-estimate";
                 case MqttRawMessage: return "mqtt-raw";
                 case HfpData: return "hfp-data";
                 case TransitdataServiceAlert: return "transitdata-service-alert";
@@ -82,6 +90,9 @@ public class TransitdataProperties {
             }
             else if (str.equals(InternalMessagesStopEstimate.toString())) {
                 return InternalMessagesStopEstimate;
+            }
+            else if (str.equals(MetroAtsEstimate.toString())) {
+                return MetroAtsEstimate;
             }
             else if (str.equals(MqttRawMessage.toString())) {
                 return MqttRawMessage;
@@ -118,12 +129,17 @@ public class TransitdataProperties {
     }
 
     /**
-     *
      * @param stopShortName e.g. MAK
-     * @param startDatetime e.g. 2019-12-20T15:12:56.000Z
+     * @param originalStartDatetime e.g. 2019-12-20T15:12:56.123Z
      * @return
      */
-    public static String formatMetroId(final String stopShortName, final String startDatetime) {
-        return REDIS_PREFIX_METRO + stopShortName + "_" + startDatetime;
+    public static String formatMetroId(final String stopShortName, final String originalStartDatetime) {
+        // Transform dateTime string: remove milliseconds, change seconds
+        // e.g 2019-12-20T15:12:56.123Z --> 2019-12-20T15:12:00Z
+        Matcher m = matchTimestampSecondsAndMillisecondsPattern.matcher(originalStartDatetime);
+        String fixedStartDateTime = m.replaceFirst("00Z");
+
+        return REDIS_PREFIX_METRO + stopShortName + "_" + fixedStartDateTime;
     }
+
 }

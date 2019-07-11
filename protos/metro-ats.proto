@@ -1,0 +1,50 @@
+syntax = "proto2";
+
+package proto;
+
+option java_package = "fi.hsl.common.transitdata.proto";
+option java_outer_classname = "MetroAtsProtos";
+
+enum MetroTrainType {
+    M = 0;
+    T = 1;
+}
+
+enum MetroProgress {
+    SCHEDULED = 0;
+    INPROGRESS = 1;
+    COMPLETED = 2;
+    CANCELLED = 3;
+}
+
+message MetroStopEstimate {
+    // Fields from mqtt-pulsar-gateway
+    required string station = 1;
+    required string platform = 2;
+    required string arrival_time_planned = 3;
+    required string arrival_time_forecast = 4;
+    required string arrival_time_measured = 5;
+    required string departure_time_planned = 6;
+    required string departure_time_forecast = 7;
+    required string departure_time_measured = 8;
+    required string source = 9;
+    required MetroProgress row_progress = 10;
+}
+
+message MetroEstimate {
+    // Fields from mqtt-pulsar-gateway
+    required int32 SchemaVersion = 1 [default = 1];
+    repeated MetroStopEstimate metro_row = 2;
+    required MetroTrainType train_type = 3;
+    required MetroProgress journey_sectionprogress = 4;
+    required string begin_time = 5;
+    required string end_time = 6;
+    // Fields from redis
+    required string start_datetime = 7;
+    required string direction = 8;
+    required string start_stop_number = 9;
+    required string start_stop_short_name = 10;
+    required string operating_day = 11;
+    required string start_time = 12;
+    required string route_name = 13;
+}
