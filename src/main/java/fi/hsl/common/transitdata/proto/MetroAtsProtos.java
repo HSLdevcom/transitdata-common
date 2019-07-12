@@ -271,15 +271,15 @@ public final class MetroAtsProtos {
         getArrivalTimePlannedBytes();
 
     /**
-     * <code>required string arrival_time_forecast = 4;</code>
+     * <code>optional string arrival_time_forecast = 4;</code>
      */
     boolean hasArrivalTimeForecast();
     /**
-     * <code>required string arrival_time_forecast = 4;</code>
+     * <code>optional string arrival_time_forecast = 4;</code>
      */
     java.lang.String getArrivalTimeForecast();
     /**
-     * <code>required string arrival_time_forecast = 4;</code>
+     * <code>optional string arrival_time_forecast = 4;</code>
      */
     com.google.protobuf.ByteString
         getArrivalTimeForecastBytes();
@@ -313,15 +313,15 @@ public final class MetroAtsProtos {
         getDepartureTimePlannedBytes();
 
     /**
-     * <code>required string departure_time_forecast = 7;</code>
+     * <code>optional string departure_time_forecast = 7;</code>
      */
     boolean hasDepartureTimeForecast();
     /**
-     * <code>required string departure_time_forecast = 7;</code>
+     * <code>optional string departure_time_forecast = 7;</code>
      */
     java.lang.String getDepartureTimeForecast();
     /**
-     * <code>required string departure_time_forecast = 7;</code>
+     * <code>optional string departure_time_forecast = 7;</code>
      */
     com.google.protobuf.ByteString
         getDepartureTimeForecastBytes();
@@ -652,13 +652,13 @@ public final class MetroAtsProtos {
     public static final int ARRIVAL_TIME_FORECAST_FIELD_NUMBER = 4;
     private volatile java.lang.Object arrivalTimeForecast_;
     /**
-     * <code>required string arrival_time_forecast = 4;</code>
+     * <code>optional string arrival_time_forecast = 4;</code>
      */
     public boolean hasArrivalTimeForecast() {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>required string arrival_time_forecast = 4;</code>
+     * <code>optional string arrival_time_forecast = 4;</code>
      */
     public java.lang.String getArrivalTimeForecast() {
       java.lang.Object ref = arrivalTimeForecast_;
@@ -675,7 +675,7 @@ public final class MetroAtsProtos {
       }
     }
     /**
-     * <code>required string arrival_time_forecast = 4;</code>
+     * <code>optional string arrival_time_forecast = 4;</code>
      */
     public com.google.protobuf.ByteString
         getArrivalTimeForecastBytes() {
@@ -778,13 +778,13 @@ public final class MetroAtsProtos {
     public static final int DEPARTURE_TIME_FORECAST_FIELD_NUMBER = 7;
     private volatile java.lang.Object departureTimeForecast_;
     /**
-     * <code>required string departure_time_forecast = 7;</code>
+     * <code>optional string departure_time_forecast = 7;</code>
      */
     public boolean hasDepartureTimeForecast() {
       return ((bitField0_ & 0x00000040) != 0);
     }
     /**
-     * <code>required string departure_time_forecast = 7;</code>
+     * <code>optional string departure_time_forecast = 7;</code>
      */
     public java.lang.String getDepartureTimeForecast() {
       java.lang.Object ref = departureTimeForecast_;
@@ -801,7 +801,7 @@ public final class MetroAtsProtos {
       }
     }
     /**
-     * <code>required string departure_time_forecast = 7;</code>
+     * <code>optional string departure_time_forecast = 7;</code>
      */
     public com.google.protobuf.ByteString
         getDepartureTimeForecastBytes() {
@@ -937,19 +937,11 @@ public final class MetroAtsProtos {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasArrivalTimeForecast()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasArrivalTimeMeasured()) {
         memoizedIsInitialized = 0;
         return false;
       }
       if (!hasDepartureTimePlanned()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasDepartureTimeForecast()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -1491,16 +1483,10 @@ public final class MetroAtsProtos {
         if (!hasArrivalTimePlanned()) {
           return false;
         }
-        if (!hasArrivalTimeForecast()) {
-          return false;
-        }
         if (!hasArrivalTimeMeasured()) {
           return false;
         }
         if (!hasDepartureTimePlanned()) {
-          return false;
-        }
-        if (!hasDepartureTimeForecast()) {
           return false;
         }
         if (!hasDepartureTimeMeasured()) {
@@ -1789,13 +1775,13 @@ public final class MetroAtsProtos {
 
       private java.lang.Object arrivalTimeForecast_ = "";
       /**
-       * <code>required string arrival_time_forecast = 4;</code>
+       * <code>optional string arrival_time_forecast = 4;</code>
        */
       public boolean hasArrivalTimeForecast() {
         return ((bitField0_ & 0x00000008) != 0);
       }
       /**
-       * <code>required string arrival_time_forecast = 4;</code>
+       * <code>optional string arrival_time_forecast = 4;</code>
        */
       public java.lang.String getArrivalTimeForecast() {
         java.lang.Object ref = arrivalTimeForecast_;
@@ -1812,7 +1798,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string arrival_time_forecast = 4;</code>
+       * <code>optional string arrival_time_forecast = 4;</code>
        */
       public com.google.protobuf.ByteString
           getArrivalTimeForecastBytes() {
@@ -1828,7 +1814,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string arrival_time_forecast = 4;</code>
+       * <code>optional string arrival_time_forecast = 4;</code>
        */
       public Builder setArrivalTimeForecast(
           java.lang.String value) {
@@ -1841,7 +1827,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string arrival_time_forecast = 4;</code>
+       * <code>optional string arrival_time_forecast = 4;</code>
        */
       public Builder clearArrivalTimeForecast() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -1850,7 +1836,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string arrival_time_forecast = 4;</code>
+       * <code>optional string arrival_time_forecast = 4;</code>
        */
       public Builder setArrivalTimeForecastBytes(
           com.google.protobuf.ByteString value) {
@@ -2017,13 +2003,13 @@ public final class MetroAtsProtos {
 
       private java.lang.Object departureTimeForecast_ = "";
       /**
-       * <code>required string departure_time_forecast = 7;</code>
+       * <code>optional string departure_time_forecast = 7;</code>
        */
       public boolean hasDepartureTimeForecast() {
         return ((bitField0_ & 0x00000040) != 0);
       }
       /**
-       * <code>required string departure_time_forecast = 7;</code>
+       * <code>optional string departure_time_forecast = 7;</code>
        */
       public java.lang.String getDepartureTimeForecast() {
         java.lang.Object ref = departureTimeForecast_;
@@ -2040,7 +2026,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string departure_time_forecast = 7;</code>
+       * <code>optional string departure_time_forecast = 7;</code>
        */
       public com.google.protobuf.ByteString
           getDepartureTimeForecastBytes() {
@@ -2056,7 +2042,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string departure_time_forecast = 7;</code>
+       * <code>optional string departure_time_forecast = 7;</code>
        */
       public Builder setDepartureTimeForecast(
           java.lang.String value) {
@@ -2069,7 +2055,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string departure_time_forecast = 7;</code>
+       * <code>optional string departure_time_forecast = 7;</code>
        */
       public Builder clearDepartureTimeForecast() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -2078,7 +2064,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string departure_time_forecast = 7;</code>
+       * <code>optional string departure_time_forecast = 7;</code>
        */
       public Builder setDepartureTimeForecastBytes(
           com.google.protobuf.ByteString value) {
@@ -2354,27 +2340,27 @@ public final class MetroAtsProtos {
     int getSchemaVersion();
 
     /**
-     * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+     * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
      */
     java.util.List<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate> 
-        getMetroRowList();
+        getMetroRowsList();
     /**
-     * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+     * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
      */
-    fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate getMetroRow(int index);
+    fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate getMetroRows(int index);
     /**
-     * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+     * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
      */
-    int getMetroRowCount();
+    int getMetroRowsCount();
     /**
-     * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+     * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
      */
     java.util.List<? extends fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimateOrBuilder> 
-        getMetroRowOrBuilderList();
+        getMetroRowsOrBuilderList();
     /**
-     * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+     * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
      */
-    fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimateOrBuilder getMetroRowOrBuilder(
+    fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimateOrBuilder getMetroRowsOrBuilder(
         int index);
 
     /**
@@ -2428,110 +2414,124 @@ public final class MetroAtsProtos {
      * Fields from redis
      * </pre>
      *
-     * <code>required string start_datetime = 7;</code>
-     */
-    boolean hasStartDatetime();
-    /**
-     * <pre>
-     * Fields from redis
-     * </pre>
-     *
-     * <code>required string start_datetime = 7;</code>
-     */
-    java.lang.String getStartDatetime();
-    /**
-     * <pre>
-     * Fields from redis
-     * </pre>
-     *
-     * <code>required string start_datetime = 7;</code>
-     */
-    com.google.protobuf.ByteString
-        getStartDatetimeBytes();
-
-    /**
-     * <code>required string direction = 8;</code>
-     */
-    boolean hasDirection();
-    /**
-     * <code>required string direction = 8;</code>
-     */
-    java.lang.String getDirection();
-    /**
-     * <code>required string direction = 8;</code>
-     */
-    com.google.protobuf.ByteString
-        getDirectionBytes();
-
-    /**
-     * <code>required string start_stop_number = 9;</code>
-     */
-    boolean hasStartStopNumber();
-    /**
-     * <code>required string start_stop_number = 9;</code>
-     */
-    java.lang.String getStartStopNumber();
-    /**
-     * <code>required string start_stop_number = 9;</code>
-     */
-    com.google.protobuf.ByteString
-        getStartStopNumberBytes();
-
-    /**
-     * <code>required string start_stop_short_name = 10;</code>
-     */
-    boolean hasStartStopShortName();
-    /**
-     * <code>required string start_stop_short_name = 10;</code>
-     */
-    java.lang.String getStartStopShortName();
-    /**
-     * <code>required string start_stop_short_name = 10;</code>
-     */
-    com.google.protobuf.ByteString
-        getStartStopShortNameBytes();
-
-    /**
-     * <code>required string operating_day = 11;</code>
+     * <code>required string operating_day = 7;</code>
      */
     boolean hasOperatingDay();
     /**
-     * <code>required string operating_day = 11;</code>
+     * <pre>
+     * Fields from redis
+     * </pre>
+     *
+     * <code>required string operating_day = 7;</code>
      */
     java.lang.String getOperatingDay();
     /**
-     * <code>required string operating_day = 11;</code>
+     * <pre>
+     * Fields from redis
+     * </pre>
+     *
+     * <code>required string operating_day = 7;</code>
      */
     com.google.protobuf.ByteString
         getOperatingDayBytes();
 
     /**
-     * <code>required string start_time = 12;</code>
+     * <code>required string start_stop_number = 8;</code>
+     */
+    boolean hasStartStopNumber();
+    /**
+     * <code>required string start_stop_number = 8;</code>
+     */
+    java.lang.String getStartStopNumber();
+    /**
+     * <code>required string start_stop_number = 8;</code>
+     */
+    com.google.protobuf.ByteString
+        getStartStopNumberBytes();
+
+    /**
+     * <code>required string start_time = 9;</code>
      */
     boolean hasStartTime();
     /**
-     * <code>required string start_time = 12;</code>
+     * <code>required string start_time = 9;</code>
      */
     java.lang.String getStartTime();
     /**
-     * <code>required string start_time = 12;</code>
+     * <code>required string start_time = 9;</code>
      */
     com.google.protobuf.ByteString
         getStartTimeBytes();
 
     /**
-     * <code>required string route_name = 13;</code>
+     * <code>required string dvj_id = 10;</code>
+     */
+    boolean hasDvjId();
+    /**
+     * <code>required string dvj_id = 10;</code>
+     */
+    java.lang.String getDvjId();
+    /**
+     * <code>required string dvj_id = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getDvjIdBytes();
+
+    /**
+     * <code>required string start_stop_short_name = 11;</code>
+     */
+    boolean hasStartStopShortName();
+    /**
+     * <code>required string start_stop_short_name = 11;</code>
+     */
+    java.lang.String getStartStopShortName();
+    /**
+     * <code>required string start_stop_short_name = 11;</code>
+     */
+    com.google.protobuf.ByteString
+        getStartStopShortNameBytes();
+
+    /**
+     * <code>required string route_name = 12;</code>
      */
     boolean hasRouteName();
     /**
-     * <code>required string route_name = 13;</code>
+     * <code>required string route_name = 12;</code>
      */
     java.lang.String getRouteName();
     /**
-     * <code>required string route_name = 13;</code>
+     * <code>required string route_name = 12;</code>
      */
     com.google.protobuf.ByteString
         getRouteNameBytes();
+
+    /**
+     * <code>required string start_datetime = 13;</code>
+     */
+    boolean hasStartDatetime();
+    /**
+     * <code>required string start_datetime = 13;</code>
+     */
+    java.lang.String getStartDatetime();
+    /**
+     * <code>required string start_datetime = 13;</code>
+     */
+    com.google.protobuf.ByteString
+        getStartDatetimeBytes();
+
+    /**
+     * <code>required string direction = 14;</code>
+     */
+    boolean hasDirection();
+    /**
+     * <code>required string direction = 14;</code>
+     */
+    java.lang.String getDirection();
+    /**
+     * <code>required string direction = 14;</code>
+     */
+    com.google.protobuf.ByteString
+        getDirectionBytes();
   }
   /**
    * Protobuf type {@code proto.MetroEstimate}
@@ -2547,18 +2547,19 @@ public final class MetroAtsProtos {
     }
     private MetroEstimate() {
       schemaVersion_ = 1;
-      metroRow_ = java.util.Collections.emptyList();
+      metroRows_ = java.util.Collections.emptyList();
       trainType_ = 0;
       journeySectionprogress_ = 0;
       beginTime_ = "";
       endTime_ = "";
+      operatingDay_ = "";
+      startStopNumber_ = "";
+      startTime_ = "";
+      dvjId_ = "";
+      startStopShortName_ = "";
+      routeName_ = "";
       startDatetime_ = "";
       direction_ = "";
-      startStopNumber_ = "";
-      startStopShortName_ = "";
-      operatingDay_ = "";
-      startTime_ = "";
-      routeName_ = "";
     }
 
     @java.lang.Override
@@ -2592,10 +2593,10 @@ public final class MetroAtsProtos {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                metroRow_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate>();
+                metroRows_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate>();
                 mutable_bitField0_ |= 0x00000002;
               }
-              metroRow_.add(
+              metroRows_.add(
                   input.readMessage(fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.PARSER, extensionRegistry));
               break;
             }
@@ -2638,43 +2639,49 @@ public final class MetroAtsProtos {
             case 58: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000020;
-              startDatetime_ = bs;
+              operatingDay_ = bs;
               break;
             }
             case 66: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000040;
-              direction_ = bs;
+              startStopNumber_ = bs;
               break;
             }
             case 74: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000080;
-              startStopNumber_ = bs;
+              startTime_ = bs;
               break;
             }
             case 82: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000100;
-              startStopShortName_ = bs;
+              dvjId_ = bs;
               break;
             }
             case 90: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000200;
-              operatingDay_ = bs;
+              startStopShortName_ = bs;
               break;
             }
             case 98: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000400;
-              startTime_ = bs;
+              routeName_ = bs;
               break;
             }
             case 106: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000800;
-              routeName_ = bs;
+              startDatetime_ = bs;
+              break;
+            }
+            case 114: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00001000;
+              direction_ = bs;
               break;
             }
             default: {
@@ -2693,7 +2700,7 @@ public final class MetroAtsProtos {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          metroRow_ = java.util.Collections.unmodifiableList(metroRow_);
+          metroRows_ = java.util.Collections.unmodifiableList(metroRows_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -2736,39 +2743,39 @@ public final class MetroAtsProtos {
       return schemaVersion_;
     }
 
-    public static final int METRO_ROW_FIELD_NUMBER = 2;
-    private java.util.List<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate> metroRow_;
+    public static final int METRO_ROWS_FIELD_NUMBER = 2;
+    private java.util.List<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate> metroRows_;
     /**
-     * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+     * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
      */
-    public java.util.List<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate> getMetroRowList() {
-      return metroRow_;
+    public java.util.List<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate> getMetroRowsList() {
+      return metroRows_;
     }
     /**
-     * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+     * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
      */
     public java.util.List<? extends fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimateOrBuilder> 
-        getMetroRowOrBuilderList() {
-      return metroRow_;
+        getMetroRowsOrBuilderList() {
+      return metroRows_;
     }
     /**
-     * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+     * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
      */
-    public int getMetroRowCount() {
-      return metroRow_.size();
+    public int getMetroRowsCount() {
+      return metroRows_.size();
     }
     /**
-     * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+     * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
      */
-    public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate getMetroRow(int index) {
-      return metroRow_.get(index);
+    public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate getMetroRows(int index) {
+      return metroRows_.get(index);
     }
     /**
-     * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+     * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
      */
-    public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimateOrBuilder getMetroRowOrBuilder(
+    public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimateOrBuilder getMetroRowsOrBuilder(
         int index) {
-      return metroRow_.get(index);
+      return metroRows_.get(index);
     }
 
     public static final int TRAIN_TYPE_FIELD_NUMBER = 3;
@@ -2889,16 +2896,16 @@ public final class MetroAtsProtos {
       }
     }
 
-    public static final int START_DATETIME_FIELD_NUMBER = 7;
-    private volatile java.lang.Object startDatetime_;
+    public static final int OPERATING_DAY_FIELD_NUMBER = 7;
+    private volatile java.lang.Object operatingDay_;
     /**
      * <pre>
      * Fields from redis
      * </pre>
      *
-     * <code>required string start_datetime = 7;</code>
+     * <code>required string operating_day = 7;</code>
      */
-    public boolean hasStartDatetime() {
+    public boolean hasOperatingDay() {
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
@@ -2906,179 +2913,7 @@ public final class MetroAtsProtos {
      * Fields from redis
      * </pre>
      *
-     * <code>required string start_datetime = 7;</code>
-     */
-    public java.lang.String getStartDatetime() {
-      java.lang.Object ref = startDatetime_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          startDatetime_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Fields from redis
-     * </pre>
-     *
-     * <code>required string start_datetime = 7;</code>
-     */
-    public com.google.protobuf.ByteString
-        getStartDatetimeBytes() {
-      java.lang.Object ref = startDatetime_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        startDatetime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DIRECTION_FIELD_NUMBER = 8;
-    private volatile java.lang.Object direction_;
-    /**
-     * <code>required string direction = 8;</code>
-     */
-    public boolean hasDirection() {
-      return ((bitField0_ & 0x00000040) != 0);
-    }
-    /**
-     * <code>required string direction = 8;</code>
-     */
-    public java.lang.String getDirection() {
-      java.lang.Object ref = direction_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          direction_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string direction = 8;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDirectionBytes() {
-      java.lang.Object ref = direction_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        direction_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int START_STOP_NUMBER_FIELD_NUMBER = 9;
-    private volatile java.lang.Object startStopNumber_;
-    /**
-     * <code>required string start_stop_number = 9;</code>
-     */
-    public boolean hasStartStopNumber() {
-      return ((bitField0_ & 0x00000080) != 0);
-    }
-    /**
-     * <code>required string start_stop_number = 9;</code>
-     */
-    public java.lang.String getStartStopNumber() {
-      java.lang.Object ref = startStopNumber_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          startStopNumber_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string start_stop_number = 9;</code>
-     */
-    public com.google.protobuf.ByteString
-        getStartStopNumberBytes() {
-      java.lang.Object ref = startStopNumber_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        startStopNumber_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int START_STOP_SHORT_NAME_FIELD_NUMBER = 10;
-    private volatile java.lang.Object startStopShortName_;
-    /**
-     * <code>required string start_stop_short_name = 10;</code>
-     */
-    public boolean hasStartStopShortName() {
-      return ((bitField0_ & 0x00000100) != 0);
-    }
-    /**
-     * <code>required string start_stop_short_name = 10;</code>
-     */
-    public java.lang.String getStartStopShortName() {
-      java.lang.Object ref = startStopShortName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          startStopShortName_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string start_stop_short_name = 10;</code>
-     */
-    public com.google.protobuf.ByteString
-        getStartStopShortNameBytes() {
-      java.lang.Object ref = startStopShortName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        startStopShortName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int OPERATING_DAY_FIELD_NUMBER = 11;
-    private volatile java.lang.Object operatingDay_;
-    /**
-     * <code>required string operating_day = 11;</code>
-     */
-    public boolean hasOperatingDay() {
-      return ((bitField0_ & 0x00000200) != 0);
-    }
-    /**
-     * <code>required string operating_day = 11;</code>
+     * <code>required string operating_day = 7;</code>
      */
     public java.lang.String getOperatingDay() {
       java.lang.Object ref = operatingDay_;
@@ -3095,7 +2930,11 @@ public final class MetroAtsProtos {
       }
     }
     /**
-     * <code>required string operating_day = 11;</code>
+     * <pre>
+     * Fields from redis
+     * </pre>
+     *
+     * <code>required string operating_day = 7;</code>
      */
     public com.google.protobuf.ByteString
         getOperatingDayBytes() {
@@ -3111,16 +2950,58 @@ public final class MetroAtsProtos {
       }
     }
 
-    public static final int START_TIME_FIELD_NUMBER = 12;
-    private volatile java.lang.Object startTime_;
+    public static final int START_STOP_NUMBER_FIELD_NUMBER = 8;
+    private volatile java.lang.Object startStopNumber_;
     /**
-     * <code>required string start_time = 12;</code>
+     * <code>required string start_stop_number = 8;</code>
      */
-    public boolean hasStartTime() {
-      return ((bitField0_ & 0x00000400) != 0);
+    public boolean hasStartStopNumber() {
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
-     * <code>required string start_time = 12;</code>
+     * <code>required string start_stop_number = 8;</code>
+     */
+    public java.lang.String getStartStopNumber() {
+      java.lang.Object ref = startStopNumber_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          startStopNumber_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string start_stop_number = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStartStopNumberBytes() {
+      java.lang.Object ref = startStopNumber_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        startStopNumber_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int START_TIME_FIELD_NUMBER = 9;
+    private volatile java.lang.Object startTime_;
+    /**
+     * <code>required string start_time = 9;</code>
+     */
+    public boolean hasStartTime() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <code>required string start_time = 9;</code>
      */
     public java.lang.String getStartTime() {
       java.lang.Object ref = startTime_;
@@ -3137,7 +3018,7 @@ public final class MetroAtsProtos {
       }
     }
     /**
-     * <code>required string start_time = 12;</code>
+     * <code>required string start_time = 9;</code>
      */
     public com.google.protobuf.ByteString
         getStartTimeBytes() {
@@ -3153,16 +3034,100 @@ public final class MetroAtsProtos {
       }
     }
 
-    public static final int ROUTE_NAME_FIELD_NUMBER = 13;
-    private volatile java.lang.Object routeName_;
+    public static final int DVJ_ID_FIELD_NUMBER = 10;
+    private volatile java.lang.Object dvjId_;
     /**
-     * <code>required string route_name = 13;</code>
+     * <code>required string dvj_id = 10;</code>
      */
-    public boolean hasRouteName() {
-      return ((bitField0_ & 0x00000800) != 0);
+    public boolean hasDvjId() {
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <code>required string route_name = 13;</code>
+     * <code>required string dvj_id = 10;</code>
+     */
+    public java.lang.String getDvjId() {
+      java.lang.Object ref = dvjId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          dvjId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string dvj_id = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDvjIdBytes() {
+      java.lang.Object ref = dvjId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        dvjId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int START_STOP_SHORT_NAME_FIELD_NUMBER = 11;
+    private volatile java.lang.Object startStopShortName_;
+    /**
+     * <code>required string start_stop_short_name = 11;</code>
+     */
+    public boolean hasStartStopShortName() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     * <code>required string start_stop_short_name = 11;</code>
+     */
+    public java.lang.String getStartStopShortName() {
+      java.lang.Object ref = startStopShortName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          startStopShortName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string start_stop_short_name = 11;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStartStopShortNameBytes() {
+      java.lang.Object ref = startStopShortName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        startStopShortName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROUTE_NAME_FIELD_NUMBER = 12;
+    private volatile java.lang.Object routeName_;
+    /**
+     * <code>required string route_name = 12;</code>
+     */
+    public boolean hasRouteName() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     * <code>required string route_name = 12;</code>
      */
     public java.lang.String getRouteName() {
       java.lang.Object ref = routeName_;
@@ -3179,7 +3144,7 @@ public final class MetroAtsProtos {
       }
     }
     /**
-     * <code>required string route_name = 13;</code>
+     * <code>required string route_name = 12;</code>
      */
     public com.google.protobuf.ByteString
         getRouteNameBytes() {
@@ -3189,6 +3154,90 @@ public final class MetroAtsProtos {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         routeName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int START_DATETIME_FIELD_NUMBER = 13;
+    private volatile java.lang.Object startDatetime_;
+    /**
+     * <code>required string start_datetime = 13;</code>
+     */
+    public boolean hasStartDatetime() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     * <code>required string start_datetime = 13;</code>
+     */
+    public java.lang.String getStartDatetime() {
+      java.lang.Object ref = startDatetime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          startDatetime_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string start_datetime = 13;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStartDatetimeBytes() {
+      java.lang.Object ref = startDatetime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        startDatetime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DIRECTION_FIELD_NUMBER = 14;
+    private volatile java.lang.Object direction_;
+    /**
+     * <code>required string direction = 14;</code>
+     */
+    public boolean hasDirection() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     * <code>required string direction = 14;</code>
+     */
+    public java.lang.String getDirection() {
+      java.lang.Object ref = direction_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          direction_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string direction = 14;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDirectionBytes() {
+      java.lang.Object ref = direction_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        direction_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3222,6 +3271,30 @@ public final class MetroAtsProtos {
         memoizedIsInitialized = 0;
         return false;
       }
+      if (!hasOperatingDay()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasStartStopNumber()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasStartTime()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasDvjId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasStartStopShortName()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasRouteName()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       if (!hasStartDatetime()) {
         memoizedIsInitialized = 0;
         return false;
@@ -3230,28 +3303,8 @@ public final class MetroAtsProtos {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasStartStopNumber()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasStartStopShortName()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasOperatingDay()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasStartTime()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasRouteName()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      for (int i = 0; i < getMetroRowCount(); i++) {
-        if (!getMetroRow(i).isInitialized()) {
+      for (int i = 0; i < getMetroRowsCount(); i++) {
+        if (!getMetroRows(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -3266,8 +3319,8 @@ public final class MetroAtsProtos {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt32(1, schemaVersion_);
       }
-      for (int i = 0; i < metroRow_.size(); i++) {
-        output.writeMessage(2, metroRow_.get(i));
+      for (int i = 0; i < metroRows_.size(); i++) {
+        output.writeMessage(2, metroRows_.get(i));
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeEnum(3, trainType_);
@@ -3282,25 +3335,28 @@ public final class MetroAtsProtos {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, endTime_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, startDatetime_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, operatingDay_);
       }
       if (((bitField0_ & 0x00000040) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, direction_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, startStopNumber_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, startStopNumber_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, startTime_);
       }
       if (((bitField0_ & 0x00000100) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, startStopShortName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, dvjId_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, operatingDay_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, startStopShortName_);
       }
       if (((bitField0_ & 0x00000400) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, startTime_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, routeName_);
       }
       if (((bitField0_ & 0x00000800) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, routeName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, startDatetime_);
+      }
+      if (((bitField0_ & 0x00001000) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, direction_);
       }
       unknownFields.writeTo(output);
     }
@@ -3315,9 +3371,9 @@ public final class MetroAtsProtos {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, schemaVersion_);
       }
-      for (int i = 0; i < metroRow_.size(); i++) {
+      for (int i = 0; i < metroRows_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, metroRow_.get(i));
+          .computeMessageSize(2, metroRows_.get(i));
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
@@ -3334,25 +3390,28 @@ public final class MetroAtsProtos {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, endTime_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, startDatetime_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, operatingDay_);
       }
       if (((bitField0_ & 0x00000040) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, direction_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, startStopNumber_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, startStopNumber_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, startTime_);
       }
       if (((bitField0_ & 0x00000100) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, startStopShortName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, dvjId_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, operatingDay_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, startStopShortName_);
       }
       if (((bitField0_ & 0x00000400) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, startTime_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, routeName_);
       }
       if (((bitField0_ & 0x00000800) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, routeName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, startDatetime_);
+      }
+      if (((bitField0_ & 0x00001000) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, direction_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3374,8 +3433,8 @@ public final class MetroAtsProtos {
         if (getSchemaVersion()
             != other.getSchemaVersion()) return false;
       }
-      if (!getMetroRowList()
-          .equals(other.getMetroRowList())) return false;
+      if (!getMetroRowsList()
+          .equals(other.getMetroRowsList())) return false;
       if (hasTrainType() != other.hasTrainType()) return false;
       if (hasTrainType()) {
         if (trainType_ != other.trainType_) return false;
@@ -3394,6 +3453,36 @@ public final class MetroAtsProtos {
         if (!getEndTime()
             .equals(other.getEndTime())) return false;
       }
+      if (hasOperatingDay() != other.hasOperatingDay()) return false;
+      if (hasOperatingDay()) {
+        if (!getOperatingDay()
+            .equals(other.getOperatingDay())) return false;
+      }
+      if (hasStartStopNumber() != other.hasStartStopNumber()) return false;
+      if (hasStartStopNumber()) {
+        if (!getStartStopNumber()
+            .equals(other.getStartStopNumber())) return false;
+      }
+      if (hasStartTime() != other.hasStartTime()) return false;
+      if (hasStartTime()) {
+        if (!getStartTime()
+            .equals(other.getStartTime())) return false;
+      }
+      if (hasDvjId() != other.hasDvjId()) return false;
+      if (hasDvjId()) {
+        if (!getDvjId()
+            .equals(other.getDvjId())) return false;
+      }
+      if (hasStartStopShortName() != other.hasStartStopShortName()) return false;
+      if (hasStartStopShortName()) {
+        if (!getStartStopShortName()
+            .equals(other.getStartStopShortName())) return false;
+      }
+      if (hasRouteName() != other.hasRouteName()) return false;
+      if (hasRouteName()) {
+        if (!getRouteName()
+            .equals(other.getRouteName())) return false;
+      }
       if (hasStartDatetime() != other.hasStartDatetime()) return false;
       if (hasStartDatetime()) {
         if (!getStartDatetime()
@@ -3403,31 +3492,6 @@ public final class MetroAtsProtos {
       if (hasDirection()) {
         if (!getDirection()
             .equals(other.getDirection())) return false;
-      }
-      if (hasStartStopNumber() != other.hasStartStopNumber()) return false;
-      if (hasStartStopNumber()) {
-        if (!getStartStopNumber()
-            .equals(other.getStartStopNumber())) return false;
-      }
-      if (hasStartStopShortName() != other.hasStartStopShortName()) return false;
-      if (hasStartStopShortName()) {
-        if (!getStartStopShortName()
-            .equals(other.getStartStopShortName())) return false;
-      }
-      if (hasOperatingDay() != other.hasOperatingDay()) return false;
-      if (hasOperatingDay()) {
-        if (!getOperatingDay()
-            .equals(other.getOperatingDay())) return false;
-      }
-      if (hasStartTime() != other.hasStartTime()) return false;
-      if (hasStartTime()) {
-        if (!getStartTime()
-            .equals(other.getStartTime())) return false;
-      }
-      if (hasRouteName() != other.hasRouteName()) return false;
-      if (hasRouteName()) {
-        if (!getRouteName()
-            .equals(other.getRouteName())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -3444,9 +3508,9 @@ public final class MetroAtsProtos {
         hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
         hash = (53 * hash) + getSchemaVersion();
       }
-      if (getMetroRowCount() > 0) {
-        hash = (37 * hash) + METRO_ROW_FIELD_NUMBER;
-        hash = (53 * hash) + getMetroRowList().hashCode();
+      if (getMetroRowsCount() > 0) {
+        hash = (37 * hash) + METRO_ROWS_FIELD_NUMBER;
+        hash = (53 * hash) + getMetroRowsList().hashCode();
       }
       if (hasTrainType()) {
         hash = (37 * hash) + TRAIN_TYPE_FIELD_NUMBER;
@@ -3464,6 +3528,30 @@ public final class MetroAtsProtos {
         hash = (37 * hash) + END_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getEndTime().hashCode();
       }
+      if (hasOperatingDay()) {
+        hash = (37 * hash) + OPERATING_DAY_FIELD_NUMBER;
+        hash = (53 * hash) + getOperatingDay().hashCode();
+      }
+      if (hasStartStopNumber()) {
+        hash = (37 * hash) + START_STOP_NUMBER_FIELD_NUMBER;
+        hash = (53 * hash) + getStartStopNumber().hashCode();
+      }
+      if (hasStartTime()) {
+        hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getStartTime().hashCode();
+      }
+      if (hasDvjId()) {
+        hash = (37 * hash) + DVJ_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getDvjId().hashCode();
+      }
+      if (hasStartStopShortName()) {
+        hash = (37 * hash) + START_STOP_SHORT_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getStartStopShortName().hashCode();
+      }
+      if (hasRouteName()) {
+        hash = (37 * hash) + ROUTE_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getRouteName().hashCode();
+      }
       if (hasStartDatetime()) {
         hash = (37 * hash) + START_DATETIME_FIELD_NUMBER;
         hash = (53 * hash) + getStartDatetime().hashCode();
@@ -3471,26 +3559,6 @@ public final class MetroAtsProtos {
       if (hasDirection()) {
         hash = (37 * hash) + DIRECTION_FIELD_NUMBER;
         hash = (53 * hash) + getDirection().hashCode();
-      }
-      if (hasStartStopNumber()) {
-        hash = (37 * hash) + START_STOP_NUMBER_FIELD_NUMBER;
-        hash = (53 * hash) + getStartStopNumber().hashCode();
-      }
-      if (hasStartStopShortName()) {
-        hash = (37 * hash) + START_STOP_SHORT_NAME_FIELD_NUMBER;
-        hash = (53 * hash) + getStartStopShortName().hashCode();
-      }
-      if (hasOperatingDay()) {
-        hash = (37 * hash) + OPERATING_DAY_FIELD_NUMBER;
-        hash = (53 * hash) + getOperatingDay().hashCode();
-      }
-      if (hasStartTime()) {
-        hash = (37 * hash) + START_TIME_FIELD_NUMBER;
-        hash = (53 * hash) + getStartTime().hashCode();
-      }
-      if (hasRouteName()) {
-        hash = (37 * hash) + ROUTE_NAME_FIELD_NUMBER;
-        hash = (53 * hash) + getRouteName().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3620,7 +3688,7 @@ public final class MetroAtsProtos {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getMetroRowFieldBuilder();
+          getMetroRowsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -3628,11 +3696,11 @@ public final class MetroAtsProtos {
         super.clear();
         schemaVersion_ = 1;
         bitField0_ = (bitField0_ & ~0x00000001);
-        if (metroRowBuilder_ == null) {
-          metroRow_ = java.util.Collections.emptyList();
+        if (metroRowsBuilder_ == null) {
+          metroRows_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          metroRowBuilder_.clear();
+          metroRowsBuilder_.clear();
         }
         trainType_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -3642,20 +3710,22 @@ public final class MetroAtsProtos {
         bitField0_ = (bitField0_ & ~0x00000010);
         endTime_ = "";
         bitField0_ = (bitField0_ & ~0x00000020);
-        startDatetime_ = "";
-        bitField0_ = (bitField0_ & ~0x00000040);
-        direction_ = "";
-        bitField0_ = (bitField0_ & ~0x00000080);
-        startStopNumber_ = "";
-        bitField0_ = (bitField0_ & ~0x00000100);
-        startStopShortName_ = "";
-        bitField0_ = (bitField0_ & ~0x00000200);
         operatingDay_ = "";
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000040);
+        startStopNumber_ = "";
+        bitField0_ = (bitField0_ & ~0x00000080);
         startTime_ = "";
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000100);
+        dvjId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000200);
+        startStopShortName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000400);
         routeName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000800);
+        startDatetime_ = "";
         bitField0_ = (bitField0_ & ~0x00001000);
+        direction_ = "";
+        bitField0_ = (bitField0_ & ~0x00002000);
         return this;
       }
 
@@ -3688,14 +3758,14 @@ public final class MetroAtsProtos {
           to_bitField0_ |= 0x00000001;
         }
         result.schemaVersion_ = schemaVersion_;
-        if (metroRowBuilder_ == null) {
+        if (metroRowsBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
-            metroRow_ = java.util.Collections.unmodifiableList(metroRow_);
+            metroRows_ = java.util.Collections.unmodifiableList(metroRows_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
-          result.metroRow_ = metroRow_;
+          result.metroRows_ = metroRows_;
         } else {
-          result.metroRow_ = metroRowBuilder_.build();
+          result.metroRows_ = metroRowsBuilder_.build();
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           to_bitField0_ |= 0x00000002;
@@ -3716,31 +3786,35 @@ public final class MetroAtsProtos {
         if (((from_bitField0_ & 0x00000040) != 0)) {
           to_bitField0_ |= 0x00000020;
         }
-        result.startDatetime_ = startDatetime_;
+        result.operatingDay_ = operatingDay_;
         if (((from_bitField0_ & 0x00000080) != 0)) {
           to_bitField0_ |= 0x00000040;
         }
-        result.direction_ = direction_;
+        result.startStopNumber_ = startStopNumber_;
         if (((from_bitField0_ & 0x00000100) != 0)) {
           to_bitField0_ |= 0x00000080;
         }
-        result.startStopNumber_ = startStopNumber_;
+        result.startTime_ = startTime_;
         if (((from_bitField0_ & 0x00000200) != 0)) {
           to_bitField0_ |= 0x00000100;
         }
-        result.startStopShortName_ = startStopShortName_;
+        result.dvjId_ = dvjId_;
         if (((from_bitField0_ & 0x00000400) != 0)) {
           to_bitField0_ |= 0x00000200;
         }
-        result.operatingDay_ = operatingDay_;
+        result.startStopShortName_ = startStopShortName_;
         if (((from_bitField0_ & 0x00000800) != 0)) {
           to_bitField0_ |= 0x00000400;
         }
-        result.startTime_ = startTime_;
+        result.routeName_ = routeName_;
         if (((from_bitField0_ & 0x00001000) != 0)) {
           to_bitField0_ |= 0x00000800;
         }
-        result.routeName_ = routeName_;
+        result.startDatetime_ = startDatetime_;
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          to_bitField0_ |= 0x00001000;
+        }
+        result.direction_ = direction_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3793,29 +3867,29 @@ public final class MetroAtsProtos {
         if (other.hasSchemaVersion()) {
           setSchemaVersion(other.getSchemaVersion());
         }
-        if (metroRowBuilder_ == null) {
-          if (!other.metroRow_.isEmpty()) {
-            if (metroRow_.isEmpty()) {
-              metroRow_ = other.metroRow_;
+        if (metroRowsBuilder_ == null) {
+          if (!other.metroRows_.isEmpty()) {
+            if (metroRows_.isEmpty()) {
+              metroRows_ = other.metroRows_;
               bitField0_ = (bitField0_ & ~0x00000002);
             } else {
-              ensureMetroRowIsMutable();
-              metroRow_.addAll(other.metroRow_);
+              ensureMetroRowsIsMutable();
+              metroRows_.addAll(other.metroRows_);
             }
             onChanged();
           }
         } else {
-          if (!other.metroRow_.isEmpty()) {
-            if (metroRowBuilder_.isEmpty()) {
-              metroRowBuilder_.dispose();
-              metroRowBuilder_ = null;
-              metroRow_ = other.metroRow_;
+          if (!other.metroRows_.isEmpty()) {
+            if (metroRowsBuilder_.isEmpty()) {
+              metroRowsBuilder_.dispose();
+              metroRowsBuilder_ = null;
+              metroRows_ = other.metroRows_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              metroRowBuilder_ = 
+              metroRowsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getMetroRowFieldBuilder() : null;
+                   getMetroRowsFieldBuilder() : null;
             } else {
-              metroRowBuilder_.addAllMessages(other.metroRow_);
+              metroRowsBuilder_.addAllMessages(other.metroRows_);
             }
           }
         }
@@ -3835,39 +3909,44 @@ public final class MetroAtsProtos {
           endTime_ = other.endTime_;
           onChanged();
         }
-        if (other.hasStartDatetime()) {
+        if (other.hasOperatingDay()) {
           bitField0_ |= 0x00000040;
+          operatingDay_ = other.operatingDay_;
+          onChanged();
+        }
+        if (other.hasStartStopNumber()) {
+          bitField0_ |= 0x00000080;
+          startStopNumber_ = other.startStopNumber_;
+          onChanged();
+        }
+        if (other.hasStartTime()) {
+          bitField0_ |= 0x00000100;
+          startTime_ = other.startTime_;
+          onChanged();
+        }
+        if (other.hasDvjId()) {
+          bitField0_ |= 0x00000200;
+          dvjId_ = other.dvjId_;
+          onChanged();
+        }
+        if (other.hasStartStopShortName()) {
+          bitField0_ |= 0x00000400;
+          startStopShortName_ = other.startStopShortName_;
+          onChanged();
+        }
+        if (other.hasRouteName()) {
+          bitField0_ |= 0x00000800;
+          routeName_ = other.routeName_;
+          onChanged();
+        }
+        if (other.hasStartDatetime()) {
+          bitField0_ |= 0x00001000;
           startDatetime_ = other.startDatetime_;
           onChanged();
         }
         if (other.hasDirection()) {
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00002000;
           direction_ = other.direction_;
-          onChanged();
-        }
-        if (other.hasStartStopNumber()) {
-          bitField0_ |= 0x00000100;
-          startStopNumber_ = other.startStopNumber_;
-          onChanged();
-        }
-        if (other.hasStartStopShortName()) {
-          bitField0_ |= 0x00000200;
-          startStopShortName_ = other.startStopShortName_;
-          onChanged();
-        }
-        if (other.hasOperatingDay()) {
-          bitField0_ |= 0x00000400;
-          operatingDay_ = other.operatingDay_;
-          onChanged();
-        }
-        if (other.hasStartTime()) {
-          bitField0_ |= 0x00000800;
-          startTime_ = other.startTime_;
-          onChanged();
-        }
-        if (other.hasRouteName()) {
-          bitField0_ |= 0x00001000;
-          routeName_ = other.routeName_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -3892,29 +3971,32 @@ public final class MetroAtsProtos {
         if (!hasEndTime()) {
           return false;
         }
+        if (!hasOperatingDay()) {
+          return false;
+        }
+        if (!hasStartStopNumber()) {
+          return false;
+        }
+        if (!hasStartTime()) {
+          return false;
+        }
+        if (!hasDvjId()) {
+          return false;
+        }
+        if (!hasStartStopShortName()) {
+          return false;
+        }
+        if (!hasRouteName()) {
+          return false;
+        }
         if (!hasStartDatetime()) {
           return false;
         }
         if (!hasDirection()) {
           return false;
         }
-        if (!hasStartStopNumber()) {
-          return false;
-        }
-        if (!hasStartStopShortName()) {
-          return false;
-        }
-        if (!hasOperatingDay()) {
-          return false;
-        }
-        if (!hasStartTime()) {
-          return false;
-        }
-        if (!hasRouteName()) {
-          return false;
-        }
-        for (int i = 0; i < getMetroRowCount(); i++) {
-          if (!getMetroRow(i).isInitialized()) {
+        for (int i = 0; i < getMetroRowsCount(); i++) {
+          if (!getMetroRows(i).isInitialized()) {
             return false;
           }
         }
@@ -3989,244 +4071,244 @@ public final class MetroAtsProtos {
         return this;
       }
 
-      private java.util.List<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate> metroRow_ =
+      private java.util.List<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate> metroRows_ =
         java.util.Collections.emptyList();
-      private void ensureMetroRowIsMutable() {
+      private void ensureMetroRowsIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          metroRow_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate>(metroRow_);
+          metroRows_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate>(metroRows_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate, fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.Builder, fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimateOrBuilder> metroRowBuilder_;
+          fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate, fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.Builder, fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimateOrBuilder> metroRowsBuilder_;
 
       /**
-       * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+       * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
        */
-      public java.util.List<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate> getMetroRowList() {
-        if (metroRowBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(metroRow_);
+      public java.util.List<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate> getMetroRowsList() {
+        if (metroRowsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(metroRows_);
         } else {
-          return metroRowBuilder_.getMessageList();
+          return metroRowsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+       * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
        */
-      public int getMetroRowCount() {
-        if (metroRowBuilder_ == null) {
-          return metroRow_.size();
+      public int getMetroRowsCount() {
+        if (metroRowsBuilder_ == null) {
+          return metroRows_.size();
         } else {
-          return metroRowBuilder_.getCount();
+          return metroRowsBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+       * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
        */
-      public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate getMetroRow(int index) {
-        if (metroRowBuilder_ == null) {
-          return metroRow_.get(index);
+      public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate getMetroRows(int index) {
+        if (metroRowsBuilder_ == null) {
+          return metroRows_.get(index);
         } else {
-          return metroRowBuilder_.getMessage(index);
+          return metroRowsBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+       * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
        */
-      public Builder setMetroRow(
+      public Builder setMetroRows(
           int index, fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate value) {
-        if (metroRowBuilder_ == null) {
+        if (metroRowsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMetroRowIsMutable();
-          metroRow_.set(index, value);
+          ensureMetroRowsIsMutable();
+          metroRows_.set(index, value);
           onChanged();
         } else {
-          metroRowBuilder_.setMessage(index, value);
+          metroRowsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+       * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
        */
-      public Builder setMetroRow(
+      public Builder setMetroRows(
           int index, fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.Builder builderForValue) {
-        if (metroRowBuilder_ == null) {
-          ensureMetroRowIsMutable();
-          metroRow_.set(index, builderForValue.build());
+        if (metroRowsBuilder_ == null) {
+          ensureMetroRowsIsMutable();
+          metroRows_.set(index, builderForValue.build());
           onChanged();
         } else {
-          metroRowBuilder_.setMessage(index, builderForValue.build());
+          metroRowsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+       * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
        */
-      public Builder addMetroRow(fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate value) {
-        if (metroRowBuilder_ == null) {
+      public Builder addMetroRows(fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate value) {
+        if (metroRowsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMetroRowIsMutable();
-          metroRow_.add(value);
+          ensureMetroRowsIsMutable();
+          metroRows_.add(value);
           onChanged();
         } else {
-          metroRowBuilder_.addMessage(value);
+          metroRowsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+       * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
        */
-      public Builder addMetroRow(
+      public Builder addMetroRows(
           int index, fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate value) {
-        if (metroRowBuilder_ == null) {
+        if (metroRowsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMetroRowIsMutable();
-          metroRow_.add(index, value);
+          ensureMetroRowsIsMutable();
+          metroRows_.add(index, value);
           onChanged();
         } else {
-          metroRowBuilder_.addMessage(index, value);
+          metroRowsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+       * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
        */
-      public Builder addMetroRow(
+      public Builder addMetroRows(
           fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.Builder builderForValue) {
-        if (metroRowBuilder_ == null) {
-          ensureMetroRowIsMutable();
-          metroRow_.add(builderForValue.build());
+        if (metroRowsBuilder_ == null) {
+          ensureMetroRowsIsMutable();
+          metroRows_.add(builderForValue.build());
           onChanged();
         } else {
-          metroRowBuilder_.addMessage(builderForValue.build());
+          metroRowsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+       * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
        */
-      public Builder addMetroRow(
+      public Builder addMetroRows(
           int index, fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.Builder builderForValue) {
-        if (metroRowBuilder_ == null) {
-          ensureMetroRowIsMutable();
-          metroRow_.add(index, builderForValue.build());
+        if (metroRowsBuilder_ == null) {
+          ensureMetroRowsIsMutable();
+          metroRows_.add(index, builderForValue.build());
           onChanged();
         } else {
-          metroRowBuilder_.addMessage(index, builderForValue.build());
+          metroRowsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+       * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
        */
-      public Builder addAllMetroRow(
+      public Builder addAllMetroRows(
           java.lang.Iterable<? extends fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate> values) {
-        if (metroRowBuilder_ == null) {
-          ensureMetroRowIsMutable();
+        if (metroRowsBuilder_ == null) {
+          ensureMetroRowsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, metroRow_);
+              values, metroRows_);
           onChanged();
         } else {
-          metroRowBuilder_.addAllMessages(values);
+          metroRowsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+       * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
        */
-      public Builder clearMetroRow() {
-        if (metroRowBuilder_ == null) {
-          metroRow_ = java.util.Collections.emptyList();
+      public Builder clearMetroRows() {
+        if (metroRowsBuilder_ == null) {
+          metroRows_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
-          metroRowBuilder_.clear();
+          metroRowsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+       * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
        */
-      public Builder removeMetroRow(int index) {
-        if (metroRowBuilder_ == null) {
-          ensureMetroRowIsMutable();
-          metroRow_.remove(index);
+      public Builder removeMetroRows(int index) {
+        if (metroRowsBuilder_ == null) {
+          ensureMetroRowsIsMutable();
+          metroRows_.remove(index);
           onChanged();
         } else {
-          metroRowBuilder_.remove(index);
+          metroRowsBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+       * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
        */
-      public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.Builder getMetroRowBuilder(
+      public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.Builder getMetroRowsBuilder(
           int index) {
-        return getMetroRowFieldBuilder().getBuilder(index);
+        return getMetroRowsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+       * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
        */
-      public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimateOrBuilder getMetroRowOrBuilder(
+      public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimateOrBuilder getMetroRowsOrBuilder(
           int index) {
-        if (metroRowBuilder_ == null) {
-          return metroRow_.get(index);  } else {
-          return metroRowBuilder_.getMessageOrBuilder(index);
+        if (metroRowsBuilder_ == null) {
+          return metroRows_.get(index);  } else {
+          return metroRowsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+       * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
        */
       public java.util.List<? extends fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimateOrBuilder> 
-           getMetroRowOrBuilderList() {
-        if (metroRowBuilder_ != null) {
-          return metroRowBuilder_.getMessageOrBuilderList();
+           getMetroRowsOrBuilderList() {
+        if (metroRowsBuilder_ != null) {
+          return metroRowsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(metroRow_);
+          return java.util.Collections.unmodifiableList(metroRows_);
         }
       }
       /**
-       * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+       * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
        */
-      public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.Builder addMetroRowBuilder() {
-        return getMetroRowFieldBuilder().addBuilder(
+      public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.Builder addMetroRowsBuilder() {
+        return getMetroRowsFieldBuilder().addBuilder(
             fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.getDefaultInstance());
       }
       /**
-       * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+       * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
        */
-      public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.Builder addMetroRowBuilder(
+      public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.Builder addMetroRowsBuilder(
           int index) {
-        return getMetroRowFieldBuilder().addBuilder(
+        return getMetroRowsFieldBuilder().addBuilder(
             index, fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.getDefaultInstance());
       }
       /**
-       * <code>repeated .proto.MetroStopEstimate metro_row = 2;</code>
+       * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
        */
       public java.util.List<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.Builder> 
-           getMetroRowBuilderList() {
-        return getMetroRowFieldBuilder().getBuilderList();
+           getMetroRowsBuilderList() {
+        return getMetroRowsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate, fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.Builder, fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimateOrBuilder> 
-          getMetroRowFieldBuilder() {
-        if (metroRowBuilder_ == null) {
-          metroRowBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getMetroRowsFieldBuilder() {
+        if (metroRowsBuilder_ == null) {
+          metroRowsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate, fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.Builder, fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimateOrBuilder>(
-                  metroRow_,
+                  metroRows_,
                   ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
-          metroRow_ = null;
+          metroRows_ = null;
         }
-        return metroRowBuilder_;
+        return metroRowsBuilder_;
       }
 
       private int trainType_ = 0;
@@ -4455,15 +4537,15 @@ public final class MetroAtsProtos {
         return this;
       }
 
-      private java.lang.Object startDatetime_ = "";
+      private java.lang.Object operatingDay_ = "";
       /**
        * <pre>
        * Fields from redis
        * </pre>
        *
-       * <code>required string start_datetime = 7;</code>
+       * <code>required string operating_day = 7;</code>
        */
-      public boolean hasStartDatetime() {
+      public boolean hasOperatingDay() {
         return ((bitField0_ & 0x00000040) != 0);
       }
       /**
@@ -4471,327 +4553,7 @@ public final class MetroAtsProtos {
        * Fields from redis
        * </pre>
        *
-       * <code>required string start_datetime = 7;</code>
-       */
-      public java.lang.String getStartDatetime() {
-        java.lang.Object ref = startDatetime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            startDatetime_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Fields from redis
-       * </pre>
-       *
-       * <code>required string start_datetime = 7;</code>
-       */
-      public com.google.protobuf.ByteString
-          getStartDatetimeBytes() {
-        java.lang.Object ref = startDatetime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          startDatetime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Fields from redis
-       * </pre>
-       *
-       * <code>required string start_datetime = 7;</code>
-       */
-      public Builder setStartDatetime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000040;
-        startDatetime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Fields from redis
-       * </pre>
-       *
-       * <code>required string start_datetime = 7;</code>
-       */
-      public Builder clearStartDatetime() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        startDatetime_ = getDefaultInstance().getStartDatetime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Fields from redis
-       * </pre>
-       *
-       * <code>required string start_datetime = 7;</code>
-       */
-      public Builder setStartDatetimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000040;
-        startDatetime_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object direction_ = "";
-      /**
-       * <code>required string direction = 8;</code>
-       */
-      public boolean hasDirection() {
-        return ((bitField0_ & 0x00000080) != 0);
-      }
-      /**
-       * <code>required string direction = 8;</code>
-       */
-      public java.lang.String getDirection() {
-        java.lang.Object ref = direction_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            direction_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>required string direction = 8;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDirectionBytes() {
-        java.lang.Object ref = direction_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          direction_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string direction = 8;</code>
-       */
-      public Builder setDirection(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000080;
-        direction_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string direction = 8;</code>
-       */
-      public Builder clearDirection() {
-        bitField0_ = (bitField0_ & ~0x00000080);
-        direction_ = getDefaultInstance().getDirection();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string direction = 8;</code>
-       */
-      public Builder setDirectionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000080;
-        direction_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object startStopNumber_ = "";
-      /**
-       * <code>required string start_stop_number = 9;</code>
-       */
-      public boolean hasStartStopNumber() {
-        return ((bitField0_ & 0x00000100) != 0);
-      }
-      /**
-       * <code>required string start_stop_number = 9;</code>
-       */
-      public java.lang.String getStartStopNumber() {
-        java.lang.Object ref = startStopNumber_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            startStopNumber_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>required string start_stop_number = 9;</code>
-       */
-      public com.google.protobuf.ByteString
-          getStartStopNumberBytes() {
-        java.lang.Object ref = startStopNumber_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          startStopNumber_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string start_stop_number = 9;</code>
-       */
-      public Builder setStartStopNumber(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000100;
-        startStopNumber_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string start_stop_number = 9;</code>
-       */
-      public Builder clearStartStopNumber() {
-        bitField0_ = (bitField0_ & ~0x00000100);
-        startStopNumber_ = getDefaultInstance().getStartStopNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string start_stop_number = 9;</code>
-       */
-      public Builder setStartStopNumberBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000100;
-        startStopNumber_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object startStopShortName_ = "";
-      /**
-       * <code>required string start_stop_short_name = 10;</code>
-       */
-      public boolean hasStartStopShortName() {
-        return ((bitField0_ & 0x00000200) != 0);
-      }
-      /**
-       * <code>required string start_stop_short_name = 10;</code>
-       */
-      public java.lang.String getStartStopShortName() {
-        java.lang.Object ref = startStopShortName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            startStopShortName_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>required string start_stop_short_name = 10;</code>
-       */
-      public com.google.protobuf.ByteString
-          getStartStopShortNameBytes() {
-        java.lang.Object ref = startStopShortName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          startStopShortName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string start_stop_short_name = 10;</code>
-       */
-      public Builder setStartStopShortName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000200;
-        startStopShortName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string start_stop_short_name = 10;</code>
-       */
-      public Builder clearStartStopShortName() {
-        bitField0_ = (bitField0_ & ~0x00000200);
-        startStopShortName_ = getDefaultInstance().getStartStopShortName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string start_stop_short_name = 10;</code>
-       */
-      public Builder setStartStopShortNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000200;
-        startStopShortName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object operatingDay_ = "";
-      /**
-       * <code>required string operating_day = 11;</code>
-       */
-      public boolean hasOperatingDay() {
-        return ((bitField0_ & 0x00000400) != 0);
-      }
-      /**
-       * <code>required string operating_day = 11;</code>
+       * <code>required string operating_day = 7;</code>
        */
       public java.lang.String getOperatingDay() {
         java.lang.Object ref = operatingDay_;
@@ -4808,7 +4570,11 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string operating_day = 11;</code>
+       * <pre>
+       * Fields from redis
+       * </pre>
+       *
+       * <code>required string operating_day = 7;</code>
        */
       public com.google.protobuf.ByteString
           getOperatingDayBytes() {
@@ -4824,50 +4590,138 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string operating_day = 11;</code>
+       * <pre>
+       * Fields from redis
+       * </pre>
+       *
+       * <code>required string operating_day = 7;</code>
        */
       public Builder setOperatingDay(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  bitField0_ |= 0x00000040;
         operatingDay_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string operating_day = 11;</code>
+       * <pre>
+       * Fields from redis
+       * </pre>
+       *
+       * <code>required string operating_day = 7;</code>
        */
       public Builder clearOperatingDay() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000040);
         operatingDay_ = getDefaultInstance().getOperatingDay();
         onChanged();
         return this;
       }
       /**
-       * <code>required string operating_day = 11;</code>
+       * <pre>
+       * Fields from redis
+       * </pre>
+       *
+       * <code>required string operating_day = 7;</code>
        */
       public Builder setOperatingDayBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  bitField0_ |= 0x00000040;
         operatingDay_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object startStopNumber_ = "";
+      /**
+       * <code>required string start_stop_number = 8;</code>
+       */
+      public boolean hasStartStopNumber() {
+        return ((bitField0_ & 0x00000080) != 0);
+      }
+      /**
+       * <code>required string start_stop_number = 8;</code>
+       */
+      public java.lang.String getStartStopNumber() {
+        java.lang.Object ref = startStopNumber_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            startStopNumber_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string start_stop_number = 8;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStartStopNumberBytes() {
+        java.lang.Object ref = startStopNumber_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          startStopNumber_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string start_stop_number = 8;</code>
+       */
+      public Builder setStartStopNumber(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        startStopNumber_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string start_stop_number = 8;</code>
+       */
+      public Builder clearStartStopNumber() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        startStopNumber_ = getDefaultInstance().getStartStopNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string start_stop_number = 8;</code>
+       */
+      public Builder setStartStopNumberBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        startStopNumber_ = value;
         onChanged();
         return this;
       }
 
       private java.lang.Object startTime_ = "";
       /**
-       * <code>required string start_time = 12;</code>
+       * <code>required string start_time = 9;</code>
        */
       public boolean hasStartTime() {
-        return ((bitField0_ & 0x00000800) != 0);
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
-       * <code>required string start_time = 12;</code>
+       * <code>required string start_time = 9;</code>
        */
       public java.lang.String getStartTime() {
         java.lang.Object ref = startTime_;
@@ -4884,7 +4738,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string start_time = 12;</code>
+       * <code>required string start_time = 9;</code>
        */
       public com.google.protobuf.ByteString
           getStartTimeBytes() {
@@ -4900,50 +4754,202 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string start_time = 12;</code>
+       * <code>required string start_time = 9;</code>
        */
       public Builder setStartTime(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000800;
+  bitField0_ |= 0x00000100;
         startTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string start_time = 12;</code>
+       * <code>required string start_time = 9;</code>
        */
       public Builder clearStartTime() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000100);
         startTime_ = getDefaultInstance().getStartTime();
         onChanged();
         return this;
       }
       /**
-       * <code>required string start_time = 12;</code>
+       * <code>required string start_time = 9;</code>
        */
       public Builder setStartTimeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000800;
+  bitField0_ |= 0x00000100;
         startTime_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object dvjId_ = "";
+      /**
+       * <code>required string dvj_id = 10;</code>
+       */
+      public boolean hasDvjId() {
+        return ((bitField0_ & 0x00000200) != 0);
+      }
+      /**
+       * <code>required string dvj_id = 10;</code>
+       */
+      public java.lang.String getDvjId() {
+        java.lang.Object ref = dvjId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            dvjId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string dvj_id = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDvjIdBytes() {
+        java.lang.Object ref = dvjId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          dvjId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string dvj_id = 10;</code>
+       */
+      public Builder setDvjId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        dvjId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string dvj_id = 10;</code>
+       */
+      public Builder clearDvjId() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        dvjId_ = getDefaultInstance().getDvjId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string dvj_id = 10;</code>
+       */
+      public Builder setDvjIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        dvjId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object startStopShortName_ = "";
+      /**
+       * <code>required string start_stop_short_name = 11;</code>
+       */
+      public boolean hasStartStopShortName() {
+        return ((bitField0_ & 0x00000400) != 0);
+      }
+      /**
+       * <code>required string start_stop_short_name = 11;</code>
+       */
+      public java.lang.String getStartStopShortName() {
+        java.lang.Object ref = startStopShortName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            startStopShortName_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string start_stop_short_name = 11;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStartStopShortNameBytes() {
+        java.lang.Object ref = startStopShortName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          startStopShortName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string start_stop_short_name = 11;</code>
+       */
+      public Builder setStartStopShortName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000400;
+        startStopShortName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string start_stop_short_name = 11;</code>
+       */
+      public Builder clearStartStopShortName() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        startStopShortName_ = getDefaultInstance().getStartStopShortName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string start_stop_short_name = 11;</code>
+       */
+      public Builder setStartStopShortNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000400;
+        startStopShortName_ = value;
         onChanged();
         return this;
       }
 
       private java.lang.Object routeName_ = "";
       /**
-       * <code>required string route_name = 13;</code>
+       * <code>required string route_name = 12;</code>
        */
       public boolean hasRouteName() {
-        return ((bitField0_ & 0x00001000) != 0);
+        return ((bitField0_ & 0x00000800) != 0);
       }
       /**
-       * <code>required string route_name = 13;</code>
+       * <code>required string route_name = 12;</code>
        */
       public java.lang.String getRouteName() {
         java.lang.Object ref = routeName_;
@@ -4960,7 +4966,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string route_name = 13;</code>
+       * <code>required string route_name = 12;</code>
        */
       public com.google.protobuf.ByteString
           getRouteNameBytes() {
@@ -4976,37 +4982,189 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string route_name = 13;</code>
+       * <code>required string route_name = 12;</code>
        */
       public Builder setRouteName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00001000;
+  bitField0_ |= 0x00000800;
         routeName_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string route_name = 13;</code>
+       * <code>required string route_name = 12;</code>
        */
       public Builder clearRouteName() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000800);
         routeName_ = getDefaultInstance().getRouteName();
         onChanged();
         return this;
       }
       /**
-       * <code>required string route_name = 13;</code>
+       * <code>required string route_name = 12;</code>
        */
       public Builder setRouteNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00001000;
+  bitField0_ |= 0x00000800;
         routeName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object startDatetime_ = "";
+      /**
+       * <code>required string start_datetime = 13;</code>
+       */
+      public boolean hasStartDatetime() {
+        return ((bitField0_ & 0x00001000) != 0);
+      }
+      /**
+       * <code>required string start_datetime = 13;</code>
+       */
+      public java.lang.String getStartDatetime() {
+        java.lang.Object ref = startDatetime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            startDatetime_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string start_datetime = 13;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStartDatetimeBytes() {
+        java.lang.Object ref = startDatetime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          startDatetime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string start_datetime = 13;</code>
+       */
+      public Builder setStartDatetime(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00001000;
+        startDatetime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string start_datetime = 13;</code>
+       */
+      public Builder clearStartDatetime() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        startDatetime_ = getDefaultInstance().getStartDatetime();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string start_datetime = 13;</code>
+       */
+      public Builder setStartDatetimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00001000;
+        startDatetime_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object direction_ = "";
+      /**
+       * <code>required string direction = 14;</code>
+       */
+      public boolean hasDirection() {
+        return ((bitField0_ & 0x00002000) != 0);
+      }
+      /**
+       * <code>required string direction = 14;</code>
+       */
+      public java.lang.String getDirection() {
+        java.lang.Object ref = direction_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            direction_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string direction = 14;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDirectionBytes() {
+        java.lang.Object ref = direction_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          direction_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string direction = 14;</code>
+       */
+      public Builder setDirection(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00002000;
+        direction_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string direction = 14;</code>
+       */
+      public Builder clearDirection() {
+        bitField0_ = (bitField0_ & ~0x00002000);
+        direction_ = getDefaultInstance().getDirection();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string direction = 14;</code>
+       */
+      public Builder setDirectionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00002000;
+        direction_ = value;
         onChanged();
         return this;
       }
@@ -5085,26 +5243,26 @@ public final class MetroAtsProtos {
       "\n\017metro-ats.proto\022\005proto\"\260\002\n\021MetroStopEs" +
       "timate\022\017\n\007station\030\001 \002(\t\022\020\n\010platform\030\002 \002(" +
       "\t\022\034\n\024arrival_time_planned\030\003 \002(\t\022\035\n\025arriv" +
-      "al_time_forecast\030\004 \002(\t\022\035\n\025arrival_time_m" +
+      "al_time_forecast\030\004 \001(\t\022\035\n\025arrival_time_m" +
       "easured\030\005 \002(\t\022\036\n\026departure_time_planned\030" +
-      "\006 \002(\t\022\037\n\027departure_time_forecast\030\007 \002(\t\022\037" +
+      "\006 \002(\t\022\037\n\027departure_time_forecast\030\007 \001(\t\022\037" +
       "\n\027departure_time_measured\030\010 \002(\t\022\016\n\006sourc" +
       "e\030\t \002(\t\022*\n\014row_progress\030\n \002(\0162\024.proto.Me" +
-      "troProgress\"\202\003\n\rMetroEstimate\022\030\n\rSchemaV" +
-      "ersion\030\001 \002(\005:\0011\022+\n\tmetro_row\030\002 \003(\0132\030.pro" +
-      "to.MetroStopEstimate\022)\n\ntrain_type\030\003 \002(\016" +
-      "2\025.proto.MetroTrainType\0225\n\027journey_secti" +
-      "onprogress\030\004 \002(\0162\024.proto.MetroProgress\022\022" +
-      "\n\nbegin_time\030\005 \002(\t\022\020\n\010end_time\030\006 \002(\t\022\026\n\016" +
-      "start_datetime\030\007 \002(\t\022\021\n\tdirection\030\010 \002(\t\022" +
-      "\031\n\021start_stop_number\030\t \002(\t\022\035\n\025start_stop" +
-      "_short_name\030\n \002(\t\022\025\n\roperating_day\030\013 \002(\t" +
-      "\022\022\n\nstart_time\030\014 \002(\t\022\022\n\nroute_name\030\r \002(\t" +
-      "*\036\n\016MetroTrainType\022\005\n\001M\020\000\022\005\n\001T\020\001*L\n\rMetr" +
-      "oProgress\022\r\n\tSCHEDULED\020\000\022\016\n\nINPROGRESS\020\001" +
-      "\022\r\n\tCOMPLETED\020\002\022\r\n\tCANCELLED\020\003B1\n\037fi.hsl" +
-      ".common.transitdata.protoB\016MetroAtsProto" +
-      "s"
+      "troProgress\"\223\003\n\rMetroEstimate\022\030\n\rSchemaV" +
+      "ersion\030\001 \002(\005:\0011\022,\n\nmetro_rows\030\002 \003(\0132\030.pr" +
+      "oto.MetroStopEstimate\022)\n\ntrain_type\030\003 \002(" +
+      "\0162\025.proto.MetroTrainType\0225\n\027journey_sect" +
+      "ionprogress\030\004 \002(\0162\024.proto.MetroProgress\022" +
+      "\022\n\nbegin_time\030\005 \002(\t\022\020\n\010end_time\030\006 \002(\t\022\025\n" +
+      "\roperating_day\030\007 \002(\t\022\031\n\021start_stop_numbe" +
+      "r\030\010 \002(\t\022\022\n\nstart_time\030\t \002(\t\022\016\n\006dvj_id\030\n " +
+      "\002(\t\022\035\n\025start_stop_short_name\030\013 \002(\t\022\022\n\nro" +
+      "ute_name\030\014 \002(\t\022\026\n\016start_datetime\030\r \002(\t\022\021" +
+      "\n\tdirection\030\016 \002(\t*\036\n\016MetroTrainType\022\005\n\001M" +
+      "\020\000\022\005\n\001T\020\001*L\n\rMetroProgress\022\r\n\tSCHEDULED\020" +
+      "\000\022\016\n\nINPROGRESS\020\001\022\r\n\tCOMPLETED\020\002\022\r\n\tCANC" +
+      "ELLED\020\003B1\n\037fi.hsl.common.transitdata.pro" +
+      "toB\016MetroAtsProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5129,7 +5287,7 @@ public final class MetroAtsProtos {
     internal_static_proto_MetroEstimate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_MetroEstimate_descriptor,
-        new java.lang.String[] { "SchemaVersion", "MetroRow", "TrainType", "JourneySectionprogress", "BeginTime", "EndTime", "StartDatetime", "Direction", "StartStopNumber", "StartStopShortName", "OperatingDay", "StartTime", "RouteName", });
+        new java.lang.String[] { "SchemaVersion", "MetroRows", "TrainType", "JourneySectionprogress", "BeginTime", "EndTime", "OperatingDay", "StartStopNumber", "StartTime", "DvjId", "StartStopShortName", "RouteName", "StartDatetime", "Direction", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

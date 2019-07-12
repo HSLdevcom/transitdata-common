@@ -22,10 +22,10 @@ message MetroStopEstimate {
     required string station = 1;
     required string platform = 2;
     required string arrival_time_planned = 3;
-    required string arrival_time_forecast = 4;
+    optional string arrival_time_forecast = 4;
     required string arrival_time_measured = 5;
     required string departure_time_planned = 6;
-    required string departure_time_forecast = 7;
+    optional string departure_time_forecast = 7;
     required string departure_time_measured = 8;
     required string source = 9;
     required MetroProgress row_progress = 10;
@@ -34,17 +34,18 @@ message MetroStopEstimate {
 message MetroEstimate {
     // Fields from mqtt-pulsar-gateway
     required int32 SchemaVersion = 1 [default = 1];
-    repeated MetroStopEstimate metro_row = 2;
+    repeated MetroStopEstimate metro_rows = 2;
     required MetroTrainType train_type = 3;
     required MetroProgress journey_sectionprogress = 4;
     required string begin_time = 5;
     required string end_time = 6;
     // Fields from redis
-    required string start_datetime = 7;
-    required string direction = 8;
-    required string start_stop_number = 9;
-    required string start_stop_short_name = 10;
-    required string operating_day = 11;
-    required string start_time = 12;
-    required string route_name = 13;
+    required string operating_day = 7;
+    required string start_stop_number = 8;
+    required string start_time = 9;
+    required string dvj_id = 10;
+    required string start_stop_short_name = 11;
+    required string route_name = 12;
+    required string start_datetime = 13;
+    required string direction = 14;
 }
