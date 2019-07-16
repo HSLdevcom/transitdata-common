@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
  */
 public class TransitdataProperties {
     private TransitdataProperties() {}
-    private static final Pattern matchTimestampSecondsAndMillisecondsPattern = Pattern.compile("\\d{2}.\\d{3}Z$");
+    private static final Pattern matchTimestampSecondsAndMillisecondsPattern = Pattern.compile("\\d{2}\\.\\d{3}Z$");
 
     public static final String REDIS_PREFIX_JPP = "jpp:";
     public static final String REDIS_PREFIX_DVJ = "dvj:";
