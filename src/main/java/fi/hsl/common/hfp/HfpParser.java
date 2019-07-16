@@ -65,7 +65,7 @@ public class HfpParser {
     }
 
     public static Hfp.Payload parsePayload(HfpJson json) {
-        final HfpJson.Payload payload = json.VP;
+        final HfpJson.Payload payload = json.payload;
 
         Hfp.Payload.Builder builder = Hfp.Payload.newBuilder();
         // Required attributes
@@ -173,7 +173,7 @@ public class HfpParser {
         if (versionStr.equals("v2")) {
             final String eventTypeStr = parts[index++];
             if (eventTypeStr != null && !eventTypeStr.isEmpty()) {
-                builder.setEventType(Hfp.Topic.EventType.valueOf(eventTypeStr));
+                builder.setEventType(Hfp.Topic.EventType.valueOf(eventTypeStr.toUpperCase()));
             }
         }
 

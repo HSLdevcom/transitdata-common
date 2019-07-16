@@ -12,8 +12,8 @@ public class HfpJson {
     //Example payload:
     // {"VP":{"desi":"81","dir":"2","oper":22,"veh":792,"tst":"2018-04-05T17:38:36Z","tsi":1522949916,"spd":0.16,"hdg":225,"lat":60.194481,"long":25.03095,"acc":0,"dl":-25,"odo":2819,"drst":0,"oday":"2018-04-05","jrn":636,"line":112,"start":"20:25"}}
 
-    @JsonAttribute(nullable = false)
-    public Payload VP;
+    @JsonAttribute(nullable = false, name = "VP", alternativeNames = {"DUE", "ARR", "DEP", "ARS", "PDE", "PAS", "WAIT", "DOO", "DOC", "TLR", "TLA", "DA", "DOUT", "BA", "BOUT", "VJA", "VJOUT"})
+    public Payload payload;
 
     @CompiledJson(onUnknown = CompiledJson.Behavior.IGNORE)
     public static class Payload {
@@ -58,17 +58,13 @@ public class HfpJson {
 
         public String start; //%H:%M in 24 hour clock
 
-        @JsonAttribute(ignore = true)
-        public String loc;
+        public String loc; // v2
 
-        @JsonAttribute(ignore = true)
-        public Integer stop;
+        public Integer stop; // v2
 
-        @JsonAttribute(ignore = true)
-        public String route;
+        public String route; // v2
 
-        @JsonAttribute(ignore = true)
-        public Integer occu;
+        public Integer occu; // v2
     }
 
     public static abstract class Odo {
