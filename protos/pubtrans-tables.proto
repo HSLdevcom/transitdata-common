@@ -7,7 +7,7 @@ option java_outer_classname = "PubtransTableProtos";
 
 
 message Common {
-    required int32 schema_version = 1 [default = 1]; // Remember to bump up the version when updating the scema!
+    required int32 schema_version = 1 [default = 1]; // Remember to bump up the version when updating the schema!
     required int64 id = 2;
     required int64 is_on_dated_vehicle_journey_id = 3;
     optional int64 is_on_monitored_vehicle_journey_id = 4;
@@ -38,13 +38,13 @@ message DOITripInfo {
 }
 
 message ROIArrival {
-    required int32 schema_version = 1 [default = 1]; // Remember to bump up the version when updating the scema!
+    required int32 schema_version = 1 [default = 1]; // Remember to bump up the version when updating the schema!
     required Common common = 2;
     required DOITripInfo trip_info = 3;
 }
 
 message ROIDeparture {
-    required int32 schema_version = 1 [default = 1]; // Remember to bump up the version when updating the scema!
+    required int32 schema_version = 1 [default = 1]; // Remember to bump up the version when updating the schema!
     required Common common = 2;
     required DOITripInfo trip_info = 3;
     optional int64 has_destination_display_id = 4;
