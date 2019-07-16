@@ -39,12 +39,12 @@ message MetroEstimate {
     required MetroProgress journey_sectionprogress = 4;
     required string begin_time = 5;
     required string end_time = 6;
+    required string start_stop_short_name = 7;
     // Fields from redis
-    required string operating_day = 7;
-    required string start_stop_number = 8;
-    required string start_time = 9;
-    required string dvj_id = 10;
-    required string start_stop_short_name = 11;
+    required string operating_day = 8;
+    required string start_stop_number = 9;
+    required string start_time = 10;
+    required string dvj_id = 11;
     required string route_name = 12;
     required string start_datetime = 13;
     required string direction = 14;
