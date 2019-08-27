@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.function.BooleanSupplier;
 import java.util.regex.Pattern;
@@ -142,10 +143,16 @@ public class PulsarApplication implements AutoCloseable {
                 .subscriptionType(subscriptionType);
 
         if (config.getBoolean("pulsar.consumer.multipleTopics")) {
-            String topics = config.getString("pulsar.consumer.topicsPattern");
-            log.info("Creating Pulsar consumer for multiple topics using pattern: " + topics);
-            Pattern pattern = Pattern.compile(topics);
-            builder = builder.topicsPattern(pattern);
+            if (config.hasPath("pulsar.consumer.topics")) {
+                List<String> topics = config.getStringList("pulsar.consumer.topics");
+                log.info("Creating Pulsar consumer for topics: [ {} ]", String.join(", ", topics));
+                builder = builder.topics(topics);
+            } else {
+                String topics = config.getString("pulsar.consumer.topicsPattern");
+                log.info("Creating Pulsar consumer for multiple topics using pattern: " + topics);
+                Pattern pattern = Pattern.compile(topics);
+                builder = builder.topicsPattern(pattern);
+            }
         }
         else {
             String topic = config.getString("pulsar.consumer.topic");
