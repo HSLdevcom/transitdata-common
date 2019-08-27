@@ -355,11 +355,25 @@ public final class MetroAtsProtos {
         getSourceBytes();
 
     /**
-     * <code>required .proto.MetroProgress row_progress = 10;</code>
+     * <code>required string stop_number = 10;</code>
+     */
+    boolean hasStopNumber();
+    /**
+     * <code>required string stop_number = 10;</code>
+     */
+    java.lang.String getStopNumber();
+    /**
+     * <code>required string stop_number = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getStopNumberBytes();
+
+    /**
+     * <code>required .proto.MetroProgress row_progress = 11;</code>
      */
     boolean hasRowProgress();
     /**
-     * <code>required .proto.MetroProgress row_progress = 10;</code>
+     * <code>required .proto.MetroProgress row_progress = 11;</code>
      */
     fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress getRowProgress();
   }
@@ -385,6 +399,7 @@ public final class MetroAtsProtos {
       departureTimeForecast_ = "";
       departureTimeMeasured_ = "";
       source_ = "";
+      stopNumber_ = "";
       rowProgress_ = 0;
     }
 
@@ -466,14 +481,20 @@ public final class MetroAtsProtos {
               source_ = bs;
               break;
             }
-            case 80: {
+            case 82: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000200;
+              stopNumber_ = bs;
+              break;
+            }
+            case 88: {
               int rawValue = input.readEnum();
                 @SuppressWarnings("deprecation")
               fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress value = fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.valueOf(rawValue);
               if (value == null) {
-                unknownFields.mergeVarintField(10, rawValue);
+                unknownFields.mergeVarintField(11, rawValue);
               } else {
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 rowProgress_ = rawValue;
               }
               break;
@@ -901,16 +922,58 @@ public final class MetroAtsProtos {
       }
     }
 
-    public static final int ROW_PROGRESS_FIELD_NUMBER = 10;
-    private int rowProgress_;
+    public static final int STOP_NUMBER_FIELD_NUMBER = 10;
+    private volatile java.lang.Object stopNumber_;
     /**
-     * <code>required .proto.MetroProgress row_progress = 10;</code>
+     * <code>required string stop_number = 10;</code>
      */
-    public boolean hasRowProgress() {
+    public boolean hasStopNumber() {
       return ((bitField0_ & 0x00000200) != 0);
     }
     /**
-     * <code>required .proto.MetroProgress row_progress = 10;</code>
+     * <code>required string stop_number = 10;</code>
+     */
+    public java.lang.String getStopNumber() {
+      java.lang.Object ref = stopNumber_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          stopNumber_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string stop_number = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStopNumberBytes() {
+      java.lang.Object ref = stopNumber_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        stopNumber_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROW_PROGRESS_FIELD_NUMBER = 11;
+    private int rowProgress_;
+    /**
+     * <code>required .proto.MetroProgress row_progress = 11;</code>
+     */
+    public boolean hasRowProgress() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     * <code>required .proto.MetroProgress row_progress = 11;</code>
      */
     public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress getRowProgress() {
       @SuppressWarnings("deprecation")
@@ -953,6 +1016,10 @@ public final class MetroAtsProtos {
         memoizedIsInitialized = 0;
         return false;
       }
+      if (!hasStopNumber()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       if (!hasRowProgress()) {
         memoizedIsInitialized = 0;
         return false;
@@ -992,7 +1059,10 @@ public final class MetroAtsProtos {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, source_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
-        output.writeEnum(10, rowProgress_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, stopNumber_);
+      }
+      if (((bitField0_ & 0x00000400) != 0)) {
+        output.writeEnum(11, rowProgress_);
       }
       unknownFields.writeTo(output);
     }
@@ -1031,8 +1101,11 @@ public final class MetroAtsProtos {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, source_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, stopNumber_);
+      }
+      if (((bitField0_ & 0x00000400) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(10, rowProgress_);
+          .computeEnumSize(11, rowProgress_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1094,6 +1167,11 @@ public final class MetroAtsProtos {
         if (!getSource()
             .equals(other.getSource())) return false;
       }
+      if (hasStopNumber() != other.hasStopNumber()) return false;
+      if (hasStopNumber()) {
+        if (!getStopNumber()
+            .equals(other.getStopNumber())) return false;
+      }
       if (hasRowProgress() != other.hasRowProgress()) return false;
       if (hasRowProgress()) {
         if (rowProgress_ != other.rowProgress_) return false;
@@ -1144,6 +1222,10 @@ public final class MetroAtsProtos {
       if (hasSource()) {
         hash = (37 * hash) + SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getSource().hashCode();
+      }
+      if (hasStopNumber()) {
+        hash = (37 * hash) + STOP_NUMBER_FIELD_NUMBER;
+        hash = (53 * hash) + getStopNumber().hashCode();
       }
       if (hasRowProgress()) {
         hash = (37 * hash) + ROW_PROGRESS_FIELD_NUMBER;
@@ -1300,8 +1382,10 @@ public final class MetroAtsProtos {
         bitField0_ = (bitField0_ & ~0x00000080);
         source_ = "";
         bitField0_ = (bitField0_ & ~0x00000100);
-        rowProgress_ = 0;
+        stopNumber_ = "";
         bitField0_ = (bitField0_ & ~0x00000200);
+        rowProgress_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000400);
         return this;
       }
 
@@ -1368,6 +1452,10 @@ public final class MetroAtsProtos {
         result.source_ = source_;
         if (((from_bitField0_ & 0x00000200) != 0)) {
           to_bitField0_ |= 0x00000200;
+        }
+        result.stopNumber_ = stopNumber_;
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          to_bitField0_ |= 0x00000400;
         }
         result.rowProgress_ = rowProgress_;
         result.bitField0_ = to_bitField0_;
@@ -1464,6 +1552,11 @@ public final class MetroAtsProtos {
           source_ = other.source_;
           onChanged();
         }
+        if (other.hasStopNumber()) {
+          bitField0_ |= 0x00000200;
+          stopNumber_ = other.stopNumber_;
+          onChanged();
+        }
         if (other.hasRowProgress()) {
           setRowProgress(other.getRowProgress());
         }
@@ -1493,6 +1586,9 @@ public final class MetroAtsProtos {
           return false;
         }
         if (!hasSource()) {
+          return false;
+        }
+        if (!hasStopNumber()) {
           return false;
         }
         if (!hasRowProgress()) {
@@ -2229,15 +2325,91 @@ public final class MetroAtsProtos {
         return this;
       }
 
-      private int rowProgress_ = 0;
+      private java.lang.Object stopNumber_ = "";
       /**
-       * <code>required .proto.MetroProgress row_progress = 10;</code>
+       * <code>required string stop_number = 10;</code>
        */
-      public boolean hasRowProgress() {
+      public boolean hasStopNumber() {
         return ((bitField0_ & 0x00000200) != 0);
       }
       /**
-       * <code>required .proto.MetroProgress row_progress = 10;</code>
+       * <code>required string stop_number = 10;</code>
+       */
+      public java.lang.String getStopNumber() {
+        java.lang.Object ref = stopNumber_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            stopNumber_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string stop_number = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStopNumberBytes() {
+        java.lang.Object ref = stopNumber_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          stopNumber_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string stop_number = 10;</code>
+       */
+      public Builder setStopNumber(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        stopNumber_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string stop_number = 10;</code>
+       */
+      public Builder clearStopNumber() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        stopNumber_ = getDefaultInstance().getStopNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string stop_number = 10;</code>
+       */
+      public Builder setStopNumberBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        stopNumber_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int rowProgress_ = 0;
+      /**
+       * <code>required .proto.MetroProgress row_progress = 11;</code>
+       */
+      public boolean hasRowProgress() {
+        return ((bitField0_ & 0x00000400) != 0);
+      }
+      /**
+       * <code>required .proto.MetroProgress row_progress = 11;</code>
        */
       public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress getRowProgress() {
         @SuppressWarnings("deprecation")
@@ -2245,22 +2417,22 @@ public final class MetroAtsProtos {
         return result == null ? fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.SCHEDULED : result;
       }
       /**
-       * <code>required .proto.MetroProgress row_progress = 10;</code>
+       * <code>required .proto.MetroProgress row_progress = 11;</code>
        */
       public Builder setRowProgress(fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         rowProgress_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>required .proto.MetroProgress row_progress = 10;</code>
+       * <code>required .proto.MetroProgress row_progress = 11;</code>
        */
       public Builder clearRowProgress() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         rowProgress_ = 0;
         onChanged();
         return this;
@@ -5240,29 +5412,29 @@ public final class MetroAtsProtos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017metro-ats.proto\022\005proto\"\260\002\n\021MetroStopEs" +
+      "\n\017metro-ats.proto\022\005proto\"\305\002\n\021MetroStopEs" +
       "timate\022\017\n\007station\030\001 \002(\t\022\020\n\010platform\030\002 \002(" +
       "\t\022\034\n\024arrival_time_planned\030\003 \002(\t\022\035\n\025arriv" +
       "al_time_forecast\030\004 \001(\t\022\035\n\025arrival_time_m" +
       "easured\030\005 \002(\t\022\036\n\026departure_time_planned\030" +
       "\006 \002(\t\022\037\n\027departure_time_forecast\030\007 \001(\t\022\037" +
       "\n\027departure_time_measured\030\010 \002(\t\022\016\n\006sourc" +
-      "e\030\t \002(\t\022*\n\014row_progress\030\n \002(\0162\024.proto.Me" +
-      "troProgress\"\223\003\n\rMetroEstimate\022\030\n\rSchemaV" +
-      "ersion\030\001 \002(\005:\0011\022,\n\nmetro_rows\030\002 \003(\0132\030.pr" +
-      "oto.MetroStopEstimate\022)\n\ntrain_type\030\003 \002(" +
-      "\0162\025.proto.MetroTrainType\0225\n\027journey_sect" +
-      "ionprogress\030\004 \002(\0162\024.proto.MetroProgress\022" +
-      "\022\n\nbegin_time\030\005 \002(\t\022\020\n\010end_time\030\006 \002(\t\022\035\n" +
-      "\025start_stop_short_name\030\007 \002(\t\022\025\n\roperatin" +
-      "g_day\030\010 \002(\t\022\031\n\021start_stop_number\030\t \002(\t\022\022" +
-      "\n\nstart_time\030\n \002(\t\022\016\n\006dvj_id\030\013 \002(\t\022\022\n\nro" +
-      "ute_name\030\014 \002(\t\022\026\n\016start_datetime\030\r \002(\t\022\021" +
-      "\n\tdirection\030\016 \002(\t*\036\n\016MetroTrainType\022\005\n\001M" +
-      "\020\000\022\005\n\001T\020\001*L\n\rMetroProgress\022\r\n\tSCHEDULED\020" +
-      "\000\022\016\n\nINPROGRESS\020\001\022\r\n\tCOMPLETED\020\002\022\r\n\tCANC" +
-      "ELLED\020\003B1\n\037fi.hsl.common.transitdata.pro" +
-      "toB\016MetroAtsProtos"
+      "e\030\t \002(\t\022\023\n\013stop_number\030\n \002(\t\022*\n\014row_prog" +
+      "ress\030\013 \002(\0162\024.proto.MetroProgress\"\223\003\n\rMet" +
+      "roEstimate\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022,\n\n" +
+      "metro_rows\030\002 \003(\0132\030.proto.MetroStopEstima" +
+      "te\022)\n\ntrain_type\030\003 \002(\0162\025.proto.MetroTrai" +
+      "nType\0225\n\027journey_sectionprogress\030\004 \002(\0162\024" +
+      ".proto.MetroProgress\022\022\n\nbegin_time\030\005 \002(\t" +
+      "\022\020\n\010end_time\030\006 \002(\t\022\035\n\025start_stop_short_n" +
+      "ame\030\007 \002(\t\022\025\n\roperating_day\030\010 \002(\t\022\031\n\021star" +
+      "t_stop_number\030\t \002(\t\022\022\n\nstart_time\030\n \002(\t\022" +
+      "\016\n\006dvj_id\030\013 \002(\t\022\022\n\nroute_name\030\014 \002(\t\022\026\n\016s" +
+      "tart_datetime\030\r \002(\t\022\021\n\tdirection\030\016 \002(\t*\036" +
+      "\n\016MetroTrainType\022\005\n\001M\020\000\022\005\n\001T\020\001*L\n\rMetroP" +
+      "rogress\022\r\n\tSCHEDULED\020\000\022\016\n\nINPROGRESS\020\001\022\r" +
+      "\n\tCOMPLETED\020\002\022\r\n\tCANCELLED\020\003B1\n\037fi.hsl.c" +
+      "ommon.transitdata.protoB\016MetroAtsProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5281,7 +5453,7 @@ public final class MetroAtsProtos {
     internal_static_proto_MetroStopEstimate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_MetroStopEstimate_descriptor,
-        new java.lang.String[] { "Station", "Platform", "ArrivalTimePlanned", "ArrivalTimeForecast", "ArrivalTimeMeasured", "DepartureTimePlanned", "DepartureTimeForecast", "DepartureTimeMeasured", "Source", "RowProgress", });
+        new java.lang.String[] { "Station", "Platform", "ArrivalTimePlanned", "ArrivalTimeForecast", "ArrivalTimeMeasured", "DepartureTimePlanned", "DepartureTimeForecast", "DepartureTimeMeasured", "Source", "StopNumber", "RowProgress", });
     internal_static_proto_MetroEstimate_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_MetroEstimate_fieldAccessorTable = new
