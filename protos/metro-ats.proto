@@ -28,7 +28,8 @@ message MetroStopEstimate {
     optional string departure_time_forecast = 7;
     required string departure_time_measured = 8;
     required string source = 9;
-    required MetroProgress row_progress = 10;
+    required string stop_number = 10;
+    required MetroProgress row_progress = 11;
 }
 
 message MetroEstimate {
