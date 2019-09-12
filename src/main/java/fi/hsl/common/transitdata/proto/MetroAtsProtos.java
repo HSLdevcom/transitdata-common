@@ -369,11 +369,11 @@ public final class MetroAtsProtos {
         getStopNumberBytes();
 
     /**
-     * <code>required .proto.MetroProgress row_progress = 11;</code>
+     * <code>optional .proto.MetroProgress row_progress = 11;</code>
      */
     boolean hasRowProgress();
     /**
-     * <code>required .proto.MetroProgress row_progress = 11;</code>
+     * <code>optional .proto.MetroProgress row_progress = 11;</code>
      */
     fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress getRowProgress();
   }
@@ -384,7 +384,6 @@ public final class MetroAtsProtos {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.MetroStopEstimate)
       MetroStopEstimateOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use MetroStopEstimate.newBuilder() to construct.
     private MetroStopEstimate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -413,9 +412,6 @@ public final class MetroAtsProtos {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -427,6 +423,13 @@ public final class MetroAtsProtos {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
@@ -489,20 +492,12 @@ public final class MetroAtsProtos {
             }
             case 88: {
               int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
               fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress value = fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(11, rawValue);
               } else {
                 bitField0_ |= 0x00000400;
                 rowProgress_ = rawValue;
-              }
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
               }
               break;
             }
@@ -523,7 +518,6 @@ public final class MetroAtsProtos {
       return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroStopEstimate_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroStopEstimate_fieldAccessorTable
@@ -542,7 +536,7 @@ public final class MetroAtsProtos {
      * <code>required string station = 1;</code>
      */
     public boolean hasStation() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -592,7 +586,7 @@ public final class MetroAtsProtos {
      * <code>required string platform = 2;</code>
      */
     public boolean hasPlatform() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>required string platform = 2;</code>
@@ -634,7 +628,7 @@ public final class MetroAtsProtos {
      * <code>required string arrival_time_planned = 3;</code>
      */
     public boolean hasArrivalTimePlanned() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>required string arrival_time_planned = 3;</code>
@@ -676,7 +670,7 @@ public final class MetroAtsProtos {
      * <code>optional string arrival_time_forecast = 4;</code>
      */
     public boolean hasArrivalTimeForecast() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <code>optional string arrival_time_forecast = 4;</code>
@@ -718,7 +712,7 @@ public final class MetroAtsProtos {
      * <code>required string arrival_time_measured = 5;</code>
      */
     public boolean hasArrivalTimeMeasured() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <code>required string arrival_time_measured = 5;</code>
@@ -760,7 +754,7 @@ public final class MetroAtsProtos {
      * <code>required string departure_time_planned = 6;</code>
      */
     public boolean hasDepartureTimePlanned() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <code>required string departure_time_planned = 6;</code>
@@ -802,7 +796,7 @@ public final class MetroAtsProtos {
      * <code>optional string departure_time_forecast = 7;</code>
      */
     public boolean hasDepartureTimeForecast() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
      * <code>optional string departure_time_forecast = 7;</code>
@@ -844,7 +838,7 @@ public final class MetroAtsProtos {
      * <code>required string departure_time_measured = 8;</code>
      */
     public boolean hasDepartureTimeMeasured() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
      * <code>required string departure_time_measured = 8;</code>
@@ -886,7 +880,7 @@ public final class MetroAtsProtos {
      * <code>required string source = 9;</code>
      */
     public boolean hasSource() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
      * <code>required string source = 9;</code>
@@ -928,7 +922,7 @@ public final class MetroAtsProtos {
      * <code>required string stop_number = 10;</code>
      */
     public boolean hasStopNumber() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
      * <code>required string stop_number = 10;</code>
@@ -967,22 +961,20 @@ public final class MetroAtsProtos {
     public static final int ROW_PROGRESS_FIELD_NUMBER = 11;
     private int rowProgress_;
     /**
-     * <code>required .proto.MetroProgress row_progress = 11;</code>
+     * <code>optional .proto.MetroProgress row_progress = 11;</code>
      */
     public boolean hasRowProgress() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
-     * <code>required .proto.MetroProgress row_progress = 11;</code>
+     * <code>optional .proto.MetroProgress row_progress = 11;</code>
      */
     public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress getRowProgress() {
-      @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress result = fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.valueOf(rowProgress_);
       return result == null ? fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.SCHEDULED : result;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1020,90 +1012,84 @@ public final class MetroAtsProtos {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasRowProgress()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       memoizedIsInitialized = 1;
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, station_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, platform_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, arrivalTimePlanned_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, arrivalTimeForecast_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, arrivalTimeMeasured_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, departureTimePlanned_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, departureTimeForecast_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, departureTimeMeasured_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, source_);
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, stopNumber_);
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         output.writeEnum(11, rowProgress_);
       }
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, station_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, platform_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, arrivalTimePlanned_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, arrivalTimeForecast_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, arrivalTimeMeasured_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, departureTimePlanned_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, departureTimeForecast_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, departureTimeMeasured_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, source_);
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, stopNumber_);
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, rowProgress_);
       }
@@ -1112,6 +1098,7 @@ public final class MetroAtsProtos {
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1122,62 +1109,63 @@ public final class MetroAtsProtos {
       }
       fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate other = (fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate) obj;
 
-      if (hasStation() != other.hasStation()) return false;
+      boolean result = true;
+      result = result && (hasStation() == other.hasStation());
       if (hasStation()) {
-        if (!getStation()
-            .equals(other.getStation())) return false;
+        result = result && getStation()
+            .equals(other.getStation());
       }
-      if (hasPlatform() != other.hasPlatform()) return false;
+      result = result && (hasPlatform() == other.hasPlatform());
       if (hasPlatform()) {
-        if (!getPlatform()
-            .equals(other.getPlatform())) return false;
+        result = result && getPlatform()
+            .equals(other.getPlatform());
       }
-      if (hasArrivalTimePlanned() != other.hasArrivalTimePlanned()) return false;
+      result = result && (hasArrivalTimePlanned() == other.hasArrivalTimePlanned());
       if (hasArrivalTimePlanned()) {
-        if (!getArrivalTimePlanned()
-            .equals(other.getArrivalTimePlanned())) return false;
+        result = result && getArrivalTimePlanned()
+            .equals(other.getArrivalTimePlanned());
       }
-      if (hasArrivalTimeForecast() != other.hasArrivalTimeForecast()) return false;
+      result = result && (hasArrivalTimeForecast() == other.hasArrivalTimeForecast());
       if (hasArrivalTimeForecast()) {
-        if (!getArrivalTimeForecast()
-            .equals(other.getArrivalTimeForecast())) return false;
+        result = result && getArrivalTimeForecast()
+            .equals(other.getArrivalTimeForecast());
       }
-      if (hasArrivalTimeMeasured() != other.hasArrivalTimeMeasured()) return false;
+      result = result && (hasArrivalTimeMeasured() == other.hasArrivalTimeMeasured());
       if (hasArrivalTimeMeasured()) {
-        if (!getArrivalTimeMeasured()
-            .equals(other.getArrivalTimeMeasured())) return false;
+        result = result && getArrivalTimeMeasured()
+            .equals(other.getArrivalTimeMeasured());
       }
-      if (hasDepartureTimePlanned() != other.hasDepartureTimePlanned()) return false;
+      result = result && (hasDepartureTimePlanned() == other.hasDepartureTimePlanned());
       if (hasDepartureTimePlanned()) {
-        if (!getDepartureTimePlanned()
-            .equals(other.getDepartureTimePlanned())) return false;
+        result = result && getDepartureTimePlanned()
+            .equals(other.getDepartureTimePlanned());
       }
-      if (hasDepartureTimeForecast() != other.hasDepartureTimeForecast()) return false;
+      result = result && (hasDepartureTimeForecast() == other.hasDepartureTimeForecast());
       if (hasDepartureTimeForecast()) {
-        if (!getDepartureTimeForecast()
-            .equals(other.getDepartureTimeForecast())) return false;
+        result = result && getDepartureTimeForecast()
+            .equals(other.getDepartureTimeForecast());
       }
-      if (hasDepartureTimeMeasured() != other.hasDepartureTimeMeasured()) return false;
+      result = result && (hasDepartureTimeMeasured() == other.hasDepartureTimeMeasured());
       if (hasDepartureTimeMeasured()) {
-        if (!getDepartureTimeMeasured()
-            .equals(other.getDepartureTimeMeasured())) return false;
+        result = result && getDepartureTimeMeasured()
+            .equals(other.getDepartureTimeMeasured());
       }
-      if (hasSource() != other.hasSource()) return false;
+      result = result && (hasSource() == other.hasSource());
       if (hasSource()) {
-        if (!getSource()
-            .equals(other.getSource())) return false;
+        result = result && getSource()
+            .equals(other.getSource());
       }
-      if (hasStopNumber() != other.hasStopNumber()) return false;
+      result = result && (hasStopNumber() == other.hasStopNumber());
       if (hasStopNumber()) {
-        if (!getStopNumber()
-            .equals(other.getStopNumber())) return false;
+        result = result && getStopNumber()
+            .equals(other.getStopNumber());
       }
-      if (hasRowProgress() != other.hasRowProgress()) return false;
+      result = result && (hasRowProgress() == other.hasRowProgress());
       if (hasRowProgress()) {
-        if (rowProgress_ != other.rowProgress_) return false;
+        result = result && rowProgress_ == other.rowProgress_;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -1186,7 +1174,7 @@ public final class MetroAtsProtos {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       if (hasStation()) {
         hash = (37 * hash) + STATION_FIELD_NUMBER;
         hash = (53 * hash) + getStation().hashCode();
@@ -1236,17 +1224,6 @@ public final class MetroAtsProtos {
       return hash;
     }
 
-    public static fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1306,7 +1283,6 @@ public final class MetroAtsProtos {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1314,7 +1290,6 @@ public final class MetroAtsProtos {
     public static Builder newBuilder(fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1338,7 +1313,6 @@ public final class MetroAtsProtos {
         return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroStopEstimate_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroStopEstimate_fieldAccessorTable
@@ -1361,7 +1335,6 @@ public final class MetroAtsProtos {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         station_ = "";
@@ -1389,18 +1362,15 @@ public final class MetroAtsProtos {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroStopEstimate_descriptor;
       }
 
-      @java.lang.Override
       public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate getDefaultInstanceForType() {
         return fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.getDefaultInstance();
       }
 
-      @java.lang.Override
       public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate build() {
         fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate result = buildPartial();
         if (!result.isInitialized()) {
@@ -1409,52 +1379,51 @@ public final class MetroAtsProtos {
         return result;
       }
 
-      @java.lang.Override
       public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate buildPartial() {
         fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate result = new fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
         result.station_ = station_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
         result.platform_ = platform_;
-        if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
         result.arrivalTimePlanned_ = arrivalTimePlanned_;
-        if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
         result.arrivalTimeForecast_ = arrivalTimeForecast_;
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
         result.arrivalTimeMeasured_ = arrivalTimeMeasured_;
-        if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
         result.departureTimePlanned_ = departureTimePlanned_;
-        if (((from_bitField0_ & 0x00000040) != 0)) {
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
         result.departureTimeForecast_ = departureTimeForecast_;
-        if (((from_bitField0_ & 0x00000080) != 0)) {
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
         }
         result.departureTimeMeasured_ = departureTimeMeasured_;
-        if (((from_bitField0_ & 0x00000100) != 0)) {
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000100;
         }
         result.source_ = source_;
-        if (((from_bitField0_ & 0x00000200) != 0)) {
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
           to_bitField0_ |= 0x00000200;
         }
         result.stopNumber_ = stopNumber_;
-        if (((from_bitField0_ & 0x00000400) != 0)) {
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
           to_bitField0_ |= 0x00000400;
         }
         result.rowProgress_ = rowProgress_;
@@ -1463,39 +1432,32 @@ public final class MetroAtsProtos {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
+          Object value) {
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate) {
           return mergeFrom((fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate)other);
@@ -1565,7 +1527,6 @@ public final class MetroAtsProtos {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasStation()) {
           return false;
@@ -1591,13 +1552,9 @@ public final class MetroAtsProtos {
         if (!hasStopNumber()) {
           return false;
         }
-        if (!hasRowProgress()) {
-          return false;
-        }
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1626,7 +1583,7 @@ public final class MetroAtsProtos {
        * <code>required string station = 1;</code>
        */
       public boolean hasStation() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -1722,7 +1679,7 @@ public final class MetroAtsProtos {
        * <code>required string platform = 2;</code>
        */
       public boolean hasPlatform() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>required string platform = 2;</code>
@@ -1798,7 +1755,7 @@ public final class MetroAtsProtos {
        * <code>required string arrival_time_planned = 3;</code>
        */
       public boolean hasArrivalTimePlanned() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>required string arrival_time_planned = 3;</code>
@@ -1874,7 +1831,7 @@ public final class MetroAtsProtos {
        * <code>optional string arrival_time_forecast = 4;</code>
        */
       public boolean hasArrivalTimeForecast() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <code>optional string arrival_time_forecast = 4;</code>
@@ -1950,7 +1907,7 @@ public final class MetroAtsProtos {
        * <code>required string arrival_time_measured = 5;</code>
        */
       public boolean hasArrivalTimeMeasured() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <code>required string arrival_time_measured = 5;</code>
@@ -2026,7 +1983,7 @@ public final class MetroAtsProtos {
        * <code>required string departure_time_planned = 6;</code>
        */
       public boolean hasDepartureTimePlanned() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <code>required string departure_time_planned = 6;</code>
@@ -2102,7 +2059,7 @@ public final class MetroAtsProtos {
        * <code>optional string departure_time_forecast = 7;</code>
        */
       public boolean hasDepartureTimeForecast() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
        * <code>optional string departure_time_forecast = 7;</code>
@@ -2178,7 +2135,7 @@ public final class MetroAtsProtos {
        * <code>required string departure_time_measured = 8;</code>
        */
       public boolean hasDepartureTimeMeasured() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
        * <code>required string departure_time_measured = 8;</code>
@@ -2254,7 +2211,7 @@ public final class MetroAtsProtos {
        * <code>required string source = 9;</code>
        */
       public boolean hasSource() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
        * <code>required string source = 9;</code>
@@ -2330,7 +2287,7 @@ public final class MetroAtsProtos {
        * <code>required string stop_number = 10;</code>
        */
       public boolean hasStopNumber() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
        * <code>required string stop_number = 10;</code>
@@ -2403,21 +2360,20 @@ public final class MetroAtsProtos {
 
       private int rowProgress_ = 0;
       /**
-       * <code>required .proto.MetroProgress row_progress = 11;</code>
+       * <code>optional .proto.MetroProgress row_progress = 11;</code>
        */
       public boolean hasRowProgress() {
-        return ((bitField0_ & 0x00000400) != 0);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
-       * <code>required .proto.MetroProgress row_progress = 11;</code>
+       * <code>optional .proto.MetroProgress row_progress = 11;</code>
        */
       public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress getRowProgress() {
-        @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress result = fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.valueOf(rowProgress_);
         return result == null ? fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.SCHEDULED : result;
       }
       /**
-       * <code>required .proto.MetroProgress row_progress = 11;</code>
+       * <code>optional .proto.MetroProgress row_progress = 11;</code>
        */
       public Builder setRowProgress(fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress value) {
         if (value == null) {
@@ -2429,7 +2385,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required .proto.MetroProgress row_progress = 11;</code>
+       * <code>optional .proto.MetroProgress row_progress = 11;</code>
        */
       public Builder clearRowProgress() {
         bitField0_ = (bitField0_ & ~0x00000400);
@@ -2437,13 +2393,11 @@ public final class MetroAtsProtos {
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2465,12 +2419,11 @@ public final class MetroAtsProtos {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<MetroStopEstimate>
         PARSER = new com.google.protobuf.AbstractParser<MetroStopEstimate>() {
-      @java.lang.Override
       public MetroStopEstimate parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MetroStopEstimate(input, extensionRegistry);
+          return new MetroStopEstimate(input, extensionRegistry);
       }
     };
 
@@ -2483,7 +2436,6 @@ public final class MetroAtsProtos {
       return PARSER;
     }
 
-    @java.lang.Override
     public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2712,7 +2664,6 @@ public final class MetroAtsProtos {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.MetroEstimate)
       MetroEstimateOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use MetroEstimate.newBuilder() to construct.
     private MetroEstimate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2744,9 +2695,6 @@ public final class MetroAtsProtos {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2758,13 +2706,20 @@ public final class MetroAtsProtos {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 8: {
               bitField0_ |= 0x00000001;
               schemaVersion_ = input.readInt32();
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
                 metroRows_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate>();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -2774,7 +2729,6 @@ public final class MetroAtsProtos {
             }
             case 24: {
               int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
               fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType value = fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(3, rawValue);
@@ -2786,7 +2740,6 @@ public final class MetroAtsProtos {
             }
             case 32: {
               int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
               fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress value = fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(4, rawValue);
@@ -2856,13 +2809,6 @@ public final class MetroAtsProtos {
               direction_ = bs;
               break;
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2871,7 +2817,7 @@ public final class MetroAtsProtos {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           metroRows_ = java.util.Collections.unmodifiableList(metroRows_);
         }
         this.unknownFields = unknownFields.build();
@@ -2883,7 +2829,6 @@ public final class MetroAtsProtos {
       return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroEstimate_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroEstimate_fieldAccessorTable
@@ -2902,7 +2847,7 @@ public final class MetroAtsProtos {
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
      */
     public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
@@ -2956,13 +2901,12 @@ public final class MetroAtsProtos {
      * <code>required .proto.MetroTrainType train_type = 3;</code>
      */
     public boolean hasTrainType() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>required .proto.MetroTrainType train_type = 3;</code>
      */
     public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType getTrainType() {
-      @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType result = fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType.valueOf(trainType_);
       return result == null ? fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType.M : result;
     }
@@ -2973,13 +2917,12 @@ public final class MetroAtsProtos {
      * <code>required .proto.MetroProgress journey_sectionprogress = 4;</code>
      */
     public boolean hasJourneySectionprogress() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>required .proto.MetroProgress journey_sectionprogress = 4;</code>
      */
     public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress getJourneySectionprogress() {
-      @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress result = fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.valueOf(journeySectionprogress_);
       return result == null ? fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.SCHEDULED : result;
     }
@@ -2990,7 +2933,7 @@ public final class MetroAtsProtos {
      * <code>required string begin_time = 5;</code>
      */
     public boolean hasBeginTime() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <code>required string begin_time = 5;</code>
@@ -3032,7 +2975,7 @@ public final class MetroAtsProtos {
      * <code>required string end_time = 6;</code>
      */
     public boolean hasEndTime() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <code>required string end_time = 6;</code>
@@ -3074,7 +3017,7 @@ public final class MetroAtsProtos {
      * <code>required string start_stop_short_name = 7;</code>
      */
     public boolean hasStartStopShortName() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <code>required string start_stop_short_name = 7;</code>
@@ -3120,7 +3063,7 @@ public final class MetroAtsProtos {
      * <code>required string operating_day = 8;</code>
      */
     public boolean hasOperatingDay() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
      * <pre>
@@ -3170,7 +3113,7 @@ public final class MetroAtsProtos {
      * <code>required string start_stop_number = 9;</code>
      */
     public boolean hasStartStopNumber() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
      * <code>required string start_stop_number = 9;</code>
@@ -3212,7 +3155,7 @@ public final class MetroAtsProtos {
      * <code>required string start_time = 10;</code>
      */
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
      * <code>required string start_time = 10;</code>
@@ -3254,7 +3197,7 @@ public final class MetroAtsProtos {
      * <code>required string dvj_id = 11;</code>
      */
     public boolean hasDvjId() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
      * <code>required string dvj_id = 11;</code>
@@ -3296,7 +3239,7 @@ public final class MetroAtsProtos {
      * <code>required string route_name = 12;</code>
      */
     public boolean hasRouteName() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
      * <code>required string route_name = 12;</code>
@@ -3338,7 +3281,7 @@ public final class MetroAtsProtos {
      * <code>required string start_datetime = 13;</code>
      */
     public boolean hasStartDatetime() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
      * <code>required string start_datetime = 13;</code>
@@ -3380,7 +3323,7 @@ public final class MetroAtsProtos {
      * <code>required string direction = 14;</code>
      */
     public boolean hasDirection() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     /**
      * <code>required string direction = 14;</code>
@@ -3417,7 +3360,6 @@ public final class MetroAtsProtos {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3485,61 +3427,59 @@ public final class MetroAtsProtos {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeInt32(1, schemaVersion_);
       }
       for (int i = 0; i < metroRows_.size(); i++) {
         output.writeMessage(2, metroRows_.get(i));
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeEnum(3, trainType_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeEnum(4, journeySectionprogress_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, beginTime_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, endTime_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, startStopShortName_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, operatingDay_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, startStopNumber_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, startTime_);
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, dvjId_);
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, routeName_);
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, startDatetime_);
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 14, direction_);
       }
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, schemaVersion_);
       }
@@ -3547,42 +3487,42 @@ public final class MetroAtsProtos {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, metroRows_.get(i));
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, trainType_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, journeySectionprogress_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, beginTime_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, endTime_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, startStopShortName_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, operatingDay_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, startStopNumber_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, startTime_);
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, dvjId_);
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, routeName_);
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, startDatetime_);
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, direction_);
       }
       size += unknownFields.getSerializedSize();
@@ -3590,6 +3530,7 @@ public final class MetroAtsProtos {
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3600,73 +3541,74 @@ public final class MetroAtsProtos {
       }
       fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate other = (fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate) obj;
 
-      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
+      boolean result = true;
+      result = result && (hasSchemaVersion() == other.hasSchemaVersion());
       if (hasSchemaVersion()) {
-        if (getSchemaVersion()
-            != other.getSchemaVersion()) return false;
+        result = result && (getSchemaVersion()
+            == other.getSchemaVersion());
       }
-      if (!getMetroRowsList()
-          .equals(other.getMetroRowsList())) return false;
-      if (hasTrainType() != other.hasTrainType()) return false;
+      result = result && getMetroRowsList()
+          .equals(other.getMetroRowsList());
+      result = result && (hasTrainType() == other.hasTrainType());
       if (hasTrainType()) {
-        if (trainType_ != other.trainType_) return false;
+        result = result && trainType_ == other.trainType_;
       }
-      if (hasJourneySectionprogress() != other.hasJourneySectionprogress()) return false;
+      result = result && (hasJourneySectionprogress() == other.hasJourneySectionprogress());
       if (hasJourneySectionprogress()) {
-        if (journeySectionprogress_ != other.journeySectionprogress_) return false;
+        result = result && journeySectionprogress_ == other.journeySectionprogress_;
       }
-      if (hasBeginTime() != other.hasBeginTime()) return false;
+      result = result && (hasBeginTime() == other.hasBeginTime());
       if (hasBeginTime()) {
-        if (!getBeginTime()
-            .equals(other.getBeginTime())) return false;
+        result = result && getBeginTime()
+            .equals(other.getBeginTime());
       }
-      if (hasEndTime() != other.hasEndTime()) return false;
+      result = result && (hasEndTime() == other.hasEndTime());
       if (hasEndTime()) {
-        if (!getEndTime()
-            .equals(other.getEndTime())) return false;
+        result = result && getEndTime()
+            .equals(other.getEndTime());
       }
-      if (hasStartStopShortName() != other.hasStartStopShortName()) return false;
+      result = result && (hasStartStopShortName() == other.hasStartStopShortName());
       if (hasStartStopShortName()) {
-        if (!getStartStopShortName()
-            .equals(other.getStartStopShortName())) return false;
+        result = result && getStartStopShortName()
+            .equals(other.getStartStopShortName());
       }
-      if (hasOperatingDay() != other.hasOperatingDay()) return false;
+      result = result && (hasOperatingDay() == other.hasOperatingDay());
       if (hasOperatingDay()) {
-        if (!getOperatingDay()
-            .equals(other.getOperatingDay())) return false;
+        result = result && getOperatingDay()
+            .equals(other.getOperatingDay());
       }
-      if (hasStartStopNumber() != other.hasStartStopNumber()) return false;
+      result = result && (hasStartStopNumber() == other.hasStartStopNumber());
       if (hasStartStopNumber()) {
-        if (!getStartStopNumber()
-            .equals(other.getStartStopNumber())) return false;
+        result = result && getStartStopNumber()
+            .equals(other.getStartStopNumber());
       }
-      if (hasStartTime() != other.hasStartTime()) return false;
+      result = result && (hasStartTime() == other.hasStartTime());
       if (hasStartTime()) {
-        if (!getStartTime()
-            .equals(other.getStartTime())) return false;
+        result = result && getStartTime()
+            .equals(other.getStartTime());
       }
-      if (hasDvjId() != other.hasDvjId()) return false;
+      result = result && (hasDvjId() == other.hasDvjId());
       if (hasDvjId()) {
-        if (!getDvjId()
-            .equals(other.getDvjId())) return false;
+        result = result && getDvjId()
+            .equals(other.getDvjId());
       }
-      if (hasRouteName() != other.hasRouteName()) return false;
+      result = result && (hasRouteName() == other.hasRouteName());
       if (hasRouteName()) {
-        if (!getRouteName()
-            .equals(other.getRouteName())) return false;
+        result = result && getRouteName()
+            .equals(other.getRouteName());
       }
-      if (hasStartDatetime() != other.hasStartDatetime()) return false;
+      result = result && (hasStartDatetime() == other.hasStartDatetime());
       if (hasStartDatetime()) {
-        if (!getStartDatetime()
-            .equals(other.getStartDatetime())) return false;
+        result = result && getStartDatetime()
+            .equals(other.getStartDatetime());
       }
-      if (hasDirection() != other.hasDirection()) return false;
+      result = result && (hasDirection() == other.hasDirection());
       if (hasDirection()) {
-        if (!getDirection()
-            .equals(other.getDirection())) return false;
+        result = result && getDirection()
+            .equals(other.getDirection());
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -3675,7 +3617,7 @@ public final class MetroAtsProtos {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       if (hasSchemaVersion()) {
         hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
         hash = (53 * hash) + getSchemaVersion();
@@ -3738,17 +3680,6 @@ public final class MetroAtsProtos {
     }
 
     public static fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -3807,7 +3738,6 @@ public final class MetroAtsProtos {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3815,7 +3745,6 @@ public final class MetroAtsProtos {
     public static Builder newBuilder(fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3839,7 +3768,6 @@ public final class MetroAtsProtos {
         return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroEstimate_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroEstimate_fieldAccessorTable
@@ -3863,7 +3791,6 @@ public final class MetroAtsProtos {
           getMetroRowsFieldBuilder();
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         schemaVersion_ = 1;
@@ -3901,18 +3828,15 @@ public final class MetroAtsProtos {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroEstimate_descriptor;
       }
 
-      @java.lang.Override
       public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate getDefaultInstanceForType() {
         return fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate.getDefaultInstance();
       }
 
-      @java.lang.Override
       public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate build() {
         fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate result = buildPartial();
         if (!result.isInitialized()) {
@@ -3921,17 +3845,16 @@ public final class MetroAtsProtos {
         return result;
       }
 
-      @java.lang.Override
       public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate buildPartial() {
         fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate result = new fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
         result.schemaVersion_ = schemaVersion_;
         if (metroRowsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
             metroRows_ = java.util.Collections.unmodifiableList(metroRows_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
@@ -3939,51 +3862,51 @@ public final class MetroAtsProtos {
         } else {
           result.metroRows_ = metroRowsBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000002;
         }
         result.trainType_ = trainType_;
-        if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000004;
         }
         result.journeySectionprogress_ = journeySectionprogress_;
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000008;
         }
         result.beginTime_ = beginTime_;
-        if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000010;
         }
         result.endTime_ = endTime_;
-        if (((from_bitField0_ & 0x00000040) != 0)) {
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000020;
         }
         result.startStopShortName_ = startStopShortName_;
-        if (((from_bitField0_ & 0x00000080) != 0)) {
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000040;
         }
         result.operatingDay_ = operatingDay_;
-        if (((from_bitField0_ & 0x00000100) != 0)) {
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000080;
         }
         result.startStopNumber_ = startStopNumber_;
-        if (((from_bitField0_ & 0x00000200) != 0)) {
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
           to_bitField0_ |= 0x00000100;
         }
         result.startTime_ = startTime_;
-        if (((from_bitField0_ & 0x00000400) != 0)) {
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
           to_bitField0_ |= 0x00000200;
         }
         result.dvjId_ = dvjId_;
-        if (((from_bitField0_ & 0x00000800) != 0)) {
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
           to_bitField0_ |= 0x00000400;
         }
         result.routeName_ = routeName_;
-        if (((from_bitField0_ & 0x00001000) != 0)) {
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
           to_bitField0_ |= 0x00000800;
         }
         result.startDatetime_ = startDatetime_;
-        if (((from_bitField0_ & 0x00002000) != 0)) {
+        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
           to_bitField0_ |= 0x00001000;
         }
         result.direction_ = direction_;
@@ -3992,39 +3915,32 @@ public final class MetroAtsProtos {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
+          Object value) {
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate) {
           return mergeFrom((fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate)other);
@@ -4126,7 +4042,6 @@ public final class MetroAtsProtos {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasSchemaVersion()) {
           return false;
@@ -4175,7 +4090,6 @@ public final class MetroAtsProtos {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4204,7 +4118,7 @@ public final class MetroAtsProtos {
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
        */
       public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
@@ -4246,7 +4160,7 @@ public final class MetroAtsProtos {
       private java.util.List<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate> metroRows_ =
         java.util.Collections.emptyList();
       private void ensureMetroRowsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
           metroRows_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate>(metroRows_);
           bitField0_ |= 0x00000002;
          }
@@ -4475,7 +4389,7 @@ public final class MetroAtsProtos {
           metroRowsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate, fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.Builder, fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimateOrBuilder>(
                   metroRows_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
                   isClean());
           metroRows_ = null;
@@ -4488,13 +4402,12 @@ public final class MetroAtsProtos {
        * <code>required .proto.MetroTrainType train_type = 3;</code>
        */
       public boolean hasTrainType() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>required .proto.MetroTrainType train_type = 3;</code>
        */
       public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType getTrainType() {
-        @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType result = fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType.valueOf(trainType_);
         return result == null ? fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType.M : result;
       }
@@ -4525,13 +4438,12 @@ public final class MetroAtsProtos {
        * <code>required .proto.MetroProgress journey_sectionprogress = 4;</code>
        */
       public boolean hasJourneySectionprogress() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <code>required .proto.MetroProgress journey_sectionprogress = 4;</code>
        */
       public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress getJourneySectionprogress() {
-        @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress result = fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.valueOf(journeySectionprogress_);
         return result == null ? fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.SCHEDULED : result;
       }
@@ -4562,7 +4474,7 @@ public final class MetroAtsProtos {
        * <code>required string begin_time = 5;</code>
        */
       public boolean hasBeginTime() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <code>required string begin_time = 5;</code>
@@ -4638,7 +4550,7 @@ public final class MetroAtsProtos {
        * <code>required string end_time = 6;</code>
        */
       public boolean hasEndTime() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <code>required string end_time = 6;</code>
@@ -4714,7 +4626,7 @@ public final class MetroAtsProtos {
        * <code>required string start_stop_short_name = 7;</code>
        */
       public boolean hasStartStopShortName() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
        * <code>required string start_stop_short_name = 7;</code>
@@ -4794,7 +4706,7 @@ public final class MetroAtsProtos {
        * <code>required string operating_day = 8;</code>
        */
       public boolean hasOperatingDay() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
        * <pre>
@@ -4890,7 +4802,7 @@ public final class MetroAtsProtos {
        * <code>required string start_stop_number = 9;</code>
        */
       public boolean hasStartStopNumber() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
        * <code>required string start_stop_number = 9;</code>
@@ -4966,7 +4878,7 @@ public final class MetroAtsProtos {
        * <code>required string start_time = 10;</code>
        */
       public boolean hasStartTime() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
        * <code>required string start_time = 10;</code>
@@ -5042,7 +4954,7 @@ public final class MetroAtsProtos {
        * <code>required string dvj_id = 11;</code>
        */
       public boolean hasDvjId() {
-        return ((bitField0_ & 0x00000400) != 0);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
        * <code>required string dvj_id = 11;</code>
@@ -5118,7 +5030,7 @@ public final class MetroAtsProtos {
        * <code>required string route_name = 12;</code>
        */
       public boolean hasRouteName() {
-        return ((bitField0_ & 0x00000800) != 0);
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
        * <code>required string route_name = 12;</code>
@@ -5194,7 +5106,7 @@ public final class MetroAtsProtos {
        * <code>required string start_datetime = 13;</code>
        */
       public boolean hasStartDatetime() {
-        return ((bitField0_ & 0x00001000) != 0);
+        return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
        * <code>required string start_datetime = 13;</code>
@@ -5270,7 +5182,7 @@ public final class MetroAtsProtos {
        * <code>required string direction = 14;</code>
        */
       public boolean hasDirection() {
-        return ((bitField0_ & 0x00002000) != 0);
+        return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       /**
        * <code>required string direction = 14;</code>
@@ -5340,13 +5252,11 @@ public final class MetroAtsProtos {
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -5368,12 +5278,11 @@ public final class MetroAtsProtos {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<MetroEstimate>
         PARSER = new com.google.protobuf.AbstractParser<MetroEstimate>() {
-      @java.lang.Override
       public MetroEstimate parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MetroEstimate(input, extensionRegistry);
+          return new MetroEstimate(input, extensionRegistry);
       }
     };
 
@@ -5386,7 +5295,6 @@ public final class MetroAtsProtos {
       return PARSER;
     }
 
-    @java.lang.Override
     public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5420,8 +5328,8 @@ public final class MetroAtsProtos {
       "\006 \002(\t\022\037\n\027departure_time_forecast\030\007 \001(\t\022\037" +
       "\n\027departure_time_measured\030\010 \002(\t\022\016\n\006sourc" +
       "e\030\t \002(\t\022\023\n\013stop_number\030\n \002(\t\022*\n\014row_prog" +
-      "ress\030\013 \002(\0162\024.proto.MetroProgress\"\223\003\n\rMet" +
-      "roEstimate\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022,\n\n" +
+      "ress\030\013 \001(\0162\024.proto.MetroProgress\"\223\003\n\rMet" +
+      "roEstimate\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022,\n\n",
       "metro_rows\030\002 \003(\0132\030.proto.MetroStopEstima" +
       "te\022)\n\ntrain_type\030\003 \002(\0162\025.proto.MetroTrai" +
       "nType\0225\n\027journey_sectionprogress\030\004 \002(\0162\024" +
@@ -5431,7 +5339,7 @@ public final class MetroAtsProtos {
       "t_stop_number\030\t \002(\t\022\022\n\nstart_time\030\n \002(\t\022" +
       "\016\n\006dvj_id\030\013 \002(\t\022\022\n\nroute_name\030\014 \002(\t\022\026\n\016s" +
       "tart_datetime\030\r \002(\t\022\021\n\tdirection\030\016 \002(\t*\036" +
-      "\n\016MetroTrainType\022\005\n\001M\020\000\022\005\n\001T\020\001*L\n\rMetroP" +
+      "\n\016MetroTrainType\022\005\n\001M\020\000\022\005\n\001T\020\001*L\n\rMetroP",
       "rogress\022\r\n\tSCHEDULED\020\000\022\016\n\nINPROGRESS\020\001\022\r" +
       "\n\tCOMPLETED\020\002\022\r\n\tCANCELLED\020\003B1\n\037fi.hsl.c" +
       "ommon.transitdata.protoB\016MetroAtsProtos"
