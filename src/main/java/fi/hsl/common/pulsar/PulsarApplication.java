@@ -160,6 +160,12 @@ public class PulsarApplication implements AutoCloseable {
             builder = builder.topic(topic);
         }
 
+        if (config.hasPath("pulsar.consumer.ackTimeoutSecs")) {
+            long ackTimeOutSecs = config.getLong("pulsar.consumer.ackTimeoutSecs");
+            log.info("Setting message redelivery (ackTimeout) time to {} s in pulsar consumer subscription", ackTimeOutSecs);
+            builder = builder.ackTimeout(ackTimeOutSecs, TimeUnit.SECONDS);
+        }
+
         Consumer<byte[]> consumer = builder.subscribe();
 
         if (config.getBoolean("pulsar.consumer.cursor.resetToLatest")) {
