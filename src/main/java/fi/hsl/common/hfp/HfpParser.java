@@ -1,6 +1,7 @@
 package fi.hsl.common.hfp;
 
 import com.dslplatform.json.DslJson;
+import com.dslplatform.json.ParsingException;
 import com.dslplatform.json.runtime.Settings;
 import fi.hsl.common.hfp.proto.Hfp;
 import org.slf4j.Logger;
@@ -37,8 +38,16 @@ public class HfpParser {
      * Methods for parsing the Json Payload
      **/
 
-    public HfpJson parseJson(byte[] data) throws IOException {
-        return dslJson.deserialize(HfpJson.class, data, data.length);
+    public HfpJson parseJson(byte[] data) throws IOException, InvalidHfpPayloadException {
+        try {
+            return dslJson.deserialize(HfpJson.class, data, data.length);
+        } catch (IOException ioe) {
+            if (ioe instanceof ParsingException) {
+                throw new InvalidHfpPayloadException("Failed to parse HFP JSON", (ParsingException)ioe);
+            } else {
+                throw ioe;
+            }
+        }
     }
 
     public String serializeToString(final HfpJson json) throws IOException {
@@ -144,11 +153,11 @@ public class HfpParser {
         }
     }
 
-    public static Hfp.Topic parseTopic(String topic) throws Exception {
+    public static Hfp.Topic parseTopic(String topic) throws InvalidHfpTopicException {
         return parseTopic(topic, System.currentTimeMillis());
     }
 
-    public static Hfp.Topic parseTopic(String topic, long receivedAtMs) throws Exception {
+    public static Hfp.Topic parseTopic(String topic, long receivedAtMs) throws InvalidHfpTopicException {
         //log.debug("Parsing metadata from topic: " + topic);
 
         final String[] parts = topic.split("/", -1);//-1 to include empty substrings
@@ -160,7 +169,7 @@ public class HfpParser {
         //We first find the index of version. The prefix topic part can consist of more complicated path
         int versionIndex = findVersionIndex(parts);
         if (versionIndex < 0) {
-            throw new Exception("Failed to find topic version from topic " + topic);
+            throw new InvalidHfpTopicException("Failed to find topic version from topic " + topic);
         }
         builder.setTopicPrefix(joinFirstNParts(parts, versionIndex, "/"));
         int index = versionIndex;
@@ -343,6 +352,18 @@ public class HfpParser {
                 log.error("Failed to convert {} to java.sql.Timestamp", dt);
                 return Optional.empty();
             }
+        }
+    }
+
+    public static class InvalidHfpTopicException extends Exception {
+        private InvalidHfpTopicException(String message) {
+            super(message);
+        }
+    }
+
+    public static class InvalidHfpPayloadException extends Exception {
+        private InvalidHfpPayloadException(String message, ParsingException cause) {
+            super(message, cause);
         }
     }
 }
