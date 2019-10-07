@@ -3,7 +3,9 @@ package fi.hsl.common.hfp;
 import fi.hsl.common.hfp.proto.Hfp;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalTime;
@@ -133,6 +135,11 @@ public class HfpParserTest {
         HfpJson hfp = HfpParser.newInstance().parseJson(content.getBytes("UTF-8"));
         assertNotNull(hfp);
         return hfp;
+    }
+
+    @Test(expected = HfpParser.InvalidHfpPayloadException.class)
+    public void parsingInvalidHfpPayloadThrowsException() throws IOException, HfpParser.InvalidHfpPayloadException {
+        HfpJson hfpJson = HfpParser.newInstance().parseJson("{\"VP\":{\"tst\":null}}".getBytes(StandardCharsets.UTF_8));
     }
 
     @Test
