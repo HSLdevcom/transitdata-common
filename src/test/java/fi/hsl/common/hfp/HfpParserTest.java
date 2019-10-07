@@ -25,21 +25,6 @@ public class HfpParserTest {
     }
 
     @Test
-    public void parseTimeSafely() {
-        Time time = HfpParser.safeParseTime("18:00").get();
-        assertTrue(time.toLocalTime().equals(LocalTime.of(18, 0)));
-
-        Time earlyTime = HfpParser.safeParseTime("8:00").get();
-        assertTrue(earlyTime.toLocalTime().equals(LocalTime.of(8, 0)));
-
-        Time earlyTime2 = HfpParser.safeParseTime("08:00").get();
-        assertTrue(earlyTime2.toLocalTime().equals(LocalTime.of(8, 0)));
-
-        assertFalse(HfpParser.safeParseTime("random-time").isPresent());
-        assertFalse(HfpParser.safeParseTime(null).isPresent());
-    }
-
-    @Test
     public void parseSampleVpJsonFile() throws Exception {
         HfpJson hfp = parseJsonFromResources("hfp-sample-vp.json");
         assertEquals("81", hfp.payload.desi);

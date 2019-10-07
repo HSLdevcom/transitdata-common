@@ -303,20 +303,6 @@ public class HfpParser {
             return Optional.of(n != 0);
     }
 
-    public static Optional<Time> safeParseTime(String time) {
-        if (time == null)
-            return Optional.empty();
-        else {
-            try {
-                return Optional.of(Time.valueOf(time + ":00")); // parser requires seconds also.
-            }
-            catch (Exception e) {
-                log.error("Failed to convert {} to java.sql.Time", time);
-                return Optional.empty();
-            }
-        }
-    }
-
     public static Optional<Date> safeParseDate(String date) {
         if (date == null)
             return Optional.empty();
