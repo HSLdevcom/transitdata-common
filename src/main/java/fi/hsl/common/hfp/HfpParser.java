@@ -116,6 +116,9 @@ public class HfpParser {
         validateString(payload.route).ifPresent(builder::setRoute);
         if (payload.occu != null)
             builder.setOccu(payload.occu);
+        if (payload.seq != null) {
+            builder.setSeq(payload.seq);
+        }
 
         return builder.build();
     }
