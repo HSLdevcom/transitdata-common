@@ -3,7 +3,9 @@ package fi.hsl.common.hfp;
 import fi.hsl.common.hfp.proto.Hfp;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalTime;
@@ -22,21 +24,6 @@ public class HfpParserTest {
 
         assertFalse(HfpParser.safeParseTimestamp("datetime").isPresent());
         assertFalse(HfpParser.safeParseTimestamp(null).isPresent());
-    }
-
-    @Test
-    public void parseTimeSafely() {
-        Time time = HfpParser.safeParseTime("18:00").get();
-        assertTrue(time.toLocalTime().equals(LocalTime.of(18, 0)));
-
-        Time earlyTime = HfpParser.safeParseTime("8:00").get();
-        assertTrue(earlyTime.toLocalTime().equals(LocalTime.of(8, 0)));
-
-        Time earlyTime2 = HfpParser.safeParseTime("08:00").get();
-        assertTrue(earlyTime2.toLocalTime().equals(LocalTime.of(8, 0)));
-
-        assertFalse(HfpParser.safeParseTime("random-time").isPresent());
-        assertFalse(HfpParser.safeParseTime(null).isPresent());
     }
 
     @Test
@@ -148,6 +135,11 @@ public class HfpParserTest {
         HfpJson hfp = HfpParser.newInstance().parseJson(content.getBytes("UTF-8"));
         assertNotNull(hfp);
         return hfp;
+    }
+
+    @Test(expected = HfpParser.InvalidHfpPayloadException.class)
+    public void parsingInvalidHfpPayloadThrowsException() throws IOException, HfpParser.InvalidHfpPayloadException {
+        HfpJson hfpJson = HfpParser.newInstance().parseJson("{\"VP\":{\"tst\":null}}".getBytes(StandardCharsets.UTF_8));
     }
 
     @Test
