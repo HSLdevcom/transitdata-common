@@ -115,4 +115,5 @@ message Payload {
     optional int32 stop = 21; // v2
     optional string route = 22; // v2
     optional int32 occu = 23; // v2
+    optional int32 seq = 24;
 }
