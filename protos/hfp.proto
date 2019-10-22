@@ -90,6 +90,31 @@ message Payload {
         NA = 3;
     }
 
+    enum TlpRequestType {
+        NORMAL = 0;
+        DOOR_CLOSE = 1;
+        DOOR_OPEN = 2;
+        ADVANCE= 3;
+    }
+
+    enum TlpPriorityLevel {
+        normal = 0;
+        high = 1;
+        norequest = 2;
+    }
+
+    enum TlpReason {
+        GLOBAL = 0;
+        AHEAD = 1;
+        LINE = 2;
+        PRIOEXEP = 3;
+    }
+
+    enum TlpDecision {
+        ACK = 0;
+        NAK = 1;
+    }
+
     optional string desi = 2;
     optional string dir = 3;
     optional int32 oper = 4;
@@ -116,4 +141,22 @@ message Payload {
     optional string route = 22; // v2
     optional int32 occu = 23; // v2
     optional int32 seq = 24;
+    optional string ttarr = 25;
+    optional string ttdep = 26;
+    optional int32 dr_type = 27;
+
+    optional int32 tlp_requestid = 28; // tlr
+    optional TlpRequestType tlp_requesttype = 29; // tlr
+    optional TlpPriorityLevel tlp_prioritylevel = 30; // tlr
+    optional TlpReason tlp_reason = 31; // tlr
+    optional int32 tlp_att_seq = 32; // tlr
+    optional TlpDecision tlp_decision = 33; // tlr
+
+    optional int32 sid = 34; // tlr
+    optional int32 signal_groupid = 35; // tlr
+    optional int32 tlp_signalgroupnbr = 36; // tlr
+    optional int32 tlp_line_configid = 38; // tlr
+    optional int32 tlp_point_configid = 39; // tlr
+    optional int32 tlp_frequency = 40; // tlr
+    optional string tlp_protocol = 41; // tlr
 }
