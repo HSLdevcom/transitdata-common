@@ -125,10 +125,38 @@ public class HfpParser {
         validateString(payload.route).ifPresent(builder::setRoute);
         if (payload.occu != null)
             builder.setOccu(payload.occu);
-        if (payload.seq != null) {
+        if (payload.seq != null)
             builder.setSeq(payload.seq);
-        }
-
+        if (payload.ttarr != null)
+            builder.setTtarr(payload.ttarr);
+        if (payload.ttdep != null)
+            builder.setTtdep(payload.ttdep);
+        if (payload.dr_type != null)
+            builder.setDrType(payload.dr_type);
+        if (payload.tlp_requestid != null)
+            builder.setTlpRequestid(payload.tlp_requestid);
+        if (payload.tlp_requesttype != null && !payload.tlp_requesttype.isEmpty())
+            builder.setTlpRequesttype(Hfp.Payload.TlpRequestType.valueOf(payload.tlp_requesttype));
+        if (payload.tlp_prioritylevel != null && !payload.tlp_prioritylevel.isEmpty())
+            builder.setTlpPrioritylevel(Hfp.Payload.TlpPriorityLevel.valueOf(payload.tlp_prioritylevel));
+        if (payload.tlp_reason != null && !payload.tlp_reason.isEmpty())
+            builder.setTlpReason(Hfp.Payload.TlpReason.valueOf(payload.tlp_reason));
+        if (payload.tlp_att_seq != null)
+            builder.setTlpAttSeq(payload.tlp_att_seq);
+        if (payload.tlp_decision != null && !payload.tlp_decision.isEmpty())
+            builder.setTlpDecision(Hfp.Payload.TlpDecision.valueOf(payload.tlp_decision));
+        if (payload.sid != null)
+            builder.setSid(payload.sid);
+        if (payload.signal_groupid != null)
+            builder.setSignalGroupid(payload.signal_groupid);
+        if (payload.tlp_signalgroupnbr != null)
+            builder.setTlpSignalgroupnbr(payload.tlp_signalgroupnbr);
+        if (payload.tlp_line_configid != null)
+            builder.setTlpLineConfigid(payload.tlp_line_configid);
+        if (payload.tlp_frequency != null)
+            builder.setTlpFrequency(payload.tlp_frequency);
+        if (payload.tlp_protocol != null)
+            builder.setTlpProtocol(payload.tlp_protocol);
         return builder.build();
     }
 
