@@ -65,8 +65,6 @@ public class HfpJson {
         public String route; // v2
 
         public Integer occu; // v2
-
-        public Integer seq;
     }
 
     public static abstract class Odo {
