@@ -4591,70 +4591,38 @@ public final class Hfp {
     int getSeq();
 
     /**
-     * <pre>
-     * v2
-     * </pre>
-     *
      * <code>optional string ttarr = 25;</code>
      */
     boolean hasTtarr();
     /**
-     * <pre>
-     * v2
-     * </pre>
-     *
      * <code>optional string ttarr = 25;</code>
      */
     java.lang.String getTtarr();
     /**
-     * <pre>
-     * v2
-     * </pre>
-     *
      * <code>optional string ttarr = 25;</code>
      */
     com.google.protobuf.ByteString
         getTtarrBytes();
 
     /**
-     * <pre>
-     * v2
-     * </pre>
-     *
      * <code>optional string ttdep = 26;</code>
      */
     boolean hasTtdep();
     /**
-     * <pre>
-     * v2
-     * </pre>
-     *
      * <code>optional string ttdep = 26;</code>
      */
     java.lang.String getTtdep();
     /**
-     * <pre>
-     * v2
-     * </pre>
-     *
      * <code>optional string ttdep = 26;</code>
      */
     com.google.protobuf.ByteString
         getTtdepBytes();
 
     /**
-     * <pre>
-     * 1 = driver or 2 = service technician
-     * </pre>
-     *
      * <code>optional int32 dr_type = 27;</code>
      */
     boolean hasDrType();
     /**
-     * <pre>
-     * 1 = driver or 2 = service technician
-     * </pre>
-     *
      * <code>optional int32 dr_type = 27;</code>
      */
     int getDrType();
@@ -6298,20 +6266,12 @@ public final class Hfp {
     public static final int TTARR_FIELD_NUMBER = 25;
     private volatile java.lang.Object ttarr_;
     /**
-     * <pre>
-     * v2
-     * </pre>
-     *
      * <code>optional string ttarr = 25;</code>
      */
     public boolean hasTtarr() {
       return ((bitField0_ & 0x01000000) != 0);
     }
     /**
-     * <pre>
-     * v2
-     * </pre>
-     *
      * <code>optional string ttarr = 25;</code>
      */
     public java.lang.String getTtarr() {
@@ -6329,10 +6289,6 @@ public final class Hfp {
       }
     }
     /**
-     * <pre>
-     * v2
-     * </pre>
-     *
      * <code>optional string ttarr = 25;</code>
      */
     public com.google.protobuf.ByteString
@@ -6352,20 +6308,12 @@ public final class Hfp {
     public static final int TTDEP_FIELD_NUMBER = 26;
     private volatile java.lang.Object ttdep_;
     /**
-     * <pre>
-     * v2
-     * </pre>
-     *
      * <code>optional string ttdep = 26;</code>
      */
     public boolean hasTtdep() {
       return ((bitField0_ & 0x02000000) != 0);
     }
     /**
-     * <pre>
-     * v2
-     * </pre>
-     *
      * <code>optional string ttdep = 26;</code>
      */
     public java.lang.String getTtdep() {
@@ -6383,10 +6331,6 @@ public final class Hfp {
       }
     }
     /**
-     * <pre>
-     * v2
-     * </pre>
-     *
      * <code>optional string ttdep = 26;</code>
      */
     public com.google.protobuf.ByteString
@@ -6406,20 +6350,12 @@ public final class Hfp {
     public static final int DR_TYPE_FIELD_NUMBER = 27;
     private int drType_;
     /**
-     * <pre>
-     * 1 = driver or 2 = service technician
-     * </pre>
-     *
      * <code>optional int32 dr_type = 27;</code>
      */
     public boolean hasDrType() {
       return ((bitField0_ & 0x04000000) != 0);
     }
     /**
-     * <pre>
-     * 1 = driver or 2 = service technician
-     * </pre>
-     *
      * <code>optional int32 dr_type = 27;</code>
      */
     public int getDrType() {
@@ -9204,20 +9140,12 @@ public final class Hfp {
 
       private java.lang.Object ttarr_ = "";
       /**
-       * <pre>
-       * v2
-       * </pre>
-       *
        * <code>optional string ttarr = 25;</code>
        */
       public boolean hasTtarr() {
         return ((bitField0_ & 0x01000000) != 0);
       }
       /**
-       * <pre>
-       * v2
-       * </pre>
-       *
        * <code>optional string ttarr = 25;</code>
        */
       public java.lang.String getTtarr() {
@@ -9235,10 +9163,6 @@ public final class Hfp {
         }
       }
       /**
-       * <pre>
-       * v2
-       * </pre>
-       *
        * <code>optional string ttarr = 25;</code>
        */
       public com.google.protobuf.ByteString
@@ -9255,10 +9179,6 @@ public final class Hfp {
         }
       }
       /**
-       * <pre>
-       * v2
-       * </pre>
-       *
        * <code>optional string ttarr = 25;</code>
        */
       public Builder setTtarr(
@@ -9272,10 +9192,6 @@ public final class Hfp {
         return this;
       }
       /**
-       * <pre>
-       * v2
-       * </pre>
-       *
        * <code>optional string ttarr = 25;</code>
        */
       public Builder clearTtarr() {
@@ -9285,10 +9201,6 @@ public final class Hfp {
         return this;
       }
       /**
-       * <pre>
-       * v2
-       * </pre>
-       *
        * <code>optional string ttarr = 25;</code>
        */
       public Builder setTtarrBytes(
@@ -9304,20 +9216,12 @@ public final class Hfp {
 
       private java.lang.Object ttdep_ = "";
       /**
-       * <pre>
-       * v2
-       * </pre>
-       *
        * <code>optional string ttdep = 26;</code>
        */
       public boolean hasTtdep() {
         return ((bitField0_ & 0x02000000) != 0);
       }
       /**
-       * <pre>
-       * v2
-       * </pre>
-       *
        * <code>optional string ttdep = 26;</code>
        */
       public java.lang.String getTtdep() {
@@ -9335,10 +9239,6 @@ public final class Hfp {
         }
       }
       /**
-       * <pre>
-       * v2
-       * </pre>
-       *
        * <code>optional string ttdep = 26;</code>
        */
       public com.google.protobuf.ByteString
@@ -9355,10 +9255,6 @@ public final class Hfp {
         }
       }
       /**
-       * <pre>
-       * v2
-       * </pre>
-       *
        * <code>optional string ttdep = 26;</code>
        */
       public Builder setTtdep(
@@ -9372,10 +9268,6 @@ public final class Hfp {
         return this;
       }
       /**
-       * <pre>
-       * v2
-       * </pre>
-       *
        * <code>optional string ttdep = 26;</code>
        */
       public Builder clearTtdep() {
@@ -9385,10 +9277,6 @@ public final class Hfp {
         return this;
       }
       /**
-       * <pre>
-       * v2
-       * </pre>
-       *
        * <code>optional string ttdep = 26;</code>
        */
       public Builder setTtdepBytes(
@@ -9404,30 +9292,18 @@ public final class Hfp {
 
       private int drType_ ;
       /**
-       * <pre>
-       * 1 = driver or 2 = service technician
-       * </pre>
-       *
        * <code>optional int32 dr_type = 27;</code>
        */
       public boolean hasDrType() {
         return ((bitField0_ & 0x04000000) != 0);
       }
       /**
-       * <pre>
-       * 1 = driver or 2 = service technician
-       * </pre>
-       *
        * <code>optional int32 dr_type = 27;</code>
        */
       public int getDrType() {
         return drType_;
       }
       /**
-       * <pre>
-       * 1 = driver or 2 = service technician
-       * </pre>
-       *
        * <code>optional int32 dr_type = 27;</code>
        */
       public Builder setDrType(int value) {
@@ -9437,10 +9313,6 @@ public final class Hfp {
         return this;
       }
       /**
-       * <pre>
-       * 1 = driver or 2 = service technician
-       * </pre>
-       *
        * <code>optional int32 dr_type = 27;</code>
        */
       public Builder clearDrType() {
