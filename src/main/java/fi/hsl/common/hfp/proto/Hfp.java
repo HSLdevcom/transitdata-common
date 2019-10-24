@@ -4580,6 +4580,282 @@ public final class Hfp {
      * <code>optional int32 occu = 23;</code>
      */
     int getOccu();
+
+    /**
+     * <code>optional int32 seq = 24;</code>
+     */
+    boolean hasSeq();
+    /**
+     * <code>optional int32 seq = 24;</code>
+     */
+    int getSeq();
+
+    /**
+     * <code>optional string ttarr = 25;</code>
+     */
+    boolean hasTtarr();
+    /**
+     * <code>optional string ttarr = 25;</code>
+     */
+    java.lang.String getTtarr();
+    /**
+     * <code>optional string ttarr = 25;</code>
+     */
+    com.google.protobuf.ByteString
+        getTtarrBytes();
+
+    /**
+     * <code>optional string ttdep = 26;</code>
+     */
+    boolean hasTtdep();
+    /**
+     * <code>optional string ttdep = 26;</code>
+     */
+    java.lang.String getTtdep();
+    /**
+     * <code>optional string ttdep = 26;</code>
+     */
+    com.google.protobuf.ByteString
+        getTtdepBytes();
+
+    /**
+     * <code>optional int32 dr_type = 27;</code>
+     */
+    boolean hasDrType();
+    /**
+     * <code>optional int32 dr_type = 27;</code>
+     */
+    int getDrType();
+
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_requestid = 28;</code>
+     */
+    boolean hasTlpRequestid();
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_requestid = 28;</code>
+     */
+    int getTlpRequestid();
+
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+     */
+    boolean hasTlpRequesttype();
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+     */
+    fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType getTlpRequesttype();
+
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+     */
+    boolean hasTlpPrioritylevel();
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+     */
+    fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel getTlpPrioritylevel();
+
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+     */
+    boolean hasTlpReason();
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+     */
+    fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason getTlpReason();
+
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_att_seq = 32;</code>
+     */
+    boolean hasTlpAttSeq();
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_att_seq = 32;</code>
+     */
+    int getTlpAttSeq();
+
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+     */
+    boolean hasTlpDecision();
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+     */
+    fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision getTlpDecision();
+
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 sid = 34;</code>
+     */
+    boolean hasSid();
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 sid = 34;</code>
+     */
+    int getSid();
+
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 signal_groupid = 35;</code>
+     */
+    boolean hasSignalGroupid();
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 signal_groupid = 35;</code>
+     */
+    int getSignalGroupid();
+
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+     */
+    boolean hasTlpSignalgroupnbr();
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+     */
+    int getTlpSignalgroupnbr();
+
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_line_configid = 38;</code>
+     */
+    boolean hasTlpLineConfigid();
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_line_configid = 38;</code>
+     */
+    int getTlpLineConfigid();
+
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_point_configid = 39;</code>
+     */
+    boolean hasTlpPointConfigid();
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_point_configid = 39;</code>
+     */
+    int getTlpPointConfigid();
+
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_frequency = 40;</code>
+     */
+    boolean hasTlpFrequency();
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_frequency = 40;</code>
+     */
+    int getTlpFrequency();
+
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional string tlp_protocol = 41;</code>
+     */
+    boolean hasTlpProtocol();
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional string tlp_protocol = 41;</code>
+     */
+    java.lang.String getTlpProtocol();
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional string tlp_protocol = 41;</code>
+     */
+    com.google.protobuf.ByteString
+        getTlpProtocolBytes();
   }
   /**
    * Protobuf type {@code proto.Payload}
@@ -4602,6 +4878,13 @@ public final class Hfp {
       start_ = "";
       loc_ = 0;
       route_ = "";
+      ttarr_ = "";
+      ttdep_ = "";
+      tlpRequesttype_ = 0;
+      tlpPrioritylevel_ = 0;
+      tlpReason_ = 0;
+      tlpDecision_ = 0;
+      tlpProtocol_ = "";
     }
 
     @java.lang.Override
@@ -4618,6 +4901,7 @@ public final class Hfp {
         throw new java.lang.NullPointerException();
       }
       int mutable_bitField0_ = 0;
+      int mutable_bitField1_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -4754,6 +5038,122 @@ public final class Hfp {
             case 184: {
               bitField0_ |= 0x00400000;
               occu_ = input.readInt32();
+              break;
+            }
+            case 192: {
+              bitField0_ |= 0x00800000;
+              seq_ = input.readInt32();
+              break;
+            }
+            case 202: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x01000000;
+              ttarr_ = bs;
+              break;
+            }
+            case 210: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x02000000;
+              ttdep_ = bs;
+              break;
+            }
+            case 216: {
+              bitField0_ |= 0x04000000;
+              drType_ = input.readInt32();
+              break;
+            }
+            case 224: {
+              bitField0_ |= 0x08000000;
+              tlpRequestid_ = input.readInt32();
+              break;
+            }
+            case 232: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType value = fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(29, rawValue);
+              } else {
+                bitField0_ |= 0x10000000;
+                tlpRequesttype_ = rawValue;
+              }
+              break;
+            }
+            case 240: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel value = fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(30, rawValue);
+              } else {
+                bitField0_ |= 0x20000000;
+                tlpPrioritylevel_ = rawValue;
+              }
+              break;
+            }
+            case 248: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason value = fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(31, rawValue);
+              } else {
+                bitField0_ |= 0x40000000;
+                tlpReason_ = rawValue;
+              }
+              break;
+            }
+            case 256: {
+              bitField0_ |= 0x80000000;
+              tlpAttSeq_ = input.readInt32();
+              break;
+            }
+            case 264: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision value = fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(33, rawValue);
+              } else {
+                bitField1_ |= 0x00000001;
+                tlpDecision_ = rawValue;
+              }
+              break;
+            }
+            case 272: {
+              bitField1_ |= 0x00000002;
+              sid_ = input.readInt32();
+              break;
+            }
+            case 280: {
+              bitField1_ |= 0x00000004;
+              signalGroupid_ = input.readInt32();
+              break;
+            }
+            case 288: {
+              bitField1_ |= 0x00000008;
+              tlpSignalgroupnbr_ = input.readInt32();
+              break;
+            }
+            case 304: {
+              bitField1_ |= 0x00000010;
+              tlpLineConfigid_ = input.readInt32();
+              break;
+            }
+            case 312: {
+              bitField1_ |= 0x00000020;
+              tlpPointConfigid_ = input.readInt32();
+              break;
+            }
+            case 320: {
+              bitField1_ |= 0x00000040;
+              tlpFrequency_ = input.readInt32();
+              break;
+            }
+            case 330: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField1_ |= 0x00000080;
+              tlpProtocol_ = bs;
               break;
             }
             default: {
@@ -4896,7 +5296,413 @@ public final class Hfp {
       // @@protoc_insertion_point(enum_scope:proto.Payload.LocationQualityMethod)
     }
 
+    /**
+     * Protobuf enum {@code proto.Payload.TlpRequestType}
+     */
+    public enum TlpRequestType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NORMAL = 0;</code>
+       */
+      NORMAL(0),
+      /**
+       * <code>DOOR_CLOSE = 1;</code>
+       */
+      DOOR_CLOSE(1),
+      /**
+       * <code>DOOR_OPEN = 2;</code>
+       */
+      DOOR_OPEN(2),
+      /**
+       * <code>ADVANCE = 3;</code>
+       */
+      ADVANCE(3),
+      ;
+
+      /**
+       * <code>NORMAL = 0;</code>
+       */
+      public static final int NORMAL_VALUE = 0;
+      /**
+       * <code>DOOR_CLOSE = 1;</code>
+       */
+      public static final int DOOR_CLOSE_VALUE = 1;
+      /**
+       * <code>DOOR_OPEN = 2;</code>
+       */
+      public static final int DOOR_OPEN_VALUE = 2;
+      /**
+       * <code>ADVANCE = 3;</code>
+       */
+      public static final int ADVANCE_VALUE = 3;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static TlpRequestType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static TlpRequestType forNumber(int value) {
+        switch (value) {
+          case 0: return NORMAL;
+          case 1: return DOOR_CLOSE;
+          case 2: return DOOR_OPEN;
+          case 3: return ADVANCE;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<TlpRequestType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          TlpRequestType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<TlpRequestType>() {
+              public TlpRequestType findValueByNumber(int number) {
+                return TlpRequestType.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return fi.hsl.common.hfp.proto.Hfp.Payload.getDescriptor().getEnumTypes().get(1);
+      }
+
+      private static final TlpRequestType[] VALUES = values();
+
+      public static TlpRequestType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private TlpRequestType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.Payload.TlpRequestType)
+    }
+
+    /**
+     * Protobuf enum {@code proto.Payload.TlpPriorityLevel}
+     */
+    public enum TlpPriorityLevel
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>normal = 0;</code>
+       */
+      normal(0),
+      /**
+       * <code>high = 1;</code>
+       */
+      high(1),
+      /**
+       * <code>norequest = 2;</code>
+       */
+      norequest(2),
+      ;
+
+      /**
+       * <code>normal = 0;</code>
+       */
+      public static final int normal_VALUE = 0;
+      /**
+       * <code>high = 1;</code>
+       */
+      public static final int high_VALUE = 1;
+      /**
+       * <code>norequest = 2;</code>
+       */
+      public static final int norequest_VALUE = 2;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static TlpPriorityLevel valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static TlpPriorityLevel forNumber(int value) {
+        switch (value) {
+          case 0: return normal;
+          case 1: return high;
+          case 2: return norequest;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<TlpPriorityLevel>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          TlpPriorityLevel> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<TlpPriorityLevel>() {
+              public TlpPriorityLevel findValueByNumber(int number) {
+                return TlpPriorityLevel.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return fi.hsl.common.hfp.proto.Hfp.Payload.getDescriptor().getEnumTypes().get(2);
+      }
+
+      private static final TlpPriorityLevel[] VALUES = values();
+
+      public static TlpPriorityLevel valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private TlpPriorityLevel(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.Payload.TlpPriorityLevel)
+    }
+
+    /**
+     * Protobuf enum {@code proto.Payload.TlpReason}
+     */
+    public enum TlpReason
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>GLOBAL = 0;</code>
+       */
+      GLOBAL(0),
+      /**
+       * <code>AHEAD = 1;</code>
+       */
+      AHEAD(1),
+      /**
+       * <code>LINE = 2;</code>
+       */
+      LINE(2),
+      /**
+       * <code>PRIOEXEP = 3;</code>
+       */
+      PRIOEXEP(3),
+      ;
+
+      /**
+       * <code>GLOBAL = 0;</code>
+       */
+      public static final int GLOBAL_VALUE = 0;
+      /**
+       * <code>AHEAD = 1;</code>
+       */
+      public static final int AHEAD_VALUE = 1;
+      /**
+       * <code>LINE = 2;</code>
+       */
+      public static final int LINE_VALUE = 2;
+      /**
+       * <code>PRIOEXEP = 3;</code>
+       */
+      public static final int PRIOEXEP_VALUE = 3;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static TlpReason valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static TlpReason forNumber(int value) {
+        switch (value) {
+          case 0: return GLOBAL;
+          case 1: return AHEAD;
+          case 2: return LINE;
+          case 3: return PRIOEXEP;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<TlpReason>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          TlpReason> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<TlpReason>() {
+              public TlpReason findValueByNumber(int number) {
+                return TlpReason.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return fi.hsl.common.hfp.proto.Hfp.Payload.getDescriptor().getEnumTypes().get(3);
+      }
+
+      private static final TlpReason[] VALUES = values();
+
+      public static TlpReason valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private TlpReason(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.Payload.TlpReason)
+    }
+
+    /**
+     * Protobuf enum {@code proto.Payload.TlpDecision}
+     */
+    public enum TlpDecision
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>ACK = 0;</code>
+       */
+      ACK(0),
+      /**
+       * <code>NAK = 1;</code>
+       */
+      NAK(1),
+      ;
+
+      /**
+       * <code>ACK = 0;</code>
+       */
+      public static final int ACK_VALUE = 0;
+      /**
+       * <code>NAK = 1;</code>
+       */
+      public static final int NAK_VALUE = 1;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static TlpDecision valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static TlpDecision forNumber(int value) {
+        switch (value) {
+          case 0: return ACK;
+          case 1: return NAK;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<TlpDecision>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          TlpDecision> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<TlpDecision>() {
+              public TlpDecision findValueByNumber(int number) {
+                return TlpDecision.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return fi.hsl.common.hfp.proto.Hfp.Payload.getDescriptor().getEnumTypes().get(4);
+      }
+
+      private static final TlpDecision[] VALUES = values();
+
+      public static TlpDecision valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private TlpDecision(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.Payload.TlpDecision)
+    }
+
     private int bitField0_;
+    private int bitField1_;
     public static final int SCHEMAVERSION_FIELD_NUMBER = 1;
     private int schemaVersion_;
     /**
@@ -5442,6 +6248,458 @@ public final class Hfp {
       return occu_;
     }
 
+    public static final int SEQ_FIELD_NUMBER = 24;
+    private int seq_;
+    /**
+     * <code>optional int32 seq = 24;</code>
+     */
+    public boolean hasSeq() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+    /**
+     * <code>optional int32 seq = 24;</code>
+     */
+    public int getSeq() {
+      return seq_;
+    }
+
+    public static final int TTARR_FIELD_NUMBER = 25;
+    private volatile java.lang.Object ttarr_;
+    /**
+     * <code>optional string ttarr = 25;</code>
+     */
+    public boolean hasTtarr() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+    /**
+     * <code>optional string ttarr = 25;</code>
+     */
+    public java.lang.String getTtarr() {
+      java.lang.Object ref = ttarr_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          ttarr_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string ttarr = 25;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTtarrBytes() {
+      java.lang.Object ref = ttarr_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ttarr_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TTDEP_FIELD_NUMBER = 26;
+    private volatile java.lang.Object ttdep_;
+    /**
+     * <code>optional string ttdep = 26;</code>
+     */
+    public boolean hasTtdep() {
+      return ((bitField0_ & 0x02000000) != 0);
+    }
+    /**
+     * <code>optional string ttdep = 26;</code>
+     */
+    public java.lang.String getTtdep() {
+      java.lang.Object ref = ttdep_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          ttdep_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string ttdep = 26;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTtdepBytes() {
+      java.lang.Object ref = ttdep_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ttdep_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DR_TYPE_FIELD_NUMBER = 27;
+    private int drType_;
+    /**
+     * <code>optional int32 dr_type = 27;</code>
+     */
+    public boolean hasDrType() {
+      return ((bitField0_ & 0x04000000) != 0);
+    }
+    /**
+     * <code>optional int32 dr_type = 27;</code>
+     */
+    public int getDrType() {
+      return drType_;
+    }
+
+    public static final int TLP_REQUESTID_FIELD_NUMBER = 28;
+    private int tlpRequestid_;
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_requestid = 28;</code>
+     */
+    public boolean hasTlpRequestid() {
+      return ((bitField0_ & 0x08000000) != 0);
+    }
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_requestid = 28;</code>
+     */
+    public int getTlpRequestid() {
+      return tlpRequestid_;
+    }
+
+    public static final int TLP_REQUESTTYPE_FIELD_NUMBER = 29;
+    private int tlpRequesttype_;
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+     */
+    public boolean hasTlpRequesttype() {
+      return ((bitField0_ & 0x10000000) != 0);
+    }
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+     */
+    public fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType getTlpRequesttype() {
+      @SuppressWarnings("deprecation")
+      fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType.valueOf(tlpRequesttype_);
+      return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType.NORMAL : result;
+    }
+
+    public static final int TLP_PRIORITYLEVEL_FIELD_NUMBER = 30;
+    private int tlpPrioritylevel_;
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+     */
+    public boolean hasTlpPrioritylevel() {
+      return ((bitField0_ & 0x20000000) != 0);
+    }
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+     */
+    public fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel getTlpPrioritylevel() {
+      @SuppressWarnings("deprecation")
+      fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel.valueOf(tlpPrioritylevel_);
+      return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel.normal : result;
+    }
+
+    public static final int TLP_REASON_FIELD_NUMBER = 31;
+    private int tlpReason_;
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+     */
+    public boolean hasTlpReason() {
+      return ((bitField0_ & 0x40000000) != 0);
+    }
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+     */
+    public fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason getTlpReason() {
+      @SuppressWarnings("deprecation")
+      fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason.valueOf(tlpReason_);
+      return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason.GLOBAL : result;
+    }
+
+    public static final int TLP_ATT_SEQ_FIELD_NUMBER = 32;
+    private int tlpAttSeq_;
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_att_seq = 32;</code>
+     */
+    public boolean hasTlpAttSeq() {
+      return ((bitField0_ & 0x80000000) != 0);
+    }
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_att_seq = 32;</code>
+     */
+    public int getTlpAttSeq() {
+      return tlpAttSeq_;
+    }
+
+    public static final int TLP_DECISION_FIELD_NUMBER = 33;
+    private int tlpDecision_;
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+     */
+    public boolean hasTlpDecision() {
+      return ((bitField1_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+     */
+    public fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision getTlpDecision() {
+      @SuppressWarnings("deprecation")
+      fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision.valueOf(tlpDecision_);
+      return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision.ACK : result;
+    }
+
+    public static final int SID_FIELD_NUMBER = 34;
+    private int sid_;
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 sid = 34;</code>
+     */
+    public boolean hasSid() {
+      return ((bitField1_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 sid = 34;</code>
+     */
+    public int getSid() {
+      return sid_;
+    }
+
+    public static final int SIGNAL_GROUPID_FIELD_NUMBER = 35;
+    private int signalGroupid_;
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 signal_groupid = 35;</code>
+     */
+    public boolean hasSignalGroupid() {
+      return ((bitField1_ & 0x00000004) != 0);
+    }
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 signal_groupid = 35;</code>
+     */
+    public int getSignalGroupid() {
+      return signalGroupid_;
+    }
+
+    public static final int TLP_SIGNALGROUPNBR_FIELD_NUMBER = 36;
+    private int tlpSignalgroupnbr_;
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+     */
+    public boolean hasTlpSignalgroupnbr() {
+      return ((bitField1_ & 0x00000008) != 0);
+    }
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+     */
+    public int getTlpSignalgroupnbr() {
+      return tlpSignalgroupnbr_;
+    }
+
+    public static final int TLP_LINE_CONFIGID_FIELD_NUMBER = 38;
+    private int tlpLineConfigid_;
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_line_configid = 38;</code>
+     */
+    public boolean hasTlpLineConfigid() {
+      return ((bitField1_ & 0x00000010) != 0);
+    }
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_line_configid = 38;</code>
+     */
+    public int getTlpLineConfigid() {
+      return tlpLineConfigid_;
+    }
+
+    public static final int TLP_POINT_CONFIGID_FIELD_NUMBER = 39;
+    private int tlpPointConfigid_;
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_point_configid = 39;</code>
+     */
+    public boolean hasTlpPointConfigid() {
+      return ((bitField1_ & 0x00000020) != 0);
+    }
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_point_configid = 39;</code>
+     */
+    public int getTlpPointConfigid() {
+      return tlpPointConfigid_;
+    }
+
+    public static final int TLP_FREQUENCY_FIELD_NUMBER = 40;
+    private int tlpFrequency_;
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_frequency = 40;</code>
+     */
+    public boolean hasTlpFrequency() {
+      return ((bitField1_ & 0x00000040) != 0);
+    }
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional int32 tlp_frequency = 40;</code>
+     */
+    public int getTlpFrequency() {
+      return tlpFrequency_;
+    }
+
+    public static final int TLP_PROTOCOL_FIELD_NUMBER = 41;
+    private volatile java.lang.Object tlpProtocol_;
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional string tlp_protocol = 41;</code>
+     */
+    public boolean hasTlpProtocol() {
+      return ((bitField1_ & 0x00000080) != 0);
+    }
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional string tlp_protocol = 41;</code>
+     */
+    public java.lang.String getTlpProtocol() {
+      java.lang.Object ref = tlpProtocol_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          tlpProtocol_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * tlr
+     * </pre>
+     *
+     * <code>optional string tlp_protocol = 41;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTlpProtocolBytes() {
+      java.lang.Object ref = tlpProtocol_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tlpProtocol_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5537,6 +6795,57 @@ public final class Hfp {
       if (((bitField0_ & 0x00400000) != 0)) {
         output.writeInt32(23, occu_);
       }
+      if (((bitField0_ & 0x00800000) != 0)) {
+        output.writeInt32(24, seq_);
+      }
+      if (((bitField0_ & 0x01000000) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 25, ttarr_);
+      }
+      if (((bitField0_ & 0x02000000) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 26, ttdep_);
+      }
+      if (((bitField0_ & 0x04000000) != 0)) {
+        output.writeInt32(27, drType_);
+      }
+      if (((bitField0_ & 0x08000000) != 0)) {
+        output.writeInt32(28, tlpRequestid_);
+      }
+      if (((bitField0_ & 0x10000000) != 0)) {
+        output.writeEnum(29, tlpRequesttype_);
+      }
+      if (((bitField0_ & 0x20000000) != 0)) {
+        output.writeEnum(30, tlpPrioritylevel_);
+      }
+      if (((bitField0_ & 0x40000000) != 0)) {
+        output.writeEnum(31, tlpReason_);
+      }
+      if (((bitField0_ & 0x80000000) != 0)) {
+        output.writeInt32(32, tlpAttSeq_);
+      }
+      if (((bitField1_ & 0x00000001) != 0)) {
+        output.writeEnum(33, tlpDecision_);
+      }
+      if (((bitField1_ & 0x00000002) != 0)) {
+        output.writeInt32(34, sid_);
+      }
+      if (((bitField1_ & 0x00000004) != 0)) {
+        output.writeInt32(35, signalGroupid_);
+      }
+      if (((bitField1_ & 0x00000008) != 0)) {
+        output.writeInt32(36, tlpSignalgroupnbr_);
+      }
+      if (((bitField1_ & 0x00000010) != 0)) {
+        output.writeInt32(38, tlpLineConfigid_);
+      }
+      if (((bitField1_ & 0x00000020) != 0)) {
+        output.writeInt32(39, tlpPointConfigid_);
+      }
+      if (((bitField1_ & 0x00000040) != 0)) {
+        output.writeInt32(40, tlpFrequency_);
+      }
+      if (((bitField1_ & 0x00000080) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 41, tlpProtocol_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5631,6 +6940,71 @@ public final class Hfp {
       if (((bitField0_ & 0x00400000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(23, occu_);
+      }
+      if (((bitField0_ & 0x00800000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(24, seq_);
+      }
+      if (((bitField0_ & 0x01000000) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, ttarr_);
+      }
+      if (((bitField0_ & 0x02000000) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, ttdep_);
+      }
+      if (((bitField0_ & 0x04000000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(27, drType_);
+      }
+      if (((bitField0_ & 0x08000000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(28, tlpRequestid_);
+      }
+      if (((bitField0_ & 0x10000000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(29, tlpRequesttype_);
+      }
+      if (((bitField0_ & 0x20000000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(30, tlpPrioritylevel_);
+      }
+      if (((bitField0_ & 0x40000000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(31, tlpReason_);
+      }
+      if (((bitField0_ & 0x80000000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(32, tlpAttSeq_);
+      }
+      if (((bitField1_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(33, tlpDecision_);
+      }
+      if (((bitField1_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(34, sid_);
+      }
+      if (((bitField1_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(35, signalGroupid_);
+      }
+      if (((bitField1_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(36, tlpSignalgroupnbr_);
+      }
+      if (((bitField1_ & 0x00000010) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(38, tlpLineConfigid_);
+      }
+      if (((bitField1_ & 0x00000020) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(39, tlpPointConfigid_);
+      }
+      if (((bitField1_ & 0x00000040) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(40, tlpFrequency_);
+      }
+      if (((bitField1_ & 0x00000080) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(41, tlpProtocol_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5766,6 +7140,87 @@ public final class Hfp {
         if (getOccu()
             != other.getOccu()) return false;
       }
+      if (hasSeq() != other.hasSeq()) return false;
+      if (hasSeq()) {
+        if (getSeq()
+            != other.getSeq()) return false;
+      }
+      if (hasTtarr() != other.hasTtarr()) return false;
+      if (hasTtarr()) {
+        if (!getTtarr()
+            .equals(other.getTtarr())) return false;
+      }
+      if (hasTtdep() != other.hasTtdep()) return false;
+      if (hasTtdep()) {
+        if (!getTtdep()
+            .equals(other.getTtdep())) return false;
+      }
+      if (hasDrType() != other.hasDrType()) return false;
+      if (hasDrType()) {
+        if (getDrType()
+            != other.getDrType()) return false;
+      }
+      if (hasTlpRequestid() != other.hasTlpRequestid()) return false;
+      if (hasTlpRequestid()) {
+        if (getTlpRequestid()
+            != other.getTlpRequestid()) return false;
+      }
+      if (hasTlpRequesttype() != other.hasTlpRequesttype()) return false;
+      if (hasTlpRequesttype()) {
+        if (tlpRequesttype_ != other.tlpRequesttype_) return false;
+      }
+      if (hasTlpPrioritylevel() != other.hasTlpPrioritylevel()) return false;
+      if (hasTlpPrioritylevel()) {
+        if (tlpPrioritylevel_ != other.tlpPrioritylevel_) return false;
+      }
+      if (hasTlpReason() != other.hasTlpReason()) return false;
+      if (hasTlpReason()) {
+        if (tlpReason_ != other.tlpReason_) return false;
+      }
+      if (hasTlpAttSeq() != other.hasTlpAttSeq()) return false;
+      if (hasTlpAttSeq()) {
+        if (getTlpAttSeq()
+            != other.getTlpAttSeq()) return false;
+      }
+      if (hasTlpDecision() != other.hasTlpDecision()) return false;
+      if (hasTlpDecision()) {
+        if (tlpDecision_ != other.tlpDecision_) return false;
+      }
+      if (hasSid() != other.hasSid()) return false;
+      if (hasSid()) {
+        if (getSid()
+            != other.getSid()) return false;
+      }
+      if (hasSignalGroupid() != other.hasSignalGroupid()) return false;
+      if (hasSignalGroupid()) {
+        if (getSignalGroupid()
+            != other.getSignalGroupid()) return false;
+      }
+      if (hasTlpSignalgroupnbr() != other.hasTlpSignalgroupnbr()) return false;
+      if (hasTlpSignalgroupnbr()) {
+        if (getTlpSignalgroupnbr()
+            != other.getTlpSignalgroupnbr()) return false;
+      }
+      if (hasTlpLineConfigid() != other.hasTlpLineConfigid()) return false;
+      if (hasTlpLineConfigid()) {
+        if (getTlpLineConfigid()
+            != other.getTlpLineConfigid()) return false;
+      }
+      if (hasTlpPointConfigid() != other.hasTlpPointConfigid()) return false;
+      if (hasTlpPointConfigid()) {
+        if (getTlpPointConfigid()
+            != other.getTlpPointConfigid()) return false;
+      }
+      if (hasTlpFrequency() != other.hasTlpFrequency()) return false;
+      if (hasTlpFrequency()) {
+        if (getTlpFrequency()
+            != other.getTlpFrequency()) return false;
+      }
+      if (hasTlpProtocol() != other.hasTlpProtocol()) return false;
+      if (hasTlpProtocol()) {
+        if (!getTlpProtocol()
+            .equals(other.getTlpProtocol())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5874,6 +7329,74 @@ public final class Hfp {
       if (hasOccu()) {
         hash = (37 * hash) + OCCU_FIELD_NUMBER;
         hash = (53 * hash) + getOccu();
+      }
+      if (hasSeq()) {
+        hash = (37 * hash) + SEQ_FIELD_NUMBER;
+        hash = (53 * hash) + getSeq();
+      }
+      if (hasTtarr()) {
+        hash = (37 * hash) + TTARR_FIELD_NUMBER;
+        hash = (53 * hash) + getTtarr().hashCode();
+      }
+      if (hasTtdep()) {
+        hash = (37 * hash) + TTDEP_FIELD_NUMBER;
+        hash = (53 * hash) + getTtdep().hashCode();
+      }
+      if (hasDrType()) {
+        hash = (37 * hash) + DR_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getDrType();
+      }
+      if (hasTlpRequestid()) {
+        hash = (37 * hash) + TLP_REQUESTID_FIELD_NUMBER;
+        hash = (53 * hash) + getTlpRequestid();
+      }
+      if (hasTlpRequesttype()) {
+        hash = (37 * hash) + TLP_REQUESTTYPE_FIELD_NUMBER;
+        hash = (53 * hash) + tlpRequesttype_;
+      }
+      if (hasTlpPrioritylevel()) {
+        hash = (37 * hash) + TLP_PRIORITYLEVEL_FIELD_NUMBER;
+        hash = (53 * hash) + tlpPrioritylevel_;
+      }
+      if (hasTlpReason()) {
+        hash = (37 * hash) + TLP_REASON_FIELD_NUMBER;
+        hash = (53 * hash) + tlpReason_;
+      }
+      if (hasTlpAttSeq()) {
+        hash = (37 * hash) + TLP_ATT_SEQ_FIELD_NUMBER;
+        hash = (53 * hash) + getTlpAttSeq();
+      }
+      if (hasTlpDecision()) {
+        hash = (37 * hash) + TLP_DECISION_FIELD_NUMBER;
+        hash = (53 * hash) + tlpDecision_;
+      }
+      if (hasSid()) {
+        hash = (37 * hash) + SID_FIELD_NUMBER;
+        hash = (53 * hash) + getSid();
+      }
+      if (hasSignalGroupid()) {
+        hash = (37 * hash) + SIGNAL_GROUPID_FIELD_NUMBER;
+        hash = (53 * hash) + getSignalGroupid();
+      }
+      if (hasTlpSignalgroupnbr()) {
+        hash = (37 * hash) + TLP_SIGNALGROUPNBR_FIELD_NUMBER;
+        hash = (53 * hash) + getTlpSignalgroupnbr();
+      }
+      if (hasTlpLineConfigid()) {
+        hash = (37 * hash) + TLP_LINE_CONFIGID_FIELD_NUMBER;
+        hash = (53 * hash) + getTlpLineConfigid();
+      }
+      if (hasTlpPointConfigid()) {
+        hash = (37 * hash) + TLP_POINT_CONFIGID_FIELD_NUMBER;
+        hash = (53 * hash) + getTlpPointConfigid();
+      }
+      if (hasTlpFrequency()) {
+        hash = (37 * hash) + TLP_FREQUENCY_FIELD_NUMBER;
+        hash = (53 * hash) + getTlpFrequency();
+      }
+      if (hasTlpProtocol()) {
+        hash = (37 * hash) + TLP_PROTOCOL_FIELD_NUMBER;
+        hash = (53 * hash) + getTlpProtocol().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -6054,6 +7577,40 @@ public final class Hfp {
         bitField0_ = (bitField0_ & ~0x00200000);
         occu_ = 0;
         bitField0_ = (bitField0_ & ~0x00400000);
+        seq_ = 0;
+        bitField0_ = (bitField0_ & ~0x00800000);
+        ttarr_ = "";
+        bitField0_ = (bitField0_ & ~0x01000000);
+        ttdep_ = "";
+        bitField0_ = (bitField0_ & ~0x02000000);
+        drType_ = 0;
+        bitField0_ = (bitField0_ & ~0x04000000);
+        tlpRequestid_ = 0;
+        bitField0_ = (bitField0_ & ~0x08000000);
+        tlpRequesttype_ = 0;
+        bitField0_ = (bitField0_ & ~0x10000000);
+        tlpPrioritylevel_ = 0;
+        bitField0_ = (bitField0_ & ~0x20000000);
+        tlpReason_ = 0;
+        bitField0_ = (bitField0_ & ~0x40000000);
+        tlpAttSeq_ = 0;
+        bitField0_ = (bitField0_ & ~0x80000000);
+        tlpDecision_ = 0;
+        bitField1_ = (bitField1_ & ~0x00000001);
+        sid_ = 0;
+        bitField1_ = (bitField1_ & ~0x00000002);
+        signalGroupid_ = 0;
+        bitField1_ = (bitField1_ & ~0x00000004);
+        tlpSignalgroupnbr_ = 0;
+        bitField1_ = (bitField1_ & ~0x00000008);
+        tlpLineConfigid_ = 0;
+        bitField1_ = (bitField1_ & ~0x00000010);
+        tlpPointConfigid_ = 0;
+        bitField1_ = (bitField1_ & ~0x00000020);
+        tlpFrequency_ = 0;
+        bitField1_ = (bitField1_ & ~0x00000040);
+        tlpProtocol_ = "";
+        bitField1_ = (bitField1_ & ~0x00000080);
         return this;
       }
 
@@ -6081,7 +7638,9 @@ public final class Hfp {
       public fi.hsl.common.hfp.proto.Hfp.Payload buildPartial() {
         fi.hsl.common.hfp.proto.Hfp.Payload result = new fi.hsl.common.hfp.proto.Hfp.Payload(this);
         int from_bitField0_ = bitField0_;
+        int from_bitField1_ = bitField1_;
         int to_bitField0_ = 0;
+        int to_bitField1_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
@@ -6174,7 +7733,76 @@ public final class Hfp {
           result.occu_ = occu_;
           to_bitField0_ |= 0x00400000;
         }
+        if (((from_bitField0_ & 0x00800000) != 0)) {
+          result.seq_ = seq_;
+          to_bitField0_ |= 0x00800000;
+        }
+        if (((from_bitField0_ & 0x01000000) != 0)) {
+          to_bitField0_ |= 0x01000000;
+        }
+        result.ttarr_ = ttarr_;
+        if (((from_bitField0_ & 0x02000000) != 0)) {
+          to_bitField0_ |= 0x02000000;
+        }
+        result.ttdep_ = ttdep_;
+        if (((from_bitField0_ & 0x04000000) != 0)) {
+          result.drType_ = drType_;
+          to_bitField0_ |= 0x04000000;
+        }
+        if (((from_bitField0_ & 0x08000000) != 0)) {
+          result.tlpRequestid_ = tlpRequestid_;
+          to_bitField0_ |= 0x08000000;
+        }
+        if (((from_bitField0_ & 0x10000000) != 0)) {
+          to_bitField0_ |= 0x10000000;
+        }
+        result.tlpRequesttype_ = tlpRequesttype_;
+        if (((from_bitField0_ & 0x20000000) != 0)) {
+          to_bitField0_ |= 0x20000000;
+        }
+        result.tlpPrioritylevel_ = tlpPrioritylevel_;
+        if (((from_bitField0_ & 0x40000000) != 0)) {
+          to_bitField0_ |= 0x40000000;
+        }
+        result.tlpReason_ = tlpReason_;
+        if (((from_bitField0_ & 0x80000000) != 0)) {
+          result.tlpAttSeq_ = tlpAttSeq_;
+          to_bitField0_ |= 0x80000000;
+        }
+        if (((from_bitField1_ & 0x00000001) != 0)) {
+          to_bitField1_ |= 0x00000001;
+        }
+        result.tlpDecision_ = tlpDecision_;
+        if (((from_bitField1_ & 0x00000002) != 0)) {
+          result.sid_ = sid_;
+          to_bitField1_ |= 0x00000002;
+        }
+        if (((from_bitField1_ & 0x00000004) != 0)) {
+          result.signalGroupid_ = signalGroupid_;
+          to_bitField1_ |= 0x00000004;
+        }
+        if (((from_bitField1_ & 0x00000008) != 0)) {
+          result.tlpSignalgroupnbr_ = tlpSignalgroupnbr_;
+          to_bitField1_ |= 0x00000008;
+        }
+        if (((from_bitField1_ & 0x00000010) != 0)) {
+          result.tlpLineConfigid_ = tlpLineConfigid_;
+          to_bitField1_ |= 0x00000010;
+        }
+        if (((from_bitField1_ & 0x00000020) != 0)) {
+          result.tlpPointConfigid_ = tlpPointConfigid_;
+          to_bitField1_ |= 0x00000020;
+        }
+        if (((from_bitField1_ & 0x00000040) != 0)) {
+          result.tlpFrequency_ = tlpFrequency_;
+          to_bitField1_ |= 0x00000040;
+        }
+        if (((from_bitField1_ & 0x00000080) != 0)) {
+          to_bitField1_ |= 0x00000080;
+        }
+        result.tlpProtocol_ = tlpProtocol_;
         result.bitField0_ = to_bitField0_;
+        result.bitField1_ = to_bitField1_;
         onBuilt();
         return result;
       }
@@ -6304,6 +7932,63 @@ public final class Hfp {
         if (other.hasOccu()) {
           setOccu(other.getOccu());
         }
+        if (other.hasSeq()) {
+          setSeq(other.getSeq());
+        }
+        if (other.hasTtarr()) {
+          bitField0_ |= 0x01000000;
+          ttarr_ = other.ttarr_;
+          onChanged();
+        }
+        if (other.hasTtdep()) {
+          bitField0_ |= 0x02000000;
+          ttdep_ = other.ttdep_;
+          onChanged();
+        }
+        if (other.hasDrType()) {
+          setDrType(other.getDrType());
+        }
+        if (other.hasTlpRequestid()) {
+          setTlpRequestid(other.getTlpRequestid());
+        }
+        if (other.hasTlpRequesttype()) {
+          setTlpRequesttype(other.getTlpRequesttype());
+        }
+        if (other.hasTlpPrioritylevel()) {
+          setTlpPrioritylevel(other.getTlpPrioritylevel());
+        }
+        if (other.hasTlpReason()) {
+          setTlpReason(other.getTlpReason());
+        }
+        if (other.hasTlpAttSeq()) {
+          setTlpAttSeq(other.getTlpAttSeq());
+        }
+        if (other.hasTlpDecision()) {
+          setTlpDecision(other.getTlpDecision());
+        }
+        if (other.hasSid()) {
+          setSid(other.getSid());
+        }
+        if (other.hasSignalGroupid()) {
+          setSignalGroupid(other.getSignalGroupid());
+        }
+        if (other.hasTlpSignalgroupnbr()) {
+          setTlpSignalgroupnbr(other.getTlpSignalgroupnbr());
+        }
+        if (other.hasTlpLineConfigid()) {
+          setTlpLineConfigid(other.getTlpLineConfigid());
+        }
+        if (other.hasTlpPointConfigid()) {
+          setTlpPointConfigid(other.getTlpPointConfigid());
+        }
+        if (other.hasTlpFrequency()) {
+          setTlpFrequency(other.getTlpFrequency());
+        }
+        if (other.hasTlpProtocol()) {
+          bitField1_ |= 0x00000080;
+          tlpProtocol_ = other.tlpProtocol_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -6342,6 +8027,7 @@ public final class Hfp {
         return this;
       }
       private int bitField0_;
+      private int bitField1_;
 
       private int schemaVersion_ = 1;
       /**
@@ -7419,6 +9105,918 @@ public final class Hfp {
         onChanged();
         return this;
       }
+
+      private int seq_ ;
+      /**
+       * <code>optional int32 seq = 24;</code>
+       */
+      public boolean hasSeq() {
+        return ((bitField0_ & 0x00800000) != 0);
+      }
+      /**
+       * <code>optional int32 seq = 24;</code>
+       */
+      public int getSeq() {
+        return seq_;
+      }
+      /**
+       * <code>optional int32 seq = 24;</code>
+       */
+      public Builder setSeq(int value) {
+        bitField0_ |= 0x00800000;
+        seq_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 seq = 24;</code>
+       */
+      public Builder clearSeq() {
+        bitField0_ = (bitField0_ & ~0x00800000);
+        seq_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object ttarr_ = "";
+      /**
+       * <code>optional string ttarr = 25;</code>
+       */
+      public boolean hasTtarr() {
+        return ((bitField0_ & 0x01000000) != 0);
+      }
+      /**
+       * <code>optional string ttarr = 25;</code>
+       */
+      public java.lang.String getTtarr() {
+        java.lang.Object ref = ttarr_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            ttarr_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string ttarr = 25;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTtarrBytes() {
+        java.lang.Object ref = ttarr_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ttarr_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string ttarr = 25;</code>
+       */
+      public Builder setTtarr(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x01000000;
+        ttarr_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string ttarr = 25;</code>
+       */
+      public Builder clearTtarr() {
+        bitField0_ = (bitField0_ & ~0x01000000);
+        ttarr_ = getDefaultInstance().getTtarr();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string ttarr = 25;</code>
+       */
+      public Builder setTtarrBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x01000000;
+        ttarr_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object ttdep_ = "";
+      /**
+       * <code>optional string ttdep = 26;</code>
+       */
+      public boolean hasTtdep() {
+        return ((bitField0_ & 0x02000000) != 0);
+      }
+      /**
+       * <code>optional string ttdep = 26;</code>
+       */
+      public java.lang.String getTtdep() {
+        java.lang.Object ref = ttdep_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            ttdep_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string ttdep = 26;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTtdepBytes() {
+        java.lang.Object ref = ttdep_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ttdep_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string ttdep = 26;</code>
+       */
+      public Builder setTtdep(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x02000000;
+        ttdep_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string ttdep = 26;</code>
+       */
+      public Builder clearTtdep() {
+        bitField0_ = (bitField0_ & ~0x02000000);
+        ttdep_ = getDefaultInstance().getTtdep();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string ttdep = 26;</code>
+       */
+      public Builder setTtdepBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x02000000;
+        ttdep_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int drType_ ;
+      /**
+       * <code>optional int32 dr_type = 27;</code>
+       */
+      public boolean hasDrType() {
+        return ((bitField0_ & 0x04000000) != 0);
+      }
+      /**
+       * <code>optional int32 dr_type = 27;</code>
+       */
+      public int getDrType() {
+        return drType_;
+      }
+      /**
+       * <code>optional int32 dr_type = 27;</code>
+       */
+      public Builder setDrType(int value) {
+        bitField0_ |= 0x04000000;
+        drType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 dr_type = 27;</code>
+       */
+      public Builder clearDrType() {
+        bitField0_ = (bitField0_ & ~0x04000000);
+        drType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int tlpRequestid_ ;
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_requestid = 28;</code>
+       */
+      public boolean hasTlpRequestid() {
+        return ((bitField0_ & 0x08000000) != 0);
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_requestid = 28;</code>
+       */
+      public int getTlpRequestid() {
+        return tlpRequestid_;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_requestid = 28;</code>
+       */
+      public Builder setTlpRequestid(int value) {
+        bitField0_ |= 0x08000000;
+        tlpRequestid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_requestid = 28;</code>
+       */
+      public Builder clearTlpRequestid() {
+        bitField0_ = (bitField0_ & ~0x08000000);
+        tlpRequestid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int tlpRequesttype_ = 0;
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+       */
+      public boolean hasTlpRequesttype() {
+        return ((bitField0_ & 0x10000000) != 0);
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+       */
+      public fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType getTlpRequesttype() {
+        @SuppressWarnings("deprecation")
+        fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType.valueOf(tlpRequesttype_);
+        return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType.NORMAL : result;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+       */
+      public Builder setTlpRequesttype(fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x10000000;
+        tlpRequesttype_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+       */
+      public Builder clearTlpRequesttype() {
+        bitField0_ = (bitField0_ & ~0x10000000);
+        tlpRequesttype_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int tlpPrioritylevel_ = 0;
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+       */
+      public boolean hasTlpPrioritylevel() {
+        return ((bitField0_ & 0x20000000) != 0);
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+       */
+      public fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel getTlpPrioritylevel() {
+        @SuppressWarnings("deprecation")
+        fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel.valueOf(tlpPrioritylevel_);
+        return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel.normal : result;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+       */
+      public Builder setTlpPrioritylevel(fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x20000000;
+        tlpPrioritylevel_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+       */
+      public Builder clearTlpPrioritylevel() {
+        bitField0_ = (bitField0_ & ~0x20000000);
+        tlpPrioritylevel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int tlpReason_ = 0;
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+       */
+      public boolean hasTlpReason() {
+        return ((bitField0_ & 0x40000000) != 0);
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+       */
+      public fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason getTlpReason() {
+        @SuppressWarnings("deprecation")
+        fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason.valueOf(tlpReason_);
+        return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason.GLOBAL : result;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+       */
+      public Builder setTlpReason(fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x40000000;
+        tlpReason_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+       */
+      public Builder clearTlpReason() {
+        bitField0_ = (bitField0_ & ~0x40000000);
+        tlpReason_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int tlpAttSeq_ ;
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_att_seq = 32;</code>
+       */
+      public boolean hasTlpAttSeq() {
+        return ((bitField0_ & 0x80000000) != 0);
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_att_seq = 32;</code>
+       */
+      public int getTlpAttSeq() {
+        return tlpAttSeq_;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_att_seq = 32;</code>
+       */
+      public Builder setTlpAttSeq(int value) {
+        bitField0_ |= 0x80000000;
+        tlpAttSeq_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_att_seq = 32;</code>
+       */
+      public Builder clearTlpAttSeq() {
+        bitField0_ = (bitField0_ & ~0x80000000);
+        tlpAttSeq_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int tlpDecision_ = 0;
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+       */
+      public boolean hasTlpDecision() {
+        return ((bitField1_ & 0x00000001) != 0);
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+       */
+      public fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision getTlpDecision() {
+        @SuppressWarnings("deprecation")
+        fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision.valueOf(tlpDecision_);
+        return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision.ACK : result;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+       */
+      public Builder setTlpDecision(fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField1_ |= 0x00000001;
+        tlpDecision_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+       */
+      public Builder clearTlpDecision() {
+        bitField1_ = (bitField1_ & ~0x00000001);
+        tlpDecision_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int sid_ ;
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 sid = 34;</code>
+       */
+      public boolean hasSid() {
+        return ((bitField1_ & 0x00000002) != 0);
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 sid = 34;</code>
+       */
+      public int getSid() {
+        return sid_;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 sid = 34;</code>
+       */
+      public Builder setSid(int value) {
+        bitField1_ |= 0x00000002;
+        sid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 sid = 34;</code>
+       */
+      public Builder clearSid() {
+        bitField1_ = (bitField1_ & ~0x00000002);
+        sid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int signalGroupid_ ;
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 signal_groupid = 35;</code>
+       */
+      public boolean hasSignalGroupid() {
+        return ((bitField1_ & 0x00000004) != 0);
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 signal_groupid = 35;</code>
+       */
+      public int getSignalGroupid() {
+        return signalGroupid_;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 signal_groupid = 35;</code>
+       */
+      public Builder setSignalGroupid(int value) {
+        bitField1_ |= 0x00000004;
+        signalGroupid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 signal_groupid = 35;</code>
+       */
+      public Builder clearSignalGroupid() {
+        bitField1_ = (bitField1_ & ~0x00000004);
+        signalGroupid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int tlpSignalgroupnbr_ ;
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+       */
+      public boolean hasTlpSignalgroupnbr() {
+        return ((bitField1_ & 0x00000008) != 0);
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+       */
+      public int getTlpSignalgroupnbr() {
+        return tlpSignalgroupnbr_;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+       */
+      public Builder setTlpSignalgroupnbr(int value) {
+        bitField1_ |= 0x00000008;
+        tlpSignalgroupnbr_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+       */
+      public Builder clearTlpSignalgroupnbr() {
+        bitField1_ = (bitField1_ & ~0x00000008);
+        tlpSignalgroupnbr_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int tlpLineConfigid_ ;
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_line_configid = 38;</code>
+       */
+      public boolean hasTlpLineConfigid() {
+        return ((bitField1_ & 0x00000010) != 0);
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_line_configid = 38;</code>
+       */
+      public int getTlpLineConfigid() {
+        return tlpLineConfigid_;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_line_configid = 38;</code>
+       */
+      public Builder setTlpLineConfigid(int value) {
+        bitField1_ |= 0x00000010;
+        tlpLineConfigid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_line_configid = 38;</code>
+       */
+      public Builder clearTlpLineConfigid() {
+        bitField1_ = (bitField1_ & ~0x00000010);
+        tlpLineConfigid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int tlpPointConfigid_ ;
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_point_configid = 39;</code>
+       */
+      public boolean hasTlpPointConfigid() {
+        return ((bitField1_ & 0x00000020) != 0);
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_point_configid = 39;</code>
+       */
+      public int getTlpPointConfigid() {
+        return tlpPointConfigid_;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_point_configid = 39;</code>
+       */
+      public Builder setTlpPointConfigid(int value) {
+        bitField1_ |= 0x00000020;
+        tlpPointConfigid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_point_configid = 39;</code>
+       */
+      public Builder clearTlpPointConfigid() {
+        bitField1_ = (bitField1_ & ~0x00000020);
+        tlpPointConfigid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int tlpFrequency_ ;
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_frequency = 40;</code>
+       */
+      public boolean hasTlpFrequency() {
+        return ((bitField1_ & 0x00000040) != 0);
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_frequency = 40;</code>
+       */
+      public int getTlpFrequency() {
+        return tlpFrequency_;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_frequency = 40;</code>
+       */
+      public Builder setTlpFrequency(int value) {
+        bitField1_ |= 0x00000040;
+        tlpFrequency_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional int32 tlp_frequency = 40;</code>
+       */
+      public Builder clearTlpFrequency() {
+        bitField1_ = (bitField1_ & ~0x00000040);
+        tlpFrequency_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object tlpProtocol_ = "";
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional string tlp_protocol = 41;</code>
+       */
+      public boolean hasTlpProtocol() {
+        return ((bitField1_ & 0x00000080) != 0);
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional string tlp_protocol = 41;</code>
+       */
+      public java.lang.String getTlpProtocol() {
+        java.lang.Object ref = tlpProtocol_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            tlpProtocol_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional string tlp_protocol = 41;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTlpProtocolBytes() {
+        java.lang.Object ref = tlpProtocol_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          tlpProtocol_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional string tlp_protocol = 41;</code>
+       */
+      public Builder setTlpProtocol(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00000080;
+        tlpProtocol_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional string tlp_protocol = 41;</code>
+       */
+      public Builder clearTlpProtocol() {
+        bitField1_ = (bitField1_ & ~0x00000080);
+        tlpProtocol_ = getDefaultInstance().getTlpProtocol();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * tlr
+       * </pre>
+       *
+       * <code>optional string tlp_protocol = 41;</code>
+       */
+      public Builder setTlpProtocolBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00000080;
+        tlpProtocol_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7520,7 +10118,7 @@ public final class Hfp {
       "TLA\020\013\022\006\n\002DA\020\014\022\010\n\004DOUT\020\r\022\006\n\002BA\020\016\022\010\n\004BOUT\020" +
       "\017\022\007\n\003VJA\020\020\022\t\n\005VJOUT\020\021\"C\n\rTransportMode\022\007" +
       "\n\003bus\020\000\022\t\n\005train\020\001\022\010\n\004tram\020\002\022\t\n\005metro\020\003\022" +
-      "\t\n\005ferry\020\004\"\256\003\n\007Payload\022\030\n\rSchemaVersion\030" +
+      "\t\n\005ferry\020\004\"\357\010\n\007Payload\022\030\n\rSchemaVersion\030" +
       "\001 \002(\005:\0011\022\014\n\004desi\030\002 \001(\t\022\013\n\003dir\030\003 \001(\t\022\014\n\004o" +
       "per\030\004 \001(\005\022\013\n\003veh\030\005 \001(\005\022\013\n\003tst\030\006 \002(\t\022\013\n\003t" +
       "si\030\007 \002(\003\022\013\n\003spd\030\010 \001(\001\022\013\n\003hdg\030\t \001(\005\022\013\n\003la" +
@@ -7529,9 +10127,27 @@ public final class Hfp {
       "y\030\020 \001(\t\022\013\n\003jrn\030\021 \001(\005\022\014\n\004line\030\022 \001(\005\022\r\n\005st" +
       "art\030\023 \001(\t\0221\n\003loc\030\024 \001(\0162$.proto.Payload.L" +
       "ocationQualityMethod\022\014\n\004stop\030\025 \001(\005\022\r\n\005ro" +
-      "ute\030\026 \001(\t\022\014\n\004occu\030\027 \001(\005\":\n\025LocationQuali" +
-      "tyMethod\022\007\n\003GPS\020\000\022\007\n\003ODO\020\001\022\007\n\003MAN\020\002\022\006\n\002N" +
-      "A\020\003B\036\n\027fi.hsl.common.hfp.protoB\003Hfp"
+      "ute\030\026 \001(\t\022\014\n\004occu\030\027 \001(\005\022\013\n\003seq\030\030 \001(\005\022\r\n\005" +
+      "ttarr\030\031 \001(\t\022\r\n\005ttdep\030\032 \001(\t\022\017\n\007dr_type\030\033 " +
+      "\001(\005\022\025\n\rtlp_requestid\030\034 \001(\005\0226\n\017tlp_reques" +
+      "ttype\030\035 \001(\0162\035.proto.Payload.TlpRequestTy" +
+      "pe\022:\n\021tlp_prioritylevel\030\036 \001(\0162\037.proto.Pa" +
+      "yload.TlpPriorityLevel\022,\n\ntlp_reason\030\037 \001" +
+      "(\0162\030.proto.Payload.TlpReason\022\023\n\013tlp_att_" +
+      "seq\030  \001(\005\0220\n\014tlp_decision\030! \001(\0162\032.proto." +
+      "Payload.TlpDecision\022\013\n\003sid\030\" \001(\005\022\026\n\016sign" +
+      "al_groupid\030# \001(\005\022\032\n\022tlp_signalgroupnbr\030$" +
+      " \001(\005\022\031\n\021tlp_line_configid\030& \001(\005\022\032\n\022tlp_p" +
+      "oint_configid\030\' \001(\005\022\025\n\rtlp_frequency\030( \001" +
+      "(\005\022\024\n\014tlp_protocol\030) \001(\t\":\n\025LocationQual" +
+      "ityMethod\022\007\n\003GPS\020\000\022\007\n\003ODO\020\001\022\007\n\003MAN\020\002\022\006\n\002" +
+      "NA\020\003\"H\n\016TlpRequestType\022\n\n\006NORMAL\020\000\022\016\n\nDO" +
+      "OR_CLOSE\020\001\022\r\n\tDOOR_OPEN\020\002\022\013\n\007ADVANCE\020\003\"7" +
+      "\n\020TlpPriorityLevel\022\n\n\006normal\020\000\022\010\n\004high\020\001" +
+      "\022\r\n\tnorequest\020\002\":\n\tTlpReason\022\n\n\006GLOBAL\020\000" +
+      "\022\t\n\005AHEAD\020\001\022\010\n\004LINE\020\002\022\014\n\010PRIOEXEP\020\003\"\037\n\013T" +
+      "lpDecision\022\007\n\003ACK\020\000\022\007\n\003NAK\020\001B\036\n\027fi.hsl.c" +
+      "ommon.hfp.protoB\003Hfp"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7562,7 +10178,7 @@ public final class Hfp {
     internal_static_proto_Payload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Payload_descriptor,
-        new java.lang.String[] { "SchemaVersion", "Desi", "Dir", "Oper", "Veh", "Tst", "Tsi", "Spd", "Hdg", "Lat", "Long", "Acc", "Dl", "Odo", "Drst", "Oday", "Jrn", "Line", "Start", "Loc", "Stop", "Route", "Occu", });
+        new java.lang.String[] { "SchemaVersion", "Desi", "Dir", "Oper", "Veh", "Tst", "Tsi", "Spd", "Hdg", "Lat", "Long", "Acc", "Dl", "Odo", "Drst", "Oday", "Jrn", "Line", "Start", "Loc", "Stop", "Route", "Occu", "Seq", "Ttarr", "Ttdep", "DrType", "TlpRequestid", "TlpRequesttype", "TlpPrioritylevel", "TlpReason", "TlpAttSeq", "TlpDecision", "Sid", "SignalGroupid", "TlpSignalgroupnbr", "TlpLineConfigid", "TlpPointConfigid", "TlpFrequency", "TlpProtocol", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
