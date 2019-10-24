@@ -67,6 +67,51 @@ public class HfpJson {
         public Integer occu; // v2
 
         public Integer seq;
+
+        public String ttarr;
+
+        public String ttdep;
+
+        @JsonAttribute(name = "dr-type") //use alternative name in JSON
+        public Integer dr_type;
+
+        @JsonAttribute(name = "tlp-requestid") //use alternative name in JSON
+        public Integer tlp_requestid;
+
+        @JsonAttribute(name = "tlp-requesttype") //use alternative name in JSON
+        public String tlp_requesttype;
+
+        @JsonAttribute(name = "tlp-prioritylevel") //use alternative name in JSON
+        public String tlp_prioritylevel;
+
+        @JsonAttribute(name = "tlp-reason") //use alternative name in JSON
+        public String tlp_reason;
+
+        @JsonAttribute(name = "tlp-att-seq") //use alternative name in JSON
+        public Integer tlp_att_seq;
+
+        @JsonAttribute(name = "tlp-decision") //use alternative name in JSON
+        public String tlp_decision;
+
+        public Integer sid;
+
+        @JsonAttribute(name = "signal-groupid") //use alternative name in JSON
+        public Integer signal_groupid;
+
+        @JsonAttribute(name = "tlp-signalgroupnbr") //use alternative name in JSON
+        public Integer tlp_signalgroupnbr;
+
+        @JsonAttribute(name = "tlp-line-configid") //use alternative name in JSON
+        public Integer tlp_line_configid;
+
+        @JsonAttribute(name = "tlp-point-configid") //use alternative name in JSON
+        public Integer tlp_point_configid;
+
+        @JsonAttribute(name = "tlp-frequency") //use alternative name in JSON
+        public Integer tlp_frequency;
+
+        @JsonAttribute(name = "tlp-protocol") //use alternative name in JSON
+        public String tlp_protocol;
     }
 
     public static abstract class Odo {

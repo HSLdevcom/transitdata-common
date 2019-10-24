@@ -79,12 +79,12 @@ public class HfpParser {
         Hfp.Payload.Builder builder = Hfp.Payload.newBuilder();
         // Required attributes
         builder.setSchemaVersion(builder.getSchemaVersion());
-        builder.setTst(payload.tst); // TODO add validation for offsetdatetime format
+        HfpValidator.validateString(payload.tst).ifPresent(builder::setTst); // TODO add validation for offsetdatetime format
         builder.setTsi(payload.tsi);
 
         // Optional attributes
-        validateString(payload.desi).ifPresent(builder::setDesi);
-        validateString(payload.dir).ifPresent(builder::setDir);
+        HfpValidator.validateString(payload.desi).ifPresent(builder::setDesi);
+        HfpValidator.validateString(payload.dir).ifPresent(builder::setDir);
         if (payload.oper != null)
             builder.setOper(payload.oper);
         if (payload.veh != null)
@@ -105,30 +105,47 @@ public class HfpParser {
             builder.setOdo(payload.odo);
         if (payload.drst != null)
             builder.setDrst(payload.drst);
-        validateString(payload.oday).ifPresent(builder::setOday); // TODO add validation for datetime format
+        HfpValidator.validateString(payload.oday).ifPresent(builder::setOday); // TODO add validation for datetime format
         if (payload.jrn != null)
             builder.setJrn(payload.jrn);
         if (payload.line != null)
             builder.setLine(payload.line);
-        if (payload.start != null)
-            builder.setStart(payload.start);
-        validateString(payload.start).ifPresent(builder::setStart); // TODO add validation for localtime format
+        HfpValidator.validateString(payload.start).ifPresent(builder::setStart); // TODO add validation for localtime format
 
-        if (payload.loc != null && !payload.loc.isEmpty()) {
+        if (HfpValidator.validateLocationQualityMethod(payload.loc).isPresent()) {
             final String locStr = payload.loc.equals("N/A") ? "NA" : payload.loc;
             builder.setLoc(Hfp.Payload.LocationQualityMethod.valueOf(locStr));
         }
         if (payload.stop != null)
             builder.setStop(payload.stop);
-        if (payload.route != null)
-            builder.setRoute(payload.route);
-        validateString(payload.route).ifPresent(builder::setRoute);
+        HfpValidator.validateString(payload.route).ifPresent(builder::setRoute);
         if (payload.occu != null)
             builder.setOccu(payload.occu);
-        if (payload.seq != null) {
+        if (payload.seq != null)
             builder.setSeq(payload.seq);
-        }
-
+        HfpValidator.validateString(payload.ttarr).ifPresent(builder::setTtarr);
+        HfpValidator.validateString(payload.ttdep).ifPresent(builder::setTtdep);
+        if (payload.dr_type != null)
+            builder.setDrType(payload.dr_type);
+        if (payload.tlp_requestid != null)
+            builder.setTlpRequestid(payload.tlp_requestid);
+        HfpValidator.validateTlpRequestType(payload.tlp_requesttype).ifPresent(builder::setTlpRequesttype);
+        HfpValidator.validateTlpPriorityLevel(payload.tlp_prioritylevel).ifPresent(builder::setTlpPrioritylevel);
+        HfpValidator.validateTlpReason(payload.tlp_reason).ifPresent(builder::setTlpReason);
+        if (payload.tlp_att_seq != null)
+            builder.setTlpAttSeq(payload.tlp_att_seq);
+        HfpValidator.validateTlpDecision(payload.tlp_decision).ifPresent(builder::setTlpDecision);
+        if (payload.sid != null)
+            builder.setSid(payload.sid);
+        if (payload.signal_groupid != null)
+            builder.setSignalGroupid(payload.signal_groupid);
+        if (payload.tlp_signalgroupnbr != null)
+            builder.setTlpSignalgroupnbr(payload.tlp_signalgroupnbr);
+        if (payload.tlp_line_configid != null)
+            builder.setTlpLineConfigid(payload.tlp_line_configid);
+        if (payload.tlp_frequency != null)
+            builder.setTlpFrequency(payload.tlp_frequency);
+        HfpValidator.validateString(payload.tlp_protocol).ifPresent(builder::setTlpProtocol);
         return builder.build();
     }
 
@@ -197,11 +214,11 @@ public class HfpParser {
         builder.setVehicleNumber(Integer.parseInt(parts[index++]));
         builder.setUniqueVehicleId(createUniqueVehicleId(builder.getOperatorId(), builder.getVehicleNumber()));
         if (index + 6 <= parts.length) {
-            validateString(parts[index++]).ifPresent(builder::setRouteId);
+            HfpValidator.validateString(parts[index++]).ifPresent(builder::setRouteId);
             safeParseInt(parts[index++]).ifPresent(builder::setDirectionId);
-            validateString(parts[index++]).ifPresent(builder::setHeadsign);
-            validateString(parts[index++]).ifPresent(builder::setStartTime);
-            validateString(parts[index++]).ifPresent(builder::setNextStop);
+            HfpValidator.validateString(parts[index++]).ifPresent(builder::setHeadsign);
+            HfpValidator.validateString(parts[index++]).ifPresent(builder::setStartTime);
+            HfpValidator.validateString(parts[index++]).ifPresent(builder::setNextStop);
             safeParseInt(parts[index++]).ifPresent(builder::setGeohashLevel);
         }
         else {
@@ -285,13 +302,6 @@ public class HfpParser {
             }
         }
         return -1;
-    }
-
-    public static Optional<String> validateString(String str) {
-        if (str == null || str.isEmpty())
-            return Optional.empty();
-        else
-            return Optional.of(str);
     }
 
     public static Optional<Integer> safeParseInt(String n) {
