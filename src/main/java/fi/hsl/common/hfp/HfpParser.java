@@ -353,6 +353,19 @@ public class HfpParser {
         }
     }
 
+    public static Optional<Time> safeParseTime(String time) {
+        if (time == null) {
+            return Optional.empty();
+        } else {
+            try {
+                return Optional.of(Time.valueOf(time + ":00"));
+            } catch (Exception var2) {
+                log.error("Failed to convert {} to java.sql.Time", time);
+                return Optional.empty();
+            }
+        }
+    }
+
     public static Optional<Timestamp> safeParseTimestamp(String dt) {
         if (dt == null)
             return Optional.empty();
