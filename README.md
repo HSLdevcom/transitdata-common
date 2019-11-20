@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/HSLdevcom/transitdata-common.svg?branch=master)](https://travis-ci.org/HSLdevcom/transitdata-common)
+[![Build Status](https://travis-ci.org/HSLdevcom/transitdata-common.svg?branch=master)](https://travis-ci.org/HSLdevcom/transitdata-common) [![Download](https://api.bintray.com/packages/hsldevcom/maven/transitdata-common/images/download.svg) ](https://bintray.com/hsldevcom/maven/transitdata-common/_latestVersion)
 
 # HSL Transitdata Common-library
 
@@ -44,7 +44,7 @@ in this repository but you can also generate the files yourself:
  `cd protos && ./generate-protos.sh`   
 
 
-## Configuration
+## Configuration[ ![Download](https://api.bintray.com/packages/hsldevcom/maven/transitdata-common/images/download.svg) ](https://bintray.com/hsldevcom/maven/transitdata-common/_latestVersion)
 
 Library contains package [config](src/main/java/fi/hsl/common/config) which has tools to configure the application.
 By default the configuration file is read from resources inside the application jar-bundle from a file named `environment.conf`.
