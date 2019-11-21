@@ -12,6 +12,10 @@ public class RouteIdUtils {
     private static final String METRO_ROUTE_NAME_REGEX = "^31M([12])([BM])?$";
     private static final Pattern METRO_ROUTE_PATTERN = Pattern.compile(METRO_ROUTE_NAME_REGEX);
 
+    // Currently route IDs for ferries are 1019 and 1019.
+    private static final String FERRY_ROUTE_NAME_REGEX = "^1019E?";
+    private static final Pattern FERRY_ROUTE_PATTERN = Pattern.compile(FERRY_ROUTE_NAME_REGEX);
+
     private RouteIdUtils() {}
 
     /**
@@ -31,6 +35,16 @@ public class RouteIdUtils {
      */
     public static boolean isMetroRoute(String routeId) {
         Matcher matcher = METRO_ROUTE_PATTERN.matcher(routeId);
+        return matcher.find();
+    }
+
+    /**
+     * Checks if route ID is for ferry route
+     * @param routeId
+     * @return
+     */
+    public static boolean isFerryRoute(String routeId) {
+        Matcher matcher = FERRY_ROUTE_PATTERN.matcher(routeId);
         return matcher.find();
     }
 
