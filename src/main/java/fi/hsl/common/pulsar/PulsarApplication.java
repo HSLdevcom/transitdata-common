@@ -75,10 +75,14 @@ public class PulsarApplication implements AutoCloseable {
         }
 
         if (config.getBoolean("redis.enabled")) {
+            int connTimeOutSecs = 2;
+            if (config.hasPath("redis.connTimeOutSecs")) {
+                connTimeOutSecs = config.getInt("redis.connTimeOutSecs");
+            }
             jedis = createRedisClient(
                     config.getString("redis.host"),
                     config.getInt("redis.port"),
-                    config.getInt("redis.connTimeOutSecs"));
+                    connTimeOutSecs);
         }
 
         if (config.getBoolean("health.enabled")) {
