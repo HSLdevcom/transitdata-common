@@ -97,8 +97,32 @@ public class PulsarApplication implements AutoCloseable {
                 return status;
             };
 
+            final BooleanSupplier customRedisConnHealthCheck = () -> {
+                boolean connOk = false;
+                synchronized (jedis) {
+                    try {
+                        String maybePong = jedis.ping();
+                        if (maybePong.equals("PONG")) {
+                            connOk = true;
+                        } else {
+                            log.error("jedis.ping() returned: {}", maybePong);
+                        }
+                    } catch (Exception e) {
+                        log.error("Exception in custom health check for redis connection", e);
+                    }
+                    return connOk;
+                }
+            };
+
             healthServer = new HealthServer(port, endpoint);
             healthServer.addCheck(healthCheck);
+
+            if (config.hasPath("redis.customHealthCheckEnabled")) {
+                if (config.getBoolean("redis.customHealthCheckEnabled")) {
+                    log.info("Adding custom health check for Redis connection");
+                    healthServer.addCheck(customRedisConnHealthCheck);
+                }
+            }
         }
 
         return createContext(config, client, consumer, producer, jedis, admin, healthServer);
