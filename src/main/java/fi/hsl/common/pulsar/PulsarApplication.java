@@ -93,8 +93,15 @@ public class PulsarApplication implements AutoCloseable {
                 boolean status = true;
                 if (producer != null) status &= producer.isConnected();
                 if (consumer != null) status &= consumer.isConnected();
-                if (jedis != null) status &= jedis.isConnected();
                 return status;
+            };
+
+            healthServer = new HealthServer(port, endpoint);
+            healthServer.addCheck(healthCheck);
+
+            final BooleanSupplier jedisConnHealthCheck = () -> {
+                // this doesn't seem to work very reliably
+                return jedis.isConnected();
             };
 
             final BooleanSupplier customRedisConnHealthCheck = () -> {
@@ -114,14 +121,13 @@ public class PulsarApplication implements AutoCloseable {
                 }
             };
 
-            healthServer = new HealthServer(port, endpoint);
-            healthServer.addCheck(healthCheck);
-
             if (config.hasPath("redis.customHealthCheckEnabled")) {
                 if (config.getBoolean("redis.customHealthCheckEnabled")) {
                     log.info("Adding custom health check for Redis connection");
                     healthServer.addCheck(customRedisConnHealthCheck);
                 }
+            } else if (jedis != null) {
+                healthServer.addCheck(jedisConnHealthCheck);
             }
         }
 
