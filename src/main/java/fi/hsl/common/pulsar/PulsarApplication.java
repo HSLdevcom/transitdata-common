@@ -75,9 +75,14 @@ public class PulsarApplication implements AutoCloseable {
         }
 
         if (config.getBoolean("redis.enabled")) {
+            int connTimeOutSecs = 2;
+            if (config.hasPath("redis.connTimeOutSecs")) {
+                connTimeOutSecs = config.getInt("redis.connTimeOutSecs");
+            }
             jedis = createRedisClient(
                     config.getString("redis.host"),
-                    config.getInt("redis.port"));
+                    config.getInt("redis.port"),
+                    connTimeOutSecs);
         }
 
         if (config.getBoolean("health.enabled")) {
@@ -88,20 +93,51 @@ public class PulsarApplication implements AutoCloseable {
                 boolean status = true;
                 if (producer != null) status &= producer.isConnected();
                 if (consumer != null) status &= consumer.isConnected();
-                if (jedis != null) status &= jedis.isConnected();
                 return status;
             };
 
             healthServer = new HealthServer(port, endpoint);
             healthServer.addCheck(healthCheck);
+
+            final BooleanSupplier jedisConnHealthCheck = () -> {
+                // this doesn't seem to work very reliably
+                return jedis.isConnected();
+            };
+
+            final BooleanSupplier customRedisConnHealthCheck = () -> {
+                boolean connOk = false;
+                synchronized (jedis) {
+                    try {
+                        String maybePong = jedis.ping();
+                        if (maybePong.equals("PONG")) {
+                            connOk = true;
+                        } else {
+                            log.error("jedis.ping() returned: {}", maybePong);
+                        }
+                    } catch (Exception e) {
+                        log.error("Exception in custom health check for redis connection", e);
+                    }
+                    return connOk;
+                }
+            };
+
+            if (config.hasPath("redis.customHealthCheckEnabled")) {
+                if (config.getBoolean("redis.customHealthCheckEnabled")) {
+                    log.info("Adding custom health check for Redis connection");
+                    healthServer.addCheck(customRedisConnHealthCheck);
+                }
+            } else if (jedis != null) {
+                healthServer.addCheck(jedisConnHealthCheck);
+            }
         }
 
         return createContext(config, client, consumer, producer, jedis, admin, healthServer);
     }
 
-    protected Jedis createRedisClient(String redisHost, int port) {
-        log.info("Connecting to Redis at " + redisHost + ":" + port);
-        Jedis jedis = new Jedis(redisHost, port, 200000);
+    protected Jedis createRedisClient(String redisHost, int port, int connTimeOutSecs) {
+        log.info("Connecting to Redis at " + redisHost + ":" + port + " with connection timeout of (s): "+ connTimeOutSecs);
+        int timeOutMs = connTimeOutSecs * 1000;
+        Jedis jedis = new Jedis(redisHost, port, timeOutMs);
         jedis.connect();
         log.info("Redis connected: " + jedis.isConnected());
         return jedis;
