@@ -2,7 +2,6 @@ package fi.hsl.common.pulsar;
 
 import com.typesafe.config.Config;
 import fi.hsl.common.health.HealthServer;
-import fi.hsl.common.transitdata.TransitdataProperties;
 import org.apache.pulsar.client.admin.PulsarAdmin;
 import org.apache.pulsar.client.api.*;
 import org.slf4j.Logger;
@@ -99,15 +98,20 @@ public class PulsarApplication implements AutoCloseable {
             };
 
             final BooleanSupplier customRedisConnHealthCheck = () -> {
-                // tests that an expected key can be queried from Redis
                 boolean connOk = false;
-                try {
-                    String lastUpdate = jedis.get(TransitdataProperties.KEY_LAST_CACHE_UPDATE_TIMESTAMP);
-                    connOk = true;
-                } catch (Exception e) {
-                    log.error("Exception in custom health check for redis connection, could not find key: {}", TransitdataProperties.KEY_LAST_CACHE_UPDATE_TIMESTAMP, e);
+                synchronized (jedis) {
+                    try {
+                        String maybePong = jedis.ping();
+                        if (maybePong.equals("PONG")) {
+                            connOk = true;
+                        } else {
+                            log.error("jedis.ping() returned: {}", maybePong);
+                        }
+                    } catch (Exception e) {
+                        log.error("Exception in custom health check for redis connection", e);
+                    }
+                    return connOk;
                 }
-                return connOk;
             };
 
             healthServer = new HealthServer(port, endpoint);
@@ -115,7 +119,7 @@ public class PulsarApplication implements AutoCloseable {
 
             if (config.hasPath("redis.customHealthCheckEnabled")) {
                 if (config.getBoolean("redis.customHealthCheckEnabled")) {
-                    log.info("Adding custom health check for Redis connection with expected key: {}", TransitdataProperties.KEY_LAST_CACHE_UPDATE_TIMESTAMP);
+                    log.info("Adding custom health check for Redis connection");
                     healthServer.addCheck(customRedisConnHealthCheck);
                 }
             }
