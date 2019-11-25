@@ -77,7 +77,8 @@ public class PulsarApplication implements AutoCloseable {
         if (config.getBoolean("redis.enabled")) {
             jedis = createRedisClient(
                     config.getString("redis.host"),
-                    config.getInt("redis.port"));
+                    config.getInt("redis.port"),
+                    config.getInt("redis.connTimeOutSecs"));
         }
 
         if (config.getBoolean("health.enabled")) {
@@ -99,9 +100,10 @@ public class PulsarApplication implements AutoCloseable {
         return createContext(config, client, consumer, producer, jedis, admin, healthServer);
     }
 
-    protected Jedis createRedisClient(String redisHost, int port) {
-        log.info("Connecting to Redis at " + redisHost + ":" + port);
-        Jedis jedis = new Jedis(redisHost, port, 200000);
+    protected Jedis createRedisClient(String redisHost, int port, int connTimeOutSecs) {
+        log.info("Connecting to Redis at " + redisHost + ":" + port + " with connection timeout of (s): "+ connTimeOutSecs);
+        int timeOutMs = connTimeOutSecs * 1000;
+        Jedis jedis = new Jedis(redisHost, port, timeOutMs);
         jedis.connect();
         log.info("Redis connected: " + jedis.isConnected());
         return jedis;
