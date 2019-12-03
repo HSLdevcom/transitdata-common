@@ -23,10 +23,10 @@ message MetroStopEstimate {
     required string platform = 2;
     required string arrival_time_planned = 3;
     optional string arrival_time_forecast = 4;
-    required string arrival_time_measured = 5;
+    optional string arrival_time_measured = 5;
     required string departure_time_planned = 6;
     optional string departure_time_forecast = 7;
-    required string departure_time_measured = 8;
+    optional string departure_time_measured = 8;
     required string source = 9;
     required string stop_number = 10;
     optional MetroProgress row_progress = 11;
@@ -42,11 +42,11 @@ message MetroEstimate {
     required string end_time = 6;
     required string start_stop_short_name = 7;
     // Fields from redis
-    required string operating_day = 8;
-    required string start_stop_number = 9;
-    required string start_time = 10;
-    required string dvj_id = 11;
-    required string route_name = 12;
-    required string start_datetime = 13;
-    required string direction = 14;
+    optional string operating_day = 8;
+    optional string start_stop_number = 9;
+    optional string start_time = 10;
+    optional string dvj_id = 11;
+    optional string route_name = 12;
+    optional string start_datetime = 13;
+    optional string direction = 14;
 }

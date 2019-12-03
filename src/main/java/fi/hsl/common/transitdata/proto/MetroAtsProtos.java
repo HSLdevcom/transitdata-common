@@ -285,15 +285,15 @@ public final class MetroAtsProtos {
         getArrivalTimeForecastBytes();
 
     /**
-     * <code>required string arrival_time_measured = 5;</code>
+     * <code>optional string arrival_time_measured = 5;</code>
      */
     boolean hasArrivalTimeMeasured();
     /**
-     * <code>required string arrival_time_measured = 5;</code>
+     * <code>optional string arrival_time_measured = 5;</code>
      */
     java.lang.String getArrivalTimeMeasured();
     /**
-     * <code>required string arrival_time_measured = 5;</code>
+     * <code>optional string arrival_time_measured = 5;</code>
      */
     com.google.protobuf.ByteString
         getArrivalTimeMeasuredBytes();
@@ -327,15 +327,15 @@ public final class MetroAtsProtos {
         getDepartureTimeForecastBytes();
 
     /**
-     * <code>required string departure_time_measured = 8;</code>
+     * <code>optional string departure_time_measured = 8;</code>
      */
     boolean hasDepartureTimeMeasured();
     /**
-     * <code>required string departure_time_measured = 8;</code>
+     * <code>optional string departure_time_measured = 8;</code>
      */
     java.lang.String getDepartureTimeMeasured();
     /**
-     * <code>required string departure_time_measured = 8;</code>
+     * <code>optional string departure_time_measured = 8;</code>
      */
     com.google.protobuf.ByteString
         getDepartureTimeMeasuredBytes();
@@ -709,13 +709,13 @@ public final class MetroAtsProtos {
     public static final int ARRIVAL_TIME_MEASURED_FIELD_NUMBER = 5;
     private volatile java.lang.Object arrivalTimeMeasured_;
     /**
-     * <code>required string arrival_time_measured = 5;</code>
+     * <code>optional string arrival_time_measured = 5;</code>
      */
     public boolean hasArrivalTimeMeasured() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>required string arrival_time_measured = 5;</code>
+     * <code>optional string arrival_time_measured = 5;</code>
      */
     public java.lang.String getArrivalTimeMeasured() {
       java.lang.Object ref = arrivalTimeMeasured_;
@@ -732,7 +732,7 @@ public final class MetroAtsProtos {
       }
     }
     /**
-     * <code>required string arrival_time_measured = 5;</code>
+     * <code>optional string arrival_time_measured = 5;</code>
      */
     public com.google.protobuf.ByteString
         getArrivalTimeMeasuredBytes() {
@@ -835,13 +835,13 @@ public final class MetroAtsProtos {
     public static final int DEPARTURE_TIME_MEASURED_FIELD_NUMBER = 8;
     private volatile java.lang.Object departureTimeMeasured_;
     /**
-     * <code>required string departure_time_measured = 8;</code>
+     * <code>optional string departure_time_measured = 8;</code>
      */
     public boolean hasDepartureTimeMeasured() {
       return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
-     * <code>required string departure_time_measured = 8;</code>
+     * <code>optional string departure_time_measured = 8;</code>
      */
     public java.lang.String getDepartureTimeMeasured() {
       java.lang.Object ref = departureTimeMeasured_;
@@ -858,7 +858,7 @@ public final class MetroAtsProtos {
       }
     }
     /**
-     * <code>required string departure_time_measured = 8;</code>
+     * <code>optional string departure_time_measured = 8;</code>
      */
     public com.google.protobuf.ByteString
         getDepartureTimeMeasuredBytes() {
@@ -992,15 +992,7 @@ public final class MetroAtsProtos {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasArrivalTimeMeasured()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasDepartureTimePlanned()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasDepartureTimeMeasured()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -1537,13 +1529,7 @@ public final class MetroAtsProtos {
         if (!hasArrivalTimePlanned()) {
           return false;
         }
-        if (!hasArrivalTimeMeasured()) {
-          return false;
-        }
         if (!hasDepartureTimePlanned()) {
-          return false;
-        }
-        if (!hasDepartureTimeMeasured()) {
           return false;
         }
         if (!hasSource()) {
@@ -1904,13 +1890,13 @@ public final class MetroAtsProtos {
 
       private java.lang.Object arrivalTimeMeasured_ = "";
       /**
-       * <code>required string arrival_time_measured = 5;</code>
+       * <code>optional string arrival_time_measured = 5;</code>
        */
       public boolean hasArrivalTimeMeasured() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>required string arrival_time_measured = 5;</code>
+       * <code>optional string arrival_time_measured = 5;</code>
        */
       public java.lang.String getArrivalTimeMeasured() {
         java.lang.Object ref = arrivalTimeMeasured_;
@@ -1927,7 +1913,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string arrival_time_measured = 5;</code>
+       * <code>optional string arrival_time_measured = 5;</code>
        */
       public com.google.protobuf.ByteString
           getArrivalTimeMeasuredBytes() {
@@ -1943,7 +1929,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string arrival_time_measured = 5;</code>
+       * <code>optional string arrival_time_measured = 5;</code>
        */
       public Builder setArrivalTimeMeasured(
           java.lang.String value) {
@@ -1956,7 +1942,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string arrival_time_measured = 5;</code>
+       * <code>optional string arrival_time_measured = 5;</code>
        */
       public Builder clearArrivalTimeMeasured() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -1965,7 +1951,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string arrival_time_measured = 5;</code>
+       * <code>optional string arrival_time_measured = 5;</code>
        */
       public Builder setArrivalTimeMeasuredBytes(
           com.google.protobuf.ByteString value) {
@@ -2132,13 +2118,13 @@ public final class MetroAtsProtos {
 
       private java.lang.Object departureTimeMeasured_ = "";
       /**
-       * <code>required string departure_time_measured = 8;</code>
+       * <code>optional string departure_time_measured = 8;</code>
        */
       public boolean hasDepartureTimeMeasured() {
         return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
-       * <code>required string departure_time_measured = 8;</code>
+       * <code>optional string departure_time_measured = 8;</code>
        */
       public java.lang.String getDepartureTimeMeasured() {
         java.lang.Object ref = departureTimeMeasured_;
@@ -2155,7 +2141,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string departure_time_measured = 8;</code>
+       * <code>optional string departure_time_measured = 8;</code>
        */
       public com.google.protobuf.ByteString
           getDepartureTimeMeasuredBytes() {
@@ -2171,7 +2157,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string departure_time_measured = 8;</code>
+       * <code>optional string departure_time_measured = 8;</code>
        */
       public Builder setDepartureTimeMeasured(
           java.lang.String value) {
@@ -2184,7 +2170,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string departure_time_measured = 8;</code>
+       * <code>optional string departure_time_measured = 8;</code>
        */
       public Builder clearDepartureTimeMeasured() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -2193,7 +2179,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string departure_time_measured = 8;</code>
+       * <code>optional string departure_time_measured = 8;</code>
        */
       public Builder setDepartureTimeMeasuredBytes(
           com.google.protobuf.ByteString value) {
@@ -2552,7 +2538,7 @@ public final class MetroAtsProtos {
      * Fields from redis
      * </pre>
      *
-     * <code>required string operating_day = 8;</code>
+     * <code>optional string operating_day = 8;</code>
      */
     boolean hasOperatingDay();
     /**
@@ -2560,7 +2546,7 @@ public final class MetroAtsProtos {
      * Fields from redis
      * </pre>
      *
-     * <code>required string operating_day = 8;</code>
+     * <code>optional string operating_day = 8;</code>
      */
     java.lang.String getOperatingDay();
     /**
@@ -2568,91 +2554,91 @@ public final class MetroAtsProtos {
      * Fields from redis
      * </pre>
      *
-     * <code>required string operating_day = 8;</code>
+     * <code>optional string operating_day = 8;</code>
      */
     com.google.protobuf.ByteString
         getOperatingDayBytes();
 
     /**
-     * <code>required string start_stop_number = 9;</code>
+     * <code>optional string start_stop_number = 9;</code>
      */
     boolean hasStartStopNumber();
     /**
-     * <code>required string start_stop_number = 9;</code>
+     * <code>optional string start_stop_number = 9;</code>
      */
     java.lang.String getStartStopNumber();
     /**
-     * <code>required string start_stop_number = 9;</code>
+     * <code>optional string start_stop_number = 9;</code>
      */
     com.google.protobuf.ByteString
         getStartStopNumberBytes();
 
     /**
-     * <code>required string start_time = 10;</code>
+     * <code>optional string start_time = 10;</code>
      */
     boolean hasStartTime();
     /**
-     * <code>required string start_time = 10;</code>
+     * <code>optional string start_time = 10;</code>
      */
     java.lang.String getStartTime();
     /**
-     * <code>required string start_time = 10;</code>
+     * <code>optional string start_time = 10;</code>
      */
     com.google.protobuf.ByteString
         getStartTimeBytes();
 
     /**
-     * <code>required string dvj_id = 11;</code>
+     * <code>optional string dvj_id = 11;</code>
      */
     boolean hasDvjId();
     /**
-     * <code>required string dvj_id = 11;</code>
+     * <code>optional string dvj_id = 11;</code>
      */
     java.lang.String getDvjId();
     /**
-     * <code>required string dvj_id = 11;</code>
+     * <code>optional string dvj_id = 11;</code>
      */
     com.google.protobuf.ByteString
         getDvjIdBytes();
 
     /**
-     * <code>required string route_name = 12;</code>
+     * <code>optional string route_name = 12;</code>
      */
     boolean hasRouteName();
     /**
-     * <code>required string route_name = 12;</code>
+     * <code>optional string route_name = 12;</code>
      */
     java.lang.String getRouteName();
     /**
-     * <code>required string route_name = 12;</code>
+     * <code>optional string route_name = 12;</code>
      */
     com.google.protobuf.ByteString
         getRouteNameBytes();
 
     /**
-     * <code>required string start_datetime = 13;</code>
+     * <code>optional string start_datetime = 13;</code>
      */
     boolean hasStartDatetime();
     /**
-     * <code>required string start_datetime = 13;</code>
+     * <code>optional string start_datetime = 13;</code>
      */
     java.lang.String getStartDatetime();
     /**
-     * <code>required string start_datetime = 13;</code>
+     * <code>optional string start_datetime = 13;</code>
      */
     com.google.protobuf.ByteString
         getStartDatetimeBytes();
 
     /**
-     * <code>required string direction = 14;</code>
+     * <code>optional string direction = 14;</code>
      */
     boolean hasDirection();
     /**
-     * <code>required string direction = 14;</code>
+     * <code>optional string direction = 14;</code>
      */
     java.lang.String getDirection();
     /**
-     * <code>required string direction = 14;</code>
+     * <code>optional string direction = 14;</code>
      */
     com.google.protobuf.ByteString
         getDirectionBytes();
@@ -3060,7 +3046,7 @@ public final class MetroAtsProtos {
      * Fields from redis
      * </pre>
      *
-     * <code>required string operating_day = 8;</code>
+     * <code>optional string operating_day = 8;</code>
      */
     public boolean hasOperatingDay() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
@@ -3070,7 +3056,7 @@ public final class MetroAtsProtos {
      * Fields from redis
      * </pre>
      *
-     * <code>required string operating_day = 8;</code>
+     * <code>optional string operating_day = 8;</code>
      */
     public java.lang.String getOperatingDay() {
       java.lang.Object ref = operatingDay_;
@@ -3091,7 +3077,7 @@ public final class MetroAtsProtos {
      * Fields from redis
      * </pre>
      *
-     * <code>required string operating_day = 8;</code>
+     * <code>optional string operating_day = 8;</code>
      */
     public com.google.protobuf.ByteString
         getOperatingDayBytes() {
@@ -3110,13 +3096,13 @@ public final class MetroAtsProtos {
     public static final int START_STOP_NUMBER_FIELD_NUMBER = 9;
     private volatile java.lang.Object startStopNumber_;
     /**
-     * <code>required string start_stop_number = 9;</code>
+     * <code>optional string start_stop_number = 9;</code>
      */
     public boolean hasStartStopNumber() {
       return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
-     * <code>required string start_stop_number = 9;</code>
+     * <code>optional string start_stop_number = 9;</code>
      */
     public java.lang.String getStartStopNumber() {
       java.lang.Object ref = startStopNumber_;
@@ -3133,7 +3119,7 @@ public final class MetroAtsProtos {
       }
     }
     /**
-     * <code>required string start_stop_number = 9;</code>
+     * <code>optional string start_stop_number = 9;</code>
      */
     public com.google.protobuf.ByteString
         getStartStopNumberBytes() {
@@ -3152,13 +3138,13 @@ public final class MetroAtsProtos {
     public static final int START_TIME_FIELD_NUMBER = 10;
     private volatile java.lang.Object startTime_;
     /**
-     * <code>required string start_time = 10;</code>
+     * <code>optional string start_time = 10;</code>
      */
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
-     * <code>required string start_time = 10;</code>
+     * <code>optional string start_time = 10;</code>
      */
     public java.lang.String getStartTime() {
       java.lang.Object ref = startTime_;
@@ -3175,7 +3161,7 @@ public final class MetroAtsProtos {
       }
     }
     /**
-     * <code>required string start_time = 10;</code>
+     * <code>optional string start_time = 10;</code>
      */
     public com.google.protobuf.ByteString
         getStartTimeBytes() {
@@ -3194,13 +3180,13 @@ public final class MetroAtsProtos {
     public static final int DVJ_ID_FIELD_NUMBER = 11;
     private volatile java.lang.Object dvjId_;
     /**
-     * <code>required string dvj_id = 11;</code>
+     * <code>optional string dvj_id = 11;</code>
      */
     public boolean hasDvjId() {
       return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
-     * <code>required string dvj_id = 11;</code>
+     * <code>optional string dvj_id = 11;</code>
      */
     public java.lang.String getDvjId() {
       java.lang.Object ref = dvjId_;
@@ -3217,7 +3203,7 @@ public final class MetroAtsProtos {
       }
     }
     /**
-     * <code>required string dvj_id = 11;</code>
+     * <code>optional string dvj_id = 11;</code>
      */
     public com.google.protobuf.ByteString
         getDvjIdBytes() {
@@ -3236,13 +3222,13 @@ public final class MetroAtsProtos {
     public static final int ROUTE_NAME_FIELD_NUMBER = 12;
     private volatile java.lang.Object routeName_;
     /**
-     * <code>required string route_name = 12;</code>
+     * <code>optional string route_name = 12;</code>
      */
     public boolean hasRouteName() {
       return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
-     * <code>required string route_name = 12;</code>
+     * <code>optional string route_name = 12;</code>
      */
     public java.lang.String getRouteName() {
       java.lang.Object ref = routeName_;
@@ -3259,7 +3245,7 @@ public final class MetroAtsProtos {
       }
     }
     /**
-     * <code>required string route_name = 12;</code>
+     * <code>optional string route_name = 12;</code>
      */
     public com.google.protobuf.ByteString
         getRouteNameBytes() {
@@ -3278,13 +3264,13 @@ public final class MetroAtsProtos {
     public static final int START_DATETIME_FIELD_NUMBER = 13;
     private volatile java.lang.Object startDatetime_;
     /**
-     * <code>required string start_datetime = 13;</code>
+     * <code>optional string start_datetime = 13;</code>
      */
     public boolean hasStartDatetime() {
       return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
-     * <code>required string start_datetime = 13;</code>
+     * <code>optional string start_datetime = 13;</code>
      */
     public java.lang.String getStartDatetime() {
       java.lang.Object ref = startDatetime_;
@@ -3301,7 +3287,7 @@ public final class MetroAtsProtos {
       }
     }
     /**
-     * <code>required string start_datetime = 13;</code>
+     * <code>optional string start_datetime = 13;</code>
      */
     public com.google.protobuf.ByteString
         getStartDatetimeBytes() {
@@ -3320,13 +3306,13 @@ public final class MetroAtsProtos {
     public static final int DIRECTION_FIELD_NUMBER = 14;
     private volatile java.lang.Object direction_;
     /**
-     * <code>required string direction = 14;</code>
+     * <code>optional string direction = 14;</code>
      */
     public boolean hasDirection() {
       return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     /**
-     * <code>required string direction = 14;</code>
+     * <code>optional string direction = 14;</code>
      */
     public java.lang.String getDirection() {
       java.lang.Object ref = direction_;
@@ -3343,7 +3329,7 @@ public final class MetroAtsProtos {
       }
     }
     /**
-     * <code>required string direction = 14;</code>
+     * <code>optional string direction = 14;</code>
      */
     public com.google.protobuf.ByteString
         getDirectionBytes() {
@@ -3386,34 +3372,6 @@ public final class MetroAtsProtos {
         return false;
       }
       if (!hasStartStopShortName()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasOperatingDay()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasStartStopNumber()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasStartTime()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasDvjId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasRouteName()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasStartDatetime()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasDirection()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -4061,27 +4019,6 @@ public final class MetroAtsProtos {
         if (!hasStartStopShortName()) {
           return false;
         }
-        if (!hasOperatingDay()) {
-          return false;
-        }
-        if (!hasStartStopNumber()) {
-          return false;
-        }
-        if (!hasStartTime()) {
-          return false;
-        }
-        if (!hasDvjId()) {
-          return false;
-        }
-        if (!hasRouteName()) {
-          return false;
-        }
-        if (!hasStartDatetime()) {
-          return false;
-        }
-        if (!hasDirection()) {
-          return false;
-        }
         for (int i = 0; i < getMetroRowsCount(); i++) {
           if (!getMetroRows(i).isInitialized()) {
             return false;
@@ -4703,7 +4640,7 @@ public final class MetroAtsProtos {
        * Fields from redis
        * </pre>
        *
-       * <code>required string operating_day = 8;</code>
+       * <code>optional string operating_day = 8;</code>
        */
       public boolean hasOperatingDay() {
         return ((bitField0_ & 0x00000080) == 0x00000080);
@@ -4713,7 +4650,7 @@ public final class MetroAtsProtos {
        * Fields from redis
        * </pre>
        *
-       * <code>required string operating_day = 8;</code>
+       * <code>optional string operating_day = 8;</code>
        */
       public java.lang.String getOperatingDay() {
         java.lang.Object ref = operatingDay_;
@@ -4734,7 +4671,7 @@ public final class MetroAtsProtos {
        * Fields from redis
        * </pre>
        *
-       * <code>required string operating_day = 8;</code>
+       * <code>optional string operating_day = 8;</code>
        */
       public com.google.protobuf.ByteString
           getOperatingDayBytes() {
@@ -4754,7 +4691,7 @@ public final class MetroAtsProtos {
        * Fields from redis
        * </pre>
        *
-       * <code>required string operating_day = 8;</code>
+       * <code>optional string operating_day = 8;</code>
        */
       public Builder setOperatingDay(
           java.lang.String value) {
@@ -4771,7 +4708,7 @@ public final class MetroAtsProtos {
        * Fields from redis
        * </pre>
        *
-       * <code>required string operating_day = 8;</code>
+       * <code>optional string operating_day = 8;</code>
        */
       public Builder clearOperatingDay() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -4784,7 +4721,7 @@ public final class MetroAtsProtos {
        * Fields from redis
        * </pre>
        *
-       * <code>required string operating_day = 8;</code>
+       * <code>optional string operating_day = 8;</code>
        */
       public Builder setOperatingDayBytes(
           com.google.protobuf.ByteString value) {
@@ -4799,13 +4736,13 @@ public final class MetroAtsProtos {
 
       private java.lang.Object startStopNumber_ = "";
       /**
-       * <code>required string start_stop_number = 9;</code>
+       * <code>optional string start_stop_number = 9;</code>
        */
       public boolean hasStartStopNumber() {
         return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
-       * <code>required string start_stop_number = 9;</code>
+       * <code>optional string start_stop_number = 9;</code>
        */
       public java.lang.String getStartStopNumber() {
         java.lang.Object ref = startStopNumber_;
@@ -4822,7 +4759,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string start_stop_number = 9;</code>
+       * <code>optional string start_stop_number = 9;</code>
        */
       public com.google.protobuf.ByteString
           getStartStopNumberBytes() {
@@ -4838,7 +4775,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string start_stop_number = 9;</code>
+       * <code>optional string start_stop_number = 9;</code>
        */
       public Builder setStartStopNumber(
           java.lang.String value) {
@@ -4851,7 +4788,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string start_stop_number = 9;</code>
+       * <code>optional string start_stop_number = 9;</code>
        */
       public Builder clearStartStopNumber() {
         bitField0_ = (bitField0_ & ~0x00000100);
@@ -4860,7 +4797,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string start_stop_number = 9;</code>
+       * <code>optional string start_stop_number = 9;</code>
        */
       public Builder setStartStopNumberBytes(
           com.google.protobuf.ByteString value) {
@@ -4875,13 +4812,13 @@ public final class MetroAtsProtos {
 
       private java.lang.Object startTime_ = "";
       /**
-       * <code>required string start_time = 10;</code>
+       * <code>optional string start_time = 10;</code>
        */
       public boolean hasStartTime() {
         return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
-       * <code>required string start_time = 10;</code>
+       * <code>optional string start_time = 10;</code>
        */
       public java.lang.String getStartTime() {
         java.lang.Object ref = startTime_;
@@ -4898,7 +4835,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string start_time = 10;</code>
+       * <code>optional string start_time = 10;</code>
        */
       public com.google.protobuf.ByteString
           getStartTimeBytes() {
@@ -4914,7 +4851,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string start_time = 10;</code>
+       * <code>optional string start_time = 10;</code>
        */
       public Builder setStartTime(
           java.lang.String value) {
@@ -4927,7 +4864,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string start_time = 10;</code>
+       * <code>optional string start_time = 10;</code>
        */
       public Builder clearStartTime() {
         bitField0_ = (bitField0_ & ~0x00000200);
@@ -4936,7 +4873,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string start_time = 10;</code>
+       * <code>optional string start_time = 10;</code>
        */
       public Builder setStartTimeBytes(
           com.google.protobuf.ByteString value) {
@@ -4951,13 +4888,13 @@ public final class MetroAtsProtos {
 
       private java.lang.Object dvjId_ = "";
       /**
-       * <code>required string dvj_id = 11;</code>
+       * <code>optional string dvj_id = 11;</code>
        */
       public boolean hasDvjId() {
         return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
-       * <code>required string dvj_id = 11;</code>
+       * <code>optional string dvj_id = 11;</code>
        */
       public java.lang.String getDvjId() {
         java.lang.Object ref = dvjId_;
@@ -4974,7 +4911,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string dvj_id = 11;</code>
+       * <code>optional string dvj_id = 11;</code>
        */
       public com.google.protobuf.ByteString
           getDvjIdBytes() {
@@ -4990,7 +4927,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string dvj_id = 11;</code>
+       * <code>optional string dvj_id = 11;</code>
        */
       public Builder setDvjId(
           java.lang.String value) {
@@ -5003,7 +4940,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string dvj_id = 11;</code>
+       * <code>optional string dvj_id = 11;</code>
        */
       public Builder clearDvjId() {
         bitField0_ = (bitField0_ & ~0x00000400);
@@ -5012,7 +4949,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string dvj_id = 11;</code>
+       * <code>optional string dvj_id = 11;</code>
        */
       public Builder setDvjIdBytes(
           com.google.protobuf.ByteString value) {
@@ -5027,13 +4964,13 @@ public final class MetroAtsProtos {
 
       private java.lang.Object routeName_ = "";
       /**
-       * <code>required string route_name = 12;</code>
+       * <code>optional string route_name = 12;</code>
        */
       public boolean hasRouteName() {
         return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
-       * <code>required string route_name = 12;</code>
+       * <code>optional string route_name = 12;</code>
        */
       public java.lang.String getRouteName() {
         java.lang.Object ref = routeName_;
@@ -5050,7 +4987,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string route_name = 12;</code>
+       * <code>optional string route_name = 12;</code>
        */
       public com.google.protobuf.ByteString
           getRouteNameBytes() {
@@ -5066,7 +5003,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string route_name = 12;</code>
+       * <code>optional string route_name = 12;</code>
        */
       public Builder setRouteName(
           java.lang.String value) {
@@ -5079,7 +5016,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string route_name = 12;</code>
+       * <code>optional string route_name = 12;</code>
        */
       public Builder clearRouteName() {
         bitField0_ = (bitField0_ & ~0x00000800);
@@ -5088,7 +5025,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string route_name = 12;</code>
+       * <code>optional string route_name = 12;</code>
        */
       public Builder setRouteNameBytes(
           com.google.protobuf.ByteString value) {
@@ -5103,13 +5040,13 @@ public final class MetroAtsProtos {
 
       private java.lang.Object startDatetime_ = "";
       /**
-       * <code>required string start_datetime = 13;</code>
+       * <code>optional string start_datetime = 13;</code>
        */
       public boolean hasStartDatetime() {
         return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
-       * <code>required string start_datetime = 13;</code>
+       * <code>optional string start_datetime = 13;</code>
        */
       public java.lang.String getStartDatetime() {
         java.lang.Object ref = startDatetime_;
@@ -5126,7 +5063,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string start_datetime = 13;</code>
+       * <code>optional string start_datetime = 13;</code>
        */
       public com.google.protobuf.ByteString
           getStartDatetimeBytes() {
@@ -5142,7 +5079,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string start_datetime = 13;</code>
+       * <code>optional string start_datetime = 13;</code>
        */
       public Builder setStartDatetime(
           java.lang.String value) {
@@ -5155,7 +5092,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string start_datetime = 13;</code>
+       * <code>optional string start_datetime = 13;</code>
        */
       public Builder clearStartDatetime() {
         bitField0_ = (bitField0_ & ~0x00001000);
@@ -5164,7 +5101,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string start_datetime = 13;</code>
+       * <code>optional string start_datetime = 13;</code>
        */
       public Builder setStartDatetimeBytes(
           com.google.protobuf.ByteString value) {
@@ -5179,13 +5116,13 @@ public final class MetroAtsProtos {
 
       private java.lang.Object direction_ = "";
       /**
-       * <code>required string direction = 14;</code>
+       * <code>optional string direction = 14;</code>
        */
       public boolean hasDirection() {
         return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       /**
-       * <code>required string direction = 14;</code>
+       * <code>optional string direction = 14;</code>
        */
       public java.lang.String getDirection() {
         java.lang.Object ref = direction_;
@@ -5202,7 +5139,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string direction = 14;</code>
+       * <code>optional string direction = 14;</code>
        */
       public com.google.protobuf.ByteString
           getDirectionBytes() {
@@ -5218,7 +5155,7 @@ public final class MetroAtsProtos {
         }
       }
       /**
-       * <code>required string direction = 14;</code>
+       * <code>optional string direction = 14;</code>
        */
       public Builder setDirection(
           java.lang.String value) {
@@ -5231,7 +5168,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string direction = 14;</code>
+       * <code>optional string direction = 14;</code>
        */
       public Builder clearDirection() {
         bitField0_ = (bitField0_ & ~0x00002000);
@@ -5240,7 +5177,7 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
-       * <code>required string direction = 14;</code>
+       * <code>optional string direction = 14;</code>
        */
       public Builder setDirectionBytes(
           com.google.protobuf.ByteString value) {
@@ -5324,9 +5261,9 @@ public final class MetroAtsProtos {
       "timate\022\017\n\007station\030\001 \002(\t\022\020\n\010platform\030\002 \002(" +
       "\t\022\034\n\024arrival_time_planned\030\003 \002(\t\022\035\n\025arriv" +
       "al_time_forecast\030\004 \001(\t\022\035\n\025arrival_time_m" +
-      "easured\030\005 \002(\t\022\036\n\026departure_time_planned\030" +
+      "easured\030\005 \001(\t\022\036\n\026departure_time_planned\030" +
       "\006 \002(\t\022\037\n\027departure_time_forecast\030\007 \001(\t\022\037" +
-      "\n\027departure_time_measured\030\010 \002(\t\022\016\n\006sourc" +
+      "\n\027departure_time_measured\030\010 \001(\t\022\016\n\006sourc" +
       "e\030\t \002(\t\022\023\n\013stop_number\030\n \002(\t\022*\n\014row_prog" +
       "ress\030\013 \001(\0162\024.proto.MetroProgress\"\223\003\n\rMet" +
       "roEstimate\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022,\n\n",
@@ -5335,10 +5272,10 @@ public final class MetroAtsProtos {
       "nType\0225\n\027journey_sectionprogress\030\004 \002(\0162\024" +
       ".proto.MetroProgress\022\022\n\nbegin_time\030\005 \002(\t" +
       "\022\020\n\010end_time\030\006 \002(\t\022\035\n\025start_stop_short_n" +
-      "ame\030\007 \002(\t\022\025\n\roperating_day\030\010 \002(\t\022\031\n\021star" +
-      "t_stop_number\030\t \002(\t\022\022\n\nstart_time\030\n \002(\t\022" +
-      "\016\n\006dvj_id\030\013 \002(\t\022\022\n\nroute_name\030\014 \002(\t\022\026\n\016s" +
-      "tart_datetime\030\r \002(\t\022\021\n\tdirection\030\016 \002(\t*\036" +
+      "ame\030\007 \002(\t\022\025\n\roperating_day\030\010 \001(\t\022\031\n\021star" +
+      "t_stop_number\030\t \001(\t\022\022\n\nstart_time\030\n \001(\t\022" +
+      "\016\n\006dvj_id\030\013 \001(\t\022\022\n\nroute_name\030\014 \001(\t\022\026\n\016s" +
+      "tart_datetime\030\r \001(\t\022\021\n\tdirection\030\016 \001(\t*\036" +
       "\n\016MetroTrainType\022\005\n\001M\020\000\022\005\n\001T\020\001*L\n\rMetroP",
       "rogress\022\r\n\tSCHEDULED\020\000\022\016\n\nINPROGRESS\020\001\022\r" +
       "\n\tCOMPLETED\020\002\022\r\n\tCANCELLED\020\003B1\n\037fi.hsl.c" +
