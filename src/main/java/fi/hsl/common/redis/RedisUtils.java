@@ -32,7 +32,9 @@ public class RedisUtils {
     }
 
     public String setValue(final String key, final String value) {
-        return jedis.set(key, value);
+        synchronized (jedis) {
+            return jedis.set(key, value);
+        }
     }
 
     public String setExpiringValue(final String key, final String value) {
@@ -40,11 +42,15 @@ public class RedisUtils {
     }
 
     public String setExpiringValue(final String key, final String value, final int ttlInSeconds) {
-        return jedis.setex(key, ttlInSeconds, value);
+        synchronized (jedis) {
+            return jedis.setex(key, ttlInSeconds, value);
+        }
     }
 
     public String setValues(final String key, final Map<String, String> values) {
-        return jedis.hmset(key, values);
+        synchronized (jedis) {
+            return jedis.hmset(key, values);
+        }
     }
 
     public String setExpiringValues(final String key, final Map<String, String> values) {
@@ -63,23 +69,29 @@ public class RedisUtils {
     }
 
     public Long setExpire(final String key, final int ttlInSeconds) {
-        return jedis.expire(key, ttlInSeconds);
+        synchronized (jedis) {
+            return jedis.expire(key, ttlInSeconds);
+        }
     }
 
     public Optional<String> getValue(final String key) {
-        final String value = jedis.get(key);
-        if (value.isEmpty()) {
-            return Optional.empty();
+        synchronized (jedis) {
+            final String value = jedis.get(key);
+            if (value.isEmpty()) {
+                return Optional.empty();
+            }
+            return Optional.ofNullable(value);
         }
-        return Optional.ofNullable(value);
     }
 
     public Optional<Map<String, String>> getValues(final String key) {
-        final Map<String, String> values = jedis.hgetAll(key);
-        if (values.isEmpty()) {
-            return Optional.empty();
+        synchronized (jedis) {
+            final Map<String, String> values = jedis.hgetAll(key);
+            if (values.isEmpty()) {
+                return Optional.empty();
+            }
+            return Optional.ofNullable(values);
         }
-        return Optional.ofNullable(values);
     }
 
     /**
@@ -106,14 +118,16 @@ public class RedisUtils {
         String cursor = ScanParams.SCAN_POINTER_START;
 
         HashSet<String> keys = new HashSet<>();
-        do {
-            ScanResult<String> scanResult = jedis.scan(cursor, scanParams);
-            List<String> result = scanResult.getResult();
-            keys.addAll(result);
-            cursor = scanResult.getStringCursor();
-        } while(!"0".equals(cursor));
+        synchronized (jedis) {
+            do {
+                ScanResult<String> scanResult = jedis.scan(cursor, scanParams);
+                List<String> result = scanResult.getResult();
+                keys.addAll(result);
+                cursor = scanResult.getStringCursor();
+            } while(!"0".equals(cursor));
 
-        return new ArrayList<>(keys);
+            return new ArrayList<>(keys);
+        }
     }
 
     /**
@@ -122,22 +136,24 @@ public class RedisUtils {
      * @return HashMap of keys and their hash values if they exist
      */
     public Map<String, Optional<Map<String, String>>> getValuesByKeys(final List<String> keys) {
-        final Transaction transaction = jedis.multi();
-        final Map<String, Response<Map<String, String>>> responses = new HashMap<>();
-        keys.forEach(key -> responses.put(key, transaction.hgetAll(key)));
-        transaction.exec();
+        synchronized (jedis) {
+            final Transaction transaction = jedis.multi();
+            final Map<String, Response<Map<String, String>>> responses = new HashMap<>();
+            keys.forEach(key -> responses.put(key, transaction.hgetAll(key)));
+            transaction.exec();
 
-        final Map<String, Optional<Map<String, String>>> values = new HashMap<>(responses.size());
-        responses.forEach((k, v) -> {
-            final Map<String, String> value = v.get();
-            if (value == null || value.isEmpty()) {
-                values.put(k, Optional.empty());
-            } else {
-                values.put(k, Optional.of(value));
-            }
-        });
+            final Map<String, Optional<Map<String, String>>> values = new HashMap<>(responses.size());
+            responses.forEach((k, v) -> {
+                final Map<String, String> value = v.get();
+                if (value == null || value.isEmpty()) {
+                    values.put(k, Optional.empty());
+                } else {
+                    values.put(k, Optional.of(value));
+                }
+            });
 
-        return values;
+            return values;
+        }
     }
 
     /**
@@ -146,29 +162,33 @@ public class RedisUtils {
      * @return HashMap of keys and their values if they exist
      */
     public Map<String, Optional<String>> getValueBykeys(final List<String> keys) {
-        final Transaction transaction = jedis.multi();
-        final Map<String, Response<String>> responses = new HashMap<>();
-        keys.forEach(key -> responses.put(key, transaction.get(key)));
-        transaction.exec();
+        synchronized (jedis) {
+            final Transaction transaction = jedis.multi();
+            final Map<String, Response<String>> responses = new HashMap<>();
+            keys.forEach(key -> responses.put(key, transaction.get(key)));
+            transaction.exec();
 
-        final Map<String, Optional<String>> values = new HashMap<>(responses.size());
-        responses.forEach((k, v) -> {
-            final String value = v.get();
-            if (value == null || value.isEmpty()) {
-                values.put(k, Optional.empty());
-            } else {
-                values.put(k, Optional.of(value));
-            }
-        });
+            final Map<String, Optional<String>> values = new HashMap<>(responses.size());
+            responses.forEach((k, v) -> {
+                final String value = v.get();
+                if (value == null || value.isEmpty()) {
+                    values.put(k, Optional.empty());
+                } else {
+                    values.put(k, Optional.of(value));
+                }
+            });
 
-        return values;
+            return values;
+        }
     }
 
     public String updateTimestamp() {
-        final OffsetDateTime now = OffsetDateTime.now();
-        final String ts = DateTimeFormatter.ISO_INSTANT.format(now);
-        log.info("Updating Redis timestamp to {}", ts);
-        return jedis.set(TransitdataProperties.KEY_LAST_CACHE_UPDATE_TIMESTAMP, ts);
+        synchronized (jedis) {
+            final OffsetDateTime now = OffsetDateTime.now();
+            final String ts = DateTimeFormatter.ISO_INSTANT.format(now);
+            log.info("Updating Redis timestamp to {}", ts);
+            return jedis.set(TransitdataProperties.KEY_LAST_CACHE_UPDATE_TIMESTAMP, ts);
+        }
     }
 
     public boolean checkResponse(final String response) {
