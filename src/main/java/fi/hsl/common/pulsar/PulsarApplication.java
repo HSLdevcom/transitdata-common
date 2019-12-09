@@ -89,15 +89,21 @@ public class PulsarApplication implements AutoCloseable {
             final int port = config.getInt("health.port");
             final String endpoint = config.getString("health.endpoint");
 
-            final BooleanSupplier healthCheck = () -> {
+            final BooleanSupplier pulsarHealthCheck = () -> {
                 boolean status = true;
-                if (producer != null) status &= producer.isConnected();
-                if (consumer != null) status &= consumer.isConnected();
+                if (producer != null && !producer.isConnected()) {
+                    status = false;
+                    log.error("HealthCheck: Pulsar producer is not connected");
+                }
+                if (consumer != null && !consumer.isConnected()) {
+                    status = false;
+                    log.error("HealthCheck: Pulsar consumer is not connected");
+                }
                 return status;
             };
 
             healthServer = new HealthServer(port, endpoint);
-            healthServer.addCheck(healthCheck);
+            healthServer.addCheck(pulsarHealthCheck);
 
             final BooleanSupplier jedisConnHealthCheck = () -> {
                 // this doesn't seem to work very reliably
