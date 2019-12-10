@@ -30,6 +30,7 @@ message MetroStopEstimate {
     required string source = 9;
     required string stop_number = 10;
     optional MetroProgress row_progress = 11;
+    optional bool scheduled = 12;
 }
 
 message MetroEstimate {

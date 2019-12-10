@@ -376,6 +376,15 @@ public final class MetroAtsProtos {
      * <code>optional .proto.MetroProgress row_progress = 11;</code>
      */
     fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress getRowProgress();
+
+    /**
+     * <code>optional bool scheduled = 12;</code>
+     */
+    boolean hasScheduled();
+    /**
+     * <code>optional bool scheduled = 12;</code>
+     */
+    boolean getScheduled();
   }
   /**
    * Protobuf type {@code proto.MetroStopEstimate}
@@ -400,6 +409,7 @@ public final class MetroAtsProtos {
       source_ = "";
       stopNumber_ = "";
       rowProgress_ = 0;
+      scheduled_ = false;
     }
 
     @java.lang.Override
@@ -499,6 +509,11 @@ public final class MetroAtsProtos {
                 bitField0_ |= 0x00000400;
                 rowProgress_ = rawValue;
               }
+              break;
+            }
+            case 96: {
+              bitField0_ |= 0x00000800;
+              scheduled_ = input.readBool();
               break;
             }
           }
@@ -974,6 +989,21 @@ public final class MetroAtsProtos {
       return result == null ? fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.SCHEDULED : result;
     }
 
+    public static final int SCHEDULED_FIELD_NUMBER = 12;
+    private boolean scheduled_;
+    /**
+     * <code>optional bool scheduled = 12;</code>
+     */
+    public boolean hasScheduled() {
+      return ((bitField0_ & 0x00000800) == 0x00000800);
+    }
+    /**
+     * <code>optional bool scheduled = 12;</code>
+     */
+    public boolean getScheduled() {
+      return scheduled_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1043,6 +1073,9 @@ public final class MetroAtsProtos {
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         output.writeEnum(11, rowProgress_);
       }
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        output.writeBool(12, scheduled_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1084,6 +1117,10 @@ public final class MetroAtsProtos {
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, rowProgress_);
+      }
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, scheduled_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1156,6 +1193,11 @@ public final class MetroAtsProtos {
       if (hasRowProgress()) {
         result = result && rowProgress_ == other.rowProgress_;
       }
+      result = result && (hasScheduled() == other.hasScheduled());
+      if (hasScheduled()) {
+        result = result && (getScheduled()
+            == other.getScheduled());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -1210,6 +1252,11 @@ public final class MetroAtsProtos {
       if (hasRowProgress()) {
         hash = (37 * hash) + ROW_PROGRESS_FIELD_NUMBER;
         hash = (53 * hash) + rowProgress_;
+      }
+      if (hasScheduled()) {
+        hash = (37 * hash) + SCHEDULED_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getScheduled());
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1351,6 +1398,8 @@ public final class MetroAtsProtos {
         bitField0_ = (bitField0_ & ~0x00000200);
         rowProgress_ = 0;
         bitField0_ = (bitField0_ & ~0x00000400);
+        scheduled_ = false;
+        bitField0_ = (bitField0_ & ~0x00000800);
         return this;
       }
 
@@ -1419,6 +1468,10 @@ public final class MetroAtsProtos {
           to_bitField0_ |= 0x00000400;
         }
         result.rowProgress_ = rowProgress_;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000800;
+        }
+        result.scheduled_ = scheduled_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1513,6 +1566,9 @@ public final class MetroAtsProtos {
         }
         if (other.hasRowProgress()) {
           setRowProgress(other.getRowProgress());
+        }
+        if (other.hasScheduled()) {
+          setScheduled(other.getScheduled());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2376,6 +2432,38 @@ public final class MetroAtsProtos {
       public Builder clearRowProgress() {
         bitField0_ = (bitField0_ & ~0x00000400);
         rowProgress_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean scheduled_ ;
+      /**
+       * <code>optional bool scheduled = 12;</code>
+       */
+      public boolean hasScheduled() {
+        return ((bitField0_ & 0x00000800) == 0x00000800);
+      }
+      /**
+       * <code>optional bool scheduled = 12;</code>
+       */
+      public boolean getScheduled() {
+        return scheduled_;
+      }
+      /**
+       * <code>optional bool scheduled = 12;</code>
+       */
+      public Builder setScheduled(boolean value) {
+        bitField0_ |= 0x00000800;
+        scheduled_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool scheduled = 12;</code>
+       */
+      public Builder clearScheduled() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        scheduled_ = false;
         onChanged();
         return this;
       }
@@ -5257,7 +5345,7 @@ public final class MetroAtsProtos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017metro-ats.proto\022\005proto\"\305\002\n\021MetroStopEs" +
+      "\n\017metro-ats.proto\022\005proto\"\330\002\n\021MetroStopEs" +
       "timate\022\017\n\007station\030\001 \002(\t\022\020\n\010platform\030\002 \002(" +
       "\t\022\034\n\024arrival_time_planned\030\003 \002(\t\022\035\n\025arriv" +
       "al_time_forecast\030\004 \001(\t\022\035\n\025arrival_time_m" +
@@ -5265,21 +5353,22 @@ public final class MetroAtsProtos {
       "\006 \002(\t\022\037\n\027departure_time_forecast\030\007 \001(\t\022\037" +
       "\n\027departure_time_measured\030\010 \001(\t\022\016\n\006sourc" +
       "e\030\t \002(\t\022\023\n\013stop_number\030\n \002(\t\022*\n\014row_prog" +
-      "ress\030\013 \001(\0162\024.proto.MetroProgress\"\223\003\n\rMet" +
-      "roEstimate\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022,\n\n",
-      "metro_rows\030\002 \003(\0132\030.proto.MetroStopEstima" +
-      "te\022)\n\ntrain_type\030\003 \002(\0162\025.proto.MetroTrai" +
-      "nType\0225\n\027journey_sectionprogress\030\004 \002(\0162\024" +
-      ".proto.MetroProgress\022\022\n\nbegin_time\030\005 \002(\t" +
-      "\022\020\n\010end_time\030\006 \002(\t\022\035\n\025start_stop_short_n" +
-      "ame\030\007 \002(\t\022\025\n\roperating_day\030\010 \001(\t\022\031\n\021star" +
-      "t_stop_number\030\t \001(\t\022\022\n\nstart_time\030\n \001(\t\022" +
-      "\016\n\006dvj_id\030\013 \001(\t\022\022\n\nroute_name\030\014 \001(\t\022\026\n\016s" +
-      "tart_datetime\030\r \001(\t\022\021\n\tdirection\030\016 \001(\t*\036" +
-      "\n\016MetroTrainType\022\005\n\001M\020\000\022\005\n\001T\020\001*L\n\rMetroP",
-      "rogress\022\r\n\tSCHEDULED\020\000\022\016\n\nINPROGRESS\020\001\022\r" +
-      "\n\tCOMPLETED\020\002\022\r\n\tCANCELLED\020\003B1\n\037fi.hsl.c" +
-      "ommon.transitdata.protoB\016MetroAtsProtos"
+      "ress\030\013 \001(\0162\024.proto.MetroProgress\022\021\n\tsche" +
+      "duled\030\014 \001(\010\"\223\003\n\rMetroEstimate\022\030\n\rSchemaV",
+      "ersion\030\001 \002(\005:\0011\022,\n\nmetro_rows\030\002 \003(\0132\030.pr" +
+      "oto.MetroStopEstimate\022)\n\ntrain_type\030\003 \002(" +
+      "\0162\025.proto.MetroTrainType\0225\n\027journey_sect" +
+      "ionprogress\030\004 \002(\0162\024.proto.MetroProgress\022" +
+      "\022\n\nbegin_time\030\005 \002(\t\022\020\n\010end_time\030\006 \002(\t\022\035\n" +
+      "\025start_stop_short_name\030\007 \002(\t\022\025\n\roperatin" +
+      "g_day\030\010 \001(\t\022\031\n\021start_stop_number\030\t \001(\t\022\022" +
+      "\n\nstart_time\030\n \001(\t\022\016\n\006dvj_id\030\013 \001(\t\022\022\n\nro" +
+      "ute_name\030\014 \001(\t\022\026\n\016start_datetime\030\r \001(\t\022\021" +
+      "\n\tdirection\030\016 \001(\t*\036\n\016MetroTrainType\022\005\n\001M",
+      "\020\000\022\005\n\001T\020\001*L\n\rMetroProgress\022\r\n\tSCHEDULED\020" +
+      "\000\022\016\n\nINPROGRESS\020\001\022\r\n\tCOMPLETED\020\002\022\r\n\tCANC" +
+      "ELLED\020\003B1\n\037fi.hsl.common.transitdata.pro" +
+      "toB\016MetroAtsProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5298,7 +5387,7 @@ public final class MetroAtsProtos {
     internal_static_proto_MetroStopEstimate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_MetroStopEstimate_descriptor,
-        new java.lang.String[] { "Station", "Platform", "ArrivalTimePlanned", "ArrivalTimeForecast", "ArrivalTimeMeasured", "DepartureTimePlanned", "DepartureTimeForecast", "DepartureTimeMeasured", "Source", "StopNumber", "RowProgress", });
+        new java.lang.String[] { "Station", "Platform", "ArrivalTimePlanned", "ArrivalTimeForecast", "ArrivalTimeMeasured", "DepartureTimePlanned", "DepartureTimeForecast", "DepartureTimeMeasured", "Source", "StopNumber", "RowProgress", "Scheduled", });
     internal_static_proto_MetroEstimate_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_MetroEstimate_fieldAccessorTable = new

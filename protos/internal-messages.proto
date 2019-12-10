@@ -14,6 +14,8 @@ message TripInfo {
     required string route_id = 3;
     required uint32 direction_id = 4;
     required string start_time = 5;
+    // Whether trip is included in static schedule or not
+    optional bool scheduled = 6;
 }
 
 enum Category {
