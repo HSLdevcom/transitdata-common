@@ -484,17 +484,17 @@ public final class InternalMessages {
      * Whether trip is included in static schedule or not
      * </pre>
      *
-     * <code>optional bool scheduled = 6;</code>
+     * <code>optional .proto.TripInfo.ScheduleType schedule_type = 6 [default = SCHEDULED];</code>
      */
-    boolean hasScheduled();
+    boolean hasScheduleType();
     /**
      * <pre>
      * Whether trip is included in static schedule or not
      * </pre>
      *
-     * <code>optional bool scheduled = 6;</code>
+     * <code>optional .proto.TripInfo.ScheduleType schedule_type = 6 [default = SCHEDULED];</code>
      */
-    boolean getScheduled();
+    fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType getScheduleType();
   }
   /**
    * Protobuf type {@code proto.TripInfo}
@@ -513,7 +513,7 @@ public final class InternalMessages {
       routeId_ = "";
       directionId_ = 0;
       startTime_ = "";
-      scheduled_ = false;
+      scheduleType_ = 1;
     }
 
     @java.lang.Override
@@ -574,8 +574,14 @@ public final class InternalMessages {
               break;
             }
             case 48: {
-              bitField0_ |= 0x00000020;
-              scheduled_ = input.readBool();
+              int rawValue = input.readEnum();
+              fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType value = fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(6, rawValue);
+              } else {
+                bitField0_ |= 0x00000020;
+                scheduleType_ = rawValue;
+              }
               break;
             }
           }
@@ -600,6 +606,129 @@ public final class InternalMessages {
       return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_TripInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.class, fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code proto.TripInfo.ScheduleType}
+     */
+    public enum ScheduleType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <pre>
+       *Trip is present in the static schedule
+       * </pre>
+       *
+       * <code>SCHEDULED = 1;</code>
+       */
+      SCHEDULED(1),
+      /**
+       * <pre>
+       *Trip is not present in the static schedule, but follows some schedule (e.g. replacement service for broken vehicle)
+       * </pre>
+       *
+       * <code>ADDED = 2;</code>
+       */
+      ADDED(2),
+      /**
+       * <pre>
+       *Trip does not have any schedule (e.g. shuttle bus that runs when full)
+       * </pre>
+       *
+       * <code>UNSCHEDULED = 3;</code>
+       */
+      UNSCHEDULED(3),
+      ;
+
+      /**
+       * <pre>
+       *Trip is present in the static schedule
+       * </pre>
+       *
+       * <code>SCHEDULED = 1;</code>
+       */
+      public static final int SCHEDULED_VALUE = 1;
+      /**
+       * <pre>
+       *Trip is not present in the static schedule, but follows some schedule (e.g. replacement service for broken vehicle)
+       * </pre>
+       *
+       * <code>ADDED = 2;</code>
+       */
+      public static final int ADDED_VALUE = 2;
+      /**
+       * <pre>
+       *Trip does not have any schedule (e.g. shuttle bus that runs when full)
+       * </pre>
+       *
+       * <code>UNSCHEDULED = 3;</code>
+       */
+      public static final int UNSCHEDULED_VALUE = 3;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ScheduleType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ScheduleType forNumber(int value) {
+        switch (value) {
+          case 1: return SCHEDULED;
+          case 2: return ADDED;
+          case 3: return UNSCHEDULED;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ScheduleType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          ScheduleType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ScheduleType>() {
+              public ScheduleType findValueByNumber(int number) {
+                return ScheduleType.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final ScheduleType[] VALUES = values();
+
+      public static ScheduleType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private ScheduleType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.TripInfo.ScheduleType)
     }
 
     private int bitField0_;
@@ -813,16 +942,16 @@ public final class InternalMessages {
       }
     }
 
-    public static final int SCHEDULED_FIELD_NUMBER = 6;
-    private boolean scheduled_;
+    public static final int SCHEDULE_TYPE_FIELD_NUMBER = 6;
+    private int scheduleType_;
     /**
      * <pre>
      * Whether trip is included in static schedule or not
      * </pre>
      *
-     * <code>optional bool scheduled = 6;</code>
+     * <code>optional .proto.TripInfo.ScheduleType schedule_type = 6 [default = SCHEDULED];</code>
      */
-    public boolean hasScheduled() {
+    public boolean hasScheduleType() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
@@ -830,10 +959,11 @@ public final class InternalMessages {
      * Whether trip is included in static schedule or not
      * </pre>
      *
-     * <code>optional bool scheduled = 6;</code>
+     * <code>optional .proto.TripInfo.ScheduleType schedule_type = 6 [default = SCHEDULED];</code>
      */
-    public boolean getScheduled() {
-      return scheduled_;
+    public fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType getScheduleType() {
+      fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType result = fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType.valueOf(scheduleType_);
+      return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType.SCHEDULED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -884,7 +1014,7 @@ public final class InternalMessages {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, startTime_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeBool(6, scheduled_);
+        output.writeEnum(6, scheduleType_);
       }
       unknownFields.writeTo(output);
     }
@@ -912,7 +1042,7 @@ public final class InternalMessages {
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, scheduled_);
+          .computeEnumSize(6, scheduleType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -956,10 +1086,9 @@ public final class InternalMessages {
         result = result && getStartTime()
             .equals(other.getStartTime());
       }
-      result = result && (hasScheduled() == other.hasScheduled());
-      if (hasScheduled()) {
-        result = result && (getScheduled()
-            == other.getScheduled());
+      result = result && (hasScheduleType() == other.hasScheduleType());
+      if (hasScheduleType()) {
+        result = result && scheduleType_ == other.scheduleType_;
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -992,10 +1121,9 @@ public final class InternalMessages {
         hash = (37 * hash) + START_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getStartTime().hashCode();
       }
-      if (hasScheduled()) {
-        hash = (37 * hash) + SCHEDULED_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getScheduled());
+      if (hasScheduleType()) {
+        hash = (37 * hash) + SCHEDULE_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + scheduleType_;
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1125,7 +1253,7 @@ public final class InternalMessages {
         bitField0_ = (bitField0_ & ~0x00000008);
         startTime_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
-        scheduled_ = false;
+        scheduleType_ = 1;
         bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
@@ -1174,7 +1302,7 @@ public final class InternalMessages {
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
-        result.scheduled_ = scheduled_;
+        result.scheduleType_ = scheduleType_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1240,8 +1368,8 @@ public final class InternalMessages {
           startTime_ = other.startTime_;
           onChanged();
         }
-        if (other.hasScheduled()) {
-          setScheduled(other.getScheduled());
+        if (other.hasScheduleType()) {
+          setScheduleType(other.getScheduleType());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1676,15 +1804,15 @@ public final class InternalMessages {
         return this;
       }
 
-      private boolean scheduled_ ;
+      private int scheduleType_ = 1;
       /**
        * <pre>
        * Whether trip is included in static schedule or not
        * </pre>
        *
-       * <code>optional bool scheduled = 6;</code>
+       * <code>optional .proto.TripInfo.ScheduleType schedule_type = 6 [default = SCHEDULED];</code>
        */
-      public boolean hasScheduled() {
+      public boolean hasScheduleType() {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
@@ -1692,21 +1820,25 @@ public final class InternalMessages {
        * Whether trip is included in static schedule or not
        * </pre>
        *
-       * <code>optional bool scheduled = 6;</code>
+       * <code>optional .proto.TripInfo.ScheduleType schedule_type = 6 [default = SCHEDULED];</code>
        */
-      public boolean getScheduled() {
-        return scheduled_;
+      public fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType getScheduleType() {
+        fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType result = fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType.valueOf(scheduleType_);
+        return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType.SCHEDULED : result;
       }
       /**
        * <pre>
        * Whether trip is included in static schedule or not
        * </pre>
        *
-       * <code>optional bool scheduled = 6;</code>
+       * <code>optional .proto.TripInfo.ScheduleType schedule_type = 6 [default = SCHEDULED];</code>
        */
-      public Builder setScheduled(boolean value) {
+      public Builder setScheduleType(fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         bitField0_ |= 0x00000020;
-        scheduled_ = value;
+        scheduleType_ = value.getNumber();
         onChanged();
         return this;
       }
@@ -1715,11 +1847,11 @@ public final class InternalMessages {
        * Whether trip is included in static schedule or not
        * </pre>
        *
-       * <code>optional bool scheduled = 6;</code>
+       * <code>optional .proto.TripInfo.ScheduleType schedule_type = 6 [default = SCHEDULED];</code>
        */
-      public Builder clearScheduled() {
+      public Builder clearScheduleType() {
         bitField0_ = (bitField0_ & ~0x00000020);
-        scheduled_ = false;
+        scheduleType_ = 1;
         onChanged();
         return this;
       }
@@ -11936,116 +12068,119 @@ public final class InternalMessages {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027internal-messages.proto\022\005proto\"\201\001\n\010Tri" +
+      "\n\027internal-messages.proto\022\005proto\"\351\001\n\010Tri" +
       "pInfo\022\017\n\007trip_id\030\001 \002(\t\022\025\n\roperating_day\030" +
       "\002 \002(\t\022\020\n\010route_id\030\003 \002(\t\022\024\n\014direction_id\030" +
-      "\004 \002(\r\022\022\n\nstart_time\030\005 \002(\t\022\021\n\tscheduled\030\006" +
-      " \001(\010\"\302\020\n\020TripCancellation\022\030\n\rSchemaVersi" +
-      "on\030\001 \002(\005:\0011\022\017\n\007trip_id\030\002 \001(\t\022\020\n\010route_id" +
-      "\030\003 \001(\t\022\024\n\014direction_id\030\004 \001(\r\022\022\n\nstart_ti" +
-      "me\030\005 \001(\t\022\022\n\nstart_date\030\006 \001(\t\022.\n\006status\030\007" +
-      " \002(\0162\036.proto.TripCancellation.Status\022H\n\024" +
-      "deviation_cases_type\030\010 \001(\0162*.proto.TripC",
-      "ancellation.DeviationCasesType\022P\n\030affect" +
-      "ed_departures_type\030\t \001(\0162..proto.TripCan" +
-      "cellation.AffectedDeparturesType\022\r\n\005titl" +
-      "e\030\n \001(\t\022\023\n\013description\030\013 \001(\t\022!\n\010category" +
-      "\030\014 \001(\0162\017.proto.Category\0229\n\014sub_category\030" +
-      "\r \001(\0162#.proto.TripCancellation.SubCatego" +
-      "ry\"#\n\006Status\022\013\n\007RUNNING\020\000\022\014\n\010CANCELED\020\001\"" +
-      "\360\001\n\022DeviationCasesType\022\024\n\020CANCEL_DEPARTU" +
-      "RE\020\000\022\n\n\006DETOUR\020\001\022\026\n\022SKIPPED_STOP_CALLS\020\002" +
-      "\022\023\n\017EARLY_DEPARTURE\020\003\022%\n!EARLY_DEPARTURE",
-      "_FROM_TIMING_POINT\020\004\022\022\n\016LATE_DEPARTURE\020\005" +
-      "\022!\n\035DEPARTURED_AFTER_NEXT_JOURNEY\020\006\022\036\n\032B" +
-      "LOCK_FIRST_DEPARTURE_LATE\020\007\022\r\n\tTIS_ERROR" +
-      "\020\010\"\213\001\n\026AffectedDeparturesType\022\033\n\027CANCEL_" +
-      "ENTIRE_DEPARTURE\020\000\022\033\n\027CANCEL_STOPS_FROM_" +
-      "START\020\001\022\034\n\030CANCEL_STOPS_FROM_MIDDLE\020\002\022\031\n" +
-      "\025CANCEL_STOPS_FROM_END\020\003\"\276\t\n\013SubCategory" +
-      "\022\025\n\021BREAK_MALFUNCTION\020\000\022\017\n\013OUT_OF_FUEL\020\001" +
-      "\022\021\n\rFLUID_LEAKAGE\020\002\022\030\n\024ELECTRIC_MALFUNCT" +
-      "ION\020\003\022\026\n\022ENGINE_MALFUNCTION\020\004\022\025\n\021OTHER_M",
-      "ALFUNCTION\020\005\022\r\n\tOWN_FAULT\020\006\022\022\n\016OPPOSITE_" +
-      "FAULT\020\007\022\021\n\rFAULT_UNKNOWN\020\010\022\022\n\016STAFF_SHOR" +
-      "TAGE\020\t\022\036\n\032ND_OPERATOR_PLANNING_ERROR\020\n\022\017" +
-      "\n\013DRIVER_LATE\020\013\022)\n%INSUFFICIENT_INSTRUCT" +
-      "IONS_BY_OPERATOR\020\014\022*\n&INSUFFICIENT_INSTR" +
-      "UCTIONS_BY_AUTHORITY\020\r\022\030\n\024NO_VEHICLE_AVA" +
-      "ILABLE\020\016\022\025\n\021ASSAULT_ON_DRIVER\020\017\022\030\n\024ASSAU" +
-      "LT_ON_PASSENGER\020\020\022\026\n\022ASSAULT_ON_VEHICLE\020" +
-      "\021\022\030\n\024PASSED_OUT_PASSENGER\020\022\022\021\n\rOTHER_ASS" +
-      "AULT\020\023\022\032\n\026UNDRIVEABLE_CONDITIONS\020\024\022\034\n\030ST",
-      "UCK_CAUSED_BY_SLIPPERY\020\025\022 \n\034CONGESTION_C" +
-      "AUSED_BY_WEATHER\020\026\022\022\n\016SLIPPERY_TRACK\020\027\022\020" +
-      "\n\014ROAD_BLOCKED\020\030\022(\n$VEHICLE_OFF_THE_ROAD" +
-      "_BY_DRIVER_ERROR\020\031\022(\n$VEHICLE_OFF_THE_RO" +
-      "AD_BY_OTHER_REASON\020\032\022\026\n\022MISSPARKED_VEHIC" +
-      "LE\020\033\022\034\n\030CONGESTION_REASON_UKNOWN\020\034\022!\n\035CO" +
-      "NGESTION_CAUSED_BY_ACCIDENT\020\035\022\022\n\016DRIVER_" +
-      "SEIZURE\020\036\022\025\n\021PASSENGER_SEIZURE\020\037\022\025\n\021PASS" +
-      "ENGER_INJURED\020 \022\021\n\rOTHER_SEIZURE\020!\022\020\n\014DE" +
-      "VICE_ERROR\020\"\022\031\n\025OPERATOR_DEVICE_ERROR\020#\022",
-      "\037\n\033WRONG_INFORMATION_IN_DEVICE\020$\022\034\n\030ITS_" +
-      "SYSTEM_NOT_INSTALLED\020%\022\016\n\nUSER_ERROR\020&\022\017" +
-      "\n\013FALSE_ALARM\020\'\022\023\n\017OTHER_ITS_ERROR\020(\022\020\n\014" +
-      "DRIVER_ERROR\020)\022\031\n\025INSUFFICIENT_CAPASITY\020" +
-      "*\022 \n\034OPERATOR_PERSONNEL_ON_STRIKE\020+\022\020\n\014O" +
-      "THER_STRIKE\020,\022\031\n\025OTHER_OPERATOR_REASON\020-" +
-      "\022\021\n\rUNKNOWN_CAUSE\020.\022\024\n\020DOOR_MALFUNCTION\020" +
-      "/\"\356\002\n\014StopEstimate\022\030\n\rSchemaVersion\030\001 \002(" +
-      "\005:\0011\022\"\n\ttrip_info\030\002 \002(\0132\017.proto.TripInfo" +
-      "\022\017\n\007stop_id\030\003 \002(\t\022\025\n\rstop_sequence\030\004 \002(\r",
-      "\022*\n\006status\030\005 \002(\0162\032.proto.StopEstimate.St" +
-      "atus\022&\n\004type\030\006 \002(\0162\030.proto.StopEstimate." +
-      "Type\022\035\n\025estimated_time_utc_ms\030\007 \002(\003\022\035\n\025s" +
-      "cheduled_time_utc_ms\030\010 \001(\003\022\034\n\024last_modif" +
-      "ied_utc_ms\030\t \002(\003\"$\n\006Status\022\r\n\tSCHEDULED\020" +
-      "\000\022\013\n\007SKIPPED\020\001\"\"\n\004Type\022\013\n\007ARRIVAL\020\000\022\r\n\tD" +
-      "EPARTURE\020\001\"\307\007\n\010Bulletin\022\023\n\013bulletin_id\030\001" +
-      " \001(\t\022!\n\010category\030\002 \001(\0162\017.proto.Category\022" +
-      "\034\n\024last_modified_utc_ms\030\003 \002(\003\022\031\n\021valid_f" +
-      "rom_utc_ms\030\004 \002(\003\022\027\n\017valid_to_utc_ms\030\005 \002(",
-      "\003\022\032\n\022affects_all_routes\030\006 \001(\010\022\031\n\021affects" +
-      "_all_stops\030\007 \001(\010\0227\n\017affected_routes\030\010 \003(" +
-      "\0132\036.proto.Bulletin.AffectedEntity\0226\n\016aff" +
-      "ected_stops\030\t \003(\0132\036.proto.Bulletin.Affec" +
-      "tedEntity\022&\n\006impact\030\n \001(\0162\026.proto.Bullet" +
-      "in.Impact\022*\n\010priority\030\013 \001(\0162\030.proto.Bull" +
-      "etin.Priority\022+\n\006titles\030\014 \003(\0132\033.proto.Bu" +
-      "lletin.Translation\0221\n\014descriptions\030\r \003(\013" +
-      "2\033.proto.Bulletin.Translation\022)\n\004urls\030\016 " +
-      "\003(\0132\033.proto.Bulletin.Translation\032#\n\016Affe",
-      "ctedEntity\022\021\n\tentity_id\030\001 \002(\t\032-\n\013Transla" +
-      "tion\022\014\n\004text\030\001 \002(\t\022\020\n\010language\030\002 \001(\t\"\246\002\n" +
-      "\006Impact\022\r\n\tCANCELLED\020\000\022\013\n\007DELAYED\020\001\022\026\n\022D" +
-      "EVIATING_SCHEDULE\020\002\022\024\n\020DISRUPTION_ROUTE\020" +
-      "\003\022\030\n\024IRREGULAR_DEPARTURES\020\004\022\027\n\023POSSIBLE_" +
-      "DEVIATIONS\020\005\022\024\n\020POSSIBLY_DELAYED\020\006\022\025\n\021RE" +
-      "DUCED_TRANSPORT\020\007\022\027\n\023RETURNING_TO_NORMAL" +
-      "\020\010\022 \n\034VENDING_MACHINE_OUT_OF_ORDER\020\t\022\010\n\004" +
-      "NULL\020\n\022\t\n\005OTHER\020\013\022\025\n\021NO_TRAFFIC_IMPACT\020\014" +
-      "\022\013\n\007UNKNOWN\020\r\"-\n\010Priority\022\010\n\004INFO\020\000\022\013\n\007W",
-      "ARNING\020\001\022\n\n\006SEVERE\020\002\"L\n\014ServiceAlert\022\030\n\r" +
-      "SchemaVersion\030\001 \002(\005:\0011\022\"\n\tbulletins\030\002 \003(" +
-      "\0132\017.proto.Bulletin*\202\005\n\010Category\022\025\n\021VEHIC" +
-      "LE_BREAKDOWN\020\000\022\014\n\010ACCIDENT\020\001\022\r\n\tNO_DRIVE" +
-      "R\020\002\022\013\n\007ASSAULT\020\003\022\013\n\007WEATHER\020\004\022\030\n\024VEHICLE" +
-      "_OFF_THE_ROAD\020\005\022\013\n\007SEIZURE\020\006\022\024\n\020ITS_SYST" +
-      "EM_ERROR\020\007\022\026\n\022OTHER_DRIVER_ERROR\020\010\022\027\n\023TO" +
-      "O_MANY_PASSENGERS\020\t\022\n\n\006STRIKE\020\n\022\t\n\005OTHER" +
-      "\020\013\022\026\n\022EARLIER_DISRUPTION\020\014\022\031\n\025NO_TRAFFIC" +
-      "_DISRUPTION\020\r\022\021\n\rTRACK_BLOCKED\020\016\022\021\n\rSTAF",
-      "F_DEFICIT\020\017\022\017\n\013DISTURBANCE\020\020\022\023\n\017VEHICLE_" +
-      "DEFICIT\020\021\022\017\n\013ROAD_CLOSED\020\022\022\017\n\013ROAD_TRENC" +
-      "H\020\023\022\025\n\021TRACK_MAINTENANCE\020\024\022\024\n\020TRAFFIC_AC" +
-      "CIDENT\020\025\022\017\n\013TRAFFIC_JAM\020\026\022\024\n\020MEDICAL_INC" +
-      "IDENT\020\027\022\026\n\022WEATHER_CONDITIONS\020\030\022\025\n\021TECHN" +
-      "ICAL_FAILURE\020\031\022\010\n\004TEST\020\032\022\024\n\020ROAD_MAINTEN" +
-      "ANCE\020\033\022\022\n\016SWITCH_FAILURE\020\034\022\017\n\013STATE_VISI" +
-      "T\020\035\022\021\n\rPOWER_FAILURE\020\036\022\025\n\021MISPARKED_VEHI" +
-      "CLE\020\037\022\020\n\014PUBLIC_EVENT\020 B3\n\037fi.hsl.common" +
-      ".transitdata.protoB\020InternalMessages"
+      "\004 \002(\r\022\022\n\nstart_time\030\005 \002(\t\022>\n\rschedule_ty" +
+      "pe\030\006 \001(\0162\034.proto.TripInfo.ScheduleType:\t" +
+      "SCHEDULED\"9\n\014ScheduleType\022\r\n\tSCHEDULED\020\001" +
+      "\022\t\n\005ADDED\020\002\022\017\n\013UNSCHEDULED\020\003\"\302\020\n\020TripCan" +
+      "cellation\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\017\n\007t" +
+      "rip_id\030\002 \001(\t\022\020\n\010route_id\030\003 \001(\t\022\024\n\014direct" +
+      "ion_id\030\004 \001(\r\022\022\n\nstart_time\030\005 \001(\t\022\022\n\nstar",
+      "t_date\030\006 \001(\t\022.\n\006status\030\007 \002(\0162\036.proto.Tri" +
+      "pCancellation.Status\022H\n\024deviation_cases_" +
+      "type\030\010 \001(\0162*.proto.TripCancellation.Devi" +
+      "ationCasesType\022P\n\030affected_departures_ty" +
+      "pe\030\t \001(\0162..proto.TripCancellation.Affect" +
+      "edDeparturesType\022\r\n\005title\030\n \001(\t\022\023\n\013descr" +
+      "iption\030\013 \001(\t\022!\n\010category\030\014 \001(\0162\017.proto.C" +
+      "ategory\0229\n\014sub_category\030\r \001(\0162#.proto.Tr" +
+      "ipCancellation.SubCategory\"#\n\006Status\022\013\n\007" +
+      "RUNNING\020\000\022\014\n\010CANCELED\020\001\"\360\001\n\022DeviationCas",
+      "esType\022\024\n\020CANCEL_DEPARTURE\020\000\022\n\n\006DETOUR\020\001" +
+      "\022\026\n\022SKIPPED_STOP_CALLS\020\002\022\023\n\017EARLY_DEPART" +
+      "URE\020\003\022%\n!EARLY_DEPARTURE_FROM_TIMING_POI" +
+      "NT\020\004\022\022\n\016LATE_DEPARTURE\020\005\022!\n\035DEPARTURED_A" +
+      "FTER_NEXT_JOURNEY\020\006\022\036\n\032BLOCK_FIRST_DEPAR" +
+      "TURE_LATE\020\007\022\r\n\tTIS_ERROR\020\010\"\213\001\n\026AffectedD" +
+      "eparturesType\022\033\n\027CANCEL_ENTIRE_DEPARTURE" +
+      "\020\000\022\033\n\027CANCEL_STOPS_FROM_START\020\001\022\034\n\030CANCE" +
+      "L_STOPS_FROM_MIDDLE\020\002\022\031\n\025CANCEL_STOPS_FR" +
+      "OM_END\020\003\"\276\t\n\013SubCategory\022\025\n\021BREAK_MALFUN",
+      "CTION\020\000\022\017\n\013OUT_OF_FUEL\020\001\022\021\n\rFLUID_LEAKAG" +
+      "E\020\002\022\030\n\024ELECTRIC_MALFUNCTION\020\003\022\026\n\022ENGINE_" +
+      "MALFUNCTION\020\004\022\025\n\021OTHER_MALFUNCTION\020\005\022\r\n\t" +
+      "OWN_FAULT\020\006\022\022\n\016OPPOSITE_FAULT\020\007\022\021\n\rFAULT" +
+      "_UNKNOWN\020\010\022\022\n\016STAFF_SHORTAGE\020\t\022\036\n\032ND_OPE" +
+      "RATOR_PLANNING_ERROR\020\n\022\017\n\013DRIVER_LATE\020\013\022" +
+      ")\n%INSUFFICIENT_INSTRUCTIONS_BY_OPERATOR" +
+      "\020\014\022*\n&INSUFFICIENT_INSTRUCTIONS_BY_AUTHO" +
+      "RITY\020\r\022\030\n\024NO_VEHICLE_AVAILABLE\020\016\022\025\n\021ASSA" +
+      "ULT_ON_DRIVER\020\017\022\030\n\024ASSAULT_ON_PASSENGER\020",
+      "\020\022\026\n\022ASSAULT_ON_VEHICLE\020\021\022\030\n\024PASSED_OUT_" +
+      "PASSENGER\020\022\022\021\n\rOTHER_ASSAULT\020\023\022\032\n\026UNDRIV" +
+      "EABLE_CONDITIONS\020\024\022\034\n\030STUCK_CAUSED_BY_SL" +
+      "IPPERY\020\025\022 \n\034CONGESTION_CAUSED_BY_WEATHER" +
+      "\020\026\022\022\n\016SLIPPERY_TRACK\020\027\022\020\n\014ROAD_BLOCKED\020\030" +
+      "\022(\n$VEHICLE_OFF_THE_ROAD_BY_DRIVER_ERROR" +
+      "\020\031\022(\n$VEHICLE_OFF_THE_ROAD_BY_OTHER_REAS" +
+      "ON\020\032\022\026\n\022MISSPARKED_VEHICLE\020\033\022\034\n\030CONGESTI" +
+      "ON_REASON_UKNOWN\020\034\022!\n\035CONGESTION_CAUSED_" +
+      "BY_ACCIDENT\020\035\022\022\n\016DRIVER_SEIZURE\020\036\022\025\n\021PAS",
+      "SENGER_SEIZURE\020\037\022\025\n\021PASSENGER_INJURED\020 \022" +
+      "\021\n\rOTHER_SEIZURE\020!\022\020\n\014DEVICE_ERROR\020\"\022\031\n\025" +
+      "OPERATOR_DEVICE_ERROR\020#\022\037\n\033WRONG_INFORMA" +
+      "TION_IN_DEVICE\020$\022\034\n\030ITS_SYSTEM_NOT_INSTA" +
+      "LLED\020%\022\016\n\nUSER_ERROR\020&\022\017\n\013FALSE_ALARM\020\'\022" +
+      "\023\n\017OTHER_ITS_ERROR\020(\022\020\n\014DRIVER_ERROR\020)\022\031" +
+      "\n\025INSUFFICIENT_CAPASITY\020*\022 \n\034OPERATOR_PE" +
+      "RSONNEL_ON_STRIKE\020+\022\020\n\014OTHER_STRIKE\020,\022\031\n" +
+      "\025OTHER_OPERATOR_REASON\020-\022\021\n\rUNKNOWN_CAUS" +
+      "E\020.\022\024\n\020DOOR_MALFUNCTION\020/\"\356\002\n\014StopEstima",
+      "te\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\"\n\ttrip_inf" +
+      "o\030\002 \002(\0132\017.proto.TripInfo\022\017\n\007stop_id\030\003 \002(" +
+      "\t\022\025\n\rstop_sequence\030\004 \002(\r\022*\n\006status\030\005 \002(\016" +
+      "2\032.proto.StopEstimate.Status\022&\n\004type\030\006 \002" +
+      "(\0162\030.proto.StopEstimate.Type\022\035\n\025estimate" +
+      "d_time_utc_ms\030\007 \002(\003\022\035\n\025scheduled_time_ut" +
+      "c_ms\030\010 \001(\003\022\034\n\024last_modified_utc_ms\030\t \002(\003" +
+      "\"$\n\006Status\022\r\n\tSCHEDULED\020\000\022\013\n\007SKIPPED\020\001\"\"" +
+      "\n\004Type\022\013\n\007ARRIVAL\020\000\022\r\n\tDEPARTURE\020\001\"\307\007\n\010B" +
+      "ulletin\022\023\n\013bulletin_id\030\001 \001(\t\022!\n\010category",
+      "\030\002 \001(\0162\017.proto.Category\022\034\n\024last_modified" +
+      "_utc_ms\030\003 \002(\003\022\031\n\021valid_from_utc_ms\030\004 \002(\003" +
+      "\022\027\n\017valid_to_utc_ms\030\005 \002(\003\022\032\n\022affects_all" +
+      "_routes\030\006 \001(\010\022\031\n\021affects_all_stops\030\007 \001(\010" +
+      "\0227\n\017affected_routes\030\010 \003(\0132\036.proto.Bullet" +
+      "in.AffectedEntity\0226\n\016affected_stops\030\t \003(" +
+      "\0132\036.proto.Bulletin.AffectedEntity\022&\n\006imp" +
+      "act\030\n \001(\0162\026.proto.Bulletin.Impact\022*\n\010pri" +
+      "ority\030\013 \001(\0162\030.proto.Bulletin.Priority\022+\n" +
+      "\006titles\030\014 \003(\0132\033.proto.Bulletin.Translati",
+      "on\0221\n\014descriptions\030\r \003(\0132\033.proto.Bulleti" +
+      "n.Translation\022)\n\004urls\030\016 \003(\0132\033.proto.Bull" +
+      "etin.Translation\032#\n\016AffectedEntity\022\021\n\ten" +
+      "tity_id\030\001 \002(\t\032-\n\013Translation\022\014\n\004text\030\001 \002" +
+      "(\t\022\020\n\010language\030\002 \001(\t\"\246\002\n\006Impact\022\r\n\tCANCE" +
+      "LLED\020\000\022\013\n\007DELAYED\020\001\022\026\n\022DEVIATING_SCHEDUL" +
+      "E\020\002\022\024\n\020DISRUPTION_ROUTE\020\003\022\030\n\024IRREGULAR_D" +
+      "EPARTURES\020\004\022\027\n\023POSSIBLE_DEVIATIONS\020\005\022\024\n\020" +
+      "POSSIBLY_DELAYED\020\006\022\025\n\021REDUCED_TRANSPORT\020" +
+      "\007\022\027\n\023RETURNING_TO_NORMAL\020\010\022 \n\034VENDING_MA",
+      "CHINE_OUT_OF_ORDER\020\t\022\010\n\004NULL\020\n\022\t\n\005OTHER\020" +
+      "\013\022\025\n\021NO_TRAFFIC_IMPACT\020\014\022\013\n\007UNKNOWN\020\r\"-\n" +
+      "\010Priority\022\010\n\004INFO\020\000\022\013\n\007WARNING\020\001\022\n\n\006SEVE" +
+      "RE\020\002\"L\n\014ServiceAlert\022\030\n\rSchemaVersion\030\001 " +
+      "\002(\005:\0011\022\"\n\tbulletins\030\002 \003(\0132\017.proto.Bullet" +
+      "in*\202\005\n\010Category\022\025\n\021VEHICLE_BREAKDOWN\020\000\022\014" +
+      "\n\010ACCIDENT\020\001\022\r\n\tNO_DRIVER\020\002\022\013\n\007ASSAULT\020\003" +
+      "\022\013\n\007WEATHER\020\004\022\030\n\024VEHICLE_OFF_THE_ROAD\020\005\022" +
+      "\013\n\007SEIZURE\020\006\022\024\n\020ITS_SYSTEM_ERROR\020\007\022\026\n\022OT" +
+      "HER_DRIVER_ERROR\020\010\022\027\n\023TOO_MANY_PASSENGER",
+      "S\020\t\022\n\n\006STRIKE\020\n\022\t\n\005OTHER\020\013\022\026\n\022EARLIER_DI" +
+      "SRUPTION\020\014\022\031\n\025NO_TRAFFIC_DISRUPTION\020\r\022\021\n" +
+      "\rTRACK_BLOCKED\020\016\022\021\n\rSTAFF_DEFICIT\020\017\022\017\n\013D" +
+      "ISTURBANCE\020\020\022\023\n\017VEHICLE_DEFICIT\020\021\022\017\n\013ROA" +
+      "D_CLOSED\020\022\022\017\n\013ROAD_TRENCH\020\023\022\025\n\021TRACK_MAI" +
+      "NTENANCE\020\024\022\024\n\020TRAFFIC_ACCIDENT\020\025\022\017\n\013TRAF" +
+      "FIC_JAM\020\026\022\024\n\020MEDICAL_INCIDENT\020\027\022\026\n\022WEATH" +
+      "ER_CONDITIONS\020\030\022\025\n\021TECHNICAL_FAILURE\020\031\022\010" +
+      "\n\004TEST\020\032\022\024\n\020ROAD_MAINTENANCE\020\033\022\022\n\016SWITCH" +
+      "_FAILURE\020\034\022\017\n\013STATE_VISIT\020\035\022\021\n\rPOWER_FAI",
+      "LURE\020\036\022\025\n\021MISPARKED_VEHICLE\020\037\022\020\n\014PUBLIC_" +
+      "EVENT\020 B3\n\037fi.hsl.common.transitdata.pro" +
+      "toB\020InternalMessages"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -12064,7 +12199,7 @@ public final class InternalMessages {
     internal_static_proto_TripInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_TripInfo_descriptor,
-        new java.lang.String[] { "TripId", "OperatingDay", "RouteId", "DirectionId", "StartTime", "Scheduled", });
+        new java.lang.String[] { "TripId", "OperatingDay", "RouteId", "DirectionId", "StartTime", "ScheduleType", });
     internal_static_proto_TripCancellation_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_TripCancellation_fieldAccessorTable = new
