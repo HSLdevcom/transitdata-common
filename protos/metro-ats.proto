@@ -49,5 +49,6 @@ message MetroEstimate {
     optional string route_name = 12;
     optional string start_datetime = 13;
     optional string direction = 14;
+    // Is the metro trip is present in the static schedule?
     optional bool scheduled = 15;
 }
