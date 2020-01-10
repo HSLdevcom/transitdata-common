@@ -167,6 +167,7 @@ message StopEstimate {
     enum Status {
         SCHEDULED = 0;
         SKIPPED = 1;
+        NO_DATA = 2; // No estimate is available
     }
     required Status status = 5;
 
@@ -176,7 +177,7 @@ message StopEstimate {
     }
 
     required Type type = 6;
-    required int64 estimated_time_utc_ms = 7;
+    optional int64 estimated_time_utc_ms = 7;
     optional int64 scheduled_time_utc_ms = 8;
     required int64 last_modified_utc_ms = 9;
 }

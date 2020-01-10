@@ -4873,11 +4873,11 @@ public final class InternalMessages {
     fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Type getType();
 
     /**
-     * <code>required int64 estimated_time_utc_ms = 7;</code>
+     * <code>optional int64 estimated_time_utc_ms = 7;</code>
      */
     boolean hasEstimatedTimeUtcMs();
     /**
-     * <code>required int64 estimated_time_utc_ms = 7;</code>
+     * <code>optional int64 estimated_time_utc_ms = 7;</code>
      */
     long getEstimatedTimeUtcMs();
 
@@ -5052,6 +5052,14 @@ public final class InternalMessages {
        * <code>SKIPPED = 1;</code>
        */
       SKIPPED(1),
+      /**
+       * <pre>
+       * No estimate is available
+       * </pre>
+       *
+       * <code>NO_DATA = 2;</code>
+       */
+      NO_DATA(2),
       ;
 
       /**
@@ -5062,6 +5070,14 @@ public final class InternalMessages {
        * <code>SKIPPED = 1;</code>
        */
       public static final int SKIPPED_VALUE = 1;
+      /**
+       * <pre>
+       * No estimate is available
+       * </pre>
+       *
+       * <code>NO_DATA = 2;</code>
+       */
+      public static final int NO_DATA_VALUE = 2;
 
 
       public final int getNumber() {
@@ -5080,6 +5096,7 @@ public final class InternalMessages {
         switch (value) {
           case 0: return SCHEDULED;
           case 1: return SKIPPED;
+          case 2: return NO_DATA;
           default: return null;
         }
       }
@@ -5348,13 +5365,13 @@ public final class InternalMessages {
     public static final int ESTIMATED_TIME_UTC_MS_FIELD_NUMBER = 7;
     private long estimatedTimeUtcMs_;
     /**
-     * <code>required int64 estimated_time_utc_ms = 7;</code>
+     * <code>optional int64 estimated_time_utc_ms = 7;</code>
      */
     public boolean hasEstimatedTimeUtcMs() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>required int64 estimated_time_utc_ms = 7;</code>
+     * <code>optional int64 estimated_time_utc_ms = 7;</code>
      */
     public long getEstimatedTimeUtcMs() {
       return estimatedTimeUtcMs_;
@@ -5417,10 +5434,6 @@ public final class InternalMessages {
         return false;
       }
       if (!hasType()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasEstimatedTimeUtcMs()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -5918,9 +5931,6 @@ public final class InternalMessages {
         if (!hasType()) {
           return false;
         }
-        if (!hasEstimatedTimeUtcMs()) {
-          return false;
-        }
         if (!hasLastModifiedUtcMs()) {
           return false;
         }
@@ -6281,19 +6291,19 @@ public final class InternalMessages {
 
       private long estimatedTimeUtcMs_ ;
       /**
-       * <code>required int64 estimated_time_utc_ms = 7;</code>
+       * <code>optional int64 estimated_time_utc_ms = 7;</code>
        */
       public boolean hasEstimatedTimeUtcMs() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>required int64 estimated_time_utc_ms = 7;</code>
+       * <code>optional int64 estimated_time_utc_ms = 7;</code>
        */
       public long getEstimatedTimeUtcMs() {
         return estimatedTimeUtcMs_;
       }
       /**
-       * <code>required int64 estimated_time_utc_ms = 7;</code>
+       * <code>optional int64 estimated_time_utc_ms = 7;</code>
        */
       public Builder setEstimatedTimeUtcMs(long value) {
         bitField0_ |= 0x00000040;
@@ -6302,7 +6312,7 @@ public final class InternalMessages {
         return this;
       }
       /**
-       * <code>required int64 estimated_time_utc_ms = 7;</code>
+       * <code>optional int64 estimated_time_utc_ms = 7;</code>
        */
       public Builder clearEstimatedTimeUtcMs() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -12127,60 +12137,60 @@ public final class InternalMessages {
       "\n\025INSUFFICIENT_CAPASITY\020*\022 \n\034OPERATOR_PE" +
       "RSONNEL_ON_STRIKE\020+\022\020\n\014OTHER_STRIKE\020,\022\031\n" +
       "\025OTHER_OPERATOR_REASON\020-\022\021\n\rUNKNOWN_CAUS" +
-      "E\020.\022\024\n\020DOOR_MALFUNCTION\020/\"\356\002\n\014StopEstima",
+      "E\020.\022\024\n\020DOOR_MALFUNCTION\020/\"\373\002\n\014StopEstima",
       "te\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\"\n\ttrip_inf" +
       "o\030\002 \002(\0132\017.proto.TripInfo\022\017\n\007stop_id\030\003 \002(" +
       "\t\022\025\n\rstop_sequence\030\004 \002(\r\022*\n\006status\030\005 \002(\016" +
       "2\032.proto.StopEstimate.Status\022&\n\004type\030\006 \002" +
       "(\0162\030.proto.StopEstimate.Type\022\035\n\025estimate" +
-      "d_time_utc_ms\030\007 \002(\003\022\035\n\025scheduled_time_ut" +
+      "d_time_utc_ms\030\007 \001(\003\022\035\n\025scheduled_time_ut" +
       "c_ms\030\010 \001(\003\022\034\n\024last_modified_utc_ms\030\t \002(\003" +
-      "\"$\n\006Status\022\r\n\tSCHEDULED\020\000\022\013\n\007SKIPPED\020\001\"\"" +
-      "\n\004Type\022\013\n\007ARRIVAL\020\000\022\r\n\tDEPARTURE\020\001\"\307\007\n\010B" +
-      "ulletin\022\023\n\013bulletin_id\030\001 \001(\t\022!\n\010category",
-      "\030\002 \001(\0162\017.proto.Category\022\034\n\024last_modified" +
-      "_utc_ms\030\003 \002(\003\022\031\n\021valid_from_utc_ms\030\004 \002(\003" +
-      "\022\027\n\017valid_to_utc_ms\030\005 \002(\003\022\032\n\022affects_all" +
-      "_routes\030\006 \001(\010\022\031\n\021affects_all_stops\030\007 \001(\010" +
-      "\0227\n\017affected_routes\030\010 \003(\0132\036.proto.Bullet" +
-      "in.AffectedEntity\0226\n\016affected_stops\030\t \003(" +
-      "\0132\036.proto.Bulletin.AffectedEntity\022&\n\006imp" +
-      "act\030\n \001(\0162\026.proto.Bulletin.Impact\022*\n\010pri" +
-      "ority\030\013 \001(\0162\030.proto.Bulletin.Priority\022+\n" +
-      "\006titles\030\014 \003(\0132\033.proto.Bulletin.Translati",
-      "on\0221\n\014descriptions\030\r \003(\0132\033.proto.Bulleti" +
-      "n.Translation\022)\n\004urls\030\016 \003(\0132\033.proto.Bull" +
-      "etin.Translation\032#\n\016AffectedEntity\022\021\n\ten" +
-      "tity_id\030\001 \002(\t\032-\n\013Translation\022\014\n\004text\030\001 \002" +
-      "(\t\022\020\n\010language\030\002 \001(\t\"\246\002\n\006Impact\022\r\n\tCANCE" +
-      "LLED\020\000\022\013\n\007DELAYED\020\001\022\026\n\022DEVIATING_SCHEDUL" +
-      "E\020\002\022\024\n\020DISRUPTION_ROUTE\020\003\022\030\n\024IRREGULAR_D" +
-      "EPARTURES\020\004\022\027\n\023POSSIBLE_DEVIATIONS\020\005\022\024\n\020" +
-      "POSSIBLY_DELAYED\020\006\022\025\n\021REDUCED_TRANSPORT\020" +
-      "\007\022\027\n\023RETURNING_TO_NORMAL\020\010\022 \n\034VENDING_MA",
-      "CHINE_OUT_OF_ORDER\020\t\022\010\n\004NULL\020\n\022\t\n\005OTHER\020" +
-      "\013\022\025\n\021NO_TRAFFIC_IMPACT\020\014\022\013\n\007UNKNOWN\020\r\"-\n" +
-      "\010Priority\022\010\n\004INFO\020\000\022\013\n\007WARNING\020\001\022\n\n\006SEVE" +
-      "RE\020\002\"L\n\014ServiceAlert\022\030\n\rSchemaVersion\030\001 " +
-      "\002(\005:\0011\022\"\n\tbulletins\030\002 \003(\0132\017.proto.Bullet" +
-      "in*\202\005\n\010Category\022\025\n\021VEHICLE_BREAKDOWN\020\000\022\014" +
-      "\n\010ACCIDENT\020\001\022\r\n\tNO_DRIVER\020\002\022\013\n\007ASSAULT\020\003" +
-      "\022\013\n\007WEATHER\020\004\022\030\n\024VEHICLE_OFF_THE_ROAD\020\005\022" +
-      "\013\n\007SEIZURE\020\006\022\024\n\020ITS_SYSTEM_ERROR\020\007\022\026\n\022OT" +
-      "HER_DRIVER_ERROR\020\010\022\027\n\023TOO_MANY_PASSENGER",
-      "S\020\t\022\n\n\006STRIKE\020\n\022\t\n\005OTHER\020\013\022\026\n\022EARLIER_DI" +
-      "SRUPTION\020\014\022\031\n\025NO_TRAFFIC_DISRUPTION\020\r\022\021\n" +
-      "\rTRACK_BLOCKED\020\016\022\021\n\rSTAFF_DEFICIT\020\017\022\017\n\013D" +
-      "ISTURBANCE\020\020\022\023\n\017VEHICLE_DEFICIT\020\021\022\017\n\013ROA" +
-      "D_CLOSED\020\022\022\017\n\013ROAD_TRENCH\020\023\022\025\n\021TRACK_MAI" +
-      "NTENANCE\020\024\022\024\n\020TRAFFIC_ACCIDENT\020\025\022\017\n\013TRAF" +
-      "FIC_JAM\020\026\022\024\n\020MEDICAL_INCIDENT\020\027\022\026\n\022WEATH" +
-      "ER_CONDITIONS\020\030\022\025\n\021TECHNICAL_FAILURE\020\031\022\010" +
-      "\n\004TEST\020\032\022\024\n\020ROAD_MAINTENANCE\020\033\022\022\n\016SWITCH" +
-      "_FAILURE\020\034\022\017\n\013STATE_VISIT\020\035\022\021\n\rPOWER_FAI",
-      "LURE\020\036\022\025\n\021MISPARKED_VEHICLE\020\037\022\020\n\014PUBLIC_" +
-      "EVENT\020 B3\n\037fi.hsl.common.transitdata.pro" +
-      "toB\020InternalMessages"
+      "\"1\n\006Status\022\r\n\tSCHEDULED\020\000\022\013\n\007SKIPPED\020\001\022\013" +
+      "\n\007NO_DATA\020\002\"\"\n\004Type\022\013\n\007ARRIVAL\020\000\022\r\n\tDEPA" +
+      "RTURE\020\001\"\307\007\n\010Bulletin\022\023\n\013bulletin_id\030\001 \001(",
+      "\t\022!\n\010category\030\002 \001(\0162\017.proto.Category\022\034\n\024" +
+      "last_modified_utc_ms\030\003 \002(\003\022\031\n\021valid_from" +
+      "_utc_ms\030\004 \002(\003\022\027\n\017valid_to_utc_ms\030\005 \002(\003\022\032" +
+      "\n\022affects_all_routes\030\006 \001(\010\022\031\n\021affects_al" +
+      "l_stops\030\007 \001(\010\0227\n\017affected_routes\030\010 \003(\0132\036" +
+      ".proto.Bulletin.AffectedEntity\0226\n\016affect" +
+      "ed_stops\030\t \003(\0132\036.proto.Bulletin.Affected" +
+      "Entity\022&\n\006impact\030\n \001(\0162\026.proto.Bulletin." +
+      "Impact\022*\n\010priority\030\013 \001(\0162\030.proto.Bulleti" +
+      "n.Priority\022+\n\006titles\030\014 \003(\0132\033.proto.Bulle",
+      "tin.Translation\0221\n\014descriptions\030\r \003(\0132\033." +
+      "proto.Bulletin.Translation\022)\n\004urls\030\016 \003(\013" +
+      "2\033.proto.Bulletin.Translation\032#\n\016Affecte" +
+      "dEntity\022\021\n\tentity_id\030\001 \002(\t\032-\n\013Translatio" +
+      "n\022\014\n\004text\030\001 \002(\t\022\020\n\010language\030\002 \001(\t\"\246\002\n\006Im" +
+      "pact\022\r\n\tCANCELLED\020\000\022\013\n\007DELAYED\020\001\022\026\n\022DEVI" +
+      "ATING_SCHEDULE\020\002\022\024\n\020DISRUPTION_ROUTE\020\003\022\030" +
+      "\n\024IRREGULAR_DEPARTURES\020\004\022\027\n\023POSSIBLE_DEV" +
+      "IATIONS\020\005\022\024\n\020POSSIBLY_DELAYED\020\006\022\025\n\021REDUC" +
+      "ED_TRANSPORT\020\007\022\027\n\023RETURNING_TO_NORMAL\020\010\022",
+      " \n\034VENDING_MACHINE_OUT_OF_ORDER\020\t\022\010\n\004NUL" +
+      "L\020\n\022\t\n\005OTHER\020\013\022\025\n\021NO_TRAFFIC_IMPACT\020\014\022\013\n" +
+      "\007UNKNOWN\020\r\"-\n\010Priority\022\010\n\004INFO\020\000\022\013\n\007WARN" +
+      "ING\020\001\022\n\n\006SEVERE\020\002\"L\n\014ServiceAlert\022\030\n\rSch" +
+      "emaVersion\030\001 \002(\005:\0011\022\"\n\tbulletins\030\002 \003(\0132\017" +
+      ".proto.Bulletin*\202\005\n\010Category\022\025\n\021VEHICLE_" +
+      "BREAKDOWN\020\000\022\014\n\010ACCIDENT\020\001\022\r\n\tNO_DRIVER\020\002" +
+      "\022\013\n\007ASSAULT\020\003\022\013\n\007WEATHER\020\004\022\030\n\024VEHICLE_OF" +
+      "F_THE_ROAD\020\005\022\013\n\007SEIZURE\020\006\022\024\n\020ITS_SYSTEM_" +
+      "ERROR\020\007\022\026\n\022OTHER_DRIVER_ERROR\020\010\022\027\n\023TOO_M",
+      "ANY_PASSENGERS\020\t\022\n\n\006STRIKE\020\n\022\t\n\005OTHER\020\013\022" +
+      "\026\n\022EARLIER_DISRUPTION\020\014\022\031\n\025NO_TRAFFIC_DI" +
+      "SRUPTION\020\r\022\021\n\rTRACK_BLOCKED\020\016\022\021\n\rSTAFF_D" +
+      "EFICIT\020\017\022\017\n\013DISTURBANCE\020\020\022\023\n\017VEHICLE_DEF" +
+      "ICIT\020\021\022\017\n\013ROAD_CLOSED\020\022\022\017\n\013ROAD_TRENCH\020\023" +
+      "\022\025\n\021TRACK_MAINTENANCE\020\024\022\024\n\020TRAFFIC_ACCID" +
+      "ENT\020\025\022\017\n\013TRAFFIC_JAM\020\026\022\024\n\020MEDICAL_INCIDE" +
+      "NT\020\027\022\026\n\022WEATHER_CONDITIONS\020\030\022\025\n\021TECHNICA" +
+      "L_FAILURE\020\031\022\010\n\004TEST\020\032\022\024\n\020ROAD_MAINTENANC" +
+      "E\020\033\022\022\n\016SWITCH_FAILURE\020\034\022\017\n\013STATE_VISIT\020\035",
+      "\022\021\n\rPOWER_FAILURE\020\036\022\025\n\021MISPARKED_VEHICLE" +
+      "\020\037\022\020\n\014PUBLIC_EVENT\020 B3\n\037fi.hsl.common.tr" +
+      "ansitdata.protoB\020InternalMessages"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
