@@ -14,6 +14,14 @@ message TripInfo {
     required string route_id = 3;
     required uint32 direction_id = 4;
     required string start_time = 5;
+    // Whether trip is included in static schedule or not
+    optional ScheduleType schedule_type = 6 [default = SCHEDULED];
+
+    enum ScheduleType {
+        SCHEDULED = 1; //Trip is present in the static schedule
+        ADDED = 2; //Trip is not present in the static schedule, but follows some schedule (e.g. replacement service for broken vehicle)
+        UNSCHEDULED = 3; //Trip does not have any schedule (e.g. shuttle bus that runs when full)
+    }
 }
 
 enum Category {
@@ -159,6 +167,7 @@ message StopEstimate {
     enum Status {
         SCHEDULED = 0;
         SKIPPED = 1;
+        NO_DATA = 2; // No estimate is available
     }
     required Status status = 5;
 
@@ -168,7 +177,7 @@ message StopEstimate {
     }
 
     required Type type = 6;
-    required int64 estimated_time_utc_ms = 7;
+    optional int64 estimated_time_utc_ms = 7;
     optional int64 scheduled_time_utc_ms = 8;
     required int64 last_modified_utc_ms = 9;
 }
