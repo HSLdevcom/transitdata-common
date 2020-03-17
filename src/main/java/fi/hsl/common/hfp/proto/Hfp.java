@@ -1932,6 +1932,22 @@ public final class Hfp {
        * <code>ferry = 4;</code>
        */
       ferry(4),
+      /**
+       * <pre>
+       *Used by U-line buses and other lines with limited real-time information
+       * </pre>
+       *
+       * <code>ubus = 5;</code>
+       */
+      ubus(5),
+      /**
+       * <pre>
+       *Used by robot buses
+       * </pre>
+       *
+       * <code>robot = 6;</code>
+       */
+      robot(6),
       ;
 
       /**
@@ -1954,6 +1970,22 @@ public final class Hfp {
        * <code>ferry = 4;</code>
        */
       public static final int ferry_VALUE = 4;
+      /**
+       * <pre>
+       *Used by U-line buses and other lines with limited real-time information
+       * </pre>
+       *
+       * <code>ubus = 5;</code>
+       */
+      public static final int ubus_VALUE = 5;
+      /**
+       * <pre>
+       *Used by robot buses
+       * </pre>
+       *
+       * <code>robot = 6;</code>
+       */
+      public static final int robot_VALUE = 6;
 
 
       public final int getNumber() {
@@ -1981,6 +2013,8 @@ public final class Hfp {
           case 2: return tram;
           case 3: return metro;
           case 4: return ferry;
+          case 5: return ubus;
+          case 6: return robot;
           default: return null;
         }
       }
@@ -10982,7 +11016,7 @@ public final class Hfp {
     java.lang.String[] descriptorData = {
       "\n\thfp.proto\022\005proto\"^\n\004Data\022\030\n\rSchemaVers" +
       "ion\030\001 \002(\005:\0011\022\033\n\005topic\030\002 \001(\0132\014.proto.Topi" +
-      "c\022\037\n\007payload\030\003 \002(\0132\016.proto.Payload\"\325\006\n\005T" +
+      "c\022\037\n\007payload\030\003 \002(\0132\016.proto.Payload\"\352\006\n\005T" +
       "opic\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\023\n\013receiv" +
       "ed_at\030\002 \002(\003\022\024\n\014topic_prefix\030\003 \002(\t\022\025\n\rtop" +
       "ic_version\030\004 \002(\t\022.\n\014journey_type\030\005 \002(\0162\030" +
@@ -11002,38 +11036,39 @@ public final class Hfp {
       "R\020\002\022\007\n\003ARS\020\003\022\007\n\003PDE\020\004\022\007\n\003DEP\020\005\022\007\n\003PAS\020\006\022" +
       "\010\n\004WAIT\020\007\022\007\n\003DOO\020\010\022\007\n\003DOC\020\t\022\007\n\003TLR\020\n\022\007\n\003" +
       "TLA\020\013\022\006\n\002DA\020\014\022\010\n\004DOUT\020\r\022\006\n\002BA\020\016\022\010\n\004BOUT\020" +
-      "\017\022\007\n\003VJA\020\020\022\t\n\005VJOUT\020\021\"C\n\rTransportMode\022\007" +
+      "\017\022\007\n\003VJA\020\020\022\t\n\005VJOUT\020\021\"X\n\rTransportMode\022\007" +
       "\n\003bus\020\000\022\t\n\005train\020\001\022\010\n\004tram\020\002\022\t\n\005metro\020\003\022" +
-      "\t\n\005ferry\020\004\"\376\010\n\007Payload\022\030\n\rSchemaVersion\030" +
-      "\001 \002(\005:\0011\022\014\n\004desi\030\002 \001(\t\022\013\n\003dir\030\003 \001(\t\022\014\n\004o" +
-      "per\030\004 \001(\005\022\013\n\003veh\030\005 \001(\005\022\013\n\003tst\030\006 \002(\t\022\013\n\003t" +
-      "si\030\007 \002(\003\022\013\n\003spd\030\010 \001(\001\022\013\n\003hdg\030\t \001(\005\022\013\n\003la" +
-      "t\030\n \001(\001\022\014\n\004long\030\013 \001(\001\022\013\n\003acc\030\014 \001(\001\022\n\n\002dl" +
-      "\030\r \001(\r\022\013\n\003odo\030\016 \001(\001\022\014\n\004drst\030\017 \001(\r\022\014\n\004oda" +
-      "y\030\020 \001(\t\022\013\n\003jrn\030\021 \001(\005\022\014\n\004line\030\022 \001(\005\022\r\n\005st" +
-      "art\030\023 \001(\t\0221\n\003loc\030\024 \001(\0162$.proto.Payload.L" +
-      "ocationQualityMethod\022\014\n\004stop\030\025 \001(\005\022\r\n\005ro" +
-      "ute\030\026 \001(\t\022\014\n\004occu\030\027 \001(\005\022\013\n\003seq\030\030 \001(\005\022\r\n\005" +
-      "ttarr\030\031 \001(\t\022\r\n\005ttdep\030\032 \001(\t\022\017\n\007dr_type\030\033 " +
-      "\001(\005\022\025\n\rtlp_requestid\030\034 \001(\005\0226\n\017tlp_reques" +
-      "ttype\030\035 \001(\0162\035.proto.Payload.TlpRequestTy" +
-      "pe\022:\n\021tlp_prioritylevel\030\036 \001(\0162\037.proto.Pa" +
-      "yload.TlpPriorityLevel\022,\n\ntlp_reason\030\037 \001" +
-      "(\0162\030.proto.Payload.TlpReason\022\023\n\013tlp_att_" +
-      "seq\030  \001(\005\0220\n\014tlp_decision\030! \001(\0162\032.proto." +
-      "Payload.TlpDecision\022\013\n\003sid\030\" \001(\005\022\026\n\016sign" +
-      "al_groupid\030# \001(\005\022\032\n\022tlp_signalgroupnbr\030$" +
-      " \001(\005\022\031\n\021tlp_line_configid\030& \001(\005\022\032\n\022tlp_p" +
-      "oint_configid\030\' \001(\005\022\025\n\rtlp_frequency\030( \001" +
-      "(\005\022\024\n\014tlp_protocol\030) \001(\t\022\r\n\005label\030* \001(\t\"" +
-      ":\n\025LocationQualityMethod\022\007\n\003GPS\020\000\022\007\n\003ODO" +
-      "\020\001\022\007\n\003MAN\020\002\022\006\n\002NA\020\003\"H\n\016TlpRequestType\022\n\n" +
-      "\006NORMAL\020\000\022\016\n\nDOOR_CLOSE\020\001\022\r\n\tDOOR_OPEN\020\002" +
-      "\022\013\n\007ADVANCE\020\003\"7\n\020TlpPriorityLevel\022\n\n\006nor" +
-      "mal\020\000\022\010\n\004high\020\001\022\r\n\tnorequest\020\002\":\n\tTlpRea" +
-      "son\022\n\n\006GLOBAL\020\000\022\t\n\005AHEAD\020\001\022\010\n\004LINE\020\002\022\014\n\010" +
-      "PRIOEXEP\020\003\"\037\n\013TlpDecision\022\007\n\003ACK\020\000\022\007\n\003NA" +
-      "K\020\001B\036\n\027fi.hsl.common.hfp.protoB\003Hfp"
+      "\t\n\005ferry\020\004\022\010\n\004ubus\020\005\022\t\n\005robot\020\006\"\376\010\n\007Payl" +
+      "oad\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\014\n\004desi\030\002 " +
+      "\001(\t\022\013\n\003dir\030\003 \001(\t\022\014\n\004oper\030\004 \001(\005\022\013\n\003veh\030\005 " +
+      "\001(\005\022\013\n\003tst\030\006 \002(\t\022\013\n\003tsi\030\007 \002(\003\022\013\n\003spd\030\010 \001" +
+      "(\001\022\013\n\003hdg\030\t \001(\005\022\013\n\003lat\030\n \001(\001\022\014\n\004long\030\013 \001" +
+      "(\001\022\013\n\003acc\030\014 \001(\001\022\n\n\002dl\030\r \001(\r\022\013\n\003odo\030\016 \001(\001" +
+      "\022\014\n\004drst\030\017 \001(\r\022\014\n\004oday\030\020 \001(\t\022\013\n\003jrn\030\021 \001(" +
+      "\005\022\014\n\004line\030\022 \001(\005\022\r\n\005start\030\023 \001(\t\0221\n\003loc\030\024 " +
+      "\001(\0162$.proto.Payload.LocationQualityMetho" +
+      "d\022\014\n\004stop\030\025 \001(\005\022\r\n\005route\030\026 \001(\t\022\014\n\004occu\030\027" +
+      " \001(\005\022\013\n\003seq\030\030 \001(\005\022\r\n\005ttarr\030\031 \001(\t\022\r\n\005ttde" +
+      "p\030\032 \001(\t\022\017\n\007dr_type\030\033 \001(\005\022\025\n\rtlp_requesti" +
+      "d\030\034 \001(\005\0226\n\017tlp_requesttype\030\035 \001(\0162\035.proto" +
+      ".Payload.TlpRequestType\022:\n\021tlp_priorityl" +
+      "evel\030\036 \001(\0162\037.proto.Payload.TlpPriorityLe" +
+      "vel\022,\n\ntlp_reason\030\037 \001(\0162\030.proto.Payload." +
+      "TlpReason\022\023\n\013tlp_att_seq\030  \001(\005\0220\n\014tlp_de" +
+      "cision\030! \001(\0162\032.proto.Payload.TlpDecision" +
+      "\022\013\n\003sid\030\" \001(\005\022\026\n\016signal_groupid\030# \001(\005\022\032\n" +
+      "\022tlp_signalgroupnbr\030$ \001(\005\022\031\n\021tlp_line_co" +
+      "nfigid\030& \001(\005\022\032\n\022tlp_point_configid\030\' \001(\005" +
+      "\022\025\n\rtlp_frequency\030( \001(\005\022\024\n\014tlp_protocol\030" +
+      ") \001(\t\022\r\n\005label\030* \001(\t\":\n\025LocationQualityM" +
+      "ethod\022\007\n\003GPS\020\000\022\007\n\003ODO\020\001\022\007\n\003MAN\020\002\022\006\n\002NA\020\003" +
+      "\"H\n\016TlpRequestType\022\n\n\006NORMAL\020\000\022\016\n\nDOOR_C" +
+      "LOSE\020\001\022\r\n\tDOOR_OPEN\020\002\022\013\n\007ADVANCE\020\003\"7\n\020Tl" +
+      "pPriorityLevel\022\n\n\006normal\020\000\022\010\n\004high\020\001\022\r\n\t" +
+      "norequest\020\002\":\n\tTlpReason\022\n\n\006GLOBAL\020\000\022\t\n\005" +
+      "AHEAD\020\001\022\010\n\004LINE\020\002\022\014\n\010PRIOEXEP\020\003\"\037\n\013TlpDe" +
+      "cision\022\007\n\003ACK\020\000\022\007\n\003NAK\020\001B\036\n\027fi.hsl.commo" +
+      "n.hfp.protoB\003Hfp"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
