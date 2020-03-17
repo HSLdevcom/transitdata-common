@@ -40,6 +40,19 @@ public class RouteIdUtilsTest {
         assertFalse(RouteIdUtils.isMetroRoute("21M1"));
     }
 
+    @Test
+    public void testFerryRouteIdMatch() {
+        assertTrue(RouteIdUtils.isFerryRoute("1019"));
+        assertTrue(RouteIdUtils.isFerryRoute("1019E"));
+    }
+
+    @Test
+    public void testNonFerryRouteIdsDontMatch() {
+        assertFalse(RouteIdUtils.isFerryRoute("2550"));
+        assertFalse(RouteIdUtils.isFerryRoute("3001K"));
+        assertFalse(RouteIdUtils.isFerryRoute("31M1"));
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void testNormalizingInvalidIdThrowsException() {
         RouteIdUtils.normalizeRouteId("100");

@@ -20,19 +20,23 @@ public final class Hfp {
 
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
     boolean hasSchemaVersion();
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
     int getSchemaVersion();
 
     /**
      * <code>optional .proto.Topic topic = 2;</code>
+     * @return Whether the topic field is set.
      */
     boolean hasTopic();
     /**
      * <code>optional .proto.Topic topic = 2;</code>
+     * @return The topic.
      */
     fi.hsl.common.hfp.proto.Hfp.Topic getTopic();
     /**
@@ -42,10 +46,12 @@ public final class Hfp {
 
     /**
      * <code>required .proto.Payload payload = 3;</code>
+     * @return Whether the payload field is set.
      */
     boolean hasPayload();
     /**
      * <code>required .proto.Payload payload = 3;</code>
+     * @return The payload.
      */
     fi.hsl.common.hfp.proto.Hfp.Payload getPayload();
     /**
@@ -67,6 +73,13 @@ public final class Hfp {
     }
     private Data() {
       schemaVersion_ = 1;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Data();
     }
 
     @java.lang.Override
@@ -161,12 +174,14 @@ public final class Hfp {
     private int schemaVersion_;
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
     public boolean hasSchemaVersion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
     public int getSchemaVersion() {
       return schemaVersion_;
@@ -176,12 +191,14 @@ public final class Hfp {
     private fi.hsl.common.hfp.proto.Hfp.Topic topic_;
     /**
      * <code>optional .proto.Topic topic = 2;</code>
+     * @return Whether the topic field is set.
      */
     public boolean hasTopic() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>optional .proto.Topic topic = 2;</code>
+     * @return The topic.
      */
     public fi.hsl.common.hfp.proto.Hfp.Topic getTopic() {
       return topic_ == null ? fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance() : topic_;
@@ -197,12 +214,14 @@ public final class Hfp {
     private fi.hsl.common.hfp.proto.Hfp.Payload payload_;
     /**
      * <code>required .proto.Payload payload = 3;</code>
+     * @return Whether the payload field is set.
      */
     public boolean hasPayload() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>required .proto.Payload payload = 3;</code>
+     * @return The payload.
      */
     public fi.hsl.common.hfp.proto.Hfp.Payload getPayload() {
       return payload_ == null ? fi.hsl.common.hfp.proto.Hfp.Payload.getDefaultInstance() : payload_;
@@ -631,18 +650,22 @@ public final class Hfp {
       private int schemaVersion_ = 1;
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return Whether the schemaVersion field is set.
        */
       public boolean hasSchemaVersion() {
         return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return The schemaVersion.
        */
       public int getSchemaVersion() {
         return schemaVersion_;
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @param value The schemaVersion to set.
+       * @return This builder for chaining.
        */
       public Builder setSchemaVersion(int value) {
         bitField0_ |= 0x00000001;
@@ -652,6 +675,7 @@ public final class Hfp {
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return This builder for chaining.
        */
       public Builder clearSchemaVersion() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -665,12 +689,14 @@ public final class Hfp {
           fi.hsl.common.hfp.proto.Hfp.Topic, fi.hsl.common.hfp.proto.Hfp.Topic.Builder, fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder> topicBuilder_;
       /**
        * <code>optional .proto.Topic topic = 2;</code>
+       * @return Whether the topic field is set.
        */
       public boolean hasTopic() {
         return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>optional .proto.Topic topic = 2;</code>
+       * @return The topic.
        */
       public fi.hsl.common.hfp.proto.Hfp.Topic getTopic() {
         if (topicBuilder_ == null) {
@@ -783,12 +809,14 @@ public final class Hfp {
           fi.hsl.common.hfp.proto.Hfp.Payload, fi.hsl.common.hfp.proto.Hfp.Payload.Builder, fi.hsl.common.hfp.proto.Hfp.PayloadOrBuilder> payloadBuilder_;
       /**
        * <code>required .proto.Payload payload = 3;</code>
+       * @return Whether the payload field is set.
        */
       public boolean hasPayload() {
         return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>required .proto.Payload payload = 3;</code>
+       * @return The payload.
        */
       public fi.hsl.common.hfp.proto.Hfp.Payload getPayload() {
         if (payloadBuilder_ == null) {
@@ -954,10 +982,12 @@ public final class Hfp {
 
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
     boolean hasSchemaVersion();
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
     int getSchemaVersion();
 
@@ -967,6 +997,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>required int64 received_at = 2;</code>
+     * @return Whether the receivedAt field is set.
      */
     boolean hasReceivedAt();
     /**
@@ -975,52 +1006,63 @@ public final class Hfp {
      * </pre>
      *
      * <code>required int64 received_at = 2;</code>
+     * @return The receivedAt.
      */
     long getReceivedAt();
 
     /**
      * <code>required string topic_prefix = 3;</code>
+     * @return Whether the topicPrefix field is set.
      */
     boolean hasTopicPrefix();
     /**
      * <code>required string topic_prefix = 3;</code>
+     * @return The topicPrefix.
      */
     java.lang.String getTopicPrefix();
     /**
      * <code>required string topic_prefix = 3;</code>
+     * @return The bytes for topicPrefix.
      */
     com.google.protobuf.ByteString
         getTopicPrefixBytes();
 
     /**
      * <code>required string topic_version = 4;</code>
+     * @return Whether the topicVersion field is set.
      */
     boolean hasTopicVersion();
     /**
      * <code>required string topic_version = 4;</code>
+     * @return The topicVersion.
      */
     java.lang.String getTopicVersion();
     /**
      * <code>required string topic_version = 4;</code>
+     * @return The bytes for topicVersion.
      */
     com.google.protobuf.ByteString
         getTopicVersionBytes();
 
     /**
      * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+     * @return Whether the journeyType field is set.
      */
     boolean hasJourneyType();
     /**
      * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+     * @return The journeyType.
      */
     fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType getJourneyType();
 
     /**
      * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+     * @return Whether the temporalType field is set.
      */
     boolean hasTemporalType();
     /**
      * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+     * @return The temporalType.
      */
     fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType getTemporalType();
 
@@ -1030,6 +1072,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Topic.EventType event_type = 7;</code>
+     * @return Whether the eventType field is set.
      */
     boolean hasEventType();
     /**
@@ -1038,6 +1081,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Topic.EventType event_type = 7;</code>
+     * @return The eventType.
      */
     fi.hsl.common.hfp.proto.Hfp.Topic.EventType getEventType();
 
@@ -1047,6 +1091,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+     * @return Whether the transportMode field is set.
      */
     boolean hasTransportMode();
     /**
@@ -1055,130 +1100,158 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+     * @return The transportMode.
      */
     fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode getTransportMode();
 
     /**
      * <code>required int32 operator_id = 9;</code>
+     * @return Whether the operatorId field is set.
      */
     boolean hasOperatorId();
     /**
      * <code>required int32 operator_id = 9;</code>
+     * @return The operatorId.
      */
     int getOperatorId();
 
     /**
      * <code>required int32 vehicle_number = 10;</code>
+     * @return Whether the vehicleNumber field is set.
      */
     boolean hasVehicleNumber();
     /**
      * <code>required int32 vehicle_number = 10;</code>
+     * @return The vehicleNumber.
      */
     int getVehicleNumber();
 
     /**
      * <code>required string unique_vehicle_id = 11;</code>
+     * @return Whether the uniqueVehicleId field is set.
      */
     boolean hasUniqueVehicleId();
     /**
      * <code>required string unique_vehicle_id = 11;</code>
+     * @return The uniqueVehicleId.
      */
     java.lang.String getUniqueVehicleId();
     /**
      * <code>required string unique_vehicle_id = 11;</code>
+     * @return The bytes for uniqueVehicleId.
      */
     com.google.protobuf.ByteString
         getUniqueVehicleIdBytes();
 
     /**
      * <code>optional string route_id = 12;</code>
+     * @return Whether the routeId field is set.
      */
     boolean hasRouteId();
     /**
      * <code>optional string route_id = 12;</code>
+     * @return The routeId.
      */
     java.lang.String getRouteId();
     /**
      * <code>optional string route_id = 12;</code>
+     * @return The bytes for routeId.
      */
     com.google.protobuf.ByteString
         getRouteIdBytes();
 
     /**
      * <code>optional int32 direction_id = 13;</code>
+     * @return Whether the directionId field is set.
      */
     boolean hasDirectionId();
     /**
      * <code>optional int32 direction_id = 13;</code>
+     * @return The directionId.
      */
     int getDirectionId();
 
     /**
      * <code>optional string headsign = 14;</code>
+     * @return Whether the headsign field is set.
      */
     boolean hasHeadsign();
     /**
      * <code>optional string headsign = 14;</code>
+     * @return The headsign.
      */
     java.lang.String getHeadsign();
     /**
      * <code>optional string headsign = 14;</code>
+     * @return The bytes for headsign.
      */
     com.google.protobuf.ByteString
         getHeadsignBytes();
 
     /**
      * <code>optional string start_time = 15;</code>
+     * @return Whether the startTime field is set.
      */
     boolean hasStartTime();
     /**
      * <code>optional string start_time = 15;</code>
+     * @return The startTime.
      */
     java.lang.String getStartTime();
     /**
      * <code>optional string start_time = 15;</code>
+     * @return The bytes for startTime.
      */
     com.google.protobuf.ByteString
         getStartTimeBytes();
 
     /**
      * <code>optional string next_stop = 16;</code>
+     * @return Whether the nextStop field is set.
      */
     boolean hasNextStop();
     /**
      * <code>optional string next_stop = 16;</code>
+     * @return The nextStop.
      */
     java.lang.String getNextStop();
     /**
      * <code>optional string next_stop = 16;</code>
+     * @return The bytes for nextStop.
      */
     com.google.protobuf.ByteString
         getNextStopBytes();
 
     /**
      * <code>optional int32 geohash_level = 17;</code>
+     * @return Whether the geohashLevel field is set.
      */
     boolean hasGeohashLevel();
     /**
      * <code>optional int32 geohash_level = 17;</code>
+     * @return The geohashLevel.
      */
     int getGeohashLevel();
 
     /**
      * <code>optional double latitude = 18;</code>
+     * @return Whether the latitude field is set.
      */
     boolean hasLatitude();
     /**
      * <code>optional double latitude = 18;</code>
+     * @return The latitude.
      */
     double getLatitude();
 
     /**
      * <code>optional double longitude = 19;</code>
+     * @return Whether the longitude field is set.
      */
     boolean hasLongitude();
     /**
      * <code>optional double longitude = 19;</code>
+     * @return The longitude.
      */
     double getLongitude();
   }
@@ -1207,6 +1280,13 @@ public final class Hfp {
       headsign_ = "";
       startTime_ = "";
       nextStop_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Topic();
     }
 
     @java.lang.Override
@@ -1425,6 +1505,8 @@ public final class Hfp {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -1432,6 +1514,10 @@ public final class Hfp {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static JourneyType forNumber(int value) {
         switch (value) {
           case 0: return journey;
@@ -1515,6 +1601,8 @@ public final class Hfp {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -1522,6 +1610,10 @@ public final class Hfp {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static TemporalType forNumber(int value) {
         switch (value) {
           case 0: return ongoing;
@@ -1733,6 +1825,8 @@ public final class Hfp {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -1740,6 +1834,10 @@ public final class Hfp {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static EventType forNumber(int value) {
         switch (value) {
           case 0: return VP;
@@ -1834,6 +1932,22 @@ public final class Hfp {
        * <code>ferry = 4;</code>
        */
       ferry(4),
+      /**
+       * <pre>
+       *Used by U-line buses and other lines with limited real-time information
+       * </pre>
+       *
+       * <code>ubus = 5;</code>
+       */
+      ubus(5),
+      /**
+       * <pre>
+       *Used by robot buses
+       * </pre>
+       *
+       * <code>robot = 6;</code>
+       */
+      robot(6),
       ;
 
       /**
@@ -1856,6 +1970,22 @@ public final class Hfp {
        * <code>ferry = 4;</code>
        */
       public static final int ferry_VALUE = 4;
+      /**
+       * <pre>
+       *Used by U-line buses and other lines with limited real-time information
+       * </pre>
+       *
+       * <code>ubus = 5;</code>
+       */
+      public static final int ubus_VALUE = 5;
+      /**
+       * <pre>
+       *Used by robot buses
+       * </pre>
+       *
+       * <code>robot = 6;</code>
+       */
+      public static final int robot_VALUE = 6;
 
 
       public final int getNumber() {
@@ -1863,6 +1993,8 @@ public final class Hfp {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -1870,6 +2002,10 @@ public final class Hfp {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static TransportMode forNumber(int value) {
         switch (value) {
           case 0: return bus;
@@ -1877,6 +2013,8 @@ public final class Hfp {
           case 2: return tram;
           case 3: return metro;
           case 4: return ferry;
+          case 5: return ubus;
+          case 6: return robot;
           default: return null;
         }
       }
@@ -1931,12 +2069,14 @@ public final class Hfp {
     private int schemaVersion_;
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
     public boolean hasSchemaVersion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
     public int getSchemaVersion() {
       return schemaVersion_;
@@ -1950,6 +2090,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>required int64 received_at = 2;</code>
+     * @return Whether the receivedAt field is set.
      */
     public boolean hasReceivedAt() {
       return ((bitField0_ & 0x00000002) != 0);
@@ -1960,6 +2101,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>required int64 received_at = 2;</code>
+     * @return The receivedAt.
      */
     public long getReceivedAt() {
       return receivedAt_;
@@ -1969,12 +2111,14 @@ public final class Hfp {
     private volatile java.lang.Object topicPrefix_;
     /**
      * <code>required string topic_prefix = 3;</code>
+     * @return Whether the topicPrefix field is set.
      */
     public boolean hasTopicPrefix() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>required string topic_prefix = 3;</code>
+     * @return The topicPrefix.
      */
     public java.lang.String getTopicPrefix() {
       java.lang.Object ref = topicPrefix_;
@@ -1992,6 +2136,7 @@ public final class Hfp {
     }
     /**
      * <code>required string topic_prefix = 3;</code>
+     * @return The bytes for topicPrefix.
      */
     public com.google.protobuf.ByteString
         getTopicPrefixBytes() {
@@ -2011,12 +2156,14 @@ public final class Hfp {
     private volatile java.lang.Object topicVersion_;
     /**
      * <code>required string topic_version = 4;</code>
+     * @return Whether the topicVersion field is set.
      */
     public boolean hasTopicVersion() {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>required string topic_version = 4;</code>
+     * @return The topicVersion.
      */
     public java.lang.String getTopicVersion() {
       java.lang.Object ref = topicVersion_;
@@ -2034,6 +2181,7 @@ public final class Hfp {
     }
     /**
      * <code>required string topic_version = 4;</code>
+     * @return The bytes for topicVersion.
      */
     public com.google.protobuf.ByteString
         getTopicVersionBytes() {
@@ -2053,12 +2201,14 @@ public final class Hfp {
     private int journeyType_;
     /**
      * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+     * @return Whether the journeyType field is set.
      */
     public boolean hasJourneyType() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+     * @return The journeyType.
      */
     public fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType getJourneyType() {
       @SuppressWarnings("deprecation")
@@ -2070,12 +2220,14 @@ public final class Hfp {
     private int temporalType_;
     /**
      * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+     * @return Whether the temporalType field is set.
      */
     public boolean hasTemporalType() {
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+     * @return The temporalType.
      */
     public fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType getTemporalType() {
       @SuppressWarnings("deprecation")
@@ -2091,6 +2243,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Topic.EventType event_type = 7;</code>
+     * @return Whether the eventType field is set.
      */
     public boolean hasEventType() {
       return ((bitField0_ & 0x00000040) != 0);
@@ -2101,6 +2254,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Topic.EventType event_type = 7;</code>
+     * @return The eventType.
      */
     public fi.hsl.common.hfp.proto.Hfp.Topic.EventType getEventType() {
       @SuppressWarnings("deprecation")
@@ -2116,6 +2270,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+     * @return Whether the transportMode field is set.
      */
     public boolean hasTransportMode() {
       return ((bitField0_ & 0x00000080) != 0);
@@ -2126,6 +2281,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+     * @return The transportMode.
      */
     public fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode getTransportMode() {
       @SuppressWarnings("deprecation")
@@ -2137,12 +2293,14 @@ public final class Hfp {
     private int operatorId_;
     /**
      * <code>required int32 operator_id = 9;</code>
+     * @return Whether the operatorId field is set.
      */
     public boolean hasOperatorId() {
       return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <code>required int32 operator_id = 9;</code>
+     * @return The operatorId.
      */
     public int getOperatorId() {
       return operatorId_;
@@ -2152,12 +2310,14 @@ public final class Hfp {
     private int vehicleNumber_;
     /**
      * <code>required int32 vehicle_number = 10;</code>
+     * @return Whether the vehicleNumber field is set.
      */
     public boolean hasVehicleNumber() {
       return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      * <code>required int32 vehicle_number = 10;</code>
+     * @return The vehicleNumber.
      */
     public int getVehicleNumber() {
       return vehicleNumber_;
@@ -2167,12 +2327,14 @@ public final class Hfp {
     private volatile java.lang.Object uniqueVehicleId_;
     /**
      * <code>required string unique_vehicle_id = 11;</code>
+     * @return Whether the uniqueVehicleId field is set.
      */
     public boolean hasUniqueVehicleId() {
       return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      * <code>required string unique_vehicle_id = 11;</code>
+     * @return The uniqueVehicleId.
      */
     public java.lang.String getUniqueVehicleId() {
       java.lang.Object ref = uniqueVehicleId_;
@@ -2190,6 +2352,7 @@ public final class Hfp {
     }
     /**
      * <code>required string unique_vehicle_id = 11;</code>
+     * @return The bytes for uniqueVehicleId.
      */
     public com.google.protobuf.ByteString
         getUniqueVehicleIdBytes() {
@@ -2209,12 +2372,14 @@ public final class Hfp {
     private volatile java.lang.Object routeId_;
     /**
      * <code>optional string route_id = 12;</code>
+     * @return Whether the routeId field is set.
      */
     public boolean hasRouteId() {
       return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      * <code>optional string route_id = 12;</code>
+     * @return The routeId.
      */
     public java.lang.String getRouteId() {
       java.lang.Object ref = routeId_;
@@ -2232,6 +2397,7 @@ public final class Hfp {
     }
     /**
      * <code>optional string route_id = 12;</code>
+     * @return The bytes for routeId.
      */
     public com.google.protobuf.ByteString
         getRouteIdBytes() {
@@ -2251,12 +2417,14 @@ public final class Hfp {
     private int directionId_;
     /**
      * <code>optional int32 direction_id = 13;</code>
+     * @return Whether the directionId field is set.
      */
     public boolean hasDirectionId() {
       return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      * <code>optional int32 direction_id = 13;</code>
+     * @return The directionId.
      */
     public int getDirectionId() {
       return directionId_;
@@ -2266,12 +2434,14 @@ public final class Hfp {
     private volatile java.lang.Object headsign_;
     /**
      * <code>optional string headsign = 14;</code>
+     * @return Whether the headsign field is set.
      */
     public boolean hasHeadsign() {
       return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      * <code>optional string headsign = 14;</code>
+     * @return The headsign.
      */
     public java.lang.String getHeadsign() {
       java.lang.Object ref = headsign_;
@@ -2289,6 +2459,7 @@ public final class Hfp {
     }
     /**
      * <code>optional string headsign = 14;</code>
+     * @return The bytes for headsign.
      */
     public com.google.protobuf.ByteString
         getHeadsignBytes() {
@@ -2308,12 +2479,14 @@ public final class Hfp {
     private volatile java.lang.Object startTime_;
     /**
      * <code>optional string start_time = 15;</code>
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      * <code>optional string start_time = 15;</code>
+     * @return The startTime.
      */
     public java.lang.String getStartTime() {
       java.lang.Object ref = startTime_;
@@ -2331,6 +2504,7 @@ public final class Hfp {
     }
     /**
      * <code>optional string start_time = 15;</code>
+     * @return The bytes for startTime.
      */
     public com.google.protobuf.ByteString
         getStartTimeBytes() {
@@ -2350,12 +2524,14 @@ public final class Hfp {
     private volatile java.lang.Object nextStop_;
     /**
      * <code>optional string next_stop = 16;</code>
+     * @return Whether the nextStop field is set.
      */
     public boolean hasNextStop() {
       return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      * <code>optional string next_stop = 16;</code>
+     * @return The nextStop.
      */
     public java.lang.String getNextStop() {
       java.lang.Object ref = nextStop_;
@@ -2373,6 +2549,7 @@ public final class Hfp {
     }
     /**
      * <code>optional string next_stop = 16;</code>
+     * @return The bytes for nextStop.
      */
     public com.google.protobuf.ByteString
         getNextStopBytes() {
@@ -2392,12 +2569,14 @@ public final class Hfp {
     private int geohashLevel_;
     /**
      * <code>optional int32 geohash_level = 17;</code>
+     * @return Whether the geohashLevel field is set.
      */
     public boolean hasGeohashLevel() {
       return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      * <code>optional int32 geohash_level = 17;</code>
+     * @return The geohashLevel.
      */
     public int getGeohashLevel() {
       return geohashLevel_;
@@ -2407,12 +2586,14 @@ public final class Hfp {
     private double latitude_;
     /**
      * <code>optional double latitude = 18;</code>
+     * @return Whether the latitude field is set.
      */
     public boolean hasLatitude() {
       return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      * <code>optional double latitude = 18;</code>
+     * @return The latitude.
      */
     public double getLatitude() {
       return latitude_;
@@ -2422,12 +2603,14 @@ public final class Hfp {
     private double longitude_;
     /**
      * <code>optional double longitude = 19;</code>
+     * @return Whether the longitude field is set.
      */
     public boolean hasLongitude() {
       return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      * <code>optional double longitude = 19;</code>
+     * @return The longitude.
      */
     public double getLongitude() {
       return longitude_;
@@ -3271,18 +3454,22 @@ public final class Hfp {
       private int schemaVersion_ = 1;
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return Whether the schemaVersion field is set.
        */
       public boolean hasSchemaVersion() {
         return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return The schemaVersion.
        */
       public int getSchemaVersion() {
         return schemaVersion_;
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @param value The schemaVersion to set.
+       * @return This builder for chaining.
        */
       public Builder setSchemaVersion(int value) {
         bitField0_ |= 0x00000001;
@@ -3292,6 +3479,7 @@ public final class Hfp {
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return This builder for chaining.
        */
       public Builder clearSchemaVersion() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -3307,6 +3495,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>required int64 received_at = 2;</code>
+       * @return Whether the receivedAt field is set.
        */
       public boolean hasReceivedAt() {
         return ((bitField0_ & 0x00000002) != 0);
@@ -3317,6 +3506,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>required int64 received_at = 2;</code>
+       * @return The receivedAt.
        */
       public long getReceivedAt() {
         return receivedAt_;
@@ -3327,6 +3517,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>required int64 received_at = 2;</code>
+       * @param value The receivedAt to set.
+       * @return This builder for chaining.
        */
       public Builder setReceivedAt(long value) {
         bitField0_ |= 0x00000002;
@@ -3340,6 +3532,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>required int64 received_at = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearReceivedAt() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -3351,12 +3544,14 @@ public final class Hfp {
       private java.lang.Object topicPrefix_ = "";
       /**
        * <code>required string topic_prefix = 3;</code>
+       * @return Whether the topicPrefix field is set.
        */
       public boolean hasTopicPrefix() {
         return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>required string topic_prefix = 3;</code>
+       * @return The topicPrefix.
        */
       public java.lang.String getTopicPrefix() {
         java.lang.Object ref = topicPrefix_;
@@ -3374,6 +3569,7 @@ public final class Hfp {
       }
       /**
        * <code>required string topic_prefix = 3;</code>
+       * @return The bytes for topicPrefix.
        */
       public com.google.protobuf.ByteString
           getTopicPrefixBytes() {
@@ -3390,6 +3586,8 @@ public final class Hfp {
       }
       /**
        * <code>required string topic_prefix = 3;</code>
+       * @param value The topicPrefix to set.
+       * @return This builder for chaining.
        */
       public Builder setTopicPrefix(
           java.lang.String value) {
@@ -3403,6 +3601,7 @@ public final class Hfp {
       }
       /**
        * <code>required string topic_prefix = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTopicPrefix() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -3412,6 +3611,8 @@ public final class Hfp {
       }
       /**
        * <code>required string topic_prefix = 3;</code>
+       * @param value The bytes for topicPrefix to set.
+       * @return This builder for chaining.
        */
       public Builder setTopicPrefixBytes(
           com.google.protobuf.ByteString value) {
@@ -3427,12 +3628,14 @@ public final class Hfp {
       private java.lang.Object topicVersion_ = "";
       /**
        * <code>required string topic_version = 4;</code>
+       * @return Whether the topicVersion field is set.
        */
       public boolean hasTopicVersion() {
         return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>required string topic_version = 4;</code>
+       * @return The topicVersion.
        */
       public java.lang.String getTopicVersion() {
         java.lang.Object ref = topicVersion_;
@@ -3450,6 +3653,7 @@ public final class Hfp {
       }
       /**
        * <code>required string topic_version = 4;</code>
+       * @return The bytes for topicVersion.
        */
       public com.google.protobuf.ByteString
           getTopicVersionBytes() {
@@ -3466,6 +3670,8 @@ public final class Hfp {
       }
       /**
        * <code>required string topic_version = 4;</code>
+       * @param value The topicVersion to set.
+       * @return This builder for chaining.
        */
       public Builder setTopicVersion(
           java.lang.String value) {
@@ -3479,6 +3685,7 @@ public final class Hfp {
       }
       /**
        * <code>required string topic_version = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTopicVersion() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -3488,6 +3695,8 @@ public final class Hfp {
       }
       /**
        * <code>required string topic_version = 4;</code>
+       * @param value The bytes for topicVersion to set.
+       * @return This builder for chaining.
        */
       public Builder setTopicVersionBytes(
           com.google.protobuf.ByteString value) {
@@ -3503,12 +3712,14 @@ public final class Hfp {
       private int journeyType_ = 0;
       /**
        * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+       * @return Whether the journeyType field is set.
        */
       public boolean hasJourneyType() {
         return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+       * @return The journeyType.
        */
       public fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType getJourneyType() {
         @SuppressWarnings("deprecation")
@@ -3517,6 +3728,8 @@ public final class Hfp {
       }
       /**
        * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+       * @param value The journeyType to set.
+       * @return This builder for chaining.
        */
       public Builder setJourneyType(fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType value) {
         if (value == null) {
@@ -3529,6 +3742,7 @@ public final class Hfp {
       }
       /**
        * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearJourneyType() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -3540,12 +3754,14 @@ public final class Hfp {
       private int temporalType_ = 0;
       /**
        * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+       * @return Whether the temporalType field is set.
        */
       public boolean hasTemporalType() {
         return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+       * @return The temporalType.
        */
       public fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType getTemporalType() {
         @SuppressWarnings("deprecation")
@@ -3554,6 +3770,8 @@ public final class Hfp {
       }
       /**
        * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+       * @param value The temporalType to set.
+       * @return This builder for chaining.
        */
       public Builder setTemporalType(fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType value) {
         if (value == null) {
@@ -3566,6 +3784,7 @@ public final class Hfp {
       }
       /**
        * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTemporalType() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -3581,6 +3800,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Topic.EventType event_type = 7;</code>
+       * @return Whether the eventType field is set.
        */
       public boolean hasEventType() {
         return ((bitField0_ & 0x00000040) != 0);
@@ -3591,6 +3811,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Topic.EventType event_type = 7;</code>
+       * @return The eventType.
        */
       public fi.hsl.common.hfp.proto.Hfp.Topic.EventType getEventType() {
         @SuppressWarnings("deprecation")
@@ -3603,6 +3824,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Topic.EventType event_type = 7;</code>
+       * @param value The eventType to set.
+       * @return This builder for chaining.
        */
       public Builder setEventType(fi.hsl.common.hfp.proto.Hfp.Topic.EventType value) {
         if (value == null) {
@@ -3619,6 +3842,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Topic.EventType event_type = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearEventType() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -3634,6 +3858,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+       * @return Whether the transportMode field is set.
        */
       public boolean hasTransportMode() {
         return ((bitField0_ & 0x00000080) != 0);
@@ -3644,6 +3869,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+       * @return The transportMode.
        */
       public fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode getTransportMode() {
         @SuppressWarnings("deprecation")
@@ -3656,6 +3882,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+       * @param value The transportMode to set.
+       * @return This builder for chaining.
        */
       public Builder setTransportMode(fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode value) {
         if (value == null) {
@@ -3672,6 +3900,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTransportMode() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -3683,18 +3912,22 @@ public final class Hfp {
       private int operatorId_ ;
       /**
        * <code>required int32 operator_id = 9;</code>
+       * @return Whether the operatorId field is set.
        */
       public boolean hasOperatorId() {
         return ((bitField0_ & 0x00000100) != 0);
       }
       /**
        * <code>required int32 operator_id = 9;</code>
+       * @return The operatorId.
        */
       public int getOperatorId() {
         return operatorId_;
       }
       /**
        * <code>required int32 operator_id = 9;</code>
+       * @param value The operatorId to set.
+       * @return This builder for chaining.
        */
       public Builder setOperatorId(int value) {
         bitField0_ |= 0x00000100;
@@ -3704,6 +3937,7 @@ public final class Hfp {
       }
       /**
        * <code>required int32 operator_id = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOperatorId() {
         bitField0_ = (bitField0_ & ~0x00000100);
@@ -3715,18 +3949,22 @@ public final class Hfp {
       private int vehicleNumber_ ;
       /**
        * <code>required int32 vehicle_number = 10;</code>
+       * @return Whether the vehicleNumber field is set.
        */
       public boolean hasVehicleNumber() {
         return ((bitField0_ & 0x00000200) != 0);
       }
       /**
        * <code>required int32 vehicle_number = 10;</code>
+       * @return The vehicleNumber.
        */
       public int getVehicleNumber() {
         return vehicleNumber_;
       }
       /**
        * <code>required int32 vehicle_number = 10;</code>
+       * @param value The vehicleNumber to set.
+       * @return This builder for chaining.
        */
       public Builder setVehicleNumber(int value) {
         bitField0_ |= 0x00000200;
@@ -3736,6 +3974,7 @@ public final class Hfp {
       }
       /**
        * <code>required int32 vehicle_number = 10;</code>
+       * @return This builder for chaining.
        */
       public Builder clearVehicleNumber() {
         bitField0_ = (bitField0_ & ~0x00000200);
@@ -3747,12 +3986,14 @@ public final class Hfp {
       private java.lang.Object uniqueVehicleId_ = "";
       /**
        * <code>required string unique_vehicle_id = 11;</code>
+       * @return Whether the uniqueVehicleId field is set.
        */
       public boolean hasUniqueVehicleId() {
         return ((bitField0_ & 0x00000400) != 0);
       }
       /**
        * <code>required string unique_vehicle_id = 11;</code>
+       * @return The uniqueVehicleId.
        */
       public java.lang.String getUniqueVehicleId() {
         java.lang.Object ref = uniqueVehicleId_;
@@ -3770,6 +4011,7 @@ public final class Hfp {
       }
       /**
        * <code>required string unique_vehicle_id = 11;</code>
+       * @return The bytes for uniqueVehicleId.
        */
       public com.google.protobuf.ByteString
           getUniqueVehicleIdBytes() {
@@ -3786,6 +4028,8 @@ public final class Hfp {
       }
       /**
        * <code>required string unique_vehicle_id = 11;</code>
+       * @param value The uniqueVehicleId to set.
+       * @return This builder for chaining.
        */
       public Builder setUniqueVehicleId(
           java.lang.String value) {
@@ -3799,6 +4043,7 @@ public final class Hfp {
       }
       /**
        * <code>required string unique_vehicle_id = 11;</code>
+       * @return This builder for chaining.
        */
       public Builder clearUniqueVehicleId() {
         bitField0_ = (bitField0_ & ~0x00000400);
@@ -3808,6 +4053,8 @@ public final class Hfp {
       }
       /**
        * <code>required string unique_vehicle_id = 11;</code>
+       * @param value The bytes for uniqueVehicleId to set.
+       * @return This builder for chaining.
        */
       public Builder setUniqueVehicleIdBytes(
           com.google.protobuf.ByteString value) {
@@ -3823,12 +4070,14 @@ public final class Hfp {
       private java.lang.Object routeId_ = "";
       /**
        * <code>optional string route_id = 12;</code>
+       * @return Whether the routeId field is set.
        */
       public boolean hasRouteId() {
         return ((bitField0_ & 0x00000800) != 0);
       }
       /**
        * <code>optional string route_id = 12;</code>
+       * @return The routeId.
        */
       public java.lang.String getRouteId() {
         java.lang.Object ref = routeId_;
@@ -3846,6 +4095,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string route_id = 12;</code>
+       * @return The bytes for routeId.
        */
       public com.google.protobuf.ByteString
           getRouteIdBytes() {
@@ -3862,6 +4112,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string route_id = 12;</code>
+       * @param value The routeId to set.
+       * @return This builder for chaining.
        */
       public Builder setRouteId(
           java.lang.String value) {
@@ -3875,6 +4127,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string route_id = 12;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRouteId() {
         bitField0_ = (bitField0_ & ~0x00000800);
@@ -3884,6 +4137,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string route_id = 12;</code>
+       * @param value The bytes for routeId to set.
+       * @return This builder for chaining.
        */
       public Builder setRouteIdBytes(
           com.google.protobuf.ByteString value) {
@@ -3899,18 +4154,22 @@ public final class Hfp {
       private int directionId_ ;
       /**
        * <code>optional int32 direction_id = 13;</code>
+       * @return Whether the directionId field is set.
        */
       public boolean hasDirectionId() {
         return ((bitField0_ & 0x00001000) != 0);
       }
       /**
        * <code>optional int32 direction_id = 13;</code>
+       * @return The directionId.
        */
       public int getDirectionId() {
         return directionId_;
       }
       /**
        * <code>optional int32 direction_id = 13;</code>
+       * @param value The directionId to set.
+       * @return This builder for chaining.
        */
       public Builder setDirectionId(int value) {
         bitField0_ |= 0x00001000;
@@ -3920,6 +4179,7 @@ public final class Hfp {
       }
       /**
        * <code>optional int32 direction_id = 13;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDirectionId() {
         bitField0_ = (bitField0_ & ~0x00001000);
@@ -3931,12 +4191,14 @@ public final class Hfp {
       private java.lang.Object headsign_ = "";
       /**
        * <code>optional string headsign = 14;</code>
+       * @return Whether the headsign field is set.
        */
       public boolean hasHeadsign() {
         return ((bitField0_ & 0x00002000) != 0);
       }
       /**
        * <code>optional string headsign = 14;</code>
+       * @return The headsign.
        */
       public java.lang.String getHeadsign() {
         java.lang.Object ref = headsign_;
@@ -3954,6 +4216,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string headsign = 14;</code>
+       * @return The bytes for headsign.
        */
       public com.google.protobuf.ByteString
           getHeadsignBytes() {
@@ -3970,6 +4233,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string headsign = 14;</code>
+       * @param value The headsign to set.
+       * @return This builder for chaining.
        */
       public Builder setHeadsign(
           java.lang.String value) {
@@ -3983,6 +4248,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string headsign = 14;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHeadsign() {
         bitField0_ = (bitField0_ & ~0x00002000);
@@ -3992,6 +4258,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string headsign = 14;</code>
+       * @param value The bytes for headsign to set.
+       * @return This builder for chaining.
        */
       public Builder setHeadsignBytes(
           com.google.protobuf.ByteString value) {
@@ -4007,12 +4275,14 @@ public final class Hfp {
       private java.lang.Object startTime_ = "";
       /**
        * <code>optional string start_time = 15;</code>
+       * @return Whether the startTime field is set.
        */
       public boolean hasStartTime() {
         return ((bitField0_ & 0x00004000) != 0);
       }
       /**
        * <code>optional string start_time = 15;</code>
+       * @return The startTime.
        */
       public java.lang.String getStartTime() {
         java.lang.Object ref = startTime_;
@@ -4030,6 +4300,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string start_time = 15;</code>
+       * @return The bytes for startTime.
        */
       public com.google.protobuf.ByteString
           getStartTimeBytes() {
@@ -4046,6 +4317,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string start_time = 15;</code>
+       * @param value The startTime to set.
+       * @return This builder for chaining.
        */
       public Builder setStartTime(
           java.lang.String value) {
@@ -4059,6 +4332,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string start_time = 15;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStartTime() {
         bitField0_ = (bitField0_ & ~0x00004000);
@@ -4068,6 +4342,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string start_time = 15;</code>
+       * @param value The bytes for startTime to set.
+       * @return This builder for chaining.
        */
       public Builder setStartTimeBytes(
           com.google.protobuf.ByteString value) {
@@ -4083,12 +4359,14 @@ public final class Hfp {
       private java.lang.Object nextStop_ = "";
       /**
        * <code>optional string next_stop = 16;</code>
+       * @return Whether the nextStop field is set.
        */
       public boolean hasNextStop() {
         return ((bitField0_ & 0x00008000) != 0);
       }
       /**
        * <code>optional string next_stop = 16;</code>
+       * @return The nextStop.
        */
       public java.lang.String getNextStop() {
         java.lang.Object ref = nextStop_;
@@ -4106,6 +4384,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string next_stop = 16;</code>
+       * @return The bytes for nextStop.
        */
       public com.google.protobuf.ByteString
           getNextStopBytes() {
@@ -4122,6 +4401,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string next_stop = 16;</code>
+       * @param value The nextStop to set.
+       * @return This builder for chaining.
        */
       public Builder setNextStop(
           java.lang.String value) {
@@ -4135,6 +4416,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string next_stop = 16;</code>
+       * @return This builder for chaining.
        */
       public Builder clearNextStop() {
         bitField0_ = (bitField0_ & ~0x00008000);
@@ -4144,6 +4426,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string next_stop = 16;</code>
+       * @param value The bytes for nextStop to set.
+       * @return This builder for chaining.
        */
       public Builder setNextStopBytes(
           com.google.protobuf.ByteString value) {
@@ -4159,18 +4443,22 @@ public final class Hfp {
       private int geohashLevel_ ;
       /**
        * <code>optional int32 geohash_level = 17;</code>
+       * @return Whether the geohashLevel field is set.
        */
       public boolean hasGeohashLevel() {
         return ((bitField0_ & 0x00010000) != 0);
       }
       /**
        * <code>optional int32 geohash_level = 17;</code>
+       * @return The geohashLevel.
        */
       public int getGeohashLevel() {
         return geohashLevel_;
       }
       /**
        * <code>optional int32 geohash_level = 17;</code>
+       * @param value The geohashLevel to set.
+       * @return This builder for chaining.
        */
       public Builder setGeohashLevel(int value) {
         bitField0_ |= 0x00010000;
@@ -4180,6 +4468,7 @@ public final class Hfp {
       }
       /**
        * <code>optional int32 geohash_level = 17;</code>
+       * @return This builder for chaining.
        */
       public Builder clearGeohashLevel() {
         bitField0_ = (bitField0_ & ~0x00010000);
@@ -4191,18 +4480,22 @@ public final class Hfp {
       private double latitude_ ;
       /**
        * <code>optional double latitude = 18;</code>
+       * @return Whether the latitude field is set.
        */
       public boolean hasLatitude() {
         return ((bitField0_ & 0x00020000) != 0);
       }
       /**
        * <code>optional double latitude = 18;</code>
+       * @return The latitude.
        */
       public double getLatitude() {
         return latitude_;
       }
       /**
        * <code>optional double latitude = 18;</code>
+       * @param value The latitude to set.
+       * @return This builder for chaining.
        */
       public Builder setLatitude(double value) {
         bitField0_ |= 0x00020000;
@@ -4212,6 +4505,7 @@ public final class Hfp {
       }
       /**
        * <code>optional double latitude = 18;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLatitude() {
         bitField0_ = (bitField0_ & ~0x00020000);
@@ -4223,18 +4517,22 @@ public final class Hfp {
       private double longitude_ ;
       /**
        * <code>optional double longitude = 19;</code>
+       * @return Whether the longitude field is set.
        */
       public boolean hasLongitude() {
         return ((bitField0_ & 0x00040000) != 0);
       }
       /**
        * <code>optional double longitude = 19;</code>
+       * @return The longitude.
        */
       public double getLongitude() {
         return longitude_;
       }
       /**
        * <code>optional double longitude = 19;</code>
+       * @param value The longitude to set.
+       * @return This builder for chaining.
        */
       public Builder setLongitude(double value) {
         bitField0_ |= 0x00040000;
@@ -4244,6 +4542,7 @@ public final class Hfp {
       }
       /**
        * <code>optional double longitude = 19;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLongitude() {
         bitField0_ = (bitField0_ & ~0x00040000);
@@ -4310,196 +4609,239 @@ public final class Hfp {
 
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
     boolean hasSchemaVersion();
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
     int getSchemaVersion();
 
     /**
      * <code>optional string desi = 2;</code>
+     * @return Whether the desi field is set.
      */
     boolean hasDesi();
     /**
      * <code>optional string desi = 2;</code>
+     * @return The desi.
      */
     java.lang.String getDesi();
     /**
      * <code>optional string desi = 2;</code>
+     * @return The bytes for desi.
      */
     com.google.protobuf.ByteString
         getDesiBytes();
 
     /**
      * <code>optional string dir = 3;</code>
+     * @return Whether the dir field is set.
      */
     boolean hasDir();
     /**
      * <code>optional string dir = 3;</code>
+     * @return The dir.
      */
     java.lang.String getDir();
     /**
      * <code>optional string dir = 3;</code>
+     * @return The bytes for dir.
      */
     com.google.protobuf.ByteString
         getDirBytes();
 
     /**
      * <code>optional int32 oper = 4;</code>
+     * @return Whether the oper field is set.
      */
     boolean hasOper();
     /**
      * <code>optional int32 oper = 4;</code>
+     * @return The oper.
      */
     int getOper();
 
     /**
      * <code>optional int32 veh = 5;</code>
+     * @return Whether the veh field is set.
      */
     boolean hasVeh();
     /**
      * <code>optional int32 veh = 5;</code>
+     * @return The veh.
      */
     int getVeh();
 
     /**
      * <code>required string tst = 6;</code>
+     * @return Whether the tst field is set.
      */
     boolean hasTst();
     /**
      * <code>required string tst = 6;</code>
+     * @return The tst.
      */
     java.lang.String getTst();
     /**
      * <code>required string tst = 6;</code>
+     * @return The bytes for tst.
      */
     com.google.protobuf.ByteString
         getTstBytes();
 
     /**
      * <code>required int64 tsi = 7;</code>
+     * @return Whether the tsi field is set.
      */
     boolean hasTsi();
     /**
      * <code>required int64 tsi = 7;</code>
+     * @return The tsi.
      */
     long getTsi();
 
     /**
      * <code>optional double spd = 8;</code>
+     * @return Whether the spd field is set.
      */
     boolean hasSpd();
     /**
      * <code>optional double spd = 8;</code>
+     * @return The spd.
      */
     double getSpd();
 
     /**
      * <code>optional int32 hdg = 9;</code>
+     * @return Whether the hdg field is set.
      */
     boolean hasHdg();
     /**
      * <code>optional int32 hdg = 9;</code>
+     * @return The hdg.
      */
     int getHdg();
 
     /**
      * <code>optional double lat = 10;</code>
+     * @return Whether the lat field is set.
      */
     boolean hasLat();
     /**
      * <code>optional double lat = 10;</code>
+     * @return The lat.
      */
     double getLat();
 
     /**
      * <code>optional double long = 11;</code>
+     * @return Whether the long field is set.
      */
     boolean hasLong();
     /**
      * <code>optional double long = 11;</code>
+     * @return The long.
      */
     double getLong();
 
     /**
      * <code>optional double acc = 12;</code>
+     * @return Whether the acc field is set.
      */
     boolean hasAcc();
     /**
      * <code>optional double acc = 12;</code>
+     * @return The acc.
      */
     double getAcc();
 
     /**
      * <code>optional uint32 dl = 13;</code>
+     * @return Whether the dl field is set.
      */
     boolean hasDl();
     /**
      * <code>optional uint32 dl = 13;</code>
+     * @return The dl.
      */
     int getDl();
 
     /**
      * <code>optional double odo = 14;</code>
+     * @return Whether the odo field is set.
      */
     boolean hasOdo();
     /**
      * <code>optional double odo = 14;</code>
+     * @return The odo.
      */
     double getOdo();
 
     /**
      * <code>optional uint32 drst = 15;</code>
+     * @return Whether the drst field is set.
      */
     boolean hasDrst();
     /**
      * <code>optional uint32 drst = 15;</code>
+     * @return The drst.
      */
     int getDrst();
 
     /**
      * <code>optional string oday = 16;</code>
+     * @return Whether the oday field is set.
      */
     boolean hasOday();
     /**
      * <code>optional string oday = 16;</code>
+     * @return The oday.
      */
     java.lang.String getOday();
     /**
      * <code>optional string oday = 16;</code>
+     * @return The bytes for oday.
      */
     com.google.protobuf.ByteString
         getOdayBytes();
 
     /**
      * <code>optional int32 jrn = 17;</code>
+     * @return Whether the jrn field is set.
      */
     boolean hasJrn();
     /**
      * <code>optional int32 jrn = 17;</code>
+     * @return The jrn.
      */
     int getJrn();
 
     /**
      * <code>optional int32 line = 18;</code>
+     * @return Whether the line field is set.
      */
     boolean hasLine();
     /**
      * <code>optional int32 line = 18;</code>
+     * @return The line.
      */
     int getLine();
 
     /**
      * <code>optional string start = 19;</code>
+     * @return Whether the start field is set.
      */
     boolean hasStart();
     /**
      * <code>optional string start = 19;</code>
+     * @return The start.
      */
     java.lang.String getStart();
     /**
      * <code>optional string start = 19;</code>
+     * @return The bytes for start.
      */
     com.google.protobuf.ByteString
         getStartBytes();
@@ -4510,6 +4852,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
+     * @return Whether the loc field is set.
      */
     boolean hasLoc();
     /**
@@ -4518,6 +4861,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
+     * @return The loc.
      */
     fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod getLoc();
 
@@ -4527,6 +4871,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 stop = 21;</code>
+     * @return Whether the stop field is set.
      */
     boolean hasStop();
     /**
@@ -4535,6 +4880,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 stop = 21;</code>
+     * @return The stop.
      */
     int getStop();
 
@@ -4544,6 +4890,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional string route = 22;</code>
+     * @return Whether the route field is set.
      */
     boolean hasRoute();
     /**
@@ -4552,6 +4899,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional string route = 22;</code>
+     * @return The route.
      */
     java.lang.String getRoute();
     /**
@@ -4560,6 +4908,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional string route = 22;</code>
+     * @return The bytes for route.
      */
     com.google.protobuf.ByteString
         getRouteBytes();
@@ -4570,6 +4919,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 occu = 23;</code>
+     * @return Whether the occu field is set.
      */
     boolean hasOccu();
     /**
@@ -4578,52 +4928,63 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 occu = 23;</code>
+     * @return The occu.
      */
     int getOccu();
 
     /**
      * <code>optional int32 seq = 24;</code>
+     * @return Whether the seq field is set.
      */
     boolean hasSeq();
     /**
      * <code>optional int32 seq = 24;</code>
+     * @return The seq.
      */
     int getSeq();
 
     /**
      * <code>optional string ttarr = 25;</code>
+     * @return Whether the ttarr field is set.
      */
     boolean hasTtarr();
     /**
      * <code>optional string ttarr = 25;</code>
+     * @return The ttarr.
      */
     java.lang.String getTtarr();
     /**
      * <code>optional string ttarr = 25;</code>
+     * @return The bytes for ttarr.
      */
     com.google.protobuf.ByteString
         getTtarrBytes();
 
     /**
      * <code>optional string ttdep = 26;</code>
+     * @return Whether the ttdep field is set.
      */
     boolean hasTtdep();
     /**
      * <code>optional string ttdep = 26;</code>
+     * @return The ttdep.
      */
     java.lang.String getTtdep();
     /**
      * <code>optional string ttdep = 26;</code>
+     * @return The bytes for ttdep.
      */
     com.google.protobuf.ByteString
         getTtdepBytes();
 
     /**
      * <code>optional int32 dr_type = 27;</code>
+     * @return Whether the drType field is set.
      */
     boolean hasDrType();
     /**
      * <code>optional int32 dr_type = 27;</code>
+     * @return The drType.
      */
     int getDrType();
 
@@ -4633,6 +4994,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_requestid = 28;</code>
+     * @return Whether the tlpRequestid field is set.
      */
     boolean hasTlpRequestid();
     /**
@@ -4641,6 +5003,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_requestid = 28;</code>
+     * @return The tlpRequestid.
      */
     int getTlpRequestid();
 
@@ -4650,6 +5013,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+     * @return Whether the tlpRequesttype field is set.
      */
     boolean hasTlpRequesttype();
     /**
@@ -4658,6 +5022,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+     * @return The tlpRequesttype.
      */
     fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType getTlpRequesttype();
 
@@ -4667,6 +5032,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+     * @return Whether the tlpPrioritylevel field is set.
      */
     boolean hasTlpPrioritylevel();
     /**
@@ -4675,6 +5041,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+     * @return The tlpPrioritylevel.
      */
     fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel getTlpPrioritylevel();
 
@@ -4684,6 +5051,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+     * @return Whether the tlpReason field is set.
      */
     boolean hasTlpReason();
     /**
@@ -4692,6 +5060,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+     * @return The tlpReason.
      */
     fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason getTlpReason();
 
@@ -4701,6 +5070,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_att_seq = 32;</code>
+     * @return Whether the tlpAttSeq field is set.
      */
     boolean hasTlpAttSeq();
     /**
@@ -4709,6 +5079,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_att_seq = 32;</code>
+     * @return The tlpAttSeq.
      */
     int getTlpAttSeq();
 
@@ -4718,6 +5089,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+     * @return Whether the tlpDecision field is set.
      */
     boolean hasTlpDecision();
     /**
@@ -4726,6 +5098,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+     * @return The tlpDecision.
      */
     fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision getTlpDecision();
 
@@ -4735,6 +5108,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 sid = 34;</code>
+     * @return Whether the sid field is set.
      */
     boolean hasSid();
     /**
@@ -4743,6 +5117,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 sid = 34;</code>
+     * @return The sid.
      */
     int getSid();
 
@@ -4752,6 +5127,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 signal_groupid = 35;</code>
+     * @return Whether the signalGroupid field is set.
      */
     boolean hasSignalGroupid();
     /**
@@ -4760,6 +5136,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 signal_groupid = 35;</code>
+     * @return The signalGroupid.
      */
     int getSignalGroupid();
 
@@ -4769,6 +5146,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+     * @return Whether the tlpSignalgroupnbr field is set.
      */
     boolean hasTlpSignalgroupnbr();
     /**
@@ -4777,6 +5155,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+     * @return The tlpSignalgroupnbr.
      */
     int getTlpSignalgroupnbr();
 
@@ -4786,6 +5165,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_line_configid = 38;</code>
+     * @return Whether the tlpLineConfigid field is set.
      */
     boolean hasTlpLineConfigid();
     /**
@@ -4794,6 +5174,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_line_configid = 38;</code>
+     * @return The tlpLineConfigid.
      */
     int getTlpLineConfigid();
 
@@ -4803,6 +5184,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_point_configid = 39;</code>
+     * @return Whether the tlpPointConfigid field is set.
      */
     boolean hasTlpPointConfigid();
     /**
@@ -4811,6 +5193,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_point_configid = 39;</code>
+     * @return The tlpPointConfigid.
      */
     int getTlpPointConfigid();
 
@@ -4820,6 +5203,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_frequency = 40;</code>
+     * @return Whether the tlpFrequency field is set.
      */
     boolean hasTlpFrequency();
     /**
@@ -4828,6 +5212,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_frequency = 40;</code>
+     * @return The tlpFrequency.
      */
     int getTlpFrequency();
 
@@ -4837,6 +5222,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional string tlp_protocol = 41;</code>
+     * @return Whether the tlpProtocol field is set.
      */
     boolean hasTlpProtocol();
     /**
@@ -4845,6 +5231,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional string tlp_protocol = 41;</code>
+     * @return The tlpProtocol.
      */
     java.lang.String getTlpProtocol();
     /**
@@ -4853,9 +5240,27 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional string tlp_protocol = 41;</code>
+     * @return The bytes for tlpProtocol.
      */
     com.google.protobuf.ByteString
         getTlpProtocolBytes();
+
+    /**
+     * <code>optional string label = 42;</code>
+     * @return Whether the label field is set.
+     */
+    boolean hasLabel();
+    /**
+     * <code>optional string label = 42;</code>
+     * @return The label.
+     */
+    java.lang.String getLabel();
+    /**
+     * <code>optional string label = 42;</code>
+     * @return The bytes for label.
+     */
+    com.google.protobuf.ByteString
+        getLabelBytes();
   }
   /**
    * Protobuf type {@code proto.Payload}
@@ -4885,6 +5290,14 @@ public final class Hfp {
       tlpReason_ = 0;
       tlpDecision_ = 0;
       tlpProtocol_ = "";
+      label_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Payload();
     }
 
     @java.lang.Override
@@ -5156,6 +5569,12 @@ public final class Hfp {
               tlpProtocol_ = bs;
               break;
             }
+            case 338: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField1_ |= 0x00000100;
+              label_ = bs;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -5234,6 +5653,8 @@ public final class Hfp {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -5241,6 +5662,10 @@ public final class Hfp {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static LocationQualityMethod forNumber(int value) {
         switch (value) {
           case 0: return GPS;
@@ -5342,6 +5767,8 @@ public final class Hfp {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -5349,6 +5776,10 @@ public final class Hfp {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static TlpRequestType forNumber(int value) {
         switch (value) {
           case 0: return NORMAL;
@@ -5442,6 +5873,8 @@ public final class Hfp {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -5449,6 +5882,10 @@ public final class Hfp {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static TlpPriorityLevel forNumber(int value) {
         switch (value) {
           case 0: return normal;
@@ -5549,6 +5986,8 @@ public final class Hfp {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -5556,6 +5995,10 @@ public final class Hfp {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static TlpReason forNumber(int value) {
         switch (value) {
           case 0: return GLOBAL;
@@ -5641,6 +6084,8 @@ public final class Hfp {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -5648,6 +6093,10 @@ public final class Hfp {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static TlpDecision forNumber(int value) {
         switch (value) {
           case 0: return ACK;
@@ -5707,12 +6156,14 @@ public final class Hfp {
     private int schemaVersion_;
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
     public boolean hasSchemaVersion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
     public int getSchemaVersion() {
       return schemaVersion_;
@@ -5722,12 +6173,14 @@ public final class Hfp {
     private volatile java.lang.Object desi_;
     /**
      * <code>optional string desi = 2;</code>
+     * @return Whether the desi field is set.
      */
     public boolean hasDesi() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>optional string desi = 2;</code>
+     * @return The desi.
      */
     public java.lang.String getDesi() {
       java.lang.Object ref = desi_;
@@ -5745,6 +6198,7 @@ public final class Hfp {
     }
     /**
      * <code>optional string desi = 2;</code>
+     * @return The bytes for desi.
      */
     public com.google.protobuf.ByteString
         getDesiBytes() {
@@ -5764,12 +6218,14 @@ public final class Hfp {
     private volatile java.lang.Object dir_;
     /**
      * <code>optional string dir = 3;</code>
+     * @return Whether the dir field is set.
      */
     public boolean hasDir() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>optional string dir = 3;</code>
+     * @return The dir.
      */
     public java.lang.String getDir() {
       java.lang.Object ref = dir_;
@@ -5787,6 +6243,7 @@ public final class Hfp {
     }
     /**
      * <code>optional string dir = 3;</code>
+     * @return The bytes for dir.
      */
     public com.google.protobuf.ByteString
         getDirBytes() {
@@ -5806,12 +6263,14 @@ public final class Hfp {
     private int oper_;
     /**
      * <code>optional int32 oper = 4;</code>
+     * @return Whether the oper field is set.
      */
     public boolean hasOper() {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>optional int32 oper = 4;</code>
+     * @return The oper.
      */
     public int getOper() {
       return oper_;
@@ -5821,12 +6280,14 @@ public final class Hfp {
     private int veh_;
     /**
      * <code>optional int32 veh = 5;</code>
+     * @return Whether the veh field is set.
      */
     public boolean hasVeh() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <code>optional int32 veh = 5;</code>
+     * @return The veh.
      */
     public int getVeh() {
       return veh_;
@@ -5836,12 +6297,14 @@ public final class Hfp {
     private volatile java.lang.Object tst_;
     /**
      * <code>required string tst = 6;</code>
+     * @return Whether the tst field is set.
      */
     public boolean hasTst() {
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <code>required string tst = 6;</code>
+     * @return The tst.
      */
     public java.lang.String getTst() {
       java.lang.Object ref = tst_;
@@ -5859,6 +6322,7 @@ public final class Hfp {
     }
     /**
      * <code>required string tst = 6;</code>
+     * @return The bytes for tst.
      */
     public com.google.protobuf.ByteString
         getTstBytes() {
@@ -5878,12 +6342,14 @@ public final class Hfp {
     private long tsi_;
     /**
      * <code>required int64 tsi = 7;</code>
+     * @return Whether the tsi field is set.
      */
     public boolean hasTsi() {
       return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      * <code>required int64 tsi = 7;</code>
+     * @return The tsi.
      */
     public long getTsi() {
       return tsi_;
@@ -5893,12 +6359,14 @@ public final class Hfp {
     private double spd_;
     /**
      * <code>optional double spd = 8;</code>
+     * @return Whether the spd field is set.
      */
     public boolean hasSpd() {
       return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      * <code>optional double spd = 8;</code>
+     * @return The spd.
      */
     public double getSpd() {
       return spd_;
@@ -5908,12 +6376,14 @@ public final class Hfp {
     private int hdg_;
     /**
      * <code>optional int32 hdg = 9;</code>
+     * @return Whether the hdg field is set.
      */
     public boolean hasHdg() {
       return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <code>optional int32 hdg = 9;</code>
+     * @return The hdg.
      */
     public int getHdg() {
       return hdg_;
@@ -5923,12 +6393,14 @@ public final class Hfp {
     private double lat_;
     /**
      * <code>optional double lat = 10;</code>
+     * @return Whether the lat field is set.
      */
     public boolean hasLat() {
       return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      * <code>optional double lat = 10;</code>
+     * @return The lat.
      */
     public double getLat() {
       return lat_;
@@ -5938,12 +6410,14 @@ public final class Hfp {
     private double long_;
     /**
      * <code>optional double long = 11;</code>
+     * @return Whether the long field is set.
      */
     public boolean hasLong() {
       return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      * <code>optional double long = 11;</code>
+     * @return The long.
      */
     public double getLong() {
       return long_;
@@ -5953,12 +6427,14 @@ public final class Hfp {
     private double acc_;
     /**
      * <code>optional double acc = 12;</code>
+     * @return Whether the acc field is set.
      */
     public boolean hasAcc() {
       return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      * <code>optional double acc = 12;</code>
+     * @return The acc.
      */
     public double getAcc() {
       return acc_;
@@ -5968,12 +6444,14 @@ public final class Hfp {
     private int dl_;
     /**
      * <code>optional uint32 dl = 13;</code>
+     * @return Whether the dl field is set.
      */
     public boolean hasDl() {
       return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      * <code>optional uint32 dl = 13;</code>
+     * @return The dl.
      */
     public int getDl() {
       return dl_;
@@ -5983,12 +6461,14 @@ public final class Hfp {
     private double odo_;
     /**
      * <code>optional double odo = 14;</code>
+     * @return Whether the odo field is set.
      */
     public boolean hasOdo() {
       return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      * <code>optional double odo = 14;</code>
+     * @return The odo.
      */
     public double getOdo() {
       return odo_;
@@ -5998,12 +6478,14 @@ public final class Hfp {
     private int drst_;
     /**
      * <code>optional uint32 drst = 15;</code>
+     * @return Whether the drst field is set.
      */
     public boolean hasDrst() {
       return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      * <code>optional uint32 drst = 15;</code>
+     * @return The drst.
      */
     public int getDrst() {
       return drst_;
@@ -6013,12 +6495,14 @@ public final class Hfp {
     private volatile java.lang.Object oday_;
     /**
      * <code>optional string oday = 16;</code>
+     * @return Whether the oday field is set.
      */
     public boolean hasOday() {
       return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      * <code>optional string oday = 16;</code>
+     * @return The oday.
      */
     public java.lang.String getOday() {
       java.lang.Object ref = oday_;
@@ -6036,6 +6520,7 @@ public final class Hfp {
     }
     /**
      * <code>optional string oday = 16;</code>
+     * @return The bytes for oday.
      */
     public com.google.protobuf.ByteString
         getOdayBytes() {
@@ -6055,12 +6540,14 @@ public final class Hfp {
     private int jrn_;
     /**
      * <code>optional int32 jrn = 17;</code>
+     * @return Whether the jrn field is set.
      */
     public boolean hasJrn() {
       return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      * <code>optional int32 jrn = 17;</code>
+     * @return The jrn.
      */
     public int getJrn() {
       return jrn_;
@@ -6070,12 +6557,14 @@ public final class Hfp {
     private int line_;
     /**
      * <code>optional int32 line = 18;</code>
+     * @return Whether the line field is set.
      */
     public boolean hasLine() {
       return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      * <code>optional int32 line = 18;</code>
+     * @return The line.
      */
     public int getLine() {
       return line_;
@@ -6085,12 +6574,14 @@ public final class Hfp {
     private volatile java.lang.Object start_;
     /**
      * <code>optional string start = 19;</code>
+     * @return Whether the start field is set.
      */
     public boolean hasStart() {
       return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      * <code>optional string start = 19;</code>
+     * @return The start.
      */
     public java.lang.String getStart() {
       java.lang.Object ref = start_;
@@ -6108,6 +6599,7 @@ public final class Hfp {
     }
     /**
      * <code>optional string start = 19;</code>
+     * @return The bytes for start.
      */
     public com.google.protobuf.ByteString
         getStartBytes() {
@@ -6131,6 +6623,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
+     * @return Whether the loc field is set.
      */
     public boolean hasLoc() {
       return ((bitField0_ & 0x00080000) != 0);
@@ -6141,6 +6634,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
+     * @return The loc.
      */
     public fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod getLoc() {
       @SuppressWarnings("deprecation")
@@ -6156,6 +6650,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 stop = 21;</code>
+     * @return Whether the stop field is set.
      */
     public boolean hasStop() {
       return ((bitField0_ & 0x00100000) != 0);
@@ -6166,6 +6661,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 stop = 21;</code>
+     * @return The stop.
      */
     public int getStop() {
       return stop_;
@@ -6179,6 +6675,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional string route = 22;</code>
+     * @return Whether the route field is set.
      */
     public boolean hasRoute() {
       return ((bitField0_ & 0x00200000) != 0);
@@ -6189,6 +6686,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional string route = 22;</code>
+     * @return The route.
      */
     public java.lang.String getRoute() {
       java.lang.Object ref = route_;
@@ -6210,6 +6708,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional string route = 22;</code>
+     * @return The bytes for route.
      */
     public com.google.protobuf.ByteString
         getRouteBytes() {
@@ -6233,6 +6732,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 occu = 23;</code>
+     * @return Whether the occu field is set.
      */
     public boolean hasOccu() {
       return ((bitField0_ & 0x00400000) != 0);
@@ -6243,6 +6743,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 occu = 23;</code>
+     * @return The occu.
      */
     public int getOccu() {
       return occu_;
@@ -6252,12 +6753,14 @@ public final class Hfp {
     private int seq_;
     /**
      * <code>optional int32 seq = 24;</code>
+     * @return Whether the seq field is set.
      */
     public boolean hasSeq() {
       return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      * <code>optional int32 seq = 24;</code>
+     * @return The seq.
      */
     public int getSeq() {
       return seq_;
@@ -6267,12 +6770,14 @@ public final class Hfp {
     private volatile java.lang.Object ttarr_;
     /**
      * <code>optional string ttarr = 25;</code>
+     * @return Whether the ttarr field is set.
      */
     public boolean hasTtarr() {
       return ((bitField0_ & 0x01000000) != 0);
     }
     /**
      * <code>optional string ttarr = 25;</code>
+     * @return The ttarr.
      */
     public java.lang.String getTtarr() {
       java.lang.Object ref = ttarr_;
@@ -6290,6 +6795,7 @@ public final class Hfp {
     }
     /**
      * <code>optional string ttarr = 25;</code>
+     * @return The bytes for ttarr.
      */
     public com.google.protobuf.ByteString
         getTtarrBytes() {
@@ -6309,12 +6815,14 @@ public final class Hfp {
     private volatile java.lang.Object ttdep_;
     /**
      * <code>optional string ttdep = 26;</code>
+     * @return Whether the ttdep field is set.
      */
     public boolean hasTtdep() {
       return ((bitField0_ & 0x02000000) != 0);
     }
     /**
      * <code>optional string ttdep = 26;</code>
+     * @return The ttdep.
      */
     public java.lang.String getTtdep() {
       java.lang.Object ref = ttdep_;
@@ -6332,6 +6840,7 @@ public final class Hfp {
     }
     /**
      * <code>optional string ttdep = 26;</code>
+     * @return The bytes for ttdep.
      */
     public com.google.protobuf.ByteString
         getTtdepBytes() {
@@ -6351,12 +6860,14 @@ public final class Hfp {
     private int drType_;
     /**
      * <code>optional int32 dr_type = 27;</code>
+     * @return Whether the drType field is set.
      */
     public boolean hasDrType() {
       return ((bitField0_ & 0x04000000) != 0);
     }
     /**
      * <code>optional int32 dr_type = 27;</code>
+     * @return The drType.
      */
     public int getDrType() {
       return drType_;
@@ -6370,6 +6881,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_requestid = 28;</code>
+     * @return Whether the tlpRequestid field is set.
      */
     public boolean hasTlpRequestid() {
       return ((bitField0_ & 0x08000000) != 0);
@@ -6380,6 +6892,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_requestid = 28;</code>
+     * @return The tlpRequestid.
      */
     public int getTlpRequestid() {
       return tlpRequestid_;
@@ -6393,6 +6906,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+     * @return Whether the tlpRequesttype field is set.
      */
     public boolean hasTlpRequesttype() {
       return ((bitField0_ & 0x10000000) != 0);
@@ -6403,6 +6917,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+     * @return The tlpRequesttype.
      */
     public fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType getTlpRequesttype() {
       @SuppressWarnings("deprecation")
@@ -6418,6 +6933,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+     * @return Whether the tlpPrioritylevel field is set.
      */
     public boolean hasTlpPrioritylevel() {
       return ((bitField0_ & 0x20000000) != 0);
@@ -6428,6 +6944,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+     * @return The tlpPrioritylevel.
      */
     public fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel getTlpPrioritylevel() {
       @SuppressWarnings("deprecation")
@@ -6443,6 +6960,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+     * @return Whether the tlpReason field is set.
      */
     public boolean hasTlpReason() {
       return ((bitField0_ & 0x40000000) != 0);
@@ -6453,6 +6971,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+     * @return The tlpReason.
      */
     public fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason getTlpReason() {
       @SuppressWarnings("deprecation")
@@ -6468,6 +6987,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_att_seq = 32;</code>
+     * @return Whether the tlpAttSeq field is set.
      */
     public boolean hasTlpAttSeq() {
       return ((bitField0_ & 0x80000000) != 0);
@@ -6478,6 +6998,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_att_seq = 32;</code>
+     * @return The tlpAttSeq.
      */
     public int getTlpAttSeq() {
       return tlpAttSeq_;
@@ -6491,6 +7012,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+     * @return Whether the tlpDecision field is set.
      */
     public boolean hasTlpDecision() {
       return ((bitField1_ & 0x00000001) != 0);
@@ -6501,6 +7023,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+     * @return The tlpDecision.
      */
     public fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision getTlpDecision() {
       @SuppressWarnings("deprecation")
@@ -6516,6 +7039,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 sid = 34;</code>
+     * @return Whether the sid field is set.
      */
     public boolean hasSid() {
       return ((bitField1_ & 0x00000002) != 0);
@@ -6526,6 +7050,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 sid = 34;</code>
+     * @return The sid.
      */
     public int getSid() {
       return sid_;
@@ -6539,6 +7064,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 signal_groupid = 35;</code>
+     * @return Whether the signalGroupid field is set.
      */
     public boolean hasSignalGroupid() {
       return ((bitField1_ & 0x00000004) != 0);
@@ -6549,6 +7075,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 signal_groupid = 35;</code>
+     * @return The signalGroupid.
      */
     public int getSignalGroupid() {
       return signalGroupid_;
@@ -6562,6 +7089,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+     * @return Whether the tlpSignalgroupnbr field is set.
      */
     public boolean hasTlpSignalgroupnbr() {
       return ((bitField1_ & 0x00000008) != 0);
@@ -6572,6 +7100,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+     * @return The tlpSignalgroupnbr.
      */
     public int getTlpSignalgroupnbr() {
       return tlpSignalgroupnbr_;
@@ -6585,6 +7114,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_line_configid = 38;</code>
+     * @return Whether the tlpLineConfigid field is set.
      */
     public boolean hasTlpLineConfigid() {
       return ((bitField1_ & 0x00000010) != 0);
@@ -6595,6 +7125,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_line_configid = 38;</code>
+     * @return The tlpLineConfigid.
      */
     public int getTlpLineConfigid() {
       return tlpLineConfigid_;
@@ -6608,6 +7139,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_point_configid = 39;</code>
+     * @return Whether the tlpPointConfigid field is set.
      */
     public boolean hasTlpPointConfigid() {
       return ((bitField1_ & 0x00000020) != 0);
@@ -6618,6 +7150,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_point_configid = 39;</code>
+     * @return The tlpPointConfigid.
      */
     public int getTlpPointConfigid() {
       return tlpPointConfigid_;
@@ -6631,6 +7164,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_frequency = 40;</code>
+     * @return Whether the tlpFrequency field is set.
      */
     public boolean hasTlpFrequency() {
       return ((bitField1_ & 0x00000040) != 0);
@@ -6641,6 +7175,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional int32 tlp_frequency = 40;</code>
+     * @return The tlpFrequency.
      */
     public int getTlpFrequency() {
       return tlpFrequency_;
@@ -6654,6 +7189,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional string tlp_protocol = 41;</code>
+     * @return Whether the tlpProtocol field is set.
      */
     public boolean hasTlpProtocol() {
       return ((bitField1_ & 0x00000080) != 0);
@@ -6664,6 +7200,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional string tlp_protocol = 41;</code>
+     * @return The tlpProtocol.
      */
     public java.lang.String getTlpProtocol() {
       java.lang.Object ref = tlpProtocol_;
@@ -6685,6 +7222,7 @@ public final class Hfp {
      * </pre>
      *
      * <code>optional string tlp_protocol = 41;</code>
+     * @return The bytes for tlpProtocol.
      */
     public com.google.protobuf.ByteString
         getTlpProtocolBytes() {
@@ -6694,6 +7232,51 @@ public final class Hfp {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         tlpProtocol_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LABEL_FIELD_NUMBER = 42;
+    private volatile java.lang.Object label_;
+    /**
+     * <code>optional string label = 42;</code>
+     * @return Whether the label field is set.
+     */
+    public boolean hasLabel() {
+      return ((bitField1_ & 0x00000100) != 0);
+    }
+    /**
+     * <code>optional string label = 42;</code>
+     * @return The label.
+     */
+    public java.lang.String getLabel() {
+      java.lang.Object ref = label_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          label_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string label = 42;</code>
+     * @return The bytes for label.
+     */
+    public com.google.protobuf.ByteString
+        getLabelBytes() {
+      java.lang.Object ref = label_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        label_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -6845,6 +7428,9 @@ public final class Hfp {
       }
       if (((bitField1_ & 0x00000080) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 41, tlpProtocol_);
+      }
+      if (((bitField1_ & 0x00000100) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 42, label_);
       }
       unknownFields.writeTo(output);
     }
@@ -7005,6 +7591,9 @@ public final class Hfp {
       }
       if (((bitField1_ & 0x00000080) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(41, tlpProtocol_);
+      }
+      if (((bitField1_ & 0x00000100) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(42, label_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7221,6 +7810,11 @@ public final class Hfp {
         if (!getTlpProtocol()
             .equals(other.getTlpProtocol())) return false;
       }
+      if (hasLabel() != other.hasLabel()) return false;
+      if (hasLabel()) {
+        if (!getLabel()
+            .equals(other.getLabel())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7397,6 +7991,10 @@ public final class Hfp {
       if (hasTlpProtocol()) {
         hash = (37 * hash) + TLP_PROTOCOL_FIELD_NUMBER;
         hash = (53 * hash) + getTlpProtocol().hashCode();
+      }
+      if (hasLabel()) {
+        hash = (37 * hash) + LABEL_FIELD_NUMBER;
+        hash = (53 * hash) + getLabel().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -7611,6 +8209,8 @@ public final class Hfp {
         bitField1_ = (bitField1_ & ~0x00000040);
         tlpProtocol_ = "";
         bitField1_ = (bitField1_ & ~0x00000080);
+        label_ = "";
+        bitField1_ = (bitField1_ & ~0x00000100);
         return this;
       }
 
@@ -7801,6 +8401,10 @@ public final class Hfp {
           to_bitField1_ |= 0x00000080;
         }
         result.tlpProtocol_ = tlpProtocol_;
+        if (((from_bitField1_ & 0x00000100) != 0)) {
+          to_bitField1_ |= 0x00000100;
+        }
+        result.label_ = label_;
         result.bitField0_ = to_bitField0_;
         result.bitField1_ = to_bitField1_;
         onBuilt();
@@ -7989,6 +8593,11 @@ public final class Hfp {
           tlpProtocol_ = other.tlpProtocol_;
           onChanged();
         }
+        if (other.hasLabel()) {
+          bitField1_ |= 0x00000100;
+          label_ = other.label_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -8032,18 +8641,22 @@ public final class Hfp {
       private int schemaVersion_ = 1;
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return Whether the schemaVersion field is set.
        */
       public boolean hasSchemaVersion() {
         return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return The schemaVersion.
        */
       public int getSchemaVersion() {
         return schemaVersion_;
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @param value The schemaVersion to set.
+       * @return This builder for chaining.
        */
       public Builder setSchemaVersion(int value) {
         bitField0_ |= 0x00000001;
@@ -8053,6 +8666,7 @@ public final class Hfp {
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return This builder for chaining.
        */
       public Builder clearSchemaVersion() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -8064,12 +8678,14 @@ public final class Hfp {
       private java.lang.Object desi_ = "";
       /**
        * <code>optional string desi = 2;</code>
+       * @return Whether the desi field is set.
        */
       public boolean hasDesi() {
         return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>optional string desi = 2;</code>
+       * @return The desi.
        */
       public java.lang.String getDesi() {
         java.lang.Object ref = desi_;
@@ -8087,6 +8703,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string desi = 2;</code>
+       * @return The bytes for desi.
        */
       public com.google.protobuf.ByteString
           getDesiBytes() {
@@ -8103,6 +8720,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string desi = 2;</code>
+       * @param value The desi to set.
+       * @return This builder for chaining.
        */
       public Builder setDesi(
           java.lang.String value) {
@@ -8116,6 +8735,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string desi = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDesi() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -8125,6 +8745,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string desi = 2;</code>
+       * @param value The bytes for desi to set.
+       * @return This builder for chaining.
        */
       public Builder setDesiBytes(
           com.google.protobuf.ByteString value) {
@@ -8140,12 +8762,14 @@ public final class Hfp {
       private java.lang.Object dir_ = "";
       /**
        * <code>optional string dir = 3;</code>
+       * @return Whether the dir field is set.
        */
       public boolean hasDir() {
         return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>optional string dir = 3;</code>
+       * @return The dir.
        */
       public java.lang.String getDir() {
         java.lang.Object ref = dir_;
@@ -8163,6 +8787,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string dir = 3;</code>
+       * @return The bytes for dir.
        */
       public com.google.protobuf.ByteString
           getDirBytes() {
@@ -8179,6 +8804,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string dir = 3;</code>
+       * @param value The dir to set.
+       * @return This builder for chaining.
        */
       public Builder setDir(
           java.lang.String value) {
@@ -8192,6 +8819,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string dir = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDir() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -8201,6 +8829,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string dir = 3;</code>
+       * @param value The bytes for dir to set.
+       * @return This builder for chaining.
        */
       public Builder setDirBytes(
           com.google.protobuf.ByteString value) {
@@ -8216,18 +8846,22 @@ public final class Hfp {
       private int oper_ ;
       /**
        * <code>optional int32 oper = 4;</code>
+       * @return Whether the oper field is set.
        */
       public boolean hasOper() {
         return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>optional int32 oper = 4;</code>
+       * @return The oper.
        */
       public int getOper() {
         return oper_;
       }
       /**
        * <code>optional int32 oper = 4;</code>
+       * @param value The oper to set.
+       * @return This builder for chaining.
        */
       public Builder setOper(int value) {
         bitField0_ |= 0x00000008;
@@ -8237,6 +8871,7 @@ public final class Hfp {
       }
       /**
        * <code>optional int32 oper = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOper() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -8248,18 +8883,22 @@ public final class Hfp {
       private int veh_ ;
       /**
        * <code>optional int32 veh = 5;</code>
+       * @return Whether the veh field is set.
        */
       public boolean hasVeh() {
         return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>optional int32 veh = 5;</code>
+       * @return The veh.
        */
       public int getVeh() {
         return veh_;
       }
       /**
        * <code>optional int32 veh = 5;</code>
+       * @param value The veh to set.
+       * @return This builder for chaining.
        */
       public Builder setVeh(int value) {
         bitField0_ |= 0x00000010;
@@ -8269,6 +8908,7 @@ public final class Hfp {
       }
       /**
        * <code>optional int32 veh = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearVeh() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -8280,12 +8920,14 @@ public final class Hfp {
       private java.lang.Object tst_ = "";
       /**
        * <code>required string tst = 6;</code>
+       * @return Whether the tst field is set.
        */
       public boolean hasTst() {
         return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <code>required string tst = 6;</code>
+       * @return The tst.
        */
       public java.lang.String getTst() {
         java.lang.Object ref = tst_;
@@ -8303,6 +8945,7 @@ public final class Hfp {
       }
       /**
        * <code>required string tst = 6;</code>
+       * @return The bytes for tst.
        */
       public com.google.protobuf.ByteString
           getTstBytes() {
@@ -8319,6 +8962,8 @@ public final class Hfp {
       }
       /**
        * <code>required string tst = 6;</code>
+       * @param value The tst to set.
+       * @return This builder for chaining.
        */
       public Builder setTst(
           java.lang.String value) {
@@ -8332,6 +8977,7 @@ public final class Hfp {
       }
       /**
        * <code>required string tst = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTst() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -8341,6 +8987,8 @@ public final class Hfp {
       }
       /**
        * <code>required string tst = 6;</code>
+       * @param value The bytes for tst to set.
+       * @return This builder for chaining.
        */
       public Builder setTstBytes(
           com.google.protobuf.ByteString value) {
@@ -8356,18 +9004,22 @@ public final class Hfp {
       private long tsi_ ;
       /**
        * <code>required int64 tsi = 7;</code>
+       * @return Whether the tsi field is set.
        */
       public boolean hasTsi() {
         return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        * <code>required int64 tsi = 7;</code>
+       * @return The tsi.
        */
       public long getTsi() {
         return tsi_;
       }
       /**
        * <code>required int64 tsi = 7;</code>
+       * @param value The tsi to set.
+       * @return This builder for chaining.
        */
       public Builder setTsi(long value) {
         bitField0_ |= 0x00000040;
@@ -8377,6 +9029,7 @@ public final class Hfp {
       }
       /**
        * <code>required int64 tsi = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTsi() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -8388,18 +9041,22 @@ public final class Hfp {
       private double spd_ ;
       /**
        * <code>optional double spd = 8;</code>
+       * @return Whether the spd field is set.
        */
       public boolean hasSpd() {
         return ((bitField0_ & 0x00000080) != 0);
       }
       /**
        * <code>optional double spd = 8;</code>
+       * @return The spd.
        */
       public double getSpd() {
         return spd_;
       }
       /**
        * <code>optional double spd = 8;</code>
+       * @param value The spd to set.
+       * @return This builder for chaining.
        */
       public Builder setSpd(double value) {
         bitField0_ |= 0x00000080;
@@ -8409,6 +9066,7 @@ public final class Hfp {
       }
       /**
        * <code>optional double spd = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSpd() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -8420,18 +9078,22 @@ public final class Hfp {
       private int hdg_ ;
       /**
        * <code>optional int32 hdg = 9;</code>
+       * @return Whether the hdg field is set.
        */
       public boolean hasHdg() {
         return ((bitField0_ & 0x00000100) != 0);
       }
       /**
        * <code>optional int32 hdg = 9;</code>
+       * @return The hdg.
        */
       public int getHdg() {
         return hdg_;
       }
       /**
        * <code>optional int32 hdg = 9;</code>
+       * @param value The hdg to set.
+       * @return This builder for chaining.
        */
       public Builder setHdg(int value) {
         bitField0_ |= 0x00000100;
@@ -8441,6 +9103,7 @@ public final class Hfp {
       }
       /**
        * <code>optional int32 hdg = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHdg() {
         bitField0_ = (bitField0_ & ~0x00000100);
@@ -8452,18 +9115,22 @@ public final class Hfp {
       private double lat_ ;
       /**
        * <code>optional double lat = 10;</code>
+       * @return Whether the lat field is set.
        */
       public boolean hasLat() {
         return ((bitField0_ & 0x00000200) != 0);
       }
       /**
        * <code>optional double lat = 10;</code>
+       * @return The lat.
        */
       public double getLat() {
         return lat_;
       }
       /**
        * <code>optional double lat = 10;</code>
+       * @param value The lat to set.
+       * @return This builder for chaining.
        */
       public Builder setLat(double value) {
         bitField0_ |= 0x00000200;
@@ -8473,6 +9140,7 @@ public final class Hfp {
       }
       /**
        * <code>optional double lat = 10;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLat() {
         bitField0_ = (bitField0_ & ~0x00000200);
@@ -8484,18 +9152,22 @@ public final class Hfp {
       private double long_ ;
       /**
        * <code>optional double long = 11;</code>
+       * @return Whether the long field is set.
        */
       public boolean hasLong() {
         return ((bitField0_ & 0x00000400) != 0);
       }
       /**
        * <code>optional double long = 11;</code>
+       * @return The long.
        */
       public double getLong() {
         return long_;
       }
       /**
        * <code>optional double long = 11;</code>
+       * @param value The long to set.
+       * @return This builder for chaining.
        */
       public Builder setLong(double value) {
         bitField0_ |= 0x00000400;
@@ -8505,6 +9177,7 @@ public final class Hfp {
       }
       /**
        * <code>optional double long = 11;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLong() {
         bitField0_ = (bitField0_ & ~0x00000400);
@@ -8516,18 +9189,22 @@ public final class Hfp {
       private double acc_ ;
       /**
        * <code>optional double acc = 12;</code>
+       * @return Whether the acc field is set.
        */
       public boolean hasAcc() {
         return ((bitField0_ & 0x00000800) != 0);
       }
       /**
        * <code>optional double acc = 12;</code>
+       * @return The acc.
        */
       public double getAcc() {
         return acc_;
       }
       /**
        * <code>optional double acc = 12;</code>
+       * @param value The acc to set.
+       * @return This builder for chaining.
        */
       public Builder setAcc(double value) {
         bitField0_ |= 0x00000800;
@@ -8537,6 +9214,7 @@ public final class Hfp {
       }
       /**
        * <code>optional double acc = 12;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAcc() {
         bitField0_ = (bitField0_ & ~0x00000800);
@@ -8548,18 +9226,22 @@ public final class Hfp {
       private int dl_ ;
       /**
        * <code>optional uint32 dl = 13;</code>
+       * @return Whether the dl field is set.
        */
       public boolean hasDl() {
         return ((bitField0_ & 0x00001000) != 0);
       }
       /**
        * <code>optional uint32 dl = 13;</code>
+       * @return The dl.
        */
       public int getDl() {
         return dl_;
       }
       /**
        * <code>optional uint32 dl = 13;</code>
+       * @param value The dl to set.
+       * @return This builder for chaining.
        */
       public Builder setDl(int value) {
         bitField0_ |= 0x00001000;
@@ -8569,6 +9251,7 @@ public final class Hfp {
       }
       /**
        * <code>optional uint32 dl = 13;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDl() {
         bitField0_ = (bitField0_ & ~0x00001000);
@@ -8580,18 +9263,22 @@ public final class Hfp {
       private double odo_ ;
       /**
        * <code>optional double odo = 14;</code>
+       * @return Whether the odo field is set.
        */
       public boolean hasOdo() {
         return ((bitField0_ & 0x00002000) != 0);
       }
       /**
        * <code>optional double odo = 14;</code>
+       * @return The odo.
        */
       public double getOdo() {
         return odo_;
       }
       /**
        * <code>optional double odo = 14;</code>
+       * @param value The odo to set.
+       * @return This builder for chaining.
        */
       public Builder setOdo(double value) {
         bitField0_ |= 0x00002000;
@@ -8601,6 +9288,7 @@ public final class Hfp {
       }
       /**
        * <code>optional double odo = 14;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOdo() {
         bitField0_ = (bitField0_ & ~0x00002000);
@@ -8612,18 +9300,22 @@ public final class Hfp {
       private int drst_ ;
       /**
        * <code>optional uint32 drst = 15;</code>
+       * @return Whether the drst field is set.
        */
       public boolean hasDrst() {
         return ((bitField0_ & 0x00004000) != 0);
       }
       /**
        * <code>optional uint32 drst = 15;</code>
+       * @return The drst.
        */
       public int getDrst() {
         return drst_;
       }
       /**
        * <code>optional uint32 drst = 15;</code>
+       * @param value The drst to set.
+       * @return This builder for chaining.
        */
       public Builder setDrst(int value) {
         bitField0_ |= 0x00004000;
@@ -8633,6 +9325,7 @@ public final class Hfp {
       }
       /**
        * <code>optional uint32 drst = 15;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDrst() {
         bitField0_ = (bitField0_ & ~0x00004000);
@@ -8644,12 +9337,14 @@ public final class Hfp {
       private java.lang.Object oday_ = "";
       /**
        * <code>optional string oday = 16;</code>
+       * @return Whether the oday field is set.
        */
       public boolean hasOday() {
         return ((bitField0_ & 0x00008000) != 0);
       }
       /**
        * <code>optional string oday = 16;</code>
+       * @return The oday.
        */
       public java.lang.String getOday() {
         java.lang.Object ref = oday_;
@@ -8667,6 +9362,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string oday = 16;</code>
+       * @return The bytes for oday.
        */
       public com.google.protobuf.ByteString
           getOdayBytes() {
@@ -8683,6 +9379,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string oday = 16;</code>
+       * @param value The oday to set.
+       * @return This builder for chaining.
        */
       public Builder setOday(
           java.lang.String value) {
@@ -8696,6 +9394,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string oday = 16;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOday() {
         bitField0_ = (bitField0_ & ~0x00008000);
@@ -8705,6 +9404,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string oday = 16;</code>
+       * @param value The bytes for oday to set.
+       * @return This builder for chaining.
        */
       public Builder setOdayBytes(
           com.google.protobuf.ByteString value) {
@@ -8720,18 +9421,22 @@ public final class Hfp {
       private int jrn_ ;
       /**
        * <code>optional int32 jrn = 17;</code>
+       * @return Whether the jrn field is set.
        */
       public boolean hasJrn() {
         return ((bitField0_ & 0x00010000) != 0);
       }
       /**
        * <code>optional int32 jrn = 17;</code>
+       * @return The jrn.
        */
       public int getJrn() {
         return jrn_;
       }
       /**
        * <code>optional int32 jrn = 17;</code>
+       * @param value The jrn to set.
+       * @return This builder for chaining.
        */
       public Builder setJrn(int value) {
         bitField0_ |= 0x00010000;
@@ -8741,6 +9446,7 @@ public final class Hfp {
       }
       /**
        * <code>optional int32 jrn = 17;</code>
+       * @return This builder for chaining.
        */
       public Builder clearJrn() {
         bitField0_ = (bitField0_ & ~0x00010000);
@@ -8752,18 +9458,22 @@ public final class Hfp {
       private int line_ ;
       /**
        * <code>optional int32 line = 18;</code>
+       * @return Whether the line field is set.
        */
       public boolean hasLine() {
         return ((bitField0_ & 0x00020000) != 0);
       }
       /**
        * <code>optional int32 line = 18;</code>
+       * @return The line.
        */
       public int getLine() {
         return line_;
       }
       /**
        * <code>optional int32 line = 18;</code>
+       * @param value The line to set.
+       * @return This builder for chaining.
        */
       public Builder setLine(int value) {
         bitField0_ |= 0x00020000;
@@ -8773,6 +9483,7 @@ public final class Hfp {
       }
       /**
        * <code>optional int32 line = 18;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLine() {
         bitField0_ = (bitField0_ & ~0x00020000);
@@ -8784,12 +9495,14 @@ public final class Hfp {
       private java.lang.Object start_ = "";
       /**
        * <code>optional string start = 19;</code>
+       * @return Whether the start field is set.
        */
       public boolean hasStart() {
         return ((bitField0_ & 0x00040000) != 0);
       }
       /**
        * <code>optional string start = 19;</code>
+       * @return The start.
        */
       public java.lang.String getStart() {
         java.lang.Object ref = start_;
@@ -8807,6 +9520,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string start = 19;</code>
+       * @return The bytes for start.
        */
       public com.google.protobuf.ByteString
           getStartBytes() {
@@ -8823,6 +9537,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string start = 19;</code>
+       * @param value The start to set.
+       * @return This builder for chaining.
        */
       public Builder setStart(
           java.lang.String value) {
@@ -8836,6 +9552,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string start = 19;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStart() {
         bitField0_ = (bitField0_ & ~0x00040000);
@@ -8845,6 +9562,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string start = 19;</code>
+       * @param value The bytes for start to set.
+       * @return This builder for chaining.
        */
       public Builder setStartBytes(
           com.google.protobuf.ByteString value) {
@@ -8864,6 +9583,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
+       * @return Whether the loc field is set.
        */
       public boolean hasLoc() {
         return ((bitField0_ & 0x00080000) != 0);
@@ -8874,6 +9594,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
+       * @return The loc.
        */
       public fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod getLoc() {
         @SuppressWarnings("deprecation")
@@ -8886,6 +9607,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
+       * @param value The loc to set.
+       * @return This builder for chaining.
        */
       public Builder setLoc(fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod value) {
         if (value == null) {
@@ -8902,6 +9625,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLoc() {
         bitField0_ = (bitField0_ & ~0x00080000);
@@ -8917,6 +9641,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 stop = 21;</code>
+       * @return Whether the stop field is set.
        */
       public boolean hasStop() {
         return ((bitField0_ & 0x00100000) != 0);
@@ -8927,6 +9652,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 stop = 21;</code>
+       * @return The stop.
        */
       public int getStop() {
         return stop_;
@@ -8937,6 +9663,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 stop = 21;</code>
+       * @param value The stop to set.
+       * @return This builder for chaining.
        */
       public Builder setStop(int value) {
         bitField0_ |= 0x00100000;
@@ -8950,6 +9678,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 stop = 21;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStop() {
         bitField0_ = (bitField0_ & ~0x00100000);
@@ -8965,6 +9694,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional string route = 22;</code>
+       * @return Whether the route field is set.
        */
       public boolean hasRoute() {
         return ((bitField0_ & 0x00200000) != 0);
@@ -8975,6 +9705,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional string route = 22;</code>
+       * @return The route.
        */
       public java.lang.String getRoute() {
         java.lang.Object ref = route_;
@@ -8996,6 +9727,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional string route = 22;</code>
+       * @return The bytes for route.
        */
       public com.google.protobuf.ByteString
           getRouteBytes() {
@@ -9016,6 +9748,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional string route = 22;</code>
+       * @param value The route to set.
+       * @return This builder for chaining.
        */
       public Builder setRoute(
           java.lang.String value) {
@@ -9033,6 +9767,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional string route = 22;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRoute() {
         bitField0_ = (bitField0_ & ~0x00200000);
@@ -9046,6 +9781,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional string route = 22;</code>
+       * @param value The bytes for route to set.
+       * @return This builder for chaining.
        */
       public Builder setRouteBytes(
           com.google.protobuf.ByteString value) {
@@ -9065,6 +9802,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 occu = 23;</code>
+       * @return Whether the occu field is set.
        */
       public boolean hasOccu() {
         return ((bitField0_ & 0x00400000) != 0);
@@ -9075,6 +9813,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 occu = 23;</code>
+       * @return The occu.
        */
       public int getOccu() {
         return occu_;
@@ -9085,6 +9824,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 occu = 23;</code>
+       * @param value The occu to set.
+       * @return This builder for chaining.
        */
       public Builder setOccu(int value) {
         bitField0_ |= 0x00400000;
@@ -9098,6 +9839,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 occu = 23;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOccu() {
         bitField0_ = (bitField0_ & ~0x00400000);
@@ -9109,18 +9851,22 @@ public final class Hfp {
       private int seq_ ;
       /**
        * <code>optional int32 seq = 24;</code>
+       * @return Whether the seq field is set.
        */
       public boolean hasSeq() {
         return ((bitField0_ & 0x00800000) != 0);
       }
       /**
        * <code>optional int32 seq = 24;</code>
+       * @return The seq.
        */
       public int getSeq() {
         return seq_;
       }
       /**
        * <code>optional int32 seq = 24;</code>
+       * @param value The seq to set.
+       * @return This builder for chaining.
        */
       public Builder setSeq(int value) {
         bitField0_ |= 0x00800000;
@@ -9130,6 +9876,7 @@ public final class Hfp {
       }
       /**
        * <code>optional int32 seq = 24;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSeq() {
         bitField0_ = (bitField0_ & ~0x00800000);
@@ -9141,12 +9888,14 @@ public final class Hfp {
       private java.lang.Object ttarr_ = "";
       /**
        * <code>optional string ttarr = 25;</code>
+       * @return Whether the ttarr field is set.
        */
       public boolean hasTtarr() {
         return ((bitField0_ & 0x01000000) != 0);
       }
       /**
        * <code>optional string ttarr = 25;</code>
+       * @return The ttarr.
        */
       public java.lang.String getTtarr() {
         java.lang.Object ref = ttarr_;
@@ -9164,6 +9913,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string ttarr = 25;</code>
+       * @return The bytes for ttarr.
        */
       public com.google.protobuf.ByteString
           getTtarrBytes() {
@@ -9180,6 +9930,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string ttarr = 25;</code>
+       * @param value The ttarr to set.
+       * @return This builder for chaining.
        */
       public Builder setTtarr(
           java.lang.String value) {
@@ -9193,6 +9945,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string ttarr = 25;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTtarr() {
         bitField0_ = (bitField0_ & ~0x01000000);
@@ -9202,6 +9955,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string ttarr = 25;</code>
+       * @param value The bytes for ttarr to set.
+       * @return This builder for chaining.
        */
       public Builder setTtarrBytes(
           com.google.protobuf.ByteString value) {
@@ -9217,12 +9972,14 @@ public final class Hfp {
       private java.lang.Object ttdep_ = "";
       /**
        * <code>optional string ttdep = 26;</code>
+       * @return Whether the ttdep field is set.
        */
       public boolean hasTtdep() {
         return ((bitField0_ & 0x02000000) != 0);
       }
       /**
        * <code>optional string ttdep = 26;</code>
+       * @return The ttdep.
        */
       public java.lang.String getTtdep() {
         java.lang.Object ref = ttdep_;
@@ -9240,6 +9997,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string ttdep = 26;</code>
+       * @return The bytes for ttdep.
        */
       public com.google.protobuf.ByteString
           getTtdepBytes() {
@@ -9256,6 +10014,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string ttdep = 26;</code>
+       * @param value The ttdep to set.
+       * @return This builder for chaining.
        */
       public Builder setTtdep(
           java.lang.String value) {
@@ -9269,6 +10029,7 @@ public final class Hfp {
       }
       /**
        * <code>optional string ttdep = 26;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTtdep() {
         bitField0_ = (bitField0_ & ~0x02000000);
@@ -9278,6 +10039,8 @@ public final class Hfp {
       }
       /**
        * <code>optional string ttdep = 26;</code>
+       * @param value The bytes for ttdep to set.
+       * @return This builder for chaining.
        */
       public Builder setTtdepBytes(
           com.google.protobuf.ByteString value) {
@@ -9293,18 +10056,22 @@ public final class Hfp {
       private int drType_ ;
       /**
        * <code>optional int32 dr_type = 27;</code>
+       * @return Whether the drType field is set.
        */
       public boolean hasDrType() {
         return ((bitField0_ & 0x04000000) != 0);
       }
       /**
        * <code>optional int32 dr_type = 27;</code>
+       * @return The drType.
        */
       public int getDrType() {
         return drType_;
       }
       /**
        * <code>optional int32 dr_type = 27;</code>
+       * @param value The drType to set.
+       * @return This builder for chaining.
        */
       public Builder setDrType(int value) {
         bitField0_ |= 0x04000000;
@@ -9314,6 +10081,7 @@ public final class Hfp {
       }
       /**
        * <code>optional int32 dr_type = 27;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDrType() {
         bitField0_ = (bitField0_ & ~0x04000000);
@@ -9329,6 +10097,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_requestid = 28;</code>
+       * @return Whether the tlpRequestid field is set.
        */
       public boolean hasTlpRequestid() {
         return ((bitField0_ & 0x08000000) != 0);
@@ -9339,6 +10108,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_requestid = 28;</code>
+       * @return The tlpRequestid.
        */
       public int getTlpRequestid() {
         return tlpRequestid_;
@@ -9349,6 +10119,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_requestid = 28;</code>
+       * @param value The tlpRequestid to set.
+       * @return This builder for chaining.
        */
       public Builder setTlpRequestid(int value) {
         bitField0_ |= 0x08000000;
@@ -9362,6 +10134,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_requestid = 28;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTlpRequestid() {
         bitField0_ = (bitField0_ & ~0x08000000);
@@ -9377,6 +10150,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+       * @return Whether the tlpRequesttype field is set.
        */
       public boolean hasTlpRequesttype() {
         return ((bitField0_ & 0x10000000) != 0);
@@ -9387,6 +10161,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+       * @return The tlpRequesttype.
        */
       public fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType getTlpRequesttype() {
         @SuppressWarnings("deprecation")
@@ -9399,6 +10174,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+       * @param value The tlpRequesttype to set.
+       * @return This builder for chaining.
        */
       public Builder setTlpRequesttype(fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType value) {
         if (value == null) {
@@ -9415,6 +10192,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTlpRequesttype() {
         bitField0_ = (bitField0_ & ~0x10000000);
@@ -9430,6 +10208,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+       * @return Whether the tlpPrioritylevel field is set.
        */
       public boolean hasTlpPrioritylevel() {
         return ((bitField0_ & 0x20000000) != 0);
@@ -9440,6 +10219,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+       * @return The tlpPrioritylevel.
        */
       public fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel getTlpPrioritylevel() {
         @SuppressWarnings("deprecation")
@@ -9452,6 +10232,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+       * @param value The tlpPrioritylevel to set.
+       * @return This builder for chaining.
        */
       public Builder setTlpPrioritylevel(fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel value) {
         if (value == null) {
@@ -9468,6 +10250,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTlpPrioritylevel() {
         bitField0_ = (bitField0_ & ~0x20000000);
@@ -9483,6 +10266,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+       * @return Whether the tlpReason field is set.
        */
       public boolean hasTlpReason() {
         return ((bitField0_ & 0x40000000) != 0);
@@ -9493,6 +10277,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+       * @return The tlpReason.
        */
       public fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason getTlpReason() {
         @SuppressWarnings("deprecation")
@@ -9505,6 +10290,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+       * @param value The tlpReason to set.
+       * @return This builder for chaining.
        */
       public Builder setTlpReason(fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason value) {
         if (value == null) {
@@ -9521,6 +10308,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTlpReason() {
         bitField0_ = (bitField0_ & ~0x40000000);
@@ -9536,6 +10324,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_att_seq = 32;</code>
+       * @return Whether the tlpAttSeq field is set.
        */
       public boolean hasTlpAttSeq() {
         return ((bitField0_ & 0x80000000) != 0);
@@ -9546,6 +10335,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_att_seq = 32;</code>
+       * @return The tlpAttSeq.
        */
       public int getTlpAttSeq() {
         return tlpAttSeq_;
@@ -9556,6 +10346,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_att_seq = 32;</code>
+       * @param value The tlpAttSeq to set.
+       * @return This builder for chaining.
        */
       public Builder setTlpAttSeq(int value) {
         bitField0_ |= 0x80000000;
@@ -9569,6 +10361,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_att_seq = 32;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTlpAttSeq() {
         bitField0_ = (bitField0_ & ~0x80000000);
@@ -9584,6 +10377,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+       * @return Whether the tlpDecision field is set.
        */
       public boolean hasTlpDecision() {
         return ((bitField1_ & 0x00000001) != 0);
@@ -9594,6 +10388,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+       * @return The tlpDecision.
        */
       public fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision getTlpDecision() {
         @SuppressWarnings("deprecation")
@@ -9606,6 +10401,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+       * @param value The tlpDecision to set.
+       * @return This builder for chaining.
        */
       public Builder setTlpDecision(fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision value) {
         if (value == null) {
@@ -9622,6 +10419,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTlpDecision() {
         bitField1_ = (bitField1_ & ~0x00000001);
@@ -9637,6 +10435,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 sid = 34;</code>
+       * @return Whether the sid field is set.
        */
       public boolean hasSid() {
         return ((bitField1_ & 0x00000002) != 0);
@@ -9647,6 +10446,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 sid = 34;</code>
+       * @return The sid.
        */
       public int getSid() {
         return sid_;
@@ -9657,6 +10457,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 sid = 34;</code>
+       * @param value The sid to set.
+       * @return This builder for chaining.
        */
       public Builder setSid(int value) {
         bitField1_ |= 0x00000002;
@@ -9670,6 +10472,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 sid = 34;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSid() {
         bitField1_ = (bitField1_ & ~0x00000002);
@@ -9685,6 +10488,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 signal_groupid = 35;</code>
+       * @return Whether the signalGroupid field is set.
        */
       public boolean hasSignalGroupid() {
         return ((bitField1_ & 0x00000004) != 0);
@@ -9695,6 +10499,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 signal_groupid = 35;</code>
+       * @return The signalGroupid.
        */
       public int getSignalGroupid() {
         return signalGroupid_;
@@ -9705,6 +10510,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 signal_groupid = 35;</code>
+       * @param value The signalGroupid to set.
+       * @return This builder for chaining.
        */
       public Builder setSignalGroupid(int value) {
         bitField1_ |= 0x00000004;
@@ -9718,6 +10525,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 signal_groupid = 35;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSignalGroupid() {
         bitField1_ = (bitField1_ & ~0x00000004);
@@ -9733,6 +10541,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+       * @return Whether the tlpSignalgroupnbr field is set.
        */
       public boolean hasTlpSignalgroupnbr() {
         return ((bitField1_ & 0x00000008) != 0);
@@ -9743,6 +10552,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+       * @return The tlpSignalgroupnbr.
        */
       public int getTlpSignalgroupnbr() {
         return tlpSignalgroupnbr_;
@@ -9753,6 +10563,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+       * @param value The tlpSignalgroupnbr to set.
+       * @return This builder for chaining.
        */
       public Builder setTlpSignalgroupnbr(int value) {
         bitField1_ |= 0x00000008;
@@ -9766,6 +10578,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTlpSignalgroupnbr() {
         bitField1_ = (bitField1_ & ~0x00000008);
@@ -9781,6 +10594,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_line_configid = 38;</code>
+       * @return Whether the tlpLineConfigid field is set.
        */
       public boolean hasTlpLineConfigid() {
         return ((bitField1_ & 0x00000010) != 0);
@@ -9791,6 +10605,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_line_configid = 38;</code>
+       * @return The tlpLineConfigid.
        */
       public int getTlpLineConfigid() {
         return tlpLineConfigid_;
@@ -9801,6 +10616,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_line_configid = 38;</code>
+       * @param value The tlpLineConfigid to set.
+       * @return This builder for chaining.
        */
       public Builder setTlpLineConfigid(int value) {
         bitField1_ |= 0x00000010;
@@ -9814,6 +10631,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_line_configid = 38;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTlpLineConfigid() {
         bitField1_ = (bitField1_ & ~0x00000010);
@@ -9829,6 +10647,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_point_configid = 39;</code>
+       * @return Whether the tlpPointConfigid field is set.
        */
       public boolean hasTlpPointConfigid() {
         return ((bitField1_ & 0x00000020) != 0);
@@ -9839,6 +10658,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_point_configid = 39;</code>
+       * @return The tlpPointConfigid.
        */
       public int getTlpPointConfigid() {
         return tlpPointConfigid_;
@@ -9849,6 +10669,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_point_configid = 39;</code>
+       * @param value The tlpPointConfigid to set.
+       * @return This builder for chaining.
        */
       public Builder setTlpPointConfigid(int value) {
         bitField1_ |= 0x00000020;
@@ -9862,6 +10684,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_point_configid = 39;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTlpPointConfigid() {
         bitField1_ = (bitField1_ & ~0x00000020);
@@ -9877,6 +10700,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_frequency = 40;</code>
+       * @return Whether the tlpFrequency field is set.
        */
       public boolean hasTlpFrequency() {
         return ((bitField1_ & 0x00000040) != 0);
@@ -9887,6 +10711,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_frequency = 40;</code>
+       * @return The tlpFrequency.
        */
       public int getTlpFrequency() {
         return tlpFrequency_;
@@ -9897,6 +10722,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_frequency = 40;</code>
+       * @param value The tlpFrequency to set.
+       * @return This builder for chaining.
        */
       public Builder setTlpFrequency(int value) {
         bitField1_ |= 0x00000040;
@@ -9910,6 +10737,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional int32 tlp_frequency = 40;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTlpFrequency() {
         bitField1_ = (bitField1_ & ~0x00000040);
@@ -9925,6 +10753,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional string tlp_protocol = 41;</code>
+       * @return Whether the tlpProtocol field is set.
        */
       public boolean hasTlpProtocol() {
         return ((bitField1_ & 0x00000080) != 0);
@@ -9935,6 +10764,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional string tlp_protocol = 41;</code>
+       * @return The tlpProtocol.
        */
       public java.lang.String getTlpProtocol() {
         java.lang.Object ref = tlpProtocol_;
@@ -9956,6 +10786,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional string tlp_protocol = 41;</code>
+       * @return The bytes for tlpProtocol.
        */
       public com.google.protobuf.ByteString
           getTlpProtocolBytes() {
@@ -9976,6 +10807,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional string tlp_protocol = 41;</code>
+       * @param value The tlpProtocol to set.
+       * @return This builder for chaining.
        */
       public Builder setTlpProtocol(
           java.lang.String value) {
@@ -9993,6 +10826,7 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional string tlp_protocol = 41;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTlpProtocol() {
         bitField1_ = (bitField1_ & ~0x00000080);
@@ -10006,6 +10840,8 @@ public final class Hfp {
        * </pre>
        *
        * <code>optional string tlp_protocol = 41;</code>
+       * @param value The bytes for tlpProtocol to set.
+       * @return This builder for chaining.
        */
       public Builder setTlpProtocolBytes(
           com.google.protobuf.ByteString value) {
@@ -10014,6 +10850,90 @@ public final class Hfp {
   }
   bitField1_ |= 0x00000080;
         tlpProtocol_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object label_ = "";
+      /**
+       * <code>optional string label = 42;</code>
+       * @return Whether the label field is set.
+       */
+      public boolean hasLabel() {
+        return ((bitField1_ & 0x00000100) != 0);
+      }
+      /**
+       * <code>optional string label = 42;</code>
+       * @return The label.
+       */
+      public java.lang.String getLabel() {
+        java.lang.Object ref = label_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            label_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string label = 42;</code>
+       * @return The bytes for label.
+       */
+      public com.google.protobuf.ByteString
+          getLabelBytes() {
+        java.lang.Object ref = label_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          label_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string label = 42;</code>
+       * @param value The label to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLabel(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00000100;
+        label_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string label = 42;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLabel() {
+        bitField1_ = (bitField1_ & ~0x00000100);
+        label_ = getDefaultInstance().getLabel();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string label = 42;</code>
+       * @param value The bytes for label to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLabelBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00000100;
+        label_ = value;
         onChanged();
         return this;
       }
@@ -10096,7 +11016,7 @@ public final class Hfp {
     java.lang.String[] descriptorData = {
       "\n\thfp.proto\022\005proto\"^\n\004Data\022\030\n\rSchemaVers" +
       "ion\030\001 \002(\005:\0011\022\033\n\005topic\030\002 \001(\0132\014.proto.Topi" +
-      "c\022\037\n\007payload\030\003 \002(\0132\016.proto.Payload\"\325\006\n\005T" +
+      "c\022\037\n\007payload\030\003 \002(\0132\016.proto.Payload\"\352\006\n\005T" +
       "opic\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\023\n\013receiv" +
       "ed_at\030\002 \002(\003\022\024\n\014topic_prefix\030\003 \002(\t\022\025\n\rtop" +
       "ic_version\030\004 \002(\t\022.\n\014journey_type\030\005 \002(\0162\030" +
@@ -10116,51 +11036,44 @@ public final class Hfp {
       "R\020\002\022\007\n\003ARS\020\003\022\007\n\003PDE\020\004\022\007\n\003DEP\020\005\022\007\n\003PAS\020\006\022" +
       "\010\n\004WAIT\020\007\022\007\n\003DOO\020\010\022\007\n\003DOC\020\t\022\007\n\003TLR\020\n\022\007\n\003" +
       "TLA\020\013\022\006\n\002DA\020\014\022\010\n\004DOUT\020\r\022\006\n\002BA\020\016\022\010\n\004BOUT\020" +
-      "\017\022\007\n\003VJA\020\020\022\t\n\005VJOUT\020\021\"C\n\rTransportMode\022\007" +
+      "\017\022\007\n\003VJA\020\020\022\t\n\005VJOUT\020\021\"X\n\rTransportMode\022\007" +
       "\n\003bus\020\000\022\t\n\005train\020\001\022\010\n\004tram\020\002\022\t\n\005metro\020\003\022" +
-      "\t\n\005ferry\020\004\"\357\010\n\007Payload\022\030\n\rSchemaVersion\030" +
-      "\001 \002(\005:\0011\022\014\n\004desi\030\002 \001(\t\022\013\n\003dir\030\003 \001(\t\022\014\n\004o" +
-      "per\030\004 \001(\005\022\013\n\003veh\030\005 \001(\005\022\013\n\003tst\030\006 \002(\t\022\013\n\003t" +
-      "si\030\007 \002(\003\022\013\n\003spd\030\010 \001(\001\022\013\n\003hdg\030\t \001(\005\022\013\n\003la" +
-      "t\030\n \001(\001\022\014\n\004long\030\013 \001(\001\022\013\n\003acc\030\014 \001(\001\022\n\n\002dl" +
-      "\030\r \001(\r\022\013\n\003odo\030\016 \001(\001\022\014\n\004drst\030\017 \001(\r\022\014\n\004oda" +
-      "y\030\020 \001(\t\022\013\n\003jrn\030\021 \001(\005\022\014\n\004line\030\022 \001(\005\022\r\n\005st" +
-      "art\030\023 \001(\t\0221\n\003loc\030\024 \001(\0162$.proto.Payload.L" +
-      "ocationQualityMethod\022\014\n\004stop\030\025 \001(\005\022\r\n\005ro" +
-      "ute\030\026 \001(\t\022\014\n\004occu\030\027 \001(\005\022\013\n\003seq\030\030 \001(\005\022\r\n\005" +
-      "ttarr\030\031 \001(\t\022\r\n\005ttdep\030\032 \001(\t\022\017\n\007dr_type\030\033 " +
-      "\001(\005\022\025\n\rtlp_requestid\030\034 \001(\005\0226\n\017tlp_reques" +
-      "ttype\030\035 \001(\0162\035.proto.Payload.TlpRequestTy" +
-      "pe\022:\n\021tlp_prioritylevel\030\036 \001(\0162\037.proto.Pa" +
-      "yload.TlpPriorityLevel\022,\n\ntlp_reason\030\037 \001" +
-      "(\0162\030.proto.Payload.TlpReason\022\023\n\013tlp_att_" +
-      "seq\030  \001(\005\0220\n\014tlp_decision\030! \001(\0162\032.proto." +
-      "Payload.TlpDecision\022\013\n\003sid\030\" \001(\005\022\026\n\016sign" +
-      "al_groupid\030# \001(\005\022\032\n\022tlp_signalgroupnbr\030$" +
-      " \001(\005\022\031\n\021tlp_line_configid\030& \001(\005\022\032\n\022tlp_p" +
-      "oint_configid\030\' \001(\005\022\025\n\rtlp_frequency\030( \001" +
-      "(\005\022\024\n\014tlp_protocol\030) \001(\t\":\n\025LocationQual" +
-      "ityMethod\022\007\n\003GPS\020\000\022\007\n\003ODO\020\001\022\007\n\003MAN\020\002\022\006\n\002" +
-      "NA\020\003\"H\n\016TlpRequestType\022\n\n\006NORMAL\020\000\022\016\n\nDO" +
-      "OR_CLOSE\020\001\022\r\n\tDOOR_OPEN\020\002\022\013\n\007ADVANCE\020\003\"7" +
-      "\n\020TlpPriorityLevel\022\n\n\006normal\020\000\022\010\n\004high\020\001" +
-      "\022\r\n\tnorequest\020\002\":\n\tTlpReason\022\n\n\006GLOBAL\020\000" +
-      "\022\t\n\005AHEAD\020\001\022\010\n\004LINE\020\002\022\014\n\010PRIOEXEP\020\003\"\037\n\013T" +
-      "lpDecision\022\007\n\003ACK\020\000\022\007\n\003NAK\020\001B\036\n\027fi.hsl.c" +
-      "ommon.hfp.protoB\003Hfp"
+      "\t\n\005ferry\020\004\022\010\n\004ubus\020\005\022\t\n\005robot\020\006\"\376\010\n\007Payl" +
+      "oad\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\014\n\004desi\030\002 " +
+      "\001(\t\022\013\n\003dir\030\003 \001(\t\022\014\n\004oper\030\004 \001(\005\022\013\n\003veh\030\005 " +
+      "\001(\005\022\013\n\003tst\030\006 \002(\t\022\013\n\003tsi\030\007 \002(\003\022\013\n\003spd\030\010 \001" +
+      "(\001\022\013\n\003hdg\030\t \001(\005\022\013\n\003lat\030\n \001(\001\022\014\n\004long\030\013 \001" +
+      "(\001\022\013\n\003acc\030\014 \001(\001\022\n\n\002dl\030\r \001(\r\022\013\n\003odo\030\016 \001(\001" +
+      "\022\014\n\004drst\030\017 \001(\r\022\014\n\004oday\030\020 \001(\t\022\013\n\003jrn\030\021 \001(" +
+      "\005\022\014\n\004line\030\022 \001(\005\022\r\n\005start\030\023 \001(\t\0221\n\003loc\030\024 " +
+      "\001(\0162$.proto.Payload.LocationQualityMetho" +
+      "d\022\014\n\004stop\030\025 \001(\005\022\r\n\005route\030\026 \001(\t\022\014\n\004occu\030\027" +
+      " \001(\005\022\013\n\003seq\030\030 \001(\005\022\r\n\005ttarr\030\031 \001(\t\022\r\n\005ttde" +
+      "p\030\032 \001(\t\022\017\n\007dr_type\030\033 \001(\005\022\025\n\rtlp_requesti" +
+      "d\030\034 \001(\005\0226\n\017tlp_requesttype\030\035 \001(\0162\035.proto" +
+      ".Payload.TlpRequestType\022:\n\021tlp_priorityl" +
+      "evel\030\036 \001(\0162\037.proto.Payload.TlpPriorityLe" +
+      "vel\022,\n\ntlp_reason\030\037 \001(\0162\030.proto.Payload." +
+      "TlpReason\022\023\n\013tlp_att_seq\030  \001(\005\0220\n\014tlp_de" +
+      "cision\030! \001(\0162\032.proto.Payload.TlpDecision" +
+      "\022\013\n\003sid\030\" \001(\005\022\026\n\016signal_groupid\030# \001(\005\022\032\n" +
+      "\022tlp_signalgroupnbr\030$ \001(\005\022\031\n\021tlp_line_co" +
+      "nfigid\030& \001(\005\022\032\n\022tlp_point_configid\030\' \001(\005" +
+      "\022\025\n\rtlp_frequency\030( \001(\005\022\024\n\014tlp_protocol\030" +
+      ") \001(\t\022\r\n\005label\030* \001(\t\":\n\025LocationQualityM" +
+      "ethod\022\007\n\003GPS\020\000\022\007\n\003ODO\020\001\022\007\n\003MAN\020\002\022\006\n\002NA\020\003" +
+      "\"H\n\016TlpRequestType\022\n\n\006NORMAL\020\000\022\016\n\nDOOR_C" +
+      "LOSE\020\001\022\r\n\tDOOR_OPEN\020\002\022\013\n\007ADVANCE\020\003\"7\n\020Tl" +
+      "pPriorityLevel\022\n\n\006normal\020\000\022\010\n\004high\020\001\022\r\n\t" +
+      "norequest\020\002\":\n\tTlpReason\022\n\n\006GLOBAL\020\000\022\t\n\005" +
+      "AHEAD\020\001\022\010\n\004LINE\020\002\022\014\n\010PRIOEXEP\020\003\"\037\n\013TlpDe" +
+      "cision\022\007\n\003ACK\020\000\022\007\n\003NAK\020\001B\036\n\027fi.hsl.commo" +
+      "n.hfp.protoB\003Hfp"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_proto_Data_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_Data_fieldAccessorTable = new
@@ -10178,7 +11091,7 @@ public final class Hfp {
     internal_static_proto_Payload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Payload_descriptor,
-        new java.lang.String[] { "SchemaVersion", "Desi", "Dir", "Oper", "Veh", "Tst", "Tsi", "Spd", "Hdg", "Lat", "Long", "Acc", "Dl", "Odo", "Drst", "Oday", "Jrn", "Line", "Start", "Loc", "Stop", "Route", "Occu", "Seq", "Ttarr", "Ttdep", "DrType", "TlpRequestid", "TlpRequesttype", "TlpPrioritylevel", "TlpReason", "TlpAttSeq", "TlpDecision", "Sid", "SignalGroupid", "TlpSignalgroupnbr", "TlpLineConfigid", "TlpPointConfigid", "TlpFrequency", "TlpProtocol", });
+        new java.lang.String[] { "SchemaVersion", "Desi", "Dir", "Oper", "Veh", "Tst", "Tsi", "Spd", "Hdg", "Lat", "Long", "Acc", "Dl", "Odo", "Drst", "Oday", "Jrn", "Line", "Start", "Loc", "Stop", "Route", "Occu", "Seq", "Ttarr", "Ttdep", "DrType", "TlpRequestid", "TlpRequesttype", "TlpPrioritylevel", "TlpReason", "TlpAttSeq", "TlpDecision", "Sid", "SignalGroupid", "TlpSignalgroupnbr", "TlpLineConfigid", "TlpPointConfigid", "TlpFrequency", "TlpProtocol", "Label", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
