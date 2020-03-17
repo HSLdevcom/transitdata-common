@@ -54,6 +54,8 @@ message Topic {
         tram = 2;
         metro = 3;
         ferry = 4;
+        ubus = 5; //Used by U-line buses and other lines with limited real-time information
+        robot = 6; //Used by robot buses
     }
 
     required int64 received_at = 2; // Our server timestamp as Epoch ms
