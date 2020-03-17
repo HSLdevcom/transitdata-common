@@ -159,4 +159,6 @@ message Payload {
     optional int32 tlp_point_configid = 39; // tlr
     optional int32 tlp_frequency = 40; // tlr
     optional string tlp_protocol = 41; // tlr
+
+    optional string label = 42;
 }
