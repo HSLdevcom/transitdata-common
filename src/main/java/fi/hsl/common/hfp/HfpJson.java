@@ -112,6 +112,8 @@ public class HfpJson {
 
         @JsonAttribute(name = "tlp-protocol") //use alternative name in JSON
         public String tlp_protocol;
+
+        public String label;
     }
 
     public static abstract class Odo {

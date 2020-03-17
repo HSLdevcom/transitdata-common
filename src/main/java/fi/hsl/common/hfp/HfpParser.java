@@ -146,6 +146,8 @@ public class HfpParser {
         if (payload.tlp_frequency != null)
             builder.setTlpFrequency(payload.tlp_frequency);
         HfpValidator.validateString(payload.tlp_protocol).ifPresent(builder::setTlpProtocol);
+        if (payload.label != null)
+            builder.setLabel(payload.label);
         return builder.build();
     }
 
