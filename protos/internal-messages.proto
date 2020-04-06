@@ -60,6 +60,16 @@ enum Category {
     PUBLIC_EVENT = 32;
 }
 
+message StopCancellation {
+    optional string stop_id = 1;
+    optional int64 valid_from_utc_ms = 2;
+    optional int64 valid_to_utc_ms = 3;
+}
+
+message StopCancellations {
+    repeated StopCancellation stop_cancellations = 1;
+}
+
 message TripCancellation {
     required int32 SchemaVersion = 1 [default = 1];
     optional string trip_id = 2;

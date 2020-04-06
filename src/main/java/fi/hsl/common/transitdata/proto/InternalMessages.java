@@ -292,6 +292,8 @@ public final class InternalMessages {
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -299,6 +301,10 @@ public final class InternalMessages {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Category forNumber(int value) {
       switch (value) {
         case 0: return VEHICLE_BREAKDOWN;
@@ -394,6 +400,7 @@ public final class InternalMessages {
      * </pre>
      *
      * <code>required string trip_id = 1;</code>
+     * @return Whether the tripId field is set.
      */
     boolean hasTripId();
     /**
@@ -403,6 +410,7 @@ public final class InternalMessages {
      * </pre>
      *
      * <code>required string trip_id = 1;</code>
+     * @return The tripId.
      */
     java.lang.String getTripId();
     /**
@@ -412,6 +420,7 @@ public final class InternalMessages {
      * </pre>
      *
      * <code>required string trip_id = 1;</code>
+     * @return The bytes for tripId.
      */
     com.google.protobuf.ByteString
         getTripIdBytes();
@@ -422,6 +431,7 @@ public final class InternalMessages {
      * </pre>
      *
      * <code>required string operating_day = 2;</code>
+     * @return Whether the operatingDay field is set.
      */
     boolean hasOperatingDay();
     /**
@@ -430,6 +440,7 @@ public final class InternalMessages {
      * </pre>
      *
      * <code>required string operating_day = 2;</code>
+     * @return The operatingDay.
      */
     java.lang.String getOperatingDay();
     /**
@@ -438,43 +449,52 @@ public final class InternalMessages {
      * </pre>
      *
      * <code>required string operating_day = 2;</code>
+     * @return The bytes for operatingDay.
      */
     com.google.protobuf.ByteString
         getOperatingDayBytes();
 
     /**
      * <code>required string route_id = 3;</code>
+     * @return Whether the routeId field is set.
      */
     boolean hasRouteId();
     /**
      * <code>required string route_id = 3;</code>
+     * @return The routeId.
      */
     java.lang.String getRouteId();
     /**
      * <code>required string route_id = 3;</code>
+     * @return The bytes for routeId.
      */
     com.google.protobuf.ByteString
         getRouteIdBytes();
 
     /**
      * <code>required uint32 direction_id = 4;</code>
+     * @return Whether the directionId field is set.
      */
     boolean hasDirectionId();
     /**
      * <code>required uint32 direction_id = 4;</code>
+     * @return The directionId.
      */
     int getDirectionId();
 
     /**
      * <code>required string start_time = 5;</code>
+     * @return Whether the startTime field is set.
      */
     boolean hasStartTime();
     /**
      * <code>required string start_time = 5;</code>
+     * @return The startTime.
      */
     java.lang.String getStartTime();
     /**
      * <code>required string start_time = 5;</code>
+     * @return The bytes for startTime.
      */
     com.google.protobuf.ByteString
         getStartTimeBytes();
@@ -485,6 +505,7 @@ public final class InternalMessages {
      * </pre>
      *
      * <code>optional .proto.TripInfo.ScheduleType schedule_type = 6 [default = SCHEDULED];</code>
+     * @return Whether the scheduleType field is set.
      */
     boolean hasScheduleType();
     /**
@@ -493,6 +514,7 @@ public final class InternalMessages {
      * </pre>
      *
      * <code>optional .proto.TripInfo.ScheduleType schedule_type = 6 [default = SCHEDULED];</code>
+     * @return The scheduleType.
      */
     fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType getScheduleType();
   }
@@ -503,6 +525,7 @@ public final class InternalMessages {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.TripInfo)
       TripInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use TripInfo.newBuilder() to construct.
     private TripInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -511,9 +534,15 @@ public final class InternalMessages {
       tripId_ = "";
       operatingDay_ = "";
       routeId_ = "";
-      directionId_ = 0;
       startTime_ = "";
       scheduleType_ = 1;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TripInfo();
     }
 
     @java.lang.Override
@@ -526,6 +555,9 @@ public final class InternalMessages {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -537,13 +569,6 @@ public final class InternalMessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
@@ -575,12 +600,20 @@ public final class InternalMessages {
             }
             case 48: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType value = fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(6, rawValue);
               } else {
                 bitField0_ |= 0x00000020;
                 scheduleType_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
               }
               break;
             }
@@ -601,6 +634,7 @@ public final class InternalMessages {
       return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_TripInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_TripInfo_fieldAccessorTable
@@ -670,6 +704,8 @@ public final class InternalMessages {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -677,6 +713,10 @@ public final class InternalMessages {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static ScheduleType forNumber(int value) {
         switch (value) {
           case 1: return SCHEDULED;
@@ -741,9 +781,10 @@ public final class InternalMessages {
      * </pre>
      *
      * <code>required string trip_id = 1;</code>
+     * @return Whether the tripId field is set.
      */
     public boolean hasTripId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
@@ -752,6 +793,7 @@ public final class InternalMessages {
      * </pre>
      *
      * <code>required string trip_id = 1;</code>
+     * @return The tripId.
      */
     public java.lang.String getTripId() {
       java.lang.Object ref = tripId_;
@@ -774,6 +816,7 @@ public final class InternalMessages {
      * </pre>
      *
      * <code>required string trip_id = 1;</code>
+     * @return The bytes for tripId.
      */
     public com.google.protobuf.ByteString
         getTripIdBytes() {
@@ -797,9 +840,10 @@ public final class InternalMessages {
      * </pre>
      *
      * <code>required string operating_day = 2;</code>
+     * @return Whether the operatingDay field is set.
      */
     public boolean hasOperatingDay() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <pre>
@@ -807,6 +851,7 @@ public final class InternalMessages {
      * </pre>
      *
      * <code>required string operating_day = 2;</code>
+     * @return The operatingDay.
      */
     public java.lang.String getOperatingDay() {
       java.lang.Object ref = operatingDay_;
@@ -828,6 +873,7 @@ public final class InternalMessages {
      * </pre>
      *
      * <code>required string operating_day = 2;</code>
+     * @return The bytes for operatingDay.
      */
     public com.google.protobuf.ByteString
         getOperatingDayBytes() {
@@ -847,12 +893,14 @@ public final class InternalMessages {
     private volatile java.lang.Object routeId_;
     /**
      * <code>required string route_id = 3;</code>
+     * @return Whether the routeId field is set.
      */
     public boolean hasRouteId() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>required string route_id = 3;</code>
+     * @return The routeId.
      */
     public java.lang.String getRouteId() {
       java.lang.Object ref = routeId_;
@@ -870,6 +918,7 @@ public final class InternalMessages {
     }
     /**
      * <code>required string route_id = 3;</code>
+     * @return The bytes for routeId.
      */
     public com.google.protobuf.ByteString
         getRouteIdBytes() {
@@ -889,12 +938,14 @@ public final class InternalMessages {
     private int directionId_;
     /**
      * <code>required uint32 direction_id = 4;</code>
+     * @return Whether the directionId field is set.
      */
     public boolean hasDirectionId() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>required uint32 direction_id = 4;</code>
+     * @return The directionId.
      */
     public int getDirectionId() {
       return directionId_;
@@ -904,12 +955,14 @@ public final class InternalMessages {
     private volatile java.lang.Object startTime_;
     /**
      * <code>required string start_time = 5;</code>
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <code>required string start_time = 5;</code>
+     * @return The startTime.
      */
     public java.lang.String getStartTime() {
       java.lang.Object ref = startTime_;
@@ -927,6 +980,7 @@ public final class InternalMessages {
     }
     /**
      * <code>required string start_time = 5;</code>
+     * @return The bytes for startTime.
      */
     public com.google.protobuf.ByteString
         getStartTimeBytes() {
@@ -950,9 +1004,10 @@ public final class InternalMessages {
      * </pre>
      *
      * <code>optional .proto.TripInfo.ScheduleType schedule_type = 6 [default = SCHEDULED];</code>
+     * @return Whether the scheduleType field is set.
      */
     public boolean hasScheduleType() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <pre>
@@ -960,13 +1015,16 @@ public final class InternalMessages {
      * </pre>
      *
      * <code>optional .proto.TripInfo.ScheduleType schedule_type = 6 [default = SCHEDULED];</code>
+     * @return The scheduleType.
      */
     public fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType getScheduleType() {
+      @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType result = fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType.valueOf(scheduleType_);
       return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType.SCHEDULED : result;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -996,51 +1054,53 @@ public final class InternalMessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tripId_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, operatingDay_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, routeId_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         output.writeUInt32(4, directionId_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, startTime_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         output.writeEnum(6, scheduleType_);
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tripId_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, operatingDay_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, routeId_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, directionId_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, startTime_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, scheduleType_);
       }
@@ -1049,7 +1109,6 @@ public final class InternalMessages {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1060,38 +1119,37 @@ public final class InternalMessages {
       }
       fi.hsl.common.transitdata.proto.InternalMessages.TripInfo other = (fi.hsl.common.transitdata.proto.InternalMessages.TripInfo) obj;
 
-      boolean result = true;
-      result = result && (hasTripId() == other.hasTripId());
+      if (hasTripId() != other.hasTripId()) return false;
       if (hasTripId()) {
-        result = result && getTripId()
-            .equals(other.getTripId());
+        if (!getTripId()
+            .equals(other.getTripId())) return false;
       }
-      result = result && (hasOperatingDay() == other.hasOperatingDay());
+      if (hasOperatingDay() != other.hasOperatingDay()) return false;
       if (hasOperatingDay()) {
-        result = result && getOperatingDay()
-            .equals(other.getOperatingDay());
+        if (!getOperatingDay()
+            .equals(other.getOperatingDay())) return false;
       }
-      result = result && (hasRouteId() == other.hasRouteId());
+      if (hasRouteId() != other.hasRouteId()) return false;
       if (hasRouteId()) {
-        result = result && getRouteId()
-            .equals(other.getRouteId());
+        if (!getRouteId()
+            .equals(other.getRouteId())) return false;
       }
-      result = result && (hasDirectionId() == other.hasDirectionId());
+      if (hasDirectionId() != other.hasDirectionId()) return false;
       if (hasDirectionId()) {
-        result = result && (getDirectionId()
-            == other.getDirectionId());
+        if (getDirectionId()
+            != other.getDirectionId()) return false;
       }
-      result = result && (hasStartTime() == other.hasStartTime());
+      if (hasStartTime() != other.hasStartTime()) return false;
       if (hasStartTime()) {
-        result = result && getStartTime()
-            .equals(other.getStartTime());
+        if (!getStartTime()
+            .equals(other.getStartTime())) return false;
       }
-      result = result && (hasScheduleType() == other.hasScheduleType());
+      if (hasScheduleType() != other.hasScheduleType()) return false;
       if (hasScheduleType()) {
-        result = result && scheduleType_ == other.scheduleType_;
+        if (scheduleType_ != other.scheduleType_) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1100,7 +1158,7 @@ public final class InternalMessages {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasTripId()) {
         hash = (37 * hash) + TRIP_ID_FIELD_NUMBER;
         hash = (53 * hash) + getTripId().hashCode();
@@ -1130,6 +1188,17 @@ public final class InternalMessages {
       return hash;
     }
 
+    public static fi.hsl.common.transitdata.proto.InternalMessages.TripInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.TripInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static fi.hsl.common.transitdata.proto.InternalMessages.TripInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1189,6 +1258,7 @@ public final class InternalMessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1196,6 +1266,7 @@ public final class InternalMessages {
     public static Builder newBuilder(fi.hsl.common.transitdata.proto.InternalMessages.TripInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1219,6 +1290,7 @@ public final class InternalMessages {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_TripInfo_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_TripInfo_fieldAccessorTable
@@ -1241,6 +1313,7 @@ public final class InternalMessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         tripId_ = "";
@@ -1258,15 +1331,18 @@ public final class InternalMessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_TripInfo_descriptor;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.TripInfo getDefaultInstanceForType() {
         return fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.getDefaultInstance();
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.TripInfo build() {
         fi.hsl.common.transitdata.proto.InternalMessages.TripInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -1275,31 +1351,32 @@ public final class InternalMessages {
         return result;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.TripInfo buildPartial() {
         fi.hsl.common.transitdata.proto.InternalMessages.TripInfo result = new fi.hsl.common.transitdata.proto.InternalMessages.TripInfo(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.tripId_ = tripId_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           to_bitField0_ |= 0x00000002;
         }
         result.operatingDay_ = operatingDay_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           to_bitField0_ |= 0x00000004;
         }
         result.routeId_ = routeId_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.directionId_ = directionId_;
           to_bitField0_ |= 0x00000008;
         }
-        result.directionId_ = directionId_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           to_bitField0_ |= 0x00000010;
         }
         result.startTime_ = startTime_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           to_bitField0_ |= 0x00000020;
         }
         result.scheduleType_ = scheduleType_;
@@ -1308,32 +1385,39 @@ public final class InternalMessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.transitdata.proto.InternalMessages.TripInfo) {
           return mergeFrom((fi.hsl.common.transitdata.proto.InternalMessages.TripInfo)other);
@@ -1376,6 +1460,7 @@ public final class InternalMessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasTripId()) {
           return false;
@@ -1395,6 +1480,7 @@ public final class InternalMessages {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1422,9 +1508,10 @@ public final class InternalMessages {
        * </pre>
        *
        * <code>required string trip_id = 1;</code>
+       * @return Whether the tripId field is set.
        */
       public boolean hasTripId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <pre>
@@ -1433,6 +1520,7 @@ public final class InternalMessages {
        * </pre>
        *
        * <code>required string trip_id = 1;</code>
+       * @return The tripId.
        */
       public java.lang.String getTripId() {
         java.lang.Object ref = tripId_;
@@ -1455,6 +1543,7 @@ public final class InternalMessages {
        * </pre>
        *
        * <code>required string trip_id = 1;</code>
+       * @return The bytes for tripId.
        */
       public com.google.protobuf.ByteString
           getTripIdBytes() {
@@ -1476,6 +1565,8 @@ public final class InternalMessages {
        * </pre>
        *
        * <code>required string trip_id = 1;</code>
+       * @param value The tripId to set.
+       * @return This builder for chaining.
        */
       public Builder setTripId(
           java.lang.String value) {
@@ -1494,6 +1585,7 @@ public final class InternalMessages {
        * </pre>
        *
        * <code>required string trip_id = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTripId() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1508,6 +1600,8 @@ public final class InternalMessages {
        * </pre>
        *
        * <code>required string trip_id = 1;</code>
+       * @param value The bytes for tripId to set.
+       * @return This builder for chaining.
        */
       public Builder setTripIdBytes(
           com.google.protobuf.ByteString value) {
@@ -1527,9 +1621,10 @@ public final class InternalMessages {
        * </pre>
        *
        * <code>required string operating_day = 2;</code>
+       * @return Whether the operatingDay field is set.
        */
       public boolean hasOperatingDay() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <pre>
@@ -1537,6 +1632,7 @@ public final class InternalMessages {
        * </pre>
        *
        * <code>required string operating_day = 2;</code>
+       * @return The operatingDay.
        */
       public java.lang.String getOperatingDay() {
         java.lang.Object ref = operatingDay_;
@@ -1558,6 +1654,7 @@ public final class InternalMessages {
        * </pre>
        *
        * <code>required string operating_day = 2;</code>
+       * @return The bytes for operatingDay.
        */
       public com.google.protobuf.ByteString
           getOperatingDayBytes() {
@@ -1578,6 +1675,8 @@ public final class InternalMessages {
        * </pre>
        *
        * <code>required string operating_day = 2;</code>
+       * @param value The operatingDay to set.
+       * @return This builder for chaining.
        */
       public Builder setOperatingDay(
           java.lang.String value) {
@@ -1595,6 +1694,7 @@ public final class InternalMessages {
        * </pre>
        *
        * <code>required string operating_day = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOperatingDay() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -1608,6 +1708,8 @@ public final class InternalMessages {
        * </pre>
        *
        * <code>required string operating_day = 2;</code>
+       * @param value The bytes for operatingDay to set.
+       * @return This builder for chaining.
        */
       public Builder setOperatingDayBytes(
           com.google.protobuf.ByteString value) {
@@ -1623,12 +1725,14 @@ public final class InternalMessages {
       private java.lang.Object routeId_ = "";
       /**
        * <code>required string route_id = 3;</code>
+       * @return Whether the routeId field is set.
        */
       public boolean hasRouteId() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>required string route_id = 3;</code>
+       * @return The routeId.
        */
       public java.lang.String getRouteId() {
         java.lang.Object ref = routeId_;
@@ -1646,6 +1750,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required string route_id = 3;</code>
+       * @return The bytes for routeId.
        */
       public com.google.protobuf.ByteString
           getRouteIdBytes() {
@@ -1662,6 +1767,8 @@ public final class InternalMessages {
       }
       /**
        * <code>required string route_id = 3;</code>
+       * @param value The routeId to set.
+       * @return This builder for chaining.
        */
       public Builder setRouteId(
           java.lang.String value) {
@@ -1675,6 +1782,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required string route_id = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRouteId() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -1684,6 +1792,8 @@ public final class InternalMessages {
       }
       /**
        * <code>required string route_id = 3;</code>
+       * @param value The bytes for routeId to set.
+       * @return This builder for chaining.
        */
       public Builder setRouteIdBytes(
           com.google.protobuf.ByteString value) {
@@ -1699,18 +1809,22 @@ public final class InternalMessages {
       private int directionId_ ;
       /**
        * <code>required uint32 direction_id = 4;</code>
+       * @return Whether the directionId field is set.
        */
       public boolean hasDirectionId() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>required uint32 direction_id = 4;</code>
+       * @return The directionId.
        */
       public int getDirectionId() {
         return directionId_;
       }
       /**
        * <code>required uint32 direction_id = 4;</code>
+       * @param value The directionId to set.
+       * @return This builder for chaining.
        */
       public Builder setDirectionId(int value) {
         bitField0_ |= 0x00000008;
@@ -1720,6 +1834,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required uint32 direction_id = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDirectionId() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -1731,12 +1846,14 @@ public final class InternalMessages {
       private java.lang.Object startTime_ = "";
       /**
        * <code>required string start_time = 5;</code>
+       * @return Whether the startTime field is set.
        */
       public boolean hasStartTime() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>required string start_time = 5;</code>
+       * @return The startTime.
        */
       public java.lang.String getStartTime() {
         java.lang.Object ref = startTime_;
@@ -1754,6 +1871,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required string start_time = 5;</code>
+       * @return The bytes for startTime.
        */
       public com.google.protobuf.ByteString
           getStartTimeBytes() {
@@ -1770,6 +1888,8 @@ public final class InternalMessages {
       }
       /**
        * <code>required string start_time = 5;</code>
+       * @param value The startTime to set.
+       * @return This builder for chaining.
        */
       public Builder setStartTime(
           java.lang.String value) {
@@ -1783,6 +1903,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required string start_time = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStartTime() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -1792,6 +1913,8 @@ public final class InternalMessages {
       }
       /**
        * <code>required string start_time = 5;</code>
+       * @param value The bytes for startTime to set.
+       * @return This builder for chaining.
        */
       public Builder setStartTimeBytes(
           com.google.protobuf.ByteString value) {
@@ -1811,9 +1934,10 @@ public final class InternalMessages {
        * </pre>
        *
        * <code>optional .proto.TripInfo.ScheduleType schedule_type = 6 [default = SCHEDULED];</code>
+       * @return Whether the scheduleType field is set.
        */
       public boolean hasScheduleType() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <pre>
@@ -1821,8 +1945,10 @@ public final class InternalMessages {
        * </pre>
        *
        * <code>optional .proto.TripInfo.ScheduleType schedule_type = 6 [default = SCHEDULED];</code>
+       * @return The scheduleType.
        */
       public fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType getScheduleType() {
+        @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType result = fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType.valueOf(scheduleType_);
         return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType.SCHEDULED : result;
       }
@@ -1832,6 +1958,8 @@ public final class InternalMessages {
        * </pre>
        *
        * <code>optional .proto.TripInfo.ScheduleType schedule_type = 6 [default = SCHEDULED];</code>
+       * @param value The scheduleType to set.
+       * @return This builder for chaining.
        */
       public Builder setScheduleType(fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType value) {
         if (value == null) {
@@ -1848,6 +1976,7 @@ public final class InternalMessages {
        * </pre>
        *
        * <code>optional .proto.TripInfo.ScheduleType schedule_type = 6 [default = SCHEDULED];</code>
+       * @return This builder for chaining.
        */
       public Builder clearScheduleType() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -1855,11 +1984,13 @@ public final class InternalMessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1881,11 +2012,12 @@ public final class InternalMessages {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<TripInfo>
         PARSER = new com.google.protobuf.AbstractParser<TripInfo>() {
+      @java.lang.Override
       public TripInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TripInfo(input, extensionRegistry);
+        return new TripInfo(input, extensionRegistry);
       }
     };
 
@@ -1898,7 +2030,1591 @@ public final class InternalMessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.InternalMessages.TripInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface StopCancellationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.StopCancellation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string stop_id = 1;</code>
+     * @return Whether the stopId field is set.
+     */
+    boolean hasStopId();
+    /**
+     * <code>optional string stop_id = 1;</code>
+     * @return The stopId.
+     */
+    java.lang.String getStopId();
+    /**
+     * <code>optional string stop_id = 1;</code>
+     * @return The bytes for stopId.
+     */
+    com.google.protobuf.ByteString
+        getStopIdBytes();
+
+    /**
+     * <code>optional int64 valid_from_utc_ms = 2;</code>
+     * @return Whether the validFromUtcMs field is set.
+     */
+    boolean hasValidFromUtcMs();
+    /**
+     * <code>optional int64 valid_from_utc_ms = 2;</code>
+     * @return The validFromUtcMs.
+     */
+    long getValidFromUtcMs();
+
+    /**
+     * <code>optional int64 valid_to_utc_ms = 3;</code>
+     * @return Whether the validToUtcMs field is set.
+     */
+    boolean hasValidToUtcMs();
+    /**
+     * <code>optional int64 valid_to_utc_ms = 3;</code>
+     * @return The validToUtcMs.
+     */
+    long getValidToUtcMs();
+  }
+  /**
+   * Protobuf type {@code proto.StopCancellation}
+   */
+  public  static final class StopCancellation extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.StopCancellation)
+      StopCancellationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use StopCancellation.newBuilder() to construct.
+    private StopCancellation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private StopCancellation() {
+      stopId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new StopCancellation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private StopCancellation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              stopId_ = bs;
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              validFromUtcMs_ = input.readInt64();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              validToUtcMs_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_StopCancellation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_StopCancellation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.class, fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int STOP_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object stopId_;
+    /**
+     * <code>optional string stop_id = 1;</code>
+     * @return Whether the stopId field is set.
+     */
+    public boolean hasStopId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional string stop_id = 1;</code>
+     * @return The stopId.
+     */
+    public java.lang.String getStopId() {
+      java.lang.Object ref = stopId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          stopId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string stop_id = 1;</code>
+     * @return The bytes for stopId.
+     */
+    public com.google.protobuf.ByteString
+        getStopIdBytes() {
+      java.lang.Object ref = stopId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        stopId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALID_FROM_UTC_MS_FIELD_NUMBER = 2;
+    private long validFromUtcMs_;
+    /**
+     * <code>optional int64 valid_from_utc_ms = 2;</code>
+     * @return Whether the validFromUtcMs field is set.
+     */
+    public boolean hasValidFromUtcMs() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional int64 valid_from_utc_ms = 2;</code>
+     * @return The validFromUtcMs.
+     */
+    public long getValidFromUtcMs() {
+      return validFromUtcMs_;
+    }
+
+    public static final int VALID_TO_UTC_MS_FIELD_NUMBER = 3;
+    private long validToUtcMs_;
+    /**
+     * <code>optional int64 valid_to_utc_ms = 3;</code>
+     * @return Whether the validToUtcMs field is set.
+     */
+    public boolean hasValidToUtcMs() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional int64 valid_to_utc_ms = 3;</code>
+     * @return The validToUtcMs.
+     */
+    public long getValidToUtcMs() {
+      return validToUtcMs_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, stopId_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeInt64(2, validFromUtcMs_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeInt64(3, validToUtcMs_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, stopId_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, validFromUtcMs_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, validToUtcMs_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation)) {
+        return super.equals(obj);
+      }
+      fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation other = (fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation) obj;
+
+      if (hasStopId() != other.hasStopId()) return false;
+      if (hasStopId()) {
+        if (!getStopId()
+            .equals(other.getStopId())) return false;
+      }
+      if (hasValidFromUtcMs() != other.hasValidFromUtcMs()) return false;
+      if (hasValidFromUtcMs()) {
+        if (getValidFromUtcMs()
+            != other.getValidFromUtcMs()) return false;
+      }
+      if (hasValidToUtcMs() != other.hasValidToUtcMs()) return false;
+      if (hasValidToUtcMs()) {
+        if (getValidToUtcMs()
+            != other.getValidToUtcMs()) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasStopId()) {
+        hash = (37 * hash) + STOP_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getStopId().hashCode();
+      }
+      if (hasValidFromUtcMs()) {
+        hash = (37 * hash) + VALID_FROM_UTC_MS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getValidFromUtcMs());
+      }
+      if (hasValidToUtcMs()) {
+        hash = (37 * hash) + VALID_TO_UTC_MS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getValidToUtcMs());
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.StopCancellation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.StopCancellation)
+        fi.hsl.common.transitdata.proto.InternalMessages.StopCancellationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_StopCancellation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_StopCancellation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.class, fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.Builder.class);
+      }
+
+      // Construct using fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        stopId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        validFromUtcMs_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        validToUtcMs_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_StopCancellation_descriptor;
+      }
+
+      @java.lang.Override
+      public fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation getDefaultInstanceForType() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation build() {
+        fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation buildPartial() {
+        fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation result = new fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.stopId_ = stopId_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.validFromUtcMs_ = validFromUtcMs_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.validToUtcMs_ = validToUtcMs_;
+          to_bitField0_ |= 0x00000004;
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation) {
+          return mergeFrom((fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation other) {
+        if (other == fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.getDefaultInstance()) return this;
+        if (other.hasStopId()) {
+          bitField0_ |= 0x00000001;
+          stopId_ = other.stopId_;
+          onChanged();
+        }
+        if (other.hasValidFromUtcMs()) {
+          setValidFromUtcMs(other.getValidFromUtcMs());
+        }
+        if (other.hasValidToUtcMs()) {
+          setValidToUtcMs(other.getValidToUtcMs());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object stopId_ = "";
+      /**
+       * <code>optional string stop_id = 1;</code>
+       * @return Whether the stopId field is set.
+       */
+      public boolean hasStopId() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>optional string stop_id = 1;</code>
+       * @return The stopId.
+       */
+      public java.lang.String getStopId() {
+        java.lang.Object ref = stopId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            stopId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string stop_id = 1;</code>
+       * @return The bytes for stopId.
+       */
+      public com.google.protobuf.ByteString
+          getStopIdBytes() {
+        java.lang.Object ref = stopId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          stopId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string stop_id = 1;</code>
+       * @param value The stopId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStopId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        stopId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string stop_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStopId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        stopId_ = getDefaultInstance().getStopId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string stop_id = 1;</code>
+       * @param value The bytes for stopId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStopIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        stopId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long validFromUtcMs_ ;
+      /**
+       * <code>optional int64 valid_from_utc_ms = 2;</code>
+       * @return Whether the validFromUtcMs field is set.
+       */
+      public boolean hasValidFromUtcMs() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <code>optional int64 valid_from_utc_ms = 2;</code>
+       * @return The validFromUtcMs.
+       */
+      public long getValidFromUtcMs() {
+        return validFromUtcMs_;
+      }
+      /**
+       * <code>optional int64 valid_from_utc_ms = 2;</code>
+       * @param value The validFromUtcMs to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValidFromUtcMs(long value) {
+        bitField0_ |= 0x00000002;
+        validFromUtcMs_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 valid_from_utc_ms = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValidFromUtcMs() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        validFromUtcMs_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long validToUtcMs_ ;
+      /**
+       * <code>optional int64 valid_to_utc_ms = 3;</code>
+       * @return Whether the validToUtcMs field is set.
+       */
+      public boolean hasValidToUtcMs() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>optional int64 valid_to_utc_ms = 3;</code>
+       * @return The validToUtcMs.
+       */
+      public long getValidToUtcMs() {
+        return validToUtcMs_;
+      }
+      /**
+       * <code>optional int64 valid_to_utc_ms = 3;</code>
+       * @param value The validToUtcMs to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValidToUtcMs(long value) {
+        bitField0_ |= 0x00000004;
+        validToUtcMs_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 valid_to_utc_ms = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValidToUtcMs() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        validToUtcMs_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.StopCancellation)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.StopCancellation)
+    private static final fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation();
+    }
+
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<StopCancellation>
+        PARSER = new com.google.protobuf.AbstractParser<StopCancellation>() {
+      @java.lang.Override
+      public StopCancellation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new StopCancellation(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<StopCancellation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StopCancellation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface StopCancellationsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.StopCancellations)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+     */
+    java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation> 
+        getStopCancellationsList();
+    /**
+     * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation getStopCancellations(int index);
+    /**
+     * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+     */
+    int getStopCancellationsCount();
+    /**
+     * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+     */
+    java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.StopCancellationOrBuilder> 
+        getStopCancellationsOrBuilderList();
+    /**
+     * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.StopCancellationOrBuilder getStopCancellationsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code proto.StopCancellations}
+   */
+  public  static final class StopCancellations extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.StopCancellations)
+      StopCancellationsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use StopCancellations.newBuilder() to construct.
+    private StopCancellations(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private StopCancellations() {
+      stopCancellations_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new StopCancellations();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private StopCancellations(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                stopCancellations_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              stopCancellations_.add(
+                  input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.PARSER, extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          stopCancellations_ = java.util.Collections.unmodifiableList(stopCancellations_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_StopCancellations_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_StopCancellations_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.class, fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.Builder.class);
+    }
+
+    public static final int STOP_CANCELLATIONS_FIELD_NUMBER = 1;
+    private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation> stopCancellations_;
+    /**
+     * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+     */
+    public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation> getStopCancellationsList() {
+      return stopCancellations_;
+    }
+    /**
+     * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+     */
+    public java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.StopCancellationOrBuilder> 
+        getStopCancellationsOrBuilderList() {
+      return stopCancellations_;
+    }
+    /**
+     * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+     */
+    public int getStopCancellationsCount() {
+      return stopCancellations_.size();
+    }
+    /**
+     * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation getStopCancellations(int index) {
+      return stopCancellations_.get(index);
+    }
+    /**
+     * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+     */
+    public fi.hsl.common.transitdata.proto.InternalMessages.StopCancellationOrBuilder getStopCancellationsOrBuilder(
+        int index) {
+      return stopCancellations_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < stopCancellations_.size(); i++) {
+        output.writeMessage(1, stopCancellations_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < stopCancellations_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, stopCancellations_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations)) {
+        return super.equals(obj);
+      }
+      fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations other = (fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations) obj;
+
+      if (!getStopCancellationsList()
+          .equals(other.getStopCancellationsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getStopCancellationsCount() > 0) {
+        hash = (37 * hash) + STOP_CANCELLATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getStopCancellationsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.StopCancellations}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.StopCancellations)
+        fi.hsl.common.transitdata.proto.InternalMessages.StopCancellationsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_StopCancellations_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_StopCancellations_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.class, fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.Builder.class);
+      }
+
+      // Construct using fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getStopCancellationsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (stopCancellationsBuilder_ == null) {
+          stopCancellations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          stopCancellationsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_StopCancellations_descriptor;
+      }
+
+      @java.lang.Override
+      public fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations getDefaultInstanceForType() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations build() {
+        fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations buildPartial() {
+        fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations result = new fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations(this);
+        int from_bitField0_ = bitField0_;
+        if (stopCancellationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            stopCancellations_ = java.util.Collections.unmodifiableList(stopCancellations_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.stopCancellations_ = stopCancellations_;
+        } else {
+          result.stopCancellations_ = stopCancellationsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations) {
+          return mergeFrom((fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations other) {
+        if (other == fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.getDefaultInstance()) return this;
+        if (stopCancellationsBuilder_ == null) {
+          if (!other.stopCancellations_.isEmpty()) {
+            if (stopCancellations_.isEmpty()) {
+              stopCancellations_ = other.stopCancellations_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureStopCancellationsIsMutable();
+              stopCancellations_.addAll(other.stopCancellations_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.stopCancellations_.isEmpty()) {
+            if (stopCancellationsBuilder_.isEmpty()) {
+              stopCancellationsBuilder_.dispose();
+              stopCancellationsBuilder_ = null;
+              stopCancellations_ = other.stopCancellations_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              stopCancellationsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getStopCancellationsFieldBuilder() : null;
+            } else {
+              stopCancellationsBuilder_.addAllMessages(other.stopCancellations_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation> stopCancellations_ =
+        java.util.Collections.emptyList();
+      private void ensureStopCancellationsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          stopCancellations_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation>(stopCancellations_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation, fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.Builder, fi.hsl.common.transitdata.proto.InternalMessages.StopCancellationOrBuilder> stopCancellationsBuilder_;
+
+      /**
+       * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+       */
+      public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation> getStopCancellationsList() {
+        if (stopCancellationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(stopCancellations_);
+        } else {
+          return stopCancellationsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+       */
+      public int getStopCancellationsCount() {
+        if (stopCancellationsBuilder_ == null) {
+          return stopCancellations_.size();
+        } else {
+          return stopCancellationsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation getStopCancellations(int index) {
+        if (stopCancellationsBuilder_ == null) {
+          return stopCancellations_.get(index);
+        } else {
+          return stopCancellationsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+       */
+      public Builder setStopCancellations(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation value) {
+        if (stopCancellationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStopCancellationsIsMutable();
+          stopCancellations_.set(index, value);
+          onChanged();
+        } else {
+          stopCancellationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+       */
+      public Builder setStopCancellations(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.Builder builderForValue) {
+        if (stopCancellationsBuilder_ == null) {
+          ensureStopCancellationsIsMutable();
+          stopCancellations_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          stopCancellationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+       */
+      public Builder addStopCancellations(fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation value) {
+        if (stopCancellationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStopCancellationsIsMutable();
+          stopCancellations_.add(value);
+          onChanged();
+        } else {
+          stopCancellationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+       */
+      public Builder addStopCancellations(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation value) {
+        if (stopCancellationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStopCancellationsIsMutable();
+          stopCancellations_.add(index, value);
+          onChanged();
+        } else {
+          stopCancellationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+       */
+      public Builder addStopCancellations(
+          fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.Builder builderForValue) {
+        if (stopCancellationsBuilder_ == null) {
+          ensureStopCancellationsIsMutable();
+          stopCancellations_.add(builderForValue.build());
+          onChanged();
+        } else {
+          stopCancellationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+       */
+      public Builder addStopCancellations(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.Builder builderForValue) {
+        if (stopCancellationsBuilder_ == null) {
+          ensureStopCancellationsIsMutable();
+          stopCancellations_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          stopCancellationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+       */
+      public Builder addAllStopCancellations(
+          java.lang.Iterable<? extends fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation> values) {
+        if (stopCancellationsBuilder_ == null) {
+          ensureStopCancellationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, stopCancellations_);
+          onChanged();
+        } else {
+          stopCancellationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+       */
+      public Builder clearStopCancellations() {
+        if (stopCancellationsBuilder_ == null) {
+          stopCancellations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          stopCancellationsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+       */
+      public Builder removeStopCancellations(int index) {
+        if (stopCancellationsBuilder_ == null) {
+          ensureStopCancellationsIsMutable();
+          stopCancellations_.remove(index);
+          onChanged();
+        } else {
+          stopCancellationsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.Builder getStopCancellationsBuilder(
+          int index) {
+        return getStopCancellationsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.StopCancellationOrBuilder getStopCancellationsOrBuilder(
+          int index) {
+        if (stopCancellationsBuilder_ == null) {
+          return stopCancellations_.get(index);  } else {
+          return stopCancellationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+       */
+      public java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.StopCancellationOrBuilder> 
+           getStopCancellationsOrBuilderList() {
+        if (stopCancellationsBuilder_ != null) {
+          return stopCancellationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(stopCancellations_);
+        }
+      }
+      /**
+       * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.Builder addStopCancellationsBuilder() {
+        return getStopCancellationsFieldBuilder().addBuilder(
+            fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.Builder addStopCancellationsBuilder(
+          int index) {
+        return getStopCancellationsFieldBuilder().addBuilder(
+            index, fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.StopCancellation stop_cancellations = 1;</code>
+       */
+      public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.Builder> 
+           getStopCancellationsBuilderList() {
+        return getStopCancellationsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation, fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.Builder, fi.hsl.common.transitdata.proto.InternalMessages.StopCancellationOrBuilder> 
+          getStopCancellationsFieldBuilder() {
+        if (stopCancellationsBuilder_ == null) {
+          stopCancellationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation, fi.hsl.common.transitdata.proto.InternalMessages.StopCancellation.Builder, fi.hsl.common.transitdata.proto.InternalMessages.StopCancellationOrBuilder>(
+                  stopCancellations_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          stopCancellations_ = null;
+        }
+        return stopCancellationsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.StopCancellations)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.StopCancellations)
+    private static final fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations();
+    }
+
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<StopCancellations>
+        PARSER = new com.google.protobuf.AbstractParser<StopCancellations>() {
+      @java.lang.Override
+      public StopCancellations parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new StopCancellations(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<StopCancellations> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StopCancellations> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1910,148 +3626,180 @@ public final class InternalMessages {
 
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
     boolean hasSchemaVersion();
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
     int getSchemaVersion();
 
     /**
      * <code>optional string trip_id = 2;</code>
+     * @return Whether the tripId field is set.
      */
     boolean hasTripId();
     /**
      * <code>optional string trip_id = 2;</code>
+     * @return The tripId.
      */
     java.lang.String getTripId();
     /**
      * <code>optional string trip_id = 2;</code>
+     * @return The bytes for tripId.
      */
     com.google.protobuf.ByteString
         getTripIdBytes();
 
     /**
      * <code>optional string route_id = 3;</code>
+     * @return Whether the routeId field is set.
      */
     boolean hasRouteId();
     /**
      * <code>optional string route_id = 3;</code>
+     * @return The routeId.
      */
     java.lang.String getRouteId();
     /**
      * <code>optional string route_id = 3;</code>
+     * @return The bytes for routeId.
      */
     com.google.protobuf.ByteString
         getRouteIdBytes();
 
     /**
      * <code>optional uint32 direction_id = 4;</code>
+     * @return Whether the directionId field is set.
      */
     boolean hasDirectionId();
     /**
      * <code>optional uint32 direction_id = 4;</code>
+     * @return The directionId.
      */
     int getDirectionId();
 
     /**
      * <code>optional string start_time = 5;</code>
+     * @return Whether the startTime field is set.
      */
     boolean hasStartTime();
     /**
      * <code>optional string start_time = 5;</code>
+     * @return The startTime.
      */
     java.lang.String getStartTime();
     /**
      * <code>optional string start_time = 5;</code>
+     * @return The bytes for startTime.
      */
     com.google.protobuf.ByteString
         getStartTimeBytes();
 
     /**
      * <code>optional string start_date = 6;</code>
+     * @return Whether the startDate field is set.
      */
     boolean hasStartDate();
     /**
      * <code>optional string start_date = 6;</code>
+     * @return The startDate.
      */
     java.lang.String getStartDate();
     /**
      * <code>optional string start_date = 6;</code>
+     * @return The bytes for startDate.
      */
     com.google.protobuf.ByteString
         getStartDateBytes();
 
     /**
      * <code>required .proto.TripCancellation.Status status = 7;</code>
+     * @return Whether the status field is set.
      */
     boolean hasStatus();
     /**
      * <code>required .proto.TripCancellation.Status status = 7;</code>
+     * @return The status.
      */
     fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status getStatus();
 
     /**
      * <code>optional .proto.TripCancellation.DeviationCasesType deviation_cases_type = 8;</code>
+     * @return Whether the deviationCasesType field is set.
      */
     boolean hasDeviationCasesType();
     /**
      * <code>optional .proto.TripCancellation.DeviationCasesType deviation_cases_type = 8;</code>
+     * @return The deviationCasesType.
      */
     fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType getDeviationCasesType();
 
     /**
      * <code>optional .proto.TripCancellation.AffectedDeparturesType affected_departures_type = 9;</code>
+     * @return Whether the affectedDeparturesType field is set.
      */
     boolean hasAffectedDeparturesType();
     /**
      * <code>optional .proto.TripCancellation.AffectedDeparturesType affected_departures_type = 9;</code>
+     * @return The affectedDeparturesType.
      */
     fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType getAffectedDeparturesType();
 
     /**
      * <code>optional string title = 10;</code>
+     * @return Whether the title field is set.
      */
     boolean hasTitle();
     /**
      * <code>optional string title = 10;</code>
+     * @return The title.
      */
     java.lang.String getTitle();
     /**
      * <code>optional string title = 10;</code>
+     * @return The bytes for title.
      */
     com.google.protobuf.ByteString
         getTitleBytes();
 
     /**
      * <code>optional string description = 11;</code>
+     * @return Whether the description field is set.
      */
     boolean hasDescription();
     /**
      * <code>optional string description = 11;</code>
+     * @return The description.
      */
     java.lang.String getDescription();
     /**
      * <code>optional string description = 11;</code>
+     * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
 
     /**
      * <code>optional .proto.Category category = 12;</code>
+     * @return Whether the category field is set.
      */
     boolean hasCategory();
     /**
      * <code>optional .proto.Category category = 12;</code>
+     * @return The category.
      */
     fi.hsl.common.transitdata.proto.InternalMessages.Category getCategory();
 
     /**
      * <code>optional .proto.TripCancellation.SubCategory sub_category = 13;</code>
+     * @return Whether the subCategory field is set.
      */
     boolean hasSubCategory();
     /**
      * <code>optional .proto.TripCancellation.SubCategory sub_category = 13;</code>
+     * @return The subCategory.
      */
     fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory getSubCategory();
   }
@@ -2062,6 +3810,7 @@ public final class InternalMessages {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.TripCancellation)
       TripCancellationOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use TripCancellation.newBuilder() to construct.
     private TripCancellation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2070,7 +3819,6 @@ public final class InternalMessages {
       schemaVersion_ = 1;
       tripId_ = "";
       routeId_ = "";
-      directionId_ = 0;
       startTime_ = "";
       startDate_ = "";
       status_ = 0;
@@ -2083,6 +3831,13 @@ public final class InternalMessages {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TripCancellation();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -2092,6 +3847,9 @@ public final class InternalMessages {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2103,13 +3861,6 @@ public final class InternalMessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               schemaVersion_ = input.readInt32();
@@ -2146,6 +3897,7 @@ public final class InternalMessages {
             }
             case 56: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status value = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(7, rawValue);
@@ -2157,6 +3909,7 @@ public final class InternalMessages {
             }
             case 64: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType value = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(8, rawValue);
@@ -2168,6 +3921,7 @@ public final class InternalMessages {
             }
             case 72: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType value = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(9, rawValue);
@@ -2191,6 +3945,7 @@ public final class InternalMessages {
             }
             case 96: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               fi.hsl.common.transitdata.proto.InternalMessages.Category value = fi.hsl.common.transitdata.proto.InternalMessages.Category.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(12, rawValue);
@@ -2202,12 +3957,20 @@ public final class InternalMessages {
             }
             case 104: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory value = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(13, rawValue);
               } else {
                 bitField0_ |= 0x00001000;
                 subCategory_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
               }
               break;
             }
@@ -2228,6 +3991,7 @@ public final class InternalMessages {
       return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_TripCancellation_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_TripCancellation_fieldAccessorTable
@@ -2269,6 +4033,8 @@ public final class InternalMessages {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -2276,6 +4042,10 @@ public final class InternalMessages {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static Status forNumber(int value) {
         switch (value) {
           case 0: return RUNNING;
@@ -2415,6 +4185,8 @@ public final class InternalMessages {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -2422,6 +4194,10 @@ public final class InternalMessages {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static DeviationCasesType forNumber(int value) {
         switch (value) {
           case 0: return CANCEL_DEPARTURE;
@@ -2528,6 +4304,8 @@ public final class InternalMessages {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -2535,6 +4313,10 @@ public final class InternalMessages {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static AffectedDeparturesType forNumber(int value) {
         switch (value) {
           case 0: return CANCEL_ENTIRE_DEPARTURE;
@@ -2988,6 +4770,8 @@ public final class InternalMessages {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -2995,6 +4779,10 @@ public final class InternalMessages {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static SubCategory forNumber(int value) {
         switch (value) {
           case 0: return BREAK_MALFUNCTION;
@@ -3099,12 +4887,14 @@ public final class InternalMessages {
     private int schemaVersion_;
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
     public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
     public int getSchemaVersion() {
       return schemaVersion_;
@@ -3114,12 +4904,14 @@ public final class InternalMessages {
     private volatile java.lang.Object tripId_;
     /**
      * <code>optional string trip_id = 2;</code>
+     * @return Whether the tripId field is set.
      */
     public boolean hasTripId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>optional string trip_id = 2;</code>
+     * @return The tripId.
      */
     public java.lang.String getTripId() {
       java.lang.Object ref = tripId_;
@@ -3137,6 +4929,7 @@ public final class InternalMessages {
     }
     /**
      * <code>optional string trip_id = 2;</code>
+     * @return The bytes for tripId.
      */
     public com.google.protobuf.ByteString
         getTripIdBytes() {
@@ -3156,12 +4949,14 @@ public final class InternalMessages {
     private volatile java.lang.Object routeId_;
     /**
      * <code>optional string route_id = 3;</code>
+     * @return Whether the routeId field is set.
      */
     public boolean hasRouteId() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>optional string route_id = 3;</code>
+     * @return The routeId.
      */
     public java.lang.String getRouteId() {
       java.lang.Object ref = routeId_;
@@ -3179,6 +4974,7 @@ public final class InternalMessages {
     }
     /**
      * <code>optional string route_id = 3;</code>
+     * @return The bytes for routeId.
      */
     public com.google.protobuf.ByteString
         getRouteIdBytes() {
@@ -3198,12 +4994,14 @@ public final class InternalMessages {
     private int directionId_;
     /**
      * <code>optional uint32 direction_id = 4;</code>
+     * @return Whether the directionId field is set.
      */
     public boolean hasDirectionId() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>optional uint32 direction_id = 4;</code>
+     * @return The directionId.
      */
     public int getDirectionId() {
       return directionId_;
@@ -3213,12 +5011,14 @@ public final class InternalMessages {
     private volatile java.lang.Object startTime_;
     /**
      * <code>optional string start_time = 5;</code>
+     * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <code>optional string start_time = 5;</code>
+     * @return The startTime.
      */
     public java.lang.String getStartTime() {
       java.lang.Object ref = startTime_;
@@ -3236,6 +5036,7 @@ public final class InternalMessages {
     }
     /**
      * <code>optional string start_time = 5;</code>
+     * @return The bytes for startTime.
      */
     public com.google.protobuf.ByteString
         getStartTimeBytes() {
@@ -3255,12 +5056,14 @@ public final class InternalMessages {
     private volatile java.lang.Object startDate_;
     /**
      * <code>optional string start_date = 6;</code>
+     * @return Whether the startDate field is set.
      */
     public boolean hasStartDate() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <code>optional string start_date = 6;</code>
+     * @return The startDate.
      */
     public java.lang.String getStartDate() {
       java.lang.Object ref = startDate_;
@@ -3278,6 +5081,7 @@ public final class InternalMessages {
     }
     /**
      * <code>optional string start_date = 6;</code>
+     * @return The bytes for startDate.
      */
     public com.google.protobuf.ByteString
         getStartDateBytes() {
@@ -3297,14 +5101,17 @@ public final class InternalMessages {
     private int status_;
     /**
      * <code>required .proto.TripCancellation.Status status = 7;</code>
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      * <code>required .proto.TripCancellation.Status status = 7;</code>
+     * @return The status.
      */
     public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status getStatus() {
+      @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status.valueOf(status_);
       return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status.RUNNING : result;
     }
@@ -3313,14 +5120,17 @@ public final class InternalMessages {
     private int deviationCasesType_;
     /**
      * <code>optional .proto.TripCancellation.DeviationCasesType deviation_cases_type = 8;</code>
+     * @return Whether the deviationCasesType field is set.
      */
     public boolean hasDeviationCasesType() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      * <code>optional .proto.TripCancellation.DeviationCasesType deviation_cases_type = 8;</code>
+     * @return The deviationCasesType.
      */
     public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType getDeviationCasesType() {
+      @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType.valueOf(deviationCasesType_);
       return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType.CANCEL_DEPARTURE : result;
     }
@@ -3329,14 +5139,17 @@ public final class InternalMessages {
     private int affectedDeparturesType_;
     /**
      * <code>optional .proto.TripCancellation.AffectedDeparturesType affected_departures_type = 9;</code>
+     * @return Whether the affectedDeparturesType field is set.
      */
     public boolean hasAffectedDeparturesType() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <code>optional .proto.TripCancellation.AffectedDeparturesType affected_departures_type = 9;</code>
+     * @return The affectedDeparturesType.
      */
     public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType getAffectedDeparturesType() {
+      @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType.valueOf(affectedDeparturesType_);
       return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType.CANCEL_ENTIRE_DEPARTURE : result;
     }
@@ -3345,12 +5158,14 @@ public final class InternalMessages {
     private volatile java.lang.Object title_;
     /**
      * <code>optional string title = 10;</code>
+     * @return Whether the title field is set.
      */
     public boolean hasTitle() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      * <code>optional string title = 10;</code>
+     * @return The title.
      */
     public java.lang.String getTitle() {
       java.lang.Object ref = title_;
@@ -3368,6 +5183,7 @@ public final class InternalMessages {
     }
     /**
      * <code>optional string title = 10;</code>
+     * @return The bytes for title.
      */
     public com.google.protobuf.ByteString
         getTitleBytes() {
@@ -3387,12 +5203,14 @@ public final class InternalMessages {
     private volatile java.lang.Object description_;
     /**
      * <code>optional string description = 11;</code>
+     * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      * <code>optional string description = 11;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -3410,6 +5228,7 @@ public final class InternalMessages {
     }
     /**
      * <code>optional string description = 11;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -3429,14 +5248,17 @@ public final class InternalMessages {
     private int category_;
     /**
      * <code>optional .proto.Category category = 12;</code>
+     * @return Whether the category field is set.
      */
     public boolean hasCategory() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      * <code>optional .proto.Category category = 12;</code>
+     * @return The category.
      */
     public fi.hsl.common.transitdata.proto.InternalMessages.Category getCategory() {
+      @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.InternalMessages.Category result = fi.hsl.common.transitdata.proto.InternalMessages.Category.valueOf(category_);
       return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.Category.VEHICLE_BREAKDOWN : result;
     }
@@ -3445,19 +5267,23 @@ public final class InternalMessages {
     private int subCategory_;
     /**
      * <code>optional .proto.TripCancellation.SubCategory sub_category = 13;</code>
+     * @return Whether the subCategory field is set.
      */
     public boolean hasSubCategory() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      * <code>optional .proto.TripCancellation.SubCategory sub_category = 13;</code>
+     * @return The subCategory.
      */
     public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory getSubCategory() {
+      @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory.valueOf(subCategory_);
       return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory.BREAK_MALFUNCTION : result;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3475,98 +5301,100 @@ public final class InternalMessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt32(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tripId_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, routeId_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         output.writeUInt32(4, directionId_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, startTime_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, startDate_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         output.writeEnum(7, status_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         output.writeEnum(8, deviationCasesType_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         output.writeEnum(9, affectedDeparturesType_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, title_);
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, description_);
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         output.writeEnum(12, category_);
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         output.writeEnum(13, subCategory_);
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tripId_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, routeId_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, directionId_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, startTime_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, startDate_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, status_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(8, deviationCasesType_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(9, affectedDeparturesType_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, title_);
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, description_);
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(12, category_);
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(13, subCategory_);
       }
@@ -3575,7 +5403,6 @@ public final class InternalMessages {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3586,69 +5413,68 @@ public final class InternalMessages {
       }
       fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation other = (fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation) obj;
 
-      boolean result = true;
-      result = result && (hasSchemaVersion() == other.hasSchemaVersion());
+      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
       if (hasSchemaVersion()) {
-        result = result && (getSchemaVersion()
-            == other.getSchemaVersion());
+        if (getSchemaVersion()
+            != other.getSchemaVersion()) return false;
       }
-      result = result && (hasTripId() == other.hasTripId());
+      if (hasTripId() != other.hasTripId()) return false;
       if (hasTripId()) {
-        result = result && getTripId()
-            .equals(other.getTripId());
+        if (!getTripId()
+            .equals(other.getTripId())) return false;
       }
-      result = result && (hasRouteId() == other.hasRouteId());
+      if (hasRouteId() != other.hasRouteId()) return false;
       if (hasRouteId()) {
-        result = result && getRouteId()
-            .equals(other.getRouteId());
+        if (!getRouteId()
+            .equals(other.getRouteId())) return false;
       }
-      result = result && (hasDirectionId() == other.hasDirectionId());
+      if (hasDirectionId() != other.hasDirectionId()) return false;
       if (hasDirectionId()) {
-        result = result && (getDirectionId()
-            == other.getDirectionId());
+        if (getDirectionId()
+            != other.getDirectionId()) return false;
       }
-      result = result && (hasStartTime() == other.hasStartTime());
+      if (hasStartTime() != other.hasStartTime()) return false;
       if (hasStartTime()) {
-        result = result && getStartTime()
-            .equals(other.getStartTime());
+        if (!getStartTime()
+            .equals(other.getStartTime())) return false;
       }
-      result = result && (hasStartDate() == other.hasStartDate());
+      if (hasStartDate() != other.hasStartDate()) return false;
       if (hasStartDate()) {
-        result = result && getStartDate()
-            .equals(other.getStartDate());
+        if (!getStartDate()
+            .equals(other.getStartDate())) return false;
       }
-      result = result && (hasStatus() == other.hasStatus());
+      if (hasStatus() != other.hasStatus()) return false;
       if (hasStatus()) {
-        result = result && status_ == other.status_;
+        if (status_ != other.status_) return false;
       }
-      result = result && (hasDeviationCasesType() == other.hasDeviationCasesType());
+      if (hasDeviationCasesType() != other.hasDeviationCasesType()) return false;
       if (hasDeviationCasesType()) {
-        result = result && deviationCasesType_ == other.deviationCasesType_;
+        if (deviationCasesType_ != other.deviationCasesType_) return false;
       }
-      result = result && (hasAffectedDeparturesType() == other.hasAffectedDeparturesType());
+      if (hasAffectedDeparturesType() != other.hasAffectedDeparturesType()) return false;
       if (hasAffectedDeparturesType()) {
-        result = result && affectedDeparturesType_ == other.affectedDeparturesType_;
+        if (affectedDeparturesType_ != other.affectedDeparturesType_) return false;
       }
-      result = result && (hasTitle() == other.hasTitle());
+      if (hasTitle() != other.hasTitle()) return false;
       if (hasTitle()) {
-        result = result && getTitle()
-            .equals(other.getTitle());
+        if (!getTitle()
+            .equals(other.getTitle())) return false;
       }
-      result = result && (hasDescription() == other.hasDescription());
+      if (hasDescription() != other.hasDescription()) return false;
       if (hasDescription()) {
-        result = result && getDescription()
-            .equals(other.getDescription());
+        if (!getDescription()
+            .equals(other.getDescription())) return false;
       }
-      result = result && (hasCategory() == other.hasCategory());
+      if (hasCategory() != other.hasCategory()) return false;
       if (hasCategory()) {
-        result = result && category_ == other.category_;
+        if (category_ != other.category_) return false;
       }
-      result = result && (hasSubCategory() == other.hasSubCategory());
+      if (hasSubCategory() != other.hasSubCategory()) return false;
       if (hasSubCategory()) {
-        result = result && subCategory_ == other.subCategory_;
+        if (subCategory_ != other.subCategory_) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3657,7 +5483,7 @@ public final class InternalMessages {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasSchemaVersion()) {
         hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
         hash = (53 * hash) + getSchemaVersion();
@@ -3715,6 +5541,17 @@ public final class InternalMessages {
       return hash;
     }
 
+    public static fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3774,6 +5611,7 @@ public final class InternalMessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3781,6 +5619,7 @@ public final class InternalMessages {
     public static Builder newBuilder(fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3804,6 +5643,7 @@ public final class InternalMessages {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_TripCancellation_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_TripCancellation_fieldAccessorTable
@@ -3826,6 +5666,7 @@ public final class InternalMessages {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         schemaVersion_ = 1;
@@ -3857,15 +5698,18 @@ public final class InternalMessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_TripCancellation_descriptor;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation getDefaultInstanceForType() {
         return fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.getDefaultInstance();
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation build() {
         fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation result = buildPartial();
         if (!result.isInitialized()) {
@@ -3874,59 +5718,60 @@ public final class InternalMessages {
         return result;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation buildPartial() {
         fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation result = new fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.schemaVersion_ = schemaVersion_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           to_bitField0_ |= 0x00000002;
         }
         result.tripId_ = tripId_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           to_bitField0_ |= 0x00000004;
         }
         result.routeId_ = routeId_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.directionId_ = directionId_;
           to_bitField0_ |= 0x00000008;
         }
-        result.directionId_ = directionId_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           to_bitField0_ |= 0x00000010;
         }
         result.startTime_ = startTime_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           to_bitField0_ |= 0x00000020;
         }
         result.startDate_ = startDate_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
           to_bitField0_ |= 0x00000040;
         }
         result.status_ = status_;
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((from_bitField0_ & 0x00000080) != 0)) {
           to_bitField0_ |= 0x00000080;
         }
         result.deviationCasesType_ = deviationCasesType_;
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((from_bitField0_ & 0x00000100) != 0)) {
           to_bitField0_ |= 0x00000100;
         }
         result.affectedDeparturesType_ = affectedDeparturesType_;
-        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((from_bitField0_ & 0x00000200) != 0)) {
           to_bitField0_ |= 0x00000200;
         }
         result.title_ = title_;
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((from_bitField0_ & 0x00000400) != 0)) {
           to_bitField0_ |= 0x00000400;
         }
         result.description_ = description_;
-        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+        if (((from_bitField0_ & 0x00000800) != 0)) {
           to_bitField0_ |= 0x00000800;
         }
         result.category_ = category_;
-        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+        if (((from_bitField0_ & 0x00001000) != 0)) {
           to_bitField0_ |= 0x00001000;
         }
         result.subCategory_ = subCategory_;
@@ -3935,32 +5780,39 @@ public final class InternalMessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation) {
           return mergeFrom((fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation)other);
@@ -4028,6 +5880,7 @@ public final class InternalMessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasSchemaVersion()) {
           return false;
@@ -4038,6 +5891,7 @@ public final class InternalMessages {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4060,18 +5914,22 @@ public final class InternalMessages {
       private int schemaVersion_ = 1;
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return Whether the schemaVersion field is set.
        */
       public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return The schemaVersion.
        */
       public int getSchemaVersion() {
         return schemaVersion_;
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @param value The schemaVersion to set.
+       * @return This builder for chaining.
        */
       public Builder setSchemaVersion(int value) {
         bitField0_ |= 0x00000001;
@@ -4081,6 +5939,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return This builder for chaining.
        */
       public Builder clearSchemaVersion() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -4092,12 +5951,14 @@ public final class InternalMessages {
       private java.lang.Object tripId_ = "";
       /**
        * <code>optional string trip_id = 2;</code>
+       * @return Whether the tripId field is set.
        */
       public boolean hasTripId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>optional string trip_id = 2;</code>
+       * @return The tripId.
        */
       public java.lang.String getTripId() {
         java.lang.Object ref = tripId_;
@@ -4115,6 +5976,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string trip_id = 2;</code>
+       * @return The bytes for tripId.
        */
       public com.google.protobuf.ByteString
           getTripIdBytes() {
@@ -4131,6 +5993,8 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string trip_id = 2;</code>
+       * @param value The tripId to set.
+       * @return This builder for chaining.
        */
       public Builder setTripId(
           java.lang.String value) {
@@ -4144,6 +6008,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string trip_id = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTripId() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -4153,6 +6018,8 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string trip_id = 2;</code>
+       * @param value The bytes for tripId to set.
+       * @return This builder for chaining.
        */
       public Builder setTripIdBytes(
           com.google.protobuf.ByteString value) {
@@ -4168,12 +6035,14 @@ public final class InternalMessages {
       private java.lang.Object routeId_ = "";
       /**
        * <code>optional string route_id = 3;</code>
+       * @return Whether the routeId field is set.
        */
       public boolean hasRouteId() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>optional string route_id = 3;</code>
+       * @return The routeId.
        */
       public java.lang.String getRouteId() {
         java.lang.Object ref = routeId_;
@@ -4191,6 +6060,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string route_id = 3;</code>
+       * @return The bytes for routeId.
        */
       public com.google.protobuf.ByteString
           getRouteIdBytes() {
@@ -4207,6 +6077,8 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string route_id = 3;</code>
+       * @param value The routeId to set.
+       * @return This builder for chaining.
        */
       public Builder setRouteId(
           java.lang.String value) {
@@ -4220,6 +6092,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string route_id = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRouteId() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -4229,6 +6102,8 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string route_id = 3;</code>
+       * @param value The bytes for routeId to set.
+       * @return This builder for chaining.
        */
       public Builder setRouteIdBytes(
           com.google.protobuf.ByteString value) {
@@ -4244,18 +6119,22 @@ public final class InternalMessages {
       private int directionId_ ;
       /**
        * <code>optional uint32 direction_id = 4;</code>
+       * @return Whether the directionId field is set.
        */
       public boolean hasDirectionId() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>optional uint32 direction_id = 4;</code>
+       * @return The directionId.
        */
       public int getDirectionId() {
         return directionId_;
       }
       /**
        * <code>optional uint32 direction_id = 4;</code>
+       * @param value The directionId to set.
+       * @return This builder for chaining.
        */
       public Builder setDirectionId(int value) {
         bitField0_ |= 0x00000008;
@@ -4265,6 +6144,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional uint32 direction_id = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDirectionId() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -4276,12 +6156,14 @@ public final class InternalMessages {
       private java.lang.Object startTime_ = "";
       /**
        * <code>optional string start_time = 5;</code>
+       * @return Whether the startTime field is set.
        */
       public boolean hasStartTime() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>optional string start_time = 5;</code>
+       * @return The startTime.
        */
       public java.lang.String getStartTime() {
         java.lang.Object ref = startTime_;
@@ -4299,6 +6181,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string start_time = 5;</code>
+       * @return The bytes for startTime.
        */
       public com.google.protobuf.ByteString
           getStartTimeBytes() {
@@ -4315,6 +6198,8 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string start_time = 5;</code>
+       * @param value The startTime to set.
+       * @return This builder for chaining.
        */
       public Builder setStartTime(
           java.lang.String value) {
@@ -4328,6 +6213,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string start_time = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStartTime() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -4337,6 +6223,8 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string start_time = 5;</code>
+       * @param value The bytes for startTime to set.
+       * @return This builder for chaining.
        */
       public Builder setStartTimeBytes(
           com.google.protobuf.ByteString value) {
@@ -4352,12 +6240,14 @@ public final class InternalMessages {
       private java.lang.Object startDate_ = "";
       /**
        * <code>optional string start_date = 6;</code>
+       * @return Whether the startDate field is set.
        */
       public boolean hasStartDate() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <code>optional string start_date = 6;</code>
+       * @return The startDate.
        */
       public java.lang.String getStartDate() {
         java.lang.Object ref = startDate_;
@@ -4375,6 +6265,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string start_date = 6;</code>
+       * @return The bytes for startDate.
        */
       public com.google.protobuf.ByteString
           getStartDateBytes() {
@@ -4391,6 +6282,8 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string start_date = 6;</code>
+       * @param value The startDate to set.
+       * @return This builder for chaining.
        */
       public Builder setStartDate(
           java.lang.String value) {
@@ -4404,6 +6297,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string start_date = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStartDate() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -4413,6 +6307,8 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string start_date = 6;</code>
+       * @param value The bytes for startDate to set.
+       * @return This builder for chaining.
        */
       public Builder setStartDateBytes(
           com.google.protobuf.ByteString value) {
@@ -4428,19 +6324,24 @@ public final class InternalMessages {
       private int status_ = 0;
       /**
        * <code>required .proto.TripCancellation.Status status = 7;</code>
+       * @return Whether the status field is set.
        */
       public boolean hasStatus() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        * <code>required .proto.TripCancellation.Status status = 7;</code>
+       * @return The status.
        */
       public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status getStatus() {
+        @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status.valueOf(status_);
         return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status.RUNNING : result;
       }
       /**
        * <code>required .proto.TripCancellation.Status status = 7;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
        */
       public Builder setStatus(fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status value) {
         if (value == null) {
@@ -4453,6 +6354,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required .proto.TripCancellation.Status status = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStatus() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -4464,19 +6366,24 @@ public final class InternalMessages {
       private int deviationCasesType_ = 0;
       /**
        * <code>optional .proto.TripCancellation.DeviationCasesType deviation_cases_type = 8;</code>
+       * @return Whether the deviationCasesType field is set.
        */
       public boolean hasDeviationCasesType() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
        * <code>optional .proto.TripCancellation.DeviationCasesType deviation_cases_type = 8;</code>
+       * @return The deviationCasesType.
        */
       public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType getDeviationCasesType() {
+        @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType.valueOf(deviationCasesType_);
         return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType.CANCEL_DEPARTURE : result;
       }
       /**
        * <code>optional .proto.TripCancellation.DeviationCasesType deviation_cases_type = 8;</code>
+       * @param value The deviationCasesType to set.
+       * @return This builder for chaining.
        */
       public Builder setDeviationCasesType(fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType value) {
         if (value == null) {
@@ -4489,6 +6396,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional .proto.TripCancellation.DeviationCasesType deviation_cases_type = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDeviationCasesType() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -4500,19 +6408,24 @@ public final class InternalMessages {
       private int affectedDeparturesType_ = 0;
       /**
        * <code>optional .proto.TripCancellation.AffectedDeparturesType affected_departures_type = 9;</code>
+       * @return Whether the affectedDeparturesType field is set.
        */
       public boolean hasAffectedDeparturesType() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
        * <code>optional .proto.TripCancellation.AffectedDeparturesType affected_departures_type = 9;</code>
+       * @return The affectedDeparturesType.
        */
       public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType getAffectedDeparturesType() {
+        @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType.valueOf(affectedDeparturesType_);
         return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType.CANCEL_ENTIRE_DEPARTURE : result;
       }
       /**
        * <code>optional .proto.TripCancellation.AffectedDeparturesType affected_departures_type = 9;</code>
+       * @param value The affectedDeparturesType to set.
+       * @return This builder for chaining.
        */
       public Builder setAffectedDeparturesType(fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType value) {
         if (value == null) {
@@ -4525,6 +6438,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional .proto.TripCancellation.AffectedDeparturesType affected_departures_type = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAffectedDeparturesType() {
         bitField0_ = (bitField0_ & ~0x00000100);
@@ -4536,12 +6450,14 @@ public final class InternalMessages {
       private java.lang.Object title_ = "";
       /**
        * <code>optional string title = 10;</code>
+       * @return Whether the title field is set.
        */
       public boolean hasTitle() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000200) != 0);
       }
       /**
        * <code>optional string title = 10;</code>
+       * @return The title.
        */
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
@@ -4559,6 +6475,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string title = 10;</code>
+       * @return The bytes for title.
        */
       public com.google.protobuf.ByteString
           getTitleBytes() {
@@ -4575,6 +6492,8 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string title = 10;</code>
+       * @param value The title to set.
+       * @return This builder for chaining.
        */
       public Builder setTitle(
           java.lang.String value) {
@@ -4588,6 +6507,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string title = 10;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTitle() {
         bitField0_ = (bitField0_ & ~0x00000200);
@@ -4597,6 +6517,8 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string title = 10;</code>
+       * @param value The bytes for title to set.
+       * @return This builder for chaining.
        */
       public Builder setTitleBytes(
           com.google.protobuf.ByteString value) {
@@ -4612,12 +6534,14 @@ public final class InternalMessages {
       private java.lang.Object description_ = "";
       /**
        * <code>optional string description = 11;</code>
+       * @return Whether the description field is set.
        */
       public boolean hasDescription() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000400) != 0);
       }
       /**
        * <code>optional string description = 11;</code>
+       * @return The description.
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -4635,6 +6559,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string description = 11;</code>
+       * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
           getDescriptionBytes() {
@@ -4651,6 +6576,8 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string description = 11;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescription(
           java.lang.String value) {
@@ -4664,6 +6591,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string description = 11;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDescription() {
         bitField0_ = (bitField0_ & ~0x00000400);
@@ -4673,6 +6601,8 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string description = 11;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {
@@ -4688,19 +6618,24 @@ public final class InternalMessages {
       private int category_ = 0;
       /**
        * <code>optional .proto.Category category = 12;</code>
+       * @return Whether the category field is set.
        */
       public boolean hasCategory() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
+        return ((bitField0_ & 0x00000800) != 0);
       }
       /**
        * <code>optional .proto.Category category = 12;</code>
+       * @return The category.
        */
       public fi.hsl.common.transitdata.proto.InternalMessages.Category getCategory() {
+        @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.InternalMessages.Category result = fi.hsl.common.transitdata.proto.InternalMessages.Category.valueOf(category_);
         return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.Category.VEHICLE_BREAKDOWN : result;
       }
       /**
        * <code>optional .proto.Category category = 12;</code>
+       * @param value The category to set.
+       * @return This builder for chaining.
        */
       public Builder setCategory(fi.hsl.common.transitdata.proto.InternalMessages.Category value) {
         if (value == null) {
@@ -4713,6 +6648,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional .proto.Category category = 12;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCategory() {
         bitField0_ = (bitField0_ & ~0x00000800);
@@ -4724,19 +6660,24 @@ public final class InternalMessages {
       private int subCategory_ = 0;
       /**
        * <code>optional .proto.TripCancellation.SubCategory sub_category = 13;</code>
+       * @return Whether the subCategory field is set.
        */
       public boolean hasSubCategory() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
+        return ((bitField0_ & 0x00001000) != 0);
       }
       /**
        * <code>optional .proto.TripCancellation.SubCategory sub_category = 13;</code>
+       * @return The subCategory.
        */
       public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory getSubCategory() {
+        @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory result = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory.valueOf(subCategory_);
         return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory.BREAK_MALFUNCTION : result;
       }
       /**
        * <code>optional .proto.TripCancellation.SubCategory sub_category = 13;</code>
+       * @param value The subCategory to set.
+       * @return This builder for chaining.
        */
       public Builder setSubCategory(fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory value) {
         if (value == null) {
@@ -4749,6 +6690,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional .proto.TripCancellation.SubCategory sub_category = 13;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSubCategory() {
         bitField0_ = (bitField0_ & ~0x00001000);
@@ -4756,11 +6698,13 @@ public final class InternalMessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -4782,11 +6726,12 @@ public final class InternalMessages {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<TripCancellation>
         PARSER = new com.google.protobuf.AbstractParser<TripCancellation>() {
+      @java.lang.Override
       public TripCancellation parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TripCancellation(input, extensionRegistry);
+        return new TripCancellation(input, extensionRegistry);
       }
     };
 
@@ -4799,6 +6744,7 @@ public final class InternalMessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4811,19 +6757,23 @@ public final class InternalMessages {
 
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
     boolean hasSchemaVersion();
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
     int getSchemaVersion();
 
     /**
      * <code>required .proto.TripInfo trip_info = 2;</code>
+     * @return Whether the tripInfo field is set.
      */
     boolean hasTripInfo();
     /**
      * <code>required .proto.TripInfo trip_info = 2;</code>
+     * @return The tripInfo.
      */
     fi.hsl.common.transitdata.proto.InternalMessages.TripInfo getTripInfo();
     /**
@@ -4833,69 +6783,84 @@ public final class InternalMessages {
 
     /**
      * <code>required string stop_id = 3;</code>
+     * @return Whether the stopId field is set.
      */
     boolean hasStopId();
     /**
      * <code>required string stop_id = 3;</code>
+     * @return The stopId.
      */
     java.lang.String getStopId();
     /**
      * <code>required string stop_id = 3;</code>
+     * @return The bytes for stopId.
      */
     com.google.protobuf.ByteString
         getStopIdBytes();
 
     /**
      * <code>required uint32 stop_sequence = 4;</code>
+     * @return Whether the stopSequence field is set.
      */
     boolean hasStopSequence();
     /**
      * <code>required uint32 stop_sequence = 4;</code>
+     * @return The stopSequence.
      */
     int getStopSequence();
 
     /**
      * <code>required .proto.StopEstimate.Status status = 5;</code>
+     * @return Whether the status field is set.
      */
     boolean hasStatus();
     /**
      * <code>required .proto.StopEstimate.Status status = 5;</code>
+     * @return The status.
      */
     fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status getStatus();
 
     /**
      * <code>required .proto.StopEstimate.Type type = 6;</code>
+     * @return Whether the type field is set.
      */
     boolean hasType();
     /**
      * <code>required .proto.StopEstimate.Type type = 6;</code>
+     * @return The type.
      */
     fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Type getType();
 
     /**
      * <code>optional int64 estimated_time_utc_ms = 7;</code>
+     * @return Whether the estimatedTimeUtcMs field is set.
      */
     boolean hasEstimatedTimeUtcMs();
     /**
      * <code>optional int64 estimated_time_utc_ms = 7;</code>
+     * @return The estimatedTimeUtcMs.
      */
     long getEstimatedTimeUtcMs();
 
     /**
      * <code>optional int64 scheduled_time_utc_ms = 8;</code>
+     * @return Whether the scheduledTimeUtcMs field is set.
      */
     boolean hasScheduledTimeUtcMs();
     /**
      * <code>optional int64 scheduled_time_utc_ms = 8;</code>
+     * @return The scheduledTimeUtcMs.
      */
     long getScheduledTimeUtcMs();
 
     /**
      * <code>required int64 last_modified_utc_ms = 9;</code>
+     * @return Whether the lastModifiedUtcMs field is set.
      */
     boolean hasLastModifiedUtcMs();
     /**
      * <code>required int64 last_modified_utc_ms = 9;</code>
+     * @return The lastModifiedUtcMs.
      */
     long getLastModifiedUtcMs();
   }
@@ -4906,6 +6871,7 @@ public final class InternalMessages {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.StopEstimate)
       StopEstimateOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use StopEstimate.newBuilder() to construct.
     private StopEstimate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4913,12 +6879,15 @@ public final class InternalMessages {
     private StopEstimate() {
       schemaVersion_ = 1;
       stopId_ = "";
-      stopSequence_ = 0;
       status_ = 0;
       type_ = 0;
-      estimatedTimeUtcMs_ = 0L;
-      scheduledTimeUtcMs_ = 0L;
-      lastModifiedUtcMs_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new StopEstimate();
     }
 
     @java.lang.Override
@@ -4931,6 +6900,9 @@ public final class InternalMessages {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -4942,13 +6914,6 @@ public final class InternalMessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               schemaVersion_ = input.readInt32();
@@ -4956,7 +6921,7 @@ public final class InternalMessages {
             }
             case 18: {
               fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+              if (((bitField0_ & 0x00000002) != 0)) {
                 subBuilder = tripInfo_.toBuilder();
               }
               tripInfo_ = input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.PARSER, extensionRegistry);
@@ -4980,6 +6945,7 @@ public final class InternalMessages {
             }
             case 40: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status value = fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(5, rawValue);
@@ -4991,6 +6957,7 @@ public final class InternalMessages {
             }
             case 48: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Type value = fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Type.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(6, rawValue);
@@ -5015,6 +6982,13 @@ public final class InternalMessages {
               lastModifiedUtcMs_ = input.readInt64();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5032,6 +7006,7 @@ public final class InternalMessages {
       return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_StopEstimate_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_StopEstimate_fieldAccessorTable
@@ -5085,6 +7060,8 @@ public final class InternalMessages {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -5092,6 +7069,10 @@ public final class InternalMessages {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static Status forNumber(int value) {
         switch (value) {
           case 0: return SCHEDULED;
@@ -5176,6 +7157,8 @@ public final class InternalMessages {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -5183,6 +7166,10 @@ public final class InternalMessages {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static Type forNumber(int value) {
         switch (value) {
           case 0: return ARRIVAL;
@@ -5241,12 +7228,14 @@ public final class InternalMessages {
     private int schemaVersion_;
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
     public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
     public int getSchemaVersion() {
       return schemaVersion_;
@@ -5256,12 +7245,14 @@ public final class InternalMessages {
     private fi.hsl.common.transitdata.proto.InternalMessages.TripInfo tripInfo_;
     /**
      * <code>required .proto.TripInfo trip_info = 2;</code>
+     * @return Whether the tripInfo field is set.
      */
     public boolean hasTripInfo() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>required .proto.TripInfo trip_info = 2;</code>
+     * @return The tripInfo.
      */
     public fi.hsl.common.transitdata.proto.InternalMessages.TripInfo getTripInfo() {
       return tripInfo_ == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.getDefaultInstance() : tripInfo_;
@@ -5277,12 +7268,14 @@ public final class InternalMessages {
     private volatile java.lang.Object stopId_;
     /**
      * <code>required string stop_id = 3;</code>
+     * @return Whether the stopId field is set.
      */
     public boolean hasStopId() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>required string stop_id = 3;</code>
+     * @return The stopId.
      */
     public java.lang.String getStopId() {
       java.lang.Object ref = stopId_;
@@ -5300,6 +7293,7 @@ public final class InternalMessages {
     }
     /**
      * <code>required string stop_id = 3;</code>
+     * @return The bytes for stopId.
      */
     public com.google.protobuf.ByteString
         getStopIdBytes() {
@@ -5319,12 +7313,14 @@ public final class InternalMessages {
     private int stopSequence_;
     /**
      * <code>required uint32 stop_sequence = 4;</code>
+     * @return Whether the stopSequence field is set.
      */
     public boolean hasStopSequence() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>required uint32 stop_sequence = 4;</code>
+     * @return The stopSequence.
      */
     public int getStopSequence() {
       return stopSequence_;
@@ -5334,14 +7330,17 @@ public final class InternalMessages {
     private int status_;
     /**
      * <code>required .proto.StopEstimate.Status status = 5;</code>
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <code>required .proto.StopEstimate.Status status = 5;</code>
+     * @return The status.
      */
     public fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status getStatus() {
+      @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status result = fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status.valueOf(status_);
       return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status.SCHEDULED : result;
     }
@@ -5350,14 +7349,17 @@ public final class InternalMessages {
     private int type_;
     /**
      * <code>required .proto.StopEstimate.Type type = 6;</code>
+     * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <code>required .proto.StopEstimate.Type type = 6;</code>
+     * @return The type.
      */
     public fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Type getType() {
+      @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Type result = fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Type.valueOf(type_);
       return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Type.ARRIVAL : result;
     }
@@ -5366,12 +7368,14 @@ public final class InternalMessages {
     private long estimatedTimeUtcMs_;
     /**
      * <code>optional int64 estimated_time_utc_ms = 7;</code>
+     * @return Whether the estimatedTimeUtcMs field is set.
      */
     public boolean hasEstimatedTimeUtcMs() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      * <code>optional int64 estimated_time_utc_ms = 7;</code>
+     * @return The estimatedTimeUtcMs.
      */
     public long getEstimatedTimeUtcMs() {
       return estimatedTimeUtcMs_;
@@ -5381,12 +7385,14 @@ public final class InternalMessages {
     private long scheduledTimeUtcMs_;
     /**
      * <code>optional int64 scheduled_time_utc_ms = 8;</code>
+     * @return Whether the scheduledTimeUtcMs field is set.
      */
     public boolean hasScheduledTimeUtcMs() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      * <code>optional int64 scheduled_time_utc_ms = 8;</code>
+     * @return The scheduledTimeUtcMs.
      */
     public long getScheduledTimeUtcMs() {
       return scheduledTimeUtcMs_;
@@ -5396,18 +7402,21 @@ public final class InternalMessages {
     private long lastModifiedUtcMs_;
     /**
      * <code>required int64 last_modified_utc_ms = 9;</code>
+     * @return Whether the lastModifiedUtcMs field is set.
      */
     public boolean hasLastModifiedUtcMs() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <code>required int64 last_modified_utc_ms = 9;</code>
+     * @return The lastModifiedUtcMs.
      */
     public long getLastModifiedUtcMs() {
       return lastModifiedUtcMs_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5449,75 +7458,77 @@ public final class InternalMessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt32(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(2, getTripInfo());
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, stopId_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         output.writeUInt32(4, stopSequence_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         output.writeEnum(5, status_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         output.writeEnum(6, type_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         output.writeInt64(7, estimatedTimeUtcMs_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         output.writeInt64(8, scheduledTimeUtcMs_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         output.writeInt64(9, lastModifiedUtcMs_);
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getTripInfo());
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, stopId_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, stopSequence_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, status_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, type_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(7, estimatedTimeUtcMs_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(8, scheduledTimeUtcMs_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(9, lastModifiedUtcMs_);
       }
@@ -5526,7 +7537,6 @@ public final class InternalMessages {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5537,52 +7547,51 @@ public final class InternalMessages {
       }
       fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate other = (fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate) obj;
 
-      boolean result = true;
-      result = result && (hasSchemaVersion() == other.hasSchemaVersion());
+      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
       if (hasSchemaVersion()) {
-        result = result && (getSchemaVersion()
-            == other.getSchemaVersion());
+        if (getSchemaVersion()
+            != other.getSchemaVersion()) return false;
       }
-      result = result && (hasTripInfo() == other.hasTripInfo());
+      if (hasTripInfo() != other.hasTripInfo()) return false;
       if (hasTripInfo()) {
-        result = result && getTripInfo()
-            .equals(other.getTripInfo());
+        if (!getTripInfo()
+            .equals(other.getTripInfo())) return false;
       }
-      result = result && (hasStopId() == other.hasStopId());
+      if (hasStopId() != other.hasStopId()) return false;
       if (hasStopId()) {
-        result = result && getStopId()
-            .equals(other.getStopId());
+        if (!getStopId()
+            .equals(other.getStopId())) return false;
       }
-      result = result && (hasStopSequence() == other.hasStopSequence());
+      if (hasStopSequence() != other.hasStopSequence()) return false;
       if (hasStopSequence()) {
-        result = result && (getStopSequence()
-            == other.getStopSequence());
+        if (getStopSequence()
+            != other.getStopSequence()) return false;
       }
-      result = result && (hasStatus() == other.hasStatus());
+      if (hasStatus() != other.hasStatus()) return false;
       if (hasStatus()) {
-        result = result && status_ == other.status_;
+        if (status_ != other.status_) return false;
       }
-      result = result && (hasType() == other.hasType());
+      if (hasType() != other.hasType()) return false;
       if (hasType()) {
-        result = result && type_ == other.type_;
+        if (type_ != other.type_) return false;
       }
-      result = result && (hasEstimatedTimeUtcMs() == other.hasEstimatedTimeUtcMs());
+      if (hasEstimatedTimeUtcMs() != other.hasEstimatedTimeUtcMs()) return false;
       if (hasEstimatedTimeUtcMs()) {
-        result = result && (getEstimatedTimeUtcMs()
-            == other.getEstimatedTimeUtcMs());
+        if (getEstimatedTimeUtcMs()
+            != other.getEstimatedTimeUtcMs()) return false;
       }
-      result = result && (hasScheduledTimeUtcMs() == other.hasScheduledTimeUtcMs());
+      if (hasScheduledTimeUtcMs() != other.hasScheduledTimeUtcMs()) return false;
       if (hasScheduledTimeUtcMs()) {
-        result = result && (getScheduledTimeUtcMs()
-            == other.getScheduledTimeUtcMs());
+        if (getScheduledTimeUtcMs()
+            != other.getScheduledTimeUtcMs()) return false;
       }
-      result = result && (hasLastModifiedUtcMs() == other.hasLastModifiedUtcMs());
+      if (hasLastModifiedUtcMs() != other.hasLastModifiedUtcMs()) return false;
       if (hasLastModifiedUtcMs()) {
-        result = result && (getLastModifiedUtcMs()
-            == other.getLastModifiedUtcMs());
+        if (getLastModifiedUtcMs()
+            != other.getLastModifiedUtcMs()) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -5591,7 +7600,7 @@ public final class InternalMessages {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasSchemaVersion()) {
         hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
         hash = (53 * hash) + getSchemaVersion();
@@ -5636,6 +7645,17 @@ public final class InternalMessages {
       return hash;
     }
 
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5695,6 +7715,7 @@ public final class InternalMessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5702,6 +7723,7 @@ public final class InternalMessages {
     public static Builder newBuilder(fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5725,6 +7747,7 @@ public final class InternalMessages {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_StopEstimate_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_StopEstimate_fieldAccessorTable
@@ -5748,6 +7771,7 @@ public final class InternalMessages {
           getTripInfoFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         schemaVersion_ = 1;
@@ -5775,15 +7799,18 @@ public final class InternalMessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_StopEstimate_descriptor;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate getDefaultInstanceForType() {
         return fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.getDefaultInstance();
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate build() {
         fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate result = buildPartial();
         if (!result.isInitialized()) {
@@ -5792,81 +7819,89 @@ public final class InternalMessages {
         return result;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate buildPartial() {
         fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate result = new fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.schemaVersion_ = schemaVersion_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          if (tripInfoBuilder_ == null) {
+            result.tripInfo_ = tripInfo_;
+          } else {
+            result.tripInfo_ = tripInfoBuilder_.build();
+          }
           to_bitField0_ |= 0x00000002;
         }
-        if (tripInfoBuilder_ == null) {
-          result.tripInfo_ = tripInfo_;
-        } else {
-          result.tripInfo_ = tripInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           to_bitField0_ |= 0x00000004;
         }
         result.stopId_ = stopId_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.stopSequence_ = stopSequence_;
           to_bitField0_ |= 0x00000008;
         }
-        result.stopSequence_ = stopSequence_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           to_bitField0_ |= 0x00000010;
         }
         result.status_ = status_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           to_bitField0_ |= 0x00000020;
         }
         result.type_ = type_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.estimatedTimeUtcMs_ = estimatedTimeUtcMs_;
           to_bitField0_ |= 0x00000040;
         }
-        result.estimatedTimeUtcMs_ = estimatedTimeUtcMs_;
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.scheduledTimeUtcMs_ = scheduledTimeUtcMs_;
           to_bitField0_ |= 0x00000080;
         }
-        result.scheduledTimeUtcMs_ = scheduledTimeUtcMs_;
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.lastModifiedUtcMs_ = lastModifiedUtcMs_;
           to_bitField0_ |= 0x00000100;
         }
-        result.lastModifiedUtcMs_ = lastModifiedUtcMs_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate) {
           return mergeFrom((fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate)other);
@@ -5912,6 +7947,7 @@ public final class InternalMessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasSchemaVersion()) {
           return false;
@@ -5940,6 +7976,7 @@ public final class InternalMessages {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5962,18 +7999,22 @@ public final class InternalMessages {
       private int schemaVersion_ = 1;
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return Whether the schemaVersion field is set.
        */
       public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return The schemaVersion.
        */
       public int getSchemaVersion() {
         return schemaVersion_;
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @param value The schemaVersion to set.
+       * @return This builder for chaining.
        */
       public Builder setSchemaVersion(int value) {
         bitField0_ |= 0x00000001;
@@ -5983,6 +8024,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return This builder for chaining.
        */
       public Builder clearSchemaVersion() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -5991,17 +8033,19 @@ public final class InternalMessages {
         return this;
       }
 
-      private fi.hsl.common.transitdata.proto.InternalMessages.TripInfo tripInfo_ = null;
+      private fi.hsl.common.transitdata.proto.InternalMessages.TripInfo tripInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           fi.hsl.common.transitdata.proto.InternalMessages.TripInfo, fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.Builder, fi.hsl.common.transitdata.proto.InternalMessages.TripInfoOrBuilder> tripInfoBuilder_;
       /**
        * <code>required .proto.TripInfo trip_info = 2;</code>
+       * @return Whether the tripInfo field is set.
        */
       public boolean hasTripInfo() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>required .proto.TripInfo trip_info = 2;</code>
+       * @return The tripInfo.
        */
       public fi.hsl.common.transitdata.proto.InternalMessages.TripInfo getTripInfo() {
         if (tripInfoBuilder_ == null) {
@@ -6045,7 +8089,7 @@ public final class InternalMessages {
        */
       public Builder mergeTripInfo(fi.hsl.common.transitdata.proto.InternalMessages.TripInfo value) {
         if (tripInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+          if (((bitField0_ & 0x00000002) != 0) &&
               tripInfo_ != null &&
               tripInfo_ != fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.getDefaultInstance()) {
             tripInfo_ =
@@ -6112,12 +8156,14 @@ public final class InternalMessages {
       private java.lang.Object stopId_ = "";
       /**
        * <code>required string stop_id = 3;</code>
+       * @return Whether the stopId field is set.
        */
       public boolean hasStopId() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>required string stop_id = 3;</code>
+       * @return The stopId.
        */
       public java.lang.String getStopId() {
         java.lang.Object ref = stopId_;
@@ -6135,6 +8181,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required string stop_id = 3;</code>
+       * @return The bytes for stopId.
        */
       public com.google.protobuf.ByteString
           getStopIdBytes() {
@@ -6151,6 +8198,8 @@ public final class InternalMessages {
       }
       /**
        * <code>required string stop_id = 3;</code>
+       * @param value The stopId to set.
+       * @return This builder for chaining.
        */
       public Builder setStopId(
           java.lang.String value) {
@@ -6164,6 +8213,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required string stop_id = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStopId() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -6173,6 +8223,8 @@ public final class InternalMessages {
       }
       /**
        * <code>required string stop_id = 3;</code>
+       * @param value The bytes for stopId to set.
+       * @return This builder for chaining.
        */
       public Builder setStopIdBytes(
           com.google.protobuf.ByteString value) {
@@ -6188,18 +8240,22 @@ public final class InternalMessages {
       private int stopSequence_ ;
       /**
        * <code>required uint32 stop_sequence = 4;</code>
+       * @return Whether the stopSequence field is set.
        */
       public boolean hasStopSequence() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>required uint32 stop_sequence = 4;</code>
+       * @return The stopSequence.
        */
       public int getStopSequence() {
         return stopSequence_;
       }
       /**
        * <code>required uint32 stop_sequence = 4;</code>
+       * @param value The stopSequence to set.
+       * @return This builder for chaining.
        */
       public Builder setStopSequence(int value) {
         bitField0_ |= 0x00000008;
@@ -6209,6 +8265,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required uint32 stop_sequence = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStopSequence() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -6220,19 +8277,24 @@ public final class InternalMessages {
       private int status_ = 0;
       /**
        * <code>required .proto.StopEstimate.Status status = 5;</code>
+       * @return Whether the status field is set.
        */
       public boolean hasStatus() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>required .proto.StopEstimate.Status status = 5;</code>
+       * @return The status.
        */
       public fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status getStatus() {
+        @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status result = fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status.valueOf(status_);
         return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status.SCHEDULED : result;
       }
       /**
        * <code>required .proto.StopEstimate.Status status = 5;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
        */
       public Builder setStatus(fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status value) {
         if (value == null) {
@@ -6245,6 +8307,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required .proto.StopEstimate.Status status = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStatus() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -6256,19 +8319,24 @@ public final class InternalMessages {
       private int type_ = 0;
       /**
        * <code>required .proto.StopEstimate.Type type = 6;</code>
+       * @return Whether the type field is set.
        */
       public boolean hasType() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <code>required .proto.StopEstimate.Type type = 6;</code>
+       * @return The type.
        */
       public fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Type getType() {
+        @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Type result = fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Type.valueOf(type_);
         return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Type.ARRIVAL : result;
       }
       /**
        * <code>required .proto.StopEstimate.Type type = 6;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
       public Builder setType(fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Type value) {
         if (value == null) {
@@ -6281,6 +8349,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required .proto.StopEstimate.Type type = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -6292,18 +8361,22 @@ public final class InternalMessages {
       private long estimatedTimeUtcMs_ ;
       /**
        * <code>optional int64 estimated_time_utc_ms = 7;</code>
+       * @return Whether the estimatedTimeUtcMs field is set.
        */
       public boolean hasEstimatedTimeUtcMs() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        * <code>optional int64 estimated_time_utc_ms = 7;</code>
+       * @return The estimatedTimeUtcMs.
        */
       public long getEstimatedTimeUtcMs() {
         return estimatedTimeUtcMs_;
       }
       /**
        * <code>optional int64 estimated_time_utc_ms = 7;</code>
+       * @param value The estimatedTimeUtcMs to set.
+       * @return This builder for chaining.
        */
       public Builder setEstimatedTimeUtcMs(long value) {
         bitField0_ |= 0x00000040;
@@ -6313,6 +8386,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional int64 estimated_time_utc_ms = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearEstimatedTimeUtcMs() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -6324,18 +8398,22 @@ public final class InternalMessages {
       private long scheduledTimeUtcMs_ ;
       /**
        * <code>optional int64 scheduled_time_utc_ms = 8;</code>
+       * @return Whether the scheduledTimeUtcMs field is set.
        */
       public boolean hasScheduledTimeUtcMs() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
        * <code>optional int64 scheduled_time_utc_ms = 8;</code>
+       * @return The scheduledTimeUtcMs.
        */
       public long getScheduledTimeUtcMs() {
         return scheduledTimeUtcMs_;
       }
       /**
        * <code>optional int64 scheduled_time_utc_ms = 8;</code>
+       * @param value The scheduledTimeUtcMs to set.
+       * @return This builder for chaining.
        */
       public Builder setScheduledTimeUtcMs(long value) {
         bitField0_ |= 0x00000080;
@@ -6345,6 +8423,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional int64 scheduled_time_utc_ms = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearScheduledTimeUtcMs() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -6356,18 +8435,22 @@ public final class InternalMessages {
       private long lastModifiedUtcMs_ ;
       /**
        * <code>required int64 last_modified_utc_ms = 9;</code>
+       * @return Whether the lastModifiedUtcMs field is set.
        */
       public boolean hasLastModifiedUtcMs() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
        * <code>required int64 last_modified_utc_ms = 9;</code>
+       * @return The lastModifiedUtcMs.
        */
       public long getLastModifiedUtcMs() {
         return lastModifiedUtcMs_;
       }
       /**
        * <code>required int64 last_modified_utc_ms = 9;</code>
+       * @param value The lastModifiedUtcMs to set.
+       * @return This builder for chaining.
        */
       public Builder setLastModifiedUtcMs(long value) {
         bitField0_ |= 0x00000100;
@@ -6377,6 +8460,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required int64 last_modified_utc_ms = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLastModifiedUtcMs() {
         bitField0_ = (bitField0_ & ~0x00000100);
@@ -6384,11 +8468,13 @@ public final class InternalMessages {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -6410,11 +8496,12 @@ public final class InternalMessages {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<StopEstimate>
         PARSER = new com.google.protobuf.AbstractParser<StopEstimate>() {
+      @java.lang.Override
       public StopEstimate parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StopEstimate(input, extensionRegistry);
+        return new StopEstimate(input, extensionRegistry);
       }
     };
 
@@ -6427,6 +8514,7 @@ public final class InternalMessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6439,69 +8527,84 @@ public final class InternalMessages {
 
     /**
      * <code>optional string bulletin_id = 1;</code>
+     * @return Whether the bulletinId field is set.
      */
     boolean hasBulletinId();
     /**
      * <code>optional string bulletin_id = 1;</code>
+     * @return The bulletinId.
      */
     java.lang.String getBulletinId();
     /**
      * <code>optional string bulletin_id = 1;</code>
+     * @return The bytes for bulletinId.
      */
     com.google.protobuf.ByteString
         getBulletinIdBytes();
 
     /**
      * <code>optional .proto.Category category = 2;</code>
+     * @return Whether the category field is set.
      */
     boolean hasCategory();
     /**
      * <code>optional .proto.Category category = 2;</code>
+     * @return The category.
      */
     fi.hsl.common.transitdata.proto.InternalMessages.Category getCategory();
 
     /**
      * <code>required int64 last_modified_utc_ms = 3;</code>
+     * @return Whether the lastModifiedUtcMs field is set.
      */
     boolean hasLastModifiedUtcMs();
     /**
      * <code>required int64 last_modified_utc_ms = 3;</code>
+     * @return The lastModifiedUtcMs.
      */
     long getLastModifiedUtcMs();
 
     /**
      * <code>required int64 valid_from_utc_ms = 4;</code>
+     * @return Whether the validFromUtcMs field is set.
      */
     boolean hasValidFromUtcMs();
     /**
      * <code>required int64 valid_from_utc_ms = 4;</code>
+     * @return The validFromUtcMs.
      */
     long getValidFromUtcMs();
 
     /**
      * <code>required int64 valid_to_utc_ms = 5;</code>
+     * @return Whether the validToUtcMs field is set.
      */
     boolean hasValidToUtcMs();
     /**
      * <code>required int64 valid_to_utc_ms = 5;</code>
+     * @return The validToUtcMs.
      */
     long getValidToUtcMs();
 
     /**
      * <code>optional bool affects_all_routes = 6;</code>
+     * @return Whether the affectsAllRoutes field is set.
      */
     boolean hasAffectsAllRoutes();
     /**
      * <code>optional bool affects_all_routes = 6;</code>
+     * @return The affectsAllRoutes.
      */
     boolean getAffectsAllRoutes();
 
     /**
      * <code>optional bool affects_all_stops = 7;</code>
+     * @return Whether the affectsAllStops field is set.
      */
     boolean hasAffectsAllStops();
     /**
      * <code>optional bool affects_all_stops = 7;</code>
+     * @return The affectsAllStops.
      */
     boolean getAffectsAllStops();
 
@@ -6555,19 +8658,23 @@ public final class InternalMessages {
 
     /**
      * <code>optional .proto.Bulletin.Impact impact = 10;</code>
+     * @return Whether the impact field is set.
      */
     boolean hasImpact();
     /**
      * <code>optional .proto.Bulletin.Impact impact = 10;</code>
+     * @return The impact.
      */
     fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact getImpact();
 
     /**
      * <code>optional .proto.Bulletin.Priority priority = 11;</code>
+     * @return Whether the priority field is set.
      */
     boolean hasPriority();
     /**
      * <code>optional .proto.Bulletin.Priority priority = 11;</code>
+     * @return The priority.
      */
     fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority getPriority();
 
@@ -6650,6 +8757,7 @@ public final class InternalMessages {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.Bulletin)
       BulletinOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Bulletin.newBuilder() to construct.
     private Bulletin(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6657,11 +8765,6 @@ public final class InternalMessages {
     private Bulletin() {
       bulletinId_ = "";
       category_ = 0;
-      lastModifiedUtcMs_ = 0L;
-      validFromUtcMs_ = 0L;
-      validToUtcMs_ = 0L;
-      affectsAllRoutes_ = false;
-      affectsAllStops_ = false;
       affectedRoutes_ = java.util.Collections.emptyList();
       affectedStops_ = java.util.Collections.emptyList();
       impact_ = 0;
@@ -6669,6 +8772,13 @@ public final class InternalMessages {
       titles_ = java.util.Collections.emptyList();
       descriptions_ = java.util.Collections.emptyList();
       urls_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Bulletin();
     }
 
     @java.lang.Override
@@ -6681,6 +8791,9 @@ public final class InternalMessages {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -6692,13 +8805,6 @@ public final class InternalMessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
@@ -6707,6 +8813,7 @@ public final class InternalMessages {
             }
             case 16: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               fi.hsl.common.transitdata.proto.InternalMessages.Category value = fi.hsl.common.transitdata.proto.InternalMessages.Category.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(2, rawValue);
@@ -6742,7 +8849,7 @@ public final class InternalMessages {
               break;
             }
             case 66: {
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 affectedRoutes_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity>();
                 mutable_bitField0_ |= 0x00000080;
               }
@@ -6751,7 +8858,7 @@ public final class InternalMessages {
               break;
             }
             case 74: {
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                 affectedStops_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity>();
                 mutable_bitField0_ |= 0x00000100;
               }
@@ -6761,6 +8868,7 @@ public final class InternalMessages {
             }
             case 80: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact value = fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(10, rawValue);
@@ -6772,6 +8880,7 @@ public final class InternalMessages {
             }
             case 88: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority value = fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(11, rawValue);
@@ -6782,7 +8891,7 @@ public final class InternalMessages {
               break;
             }
             case 98: {
-              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
                 titles_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation>();
                 mutable_bitField0_ |= 0x00000800;
               }
@@ -6791,7 +8900,7 @@ public final class InternalMessages {
               break;
             }
             case 106: {
-              if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
                 descriptions_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation>();
                 mutable_bitField0_ |= 0x00001000;
               }
@@ -6800,12 +8909,19 @@ public final class InternalMessages {
               break;
             }
             case 114: {
-              if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
                 urls_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation>();
                 mutable_bitField0_ |= 0x00002000;
               }
               urls_.add(
                   input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.PARSER, extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -6816,19 +8932,19 @@ public final class InternalMessages {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((mutable_bitField0_ & 0x00000080) != 0)) {
           affectedRoutes_ = java.util.Collections.unmodifiableList(affectedRoutes_);
         }
-        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((mutable_bitField0_ & 0x00000100) != 0)) {
           affectedStops_ = java.util.Collections.unmodifiableList(affectedStops_);
         }
-        if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+        if (((mutable_bitField0_ & 0x00000800) != 0)) {
           titles_ = java.util.Collections.unmodifiableList(titles_);
         }
-        if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+        if (((mutable_bitField0_ & 0x00001000) != 0)) {
           descriptions_ = java.util.Collections.unmodifiableList(descriptions_);
         }
-        if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+        if (((mutable_bitField0_ & 0x00002000) != 0)) {
           urls_ = java.util.Collections.unmodifiableList(urls_);
         }
         this.unknownFields = unknownFields.build();
@@ -6840,6 +8956,7 @@ public final class InternalMessages {
       return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_fieldAccessorTable
@@ -6973,6 +9090,8 @@ public final class InternalMessages {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -6980,6 +9099,10 @@ public final class InternalMessages {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static Impact forNumber(int value) {
         switch (value) {
           case 0: return CANCELLED;
@@ -7083,6 +9206,8 @@ public final class InternalMessages {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -7090,6 +9215,10 @@ public final class InternalMessages {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static Priority forNumber(int value) {
         switch (value) {
           case 0: return INFO;
@@ -7150,14 +9279,17 @@ public final class InternalMessages {
 
       /**
        * <code>required string entity_id = 1;</code>
+       * @return Whether the entityId field is set.
        */
       boolean hasEntityId();
       /**
        * <code>required string entity_id = 1;</code>
+       * @return The entityId.
        */
       java.lang.String getEntityId();
       /**
        * <code>required string entity_id = 1;</code>
+       * @return The bytes for entityId.
        */
       com.google.protobuf.ByteString
           getEntityIdBytes();
@@ -7169,12 +9301,20 @@ public final class InternalMessages {
         com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:proto.Bulletin.AffectedEntity)
         AffectedEntityOrBuilder {
+    private static final long serialVersionUID = 0L;
       // Use AffectedEntity.newBuilder() to construct.
       private AffectedEntity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
       private AffectedEntity() {
         entityId_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new AffectedEntity();
       }
 
       @java.lang.Override
@@ -7187,6 +9327,9 @@ public final class InternalMessages {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -7198,17 +9341,17 @@ public final class InternalMessages {
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000001;
                 entityId_ = bs;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
                 break;
               }
             }
@@ -7228,6 +9371,7 @@ public final class InternalMessages {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_AffectedEntity_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_AffectedEntity_fieldAccessorTable
@@ -7240,12 +9384,14 @@ public final class InternalMessages {
       private volatile java.lang.Object entityId_;
       /**
        * <code>required string entity_id = 1;</code>
+       * @return Whether the entityId field is set.
        */
       public boolean hasEntityId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>required string entity_id = 1;</code>
+       * @return The entityId.
        */
       public java.lang.String getEntityId() {
         java.lang.Object ref = entityId_;
@@ -7263,6 +9409,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required string entity_id = 1;</code>
+       * @return The bytes for entityId.
        */
       public com.google.protobuf.ByteString
           getEntityIdBytes() {
@@ -7279,6 +9426,7 @@ public final class InternalMessages {
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -7292,20 +9440,22 @@ public final class InternalMessages {
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, entityId_);
         }
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
 
         size = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, entityId_);
         }
         size += unknownFields.getSerializedSize();
@@ -7313,7 +9463,6 @@ public final class InternalMessages {
         return size;
       }
 
-      private static final long serialVersionUID = 0L;
       @java.lang.Override
       public boolean equals(final java.lang.Object obj) {
         if (obj == this) {
@@ -7324,14 +9473,13 @@ public final class InternalMessages {
         }
         fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity other = (fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity) obj;
 
-        boolean result = true;
-        result = result && (hasEntityId() == other.hasEntityId());
+        if (hasEntityId() != other.hasEntityId()) return false;
         if (hasEntityId()) {
-          result = result && getEntityId()
-              .equals(other.getEntityId());
+          if (!getEntityId()
+              .equals(other.getEntityId())) return false;
         }
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -7340,7 +9488,7 @@ public final class InternalMessages {
           return memoizedHashCode;
         }
         int hash = 41;
-        hash = (19 * hash) + getDescriptorForType().hashCode();
+        hash = (19 * hash) + getDescriptor().hashCode();
         if (hasEntityId()) {
           hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
           hash = (53 * hash) + getEntityId().hashCode();
@@ -7350,6 +9498,17 @@ public final class InternalMessages {
         return hash;
       }
 
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
       public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7409,6 +9568,7 @@ public final class InternalMessages {
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -7416,6 +9576,7 @@ public final class InternalMessages {
       public static Builder newBuilder(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -7439,6 +9600,7 @@ public final class InternalMessages {
           return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_AffectedEntity_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_AffectedEntity_fieldAccessorTable
@@ -7461,6 +9623,7 @@ public final class InternalMessages {
                   .alwaysUseFieldBuilders) {
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           entityId_ = "";
@@ -7468,15 +9631,18 @@ public final class InternalMessages {
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_AffectedEntity_descriptor;
         }
 
+        @java.lang.Override
         public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity getDefaultInstanceForType() {
           return fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.getDefaultInstance();
         }
 
+        @java.lang.Override
         public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity build() {
           fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity result = buildPartial();
           if (!result.isInitialized()) {
@@ -7485,11 +9651,12 @@ public final class InternalMessages {
           return result;
         }
 
+        @java.lang.Override
         public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity buildPartial() {
           fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity result = new fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity(this);
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((from_bitField0_ & 0x00000001) != 0)) {
             to_bitField0_ |= 0x00000001;
           }
           result.entityId_ = entityId_;
@@ -7498,32 +9665,39 @@ public final class InternalMessages {
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
+            java.lang.Object value) {
+          return super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity) {
             return mergeFrom((fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity)other);
@@ -7545,6 +9719,7 @@ public final class InternalMessages {
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           if (!hasEntityId()) {
             return false;
@@ -7552,6 +9727,7 @@ public final class InternalMessages {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7574,12 +9750,14 @@ public final class InternalMessages {
         private java.lang.Object entityId_ = "";
         /**
          * <code>required string entity_id = 1;</code>
+         * @return Whether the entityId field is set.
          */
         public boolean hasEntityId() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
+          return ((bitField0_ & 0x00000001) != 0);
         }
         /**
          * <code>required string entity_id = 1;</code>
+         * @return The entityId.
          */
         public java.lang.String getEntityId() {
           java.lang.Object ref = entityId_;
@@ -7597,6 +9775,7 @@ public final class InternalMessages {
         }
         /**
          * <code>required string entity_id = 1;</code>
+         * @return The bytes for entityId.
          */
         public com.google.protobuf.ByteString
             getEntityIdBytes() {
@@ -7613,6 +9792,8 @@ public final class InternalMessages {
         }
         /**
          * <code>required string entity_id = 1;</code>
+         * @param value The entityId to set.
+         * @return This builder for chaining.
          */
         public Builder setEntityId(
             java.lang.String value) {
@@ -7626,6 +9807,7 @@ public final class InternalMessages {
         }
         /**
          * <code>required string entity_id = 1;</code>
+         * @return This builder for chaining.
          */
         public Builder clearEntityId() {
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -7635,6 +9817,8 @@ public final class InternalMessages {
         }
         /**
          * <code>required string entity_id = 1;</code>
+         * @param value The bytes for entityId to set.
+         * @return This builder for chaining.
          */
         public Builder setEntityIdBytes(
             com.google.protobuf.ByteString value) {
@@ -7646,11 +9830,13 @@ public final class InternalMessages {
           onChanged();
           return this;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFields(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -7672,11 +9858,12 @@ public final class InternalMessages {
 
       @java.lang.Deprecated public static final com.google.protobuf.Parser<AffectedEntity>
           PARSER = new com.google.protobuf.AbstractParser<AffectedEntity>() {
+        @java.lang.Override
         public AffectedEntity parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-            return new AffectedEntity(input, extensionRegistry);
+          return new AffectedEntity(input, extensionRegistry);
         }
       };
 
@@ -7689,6 +9876,7 @@ public final class InternalMessages {
         return PARSER;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -7701,28 +9889,34 @@ public final class InternalMessages {
 
       /**
        * <code>required string text = 1;</code>
+       * @return Whether the text field is set.
        */
       boolean hasText();
       /**
        * <code>required string text = 1;</code>
+       * @return The text.
        */
       java.lang.String getText();
       /**
        * <code>required string text = 1;</code>
+       * @return The bytes for text.
        */
       com.google.protobuf.ByteString
           getTextBytes();
 
       /**
        * <code>optional string language = 2;</code>
+       * @return Whether the language field is set.
        */
       boolean hasLanguage();
       /**
        * <code>optional string language = 2;</code>
+       * @return The language.
        */
       java.lang.String getLanguage();
       /**
        * <code>optional string language = 2;</code>
+       * @return The bytes for language.
        */
       com.google.protobuf.ByteString
           getLanguageBytes();
@@ -7734,6 +9928,7 @@ public final class InternalMessages {
         com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:proto.Bulletin.Translation)
         TranslationOrBuilder {
+    private static final long serialVersionUID = 0L;
       // Use Translation.newBuilder() to construct.
       private Translation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -7741,6 +9936,13 @@ public final class InternalMessages {
       private Translation() {
         text_ = "";
         language_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Translation();
       }
 
       @java.lang.Override
@@ -7753,6 +9955,9 @@ public final class InternalMessages {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -7764,13 +9969,6 @@ public final class InternalMessages {
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
               case 10: {
                 com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000001;
@@ -7781,6 +9979,13 @@ public final class InternalMessages {
                 com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000002;
                 language_ = bs;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
                 break;
               }
             }
@@ -7800,6 +10005,7 @@ public final class InternalMessages {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_Translation_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_Translation_fieldAccessorTable
@@ -7812,12 +10018,14 @@ public final class InternalMessages {
       private volatile java.lang.Object text_;
       /**
        * <code>required string text = 1;</code>
+       * @return Whether the text field is set.
        */
       public boolean hasText() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>required string text = 1;</code>
+       * @return The text.
        */
       public java.lang.String getText() {
         java.lang.Object ref = text_;
@@ -7835,6 +10043,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required string text = 1;</code>
+       * @return The bytes for text.
        */
       public com.google.protobuf.ByteString
           getTextBytes() {
@@ -7854,12 +10063,14 @@ public final class InternalMessages {
       private volatile java.lang.Object language_;
       /**
        * <code>optional string language = 2;</code>
+       * @return Whether the language field is set.
        */
       public boolean hasLanguage() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>optional string language = 2;</code>
+       * @return The language.
        */
       public java.lang.String getLanguage() {
         java.lang.Object ref = language_;
@@ -7877,6 +10088,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string language = 2;</code>
+       * @return The bytes for language.
        */
       public com.google.protobuf.ByteString
           getLanguageBytes() {
@@ -7893,6 +10105,7 @@ public final class InternalMessages {
       }
 
       private byte memoizedIsInitialized = -1;
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -7906,26 +10119,28 @@ public final class InternalMessages {
         return true;
       }
 
+      @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, text_);
         }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, language_);
         }
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
 
         size = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, text_);
         }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, language_);
         }
         size += unknownFields.getSerializedSize();
@@ -7933,7 +10148,6 @@ public final class InternalMessages {
         return size;
       }
 
-      private static final long serialVersionUID = 0L;
       @java.lang.Override
       public boolean equals(final java.lang.Object obj) {
         if (obj == this) {
@@ -7944,19 +10158,18 @@ public final class InternalMessages {
         }
         fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation other = (fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation) obj;
 
-        boolean result = true;
-        result = result && (hasText() == other.hasText());
+        if (hasText() != other.hasText()) return false;
         if (hasText()) {
-          result = result && getText()
-              .equals(other.getText());
+          if (!getText()
+              .equals(other.getText())) return false;
         }
-        result = result && (hasLanguage() == other.hasLanguage());
+        if (hasLanguage() != other.hasLanguage()) return false;
         if (hasLanguage()) {
-          result = result && getLanguage()
-              .equals(other.getLanguage());
+          if (!getLanguage()
+              .equals(other.getLanguage())) return false;
         }
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -7965,7 +10178,7 @@ public final class InternalMessages {
           return memoizedHashCode;
         }
         int hash = 41;
-        hash = (19 * hash) + getDescriptorForType().hashCode();
+        hash = (19 * hash) + getDescriptor().hashCode();
         if (hasText()) {
           hash = (37 * hash) + TEXT_FIELD_NUMBER;
           hash = (53 * hash) + getText().hashCode();
@@ -7979,6 +10192,17 @@ public final class InternalMessages {
         return hash;
       }
 
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
       public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8038,6 +10262,7 @@ public final class InternalMessages {
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      @java.lang.Override
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
@@ -8045,6 +10270,7 @@ public final class InternalMessages {
       public static Builder newBuilder(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      @java.lang.Override
       public Builder toBuilder() {
         return this == DEFAULT_INSTANCE
             ? new Builder() : new Builder().mergeFrom(this);
@@ -8068,6 +10294,7 @@ public final class InternalMessages {
           return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_Translation_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_Translation_fieldAccessorTable
@@ -8090,6 +10317,7 @@ public final class InternalMessages {
                   .alwaysUseFieldBuilders) {
           }
         }
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           text_ = "";
@@ -8099,15 +10327,18 @@ public final class InternalMessages {
           return this;
         }
 
+        @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_Translation_descriptor;
         }
 
+        @java.lang.Override
         public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation getDefaultInstanceForType() {
           return fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.getDefaultInstance();
         }
 
+        @java.lang.Override
         public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation build() {
           fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation result = buildPartial();
           if (!result.isInitialized()) {
@@ -8116,15 +10347,16 @@ public final class InternalMessages {
           return result;
         }
 
+        @java.lang.Override
         public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation buildPartial() {
           fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation result = new fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation(this);
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((from_bitField0_ & 0x00000001) != 0)) {
             to_bitField0_ |= 0x00000001;
           }
           result.text_ = text_;
-          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((from_bitField0_ & 0x00000002) != 0)) {
             to_bitField0_ |= 0x00000002;
           }
           result.language_ = language_;
@@ -8133,32 +10365,39 @@ public final class InternalMessages {
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
+        @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
+            java.lang.Object value) {
+          return super.setField(field, value);
         }
+        @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
+        @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
         }
+        @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
         }
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation) {
             return mergeFrom((fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation)other);
@@ -8185,6 +10424,7 @@ public final class InternalMessages {
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           if (!hasText()) {
             return false;
@@ -8192,6 +10432,7 @@ public final class InternalMessages {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8214,12 +10455,14 @@ public final class InternalMessages {
         private java.lang.Object text_ = "";
         /**
          * <code>required string text = 1;</code>
+         * @return Whether the text field is set.
          */
         public boolean hasText() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
+          return ((bitField0_ & 0x00000001) != 0);
         }
         /**
          * <code>required string text = 1;</code>
+         * @return The text.
          */
         public java.lang.String getText() {
           java.lang.Object ref = text_;
@@ -8237,6 +10480,7 @@ public final class InternalMessages {
         }
         /**
          * <code>required string text = 1;</code>
+         * @return The bytes for text.
          */
         public com.google.protobuf.ByteString
             getTextBytes() {
@@ -8253,6 +10497,8 @@ public final class InternalMessages {
         }
         /**
          * <code>required string text = 1;</code>
+         * @param value The text to set.
+         * @return This builder for chaining.
          */
         public Builder setText(
             java.lang.String value) {
@@ -8266,6 +10512,7 @@ public final class InternalMessages {
         }
         /**
          * <code>required string text = 1;</code>
+         * @return This builder for chaining.
          */
         public Builder clearText() {
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -8275,6 +10522,8 @@ public final class InternalMessages {
         }
         /**
          * <code>required string text = 1;</code>
+         * @param value The bytes for text to set.
+         * @return This builder for chaining.
          */
         public Builder setTextBytes(
             com.google.protobuf.ByteString value) {
@@ -8290,12 +10539,14 @@ public final class InternalMessages {
         private java.lang.Object language_ = "";
         /**
          * <code>optional string language = 2;</code>
+         * @return Whether the language field is set.
          */
         public boolean hasLanguage() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
+          return ((bitField0_ & 0x00000002) != 0);
         }
         /**
          * <code>optional string language = 2;</code>
+         * @return The language.
          */
         public java.lang.String getLanguage() {
           java.lang.Object ref = language_;
@@ -8313,6 +10564,7 @@ public final class InternalMessages {
         }
         /**
          * <code>optional string language = 2;</code>
+         * @return The bytes for language.
          */
         public com.google.protobuf.ByteString
             getLanguageBytes() {
@@ -8329,6 +10581,8 @@ public final class InternalMessages {
         }
         /**
          * <code>optional string language = 2;</code>
+         * @param value The language to set.
+         * @return This builder for chaining.
          */
         public Builder setLanguage(
             java.lang.String value) {
@@ -8342,6 +10596,7 @@ public final class InternalMessages {
         }
         /**
          * <code>optional string language = 2;</code>
+         * @return This builder for chaining.
          */
         public Builder clearLanguage() {
           bitField0_ = (bitField0_ & ~0x00000002);
@@ -8351,6 +10606,8 @@ public final class InternalMessages {
         }
         /**
          * <code>optional string language = 2;</code>
+         * @param value The bytes for language to set.
+         * @return This builder for chaining.
          */
         public Builder setLanguageBytes(
             com.google.protobuf.ByteString value) {
@@ -8362,11 +10619,13 @@ public final class InternalMessages {
           onChanged();
           return this;
         }
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFields(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
@@ -8388,11 +10647,12 @@ public final class InternalMessages {
 
       @java.lang.Deprecated public static final com.google.protobuf.Parser<Translation>
           PARSER = new com.google.protobuf.AbstractParser<Translation>() {
+        @java.lang.Override
         public Translation parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Translation(input, extensionRegistry);
+          return new Translation(input, extensionRegistry);
         }
       };
 
@@ -8405,6 +10665,7 @@ public final class InternalMessages {
         return PARSER;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -8416,12 +10677,14 @@ public final class InternalMessages {
     private volatile java.lang.Object bulletinId_;
     /**
      * <code>optional string bulletin_id = 1;</code>
+     * @return Whether the bulletinId field is set.
      */
     public boolean hasBulletinId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>optional string bulletin_id = 1;</code>
+     * @return The bulletinId.
      */
     public java.lang.String getBulletinId() {
       java.lang.Object ref = bulletinId_;
@@ -8439,6 +10702,7 @@ public final class InternalMessages {
     }
     /**
      * <code>optional string bulletin_id = 1;</code>
+     * @return The bytes for bulletinId.
      */
     public com.google.protobuf.ByteString
         getBulletinIdBytes() {
@@ -8458,14 +10722,17 @@ public final class InternalMessages {
     private int category_;
     /**
      * <code>optional .proto.Category category = 2;</code>
+     * @return Whether the category field is set.
      */
     public boolean hasCategory() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>optional .proto.Category category = 2;</code>
+     * @return The category.
      */
     public fi.hsl.common.transitdata.proto.InternalMessages.Category getCategory() {
+      @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.InternalMessages.Category result = fi.hsl.common.transitdata.proto.InternalMessages.Category.valueOf(category_);
       return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.Category.VEHICLE_BREAKDOWN : result;
     }
@@ -8474,12 +10741,14 @@ public final class InternalMessages {
     private long lastModifiedUtcMs_;
     /**
      * <code>required int64 last_modified_utc_ms = 3;</code>
+     * @return Whether the lastModifiedUtcMs field is set.
      */
     public boolean hasLastModifiedUtcMs() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>required int64 last_modified_utc_ms = 3;</code>
+     * @return The lastModifiedUtcMs.
      */
     public long getLastModifiedUtcMs() {
       return lastModifiedUtcMs_;
@@ -8489,12 +10758,14 @@ public final class InternalMessages {
     private long validFromUtcMs_;
     /**
      * <code>required int64 valid_from_utc_ms = 4;</code>
+     * @return Whether the validFromUtcMs field is set.
      */
     public boolean hasValidFromUtcMs() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>required int64 valid_from_utc_ms = 4;</code>
+     * @return The validFromUtcMs.
      */
     public long getValidFromUtcMs() {
       return validFromUtcMs_;
@@ -8504,12 +10775,14 @@ public final class InternalMessages {
     private long validToUtcMs_;
     /**
      * <code>required int64 valid_to_utc_ms = 5;</code>
+     * @return Whether the validToUtcMs field is set.
      */
     public boolean hasValidToUtcMs() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <code>required int64 valid_to_utc_ms = 5;</code>
+     * @return The validToUtcMs.
      */
     public long getValidToUtcMs() {
       return validToUtcMs_;
@@ -8519,12 +10792,14 @@ public final class InternalMessages {
     private boolean affectsAllRoutes_;
     /**
      * <code>optional bool affects_all_routes = 6;</code>
+     * @return Whether the affectsAllRoutes field is set.
      */
     public boolean hasAffectsAllRoutes() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <code>optional bool affects_all_routes = 6;</code>
+     * @return The affectsAllRoutes.
      */
     public boolean getAffectsAllRoutes() {
       return affectsAllRoutes_;
@@ -8534,12 +10809,14 @@ public final class InternalMessages {
     private boolean affectsAllStops_;
     /**
      * <code>optional bool affects_all_stops = 7;</code>
+     * @return Whether the affectsAllStops field is set.
      */
     public boolean hasAffectsAllStops() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      * <code>optional bool affects_all_stops = 7;</code>
+     * @return The affectsAllStops.
      */
     public boolean getAffectsAllStops() {
       return affectsAllStops_;
@@ -8619,14 +10896,17 @@ public final class InternalMessages {
     private int impact_;
     /**
      * <code>optional .proto.Bulletin.Impact impact = 10;</code>
+     * @return Whether the impact field is set.
      */
     public boolean hasImpact() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      * <code>optional .proto.Bulletin.Impact impact = 10;</code>
+     * @return The impact.
      */
     public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact getImpact() {
+      @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact result = fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact.valueOf(impact_);
       return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact.CANCELLED : result;
     }
@@ -8635,14 +10915,17 @@ public final class InternalMessages {
     private int priority_;
     /**
      * <code>optional .proto.Bulletin.Priority priority = 11;</code>
+     * @return Whether the priority field is set.
      */
     public boolean hasPriority() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <code>optional .proto.Bulletin.Priority priority = 11;</code>
+     * @return The priority.
      */
     public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority getPriority() {
+      @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority result = fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority.valueOf(priority_);
       return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority.INFO : result;
     }
@@ -8753,6 +11036,7 @@ public final class InternalMessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8804,27 +11088,28 @@ public final class InternalMessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, bulletinId_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeEnum(2, category_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         output.writeInt64(3, lastModifiedUtcMs_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         output.writeInt64(4, validFromUtcMs_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         output.writeInt64(5, validToUtcMs_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         output.writeBool(6, affectsAllRoutes_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         output.writeBool(7, affectsAllStops_);
       }
       for (int i = 0; i < affectedRoutes_.size(); i++) {
@@ -8833,10 +11118,10 @@ public final class InternalMessages {
       for (int i = 0; i < affectedStops_.size(); i++) {
         output.writeMessage(9, affectedStops_.get(i));
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         output.writeEnum(10, impact_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         output.writeEnum(11, priority_);
       }
       for (int i = 0; i < titles_.size(); i++) {
@@ -8851,35 +11136,36 @@ public final class InternalMessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, bulletinId_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, category_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, lastModifiedUtcMs_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, validFromUtcMs_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(5, validToUtcMs_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(6, affectsAllRoutes_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(7, affectsAllStops_);
       }
@@ -8891,11 +11177,11 @@ public final class InternalMessages {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, affectedStops_.get(i));
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(10, impact_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, priority_);
       }
@@ -8916,7 +11202,6 @@ public final class InternalMessages {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -8927,61 +11212,60 @@ public final class InternalMessages {
       }
       fi.hsl.common.transitdata.proto.InternalMessages.Bulletin other = (fi.hsl.common.transitdata.proto.InternalMessages.Bulletin) obj;
 
-      boolean result = true;
-      result = result && (hasBulletinId() == other.hasBulletinId());
+      if (hasBulletinId() != other.hasBulletinId()) return false;
       if (hasBulletinId()) {
-        result = result && getBulletinId()
-            .equals(other.getBulletinId());
+        if (!getBulletinId()
+            .equals(other.getBulletinId())) return false;
       }
-      result = result && (hasCategory() == other.hasCategory());
+      if (hasCategory() != other.hasCategory()) return false;
       if (hasCategory()) {
-        result = result && category_ == other.category_;
+        if (category_ != other.category_) return false;
       }
-      result = result && (hasLastModifiedUtcMs() == other.hasLastModifiedUtcMs());
+      if (hasLastModifiedUtcMs() != other.hasLastModifiedUtcMs()) return false;
       if (hasLastModifiedUtcMs()) {
-        result = result && (getLastModifiedUtcMs()
-            == other.getLastModifiedUtcMs());
+        if (getLastModifiedUtcMs()
+            != other.getLastModifiedUtcMs()) return false;
       }
-      result = result && (hasValidFromUtcMs() == other.hasValidFromUtcMs());
+      if (hasValidFromUtcMs() != other.hasValidFromUtcMs()) return false;
       if (hasValidFromUtcMs()) {
-        result = result && (getValidFromUtcMs()
-            == other.getValidFromUtcMs());
+        if (getValidFromUtcMs()
+            != other.getValidFromUtcMs()) return false;
       }
-      result = result && (hasValidToUtcMs() == other.hasValidToUtcMs());
+      if (hasValidToUtcMs() != other.hasValidToUtcMs()) return false;
       if (hasValidToUtcMs()) {
-        result = result && (getValidToUtcMs()
-            == other.getValidToUtcMs());
+        if (getValidToUtcMs()
+            != other.getValidToUtcMs()) return false;
       }
-      result = result && (hasAffectsAllRoutes() == other.hasAffectsAllRoutes());
+      if (hasAffectsAllRoutes() != other.hasAffectsAllRoutes()) return false;
       if (hasAffectsAllRoutes()) {
-        result = result && (getAffectsAllRoutes()
-            == other.getAffectsAllRoutes());
+        if (getAffectsAllRoutes()
+            != other.getAffectsAllRoutes()) return false;
       }
-      result = result && (hasAffectsAllStops() == other.hasAffectsAllStops());
+      if (hasAffectsAllStops() != other.hasAffectsAllStops()) return false;
       if (hasAffectsAllStops()) {
-        result = result && (getAffectsAllStops()
-            == other.getAffectsAllStops());
+        if (getAffectsAllStops()
+            != other.getAffectsAllStops()) return false;
       }
-      result = result && getAffectedRoutesList()
-          .equals(other.getAffectedRoutesList());
-      result = result && getAffectedStopsList()
-          .equals(other.getAffectedStopsList());
-      result = result && (hasImpact() == other.hasImpact());
+      if (!getAffectedRoutesList()
+          .equals(other.getAffectedRoutesList())) return false;
+      if (!getAffectedStopsList()
+          .equals(other.getAffectedStopsList())) return false;
+      if (hasImpact() != other.hasImpact()) return false;
       if (hasImpact()) {
-        result = result && impact_ == other.impact_;
+        if (impact_ != other.impact_) return false;
       }
-      result = result && (hasPriority() == other.hasPriority());
+      if (hasPriority() != other.hasPriority()) return false;
       if (hasPriority()) {
-        result = result && priority_ == other.priority_;
+        if (priority_ != other.priority_) return false;
       }
-      result = result && getTitlesList()
-          .equals(other.getTitlesList());
-      result = result && getDescriptionsList()
-          .equals(other.getDescriptionsList());
-      result = result && getUrlsList()
-          .equals(other.getUrlsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getTitlesList()
+          .equals(other.getTitlesList())) return false;
+      if (!getDescriptionsList()
+          .equals(other.getDescriptionsList())) return false;
+      if (!getUrlsList()
+          .equals(other.getUrlsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -8990,7 +11274,7 @@ public final class InternalMessages {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasBulletinId()) {
         hash = (37 * hash) + BULLETIN_ID_FIELD_NUMBER;
         hash = (53 * hash) + getBulletinId().hashCode();
@@ -9058,6 +11342,17 @@ public final class InternalMessages {
     }
 
     public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.Bulletin parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -9116,6 +11411,7 @@ public final class InternalMessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -9123,6 +11419,7 @@ public final class InternalMessages {
     public static Builder newBuilder(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -9146,6 +11443,7 @@ public final class InternalMessages {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_fieldAccessorTable
@@ -9173,6 +11471,7 @@ public final class InternalMessages {
           getUrlsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bulletinId_ = "";
@@ -9226,15 +11525,18 @@ public final class InternalMessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_descriptor;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin getDefaultInstanceForType() {
         return fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.getDefaultInstance();
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin build() {
         fi.hsl.common.transitdata.proto.InternalMessages.Bulletin result = buildPartial();
         if (!result.isInitialized()) {
@@ -9243,40 +11545,41 @@ public final class InternalMessages {
         return result;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin buildPartial() {
         fi.hsl.common.transitdata.proto.InternalMessages.Bulletin result = new fi.hsl.common.transitdata.proto.InternalMessages.Bulletin(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.bulletinId_ = bulletinId_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           to_bitField0_ |= 0x00000002;
         }
         result.category_ = category_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.lastModifiedUtcMs_ = lastModifiedUtcMs_;
           to_bitField0_ |= 0x00000004;
         }
-        result.lastModifiedUtcMs_ = lastModifiedUtcMs_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.validFromUtcMs_ = validFromUtcMs_;
           to_bitField0_ |= 0x00000008;
         }
-        result.validFromUtcMs_ = validFromUtcMs_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.validToUtcMs_ = validToUtcMs_;
           to_bitField0_ |= 0x00000010;
         }
-        result.validToUtcMs_ = validToUtcMs_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.affectsAllRoutes_ = affectsAllRoutes_;
           to_bitField0_ |= 0x00000020;
         }
-        result.affectsAllRoutes_ = affectsAllRoutes_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.affectsAllStops_ = affectsAllStops_;
           to_bitField0_ |= 0x00000040;
         }
-        result.affectsAllStops_ = affectsAllStops_;
         if (affectedRoutesBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          if (((bitField0_ & 0x00000080) != 0)) {
             affectedRoutes_ = java.util.Collections.unmodifiableList(affectedRoutes_);
             bitField0_ = (bitField0_ & ~0x00000080);
           }
@@ -9285,7 +11588,7 @@ public final class InternalMessages {
           result.affectedRoutes_ = affectedRoutesBuilder_.build();
         }
         if (affectedStopsBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) == 0x00000100)) {
+          if (((bitField0_ & 0x00000100) != 0)) {
             affectedStops_ = java.util.Collections.unmodifiableList(affectedStops_);
             bitField0_ = (bitField0_ & ~0x00000100);
           }
@@ -9293,16 +11596,16 @@ public final class InternalMessages {
         } else {
           result.affectedStops_ = affectedStopsBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((from_bitField0_ & 0x00000200) != 0)) {
           to_bitField0_ |= 0x00000080;
         }
         result.impact_ = impact_;
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((from_bitField0_ & 0x00000400) != 0)) {
           to_bitField0_ |= 0x00000100;
         }
         result.priority_ = priority_;
         if (titlesBuilder_ == null) {
-          if (((bitField0_ & 0x00000800) == 0x00000800)) {
+          if (((bitField0_ & 0x00000800) != 0)) {
             titles_ = java.util.Collections.unmodifiableList(titles_);
             bitField0_ = (bitField0_ & ~0x00000800);
           }
@@ -9311,7 +11614,7 @@ public final class InternalMessages {
           result.titles_ = titlesBuilder_.build();
         }
         if (descriptionsBuilder_ == null) {
-          if (((bitField0_ & 0x00001000) == 0x00001000)) {
+          if (((bitField0_ & 0x00001000) != 0)) {
             descriptions_ = java.util.Collections.unmodifiableList(descriptions_);
             bitField0_ = (bitField0_ & ~0x00001000);
           }
@@ -9320,7 +11623,7 @@ public final class InternalMessages {
           result.descriptions_ = descriptionsBuilder_.build();
         }
         if (urlsBuilder_ == null) {
-          if (((bitField0_ & 0x00002000) == 0x00002000)) {
+          if (((bitField0_ & 0x00002000) != 0)) {
             urls_ = java.util.Collections.unmodifiableList(urls_);
             bitField0_ = (bitField0_ & ~0x00002000);
           }
@@ -9333,32 +11636,39 @@ public final class InternalMessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.transitdata.proto.InternalMessages.Bulletin) {
           return mergeFrom((fi.hsl.common.transitdata.proto.InternalMessages.Bulletin)other);
@@ -9534,6 +11844,7 @@ public final class InternalMessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasLastModifiedUtcMs()) {
           return false;
@@ -9572,6 +11883,7 @@ public final class InternalMessages {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9594,12 +11906,14 @@ public final class InternalMessages {
       private java.lang.Object bulletinId_ = "";
       /**
        * <code>optional string bulletin_id = 1;</code>
+       * @return Whether the bulletinId field is set.
        */
       public boolean hasBulletinId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>optional string bulletin_id = 1;</code>
+       * @return The bulletinId.
        */
       public java.lang.String getBulletinId() {
         java.lang.Object ref = bulletinId_;
@@ -9617,6 +11931,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string bulletin_id = 1;</code>
+       * @return The bytes for bulletinId.
        */
       public com.google.protobuf.ByteString
           getBulletinIdBytes() {
@@ -9633,6 +11948,8 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string bulletin_id = 1;</code>
+       * @param value The bulletinId to set.
+       * @return This builder for chaining.
        */
       public Builder setBulletinId(
           java.lang.String value) {
@@ -9646,6 +11963,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string bulletin_id = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearBulletinId() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -9655,6 +11973,8 @@ public final class InternalMessages {
       }
       /**
        * <code>optional string bulletin_id = 1;</code>
+       * @param value The bytes for bulletinId to set.
+       * @return This builder for chaining.
        */
       public Builder setBulletinIdBytes(
           com.google.protobuf.ByteString value) {
@@ -9670,19 +11990,24 @@ public final class InternalMessages {
       private int category_ = 0;
       /**
        * <code>optional .proto.Category category = 2;</code>
+       * @return Whether the category field is set.
        */
       public boolean hasCategory() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>optional .proto.Category category = 2;</code>
+       * @return The category.
        */
       public fi.hsl.common.transitdata.proto.InternalMessages.Category getCategory() {
+        @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.InternalMessages.Category result = fi.hsl.common.transitdata.proto.InternalMessages.Category.valueOf(category_);
         return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.Category.VEHICLE_BREAKDOWN : result;
       }
       /**
        * <code>optional .proto.Category category = 2;</code>
+       * @param value The category to set.
+       * @return This builder for chaining.
        */
       public Builder setCategory(fi.hsl.common.transitdata.proto.InternalMessages.Category value) {
         if (value == null) {
@@ -9695,6 +12020,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional .proto.Category category = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCategory() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -9706,18 +12032,22 @@ public final class InternalMessages {
       private long lastModifiedUtcMs_ ;
       /**
        * <code>required int64 last_modified_utc_ms = 3;</code>
+       * @return Whether the lastModifiedUtcMs field is set.
        */
       public boolean hasLastModifiedUtcMs() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>required int64 last_modified_utc_ms = 3;</code>
+       * @return The lastModifiedUtcMs.
        */
       public long getLastModifiedUtcMs() {
         return lastModifiedUtcMs_;
       }
       /**
        * <code>required int64 last_modified_utc_ms = 3;</code>
+       * @param value The lastModifiedUtcMs to set.
+       * @return This builder for chaining.
        */
       public Builder setLastModifiedUtcMs(long value) {
         bitField0_ |= 0x00000004;
@@ -9727,6 +12057,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required int64 last_modified_utc_ms = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLastModifiedUtcMs() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -9738,18 +12069,22 @@ public final class InternalMessages {
       private long validFromUtcMs_ ;
       /**
        * <code>required int64 valid_from_utc_ms = 4;</code>
+       * @return Whether the validFromUtcMs field is set.
        */
       public boolean hasValidFromUtcMs() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>required int64 valid_from_utc_ms = 4;</code>
+       * @return The validFromUtcMs.
        */
       public long getValidFromUtcMs() {
         return validFromUtcMs_;
       }
       /**
        * <code>required int64 valid_from_utc_ms = 4;</code>
+       * @param value The validFromUtcMs to set.
+       * @return This builder for chaining.
        */
       public Builder setValidFromUtcMs(long value) {
         bitField0_ |= 0x00000008;
@@ -9759,6 +12094,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required int64 valid_from_utc_ms = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearValidFromUtcMs() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -9770,18 +12106,22 @@ public final class InternalMessages {
       private long validToUtcMs_ ;
       /**
        * <code>required int64 valid_to_utc_ms = 5;</code>
+       * @return Whether the validToUtcMs field is set.
        */
       public boolean hasValidToUtcMs() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>required int64 valid_to_utc_ms = 5;</code>
+       * @return The validToUtcMs.
        */
       public long getValidToUtcMs() {
         return validToUtcMs_;
       }
       /**
        * <code>required int64 valid_to_utc_ms = 5;</code>
+       * @param value The validToUtcMs to set.
+       * @return This builder for chaining.
        */
       public Builder setValidToUtcMs(long value) {
         bitField0_ |= 0x00000010;
@@ -9791,6 +12131,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required int64 valid_to_utc_ms = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearValidToUtcMs() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -9802,18 +12143,22 @@ public final class InternalMessages {
       private boolean affectsAllRoutes_ ;
       /**
        * <code>optional bool affects_all_routes = 6;</code>
+       * @return Whether the affectsAllRoutes field is set.
        */
       public boolean hasAffectsAllRoutes() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <code>optional bool affects_all_routes = 6;</code>
+       * @return The affectsAllRoutes.
        */
       public boolean getAffectsAllRoutes() {
         return affectsAllRoutes_;
       }
       /**
        * <code>optional bool affects_all_routes = 6;</code>
+       * @param value The affectsAllRoutes to set.
+       * @return This builder for chaining.
        */
       public Builder setAffectsAllRoutes(boolean value) {
         bitField0_ |= 0x00000020;
@@ -9823,6 +12168,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional bool affects_all_routes = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAffectsAllRoutes() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -9834,18 +12180,22 @@ public final class InternalMessages {
       private boolean affectsAllStops_ ;
       /**
        * <code>optional bool affects_all_stops = 7;</code>
+       * @return Whether the affectsAllStops field is set.
        */
       public boolean hasAffectsAllStops() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        * <code>optional bool affects_all_stops = 7;</code>
+       * @return The affectsAllStops.
        */
       public boolean getAffectsAllStops() {
         return affectsAllStops_;
       }
       /**
        * <code>optional bool affects_all_stops = 7;</code>
+       * @param value The affectsAllStops to set.
+       * @return This builder for chaining.
        */
       public Builder setAffectsAllStops(boolean value) {
         bitField0_ |= 0x00000040;
@@ -9855,6 +12205,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional bool affects_all_stops = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAffectsAllStops() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -9866,7 +12217,7 @@ public final class InternalMessages {
       private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> affectedRoutes_ =
         java.util.Collections.emptyList();
       private void ensureAffectedRoutesIsMutable() {
-        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+        if (!((bitField0_ & 0x00000080) != 0)) {
           affectedRoutes_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity>(affectedRoutes_);
           bitField0_ |= 0x00000080;
          }
@@ -10095,7 +12446,7 @@ public final class InternalMessages {
           affectedRoutesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder>(
                   affectedRoutes_,
-                  ((bitField0_ & 0x00000080) == 0x00000080),
+                  ((bitField0_ & 0x00000080) != 0),
                   getParentForChildren(),
                   isClean());
           affectedRoutes_ = null;
@@ -10106,7 +12457,7 @@ public final class InternalMessages {
       private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> affectedStops_ =
         java.util.Collections.emptyList();
       private void ensureAffectedStopsIsMutable() {
-        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+        if (!((bitField0_ & 0x00000100) != 0)) {
           affectedStops_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity>(affectedStops_);
           bitField0_ |= 0x00000100;
          }
@@ -10335,7 +12686,7 @@ public final class InternalMessages {
           affectedStopsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder>(
                   affectedStops_,
-                  ((bitField0_ & 0x00000100) == 0x00000100),
+                  ((bitField0_ & 0x00000100) != 0),
                   getParentForChildren(),
                   isClean());
           affectedStops_ = null;
@@ -10346,19 +12697,24 @@ public final class InternalMessages {
       private int impact_ = 0;
       /**
        * <code>optional .proto.Bulletin.Impact impact = 10;</code>
+       * @return Whether the impact field is set.
        */
       public boolean hasImpact() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000200) != 0);
       }
       /**
        * <code>optional .proto.Bulletin.Impact impact = 10;</code>
+       * @return The impact.
        */
       public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact getImpact() {
+        @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact result = fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact.valueOf(impact_);
         return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact.CANCELLED : result;
       }
       /**
        * <code>optional .proto.Bulletin.Impact impact = 10;</code>
+       * @param value The impact to set.
+       * @return This builder for chaining.
        */
       public Builder setImpact(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact value) {
         if (value == null) {
@@ -10371,6 +12727,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional .proto.Bulletin.Impact impact = 10;</code>
+       * @return This builder for chaining.
        */
       public Builder clearImpact() {
         bitField0_ = (bitField0_ & ~0x00000200);
@@ -10382,19 +12739,24 @@ public final class InternalMessages {
       private int priority_ = 0;
       /**
        * <code>optional .proto.Bulletin.Priority priority = 11;</code>
+       * @return Whether the priority field is set.
        */
       public boolean hasPriority() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000400) != 0);
       }
       /**
        * <code>optional .proto.Bulletin.Priority priority = 11;</code>
+       * @return The priority.
        */
       public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority getPriority() {
+        @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority result = fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority.valueOf(priority_);
         return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority.INFO : result;
       }
       /**
        * <code>optional .proto.Bulletin.Priority priority = 11;</code>
+       * @param value The priority to set.
+       * @return This builder for chaining.
        */
       public Builder setPriority(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority value) {
         if (value == null) {
@@ -10407,6 +12769,7 @@ public final class InternalMessages {
       }
       /**
        * <code>optional .proto.Bulletin.Priority priority = 11;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPriority() {
         bitField0_ = (bitField0_ & ~0x00000400);
@@ -10418,7 +12781,7 @@ public final class InternalMessages {
       private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> titles_ =
         java.util.Collections.emptyList();
       private void ensureTitlesIsMutable() {
-        if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+        if (!((bitField0_ & 0x00000800) != 0)) {
           titles_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation>(titles_);
           bitField0_ |= 0x00000800;
          }
@@ -10647,7 +13010,7 @@ public final class InternalMessages {
           titlesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder>(
                   titles_,
-                  ((bitField0_ & 0x00000800) == 0x00000800),
+                  ((bitField0_ & 0x00000800) != 0),
                   getParentForChildren(),
                   isClean());
           titles_ = null;
@@ -10658,7 +13021,7 @@ public final class InternalMessages {
       private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> descriptions_ =
         java.util.Collections.emptyList();
       private void ensureDescriptionsIsMutable() {
-        if (!((bitField0_ & 0x00001000) == 0x00001000)) {
+        if (!((bitField0_ & 0x00001000) != 0)) {
           descriptions_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation>(descriptions_);
           bitField0_ |= 0x00001000;
          }
@@ -10887,7 +13250,7 @@ public final class InternalMessages {
           descriptionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder>(
                   descriptions_,
-                  ((bitField0_ & 0x00001000) == 0x00001000),
+                  ((bitField0_ & 0x00001000) != 0),
                   getParentForChildren(),
                   isClean());
           descriptions_ = null;
@@ -10898,7 +13261,7 @@ public final class InternalMessages {
       private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation> urls_ =
         java.util.Collections.emptyList();
       private void ensureUrlsIsMutable() {
-        if (!((bitField0_ & 0x00002000) == 0x00002000)) {
+        if (!((bitField0_ & 0x00002000) != 0)) {
           urls_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation>(urls_);
           bitField0_ |= 0x00002000;
          }
@@ -11127,18 +13490,20 @@ public final class InternalMessages {
           urlsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.TranslationOrBuilder>(
                   urls_,
-                  ((bitField0_ & 0x00002000) == 0x00002000),
+                  ((bitField0_ & 0x00002000) != 0),
                   getParentForChildren(),
                   isClean());
           urls_ = null;
         }
         return urlsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -11160,11 +13525,12 @@ public final class InternalMessages {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Bulletin>
         PARSER = new com.google.protobuf.AbstractParser<Bulletin>() {
+      @java.lang.Override
       public Bulletin parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Bulletin(input, extensionRegistry);
+        return new Bulletin(input, extensionRegistry);
       }
     };
 
@@ -11177,6 +13543,7 @@ public final class InternalMessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -11189,10 +13556,12 @@ public final class InternalMessages {
 
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
     boolean hasSchemaVersion();
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
     int getSchemaVersion();
 
@@ -11227,6 +13596,7 @@ public final class InternalMessages {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.ServiceAlert)
       ServiceAlertOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ServiceAlert.newBuilder() to construct.
     private ServiceAlert(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -11234,6 +13604,13 @@ public final class InternalMessages {
     private ServiceAlert() {
       schemaVersion_ = 1;
       bulletins_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ServiceAlert();
     }
 
     @java.lang.Override
@@ -11246,6 +13623,9 @@ public final class InternalMessages {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -11257,25 +13637,25 @@ public final class InternalMessages {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               schemaVersion_ = input.readInt32();
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 bulletins_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin>();
                 mutable_bitField0_ |= 0x00000002;
               }
               bulletins_.add(
                   input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.PARSER, extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -11286,7 +13666,7 @@ public final class InternalMessages {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           bulletins_ = java.util.Collections.unmodifiableList(bulletins_);
         }
         this.unknownFields = unknownFields.build();
@@ -11298,6 +13678,7 @@ public final class InternalMessages {
       return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_ServiceAlert_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_ServiceAlert_fieldAccessorTable
@@ -11310,12 +13691,14 @@ public final class InternalMessages {
     private int schemaVersion_;
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
     public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
     public int getSchemaVersion() {
       return schemaVersion_;
@@ -11357,6 +13740,7 @@ public final class InternalMessages {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -11376,9 +13760,10 @@ public final class InternalMessages {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt32(1, schemaVersion_);
       }
       for (int i = 0; i < bulletins_.size(); i++) {
@@ -11387,12 +13772,13 @@ public final class InternalMessages {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, schemaVersion_);
       }
@@ -11405,7 +13791,6 @@ public final class InternalMessages {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -11416,16 +13801,15 @@ public final class InternalMessages {
       }
       fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert other = (fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert) obj;
 
-      boolean result = true;
-      result = result && (hasSchemaVersion() == other.hasSchemaVersion());
+      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
       if (hasSchemaVersion()) {
-        result = result && (getSchemaVersion()
-            == other.getSchemaVersion());
+        if (getSchemaVersion()
+            != other.getSchemaVersion()) return false;
       }
-      result = result && getBulletinsList()
-          .equals(other.getBulletinsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getBulletinsList()
+          .equals(other.getBulletinsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -11434,7 +13818,7 @@ public final class InternalMessages {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasSchemaVersion()) {
         hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
         hash = (53 * hash) + getSchemaVersion();
@@ -11448,6 +13832,17 @@ public final class InternalMessages {
       return hash;
     }
 
+    public static fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -11507,6 +13902,7 @@ public final class InternalMessages {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -11514,6 +13910,7 @@ public final class InternalMessages {
     public static Builder newBuilder(fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -11537,6 +13934,7 @@ public final class InternalMessages {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_ServiceAlert_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_ServiceAlert_fieldAccessorTable
@@ -11560,6 +13958,7 @@ public final class InternalMessages {
           getBulletinsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         schemaVersion_ = 1;
@@ -11573,15 +13972,18 @@ public final class InternalMessages {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_ServiceAlert_descriptor;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert getDefaultInstanceForType() {
         return fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert.getDefaultInstance();
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert build() {
         fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert result = buildPartial();
         if (!result.isInitialized()) {
@@ -11590,16 +13992,17 @@ public final class InternalMessages {
         return result;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert buildPartial() {
         fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert result = new fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.schemaVersion_ = schemaVersion_;
         if (bulletinsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             bulletins_ = java.util.Collections.unmodifiableList(bulletins_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
@@ -11612,32 +14015,39 @@ public final class InternalMessages {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert) {
           return mergeFrom((fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert)other);
@@ -11683,6 +14093,7 @@ public final class InternalMessages {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasSchemaVersion()) {
           return false;
@@ -11695,6 +14106,7 @@ public final class InternalMessages {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -11717,18 +14129,22 @@ public final class InternalMessages {
       private int schemaVersion_ = 1;
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return Whether the schemaVersion field is set.
        */
       public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return The schemaVersion.
        */
       public int getSchemaVersion() {
         return schemaVersion_;
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @param value The schemaVersion to set.
+       * @return This builder for chaining.
        */
       public Builder setSchemaVersion(int value) {
         bitField0_ |= 0x00000001;
@@ -11738,6 +14154,7 @@ public final class InternalMessages {
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return This builder for chaining.
        */
       public Builder clearSchemaVersion() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -11749,7 +14166,7 @@ public final class InternalMessages {
       private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin> bulletins_ =
         java.util.Collections.emptyList();
       private void ensureBulletinsIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           bulletins_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin>(bulletins_);
           bitField0_ |= 0x00000002;
          }
@@ -11978,18 +14395,20 @@ public final class InternalMessages {
           bulletinsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               fi.hsl.common.transitdata.proto.InternalMessages.Bulletin, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Builder, fi.hsl.common.transitdata.proto.InternalMessages.BulletinOrBuilder>(
                   bulletins_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           bulletins_ = null;
         }
         return bulletinsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -12011,11 +14430,12 @@ public final class InternalMessages {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ServiceAlert>
         PARSER = new com.google.protobuf.AbstractParser<ServiceAlert>() {
+      @java.lang.Override
       public ServiceAlert parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ServiceAlert(input, extensionRegistry);
+        return new ServiceAlert(input, extensionRegistry);
       }
     };
 
@@ -12028,6 +14448,7 @@ public final class InternalMessages {
       return PARSER;
     }
 
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -12039,6 +14460,16 @@ public final class InternalMessages {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_TripInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_StopCancellation_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_StopCancellation_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_StopCancellations_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_StopCancellations_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_TripCancellation_descriptor;
   private static final 
@@ -12084,146 +14515,154 @@ public final class InternalMessages {
       "\004 \002(\r\022\022\n\nstart_time\030\005 \002(\t\022>\n\rschedule_ty" +
       "pe\030\006 \001(\0162\034.proto.TripInfo.ScheduleType:\t" +
       "SCHEDULED\"9\n\014ScheduleType\022\r\n\tSCHEDULED\020\001" +
-      "\022\t\n\005ADDED\020\002\022\017\n\013UNSCHEDULED\020\003\"\302\020\n\020TripCan" +
-      "cellation\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\017\n\007t" +
-      "rip_id\030\002 \001(\t\022\020\n\010route_id\030\003 \001(\t\022\024\n\014direct" +
-      "ion_id\030\004 \001(\r\022\022\n\nstart_time\030\005 \001(\t\022\022\n\nstar",
-      "t_date\030\006 \001(\t\022.\n\006status\030\007 \002(\0162\036.proto.Tri" +
-      "pCancellation.Status\022H\n\024deviation_cases_" +
-      "type\030\010 \001(\0162*.proto.TripCancellation.Devi" +
-      "ationCasesType\022P\n\030affected_departures_ty" +
-      "pe\030\t \001(\0162..proto.TripCancellation.Affect" +
-      "edDeparturesType\022\r\n\005title\030\n \001(\t\022\023\n\013descr" +
-      "iption\030\013 \001(\t\022!\n\010category\030\014 \001(\0162\017.proto.C" +
-      "ategory\0229\n\014sub_category\030\r \001(\0162#.proto.Tr" +
-      "ipCancellation.SubCategory\"#\n\006Status\022\013\n\007" +
-      "RUNNING\020\000\022\014\n\010CANCELED\020\001\"\360\001\n\022DeviationCas",
-      "esType\022\024\n\020CANCEL_DEPARTURE\020\000\022\n\n\006DETOUR\020\001" +
-      "\022\026\n\022SKIPPED_STOP_CALLS\020\002\022\023\n\017EARLY_DEPART" +
-      "URE\020\003\022%\n!EARLY_DEPARTURE_FROM_TIMING_POI" +
-      "NT\020\004\022\022\n\016LATE_DEPARTURE\020\005\022!\n\035DEPARTURED_A" +
-      "FTER_NEXT_JOURNEY\020\006\022\036\n\032BLOCK_FIRST_DEPAR" +
-      "TURE_LATE\020\007\022\r\n\tTIS_ERROR\020\010\"\213\001\n\026AffectedD" +
-      "eparturesType\022\033\n\027CANCEL_ENTIRE_DEPARTURE" +
-      "\020\000\022\033\n\027CANCEL_STOPS_FROM_START\020\001\022\034\n\030CANCE" +
-      "L_STOPS_FROM_MIDDLE\020\002\022\031\n\025CANCEL_STOPS_FR" +
-      "OM_END\020\003\"\276\t\n\013SubCategory\022\025\n\021BREAK_MALFUN",
-      "CTION\020\000\022\017\n\013OUT_OF_FUEL\020\001\022\021\n\rFLUID_LEAKAG" +
-      "E\020\002\022\030\n\024ELECTRIC_MALFUNCTION\020\003\022\026\n\022ENGINE_" +
-      "MALFUNCTION\020\004\022\025\n\021OTHER_MALFUNCTION\020\005\022\r\n\t" +
-      "OWN_FAULT\020\006\022\022\n\016OPPOSITE_FAULT\020\007\022\021\n\rFAULT" +
-      "_UNKNOWN\020\010\022\022\n\016STAFF_SHORTAGE\020\t\022\036\n\032ND_OPE" +
-      "RATOR_PLANNING_ERROR\020\n\022\017\n\013DRIVER_LATE\020\013\022" +
-      ")\n%INSUFFICIENT_INSTRUCTIONS_BY_OPERATOR" +
-      "\020\014\022*\n&INSUFFICIENT_INSTRUCTIONS_BY_AUTHO" +
-      "RITY\020\r\022\030\n\024NO_VEHICLE_AVAILABLE\020\016\022\025\n\021ASSA" +
-      "ULT_ON_DRIVER\020\017\022\030\n\024ASSAULT_ON_PASSENGER\020",
-      "\020\022\026\n\022ASSAULT_ON_VEHICLE\020\021\022\030\n\024PASSED_OUT_" +
-      "PASSENGER\020\022\022\021\n\rOTHER_ASSAULT\020\023\022\032\n\026UNDRIV" +
-      "EABLE_CONDITIONS\020\024\022\034\n\030STUCK_CAUSED_BY_SL" +
-      "IPPERY\020\025\022 \n\034CONGESTION_CAUSED_BY_WEATHER" +
-      "\020\026\022\022\n\016SLIPPERY_TRACK\020\027\022\020\n\014ROAD_BLOCKED\020\030" +
-      "\022(\n$VEHICLE_OFF_THE_ROAD_BY_DRIVER_ERROR" +
-      "\020\031\022(\n$VEHICLE_OFF_THE_ROAD_BY_OTHER_REAS" +
-      "ON\020\032\022\026\n\022MISSPARKED_VEHICLE\020\033\022\034\n\030CONGESTI" +
-      "ON_REASON_UKNOWN\020\034\022!\n\035CONGESTION_CAUSED_" +
-      "BY_ACCIDENT\020\035\022\022\n\016DRIVER_SEIZURE\020\036\022\025\n\021PAS",
-      "SENGER_SEIZURE\020\037\022\025\n\021PASSENGER_INJURED\020 \022" +
-      "\021\n\rOTHER_SEIZURE\020!\022\020\n\014DEVICE_ERROR\020\"\022\031\n\025" +
-      "OPERATOR_DEVICE_ERROR\020#\022\037\n\033WRONG_INFORMA" +
-      "TION_IN_DEVICE\020$\022\034\n\030ITS_SYSTEM_NOT_INSTA" +
-      "LLED\020%\022\016\n\nUSER_ERROR\020&\022\017\n\013FALSE_ALARM\020\'\022" +
-      "\023\n\017OTHER_ITS_ERROR\020(\022\020\n\014DRIVER_ERROR\020)\022\031" +
-      "\n\025INSUFFICIENT_CAPASITY\020*\022 \n\034OPERATOR_PE" +
-      "RSONNEL_ON_STRIKE\020+\022\020\n\014OTHER_STRIKE\020,\022\031\n" +
-      "\025OTHER_OPERATOR_REASON\020-\022\021\n\rUNKNOWN_CAUS" +
-      "E\020.\022\024\n\020DOOR_MALFUNCTION\020/\"\373\002\n\014StopEstima",
-      "te\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\"\n\ttrip_inf" +
-      "o\030\002 \002(\0132\017.proto.TripInfo\022\017\n\007stop_id\030\003 \002(" +
-      "\t\022\025\n\rstop_sequence\030\004 \002(\r\022*\n\006status\030\005 \002(\016" +
-      "2\032.proto.StopEstimate.Status\022&\n\004type\030\006 \002" +
-      "(\0162\030.proto.StopEstimate.Type\022\035\n\025estimate" +
-      "d_time_utc_ms\030\007 \001(\003\022\035\n\025scheduled_time_ut" +
-      "c_ms\030\010 \001(\003\022\034\n\024last_modified_utc_ms\030\t \002(\003" +
-      "\"1\n\006Status\022\r\n\tSCHEDULED\020\000\022\013\n\007SKIPPED\020\001\022\013" +
-      "\n\007NO_DATA\020\002\"\"\n\004Type\022\013\n\007ARRIVAL\020\000\022\r\n\tDEPA" +
-      "RTURE\020\001\"\307\007\n\010Bulletin\022\023\n\013bulletin_id\030\001 \001(",
-      "\t\022!\n\010category\030\002 \001(\0162\017.proto.Category\022\034\n\024" +
-      "last_modified_utc_ms\030\003 \002(\003\022\031\n\021valid_from" +
-      "_utc_ms\030\004 \002(\003\022\027\n\017valid_to_utc_ms\030\005 \002(\003\022\032" +
-      "\n\022affects_all_routes\030\006 \001(\010\022\031\n\021affects_al" +
-      "l_stops\030\007 \001(\010\0227\n\017affected_routes\030\010 \003(\0132\036" +
-      ".proto.Bulletin.AffectedEntity\0226\n\016affect" +
-      "ed_stops\030\t \003(\0132\036.proto.Bulletin.Affected" +
-      "Entity\022&\n\006impact\030\n \001(\0162\026.proto.Bulletin." +
-      "Impact\022*\n\010priority\030\013 \001(\0162\030.proto.Bulleti" +
-      "n.Priority\022+\n\006titles\030\014 \003(\0132\033.proto.Bulle",
-      "tin.Translation\0221\n\014descriptions\030\r \003(\0132\033." +
-      "proto.Bulletin.Translation\022)\n\004urls\030\016 \003(\013" +
-      "2\033.proto.Bulletin.Translation\032#\n\016Affecte" +
-      "dEntity\022\021\n\tentity_id\030\001 \002(\t\032-\n\013Translatio" +
-      "n\022\014\n\004text\030\001 \002(\t\022\020\n\010language\030\002 \001(\t\"\246\002\n\006Im" +
-      "pact\022\r\n\tCANCELLED\020\000\022\013\n\007DELAYED\020\001\022\026\n\022DEVI" +
-      "ATING_SCHEDULE\020\002\022\024\n\020DISRUPTION_ROUTE\020\003\022\030" +
-      "\n\024IRREGULAR_DEPARTURES\020\004\022\027\n\023POSSIBLE_DEV" +
-      "IATIONS\020\005\022\024\n\020POSSIBLY_DELAYED\020\006\022\025\n\021REDUC" +
-      "ED_TRANSPORT\020\007\022\027\n\023RETURNING_TO_NORMAL\020\010\022",
-      " \n\034VENDING_MACHINE_OUT_OF_ORDER\020\t\022\010\n\004NUL" +
-      "L\020\n\022\t\n\005OTHER\020\013\022\025\n\021NO_TRAFFIC_IMPACT\020\014\022\013\n" +
-      "\007UNKNOWN\020\r\"-\n\010Priority\022\010\n\004INFO\020\000\022\013\n\007WARN" +
-      "ING\020\001\022\n\n\006SEVERE\020\002\"L\n\014ServiceAlert\022\030\n\rSch" +
-      "emaVersion\030\001 \002(\005:\0011\022\"\n\tbulletins\030\002 \003(\0132\017" +
-      ".proto.Bulletin*\202\005\n\010Category\022\025\n\021VEHICLE_" +
-      "BREAKDOWN\020\000\022\014\n\010ACCIDENT\020\001\022\r\n\tNO_DRIVER\020\002" +
-      "\022\013\n\007ASSAULT\020\003\022\013\n\007WEATHER\020\004\022\030\n\024VEHICLE_OF" +
-      "F_THE_ROAD\020\005\022\013\n\007SEIZURE\020\006\022\024\n\020ITS_SYSTEM_" +
-      "ERROR\020\007\022\026\n\022OTHER_DRIVER_ERROR\020\010\022\027\n\023TOO_M",
-      "ANY_PASSENGERS\020\t\022\n\n\006STRIKE\020\n\022\t\n\005OTHER\020\013\022" +
-      "\026\n\022EARLIER_DISRUPTION\020\014\022\031\n\025NO_TRAFFIC_DI" +
-      "SRUPTION\020\r\022\021\n\rTRACK_BLOCKED\020\016\022\021\n\rSTAFF_D" +
-      "EFICIT\020\017\022\017\n\013DISTURBANCE\020\020\022\023\n\017VEHICLE_DEF" +
-      "ICIT\020\021\022\017\n\013ROAD_CLOSED\020\022\022\017\n\013ROAD_TRENCH\020\023" +
-      "\022\025\n\021TRACK_MAINTENANCE\020\024\022\024\n\020TRAFFIC_ACCID" +
-      "ENT\020\025\022\017\n\013TRAFFIC_JAM\020\026\022\024\n\020MEDICAL_INCIDE" +
-      "NT\020\027\022\026\n\022WEATHER_CONDITIONS\020\030\022\025\n\021TECHNICA" +
-      "L_FAILURE\020\031\022\010\n\004TEST\020\032\022\024\n\020ROAD_MAINTENANC" +
-      "E\020\033\022\022\n\016SWITCH_FAILURE\020\034\022\017\n\013STATE_VISIT\020\035",
-      "\022\021\n\rPOWER_FAILURE\020\036\022\025\n\021MISPARKED_VEHICLE" +
-      "\020\037\022\020\n\014PUBLIC_EVENT\020 B3\n\037fi.hsl.common.tr" +
-      "ansitdata.protoB\020InternalMessages"
+      "\022\t\n\005ADDED\020\002\022\017\n\013UNSCHEDULED\020\003\"W\n\020StopCanc" +
+      "ellation\022\017\n\007stop_id\030\001 \001(\t\022\031\n\021valid_from_" +
+      "utc_ms\030\002 \001(\003\022\027\n\017valid_to_utc_ms\030\003 \001(\003\"H\n" +
+      "\021StopCancellations\0223\n\022stop_cancellations" +
+      "\030\001 \003(\0132\027.proto.StopCancellation\"\302\020\n\020Trip" +
+      "Cancellation\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\017" +
+      "\n\007trip_id\030\002 \001(\t\022\020\n\010route_id\030\003 \001(\t\022\024\n\014dir" +
+      "ection_id\030\004 \001(\r\022\022\n\nstart_time\030\005 \001(\t\022\022\n\ns" +
+      "tart_date\030\006 \001(\t\022.\n\006status\030\007 \002(\0162\036.proto." +
+      "TripCancellation.Status\022H\n\024deviation_cas" +
+      "es_type\030\010 \001(\0162*.proto.TripCancellation.D" +
+      "eviationCasesType\022P\n\030affected_departures" +
+      "_type\030\t \001(\0162..proto.TripCancellation.Aff" +
+      "ectedDeparturesType\022\r\n\005title\030\n \001(\t\022\023\n\013de" +
+      "scription\030\013 \001(\t\022!\n\010category\030\014 \001(\0162\017.prot" +
+      "o.Category\0229\n\014sub_category\030\r \001(\0162#.proto" +
+      ".TripCancellation.SubCategory\"#\n\006Status\022" +
+      "\013\n\007RUNNING\020\000\022\014\n\010CANCELED\020\001\"\360\001\n\022Deviation" +
+      "CasesType\022\024\n\020CANCEL_DEPARTURE\020\000\022\n\n\006DETOU" +
+      "R\020\001\022\026\n\022SKIPPED_STOP_CALLS\020\002\022\023\n\017EARLY_DEP" +
+      "ARTURE\020\003\022%\n!EARLY_DEPARTURE_FROM_TIMING_" +
+      "POINT\020\004\022\022\n\016LATE_DEPARTURE\020\005\022!\n\035DEPARTURE" +
+      "D_AFTER_NEXT_JOURNEY\020\006\022\036\n\032BLOCK_FIRST_DE" +
+      "PARTURE_LATE\020\007\022\r\n\tTIS_ERROR\020\010\"\213\001\n\026Affect" +
+      "edDeparturesType\022\033\n\027CANCEL_ENTIRE_DEPART" +
+      "URE\020\000\022\033\n\027CANCEL_STOPS_FROM_START\020\001\022\034\n\030CA" +
+      "NCEL_STOPS_FROM_MIDDLE\020\002\022\031\n\025CANCEL_STOPS" +
+      "_FROM_END\020\003\"\276\t\n\013SubCategory\022\025\n\021BREAK_MAL" +
+      "FUNCTION\020\000\022\017\n\013OUT_OF_FUEL\020\001\022\021\n\rFLUID_LEA" +
+      "KAGE\020\002\022\030\n\024ELECTRIC_MALFUNCTION\020\003\022\026\n\022ENGI" +
+      "NE_MALFUNCTION\020\004\022\025\n\021OTHER_MALFUNCTION\020\005\022" +
+      "\r\n\tOWN_FAULT\020\006\022\022\n\016OPPOSITE_FAULT\020\007\022\021\n\rFA" +
+      "ULT_UNKNOWN\020\010\022\022\n\016STAFF_SHORTAGE\020\t\022\036\n\032ND_" +
+      "OPERATOR_PLANNING_ERROR\020\n\022\017\n\013DRIVER_LATE" +
+      "\020\013\022)\n%INSUFFICIENT_INSTRUCTIONS_BY_OPERA" +
+      "TOR\020\014\022*\n&INSUFFICIENT_INSTRUCTIONS_BY_AU" +
+      "THORITY\020\r\022\030\n\024NO_VEHICLE_AVAILABLE\020\016\022\025\n\021A" +
+      "SSAULT_ON_DRIVER\020\017\022\030\n\024ASSAULT_ON_PASSENG" +
+      "ER\020\020\022\026\n\022ASSAULT_ON_VEHICLE\020\021\022\030\n\024PASSED_O" +
+      "UT_PASSENGER\020\022\022\021\n\rOTHER_ASSAULT\020\023\022\032\n\026UND" +
+      "RIVEABLE_CONDITIONS\020\024\022\034\n\030STUCK_CAUSED_BY" +
+      "_SLIPPERY\020\025\022 \n\034CONGESTION_CAUSED_BY_WEAT" +
+      "HER\020\026\022\022\n\016SLIPPERY_TRACK\020\027\022\020\n\014ROAD_BLOCKE" +
+      "D\020\030\022(\n$VEHICLE_OFF_THE_ROAD_BY_DRIVER_ER" +
+      "ROR\020\031\022(\n$VEHICLE_OFF_THE_ROAD_BY_OTHER_R" +
+      "EASON\020\032\022\026\n\022MISSPARKED_VEHICLE\020\033\022\034\n\030CONGE" +
+      "STION_REASON_UKNOWN\020\034\022!\n\035CONGESTION_CAUS" +
+      "ED_BY_ACCIDENT\020\035\022\022\n\016DRIVER_SEIZURE\020\036\022\025\n\021" +
+      "PASSENGER_SEIZURE\020\037\022\025\n\021PASSENGER_INJURED" +
+      "\020 \022\021\n\rOTHER_SEIZURE\020!\022\020\n\014DEVICE_ERROR\020\"\022" +
+      "\031\n\025OPERATOR_DEVICE_ERROR\020#\022\037\n\033WRONG_INFO" +
+      "RMATION_IN_DEVICE\020$\022\034\n\030ITS_SYSTEM_NOT_IN" +
+      "STALLED\020%\022\016\n\nUSER_ERROR\020&\022\017\n\013FALSE_ALARM" +
+      "\020\'\022\023\n\017OTHER_ITS_ERROR\020(\022\020\n\014DRIVER_ERROR\020" +
+      ")\022\031\n\025INSUFFICIENT_CAPASITY\020*\022 \n\034OPERATOR" +
+      "_PERSONNEL_ON_STRIKE\020+\022\020\n\014OTHER_STRIKE\020," +
+      "\022\031\n\025OTHER_OPERATOR_REASON\020-\022\021\n\rUNKNOWN_C" +
+      "AUSE\020.\022\024\n\020DOOR_MALFUNCTION\020/\"\373\002\n\014StopEst" +
+      "imate\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\"\n\ttrip_" +
+      "info\030\002 \002(\0132\017.proto.TripInfo\022\017\n\007stop_id\030\003" +
+      " \002(\t\022\025\n\rstop_sequence\030\004 \002(\r\022*\n\006status\030\005 " +
+      "\002(\0162\032.proto.StopEstimate.Status\022&\n\004type\030" +
+      "\006 \002(\0162\030.proto.StopEstimate.Type\022\035\n\025estim" +
+      "ated_time_utc_ms\030\007 \001(\003\022\035\n\025scheduled_time" +
+      "_utc_ms\030\010 \001(\003\022\034\n\024last_modified_utc_ms\030\t " +
+      "\002(\003\"1\n\006Status\022\r\n\tSCHEDULED\020\000\022\013\n\007SKIPPED\020" +
+      "\001\022\013\n\007NO_DATA\020\002\"\"\n\004Type\022\013\n\007ARRIVAL\020\000\022\r\n\tD" +
+      "EPARTURE\020\001\"\307\007\n\010Bulletin\022\023\n\013bulletin_id\030\001" +
+      " \001(\t\022!\n\010category\030\002 \001(\0162\017.proto.Category\022" +
+      "\034\n\024last_modified_utc_ms\030\003 \002(\003\022\031\n\021valid_f" +
+      "rom_utc_ms\030\004 \002(\003\022\027\n\017valid_to_utc_ms\030\005 \002(" +
+      "\003\022\032\n\022affects_all_routes\030\006 \001(\010\022\031\n\021affects" +
+      "_all_stops\030\007 \001(\010\0227\n\017affected_routes\030\010 \003(" +
+      "\0132\036.proto.Bulletin.AffectedEntity\0226\n\016aff" +
+      "ected_stops\030\t \003(\0132\036.proto.Bulletin.Affec" +
+      "tedEntity\022&\n\006impact\030\n \001(\0162\026.proto.Bullet" +
+      "in.Impact\022*\n\010priority\030\013 \001(\0162\030.proto.Bull" +
+      "etin.Priority\022+\n\006titles\030\014 \003(\0132\033.proto.Bu" +
+      "lletin.Translation\0221\n\014descriptions\030\r \003(\013" +
+      "2\033.proto.Bulletin.Translation\022)\n\004urls\030\016 " +
+      "\003(\0132\033.proto.Bulletin.Translation\032#\n\016Affe" +
+      "ctedEntity\022\021\n\tentity_id\030\001 \002(\t\032-\n\013Transla" +
+      "tion\022\014\n\004text\030\001 \002(\t\022\020\n\010language\030\002 \001(\t\"\246\002\n" +
+      "\006Impact\022\r\n\tCANCELLED\020\000\022\013\n\007DELAYED\020\001\022\026\n\022D" +
+      "EVIATING_SCHEDULE\020\002\022\024\n\020DISRUPTION_ROUTE\020" +
+      "\003\022\030\n\024IRREGULAR_DEPARTURES\020\004\022\027\n\023POSSIBLE_" +
+      "DEVIATIONS\020\005\022\024\n\020POSSIBLY_DELAYED\020\006\022\025\n\021RE" +
+      "DUCED_TRANSPORT\020\007\022\027\n\023RETURNING_TO_NORMAL" +
+      "\020\010\022 \n\034VENDING_MACHINE_OUT_OF_ORDER\020\t\022\010\n\004" +
+      "NULL\020\n\022\t\n\005OTHER\020\013\022\025\n\021NO_TRAFFIC_IMPACT\020\014" +
+      "\022\013\n\007UNKNOWN\020\r\"-\n\010Priority\022\010\n\004INFO\020\000\022\013\n\007W" +
+      "ARNING\020\001\022\n\n\006SEVERE\020\002\"L\n\014ServiceAlert\022\030\n\r" +
+      "SchemaVersion\030\001 \002(\005:\0011\022\"\n\tbulletins\030\002 \003(" +
+      "\0132\017.proto.Bulletin*\202\005\n\010Category\022\025\n\021VEHIC" +
+      "LE_BREAKDOWN\020\000\022\014\n\010ACCIDENT\020\001\022\r\n\tNO_DRIVE" +
+      "R\020\002\022\013\n\007ASSAULT\020\003\022\013\n\007WEATHER\020\004\022\030\n\024VEHICLE" +
+      "_OFF_THE_ROAD\020\005\022\013\n\007SEIZURE\020\006\022\024\n\020ITS_SYST" +
+      "EM_ERROR\020\007\022\026\n\022OTHER_DRIVER_ERROR\020\010\022\027\n\023TO" +
+      "O_MANY_PASSENGERS\020\t\022\n\n\006STRIKE\020\n\022\t\n\005OTHER" +
+      "\020\013\022\026\n\022EARLIER_DISRUPTION\020\014\022\031\n\025NO_TRAFFIC" +
+      "_DISRUPTION\020\r\022\021\n\rTRACK_BLOCKED\020\016\022\021\n\rSTAF" +
+      "F_DEFICIT\020\017\022\017\n\013DISTURBANCE\020\020\022\023\n\017VEHICLE_" +
+      "DEFICIT\020\021\022\017\n\013ROAD_CLOSED\020\022\022\017\n\013ROAD_TRENC" +
+      "H\020\023\022\025\n\021TRACK_MAINTENANCE\020\024\022\024\n\020TRAFFIC_AC" +
+      "CIDENT\020\025\022\017\n\013TRAFFIC_JAM\020\026\022\024\n\020MEDICAL_INC" +
+      "IDENT\020\027\022\026\n\022WEATHER_CONDITIONS\020\030\022\025\n\021TECHN" +
+      "ICAL_FAILURE\020\031\022\010\n\004TEST\020\032\022\024\n\020ROAD_MAINTEN" +
+      "ANCE\020\033\022\022\n\016SWITCH_FAILURE\020\034\022\017\n\013STATE_VISI" +
+      "T\020\035\022\021\n\rPOWER_FAILURE\020\036\022\025\n\021MISPARKED_VEHI" +
+      "CLE\020\037\022\020\n\014PUBLIC_EVENT\020 B3\n\037fi.hsl.common" +
+      ".transitdata.protoB\020InternalMessages"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_proto_TripInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_TripInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_TripInfo_descriptor,
         new java.lang.String[] { "TripId", "OperatingDay", "RouteId", "DirectionId", "StartTime", "ScheduleType", });
-    internal_static_proto_TripCancellation_descriptor =
+    internal_static_proto_StopCancellation_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_StopCancellation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_StopCancellation_descriptor,
+        new java.lang.String[] { "StopId", "ValidFromUtcMs", "ValidToUtcMs", });
+    internal_static_proto_StopCancellations_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_proto_StopCancellations_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_StopCancellations_descriptor,
+        new java.lang.String[] { "StopCancellations", });
+    internal_static_proto_TripCancellation_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_proto_TripCancellation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_TripCancellation_descriptor,
         new java.lang.String[] { "SchemaVersion", "TripId", "RouteId", "DirectionId", "StartTime", "StartDate", "Status", "DeviationCasesType", "AffectedDeparturesType", "Title", "Description", "Category", "SubCategory", });
     internal_static_proto_StopEstimate_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_proto_StopEstimate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_StopEstimate_descriptor,
         new java.lang.String[] { "SchemaVersion", "TripInfo", "StopId", "StopSequence", "Status", "Type", "EstimatedTimeUtcMs", "ScheduledTimeUtcMs", "LastModifiedUtcMs", });
     internal_static_proto_Bulletin_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_proto_Bulletin_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Bulletin_descriptor,
@@ -12241,7 +14680,7 @@ public final class InternalMessages {
         internal_static_proto_Bulletin_Translation_descriptor,
         new java.lang.String[] { "Text", "Language", });
     internal_static_proto_ServiceAlert_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_proto_ServiceAlert_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ServiceAlert_descriptor,
