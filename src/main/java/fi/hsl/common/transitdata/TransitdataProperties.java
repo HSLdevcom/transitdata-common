@@ -39,72 +39,37 @@ public class TransitdataProperties {
      * Actual protobuf files can be found in package transitdata.proto
      */
     public enum ProtobufSchema {
-        PubtransRoiArrival,
-        PubtransRoiDeparture,
-        GTFS_TripUpdate,
-        GTFS_ServiceAlert,
-        GTFS_VehiclePosition,
-        InternalMessagesTripCancellation,
-        InternalMessagesStopEstimate,
-        MetroAtsEstimate,
-        MqttRawMessage,
-        HfpData,
-        TransitdataServiceAlert;
+        PubtransRoiArrival("pubtrans-roi-arrival"),
+        PubtransRoiDeparture("pubtrans-roi-departure"),
+        GTFS_TripUpdate("gtfs-trip-update"),
+        GTFS_ServiceAlert("gtfs-service-alert"),
+        GTFS_VehiclePosition("gtfs-vehicle-position"),
+        InternalMessagesTripCancellation("internal-messages-trip-cancellation"),
+        InternalMessagesStopEstimate("internal-messages-stop-estimate"),
+        MetroAtsEstimate( "metro-ats-estimate"),
+        MqttRawMessage("mqtt-raw"),
+        HfpData("hfp-data"),
+        TransitdataServiceAlert("transitdata-service-alert"),
+        StopCancellation("stop-cancellation");
+
+        public final String key;
+
+        ProtobufSchema(String key) {
+            this.key = key;
+        }
 
         public String toString() {
-            switch (this) {
-                case PubtransRoiArrival: return "pubtrans-roi-arrival";
-                case PubtransRoiDeparture: return "pubtrans-roi-departure";
-                case GTFS_TripUpdate: return "gtfs-trip-update";
-                case GTFS_ServiceAlert: return "gtfs-service-alert";
-                case GTFS_VehiclePosition: return "gtfs-vehicle-position";
-                case InternalMessagesTripCancellation: return "internal-messages-trip-cancellation";
-                case InternalMessagesStopEstimate: return "internal-messages-stop-estimate";
-                case MetroAtsEstimate: return "metro-ats-estimate";
-                case MqttRawMessage: return "mqtt-raw";
-                case HfpData: return "hfp-data";
-                case TransitdataServiceAlert: return "transitdata-service-alert";
-                default: throw new IllegalArgumentException();
-            }
+            return key;
         }
 
         public static ProtobufSchema fromString(String str) {
-            if (str.equals(PubtransRoiArrival.toString())) {
-                return PubtransRoiArrival;
+            for (ProtobufSchema protobufSchema : ProtobufSchema.values()) {
+                if (protobufSchema.key.equals(str)) {
+                    return protobufSchema;
+                }
             }
-            else if (str.equals(PubtransRoiDeparture.toString())) {
-                return PubtransRoiDeparture;
-            }
-            else if (str.equals(GTFS_TripUpdate.toString())) {
-                return GTFS_TripUpdate;
-            }
-            else if (str.equals(GTFS_ServiceAlert.toString())) {
-                return GTFS_ServiceAlert;
-            }
-            else if (str.equals(GTFS_VehiclePosition.toString())) {
-                return GTFS_VehiclePosition;
-            }
-            else if (str.equals(InternalMessagesTripCancellation.toString())) {
-                return InternalMessagesTripCancellation;
-            }
-            else if (str.equals(InternalMessagesStopEstimate.toString())) {
-                return InternalMessagesStopEstimate;
-            }
-            else if (str.equals(MetroAtsEstimate.toString())) {
-                return MetroAtsEstimate;
-            }
-            else if (str.equals(MqttRawMessage.toString())) {
-                return MqttRawMessage;
-            }
-            else if (str.equals(HfpData.toString())) {
-                return HfpData;
-            }
-            else if (str.equals(TransitdataServiceAlert.toString())) {
-                return TransitdataServiceAlert;
-            }
-            else {
-                throw new IllegalArgumentException();
-            }
+
+            throw new IllegalArgumentException("No protobuf schema found for string "+str);
         }
     }
 
