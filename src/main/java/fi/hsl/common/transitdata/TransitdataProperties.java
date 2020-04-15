@@ -50,8 +50,7 @@ public class TransitdataProperties {
         MqttRawMessage("mqtt-raw"),
         HfpData("hfp-data"),
         TransitdataServiceAlert("transitdata-service-alert"),
-        StopCancellation("stop-cancellation");
-
+        StopCancellations("stop-cancellations");
         public final String key;
 
         ProtobufSchema(String key) {
