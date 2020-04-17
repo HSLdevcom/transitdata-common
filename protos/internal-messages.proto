@@ -60,27 +60,30 @@ enum Category {
     PUBLIC_EVENT = 32;
 }
 
-message StopCancellation {
-    optional string stop_id = 1;
-    optional int64 valid_from_utc_ms = 2;
-    optional int64 valid_to_utc_ms = 3;
-    repeated string affected_journey_pattern_ids = 4;
-}
 
-message AffectedStopEstimate {
-    required string stop_id = 1;
-    required uint32 stop_sequence = 2;
-}
-
-message AffectedJourneyPattern  {
+message JourneyPattern  {
     required string journey_pattern_id = 1;
-    repeated AffectedStopEstimate affected_stop_estimates = 2;
-    repeated TripInfo affected_trips = 3;
+    repeated Stop stops = 2;
+    //List of trips that use the journey pattern
+    repeated TripInfo trips = 3;
+
+    message Stop {
+        required string stop_id = 1;
+        required uint32 stop_sequence = 2;
+    }
 }
 
 message StopCancellations {
     repeated StopCancellation stop_cancellations = 1;
-    repeated AffectedJourneyPattern affected_journey_patterns = 2;
+    repeated JourneyPattern affected_journey_patterns = 2;
+
+    message StopCancellation {
+        optional string stop_id = 1;
+        optional int64 valid_from_utc_ms = 2;
+        optional int64 valid_to_utc_ms = 3;
+        //List of journey pattern IDs that are affected by the stop cancellation
+        repeated string affected_journey_pattern_ids = 4;
+    }
 }
 
 message TripCancellation {
