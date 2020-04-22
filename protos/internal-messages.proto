@@ -79,8 +79,8 @@ message StopCancellations {
 
     message StopCancellation {
         optional string stop_id = 1;
-        optional int64 valid_from_utc_ms = 2;
-        optional int64 valid_to_utc_ms = 3;
+        optional int64 valid_from_unix_s = 2;
+        optional int64 valid_to_unix_s = 3;
         //List of journey pattern IDs that are affected by the stop cancellation
         repeated string affected_journey_pattern_ids = 4;
     }
