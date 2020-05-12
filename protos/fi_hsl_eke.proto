@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package fi.hsl.eke;
+
+/*
+ * The payload of a single message to be published by EKE. Each EkeMessage
+ * contains one data message captured by EKE.
+ */
+message EkeMessage {
+  /*
+   * The version of this message specification. The current version is "1".
+   */
+  string message_version = 1;
+
+  /*
+   * All unmodified bytes of a single data message captured by EKE, as is,
+   * regardless of data source.
+   */
+  bytes captured_data = 2;
+
+  enum CapturedType {
+    STADLER_UDP = 0;
+    EKE_JKV_STATUS = 1;
+    EKE_JKV_EVENT = 2;
+  }
+
+  /*
+   * Which type of a message was captured?
+   */
+  CapturedType captured_type = 3;
+
+  /*
+   * The earliest time when the data message in captured_data was fully
+   * received by EKE.
+   *
+   * FIXME: Ask how EKE handles leap seconds. This might be handled by the NTP
+   * server or client. Specify the way that is easier for EKE to commit to
+   * implement and clarify the choice in the documentation.
+   * FIXME: Alternatives:
+   * Do NOT smear leap seconds as described in the schema comments by Google.
+   * FIXME: Or:
+   * Remember to smear leap seconds as described in the comments for the
+   * Timestamp message by Google.
+   * FIXME: Or:
+   * Remember to smear leap seconds as described in FIXME.
+   *
+   * Use as much precision as you can, e.g. prefer POSIX clock_gettime() over
+   * POSIX gettimeofday() for this field.
+   *
+   * Use commit 0894e07536af88065d462cdc9d8e807c0723ef4d of the official
+   * protobuf repository for the Timestamp message type. At the time of
+   * writing, it can be found here:
+   * https://github.com/protocolbuffers/protobuf/blob/0894e07536af88065d462cdc9d8e807c0723ef4d/src/google/protobuf/timestamp.proto
+   */
+  google.protobuf.Timestamp capture_time = 4;
+}
