@@ -24,6 +24,11 @@ public class TransitdataProperties {
     public static final String KEY_SCHEMA_VERSION = "schema-version";
     public static final String KEY_DVJ_ID = "dvj-id";
 
+    /**
+     * Suffix for MQTT topic when publishing with pulsar-mqtt-gateway
+     */
+    public static final String KEY_MQTT_TOPIC = "mqtt-topic";
+
     public static final String KEY_ROUTE_NAME = "route-name";
     public static final String KEY_DIRECTION = "direction";
     public static final String KEY_START_TIME = "start-time";
