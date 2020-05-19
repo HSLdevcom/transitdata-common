@@ -1988,7 +1988,7 @@ public final class InternalMessages {
 
     /**
      * <pre>
-     *List of trips that use the journey pattern
+     *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
      * </pre>
      *
      * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -1997,7 +1997,7 @@ public final class InternalMessages {
         getTripsList();
     /**
      * <pre>
-     *List of trips that use the journey pattern
+     *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
      * </pre>
      *
      * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -2005,7 +2005,7 @@ public final class InternalMessages {
     fi.hsl.common.transitdata.proto.InternalMessages.TripInfo getTrips(int index);
     /**
      * <pre>
-     *List of trips that use the journey pattern
+     *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
      * </pre>
      *
      * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -2013,7 +2013,7 @@ public final class InternalMessages {
     int getTripsCount();
     /**
      * <pre>
-     *List of trips that use the journey pattern
+     *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
      * </pre>
      *
      * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -2022,7 +2022,7 @@ public final class InternalMessages {
         getTripsOrBuilderList();
     /**
      * <pre>
-     *List of trips that use the journey pattern
+     *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
      * </pre>
      *
      * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -2898,7 +2898,7 @@ public final class InternalMessages {
     private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.TripInfo> trips_;
     /**
      * <pre>
-     *List of trips that use the journey pattern
+     *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
      * </pre>
      *
      * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -2908,7 +2908,7 @@ public final class InternalMessages {
     }
     /**
      * <pre>
-     *List of trips that use the journey pattern
+     *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
      * </pre>
      *
      * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -2919,7 +2919,7 @@ public final class InternalMessages {
     }
     /**
      * <pre>
-     *List of trips that use the journey pattern
+     *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
      * </pre>
      *
      * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -2929,7 +2929,7 @@ public final class InternalMessages {
     }
     /**
      * <pre>
-     *List of trips that use the journey pattern
+     *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
      * </pre>
      *
      * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -2939,7 +2939,7 @@ public final class InternalMessages {
     }
     /**
      * <pre>
-     *List of trips that use the journey pattern
+     *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
      * </pre>
      *
      * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -3733,7 +3733,7 @@ public final class InternalMessages {
 
       /**
        * <pre>
-       *List of trips that use the journey pattern
+       *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
        * </pre>
        *
        * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -3747,7 +3747,7 @@ public final class InternalMessages {
       }
       /**
        * <pre>
-       *List of trips that use the journey pattern
+       *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
        * </pre>
        *
        * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -3761,7 +3761,7 @@ public final class InternalMessages {
       }
       /**
        * <pre>
-       *List of trips that use the journey pattern
+       *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
        * </pre>
        *
        * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -3775,7 +3775,7 @@ public final class InternalMessages {
       }
       /**
        * <pre>
-       *List of trips that use the journey pattern
+       *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
        * </pre>
        *
        * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -3796,7 +3796,7 @@ public final class InternalMessages {
       }
       /**
        * <pre>
-       *List of trips that use the journey pattern
+       *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
        * </pre>
        *
        * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -3814,7 +3814,7 @@ public final class InternalMessages {
       }
       /**
        * <pre>
-       *List of trips that use the journey pattern
+       *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
        * </pre>
        *
        * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -3834,7 +3834,7 @@ public final class InternalMessages {
       }
       /**
        * <pre>
-       *List of trips that use the journey pattern
+       *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
        * </pre>
        *
        * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -3855,7 +3855,7 @@ public final class InternalMessages {
       }
       /**
        * <pre>
-       *List of trips that use the journey pattern
+       *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
        * </pre>
        *
        * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -3873,7 +3873,7 @@ public final class InternalMessages {
       }
       /**
        * <pre>
-       *List of trips that use the journey pattern
+       *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
        * </pre>
        *
        * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -3891,7 +3891,7 @@ public final class InternalMessages {
       }
       /**
        * <pre>
-       *List of trips that use the journey pattern
+       *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
        * </pre>
        *
        * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -3910,7 +3910,7 @@ public final class InternalMessages {
       }
       /**
        * <pre>
-       *List of trips that use the journey pattern
+       *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
        * </pre>
        *
        * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -3927,7 +3927,7 @@ public final class InternalMessages {
       }
       /**
        * <pre>
-       *List of trips that use the journey pattern
+       *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
        * </pre>
        *
        * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -3944,7 +3944,7 @@ public final class InternalMessages {
       }
       /**
        * <pre>
-       *List of trips that use the journey pattern
+       *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
        * </pre>
        *
        * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -3955,7 +3955,7 @@ public final class InternalMessages {
       }
       /**
        * <pre>
-       *List of trips that use the journey pattern
+       *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
        * </pre>
        *
        * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -3969,7 +3969,7 @@ public final class InternalMessages {
       }
       /**
        * <pre>
-       *List of trips that use the journey pattern
+       *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
        * </pre>
        *
        * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -3984,7 +3984,7 @@ public final class InternalMessages {
       }
       /**
        * <pre>
-       *List of trips that use the journey pattern
+       *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
        * </pre>
        *
        * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -3995,7 +3995,7 @@ public final class InternalMessages {
       }
       /**
        * <pre>
-       *List of trips that use the journey pattern
+       *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
        * </pre>
        *
        * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -4007,7 +4007,7 @@ public final class InternalMessages {
       }
       /**
        * <pre>
-       *List of trips that use the journey pattern
+       *List of trips that use the journey pattern and are affected by one or more StopCancellation messages
        * </pre>
        *
        * <code>repeated .proto.TripInfo trips = 3;</code>
@@ -4232,76 +4232,233 @@ public final class InternalMessages {
               fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.class, fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.Builder.class);
     }
 
+    /**
+     * Protobuf enum {@code proto.StopCancellations.Cause}
+     */
+    public enum Cause
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <pre>
+       *Stop cancellation is caused by a closed stop and thus affects all journey patterns that use the stop
+       * </pre>
+       *
+       * <code>CLOSED_STOP = 0;</code>
+       */
+      CLOSED_STOP(0),
+      /**
+       * <pre>
+       *Stop cancellation is caused by a detour and affects only some journey patterns
+       * </pre>
+       *
+       * <code>JOURNEY_PATTERN_DETOUR = 1;</code>
+       */
+      JOURNEY_PATTERN_DETOUR(1),
+      /**
+       * <pre>
+       *Stop cancellation affects only one journey (i.e. trip) specified (above) in StopCancellation.affected_trip (TripInfo)
+       * </pre>
+       *
+       * <code>JOURNEY_DETOUR = 2;</code>
+       */
+      JOURNEY_DETOUR(2),
+      ;
+
+      /**
+       * <pre>
+       *Stop cancellation is caused by a closed stop and thus affects all journey patterns that use the stop
+       * </pre>
+       *
+       * <code>CLOSED_STOP = 0;</code>
+       */
+      public static final int CLOSED_STOP_VALUE = 0;
+      /**
+       * <pre>
+       *Stop cancellation is caused by a detour and affects only some journey patterns
+       * </pre>
+       *
+       * <code>JOURNEY_PATTERN_DETOUR = 1;</code>
+       */
+      public static final int JOURNEY_PATTERN_DETOUR_VALUE = 1;
+      /**
+       * <pre>
+       *Stop cancellation affects only one journey (i.e. trip) specified (above) in StopCancellation.affected_trip (TripInfo)
+       * </pre>
+       *
+       * <code>JOURNEY_DETOUR = 2;</code>
+       */
+      public static final int JOURNEY_DETOUR_VALUE = 2;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Cause valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Cause forNumber(int value) {
+        switch (value) {
+          case 0: return CLOSED_STOP;
+          case 1: return JOURNEY_PATTERN_DETOUR;
+          case 2: return JOURNEY_DETOUR;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Cause>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Cause> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Cause>() {
+              public Cause findValueByNumber(int number) {
+                return Cause.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Cause[] VALUES = values();
+
+      public static Cause valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Cause(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.StopCancellations.Cause)
+    }
+
     public interface StopCancellationOrBuilder extends
         // @@protoc_insertion_point(interface_extends:proto.StopCancellations.StopCancellation)
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>optional string stop_id = 1;</code>
+       * <code>required .proto.StopCancellations.Cause cause = 1;</code>
+       */
+      boolean hasCause();
+      /**
+       * <code>required .proto.StopCancellations.Cause cause = 1;</code>
+       */
+      fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.Cause getCause();
+
+      /**
+       * <code>required string stop_id = 2;</code>
        */
       boolean hasStopId();
       /**
-       * <code>optional string stop_id = 1;</code>
+       * <code>required string stop_id = 2;</code>
        */
       java.lang.String getStopId();
       /**
-       * <code>optional string stop_id = 1;</code>
+       * <code>required string stop_id = 2;</code>
        */
       com.google.protobuf.ByteString
           getStopIdBytes();
 
       /**
-       * <code>optional int64 valid_from_unix_s = 2;</code>
+       * <code>optional int64 valid_from_unix_s = 3;</code>
        */
       boolean hasValidFromUnixS();
       /**
-       * <code>optional int64 valid_from_unix_s = 2;</code>
+       * <code>optional int64 valid_from_unix_s = 3;</code>
        */
       long getValidFromUnixS();
 
       /**
-       * <code>optional int64 valid_to_unix_s = 3;</code>
+       * <code>optional int64 valid_to_unix_s = 4;</code>
        */
       boolean hasValidToUnixS();
       /**
-       * <code>optional int64 valid_to_unix_s = 3;</code>
+       * <code>optional int64 valid_to_unix_s = 4;</code>
        */
       long getValidToUnixS();
 
       /**
        * <pre>
-       *List of journey pattern IDs that are affected by the stop cancellation
+       *List of journey patterns (IDs) that are affected by the stop cancellation (if cause is CLOSED_STOP or JOURNEY_PATTERN_DETOUR)
        * </pre>
        *
-       * <code>repeated string affected_journey_pattern_ids = 4;</code>
+       * <code>repeated string affected_journey_pattern_ids = 5;</code>
        */
       java.util.List<java.lang.String>
           getAffectedJourneyPatternIdsList();
       /**
        * <pre>
-       *List of journey pattern IDs that are affected by the stop cancellation
+       *List of journey patterns (IDs) that are affected by the stop cancellation (if cause is CLOSED_STOP or JOURNEY_PATTERN_DETOUR)
        * </pre>
        *
-       * <code>repeated string affected_journey_pattern_ids = 4;</code>
+       * <code>repeated string affected_journey_pattern_ids = 5;</code>
        */
       int getAffectedJourneyPatternIdsCount();
       /**
        * <pre>
-       *List of journey pattern IDs that are affected by the stop cancellation
+       *List of journey patterns (IDs) that are affected by the stop cancellation (if cause is CLOSED_STOP or JOURNEY_PATTERN_DETOUR)
        * </pre>
        *
-       * <code>repeated string affected_journey_pattern_ids = 4;</code>
+       * <code>repeated string affected_journey_pattern_ids = 5;</code>
        */
       java.lang.String getAffectedJourneyPatternIds(int index);
       /**
        * <pre>
-       *List of journey pattern IDs that are affected by the stop cancellation
+       *List of journey patterns (IDs) that are affected by the stop cancellation (if cause is CLOSED_STOP or JOURNEY_PATTERN_DETOUR)
        * </pre>
        *
-       * <code>repeated string affected_journey_pattern_ids = 4;</code>
+       * <code>repeated string affected_journey_pattern_ids = 5;</code>
        */
       com.google.protobuf.ByteString
           getAffectedJourneyPatternIdsBytes(int index);
+
+      /**
+       * <pre>
+       *Refers to the affected trip if cause is JOURNEY_DETOUR - i.e. StopCancellation affects only one journey/trip
+       * </pre>
+       *
+       * <code>optional .proto.TripInfo affected_trip = 6;</code>
+       */
+      boolean hasAffectedTrip();
+      /**
+       * <pre>
+       *Refers to the affected trip if cause is JOURNEY_DETOUR - i.e. StopCancellation affects only one journey/trip
+       * </pre>
+       *
+       * <code>optional .proto.TripInfo affected_trip = 6;</code>
+       */
+      fi.hsl.common.transitdata.proto.InternalMessages.TripInfo getAffectedTrip();
+      /**
+       * <pre>
+       *Refers to the affected trip if cause is JOURNEY_DETOUR - i.e. StopCancellation affects only one journey/trip
+       * </pre>
+       *
+       * <code>optional .proto.TripInfo affected_trip = 6;</code>
+       */
+      fi.hsl.common.transitdata.proto.InternalMessages.TripInfoOrBuilder getAffectedTripOrBuilder();
     }
     /**
      * Protobuf type {@code proto.StopCancellations.StopCancellation}
@@ -4316,6 +4473,7 @@ public final class InternalMessages {
         super(builder);
       }
       private StopCancellation() {
+        cause_ = 0;
         stopId_ = "";
         affectedJourneyPatternIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       }
@@ -4344,29 +4502,54 @@ public final class InternalMessages {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                com.google.protobuf.ByteString bs = input.readBytes();
-                bitField0_ |= 0x00000001;
-                stopId_ = bs;
+              case 8: {
+                int rawValue = input.readEnum();
+                  @SuppressWarnings("deprecation")
+                fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.Cause value = fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.Cause.valueOf(rawValue);
+                if (value == null) {
+                  unknownFields.mergeVarintField(1, rawValue);
+                } else {
+                  bitField0_ |= 0x00000001;
+                  cause_ = rawValue;
+                }
                 break;
               }
-              case 16: {
+              case 18: {
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000002;
-                validFromUnixS_ = input.readInt64();
+                stopId_ = bs;
                 break;
               }
               case 24: {
                 bitField0_ |= 0x00000004;
+                validFromUnixS_ = input.readInt64();
+                break;
+              }
+              case 32: {
+                bitField0_ |= 0x00000008;
                 validToUnixS_ = input.readInt64();
                 break;
               }
-              case 34: {
+              case 42: {
                 com.google.protobuf.ByteString bs = input.readBytes();
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                   affectedJourneyPatternIds_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000010;
                 }
                 affectedJourneyPatternIds_.add(bs);
+                break;
+              }
+              case 50: {
+                fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.Builder subBuilder = null;
+                if (((bitField0_ & 0x00000010) != 0)) {
+                  subBuilder = affectedTrip_.toBuilder();
+                }
+                affectedTrip_ = input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.PARSER, extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(affectedTrip_);
+                  affectedTrip_ = subBuilder.buildPartial();
+                }
+                bitField0_ |= 0x00000010;
                 break;
               }
               default: {
@@ -4384,7 +4567,7 @@ public final class InternalMessages {
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          if (((mutable_bitField0_ & 0x00000010) != 0)) {
             affectedJourneyPatternIds_ = affectedJourneyPatternIds_.getUnmodifiableView();
           }
           this.unknownFields = unknownFields.build();
@@ -4405,16 +4588,33 @@ public final class InternalMessages {
       }
 
       private int bitField0_;
-      public static final int STOP_ID_FIELD_NUMBER = 1;
-      private volatile java.lang.Object stopId_;
+      public static final int CAUSE_FIELD_NUMBER = 1;
+      private int cause_;
       /**
-       * <code>optional string stop_id = 1;</code>
+       * <code>required .proto.StopCancellations.Cause cause = 1;</code>
        */
-      public boolean hasStopId() {
+      public boolean hasCause() {
         return ((bitField0_ & 0x00000001) != 0);
       }
       /**
-       * <code>optional string stop_id = 1;</code>
+       * <code>required .proto.StopCancellations.Cause cause = 1;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.Cause getCause() {
+        @SuppressWarnings("deprecation")
+        fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.Cause result = fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.Cause.valueOf(cause_);
+        return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.Cause.CLOSED_STOP : result;
+      }
+
+      public static final int STOP_ID_FIELD_NUMBER = 2;
+      private volatile java.lang.Object stopId_;
+      /**
+       * <code>required string stop_id = 2;</code>
+       */
+      public boolean hasStopId() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <code>required string stop_id = 2;</code>
        */
       public java.lang.String getStopId() {
         java.lang.Object ref = stopId_;
@@ -4431,7 +4631,7 @@ public final class InternalMessages {
         }
       }
       /**
-       * <code>optional string stop_id = 1;</code>
+       * <code>required string stop_id = 2;</code>
        */
       public com.google.protobuf.ByteString
           getStopIdBytes() {
@@ -4447,44 +4647,44 @@ public final class InternalMessages {
         }
       }
 
-      public static final int VALID_FROM_UNIX_S_FIELD_NUMBER = 2;
+      public static final int VALID_FROM_UNIX_S_FIELD_NUMBER = 3;
       private long validFromUnixS_;
       /**
-       * <code>optional int64 valid_from_unix_s = 2;</code>
+       * <code>optional int64 valid_from_unix_s = 3;</code>
        */
       public boolean hasValidFromUnixS() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
-       * <code>optional int64 valid_from_unix_s = 2;</code>
+       * <code>optional int64 valid_from_unix_s = 3;</code>
        */
       public long getValidFromUnixS() {
         return validFromUnixS_;
       }
 
-      public static final int VALID_TO_UNIX_S_FIELD_NUMBER = 3;
+      public static final int VALID_TO_UNIX_S_FIELD_NUMBER = 4;
       private long validToUnixS_;
       /**
-       * <code>optional int64 valid_to_unix_s = 3;</code>
+       * <code>optional int64 valid_to_unix_s = 4;</code>
        */
       public boolean hasValidToUnixS() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
-       * <code>optional int64 valid_to_unix_s = 3;</code>
+       * <code>optional int64 valid_to_unix_s = 4;</code>
        */
       public long getValidToUnixS() {
         return validToUnixS_;
       }
 
-      public static final int AFFECTED_JOURNEY_PATTERN_IDS_FIELD_NUMBER = 4;
+      public static final int AFFECTED_JOURNEY_PATTERN_IDS_FIELD_NUMBER = 5;
       private com.google.protobuf.LazyStringList affectedJourneyPatternIds_;
       /**
        * <pre>
-       *List of journey pattern IDs that are affected by the stop cancellation
+       *List of journey patterns (IDs) that are affected by the stop cancellation (if cause is CLOSED_STOP or JOURNEY_PATTERN_DETOUR)
        * </pre>
        *
-       * <code>repeated string affected_journey_pattern_ids = 4;</code>
+       * <code>repeated string affected_journey_pattern_ids = 5;</code>
        */
       public com.google.protobuf.ProtocolStringList
           getAffectedJourneyPatternIdsList() {
@@ -4492,34 +4692,67 @@ public final class InternalMessages {
       }
       /**
        * <pre>
-       *List of journey pattern IDs that are affected by the stop cancellation
+       *List of journey patterns (IDs) that are affected by the stop cancellation (if cause is CLOSED_STOP or JOURNEY_PATTERN_DETOUR)
        * </pre>
        *
-       * <code>repeated string affected_journey_pattern_ids = 4;</code>
+       * <code>repeated string affected_journey_pattern_ids = 5;</code>
        */
       public int getAffectedJourneyPatternIdsCount() {
         return affectedJourneyPatternIds_.size();
       }
       /**
        * <pre>
-       *List of journey pattern IDs that are affected by the stop cancellation
+       *List of journey patterns (IDs) that are affected by the stop cancellation (if cause is CLOSED_STOP or JOURNEY_PATTERN_DETOUR)
        * </pre>
        *
-       * <code>repeated string affected_journey_pattern_ids = 4;</code>
+       * <code>repeated string affected_journey_pattern_ids = 5;</code>
        */
       public java.lang.String getAffectedJourneyPatternIds(int index) {
         return affectedJourneyPatternIds_.get(index);
       }
       /**
        * <pre>
-       *List of journey pattern IDs that are affected by the stop cancellation
+       *List of journey patterns (IDs) that are affected by the stop cancellation (if cause is CLOSED_STOP or JOURNEY_PATTERN_DETOUR)
        * </pre>
        *
-       * <code>repeated string affected_journey_pattern_ids = 4;</code>
+       * <code>repeated string affected_journey_pattern_ids = 5;</code>
        */
       public com.google.protobuf.ByteString
           getAffectedJourneyPatternIdsBytes(int index) {
         return affectedJourneyPatternIds_.getByteString(index);
+      }
+
+      public static final int AFFECTED_TRIP_FIELD_NUMBER = 6;
+      private fi.hsl.common.transitdata.proto.InternalMessages.TripInfo affectedTrip_;
+      /**
+       * <pre>
+       *Refers to the affected trip if cause is JOURNEY_DETOUR - i.e. StopCancellation affects only one journey/trip
+       * </pre>
+       *
+       * <code>optional .proto.TripInfo affected_trip = 6;</code>
+       */
+      public boolean hasAffectedTrip() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       * <pre>
+       *Refers to the affected trip if cause is JOURNEY_DETOUR - i.e. StopCancellation affects only one journey/trip
+       * </pre>
+       *
+       * <code>optional .proto.TripInfo affected_trip = 6;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.TripInfo getAffectedTrip() {
+        return affectedTrip_ == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.getDefaultInstance() : affectedTrip_;
+      }
+      /**
+       * <pre>
+       *Refers to the affected trip if cause is JOURNEY_DETOUR - i.e. StopCancellation affects only one journey/trip
+       * </pre>
+       *
+       * <code>optional .proto.TripInfo affected_trip = 6;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.TripInfoOrBuilder getAffectedTripOrBuilder() {
+        return affectedTrip_ == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.getDefaultInstance() : affectedTrip_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -4529,6 +4762,20 @@ public final class InternalMessages {
         if (isInitialized == 1) return true;
         if (isInitialized == 0) return false;
 
+        if (!hasCause()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        if (!hasStopId()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        if (hasAffectedTrip()) {
+          if (!getAffectedTrip().isInitialized()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+        }
         memoizedIsInitialized = 1;
         return true;
       }
@@ -4537,16 +4784,22 @@ public final class InternalMessages {
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (((bitField0_ & 0x00000001) != 0)) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, stopId_);
+          output.writeEnum(1, cause_);
         }
         if (((bitField0_ & 0x00000002) != 0)) {
-          output.writeInt64(2, validFromUnixS_);
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, stopId_);
         }
         if (((bitField0_ & 0x00000004) != 0)) {
-          output.writeInt64(3, validToUnixS_);
+          output.writeInt64(3, validFromUnixS_);
+        }
+        if (((bitField0_ & 0x00000008) != 0)) {
+          output.writeInt64(4, validToUnixS_);
         }
         for (int i = 0; i < affectedJourneyPatternIds_.size(); i++) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, affectedJourneyPatternIds_.getRaw(i));
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 5, affectedJourneyPatternIds_.getRaw(i));
+        }
+        if (((bitField0_ & 0x00000010) != 0)) {
+          output.writeMessage(6, getAffectedTrip());
         }
         unknownFields.writeTo(output);
       }
@@ -4558,15 +4811,19 @@ public final class InternalMessages {
 
         size = 0;
         if (((bitField0_ & 0x00000001) != 0)) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, stopId_);
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(1, cause_);
         }
         if (((bitField0_ & 0x00000002) != 0)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt64Size(2, validFromUnixS_);
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, stopId_);
         }
         if (((bitField0_ & 0x00000004) != 0)) {
           size += com.google.protobuf.CodedOutputStream
-            .computeInt64Size(3, validToUnixS_);
+            .computeInt64Size(3, validFromUnixS_);
+        }
+        if (((bitField0_ & 0x00000008) != 0)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt64Size(4, validToUnixS_);
         }
         {
           int dataSize = 0;
@@ -4575,6 +4832,10 @@ public final class InternalMessages {
           }
           size += dataSize;
           size += 1 * getAffectedJourneyPatternIdsList().size();
+        }
+        if (((bitField0_ & 0x00000010) != 0)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(6, getAffectedTrip());
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -4591,6 +4852,10 @@ public final class InternalMessages {
         }
         fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.StopCancellation other = (fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.StopCancellation) obj;
 
+        if (hasCause() != other.hasCause()) return false;
+        if (hasCause()) {
+          if (cause_ != other.cause_) return false;
+        }
         if (hasStopId() != other.hasStopId()) return false;
         if (hasStopId()) {
           if (!getStopId()
@@ -4608,6 +4873,11 @@ public final class InternalMessages {
         }
         if (!getAffectedJourneyPatternIdsList()
             .equals(other.getAffectedJourneyPatternIdsList())) return false;
+        if (hasAffectedTrip() != other.hasAffectedTrip()) return false;
+        if (hasAffectedTrip()) {
+          if (!getAffectedTrip()
+              .equals(other.getAffectedTrip())) return false;
+        }
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -4619,6 +4889,10 @@ public final class InternalMessages {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasCause()) {
+          hash = (37 * hash) + CAUSE_FIELD_NUMBER;
+          hash = (53 * hash) + cause_;
+        }
         if (hasStopId()) {
           hash = (37 * hash) + STOP_ID_FIELD_NUMBER;
           hash = (53 * hash) + getStopId().hashCode();
@@ -4636,6 +4910,10 @@ public final class InternalMessages {
         if (getAffectedJourneyPatternIdsCount() > 0) {
           hash = (37 * hash) + AFFECTED_JOURNEY_PATTERN_IDS_FIELD_NUMBER;
           hash = (53 * hash) + getAffectedJourneyPatternIdsList().hashCode();
+        }
+        if (hasAffectedTrip()) {
+          hash = (37 * hash) + AFFECTED_TRIP_FIELD_NUMBER;
+          hash = (53 * hash) + getAffectedTrip().hashCode();
         }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
@@ -4765,19 +5043,28 @@ public final class InternalMessages {
         private void maybeForceBuilderInitialization() {
           if (com.google.protobuf.GeneratedMessageV3
                   .alwaysUseFieldBuilders) {
+            getAffectedTripFieldBuilder();
           }
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          stopId_ = "";
+          cause_ = 0;
           bitField0_ = (bitField0_ & ~0x00000001);
-          validFromUnixS_ = 0L;
+          stopId_ = "";
           bitField0_ = (bitField0_ & ~0x00000002);
-          validToUnixS_ = 0L;
+          validFromUnixS_ = 0L;
           bitField0_ = (bitField0_ & ~0x00000004);
-          affectedJourneyPatternIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          validToUnixS_ = 0L;
           bitField0_ = (bitField0_ & ~0x00000008);
+          affectedJourneyPatternIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000010);
+          if (affectedTripBuilder_ == null) {
+            affectedTrip_ = null;
+          } else {
+            affectedTripBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000020);
           return this;
         }
 
@@ -4809,20 +5096,32 @@ public final class InternalMessages {
           if (((from_bitField0_ & 0x00000001) != 0)) {
             to_bitField0_ |= 0x00000001;
           }
-          result.stopId_ = stopId_;
+          result.cause_ = cause_;
           if (((from_bitField0_ & 0x00000002) != 0)) {
-            result.validFromUnixS_ = validFromUnixS_;
             to_bitField0_ |= 0x00000002;
           }
+          result.stopId_ = stopId_;
           if (((from_bitField0_ & 0x00000004) != 0)) {
-            result.validToUnixS_ = validToUnixS_;
+            result.validFromUnixS_ = validFromUnixS_;
             to_bitField0_ |= 0x00000004;
           }
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.validToUnixS_ = validToUnixS_;
+            to_bitField0_ |= 0x00000008;
+          }
+          if (((bitField0_ & 0x00000010) != 0)) {
             affectedJourneyPatternIds_ = affectedJourneyPatternIds_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.affectedJourneyPatternIds_ = affectedJourneyPatternIds_;
+          if (((from_bitField0_ & 0x00000020) != 0)) {
+            if (affectedTripBuilder_ == null) {
+              result.affectedTrip_ = affectedTrip_;
+            } else {
+              result.affectedTrip_ = affectedTripBuilder_.build();
+            }
+            to_bitField0_ |= 0x00000010;
+          }
           result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
@@ -4872,8 +5171,11 @@ public final class InternalMessages {
 
         public Builder mergeFrom(fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.StopCancellation other) {
           if (other == fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.StopCancellation.getDefaultInstance()) return this;
+          if (other.hasCause()) {
+            setCause(other.getCause());
+          }
           if (other.hasStopId()) {
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000002;
             stopId_ = other.stopId_;
             onChanged();
           }
@@ -4886,12 +5188,15 @@ public final class InternalMessages {
           if (!other.affectedJourneyPatternIds_.isEmpty()) {
             if (affectedJourneyPatternIds_.isEmpty()) {
               affectedJourneyPatternIds_ = other.affectedJourneyPatternIds_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureAffectedJourneyPatternIdsIsMutable();
               affectedJourneyPatternIds_.addAll(other.affectedJourneyPatternIds_);
             }
             onChanged();
+          }
+          if (other.hasAffectedTrip()) {
+            mergeAffectedTrip(other.getAffectedTrip());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -4900,6 +5205,17 @@ public final class InternalMessages {
 
         @java.lang.Override
         public final boolean isInitialized() {
+          if (!hasCause()) {
+            return false;
+          }
+          if (!hasStopId()) {
+            return false;
+          }
+          if (hasAffectedTrip()) {
+            if (!getAffectedTrip().isInitialized()) {
+              return false;
+            }
+          }
           return true;
         }
 
@@ -4923,15 +5239,52 @@ public final class InternalMessages {
         }
         private int bitField0_;
 
-        private java.lang.Object stopId_ = "";
+        private int cause_ = 0;
         /**
-         * <code>optional string stop_id = 1;</code>
+         * <code>required .proto.StopCancellations.Cause cause = 1;</code>
          */
-        public boolean hasStopId() {
+        public boolean hasCause() {
           return ((bitField0_ & 0x00000001) != 0);
         }
         /**
-         * <code>optional string stop_id = 1;</code>
+         * <code>required .proto.StopCancellations.Cause cause = 1;</code>
+         */
+        public fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.Cause getCause() {
+          @SuppressWarnings("deprecation")
+          fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.Cause result = fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.Cause.valueOf(cause_);
+          return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.Cause.CLOSED_STOP : result;
+        }
+        /**
+         * <code>required .proto.StopCancellations.Cause cause = 1;</code>
+         */
+        public Builder setCause(fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.Cause value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000001;
+          cause_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required .proto.StopCancellations.Cause cause = 1;</code>
+         */
+        public Builder clearCause() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          cause_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object stopId_ = "";
+        /**
+         * <code>required string stop_id = 2;</code>
+         */
+        public boolean hasStopId() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         * <code>required string stop_id = 2;</code>
          */
         public java.lang.String getStopId() {
           java.lang.Object ref = stopId_;
@@ -4948,7 +5301,7 @@ public final class InternalMessages {
           }
         }
         /**
-         * <code>optional string stop_id = 1;</code>
+         * <code>required string stop_id = 2;</code>
          */
         public com.google.protobuf.ByteString
             getStopIdBytes() {
@@ -4964,36 +5317,36 @@ public final class InternalMessages {
           }
         }
         /**
-         * <code>optional string stop_id = 1;</code>
+         * <code>required string stop_id = 2;</code>
          */
         public Builder setStopId(
             java.lang.String value) {
           if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  bitField0_ |= 0x00000002;
           stopId_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>optional string stop_id = 1;</code>
+         * <code>required string stop_id = 2;</code>
          */
         public Builder clearStopId() {
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           stopId_ = getDefaultInstance().getStopId();
           onChanged();
           return this;
         }
         /**
-         * <code>optional string stop_id = 1;</code>
+         * <code>required string stop_id = 2;</code>
          */
         public Builder setStopIdBytes(
             com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  bitField0_ |= 0x00000002;
           stopId_ = value;
           onChanged();
           return this;
@@ -5001,31 +5354,31 @@ public final class InternalMessages {
 
         private long validFromUnixS_ ;
         /**
-         * <code>optional int64 valid_from_unix_s = 2;</code>
+         * <code>optional int64 valid_from_unix_s = 3;</code>
          */
         public boolean hasValidFromUnixS() {
-          return ((bitField0_ & 0x00000002) != 0);
+          return ((bitField0_ & 0x00000004) != 0);
         }
         /**
-         * <code>optional int64 valid_from_unix_s = 2;</code>
+         * <code>optional int64 valid_from_unix_s = 3;</code>
          */
         public long getValidFromUnixS() {
           return validFromUnixS_;
         }
         /**
-         * <code>optional int64 valid_from_unix_s = 2;</code>
+         * <code>optional int64 valid_from_unix_s = 3;</code>
          */
         public Builder setValidFromUnixS(long value) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           validFromUnixS_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>optional int64 valid_from_unix_s = 2;</code>
+         * <code>optional int64 valid_from_unix_s = 3;</code>
          */
         public Builder clearValidFromUnixS() {
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           validFromUnixS_ = 0L;
           onChanged();
           return this;
@@ -5033,31 +5386,31 @@ public final class InternalMessages {
 
         private long validToUnixS_ ;
         /**
-         * <code>optional int64 valid_to_unix_s = 3;</code>
+         * <code>optional int64 valid_to_unix_s = 4;</code>
          */
         public boolean hasValidToUnixS() {
-          return ((bitField0_ & 0x00000004) != 0);
+          return ((bitField0_ & 0x00000008) != 0);
         }
         /**
-         * <code>optional int64 valid_to_unix_s = 3;</code>
+         * <code>optional int64 valid_to_unix_s = 4;</code>
          */
         public long getValidToUnixS() {
           return validToUnixS_;
         }
         /**
-         * <code>optional int64 valid_to_unix_s = 3;</code>
+         * <code>optional int64 valid_to_unix_s = 4;</code>
          */
         public Builder setValidToUnixS(long value) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           validToUnixS_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>optional int64 valid_to_unix_s = 3;</code>
+         * <code>optional int64 valid_to_unix_s = 4;</code>
          */
         public Builder clearValidToUnixS() {
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           validToUnixS_ = 0L;
           onChanged();
           return this;
@@ -5065,17 +5418,17 @@ public final class InternalMessages {
 
         private com.google.protobuf.LazyStringList affectedJourneyPatternIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         private void ensureAffectedJourneyPatternIdsIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!((bitField0_ & 0x00000010) != 0)) {
             affectedJourneyPatternIds_ = new com.google.protobuf.LazyStringArrayList(affectedJourneyPatternIds_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000010;
            }
         }
         /**
          * <pre>
-         *List of journey pattern IDs that are affected by the stop cancellation
+         *List of journey patterns (IDs) that are affected by the stop cancellation (if cause is CLOSED_STOP or JOURNEY_PATTERN_DETOUR)
          * </pre>
          *
-         * <code>repeated string affected_journey_pattern_ids = 4;</code>
+         * <code>repeated string affected_journey_pattern_ids = 5;</code>
          */
         public com.google.protobuf.ProtocolStringList
             getAffectedJourneyPatternIdsList() {
@@ -5083,30 +5436,30 @@ public final class InternalMessages {
         }
         /**
          * <pre>
-         *List of journey pattern IDs that are affected by the stop cancellation
+         *List of journey patterns (IDs) that are affected by the stop cancellation (if cause is CLOSED_STOP or JOURNEY_PATTERN_DETOUR)
          * </pre>
          *
-         * <code>repeated string affected_journey_pattern_ids = 4;</code>
+         * <code>repeated string affected_journey_pattern_ids = 5;</code>
          */
         public int getAffectedJourneyPatternIdsCount() {
           return affectedJourneyPatternIds_.size();
         }
         /**
          * <pre>
-         *List of journey pattern IDs that are affected by the stop cancellation
+         *List of journey patterns (IDs) that are affected by the stop cancellation (if cause is CLOSED_STOP or JOURNEY_PATTERN_DETOUR)
          * </pre>
          *
-         * <code>repeated string affected_journey_pattern_ids = 4;</code>
+         * <code>repeated string affected_journey_pattern_ids = 5;</code>
          */
         public java.lang.String getAffectedJourneyPatternIds(int index) {
           return affectedJourneyPatternIds_.get(index);
         }
         /**
          * <pre>
-         *List of journey pattern IDs that are affected by the stop cancellation
+         *List of journey patterns (IDs) that are affected by the stop cancellation (if cause is CLOSED_STOP or JOURNEY_PATTERN_DETOUR)
          * </pre>
          *
-         * <code>repeated string affected_journey_pattern_ids = 4;</code>
+         * <code>repeated string affected_journey_pattern_ids = 5;</code>
          */
         public com.google.protobuf.ByteString
             getAffectedJourneyPatternIdsBytes(int index) {
@@ -5114,10 +5467,10 @@ public final class InternalMessages {
         }
         /**
          * <pre>
-         *List of journey pattern IDs that are affected by the stop cancellation
+         *List of journey patterns (IDs) that are affected by the stop cancellation (if cause is CLOSED_STOP or JOURNEY_PATTERN_DETOUR)
          * </pre>
          *
-         * <code>repeated string affected_journey_pattern_ids = 4;</code>
+         * <code>repeated string affected_journey_pattern_ids = 5;</code>
          */
         public Builder setAffectedJourneyPatternIds(
             int index, java.lang.String value) {
@@ -5131,10 +5484,10 @@ public final class InternalMessages {
         }
         /**
          * <pre>
-         *List of journey pattern IDs that are affected by the stop cancellation
+         *List of journey patterns (IDs) that are affected by the stop cancellation (if cause is CLOSED_STOP or JOURNEY_PATTERN_DETOUR)
          * </pre>
          *
-         * <code>repeated string affected_journey_pattern_ids = 4;</code>
+         * <code>repeated string affected_journey_pattern_ids = 5;</code>
          */
         public Builder addAffectedJourneyPatternIds(
             java.lang.String value) {
@@ -5148,10 +5501,10 @@ public final class InternalMessages {
         }
         /**
          * <pre>
-         *List of journey pattern IDs that are affected by the stop cancellation
+         *List of journey patterns (IDs) that are affected by the stop cancellation (if cause is CLOSED_STOP or JOURNEY_PATTERN_DETOUR)
          * </pre>
          *
-         * <code>repeated string affected_journey_pattern_ids = 4;</code>
+         * <code>repeated string affected_journey_pattern_ids = 5;</code>
          */
         public Builder addAllAffectedJourneyPatternIds(
             java.lang.Iterable<java.lang.String> values) {
@@ -5163,23 +5516,23 @@ public final class InternalMessages {
         }
         /**
          * <pre>
-         *List of journey pattern IDs that are affected by the stop cancellation
+         *List of journey patterns (IDs) that are affected by the stop cancellation (if cause is CLOSED_STOP or JOURNEY_PATTERN_DETOUR)
          * </pre>
          *
-         * <code>repeated string affected_journey_pattern_ids = 4;</code>
+         * <code>repeated string affected_journey_pattern_ids = 5;</code>
          */
         public Builder clearAffectedJourneyPatternIds() {
           affectedJourneyPatternIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
           return this;
         }
         /**
          * <pre>
-         *List of journey pattern IDs that are affected by the stop cancellation
+         *List of journey patterns (IDs) that are affected by the stop cancellation (if cause is CLOSED_STOP or JOURNEY_PATTERN_DETOUR)
          * </pre>
          *
-         * <code>repeated string affected_journey_pattern_ids = 4;</code>
+         * <code>repeated string affected_journey_pattern_ids = 5;</code>
          */
         public Builder addAffectedJourneyPatternIdsBytes(
             com.google.protobuf.ByteString value) {
@@ -5190,6 +5543,160 @@ public final class InternalMessages {
           affectedJourneyPatternIds_.add(value);
           onChanged();
           return this;
+        }
+
+        private fi.hsl.common.transitdata.proto.InternalMessages.TripInfo affectedTrip_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            fi.hsl.common.transitdata.proto.InternalMessages.TripInfo, fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.Builder, fi.hsl.common.transitdata.proto.InternalMessages.TripInfoOrBuilder> affectedTripBuilder_;
+        /**
+         * <pre>
+         *Refers to the affected trip if cause is JOURNEY_DETOUR - i.e. StopCancellation affects only one journey/trip
+         * </pre>
+         *
+         * <code>optional .proto.TripInfo affected_trip = 6;</code>
+         */
+        public boolean hasAffectedTrip() {
+          return ((bitField0_ & 0x00000020) != 0);
+        }
+        /**
+         * <pre>
+         *Refers to the affected trip if cause is JOURNEY_DETOUR - i.e. StopCancellation affects only one journey/trip
+         * </pre>
+         *
+         * <code>optional .proto.TripInfo affected_trip = 6;</code>
+         */
+        public fi.hsl.common.transitdata.proto.InternalMessages.TripInfo getAffectedTrip() {
+          if (affectedTripBuilder_ == null) {
+            return affectedTrip_ == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.getDefaultInstance() : affectedTrip_;
+          } else {
+            return affectedTripBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         *Refers to the affected trip if cause is JOURNEY_DETOUR - i.e. StopCancellation affects only one journey/trip
+         * </pre>
+         *
+         * <code>optional .proto.TripInfo affected_trip = 6;</code>
+         */
+        public Builder setAffectedTrip(fi.hsl.common.transitdata.proto.InternalMessages.TripInfo value) {
+          if (affectedTripBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            affectedTrip_ = value;
+            onChanged();
+          } else {
+            affectedTripBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000020;
+          return this;
+        }
+        /**
+         * <pre>
+         *Refers to the affected trip if cause is JOURNEY_DETOUR - i.e. StopCancellation affects only one journey/trip
+         * </pre>
+         *
+         * <code>optional .proto.TripInfo affected_trip = 6;</code>
+         */
+        public Builder setAffectedTrip(
+            fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.Builder builderForValue) {
+          if (affectedTripBuilder_ == null) {
+            affectedTrip_ = builderForValue.build();
+            onChanged();
+          } else {
+            affectedTripBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000020;
+          return this;
+        }
+        /**
+         * <pre>
+         *Refers to the affected trip if cause is JOURNEY_DETOUR - i.e. StopCancellation affects only one journey/trip
+         * </pre>
+         *
+         * <code>optional .proto.TripInfo affected_trip = 6;</code>
+         */
+        public Builder mergeAffectedTrip(fi.hsl.common.transitdata.proto.InternalMessages.TripInfo value) {
+          if (affectedTripBuilder_ == null) {
+            if (((bitField0_ & 0x00000020) != 0) &&
+                affectedTrip_ != null &&
+                affectedTrip_ != fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.getDefaultInstance()) {
+              affectedTrip_ =
+                fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.newBuilder(affectedTrip_).mergeFrom(value).buildPartial();
+            } else {
+              affectedTrip_ = value;
+            }
+            onChanged();
+          } else {
+            affectedTripBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000020;
+          return this;
+        }
+        /**
+         * <pre>
+         *Refers to the affected trip if cause is JOURNEY_DETOUR - i.e. StopCancellation affects only one journey/trip
+         * </pre>
+         *
+         * <code>optional .proto.TripInfo affected_trip = 6;</code>
+         */
+        public Builder clearAffectedTrip() {
+          if (affectedTripBuilder_ == null) {
+            affectedTrip_ = null;
+            onChanged();
+          } else {
+            affectedTripBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000020);
+          return this;
+        }
+        /**
+         * <pre>
+         *Refers to the affected trip if cause is JOURNEY_DETOUR - i.e. StopCancellation affects only one journey/trip
+         * </pre>
+         *
+         * <code>optional .proto.TripInfo affected_trip = 6;</code>
+         */
+        public fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.Builder getAffectedTripBuilder() {
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return getAffectedTripFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         *Refers to the affected trip if cause is JOURNEY_DETOUR - i.e. StopCancellation affects only one journey/trip
+         * </pre>
+         *
+         * <code>optional .proto.TripInfo affected_trip = 6;</code>
+         */
+        public fi.hsl.common.transitdata.proto.InternalMessages.TripInfoOrBuilder getAffectedTripOrBuilder() {
+          if (affectedTripBuilder_ != null) {
+            return affectedTripBuilder_.getMessageOrBuilder();
+          } else {
+            return affectedTrip_ == null ?
+                fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.getDefaultInstance() : affectedTrip_;
+          }
+        }
+        /**
+         * <pre>
+         *Refers to the affected trip if cause is JOURNEY_DETOUR - i.e. StopCancellation affects only one journey/trip
+         * </pre>
+         *
+         * <code>optional .proto.TripInfo affected_trip = 6;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            fi.hsl.common.transitdata.proto.InternalMessages.TripInfo, fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.Builder, fi.hsl.common.transitdata.proto.InternalMessages.TripInfoOrBuilder> 
+            getAffectedTripFieldBuilder() {
+          if (affectedTripBuilder_ == null) {
+            affectedTripBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                fi.hsl.common.transitdata.proto.InternalMessages.TripInfo, fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.Builder, fi.hsl.common.transitdata.proto.InternalMessages.TripInfoOrBuilder>(
+                    getAffectedTrip(),
+                    getParentForChildren(),
+                    isClean());
+            affectedTrip_ = null;
+          }
+          return affectedTripBuilder_;
         }
         @java.lang.Override
         public final Builder setUnknownFields(
@@ -5321,6 +5828,12 @@ public final class InternalMessages {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
+      for (int i = 0; i < getStopCancellationsCount(); i++) {
+        if (!getStopCancellations(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       for (int i = 0; i < getAffectedJourneyPatternsCount(); i++) {
         if (!getAffectedJourneyPatterns(i).isInitialized()) {
           memoizedIsInitialized = 0;
@@ -5694,6 +6207,11 @@ public final class InternalMessages {
 
       @java.lang.Override
       public final boolean isInitialized() {
+        for (int i = 0; i < getStopCancellationsCount(); i++) {
+          if (!getStopCancellations(i).isInitialized()) {
+            return false;
+          }
+        }
         for (int i = 0; i < getAffectedJourneyPatternsCount(); i++) {
           if (!getAffectedJourneyPatterns(i).isInitialized()) {
             return false;
@@ -16706,121 +17224,125 @@ public final class InternalMessages {
       "Pattern\022\032\n\022journey_pattern_id\030\001 \002(\t\022)\n\005s" +
       "tops\030\002 \003(\0132\032.proto.JourneyPattern.Stop\022\036" +
       "\n\005trips\030\003 \003(\0132\017.proto.TripInfo\032.\n\004Stop\022\017" +
-      "\n\007stop_id\030\001 \002(\t\022\025\n\rstop_sequence\030\002 \002(\r\"\223" +
-      "\002\n\021StopCancellations\022E\n\022stop_cancellatio" +
+      "\n\007stop_id\030\001 \002(\t\022\025\n\rstop_sequence\030\002 \002(\r\"\265" +
+      "\003\n\021StopCancellations\022E\n\022stop_cancellatio" +
       "ns\030\001 \003(\0132).proto.StopCancellations.StopC" +
       "ancellation\0228\n\031affected_journey_patterns" +
-      "\030\002 \003(\0132\025.proto.JourneyPattern\032}\n\020StopCan" +
-      "cellation\022\017\n\007stop_id\030\001 \001(\t\022\031\n\021valid_from" +
-      "_unix_s\030\002 \001(\003\022\027\n\017valid_to_unix_s\030\003 \001(\003\022$" +
-      "\n\034affected_journey_pattern_ids\030\004 \003(\t\"\302\020\n" +
-      "\020TripCancellation\022\030\n\rSchemaVersion\030\001 \002(\005" +
-      ":\0011\022\017\n\007trip_id\030\002 \001(\t\022\020\n\010route_id\030\003 \001(\t\022\024" +
-      "\n\014direction_id\030\004 \001(\r\022\022\n\nstart_time\030\005 \001(\t" +
-      "\022\022\n\nstart_date\030\006 \001(\t\022.\n\006status\030\007 \002(\0162\036.p" +
-      "roto.TripCancellation.Status\022H\n\024deviatio" +
-      "n_cases_type\030\010 \001(\0162*.proto.TripCancellat" +
-      "ion.DeviationCasesType\022P\n\030affected_depar" +
-      "tures_type\030\t \001(\0162..proto.TripCancellatio" +
-      "n.AffectedDeparturesType\022\r\n\005title\030\n \001(\t\022" +
-      "\023\n\013description\030\013 \001(\t\022!\n\010category\030\014 \001(\0162\017" +
-      ".proto.Category\0229\n\014sub_category\030\r \001(\0162#." +
-      "proto.TripCancellation.SubCategory\"#\n\006St" +
-      "atus\022\013\n\007RUNNING\020\000\022\014\n\010CANCELED\020\001\"\360\001\n\022Devi" +
-      "ationCasesType\022\024\n\020CANCEL_DEPARTURE\020\000\022\n\n\006" +
-      "DETOUR\020\001\022\026\n\022SKIPPED_STOP_CALLS\020\002\022\023\n\017EARL" +
-      "Y_DEPARTURE\020\003\022%\n!EARLY_DEPARTURE_FROM_TI" +
-      "MING_POINT\020\004\022\022\n\016LATE_DEPARTURE\020\005\022!\n\035DEPA" +
-      "RTURED_AFTER_NEXT_JOURNEY\020\006\022\036\n\032BLOCK_FIR" +
-      "ST_DEPARTURE_LATE\020\007\022\r\n\tTIS_ERROR\020\010\"\213\001\n\026A" +
-      "ffectedDeparturesType\022\033\n\027CANCEL_ENTIRE_D" +
-      "EPARTURE\020\000\022\033\n\027CANCEL_STOPS_FROM_START\020\001\022" +
-      "\034\n\030CANCEL_STOPS_FROM_MIDDLE\020\002\022\031\n\025CANCEL_" +
-      "STOPS_FROM_END\020\003\"\276\t\n\013SubCategory\022\025\n\021BREA" +
-      "K_MALFUNCTION\020\000\022\017\n\013OUT_OF_FUEL\020\001\022\021\n\rFLUI" +
-      "D_LEAKAGE\020\002\022\030\n\024ELECTRIC_MALFUNCTION\020\003\022\026\n" +
-      "\022ENGINE_MALFUNCTION\020\004\022\025\n\021OTHER_MALFUNCTI" +
-      "ON\020\005\022\r\n\tOWN_FAULT\020\006\022\022\n\016OPPOSITE_FAULT\020\007\022" +
-      "\021\n\rFAULT_UNKNOWN\020\010\022\022\n\016STAFF_SHORTAGE\020\t\022\036" +
-      "\n\032ND_OPERATOR_PLANNING_ERROR\020\n\022\017\n\013DRIVER" +
-      "_LATE\020\013\022)\n%INSUFFICIENT_INSTRUCTIONS_BY_" +
-      "OPERATOR\020\014\022*\n&INSUFFICIENT_INSTRUCTIONS_" +
-      "BY_AUTHORITY\020\r\022\030\n\024NO_VEHICLE_AVAILABLE\020\016" +
-      "\022\025\n\021ASSAULT_ON_DRIVER\020\017\022\030\n\024ASSAULT_ON_PA" +
-      "SSENGER\020\020\022\026\n\022ASSAULT_ON_VEHICLE\020\021\022\030\n\024PAS" +
-      "SED_OUT_PASSENGER\020\022\022\021\n\rOTHER_ASSAULT\020\023\022\032" +
-      "\n\026UNDRIVEABLE_CONDITIONS\020\024\022\034\n\030STUCK_CAUS" +
-      "ED_BY_SLIPPERY\020\025\022 \n\034CONGESTION_CAUSED_BY" +
-      "_WEATHER\020\026\022\022\n\016SLIPPERY_TRACK\020\027\022\020\n\014ROAD_B" +
-      "LOCKED\020\030\022(\n$VEHICLE_OFF_THE_ROAD_BY_DRIV" +
-      "ER_ERROR\020\031\022(\n$VEHICLE_OFF_THE_ROAD_BY_OT" +
-      "HER_REASON\020\032\022\026\n\022MISSPARKED_VEHICLE\020\033\022\034\n\030" +
-      "CONGESTION_REASON_UKNOWN\020\034\022!\n\035CONGESTION" +
-      "_CAUSED_BY_ACCIDENT\020\035\022\022\n\016DRIVER_SEIZURE\020" +
-      "\036\022\025\n\021PASSENGER_SEIZURE\020\037\022\025\n\021PASSENGER_IN" +
-      "JURED\020 \022\021\n\rOTHER_SEIZURE\020!\022\020\n\014DEVICE_ERR" +
-      "OR\020\"\022\031\n\025OPERATOR_DEVICE_ERROR\020#\022\037\n\033WRONG" +
-      "_INFORMATION_IN_DEVICE\020$\022\034\n\030ITS_SYSTEM_N" +
-      "OT_INSTALLED\020%\022\016\n\nUSER_ERROR\020&\022\017\n\013FALSE_" +
-      "ALARM\020\'\022\023\n\017OTHER_ITS_ERROR\020(\022\020\n\014DRIVER_E" +
-      "RROR\020)\022\031\n\025INSUFFICIENT_CAPASITY\020*\022 \n\034OPE" +
-      "RATOR_PERSONNEL_ON_STRIKE\020+\022\020\n\014OTHER_STR" +
-      "IKE\020,\022\031\n\025OTHER_OPERATOR_REASON\020-\022\021\n\rUNKN" +
-      "OWN_CAUSE\020.\022\024\n\020DOOR_MALFUNCTION\020/\"\373\002\n\014St" +
-      "opEstimate\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\"\n\t" +
-      "trip_info\030\002 \002(\0132\017.proto.TripInfo\022\017\n\007stop" +
-      "_id\030\003 \002(\t\022\025\n\rstop_sequence\030\004 \002(\r\022*\n\006stat" +
-      "us\030\005 \002(\0162\032.proto.StopEstimate.Status\022&\n\004" +
-      "type\030\006 \002(\0162\030.proto.StopEstimate.Type\022\035\n\025" +
-      "estimated_time_utc_ms\030\007 \001(\003\022\035\n\025scheduled" +
-      "_time_utc_ms\030\010 \001(\003\022\034\n\024last_modified_utc_" +
-      "ms\030\t \002(\003\"1\n\006Status\022\r\n\tSCHEDULED\020\000\022\013\n\007SKI" +
-      "PPED\020\001\022\013\n\007NO_DATA\020\002\"\"\n\004Type\022\013\n\007ARRIVAL\020\000" +
-      "\022\r\n\tDEPARTURE\020\001\"\307\007\n\010Bulletin\022\023\n\013bulletin" +
-      "_id\030\001 \001(\t\022!\n\010category\030\002 \001(\0162\017.proto.Cate" +
-      "gory\022\034\n\024last_modified_utc_ms\030\003 \002(\003\022\031\n\021va" +
-      "lid_from_utc_ms\030\004 \002(\003\022\027\n\017valid_to_utc_ms" +
-      "\030\005 \002(\003\022\032\n\022affects_all_routes\030\006 \001(\010\022\031\n\021af" +
-      "fects_all_stops\030\007 \001(\010\0227\n\017affected_routes" +
-      "\030\010 \003(\0132\036.proto.Bulletin.AffectedEntity\0226" +
-      "\n\016affected_stops\030\t \003(\0132\036.proto.Bulletin." +
-      "AffectedEntity\022&\n\006impact\030\n \001(\0162\026.proto.B" +
-      "ulletin.Impact\022*\n\010priority\030\013 \001(\0162\030.proto" +
-      ".Bulletin.Priority\022+\n\006titles\030\014 \003(\0132\033.pro" +
-      "to.Bulletin.Translation\0221\n\014descriptions\030" +
-      "\r \003(\0132\033.proto.Bulletin.Translation\022)\n\004ur" +
-      "ls\030\016 \003(\0132\033.proto.Bulletin.Translation\032#\n" +
-      "\016AffectedEntity\022\021\n\tentity_id\030\001 \002(\t\032-\n\013Tr" +
-      "anslation\022\014\n\004text\030\001 \002(\t\022\020\n\010language\030\002 \001(" +
-      "\t\"\246\002\n\006Impact\022\r\n\tCANCELLED\020\000\022\013\n\007DELAYED\020\001" +
-      "\022\026\n\022DEVIATING_SCHEDULE\020\002\022\024\n\020DISRUPTION_R" +
-      "OUTE\020\003\022\030\n\024IRREGULAR_DEPARTURES\020\004\022\027\n\023POSS" +
-      "IBLE_DEVIATIONS\020\005\022\024\n\020POSSIBLY_DELAYED\020\006\022" +
-      "\025\n\021REDUCED_TRANSPORT\020\007\022\027\n\023RETURNING_TO_N" +
-      "ORMAL\020\010\022 \n\034VENDING_MACHINE_OUT_OF_ORDER\020" +
-      "\t\022\010\n\004NULL\020\n\022\t\n\005OTHER\020\013\022\025\n\021NO_TRAFFIC_IMP" +
-      "ACT\020\014\022\013\n\007UNKNOWN\020\r\"-\n\010Priority\022\010\n\004INFO\020\000" +
-      "\022\013\n\007WARNING\020\001\022\n\n\006SEVERE\020\002\"L\n\014ServiceAler" +
-      "t\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\"\n\tbulletins" +
-      "\030\002 \003(\0132\017.proto.Bulletin*\202\005\n\010Category\022\025\n\021" +
-      "VEHICLE_BREAKDOWN\020\000\022\014\n\010ACCIDENT\020\001\022\r\n\tNO_" +
-      "DRIVER\020\002\022\013\n\007ASSAULT\020\003\022\013\n\007WEATHER\020\004\022\030\n\024VE" +
-      "HICLE_OFF_THE_ROAD\020\005\022\013\n\007SEIZURE\020\006\022\024\n\020ITS" +
-      "_SYSTEM_ERROR\020\007\022\026\n\022OTHER_DRIVER_ERROR\020\010\022" +
-      "\027\n\023TOO_MANY_PASSENGERS\020\t\022\n\n\006STRIKE\020\n\022\t\n\005" +
-      "OTHER\020\013\022\026\n\022EARLIER_DISRUPTION\020\014\022\031\n\025NO_TR" +
-      "AFFIC_DISRUPTION\020\r\022\021\n\rTRACK_BLOCKED\020\016\022\021\n" +
-      "\rSTAFF_DEFICIT\020\017\022\017\n\013DISTURBANCE\020\020\022\023\n\017VEH" +
-      "ICLE_DEFICIT\020\021\022\017\n\013ROAD_CLOSED\020\022\022\017\n\013ROAD_" +
-      "TRENCH\020\023\022\025\n\021TRACK_MAINTENANCE\020\024\022\024\n\020TRAFF" +
-      "IC_ACCIDENT\020\025\022\017\n\013TRAFFIC_JAM\020\026\022\024\n\020MEDICA" +
-      "L_INCIDENT\020\027\022\026\n\022WEATHER_CONDITIONS\020\030\022\025\n\021" +
-      "TECHNICAL_FAILURE\020\031\022\010\n\004TEST\020\032\022\024\n\020ROAD_MA" +
-      "INTENANCE\020\033\022\022\n\016SWITCH_FAILURE\020\034\022\017\n\013STATE" +
-      "_VISIT\020\035\022\021\n\rPOWER_FAILURE\020\036\022\025\n\021MISPARKED" +
-      "_VEHICLE\020\037\022\020\n\014PUBLIC_EVENT\020 B3\n\037fi.hsl.c" +
-      "ommon.transitdata.protoB\020InternalMessage" +
-      "s"
+      "\030\002 \003(\0132\025.proto.JourneyPattern\032\324\001\n\020StopCa" +
+      "ncellation\022-\n\005cause\030\001 \002(\0162\036.proto.StopCa" +
+      "ncellations.Cause\022\017\n\007stop_id\030\002 \002(\t\022\031\n\021va" +
+      "lid_from_unix_s\030\003 \001(\003\022\027\n\017valid_to_unix_s" +
+      "\030\004 \001(\003\022$\n\034affected_journey_pattern_ids\030\005" +
+      " \003(\t\022&\n\raffected_trip\030\006 \001(\0132\017.proto.Trip" +
+      "Info\"H\n\005Cause\022\017\n\013CLOSED_STOP\020\000\022\032\n\026JOURNE" +
+      "Y_PATTERN_DETOUR\020\001\022\022\n\016JOURNEY_DETOUR\020\002\"\302" +
+      "\020\n\020TripCancellation\022\030\n\rSchemaVersion\030\001 \002" +
+      "(\005:\0011\022\017\n\007trip_id\030\002 \001(\t\022\020\n\010route_id\030\003 \001(\t" +
+      "\022\024\n\014direction_id\030\004 \001(\r\022\022\n\nstart_time\030\005 \001" +
+      "(\t\022\022\n\nstart_date\030\006 \001(\t\022.\n\006status\030\007 \002(\0162\036" +
+      ".proto.TripCancellation.Status\022H\n\024deviat" +
+      "ion_cases_type\030\010 \001(\0162*.proto.TripCancell" +
+      "ation.DeviationCasesType\022P\n\030affected_dep" +
+      "artures_type\030\t \001(\0162..proto.TripCancellat" +
+      "ion.AffectedDeparturesType\022\r\n\005title\030\n \001(" +
+      "\t\022\023\n\013description\030\013 \001(\t\022!\n\010category\030\014 \001(\016" +
+      "2\017.proto.Category\0229\n\014sub_category\030\r \001(\0162" +
+      "#.proto.TripCancellation.SubCategory\"#\n\006" +
+      "Status\022\013\n\007RUNNING\020\000\022\014\n\010CANCELED\020\001\"\360\001\n\022De" +
+      "viationCasesType\022\024\n\020CANCEL_DEPARTURE\020\000\022\n" +
+      "\n\006DETOUR\020\001\022\026\n\022SKIPPED_STOP_CALLS\020\002\022\023\n\017EA" +
+      "RLY_DEPARTURE\020\003\022%\n!EARLY_DEPARTURE_FROM_" +
+      "TIMING_POINT\020\004\022\022\n\016LATE_DEPARTURE\020\005\022!\n\035DE" +
+      "PARTURED_AFTER_NEXT_JOURNEY\020\006\022\036\n\032BLOCK_F" +
+      "IRST_DEPARTURE_LATE\020\007\022\r\n\tTIS_ERROR\020\010\"\213\001\n" +
+      "\026AffectedDeparturesType\022\033\n\027CANCEL_ENTIRE" +
+      "_DEPARTURE\020\000\022\033\n\027CANCEL_STOPS_FROM_START\020" +
+      "\001\022\034\n\030CANCEL_STOPS_FROM_MIDDLE\020\002\022\031\n\025CANCE" +
+      "L_STOPS_FROM_END\020\003\"\276\t\n\013SubCategory\022\025\n\021BR" +
+      "EAK_MALFUNCTION\020\000\022\017\n\013OUT_OF_FUEL\020\001\022\021\n\rFL" +
+      "UID_LEAKAGE\020\002\022\030\n\024ELECTRIC_MALFUNCTION\020\003\022" +
+      "\026\n\022ENGINE_MALFUNCTION\020\004\022\025\n\021OTHER_MALFUNC" +
+      "TION\020\005\022\r\n\tOWN_FAULT\020\006\022\022\n\016OPPOSITE_FAULT\020" +
+      "\007\022\021\n\rFAULT_UNKNOWN\020\010\022\022\n\016STAFF_SHORTAGE\020\t" +
+      "\022\036\n\032ND_OPERATOR_PLANNING_ERROR\020\n\022\017\n\013DRIV" +
+      "ER_LATE\020\013\022)\n%INSUFFICIENT_INSTRUCTIONS_B" +
+      "Y_OPERATOR\020\014\022*\n&INSUFFICIENT_INSTRUCTION" +
+      "S_BY_AUTHORITY\020\r\022\030\n\024NO_VEHICLE_AVAILABLE" +
+      "\020\016\022\025\n\021ASSAULT_ON_DRIVER\020\017\022\030\n\024ASSAULT_ON_" +
+      "PASSENGER\020\020\022\026\n\022ASSAULT_ON_VEHICLE\020\021\022\030\n\024P" +
+      "ASSED_OUT_PASSENGER\020\022\022\021\n\rOTHER_ASSAULT\020\023" +
+      "\022\032\n\026UNDRIVEABLE_CONDITIONS\020\024\022\034\n\030STUCK_CA" +
+      "USED_BY_SLIPPERY\020\025\022 \n\034CONGESTION_CAUSED_" +
+      "BY_WEATHER\020\026\022\022\n\016SLIPPERY_TRACK\020\027\022\020\n\014ROAD" +
+      "_BLOCKED\020\030\022(\n$VEHICLE_OFF_THE_ROAD_BY_DR" +
+      "IVER_ERROR\020\031\022(\n$VEHICLE_OFF_THE_ROAD_BY_" +
+      "OTHER_REASON\020\032\022\026\n\022MISSPARKED_VEHICLE\020\033\022\034" +
+      "\n\030CONGESTION_REASON_UKNOWN\020\034\022!\n\035CONGESTI" +
+      "ON_CAUSED_BY_ACCIDENT\020\035\022\022\n\016DRIVER_SEIZUR" +
+      "E\020\036\022\025\n\021PASSENGER_SEIZURE\020\037\022\025\n\021PASSENGER_" +
+      "INJURED\020 \022\021\n\rOTHER_SEIZURE\020!\022\020\n\014DEVICE_E" +
+      "RROR\020\"\022\031\n\025OPERATOR_DEVICE_ERROR\020#\022\037\n\033WRO" +
+      "NG_INFORMATION_IN_DEVICE\020$\022\034\n\030ITS_SYSTEM" +
+      "_NOT_INSTALLED\020%\022\016\n\nUSER_ERROR\020&\022\017\n\013FALS" +
+      "E_ALARM\020\'\022\023\n\017OTHER_ITS_ERROR\020(\022\020\n\014DRIVER" +
+      "_ERROR\020)\022\031\n\025INSUFFICIENT_CAPASITY\020*\022 \n\034O" +
+      "PERATOR_PERSONNEL_ON_STRIKE\020+\022\020\n\014OTHER_S" +
+      "TRIKE\020,\022\031\n\025OTHER_OPERATOR_REASON\020-\022\021\n\rUN" +
+      "KNOWN_CAUSE\020.\022\024\n\020DOOR_MALFUNCTION\020/\"\373\002\n\014" +
+      "StopEstimate\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\"" +
+      "\n\ttrip_info\030\002 \002(\0132\017.proto.TripInfo\022\017\n\007st" +
+      "op_id\030\003 \002(\t\022\025\n\rstop_sequence\030\004 \002(\r\022*\n\006st" +
+      "atus\030\005 \002(\0162\032.proto.StopEstimate.Status\022&" +
+      "\n\004type\030\006 \002(\0162\030.proto.StopEstimate.Type\022\035" +
+      "\n\025estimated_time_utc_ms\030\007 \001(\003\022\035\n\025schedul" +
+      "ed_time_utc_ms\030\010 \001(\003\022\034\n\024last_modified_ut" +
+      "c_ms\030\t \002(\003\"1\n\006Status\022\r\n\tSCHEDULED\020\000\022\013\n\007S" +
+      "KIPPED\020\001\022\013\n\007NO_DATA\020\002\"\"\n\004Type\022\013\n\007ARRIVAL" +
+      "\020\000\022\r\n\tDEPARTURE\020\001\"\307\007\n\010Bulletin\022\023\n\013bullet" +
+      "in_id\030\001 \001(\t\022!\n\010category\030\002 \001(\0162\017.proto.Ca" +
+      "tegory\022\034\n\024last_modified_utc_ms\030\003 \002(\003\022\031\n\021" +
+      "valid_from_utc_ms\030\004 \002(\003\022\027\n\017valid_to_utc_" +
+      "ms\030\005 \002(\003\022\032\n\022affects_all_routes\030\006 \001(\010\022\031\n\021" +
+      "affects_all_stops\030\007 \001(\010\0227\n\017affected_rout" +
+      "es\030\010 \003(\0132\036.proto.Bulletin.AffectedEntity" +
+      "\0226\n\016affected_stops\030\t \003(\0132\036.proto.Bulleti" +
+      "n.AffectedEntity\022&\n\006impact\030\n \001(\0162\026.proto" +
+      ".Bulletin.Impact\022*\n\010priority\030\013 \001(\0162\030.pro" +
+      "to.Bulletin.Priority\022+\n\006titles\030\014 \003(\0132\033.p" +
+      "roto.Bulletin.Translation\0221\n\014description" +
+      "s\030\r \003(\0132\033.proto.Bulletin.Translation\022)\n\004" +
+      "urls\030\016 \003(\0132\033.proto.Bulletin.Translation\032" +
+      "#\n\016AffectedEntity\022\021\n\tentity_id\030\001 \002(\t\032-\n\013" +
+      "Translation\022\014\n\004text\030\001 \002(\t\022\020\n\010language\030\002 " +
+      "\001(\t\"\246\002\n\006Impact\022\r\n\tCANCELLED\020\000\022\013\n\007DELAYED" +
+      "\020\001\022\026\n\022DEVIATING_SCHEDULE\020\002\022\024\n\020DISRUPTION" +
+      "_ROUTE\020\003\022\030\n\024IRREGULAR_DEPARTURES\020\004\022\027\n\023PO" +
+      "SSIBLE_DEVIATIONS\020\005\022\024\n\020POSSIBLY_DELAYED\020" +
+      "\006\022\025\n\021REDUCED_TRANSPORT\020\007\022\027\n\023RETURNING_TO" +
+      "_NORMAL\020\010\022 \n\034VENDING_MACHINE_OUT_OF_ORDE" +
+      "R\020\t\022\010\n\004NULL\020\n\022\t\n\005OTHER\020\013\022\025\n\021NO_TRAFFIC_I" +
+      "MPACT\020\014\022\013\n\007UNKNOWN\020\r\"-\n\010Priority\022\010\n\004INFO" +
+      "\020\000\022\013\n\007WARNING\020\001\022\n\n\006SEVERE\020\002\"L\n\014ServiceAl" +
+      "ert\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\"\n\tbulleti" +
+      "ns\030\002 \003(\0132\017.proto.Bulletin*\202\005\n\010Category\022\025" +
+      "\n\021VEHICLE_BREAKDOWN\020\000\022\014\n\010ACCIDENT\020\001\022\r\n\tN" +
+      "O_DRIVER\020\002\022\013\n\007ASSAULT\020\003\022\013\n\007WEATHER\020\004\022\030\n\024" +
+      "VEHICLE_OFF_THE_ROAD\020\005\022\013\n\007SEIZURE\020\006\022\024\n\020I" +
+      "TS_SYSTEM_ERROR\020\007\022\026\n\022OTHER_DRIVER_ERROR\020" +
+      "\010\022\027\n\023TOO_MANY_PASSENGERS\020\t\022\n\n\006STRIKE\020\n\022\t" +
+      "\n\005OTHER\020\013\022\026\n\022EARLIER_DISRUPTION\020\014\022\031\n\025NO_" +
+      "TRAFFIC_DISRUPTION\020\r\022\021\n\rTRACK_BLOCKED\020\016\022" +
+      "\021\n\rSTAFF_DEFICIT\020\017\022\017\n\013DISTURBANCE\020\020\022\023\n\017V" +
+      "EHICLE_DEFICIT\020\021\022\017\n\013ROAD_CLOSED\020\022\022\017\n\013ROA" +
+      "D_TRENCH\020\023\022\025\n\021TRACK_MAINTENANCE\020\024\022\024\n\020TRA" +
+      "FFIC_ACCIDENT\020\025\022\017\n\013TRAFFIC_JAM\020\026\022\024\n\020MEDI" +
+      "CAL_INCIDENT\020\027\022\026\n\022WEATHER_CONDITIONS\020\030\022\025" +
+      "\n\021TECHNICAL_FAILURE\020\031\022\010\n\004TEST\020\032\022\024\n\020ROAD_" +
+      "MAINTENANCE\020\033\022\022\n\016SWITCH_FAILURE\020\034\022\017\n\013STA" +
+      "TE_VISIT\020\035\022\021\n\rPOWER_FAILURE\020\036\022\025\n\021MISPARK" +
+      "ED_VEHICLE\020\037\022\020\n\014PUBLIC_EVENT\020 B3\n\037fi.hsl" +
+      ".common.transitdata.protoB\020InternalMessa" +
+      "ges"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -16863,7 +17385,7 @@ public final class InternalMessages {
     internal_static_proto_StopCancellations_StopCancellation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_StopCancellations_StopCancellation_descriptor,
-        new java.lang.String[] { "StopId", "ValidFromUnixS", "ValidToUnixS", "AffectedJourneyPatternIds", });
+        new java.lang.String[] { "Cause", "StopId", "ValidFromUnixS", "ValidToUnixS", "AffectedJourneyPatternIds", "AffectedTrip", });
     internal_static_proto_TripCancellation_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_proto_TripCancellation_fieldAccessorTable = new
