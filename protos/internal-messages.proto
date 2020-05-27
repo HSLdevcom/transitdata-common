@@ -64,8 +64,7 @@ enum Category {
 message JourneyPattern  {
     required string journey_pattern_id = 1;
     repeated Stop stops = 2;
-    //List of trips that use the journey pattern
-    repeated TripInfo trips = 3;
+    repeated TripInfo trips = 3; //List of trips that use the journey pattern and are affected by one or more StopCancellation messages
 
     message Stop {
         required string stop_id = 1;
@@ -78,11 +77,18 @@ message StopCancellations {
     repeated JourneyPattern affected_journey_patterns = 2;
 
     message StopCancellation {
-        optional string stop_id = 1;
-        optional int64 valid_from_unix_s = 2;
-        optional int64 valid_to_unix_s = 3;
-        //List of journey pattern IDs that are affected by the stop cancellation
-        repeated string affected_journey_pattern_ids = 4;
+        required Cause cause = 1;
+        required string stop_id = 2;
+        optional int64 valid_from_unix_s = 3;
+        optional int64 valid_to_unix_s = 4;
+        repeated string affected_journey_pattern_ids = 5; //List of journey patterns (IDs) that are affected by the stop cancellation
+        optional TripInfo affected_trip = 6; //Refers to the affected trip if cause is JOURNEY_DETOUR - i.e. stopCancellation affects only one journey/trip
+    }
+
+    enum Cause {
+        CLOSED_STOP = 0; //Stop cancellation is caused by a closed stop and thus affects all journey patterns that use the stop
+        JOURNEY_PATTERN_DETOUR = 1; //Stop cancellation is caused by a detour and affects only some journey patterns
+        JOURNEY_DETOUR = 2; //Stop cancellation affects only one journey (i.e. trip) specified (above) in StopCancellation.affected_trip (TripInfo)
     }
 }
 
