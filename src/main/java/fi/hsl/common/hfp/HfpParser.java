@@ -198,19 +198,24 @@ public class HfpParser {
         final String versionStr = parts[index++];
         builder.setTopicVersion(versionStr);
 
-        builder.setJourneyType(Hfp.Topic.JourneyType.valueOf(parts[index++]));
-        builder.setTemporalType(Hfp.Topic.TemporalType.valueOf(parts[index++]));
+        final Hfp.Topic.JourneyType journeyType = safeValueOf(Hfp.Topic.JourneyType.class, parts[index++]).orElseThrow(() -> new InvalidHfpTopicException("Unknown journey type: " + topic));
+        builder.setJourneyType(journeyType);
+
+        final Hfp.Topic.TemporalType temporalType = safeValueOf(Hfp.Topic.TemporalType.class, parts[index++]).orElseThrow(() -> new InvalidHfpTopicException("Unknown temporal type: " + topic));
+        builder.setTemporalType(temporalType);
 
         if (versionStr.equals("v2")) {
             final String eventTypeStr = parts[index++];
             if (eventTypeStr != null && !eventTypeStr.isEmpty()) {
-                builder.setEventType(Hfp.Topic.EventType.valueOf(eventTypeStr.toUpperCase()));
+                final Hfp.Topic.EventType eventType = safeValueOf(Hfp.Topic.EventType.class, eventTypeStr.toUpperCase()).orElseThrow(() -> new InvalidHfpTopicException("Unknown event type: " + topic));
+                builder.setEventType(eventType);
             }
         }
 
         final String strTransportMode = parts[index++];
         if (strTransportMode != null && !strTransportMode.isEmpty()) {
-            builder.setTransportMode(Hfp.Topic.TransportMode.valueOf(strTransportMode));
+            final Hfp.Topic.TransportMode transportMode = safeValueOf(Hfp.Topic.TransportMode.class, strTransportMode).orElseThrow(() -> new InvalidHfpTopicException("Unknown transport mode: " + topic));
+            builder.setTransportMode(transportMode);
         }
         builder.setOperatorId(Integer.parseInt(parts[index++]));
         builder.setVehicleNumber(Integer.parseInt(parts[index++]));
@@ -235,6 +240,15 @@ public class HfpParser {
             log.debug("could not parse Json's second batch of additional fields (geohash) for topic {}", topic);
         }
         return builder.build();
+    }
+
+    static <E extends Enum<E>> Optional<E> safeValueOf(Class<E> enumType, String value) {
+        try {
+            return Optional.of(Enum.valueOf(enumType, value));
+        } catch (IllegalArgumentException | NullPointerException e) {
+            log.debug("Failed to parse value {} for enum {}", value, enumType.getCanonicalName());
+            return Optional.empty();
+        }
     }
 
     public static class GeoHash {

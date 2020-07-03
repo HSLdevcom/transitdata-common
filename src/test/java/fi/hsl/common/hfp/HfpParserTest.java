@@ -346,6 +346,16 @@ public class HfpParserTest {
 
     }
 
+    @Test
+    public void testSafeValueOfWithValidValue() {
+        assertTrue(HfpParser.safeValueOf(Hfp.Topic.JourneyType.class, "journey").isPresent());
+    }
+
+    @Test
+    public void testSafeValueOfWithInvalidValue() {
+        assertFalse(HfpParser.safeValueOf(Hfp.Topic.JourneyType.class, "invalid_journey_type").isPresent());
+    }
+
     private String parseTopicPrefix(String topic) throws Exception {
         final String[] allParts = topic.split("/");
         int versionIndex = HfpParser.findVersionIndex(allParts);
