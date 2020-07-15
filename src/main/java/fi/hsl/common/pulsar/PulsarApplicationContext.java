@@ -6,6 +6,8 @@ import org.apache.pulsar.client.admin.PulsarAdmin;
 import org.apache.pulsar.client.api.Consumer;
 import org.apache.pulsar.client.api.Producer;
 import org.apache.pulsar.client.api.PulsarClient;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import redis.clients.jedis.Jedis;
 
 public class PulsarApplicationContext {
@@ -23,7 +25,7 @@ public class PulsarApplicationContext {
         return config;
     }
 
-    protected void setConfig(Config config) {
+    protected void setConfig(@NotNull Config config) {
         this.config = config;
     }
 
@@ -31,7 +33,7 @@ public class PulsarApplicationContext {
         return consumer;
     }
 
-    protected void setConsumer(Consumer<byte[]> consumer) {
+    protected void setConsumer(@Nullable Consumer<byte[]> consumer) {
         this.consumer = consumer;
     }
 
@@ -39,7 +41,7 @@ public class PulsarApplicationContext {
         return producer;
     }
 
-    protected void setProducer(Producer<byte[]> producer) {
+    protected void setProducer(@Nullable Producer<byte[]> producer) {
         this.producer = producer;
     }
 
@@ -47,7 +49,7 @@ public class PulsarApplicationContext {
         return client;
     }
 
-    protected void setClient(PulsarClient client) {
+    protected void setClient(@NotNull PulsarClient client) {
         this.client = client;
     }
 
@@ -55,7 +57,7 @@ public class PulsarApplicationContext {
         return jedis;
     }
 
-    protected void setJedis(Jedis jedis) {
+    protected void setJedis(@Nullable Jedis jedis) {
         this.jedis = jedis;
     }
 
@@ -63,7 +65,7 @@ public class PulsarApplicationContext {
         return admin;
     }
 
-    protected void setAdmin(PulsarAdmin admin) {
+    protected void setAdmin(@Nullable PulsarAdmin admin) {
         this.admin = admin;
     }
 
@@ -71,7 +73,7 @@ public class PulsarApplicationContext {
         return healthServer;
     }
 
-    protected void setHealthServer(HealthServer healthServer) {
+    protected void setHealthServer(@Nullable HealthServer healthServer) {
         this.healthServer = healthServer;
     }
 }

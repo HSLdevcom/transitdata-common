@@ -1,5 +1,7 @@
 package fi.hsl.common.transitdata;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -19,7 +21,7 @@ public class JoreDateTime {
     private int joreSeconds;
     private LocalDateTime dateTime;
 
-    public JoreDateTime(final String serviceDayStartTimeString, final String date24h, final String time24h) {
+    public JoreDateTime(@NotNull final String serviceDayStartTimeString, @NotNull final String date24h, @NotNull final String time24h) {
         int serviceDayStartTimeSeconds = LocalTime.parse(serviceDayStartTimeString).toSecondOfDay();
         LocalDate date = LocalDate.parse(date24h, DateTimeFormatter.ofPattern("yyyyMMdd"));
         LocalTime time = LocalTime.parse(time24h);
@@ -30,6 +32,7 @@ public class JoreDateTime {
         dateTime = LocalDateTime.of(date, time);
     }
 
+    @NotNull
     public String getJoreTimeString() {
         return secondsToTimeString(joreSeconds);
     }
@@ -38,6 +41,7 @@ public class JoreDateTime {
         return joreSeconds;
     }
 
+    @NotNull
     public String getJoreDateString() {
         LocalDate date = dateTime.toLocalDate();
         if (joreSeconds > DAY_IN_SECONDS) {
@@ -50,6 +54,7 @@ public class JoreDateTime {
         return dateTime.toEpochSecond(ZoneOffset.UTC);
     }
 
+    @NotNull
     public LocalDateTime getDateTime() {
         return dateTime;
     }
@@ -66,7 +71,7 @@ public class JoreDateTime {
         return dateTime.isEqual(other.getDateTime());
     }
 
-    public static int timeStringToSeconds(String timeString) throws ParseException {
+    public static int timeStringToSeconds(@NotNull String timeString) throws ParseException {
         Matcher matcher = pattern.matcher(timeString);
         if (!matcher.matches()) {
             throw new ParseException("Failed to parse provided time string", 0);
@@ -76,6 +81,7 @@ public class JoreDateTime {
                 + Integer.parseInt(matcher.group(3));
     }
 
+    @NotNull
     public static String secondsToTimeString(int seconds) {
         int h = seconds / HOUR_IN_SECONDS;
         int m  = (seconds % HOUR_IN_SECONDS) / MINUTE_IN_SECONDS;
