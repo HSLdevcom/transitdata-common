@@ -95,7 +95,7 @@ public class ITPulsarApplication {
 
         final String payload = "Test-message";
 
-        Producer<byte[]> producer = app.getContext().getProducer();
+        Producer<byte[]> producer = app.getContext().getSingleProducer();
         producer.send(payload.getBytes());
 
         logger.info("Message sent, reading it back");
@@ -126,17 +126,18 @@ public class ITPulsarApplication {
         Map<String, Object> o1 = new HashMap<>();
         o1.put("pulsar.consumer.enabled", false);
         o1.put("redis.enabled", false);
-        o1.put("pulsar.producer.topic", formatTopicName("test-1"));
+        o1.put("pulsar.producer.multipleProducers", true);
+        o1.put("pulsar.producer.topics", formatTopicName("test-1") + ", " + formatTopicName("test-2"));
         Config producer1Config = PulsarMockApplication.readConfigWithOverrides(CONFIG_FILE, o1);
 
         PulsarApplication app = PulsarMockApplication.newInstance(producer1Config, redis, pulsar);
         assertNotNull(app);
 
-        Producer<byte[]> producer = app.getContext().getProducer();
+        Producer<byte[]> producer = app.getContext().getProducers().get(formatTopicName("test-1"));
 
         //Create a second producer but bind into different topic
-        Config producer2Config = PulsarMockApplication.readConfigWithOverride(CONFIG_FILE, "pulsar.producer.topic", formatTopicName("test-2"));
-        Producer<byte[]> secondProducer = app.createProducer(app.client, producer2Config);
+
+        Producer<byte[]> secondProducer = app.getContext().getProducers().get(formatTopicName("test-2"));
 
         logger.info("Multi-topic Pulsar Application created, testing to send a message");
 
@@ -188,7 +189,7 @@ public class ITPulsarApplication {
             logger.info("Pulsar Application created within try-with-resources-block");
             assertNotNull(app);
 
-            producer = app.getContext().getProducer();
+            producer = app.getContext().getSingleProducer();
             assertTrue(producer.isConnected());
 
             consumer = app.getContext().getConsumer();
@@ -250,7 +251,7 @@ public class ITPulsarApplication {
 
         logger.info("Pulsar Application created, testing HealthServer");
 
-        final Producer<byte[]> producer = app.getContext().getProducer();
+        final Producer<byte[]> producer = app.getContext().getSingleProducer();
         final Consumer<byte[]> consumer = app.getContext().getConsumer();
         final Jedis jedis = app.getContext().getJedis();
         final HealthServer healthServer = app.getContext().getHealthServer();

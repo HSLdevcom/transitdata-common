@@ -86,7 +86,7 @@ public class ITBaseTestSuite {
 
         logger.info("Initializing test resources");
         PulsarApplication sourceApp = createPulsarApp(sourceConfigFilename, testId);
-        Producer<byte[]> source = sourceApp.getContext().getProducer();
+        Producer<byte[]> source = sourceApp.getContext().getSingleProducer();
         assertNotNull(source);
         assertTrue(source.isConnected());
 
