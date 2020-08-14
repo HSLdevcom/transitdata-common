@@ -128,7 +128,7 @@ public class ITPulsarApplication {
         o1.put("redis.enabled", false);
         o1.put("pulsar.producer.multipleProducers", true);
         o1.put("pulsar.producer.topics", formatTopicName("test-1") + ", " + formatTopicName("test-2"));
-        Config producer1Config = PulsarMockApplication.readConfigWithOverrides(CONFIG_FILE, o1);
+        Config producer1Config = PulsarMockApplication.readConfigWithOverrides("integration-multiprod-test.conf", o1);
 
         PulsarApplication app = PulsarMockApplication.newInstance(producer1Config, redis, pulsar);
         assertNotNull(app);
@@ -145,7 +145,7 @@ public class ITPulsarApplication {
         Map<String, Object> overrides = new HashMap<>();
         overrides.put("pulsar.consumer.multipleTopics", true);
         overrides.put("pulsar.consumer.topicsPattern", formatTopicName("test-(1|2)"));
-        Config consumerConfig = PulsarMockApplication.readConfigWithOverrides(CONFIG_FILE, overrides);
+        Config consumerConfig = PulsarMockApplication.readConfigWithOverrides("integration-multiprod-test.conf", overrides);
         Consumer<byte[]> consumer = app.createConsumer(app.client, consumerConfig);
 
         logger.debug("Consumer topic: " + consumer.getTopic());

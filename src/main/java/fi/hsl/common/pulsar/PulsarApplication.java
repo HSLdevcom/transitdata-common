@@ -225,7 +225,7 @@ public class PulsarApplication implements AutoCloseable {
         boolean blockIfFull = config.getBoolean("pulsar.producer.blockIfFull");
         Map<String, Producer<byte[]>> producers = new HashMap<>();
 
-        if (config.getBoolean("pulsar.producer.multipleProducers")) {
+        if (config.hasPath("pulsar.producer.multipleProducers") && config.getBoolean("pulsar.producer.multipleProducers")) {
             List<String> topics = config.getStringList("pulsar.producer.topics");
             log.info("Creating Pulsar producers for topics: [ {} ]", String.join(", ", topics));
             for(String topic : topics){
