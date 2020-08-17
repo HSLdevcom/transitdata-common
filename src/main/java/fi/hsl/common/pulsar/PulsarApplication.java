@@ -8,7 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.function.BooleanSupplier;
 import java.util.regex.Pattern;
@@ -21,7 +23,7 @@ public class PulsarApplication implements AutoCloseable {
     PulsarApplicationContext context;
 
     Consumer<byte[]> consumer;
-    Producer<byte[]> producer;
+    Map<String, Producer<byte[]>> producers;
     PulsarClient client;
     PulsarAdmin admin;
     Jedis jedis;
@@ -60,7 +62,7 @@ public class PulsarApplication implements AutoCloseable {
         );
 
         if (config.getBoolean("pulsar.producer.enabled")) {
-            producer = createProducer(client, config);
+            producers = createProducers(client, config);
         }
 
         if (config.getBoolean("pulsar.consumer.enabled")) {
@@ -91,7 +93,7 @@ public class PulsarApplication implements AutoCloseable {
 
             final BooleanSupplier pulsarHealthCheck = () -> {
                 boolean status = true;
-                if (producer != null && !producer.isConnected()) {
+                if (producers != null && producers.values().stream().anyMatch(producer ->  !producer.isConnected())  ){
                     status = false;
                     log.error("HealthCheck: Pulsar producer is not connected");
                 }
@@ -137,7 +139,7 @@ public class PulsarApplication implements AutoCloseable {
             }
         }
 
-        return createContext(config, client, consumer, producer, jedis, admin, healthServer);
+        return createContext(config, client, consumer, producers, jedis, admin, healthServer);
     }
 
     protected Jedis createRedisClient(String redisHost, int port, int connTimeOutSecs) {
@@ -159,13 +161,13 @@ public class PulsarApplication implements AutoCloseable {
     }
 
     protected PulsarApplicationContext createContext(Config config, PulsarClient client,
-                                                     Consumer<byte[]> consumer, Producer<byte[]> producer,
+                                                     Consumer<byte[]> consumer, Map<String, Producer<byte[]>> producers,
                                                      Jedis jedis, PulsarAdmin admin, HealthServer healthServer) {
         PulsarApplicationContext context = new PulsarApplicationContext();
         context.setConfig(config);
         context.setClient(client);
         context.setConsumer(consumer);
-        context.setProducer(producer);
+        context.setProducers(producers);
         context.setJedis(jedis);
         context.setAdmin(admin);
         context.setHealthServer(healthServer);
@@ -218,20 +220,39 @@ public class PulsarApplication implements AutoCloseable {
         return consumer;
     }
 
-    protected Producer<byte[]> createProducer(PulsarClient client, Config config) throws PulsarClientException {
+    protected Map<String, Producer<byte[]>> createProducers(PulsarClient client, Config config) throws PulsarClientException {
         int queueSize = config.getInt("pulsar.producer.queueSize");
         boolean blockIfFull = config.getBoolean("pulsar.producer.blockIfFull");
-        String topic = config.getString("pulsar.producer.topic");
+        Map<String, Producer<byte[]>> producers = new HashMap<>();
 
-        Producer<byte[]> producer = client.newProducer()
-                .compressionType(CompressionType.LZ4)
-                .maxPendingMessages(queueSize)
-                .topic(topic)
-                .enableBatching(false)
-                .blockIfQueueFull(blockIfFull)
-                .create();
-        log.info("Pulsar producer created to topic " + topic);
-        return producer;
+        if (config.hasPath("pulsar.producer.multipleProducers") && config.getBoolean("pulsar.producer.multipleProducers")) {
+            List<String> topics = config.getStringList("pulsar.producer.topics");
+            log.info("Creating Pulsar producers for topics: [ {} ]", String.join(", ", topics));
+            for(String topic : topics){
+                Producer<byte[]> producer = client.newProducer()
+                        .compressionType(CompressionType.LZ4)
+                        .maxPendingMessages(queueSize)
+                        .topic(topic)
+                        .enableBatching(false)
+                        .blockIfQueueFull(blockIfFull)
+                        .create();
+                log.info("Pulsar producer created to topic " + topic);
+                producers.put(topic, producer);
+            }
+        }
+        else {
+            String topic = config.getString("pulsar.producer.topic");
+            Producer<byte[]> producer = client.newProducer()
+                    .compressionType(CompressionType.LZ4)
+                    .maxPendingMessages(queueSize)
+                    .topic(topic)
+                    .enableBatching(false)
+                    .blockIfQueueFull(blockIfFull)
+                    .create();
+            producers.put(producer.getTopic(), producer);
+            log.info("Pulsar producer created to topic " + topic);
+        }
+        return producers;
     }
 
     protected PulsarAdmin createAdmin(String adminHost, int adminPort) throws PulsarClientException {
@@ -268,11 +289,14 @@ public class PulsarApplication implements AutoCloseable {
 
     public void close() {
         log.info("Closing PulsarApplication resources");
-        try {
-            if (producer != null)
-                producer.close();
-        } catch (PulsarClientException e) {
-            log.error("Failed to close pulsar producer", e);
+
+        if (producers != null){
+            for(Producer producer : producers.values()){
+                try { producer.close();}
+                catch (PulsarClientException e) {
+                    log.error("Failed to close pulsar producer", e);
+                }
+            }
         }
         try {
             if (consumer != null)
