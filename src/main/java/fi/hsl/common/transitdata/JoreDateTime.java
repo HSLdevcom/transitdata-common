@@ -59,15 +59,15 @@ public class JoreDateTime {
         return dateTime;
     }
 
-    public boolean isBefore(final JoreDateTime other) {
+    public boolean isBefore(@NotNull final JoreDateTime other) {
         return dateTime.isBefore(other.getDateTime());
     }
 
-    public boolean isAfter(final JoreDateTime other) {
+    public boolean isAfter(@NotNull final JoreDateTime other) {
         return dateTime.isAfter(other.getDateTime());
     }
 
-    public boolean isEqual(final JoreDateTime other) {
+    public boolean isEqual(@NotNull final JoreDateTime other) {
         return dateTime.isEqual(other.getDateTime());
     }
 

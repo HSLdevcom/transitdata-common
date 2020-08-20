@@ -21,6 +21,7 @@ public class ConfigParser {
      *
      * @see #createConfig(String)
      */
+    @NotNull
     public static Config createConfig() throws RuntimeException {
         return createConfig("environment.conf");
     }

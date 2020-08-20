@@ -68,6 +68,7 @@ public class TransitdataProperties {
             return key;
         }
 
+        @NotNull
         public static ProtobufSchema fromString(@NotNull String str) {
             for (ProtobufSchema protobufSchema : ProtobufSchema.values()) {
                 if (protobufSchema.key.equals(str)) {

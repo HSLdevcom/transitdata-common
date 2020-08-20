@@ -169,7 +169,7 @@ public class PulsarApplication implements AutoCloseable {
 
     @NotNull
     protected PulsarApplicationContext createContext(@NotNull Config config, @NotNull PulsarClient client,
-                @Nullable Consumer<byte[]> consumer, @Nullable Map<String, Producer<byte[]>> producers,
+                @Nullable Consumer<byte[]> consumer, @Nullable Map<@NotNull String, @NotNull Producer<byte[]>> producers,
                 @Nullable Jedis jedis, @Nullable PulsarAdmin admin, @Nullable HealthServer healthServer) {
         PulsarApplicationContext context = new PulsarApplicationContext();
         context.setConfig(config);
@@ -230,7 +230,7 @@ public class PulsarApplication implements AutoCloseable {
     }
 
     @NotNull
-    protected Map<String, Producer<byte[]>> createProducers(PulsarClient client, Config config) throws PulsarClientException {
+    protected Map<@NotNull String, @NotNull Producer<byte[]>> createProducers(@NotNull PulsarClient client, @NotNull Config config) throws PulsarClientException {
         int queueSize = config.getInt("pulsar.producer.queueSize");
         boolean blockIfFull = config.getBoolean("pulsar.producer.blockIfFull");
         Map<String, Producer<byte[]>> producers = new HashMap<>();

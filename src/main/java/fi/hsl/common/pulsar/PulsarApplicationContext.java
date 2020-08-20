@@ -23,6 +23,7 @@ public class PulsarApplicationContext {
     private Jedis jedis;
     private HealthServer healthServer;
 
+    @Nullable
     public Config getConfig() {
         return config;
     }
@@ -31,6 +32,7 @@ public class PulsarApplicationContext {
         this.config = config;
     }
 
+    @Nullable
     public Consumer<byte[]> getConsumer() {
         return consumer;
     }
@@ -39,18 +41,24 @@ public class PulsarApplicationContext {
         this.consumer = consumer;
     }
 
+    /**
+     * @deprecated Use {@link #getSingleProducer()} instead
+     */
     @Deprecated
-    //Use getSingleProducer instead
+    @Nullable
     public Producer<byte[]> getProducer() {
         return getSingleProducer();
     }
 
+    @Nullable
     public Producer<byte[]> getSingleProducer(){
         return getProducers().values().stream().findFirst().get();
     }
 
+    /**
+     * @deprecated Use {@link #setSingleProducer(Producer)} instead
+     */
     @Deprecated
-    //Use setSingleProducer instead
     protected void setProducer(@Nullable Producer<byte[]> producer) {
         setSingleProducer(producer);
     }
@@ -60,6 +68,7 @@ public class PulsarApplicationContext {
         getProducers().put(producer.getTopic(), producer);
     }
 
+    @Nullable
     public PulsarClient getClient() {
         return client;
     }
@@ -68,6 +77,7 @@ public class PulsarApplicationContext {
         this.client = client;
     }
 
+    @Nullable
     public Jedis getJedis() {
         return jedis;
     }
@@ -76,6 +86,7 @@ public class PulsarApplicationContext {
         this.jedis = jedis;
     }
 
+    @Nullable
     public PulsarAdmin getAdmin() {
         return admin;
     }
@@ -84,6 +95,7 @@ public class PulsarApplicationContext {
         this.admin = admin;
     }
 
+    @Nullable
     public HealthServer getHealthServer() {
         return healthServer;
     }
@@ -92,11 +104,12 @@ public class PulsarApplicationContext {
         this.healthServer = healthServer;
     }
 
-    public Map<String, Producer<byte[]>> getProducers() {
+    @Nullable
+    public Map<@NotNull String, @NotNull Producer<byte[]>> getProducers() {
         return producers;
     }
 
-    public void setProducers(Map<String, @NotNull Producer<byte[]>> producers) {
+    public void setProducers(Map<@NotNull String, @NotNull Producer<byte[]>> producers) {
         this.producers = producers;
     }
 }

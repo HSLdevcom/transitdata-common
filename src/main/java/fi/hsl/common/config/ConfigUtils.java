@@ -37,34 +37,42 @@ public class ConfigUtils {
         return getEnv(name).flatMap(ConfigUtils::safeParseInt);
     }
 
+    @NotNull
     public static String getConnectionStringFromFileOrThrow() throws Exception {
         return getSecretFromFileOrThrow("FILEPATH_CONNECTION_STRING", Optional.empty());
     }
 
+    @NotNull
     public static String getConnectionStringFromFileOrThrow(final Optional<String> defaultPath) throws Exception {
         return getSecretFromFileOrThrow("FILEPATH_CONNECTION_STRING", defaultPath);
     }
 
+    @NotNull
     public static String getUsernameFromFileOrThrow() throws Exception {
         return getSecretFromFileOrThrow("FILEPATH_USERNAME_SECRET", Optional.empty());
     }
 
+    @NotNull
     public static String getUsernameFromFileOrThrow(final Optional<String> defaultPath) throws Exception {
         return getSecretFromFileOrThrow("FILEPATH_USERNAME_SECRET", defaultPath);
     }
 
+    @NotNull
     public static String getPasswordFromFileOrThrow() throws Exception {
         return getSecretFromFileOrThrow("FILEPATH_PASSWORD_SECRET", Optional.empty());
     }
 
+    @NotNull
     public static String getPasswordFromFileOrThrow(final Optional<String> defaultPath) throws Exception {
         return getSecretFromFileOrThrow("FILEPATH_PASSWORD_SECRET", defaultPath);
     }
 
+    @NotNull
     public static String getSecretFromFileOrThrow(@NotNull final String envName) throws Exception {
         return getSecretFromFileOrThrow(envName, Optional.empty());
     }
 
+    @NotNull
     public static String getSecretFromFileOrThrow(@NotNull final String envName, final Optional<String> defaultPath) throws Exception {
         String secretFilePath;
         final Optional<String> maybeSecretFilePath = getEnv(envName);
@@ -77,8 +85,8 @@ public class ConfigUtils {
         }
 
         String secret;
-        try {
-            secret = new Scanner(new File(secretFilePath)).useDelimiter("\\Z").next();
+        try (Scanner scanner = new Scanner(new File(secretFilePath)).useDelimiter("\\Z")) {
+            secret = scanner.next();
         } catch (Exception e) {
             log.error("Failed to read secret file", e);
             throw e;
