@@ -10,12 +10,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import redis.clients.jedis.Jedis;
 
+import java.util.Map;
+
 public class PulsarApplicationContext {
 
     private Config config;
 
     private Consumer<byte[]> consumer;
-    private Producer<byte[]> producer;
+    private Map<String, Producer<byte[]>> producers;
     private PulsarClient client;
     private PulsarAdmin admin;
     private Jedis jedis;
@@ -37,12 +39,25 @@ public class PulsarApplicationContext {
         this.consumer = consumer;
     }
 
+    @Deprecated
+    //Use getSingleProducer instead
     public Producer<byte[]> getProducer() {
-        return producer;
+        return getSingleProducer();
     }
 
+    public Producer<byte[]> getSingleProducer(){
+        return getProducers().values().stream().findFirst().get();
+    }
+
+    @Deprecated
+    //Use setSingleProducer instead
     protected void setProducer(@Nullable Producer<byte[]> producer) {
-        this.producer = producer;
+        setSingleProducer(producer);
+    }
+
+    protected void setSingleProducer(@Nullable Producer<byte[]> producer) {
+        this.getProducers().clear();
+        getProducers().put(producer.getTopic(), producer);
     }
 
     public PulsarClient getClient() {
@@ -75,5 +90,13 @@ public class PulsarApplicationContext {
 
     protected void setHealthServer(@Nullable HealthServer healthServer) {
         this.healthServer = healthServer;
+    }
+
+    public Map<String, Producer<byte[]>> getProducers() {
+        return producers;
+    }
+
+    public void setProducers(Map<String, @NotNull Producer<byte[]>> producers) {
+        this.producers = producers;
     }
 }

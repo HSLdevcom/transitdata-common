@@ -41,7 +41,7 @@ public class ITCursorResetToLatestTest extends ITBaseTestSuite {
     private void sendInitialMessages(String testId, ArrayList<PulsarMessageData> messages) throws Exception {
         final String config = "integration-test-source.conf";
         PulsarApplication app = createPulsarApp(config, testId);
-        Producer<byte[]> producer = app.getContext().getProducer();
+        Producer<byte[]> producer = app.getContext().getSingleProducer();
         assertNotNull(producer);
         assertTrue(producer.isConnected());
         assertNull(app.getContext().getConsumer());
