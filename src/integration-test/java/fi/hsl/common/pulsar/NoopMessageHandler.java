@@ -3,6 +3,7 @@ package fi.hsl.common.pulsar;
 import org.apache.pulsar.client.api.Consumer;
 import org.apache.pulsar.client.api.Message;
 import org.apache.pulsar.client.api.Producer;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 import java.util.Set;
@@ -19,7 +20,7 @@ public class NoopMessageHandler implements IMessageHandler {
         producers = context.getProducers().values();
     }
 
-    public void handleMessage(Message received) throws Exception {
+    public void handleMessage(@NotNull Message received) throws Exception {
         consumer.acknowledgeAsync(received);
         for(Producer producer : producers){
             producer.newMessage()

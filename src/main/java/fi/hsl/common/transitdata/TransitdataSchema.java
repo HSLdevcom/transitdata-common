@@ -1,6 +1,7 @@
 package fi.hsl.common.transitdata;
 
 import org.apache.pulsar.client.api.Message;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,12 +13,12 @@ public class TransitdataSchema {
     final public TransitdataProperties.ProtobufSchema schema;
     final public Optional<Integer> schemaVersion;
 
-    public TransitdataSchema(TransitdataProperties.ProtobufSchema schema, Optional<Integer> version) {
+    public TransitdataSchema(@NotNull TransitdataProperties.ProtobufSchema schema, Optional<Integer> version) {
         this.schema = schema;
         schemaVersion = version;
     }
 
-    public static Optional<TransitdataSchema> parseFromPulsarMessage(Message received) {
+    public static Optional<TransitdataSchema> parseFromPulsarMessage(@NotNull Message received) {
         try {
             String schemaType = received.getProperty(TransitdataProperties.KEY_PROTOBUF_SCHEMA);
             if (schemaType == null)
@@ -35,7 +36,7 @@ public class TransitdataSchema {
         }
     }
 
-    public static boolean hasProtobufSchema(Message received, TransitdataProperties.ProtobufSchema expected) {
+    public static boolean hasProtobufSchema(@NotNull Message received, @NotNull TransitdataProperties.ProtobufSchema expected) {
         return parseFromPulsarMessage(received)
                 .map(schema -> schema.schema == expected)
                 .orElse(false);

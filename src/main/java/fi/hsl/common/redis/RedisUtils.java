@@ -2,6 +2,8 @@ package fi.hsl.common.redis;
 
 import fi.hsl.common.pulsar.PulsarApplicationContext;
 import fi.hsl.common.transitdata.TransitdataProperties;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.*;
@@ -18,63 +20,72 @@ public class RedisUtils {
     public static Jedis jedis;
     public static int ttlSeconds;
 
-    public static RedisUtils newInstance(final PulsarApplicationContext context) {
+    @NotNull
+    public static RedisUtils newInstance(@NotNull final PulsarApplicationContext context) {
         if (instance == null) {
             instance = new RedisUtils(context);
         }
         return instance;
     }
 
-    private RedisUtils(final PulsarApplicationContext context) {
+    private RedisUtils(@NotNull final PulsarApplicationContext context) {
         jedis = context.getJedis();
         ttlSeconds = context.getConfig().getInt("redis.ttlSeconds");
         log.info("Redis TTL: {} seconds", ttlSeconds);
     }
 
-    public String setValue(final String key, final String value) {
+    @NotNull
+    public String setValue(@NotNull final String key, @NotNull final String value) {
         synchronized (jedis) {
             return jedis.set(key, value);
         }
     }
 
-    public String setExpiringValue(final String key, final String value) {
+    @NotNull
+    public String setExpiringValue(@NotNull final String key, @NotNull final String value) {
         return setExpiringValue(key, value, ttlSeconds);
     }
 
-    public String setExpiringValue(final String key, final String value, final int ttlInSeconds) {
+    @NotNull
+    public String setExpiringValue(@NotNull final String key, @NotNull final String value, final int ttlInSeconds) {
         synchronized (jedis) {
             return jedis.setex(key, ttlInSeconds, value);
         }
     }
 
-    public String setValues(final String key, final Map<String, String> values) {
+    @NotNull
+    public String setValues(@NotNull final String key, @NotNull final Map<@NotNull String, @NotNull String> values) {
         synchronized (jedis) {
             return jedis.hmset(key, values);
         }
     }
 
-    public String setExpiringValues(final String key, final Map<String, String> values) {
+    @NotNull
+    public String setExpiringValues(@NotNull final String key, @NotNull final Map<@NotNull String, @NotNull String> values) {
         return setExpiringValues(key, values, ttlSeconds);
     }
 
-    public String setExpiringValues(final String key, final Map<String, String> values, final int ttlInSeconds) {
+    @NotNull
+    public String setExpiringValues(@NotNull final String key, @NotNull final Map<@NotNull String, @NotNull String> values, final int ttlInSeconds) {
         String response = setValues(key, values);
         // TODO: what if HMSET succeeds but EXPIRE does not?
         setExpire(key, ttlInSeconds);
         return response;
     }
 
-    public Long setExpire(final String key) {
+    @NotNull
+    public Long setExpire(@NotNull final String key) {
         return setExpire(key, ttlSeconds);
     }
 
-    public Long setExpire(final String key, final int ttlInSeconds) {
+    @NotNull
+    public Long setExpire(@NotNull final String key, final int ttlInSeconds) {
         synchronized (jedis) {
             return jedis.expire(key, ttlInSeconds);
         }
     }
 
-    public Optional<String> getValue(final String key) {
+    public Optional<String> getValue(@NotNull final String key) {
         synchronized (jedis) {
             final String value = jedis.get(key);
             if (value.isEmpty()) {
@@ -84,7 +95,7 @@ public class RedisUtils {
         }
     }
 
-    public Optional<Map<String, String>> getValues(final String key) {
+    public Optional<Map<@NotNull String, @NotNull String>> getValues(@NotNull final String key) {
         synchronized (jedis) {
             final Map<String, String> values = jedis.hgetAll(key);
             if (values.isEmpty()) {
@@ -100,7 +111,8 @@ public class RedisUtils {
      * @param count Approximate/maximum number of keys
      * @return ArrayList of matching keys
      */
-    public List<String> getKeys(final String prefix, final Integer count) {
+    @NotNull
+    public List<@NotNull String> getKeys(@NotNull final String prefix, @NotNull final Integer count) {
         return getKeys(prefix, "*", count);
     }
 
@@ -111,7 +123,8 @@ public class RedisUtils {
      * @param count Approximate/maximum number of keys
      * @return ArrayList of matching keys
      */
-    public List<String> getKeys(final String prefix, final String pattern, final Integer count) {
+    @NotNull
+    public List<String> getKeys(@NotNull final String prefix, @NotNull final String pattern, @NotNull final Integer count) {
         ScanParams scanParams = new ScanParams();
         scanParams.match(prefix + pattern);
         scanParams.count(count);
@@ -135,7 +148,8 @@ public class RedisUtils {
      * @param keys
      * @return HashMap of keys and their hash values if they exist
      */
-    public Map<String, Optional<Map<String, String>>> getValuesByKeys(final List<String> keys) {
+    @NotNull
+    public Map<@NotNull String, Optional<Map<@NotNull String, @NotNull String>>> getValuesByKeys(@NotNull final List<@NotNull String> keys) {
         synchronized (jedis) {
             final Transaction transaction = jedis.multi();
             final Map<String, Response<Map<String, String>>> responses = new HashMap<>();
@@ -161,7 +175,8 @@ public class RedisUtils {
      * @param keys
      * @return HashMap of keys and their values if they exist
      */
-    public Map<String, Optional<String>> getValueBykeys(final List<String> keys) {
+    @NotNull
+    public Map<@NotNull String, Optional<String>> getValueBykeys(@NotNull final List<@NotNull String> keys) {
         synchronized (jedis) {
             final Transaction transaction = jedis.multi();
             final Map<String, Response<String>> responses = new HashMap<>();
@@ -182,6 +197,7 @@ public class RedisUtils {
         }
     }
 
+    @NotNull
     public String updateTimestamp() {
         synchronized (jedis) {
             final OffsetDateTime now = OffsetDateTime.now();
@@ -191,11 +207,11 @@ public class RedisUtils {
         }
     }
 
-    public boolean checkResponse(final String response) {
+    public boolean checkResponse(@Nullable final String response) {
         return response != null && response.trim().equalsIgnoreCase("OK");
     }
 
-    public boolean checkResponse(final Long response) {
+    public boolean checkResponse(@Nullable final Long response) {
         return response != null && response == 1;
     }
 }

@@ -1,5 +1,7 @@
 package fi.hsl.common.transitdata;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
@@ -66,7 +68,8 @@ public class TransitdataProperties {
             return key;
         }
 
-        public static ProtobufSchema fromString(String str) {
+        @NotNull
+        public static ProtobufSchema fromString(@NotNull String str) {
             for (ProtobufSchema protobufSchema : ProtobufSchema.values()) {
                 if (protobufSchema.key.equals(str)) {
                     return protobufSchema;
@@ -88,11 +91,13 @@ public class TransitdataProperties {
         return utc.toEpochSecond();
     }
 
-    public static String formatJoreId(String route, String direction, String startDate, String startTime) {
+    @NotNull
+    public static String formatJoreId(@NotNull String route, @NotNull String direction, @NotNull String startDate, @NotNull String startTime) {
         return REDIS_PREFIX_JORE_ID + route + "-" + direction + "-" + startDate + "-" + startTime;
     }
 
-    public static String formatJoreId(String route, String direction, JoreDateTime startDateTime) {
+    @NotNull
+    public static String formatJoreId(@NotNull String route, @NotNull String direction, @NotNull JoreDateTime startDateTime) {
         return formatJoreId(route, direction, startDateTime.getJoreDateString(), startDateTime.getJoreTimeString());
     }
 
@@ -101,7 +106,8 @@ public class TransitdataProperties {
      * @param originalStartDatetime e.g. 2019-12-20T15:12:56.123Z
      * @return
      */
-    public static String formatMetroId(final String stopShortName, final String originalStartDatetime) {
+    @NotNull
+    public static String formatMetroId(@NotNull final String stopShortName, @NotNull final String originalStartDatetime) {
         // Transform dateTime string: remove milliseconds, change seconds
         // e.g 2019-12-20T15:12:56.123Z --> 2019-12-20T15:12:00Z
         Matcher m = matchTimestampSecondsAndMillisecondsPattern.matcher(originalStartDatetime);
