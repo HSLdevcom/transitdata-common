@@ -261,6 +261,8 @@ message Bulletin {
     repeated Translation titles = 12;
     repeated Translation descriptions = 13;
     repeated Translation urls = 14;
+
+    optional bool display_only = 15 [default = false]; //If true, the bulletin should be shown only on vehicle displays
 }
 
 message ServiceAlert {

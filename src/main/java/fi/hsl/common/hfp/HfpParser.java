@@ -4,9 +4,12 @@ import com.dslplatform.json.DslJson;
 import com.dslplatform.json.ParsingException;
 import com.dslplatform.json.runtime.Settings;
 import fi.hsl.common.hfp.proto.Hfp;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.validation.constraints.Null;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.Time;
@@ -30,6 +33,7 @@ public class HfpParser {
     //Note! Apparently not thread safe, for per thread reuse use ThreadLocal pattern or create separate instances
     final DslJson<Object> dslJson = new DslJson<>(Settings.withRuntime().allowArrayFormat(true).includeServiceLoader());
 
+    @NotNull
     public static HfpParser newInstance() {
         return new HfpParser();
     }
@@ -38,7 +42,8 @@ public class HfpParser {
      * Methods for parsing the Json Payload
      **/
 
-    public HfpJson parseJson(byte[] data) throws IOException, InvalidHfpPayloadException {
+    @Nullable
+    public HfpJson parseJson(@NotNull byte[] data) throws IOException, InvalidHfpPayloadException {
         try {
             return dslJson.deserialize(HfpJson.class, data, data.length);
         } catch (IOException ioe) {
@@ -50,19 +55,21 @@ public class HfpParser {
         }
     }
 
-    public String serializeToString(final HfpJson json) throws IOException {
+    @NotNull
+    public String serializeToString(@NotNull final HfpJson json) throws IOException {
         final ByteArrayOutputStream os = new ByteArrayOutputStream();
         dslJson.serialize(json, os);
         return os.toString("UTF-8");
     }
 
-    public byte[] serializeToByteArray(final HfpJson json) throws IOException {
+    @NotNull
+    public byte[] serializeToByteArray(@NotNull final HfpJson json) throws IOException {
         final ByteArrayOutputStream os = new ByteArrayOutputStream();
         dslJson.serialize(json, os);
         return os.toByteArray();
     }
 
-    public Optional<Hfp.Payload> safeParse(byte[] data) {
+    public Optional<Hfp.Payload> safeParse(@NotNull byte[] data) {
         try {
             HfpJson json = parseJson(data);
             return Optional.of(parsePayload(json));
@@ -73,7 +80,8 @@ public class HfpParser {
         }
     }
 
-    public static Hfp.Payload parsePayload(HfpJson json) {
+    @NotNull
+    public static Hfp.Payload parsePayload(@NotNull HfpJson json) {
         final HfpJson.Payload payload = json.payload;
 
         Hfp.Payload.Builder builder = Hfp.Payload.newBuilder();
@@ -155,7 +163,7 @@ public class HfpParser {
      * Methods for parsing the data from the topic
      */
 
-    public static Optional<Hfp.Topic> safeParseTopic(String topic) {
+    public static Optional<Hfp.Topic> safeParseTopic(@NotNull String topic) {
         try {
             return Optional.of(parseTopic(topic));
         }
@@ -165,7 +173,7 @@ public class HfpParser {
         }
     }
 
-    public static Optional<Hfp.Topic> safeParseTopic(String topic, long receivedAtMs) {
+    public static Optional<Hfp.Topic> safeParseTopic(@NotNull String topic, long receivedAtMs) {
         try {
             return Optional.of(parseTopic(topic, receivedAtMs));
         }
@@ -175,11 +183,13 @@ public class HfpParser {
         }
     }
 
-    public static Hfp.Topic parseTopic(String topic) throws InvalidHfpTopicException {
+    @NotNull
+    public static Hfp.Topic parseTopic(@NotNull String topic) throws InvalidHfpTopicException {
         return parseTopic(topic, System.currentTimeMillis());
     }
 
-    public static Hfp.Topic parseTopic(String topic, long receivedAtMs) throws InvalidHfpTopicException {
+    @NotNull
+    public static Hfp.Topic parseTopic(@NotNull String topic, long receivedAtMs) throws InvalidHfpTopicException {
         //log.debug("Parsing metadata from topic: " + topic);
 
         final String[] parts = topic.split("/", -1);//-1 to include empty substrings
@@ -198,19 +208,24 @@ public class HfpParser {
         final String versionStr = parts[index++];
         builder.setTopicVersion(versionStr);
 
-        builder.setJourneyType(Hfp.Topic.JourneyType.valueOf(parts[index++]));
-        builder.setTemporalType(Hfp.Topic.TemporalType.valueOf(parts[index++]));
+        final Hfp.Topic.JourneyType journeyType = safeValueOf(Hfp.Topic.JourneyType.class, parts[index++]).orElseThrow(() -> new InvalidHfpTopicException("Unknown journey type: " + topic));
+        builder.setJourneyType(journeyType);
+
+        final Hfp.Topic.TemporalType temporalType = safeValueOf(Hfp.Topic.TemporalType.class, parts[index++]).orElseThrow(() -> new InvalidHfpTopicException("Unknown temporal type: " + topic));
+        builder.setTemporalType(temporalType);
 
         if (versionStr.equals("v2")) {
             final String eventTypeStr = parts[index++];
             if (eventTypeStr != null && !eventTypeStr.isEmpty()) {
-                builder.setEventType(Hfp.Topic.EventType.valueOf(eventTypeStr.toUpperCase()));
+                final Hfp.Topic.EventType eventType = safeValueOf(Hfp.Topic.EventType.class, eventTypeStr.toUpperCase()).orElseThrow(() -> new InvalidHfpTopicException("Unknown event type: " + topic));
+                builder.setEventType(eventType);
             }
         }
 
         final String strTransportMode = parts[index++];
         if (strTransportMode != null && !strTransportMode.isEmpty()) {
-            builder.setTransportMode(Hfp.Topic.TransportMode.valueOf(strTransportMode));
+            final Hfp.Topic.TransportMode transportMode = safeValueOf(Hfp.Topic.TransportMode.class, strTransportMode).orElseThrow(() -> new InvalidHfpTopicException("Unknown transport mode: " + topic));
+            builder.setTransportMode(transportMode);
         }
         builder.setOperatorId(Integer.parseInt(parts[index++]));
         builder.setVehicleNumber(Integer.parseInt(parts[index++]));
@@ -237,12 +252,21 @@ public class HfpParser {
         return builder.build();
     }
 
+    static <E extends Enum<E>> Optional<E> safeValueOf(Class<E> enumType, String value) {
+        try {
+            return Optional.of(Enum.valueOf(enumType, value));
+        } catch (IllegalArgumentException | NullPointerException e) {
+            log.debug("Failed to parse value {} for enum {}", value, enumType.getCanonicalName());
+            return Optional.empty();
+        }
+    }
+
     public static class GeoHash {
         public double latitude;
         public double longitude;
     }
 
-    static Optional<GeoHash> parseGeoHash(String[] parts, int startIndex) {
+    static Optional<GeoHash> parseGeoHash(@NotNull String[] parts, int startIndex) {
         Optional<GeoHash> maybeGeoHash = Optional.empty();
 
         int index = startIndex;
@@ -279,11 +303,13 @@ public class HfpParser {
     }
 
 
+    @NotNull
     static String createUniqueVehicleId(int ownerOperatorId, int vehicleNumber) {
         return ownerOperatorId + "/" + vehicleNumber;
     }
 
-    static String joinFirstNParts(String[] parts, int upToIndexExcludingThis, String delimiter) {
+    @NotNull
+    static String joinFirstNParts(@NotNull String[] parts, int upToIndexExcludingThis, @NotNull String delimiter) {
         StringBuffer buffer = new StringBuffer();
         int index = 0;
 
@@ -296,7 +322,7 @@ public class HfpParser {
         return buffer.toString();
     }
 
-    public static int findVersionIndex(String[] parts) {
+    public static int findVersionIndex(@NotNull String[] parts) {
         for (int n = 0; n < parts.length; n++) {
             String p = parts[n];
             if (topicVersionRegex.matcher(p).matches()) {
@@ -306,7 +332,7 @@ public class HfpParser {
         return -1;
     }
 
-    public static Optional<Integer> safeParseInt(String n) {
+    public static Optional<Integer> safeParseInt(@Nullable String n) {
         if (n == null || n.isEmpty())
             return Optional.empty();
         else {
@@ -320,14 +346,14 @@ public class HfpParser {
         }
     }
 
-    public static Optional<Boolean> safeParseBoolean(Integer n) {
+    public static Optional<Boolean> safeParseBoolean(@Nullable Integer n) {
         if (n == null)
             return Optional.empty();
         else
             return Optional.of(n != 0);
     }
 
-    public static Optional<Date> safeParseDate(String date) {
+    public static Optional<Date> safeParseDate(@Nullable String date) {
         if (date == null)
             return Optional.empty();
         else {
@@ -341,7 +367,7 @@ public class HfpParser {
         }
     }
 
-    public static Optional<LocalTime> safeParseLocalTime(String time) {
+    public static Optional<LocalTime> safeParseLocalTime(@Nullable String time) {
         if (time == null)
             return Optional.empty();
         else {
@@ -355,7 +381,7 @@ public class HfpParser {
         }
     }
 
-    public static Optional<Time> safeParseTime(String time) {
+    public static Optional<Time> safeParseTime(@Nullable String time) {
         if (time == null) {
             return Optional.empty();
         } else {
@@ -368,7 +394,7 @@ public class HfpParser {
         }
     }
 
-    public static Optional<Timestamp> safeParseTimestamp(String dt) {
+    public static Optional<Timestamp> safeParseTimestamp(@Nullable String dt) {
         if (dt == null)
             return Optional.empty();
         else {

@@ -4,6 +4,8 @@ import com.typesafe.config.Config;
 import fi.hsl.common.health.HealthServer;
 import org.apache.pulsar.client.admin.PulsarAdmin;
 import org.apache.pulsar.client.api.*;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
@@ -24,7 +26,7 @@ public class PulsarApplication implements AutoCloseable {
     PulsarApplicationContext context;
 
     Consumer<byte[]> consumer;
-    Map<String, Producer<byte[]>> producers;
+    Map<String, @NotNull Producer<byte[]>> producers;
     PulsarClient client;
     PulsarAdmin admin;
     Jedis jedis;
@@ -33,7 +35,8 @@ public class PulsarApplication implements AutoCloseable {
     PulsarApplication() {
     }
 
-    public static PulsarApplication newInstance(Config config) throws Exception {
+    @NotNull
+    public static PulsarApplication newInstance(@NotNull Config config) throws Exception {
         PulsarApplication app = null;
         try {
             app = new PulsarApplication();
@@ -50,11 +53,13 @@ public class PulsarApplication implements AutoCloseable {
         }
     }
 
+    @NotNull
     public PulsarApplicationContext getContext() {
         return context;
     }
 
-    public PulsarApplicationContext initialize(Config config) throws Exception {
+    @NotNull
+    public PulsarApplicationContext initialize(@NotNull Config config) throws Exception {
         this.config = config;
 
         client = createPulsarClient(
@@ -143,7 +148,8 @@ public class PulsarApplication implements AutoCloseable {
         return createContext(config, client, consumer, producers, jedis, admin, healthServer);
     }
 
-    protected Jedis createRedisClient(String redisHost, int port, int connTimeOutSecs) {
+    @NotNull
+    protected Jedis createRedisClient(@NotNull String redisHost, int port, int connTimeOutSecs) {
         log.info("Connecting to Redis at " + redisHost + ":" + port + " with connection timeout of (s): "+ connTimeOutSecs);
         int timeOutMs = connTimeOutSecs * 1000;
         Jedis jedis = new Jedis(redisHost, port, timeOutMs);
@@ -152,7 +158,8 @@ public class PulsarApplication implements AutoCloseable {
         return jedis;
     }
 
-    protected PulsarClient createPulsarClient(String pulsarHost, int pulsarPort) throws Exception {
+    @NotNull
+    protected PulsarClient createPulsarClient(@NotNull String pulsarHost, int pulsarPort) throws Exception {
         final String pulsarUrl = String.format("pulsar://%s:%d", pulsarHost, pulsarPort);
 
         log.info("Connecting to Pulsar at " + pulsarUrl);
@@ -161,9 +168,10 @@ public class PulsarApplication implements AutoCloseable {
                 .build();
     }
 
-    protected PulsarApplicationContext createContext(Config config, PulsarClient client,
-                                                     Consumer<byte[]> consumer, Map<String, Producer<byte[]>> producers,
-                                                     Jedis jedis, PulsarAdmin admin, HealthServer healthServer) {
+    @NotNull
+    protected PulsarApplicationContext createContext(@NotNull Config config, @NotNull PulsarClient client,
+                @Nullable Consumer<byte[]> consumer, @Nullable Map<@NotNull String, @NotNull Producer<byte[]>> producers,
+                @Nullable Jedis jedis, @Nullable PulsarAdmin admin, @Nullable HealthServer healthServer) {
         PulsarApplicationContext context = new PulsarApplicationContext();
         context.setConfig(config);
         context.setClient(client);
@@ -175,7 +183,8 @@ public class PulsarApplication implements AutoCloseable {
         return context;
     }
 
-    protected Consumer<byte[]> createConsumer(PulsarClient client, Config config) throws PulsarClientException {
+    @NotNull
+    protected Consumer<byte[]> createConsumer(@NotNull PulsarClient client, @NotNull Config config) throws PulsarClientException {
         String subscription = config.getString("pulsar.consumer.subscription");
         SubscriptionType subscriptionType = SubscriptionType.valueOf(config.getString("pulsar.consumer.subscriptionType"));
         boolean readCompacted = subscriptionType != SubscriptionType.Shared; // Shared mode doesn't allow compacted reads
@@ -221,7 +230,8 @@ public class PulsarApplication implements AutoCloseable {
         return consumer;
     }
 
-    protected Map<String, Producer<byte[]>> createProducers(PulsarClient client, Config config) throws PulsarClientException {
+    @NotNull
+    protected Map<@NotNull String, @NotNull Producer<byte[]>> createProducers(@NotNull PulsarClient client, @NotNull Config config) throws PulsarClientException {
         int queueSize = config.getInt("pulsar.producer.queueSize");
         boolean blockIfFull = config.getBoolean("pulsar.producer.blockIfFull");
         Map<String, Producer<byte[]>> producers = new HashMap<>();
@@ -256,7 +266,8 @@ public class PulsarApplication implements AutoCloseable {
         return producers;
     }
 
-    protected PulsarAdmin createAdmin(String adminHost, int adminPort) throws PulsarClientException {
+    @NotNull
+    protected PulsarAdmin createAdmin(@NotNull String adminHost, int adminPort) throws PulsarClientException {
         final String adminHttpUrl = String.format("http://%s:%d", adminHost, adminPort);
         log.info("Connecting to Pulsar Admin at " + adminHttpUrl);
         return PulsarAdmin.builder()
@@ -264,7 +275,7 @@ public class PulsarApplication implements AutoCloseable {
                 .build();
     }
 
-    public void launchWithHandler(IMessageHandler handler) throws Exception {
+    public void launchWithHandler(@NotNull IMessageHandler handler) throws Exception {
         if (consumer == null) {
             throw new Exception("Consumer disabled, cannot start the handler");
         }

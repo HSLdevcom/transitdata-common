@@ -2,6 +2,7 @@ package fi.hsl.common.transitdata;
 
 import fi.hsl.common.transitdata.proto.InternalMessages;
 import fi.hsl.common.transitdata.proto.PubtransTableProtos;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * This class bundles some datatype-conversion operations and helpers.
@@ -19,8 +20,8 @@ public class PubtransFactory {
     /**
      * Protobuf build()-functions can throw RuntimeException so let's make them visible and flag the possible Exception on function signature also
      */
-
-    public static InternalMessages.TripInfo createTripInfo(PubtransTableProtos.DOITripInfo doiInfo) throws Exception {
+    @NotNull
+    public static InternalMessages.TripInfo createTripInfo(@NotNull PubtransTableProtos.DOITripInfo doiInfo) throws Exception {
         InternalMessages.TripInfo.Builder tripBuilder = InternalMessages.TripInfo.newBuilder();
         tripBuilder.setTripId(Long.toString(doiInfo.getDvjId()));
         tripBuilder.setOperatingDay(doiInfo.getOperatingDay());
@@ -30,9 +31,10 @@ public class PubtransFactory {
         return tripBuilder.build();
     }
 
-    public static InternalMessages.StopEstimate createStopEstimate(PubtransTableProtos.Common common,
-                                                                   PubtransTableProtos.DOITripInfo doiTripInfo,
-                                                                   InternalMessages.StopEstimate.Type arrivalOrDeparture) throws Exception {
+    @NotNull
+    public static InternalMessages.StopEstimate createStopEstimate(@NotNull PubtransTableProtos.Common common,
+                                                                   @NotNull PubtransTableProtos.DOITripInfo doiTripInfo,
+                                                                   @NotNull InternalMessages.StopEstimate.Type arrivalOrDeparture) throws Exception {
         InternalMessages.StopEstimate.Builder builder = InternalMessages.StopEstimate.newBuilder();
         builder.setSchemaVersion(builder.getSchemaVersion());
 

@@ -20,6 +20,7 @@ message Topic {
     enum JourneyType {
         journey = 0;
         deadrun = 1;
+        signoff = 2;
     }
 
     enum TemporalType {

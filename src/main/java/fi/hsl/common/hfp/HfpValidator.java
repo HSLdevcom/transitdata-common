@@ -1,9 +1,12 @@
 package fi.hsl.common.hfp;
 
 import fi.hsl.common.hfp.proto.Hfp;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.validation.constraints.Null;
 import java.util.Optional;
 
 
@@ -11,14 +14,14 @@ public class HfpValidator {
 
     private static final Logger log = LoggerFactory.getLogger(HfpParser.class);
 
-    public static Optional<String> validateString(String str) {
+    public static Optional<String> validateString(@Nullable String str) {
         if (str == null || str.isEmpty())
             return Optional.empty();
         else
             return Optional.of(str);
     }
 
-    public static Optional<String> validateLocationQualityMethod(String str) {
+    public static Optional<String> validateLocationQualityMethod(@Nullable String str) {
         if (validateString(str).isPresent()) {
             switch (str) {
                 case "GPS":
@@ -34,7 +37,7 @@ public class HfpValidator {
         return Optional.empty();
     }
 
-    public static Optional<Hfp.Payload.TlpRequestType> validateTlpRequestType(String str) {
+    public static Optional<Hfp.Payload.TlpRequestType> validateTlpRequestType(@Nullable String str) {
         if (validateString(str).isPresent()) {
             try {
                 return Optional.of(Hfp.Payload.TlpRequestType.valueOf(str));
@@ -46,7 +49,7 @@ public class HfpValidator {
         return Optional.empty();
     }
 
-    public static Optional<Hfp.Payload.TlpPriorityLevel> validateTlpPriorityLevel(String str) {
+    public static Optional<Hfp.Payload.TlpPriorityLevel> validateTlpPriorityLevel(@Nullable String str) {
         if (validateString(str).isPresent()) {
             try {
                 return Optional.of(Hfp.Payload.TlpPriorityLevel.valueOf(str));
@@ -58,7 +61,7 @@ public class HfpValidator {
         return Optional.empty();
     }
 
-    public static Optional<Hfp.Payload.TlpReason> validateTlpReason(String str) {
+    public static Optional<Hfp.Payload.TlpReason> validateTlpReason(@Nullable String str) {
         if (validateString(str).isPresent()) {
             try {
                 return Optional.of(Hfp.Payload.TlpReason.valueOf(str));
@@ -70,7 +73,7 @@ public class HfpValidator {
         return Optional.empty();
     }
 
-    public static Optional<Hfp.Payload.TlpDecision> validateTlpDecision(String str) {
+    public static Optional<Hfp.Payload.TlpDecision> validateTlpDecision(@Nullable String str) {
         if (validateString(str).isPresent()) {
             try {
                 return Optional.of(Hfp.Payload.TlpDecision.valueOf(str));
