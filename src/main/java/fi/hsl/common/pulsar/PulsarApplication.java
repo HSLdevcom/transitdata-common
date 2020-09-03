@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -236,7 +237,7 @@ public class PulsarApplication implements AutoCloseable {
         Map<String, Producer<byte[]>> producers = new HashMap<>();
 
         if (config.hasPath("pulsar.producer.multipleProducers") && config.getBoolean("pulsar.producer.multipleProducers")) {
-            List<String> topics = config.getStringList("pulsar.producer.topics");
+            List<String> topics = Arrays.asList(config.getString("pulsar.producer.topics").split(","));
             log.info("Creating Pulsar producers for topics: [ {} ]", String.join(", ", topics));
             for(String topic : topics){
                 Producer<byte[]> producer = client.newProducer()
