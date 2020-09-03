@@ -3,6 +3,7 @@ package fi.hsl.common.health;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,7 +23,7 @@ public class HealthServer {
     public final HttpServer httpServer;
     private List<BooleanSupplier> checks = new ArrayList<>();
 
-    public HealthServer(final int port, final String endpoint) throws IOException {
+    public HealthServer(final int port, @NotNull final String endpoint) throws IOException {
         this.port = port;
         this.endpoint = endpoint;
         log.info("Creating HealthServer, listening port {}, with endpoint {}", port, endpoint);
@@ -34,7 +35,7 @@ public class HealthServer {
         log.info("HealthServer started");
     }
 
-    private void writeResponse(final HttpExchange httpExchange, final int responseCode, final String responseBody) throws IOException {
+    private void writeResponse(@NotNull final HttpExchange httpExchange, @NotNull final int responseCode, @NotNull final String responseBody) throws IOException {
         final byte[] response = responseBody.getBytes("UTF-8");
         httpExchange.getResponseHeaders().add("Content-Type", "text/plain; charset=UTF-8");
         httpExchange.sendResponseHeaders(responseCode, response.length);
@@ -43,6 +44,7 @@ public class HealthServer {
         out.close();
     }
 
+    @NotNull
     private HttpHandler createDefaultHandler() {
         return httpExchange -> {
             final int responseCode = 404;
@@ -51,6 +53,7 @@ public class HealthServer {
         };
     }
 
+    @NotNull
     private HttpHandler createHandler() {
         return httpExchange -> {
             String method = httpExchange.getRequestMethod();
@@ -73,13 +76,13 @@ public class HealthServer {
         };
     }
 
-    public void addCheck(final BooleanSupplier check) {
+    public void addCheck(@NotNull final BooleanSupplier check) {
         if (check != null) {
             checks.add(check);
         }
     }
 
-    public void removeCheck(final BooleanSupplier check) {
+    public void removeCheck(@NotNull final BooleanSupplier check) {
         checks.remove(check);
     }
 

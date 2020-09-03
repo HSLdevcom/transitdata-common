@@ -1,5 +1,7 @@
 package fi.hsl.common.transitdata;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -23,7 +25,7 @@ public class RouteIdUtils {
      * @param routeId
      * @return
      */
-    public static boolean isTrainRoute(String routeId) {
+    public static boolean isTrainRoute(@NotNull String routeId) {
         Matcher matcher = TRAIN_ROUTE_PATTERN.matcher(routeId);
         return matcher.find();
     }
@@ -33,7 +35,7 @@ public class RouteIdUtils {
      * @param routeId
      * @return
      */
-    public static boolean isMetroRoute(String routeId) {
+    public static boolean isMetroRoute(@NotNull String routeId) {
         Matcher matcher = METRO_ROUTE_PATTERN.matcher(routeId);
         return matcher.find();
     }
@@ -43,7 +45,7 @@ public class RouteIdUtils {
      * @param routeId
      * @return
      */
-    public static boolean isFerryRoute(String routeId) {
+    public static boolean isFerryRoute(@NotNull String routeId) {
         Matcher matcher = FERRY_ROUTE_PATTERN.matcher(routeId);
         return matcher.find();
     }
@@ -53,7 +55,8 @@ public class RouteIdUtils {
      * @param routeId Route ID
      * @return Normalized route id
      */
-    public static String normalizeRouteId(String routeId) {
+    @NotNull
+    public static String normalizeRouteId(@NotNull String routeId) {
         if (routeId.length() < 4) {
             throw new IllegalArgumentException("Route ID must be at least 4 characters");
         } else if (routeId.length() <= 5) {
