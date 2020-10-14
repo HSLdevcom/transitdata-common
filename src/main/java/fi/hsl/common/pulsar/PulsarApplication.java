@@ -207,8 +207,7 @@ public class PulsarApplication implements AutoCloseable {
                 Pattern pattern = Pattern.compile(topics);
                 builder = builder.topicsPattern(pattern);
             }
-        }
-        else {
+        } else {
             String topic = config.getString("pulsar.consumer.topic");
             log.info("Creating Pulsar consumer for single topic: " + topic);
             builder = builder.topic(topic);
@@ -239,31 +238,34 @@ public class PulsarApplication implements AutoCloseable {
         if (config.hasPath("pulsar.producer.multipleProducers") && config.getBoolean("pulsar.producer.multipleProducers")) {
             List<String> topics = Arrays.asList(config.getString("pulsar.producer.topics").split(","));
             log.info("Creating Pulsar producers for topics: [ {} ]", String.join(", ", topics));
-            for(String topic : topics){
-                Producer<byte[]> producer = client.newProducer()
-                        .compressionType(CompressionType.LZ4)
-                        .maxPendingMessages(queueSize)
-                        .topic(topic)
-                        .enableBatching(false)
-                        .blockIfQueueFull(blockIfFull)
-                        .create();
+
+            for (String topic : topics) {
+                Producer<byte[]> producer = createProducer(topic, queueSize, blockIfFull);
                 log.info("Pulsar producer created to topic " + topic);
-                producers.put(topic, producer);
+
+                String[] topicParts = topic.split("/");
+                String lastPartOfTopic = topicParts[topicParts.length - 1];
+
+                //Use last part of the topic as a key in the map as topic names can be different in different environments (e.g. transitdata-prod/gtfs-rt/.. vs transitdata-dev/gtfs-rt/..)
+                producers.put(lastPartOfTopic, producer);
             }
-        }
-        else {
+        } else {
             String topic = config.getString("pulsar.producer.topic");
-            Producer<byte[]> producer = client.newProducer()
-                    .compressionType(CompressionType.LZ4)
-                    .maxPendingMessages(queueSize)
-                    .topic(topic)
-                    .enableBatching(false)
-                    .blockIfQueueFull(blockIfFull)
-                    .create();
+            Producer<byte[]> producer = createProducer(topic, queueSize, blockIfFull);
             producers.put(producer.getTopic(), producer);
             log.info("Pulsar producer created to topic " + topic);
         }
         return producers;
+    }
+
+    private Producer<byte[]> createProducer(final String topic, final int queueSize, final boolean blockIfFull) throws PulsarClientException {
+        return client.newProducer()
+                .compressionType(CompressionType.LZ4)
+                .maxPendingMessages(queueSize)
+                .topic(topic)
+                .enableBatching(false)
+                .blockIfQueueFull(blockIfFull)
+                .create();
     }
 
     @NotNull
@@ -303,9 +305,10 @@ public class PulsarApplication implements AutoCloseable {
         log.info("Closing PulsarApplication resources");
 
         if (producers != null){
-            for(Producer producer : producers.values()){
-                try { producer.close();}
-                catch (PulsarClientException e) {
+            for (Producer producer : producers.values()) {
+                try {
+                    producer.close();
+                } catch (PulsarClientException e) {
                     log.error("Failed to close pulsar producer", e);
                 }
             }
