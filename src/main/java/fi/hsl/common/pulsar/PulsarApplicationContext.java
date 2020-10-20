@@ -107,6 +107,9 @@ public class PulsarApplicationContext {
         this.healthServer = healthServer;
     }
 
+    /**
+     * Gets the map of producers for this application. Last part of the topic is used as a key in the map, for example the key for topic <pre>transitdata-dev/gtfs-rt/tripupdate</pre> would be <pre>tripupdate</pre>.
+     */
     @Nullable
     public Map<@NotNull String, @NotNull Producer<byte[]>> getProducers() {
         return producers;
