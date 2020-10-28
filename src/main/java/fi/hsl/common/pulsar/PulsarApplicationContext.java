@@ -51,7 +51,10 @@ public class PulsarApplicationContext {
     }
 
     @Nullable
-    public Producer<byte[]> getSingleProducer(){
+    public Producer<byte[]> getSingleProducer() {
+        if (getProducers().size() != 1) {
+            throw new IllegalStateException("Cannot get single producer when there are multiple producers (" + String.join(", ", getProducers().keySet()) + ")");
+        }
         return getProducers().values().stream().findFirst().get();
     }
 
@@ -104,6 +107,9 @@ public class PulsarApplicationContext {
         this.healthServer = healthServer;
     }
 
+    /**
+     * Gets the map of producers for this application. Last part of the topic is used as a key in the map, for example the key for topic <pre>transitdata-dev/gtfs-rt/tripupdate</pre> would be <pre>tripupdate</pre>.
+     */
     @Nullable
     public Map<@NotNull String, @NotNull Producer<byte[]>> getProducers() {
         return producers;

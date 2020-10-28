@@ -133,11 +133,11 @@ public class ITPulsarApplication {
         PulsarApplication app = PulsarMockApplication.newInstance(producer1Config, redis, pulsar);
         assertNotNull(app);
 
-        Producer<byte[]> producer = app.getContext().getProducers().get(formatTopicName("test-1"));
+        Producer<byte[]> producer = app.getContext().getProducers().get("test-1");
 
         //Create a second producer but bind into different topic
 
-        Producer<byte[]> secondProducer = app.getContext().getProducers().get(formatTopicName("test-2"));
+        Producer<byte[]> secondProducer = app.getContext().getProducers().get("test-2");
 
         logger.info("Multi-topic Pulsar Application created, testing to send a message");
 
