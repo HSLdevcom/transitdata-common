@@ -36,7 +36,7 @@ public class PassengerCountParserTest {
     }
 
     private APCJson parseJsonFromResources(String filename) throws Exception {
-        byte[] data = Files.readAllBytes(Paths.get("src/test/resources/passenger-count-sample.json"));
+        byte[] data = Files.readAllBytes(Paths.get(filename));
         APCJson apcJson = PassengerCountParser.newInstance().parseJson(data);
         assertNotNull(apcJson);
         return apcJson;
