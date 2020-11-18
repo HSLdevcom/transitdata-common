@@ -12,6 +12,8 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 import static org.junit.Assert.assertEquals;
@@ -34,11 +36,7 @@ public class PassengerCountParserTest {
     }
 
     private APCJson parseJsonFromResources(String filename) throws Exception {
-        File file = new File("src/test/resources/passenger-count-sample.json");
-        byte[] data = new byte[(int) file.length()];
-        BufferedInputStream bufferedInputStream=new BufferedInputStream(new FileInputStream(file));
-        bufferedInputStream.read(data,0,data.length);
-
+        byte[] data = Files.readAllBytes(Paths.get("src/test/resources/passenger-count-sample.json"));
         APCJson apcJson = PassengerCountParser.newInstance().parseJson(data);
         assertNotNull(apcJson);
         return apcJson;
