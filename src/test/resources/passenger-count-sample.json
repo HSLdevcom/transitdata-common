@@ -1,0 +1,38 @@
+{
+  "APC": {
+    "desi": "555",
+    "dir": "1",
+    "oper": 12,
+    "veh": 10,
+    "tst": "2019-05-23T14:15:16.000Z",
+    "tsi": 1416308975,
+    "lat": 24.9435,
+    "long": 60.1967,
+    "odo": 45.12,
+    "oday": "2019-05-23",
+    "jrn": 1,
+    "line": 264,
+    "start": "13:40",
+    "loc": "GPS",
+    "stop": "1234567",
+    "route": "2551",
+    "vehiclecounts": {
+      "countquality": "regular | defect | other",
+      "vehicleload": 15,
+      "vehicleloadratio": 0.2,
+      "doorcounts": [
+        {
+          "door" : "door1",
+          "count": [
+            {
+              "class": "adult | child | pram | bike | wheelchair | other",
+              "in": 1,
+              "out": 2
+            }
+          ]
+        }
+      ],
+      "extensions": "extension data"
+    }
+  }
+}

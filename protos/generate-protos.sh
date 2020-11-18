@@ -13,3 +13,5 @@ protoc mqtt.proto --java_out=../src/main/java/
 protoc hfp.proto --java_out=../src/main/java/
 
 protoc metro-ats.proto --java_out=../src/main/java/
+
+protoc passenger-count.proto --java_out=../src/main/java/

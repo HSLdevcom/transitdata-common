@@ -1,0 +1,48 @@
+syntax = "proto2";
+
+package proto;
+
+option java_package = "fi.hsl.common.passengercount.proto";
+option java_outer_classname = "PassengerCount";
+
+message Data {
+    required int32 SchemaVersion = 1 [default = 1];
+    optional string topic = 2;
+    required string desi = 3;
+    required string dir = 4;
+    required int32 oper = 5;
+    required int32 veh = 6;
+    required int64 tst = 7;
+    required int64 tsi = 8;
+    required double lat = 9;
+    required double long = 10;
+    required double odo = 11;
+    required string oday = 12;
+    required int32 jrn = 13;
+    required int32 line = 14;
+    required string start = 15;
+    required string loc = 16;
+    required string stop = 17;
+    required string route = 18;
+    required Vehiclecounts vehicleCounts = 19;
+}
+
+message Vehiclecounts{
+    required string countquality = 1;
+    required int32 vehicleload = 2;
+    required double vehicleloadratio = 3;
+    repeated Doorcount doorcounts = 4;
+    repeated string extensions = 5;
+}
+
+message Doorcount{
+    required string door = 1;
+    repeated Count count = 2;
+}
+
+message Count{
+    required string clazz = 1;
+    required int32 in = 2;
+    required int32 out = 3;
+}
+
