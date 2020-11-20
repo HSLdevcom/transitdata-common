@@ -2644,10 +2644,18 @@ public final class MetroAtsProtos {
         getDirectionBytes();
 
     /**
+     * <pre>
+     * Is the metro trip is present in the static schedule?
+     * </pre>
+     *
      * <code>optional bool scheduled = 15;</code>
      */
     boolean hasScheduled();
     /**
+     * <pre>
+     * Is the metro trip is present in the static schedule?
+     * </pre>
+     *
      * <code>optional bool scheduled = 15;</code>
      */
     boolean getScheduled();
@@ -3363,12 +3371,20 @@ public final class MetroAtsProtos {
     public static final int SCHEDULED_FIELD_NUMBER = 15;
     private boolean scheduled_;
     /**
+     * <pre>
+     * Is the metro trip is present in the static schedule?
+     * </pre>
+     *
      * <code>optional bool scheduled = 15;</code>
      */
     public boolean hasScheduled() {
       return ((bitField0_ & 0x00002000) == 0x00002000);
     }
     /**
+     * <pre>
+     * Is the metro trip is present in the static schedule?
+     * </pre>
+     *
      * <code>optional bool scheduled = 15;</code>
      */
     public boolean getScheduled() {
@@ -5248,18 +5264,30 @@ public final class MetroAtsProtos {
 
       private boolean scheduled_ ;
       /**
+       * <pre>
+       * Is the metro trip is present in the static schedule?
+       * </pre>
+       *
        * <code>optional bool scheduled = 15;</code>
        */
       public boolean hasScheduled() {
         return ((bitField0_ & 0x00004000) == 0x00004000);
       }
       /**
+       * <pre>
+       * Is the metro trip is present in the static schedule?
+       * </pre>
+       *
        * <code>optional bool scheduled = 15;</code>
        */
       public boolean getScheduled() {
         return scheduled_;
       }
       /**
+       * <pre>
+       * Is the metro trip is present in the static schedule?
+       * </pre>
+       *
        * <code>optional bool scheduled = 15;</code>
        */
       public Builder setScheduled(boolean value) {
@@ -5269,6 +5297,10 @@ public final class MetroAtsProtos {
         return this;
       }
       /**
+       * <pre>
+       * Is the metro trip is present in the static schedule?
+       * </pre>
+       *
        * <code>optional bool scheduled = 15;</code>
        */
       public Builder clearScheduled() {

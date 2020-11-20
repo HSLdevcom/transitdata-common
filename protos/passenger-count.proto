@@ -8,34 +8,38 @@ option java_outer_classname = "PassengerCount";
 message Data {
     required int32 SchemaVersion = 1 [default = 1];
     optional string topic = 2;
-    required string desi = 3;
-    required string dir = 4;
-    required int32 oper = 5;
-    required int32 veh = 6;
-    required int64 tst = 7;
-    required int64 tsi = 8;
-    required double lat = 9;
-    required double long = 10;
-    required double odo = 11;
-    required string oday = 12;
-    required int32 jrn = 13;
-    required int32 line = 14;
-    required string start = 15;
-    required string loc = 16;
-    required string stop = 17;
-    required string route = 18;
-    required Vehiclecounts vehicleCounts = 19;
+    required Payload payload = 3;
 }
 
-message Vehiclecounts{
-    required string countquality = 1;
-    required int32 vehicleload = 2;
-    required double vehicleloadratio = 3;
-    repeated Doorcount doorcounts = 4;
-    repeated string extensions = 5;
+message Payload {
+    required string desi = 1;
+    required string dir = 2;
+    required int32 oper = 3;
+    required int32 veh = 4;
+    required int64 tst = 5;
+    required int64 tsi = 6;
+    required double lat = 7;
+    required double long = 8;
+    required double odo = 9;
+    required string oday = 10;
+    required int32 jrn = 11;
+    required int32 line = 12;
+    required string start = 13;
+    required string loc = 14;
+    required string stop = 15;
+    required string route = 16;
+    required VehicleCounts vehicleCounts = 17;
 }
 
-message Doorcount{
+message VehicleCounts{
+    required string countQuality = 1;
+    required int32 vehicleLoad = 2;
+    required double vehicleLoadRatio = 3;
+    repeated DoorCount doorCounts = 4;
+    required string extensions = 5;
+}
+
+message DoorCount{
     required string door = 1;
     repeated Count count = 2;
 }

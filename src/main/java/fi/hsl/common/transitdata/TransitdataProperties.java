@@ -57,7 +57,8 @@ public class TransitdataProperties {
         MqttRawMessage("mqtt-raw"),
         HfpData("hfp-data"),
         TransitdataServiceAlert("transitdata-service-alert"),
-        StopCancellations("stop-cancellations");
+        StopCancellations("stop-cancellations"),
+        PassengerCount("passenger-count");
         public final String key;
 
         ProtobufSchema(String key) {
