@@ -17,6 +17,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.function.BooleanSupplier;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class PulsarApplication implements AutoCloseable {
     private static final Logger log = LoggerFactory.getLogger(PulsarApplication.class);
@@ -236,6 +237,9 @@ public class PulsarApplication implements AutoCloseable {
         Map<String, Producer<byte[]>> producers = new HashMap<>();
 
         if (config.hasPath("pulsar.producer.multipleProducers") && config.getBoolean("pulsar.producer.multipleProducers")) {
+            //topic key format: topic1=key1,topic2=key2...
+            Map<String, String> topicKeys = Arrays.stream(config.getString("pulsar.producer.topicKeys").split(","))
+                    .collect(Collectors.toMap((String s) -> s.split("=")[0], (String s) -> s.split("=")[1]));
             List<String> topics = Arrays.asList(config.getString("pulsar.producer.topics").split(","));
             log.info("Creating Pulsar producers for topics: [ {} ]", String.join(", ", topics));
 
@@ -243,11 +247,8 @@ public class PulsarApplication implements AutoCloseable {
                 Producer<byte[]> producer = createProducer(topic, queueSize, blockIfFull);
                 log.info("Pulsar producer created to topic " + topic);
 
-                String[] topicParts = topic.split("/");
-                String lastPartOfTopic = topicParts[topicParts.length - 1];
-
-                //Use last part of the topic as a key in the map as topic names can be different in different environments (e.g. transitdata-prod/gtfs-rt/.. vs transitdata-dev/gtfs-rt/..)
-                producers.put(lastPartOfTopic, producer);
+                String topicKey = topicKeys.get(topic);
+                producers.put(topicKey, producer);
             }
         } else {
             String topic = config.getString("pulsar.producer.topic");
