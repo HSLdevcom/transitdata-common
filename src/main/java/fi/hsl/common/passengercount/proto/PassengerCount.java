@@ -1021,18 +1021,13 @@ public final class PassengerCount {
         getLocBytes();
 
     /**
-     * <code>required string stop = 15;</code>
+     * <code>required int32 stop = 15;</code>
      */
     boolean hasStop();
     /**
-     * <code>required string stop = 15;</code>
+     * <code>required int32 stop = 15;</code>
      */
-    java.lang.String getStop();
-    /**
-     * <code>required string stop = 15;</code>
-     */
-    com.google.protobuf.ByteString
-        getStopBytes();
+    int getStop();
 
     /**
      * <code>required string route = 16;</code>
@@ -1087,7 +1082,7 @@ public final class PassengerCount {
       line_ = 0;
       start_ = "";
       loc_ = "";
-      stop_ = "";
+      stop_ = 0;
       route_ = "";
     }
 
@@ -1194,10 +1189,9 @@ public final class PassengerCount {
               loc_ = bs;
               break;
             }
-            case 122: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+            case 120: {
               bitField0_ |= 0x00004000;
-              stop_ = bs;
+              stop_ = input.readInt32();
               break;
             }
             case 130: {
@@ -1590,45 +1584,18 @@ public final class PassengerCount {
     }
 
     public static final int STOP_FIELD_NUMBER = 15;
-    private volatile java.lang.Object stop_;
+    private int stop_;
     /**
-     * <code>required string stop = 15;</code>
+     * <code>required int32 stop = 15;</code>
      */
     public boolean hasStop() {
       return ((bitField0_ & 0x00004000) == 0x00004000);
     }
     /**
-     * <code>required string stop = 15;</code>
+     * <code>required int32 stop = 15;</code>
      */
-    public java.lang.String getStop() {
-      java.lang.Object ref = stop_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          stop_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string stop = 15;</code>
-     */
-    public com.google.protobuf.ByteString
-        getStopBytes() {
-      java.lang.Object ref = stop_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        stop_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getStop() {
+      return stop_;
     }
 
     public static final int ROUTE_FIELD_NUMBER = 16;
@@ -1821,7 +1788,7 @@ public final class PassengerCount {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 14, loc_);
       }
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, stop_);
+        output.writeInt32(15, stop_);
       }
       if (((bitField0_ & 0x00008000) == 0x00008000)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 16, route_);
@@ -1889,7 +1856,8 @@ public final class PassengerCount {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, loc_);
       }
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, stop_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(15, stop_);
       }
       if (((bitField0_ & 0x00008000) == 0x00008000)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, route_);
@@ -1993,8 +1961,8 @@ public final class PassengerCount {
       }
       result = result && (hasStop() == other.hasStop());
       if (hasStop()) {
-        result = result && getStop()
-            .equals(other.getStop());
+        result = result && (getStop()
+            == other.getStop());
       }
       result = result && (hasRoute() == other.hasRoute());
       if (hasRoute()) {
@@ -2080,7 +2048,7 @@ public final class PassengerCount {
       }
       if (hasStop()) {
         hash = (37 * hash) + STOP_FIELD_NUMBER;
-        hash = (53 * hash) + getStop().hashCode();
+        hash = (53 * hash) + getStop();
       }
       if (hasRoute()) {
         hash = (37 * hash) + ROUTE_FIELD_NUMBER;
@@ -2237,7 +2205,7 @@ public final class PassengerCount {
         bitField0_ = (bitField0_ & ~0x00001000);
         loc_ = "";
         bitField0_ = (bitField0_ & ~0x00002000);
-        stop_ = "";
+        stop_ = 0;
         bitField0_ = (bitField0_ & ~0x00004000);
         route_ = "";
         bitField0_ = (bitField0_ & ~0x00008000);
@@ -2438,9 +2406,7 @@ public final class PassengerCount {
           onChanged();
         }
         if (other.hasStop()) {
-          bitField0_ |= 0x00004000;
-          stop_ = other.stop_;
-          onChanged();
+          setStop(other.getStop());
         }
         if (other.hasRoute()) {
           bitField0_ |= 0x00008000;
@@ -3200,78 +3166,34 @@ public final class PassengerCount {
         return this;
       }
 
-      private java.lang.Object stop_ = "";
+      private int stop_ ;
       /**
-       * <code>required string stop = 15;</code>
+       * <code>required int32 stop = 15;</code>
        */
       public boolean hasStop() {
         return ((bitField0_ & 0x00004000) == 0x00004000);
       }
       /**
-       * <code>required string stop = 15;</code>
+       * <code>required int32 stop = 15;</code>
        */
-      public java.lang.String getStop() {
-        java.lang.Object ref = stop_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            stop_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public int getStop() {
+        return stop_;
       }
       /**
-       * <code>required string stop = 15;</code>
+       * <code>required int32 stop = 15;</code>
        */
-      public com.google.protobuf.ByteString
-          getStopBytes() {
-        java.lang.Object ref = stop_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          stop_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string stop = 15;</code>
-       */
-      public Builder setStop(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00004000;
+      public Builder setStop(int value) {
+        bitField0_ |= 0x00004000;
         stop_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string stop = 15;</code>
+       * <code>required int32 stop = 15;</code>
        */
       public Builder clearStop() {
         bitField0_ = (bitField0_ & ~0x00004000);
-        stop_ = getDefaultInstance().getStop();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string stop = 15;</code>
-       */
-      public Builder setStopBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00004000;
-        stop_ = value;
+        stop_ = 0;
         onChanged();
         return this;
       }
@@ -3579,15 +3501,15 @@ public final class PassengerCount {
         int index);
 
     /**
-     * <code>required string extensions = 5;</code>
+     * <code>optional string extensions = 5;</code>
      */
     boolean hasExtensions();
     /**
-     * <code>required string extensions = 5;</code>
+     * <code>optional string extensions = 5;</code>
      */
     java.lang.String getExtensions();
     /**
-     * <code>required string extensions = 5;</code>
+     * <code>optional string extensions = 5;</code>
      */
     com.google.protobuf.ByteString
         getExtensionsBytes();
@@ -3808,13 +3730,13 @@ public final class PassengerCount {
     public static final int EXTENSIONS_FIELD_NUMBER = 5;
     private volatile java.lang.Object extensions_;
     /**
-     * <code>required string extensions = 5;</code>
+     * <code>optional string extensions = 5;</code>
      */
     public boolean hasExtensions() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>required string extensions = 5;</code>
+     * <code>optional string extensions = 5;</code>
      */
     public java.lang.String getExtensions() {
       java.lang.Object ref = extensions_;
@@ -3831,7 +3753,7 @@ public final class PassengerCount {
       }
     }
     /**
-     * <code>required string extensions = 5;</code>
+     * <code>optional string extensions = 5;</code>
      */
     public com.google.protobuf.ByteString
         getExtensionsBytes() {
@@ -3862,10 +3784,6 @@ public final class PassengerCount {
         return false;
       }
       if (!hasVehicleLoadRatio()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasExtensions()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -4274,9 +4192,6 @@ public final class PassengerCount {
           return false;
         }
         if (!hasVehicleLoadRatio()) {
-          return false;
-        }
-        if (!hasExtensions()) {
           return false;
         }
         for (int i = 0; i < getDoorCountsCount(); i++) {
@@ -4688,13 +4603,13 @@ public final class PassengerCount {
 
       private java.lang.Object extensions_ = "";
       /**
-       * <code>required string extensions = 5;</code>
+       * <code>optional string extensions = 5;</code>
        */
       public boolean hasExtensions() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>required string extensions = 5;</code>
+       * <code>optional string extensions = 5;</code>
        */
       public java.lang.String getExtensions() {
         java.lang.Object ref = extensions_;
@@ -4711,7 +4626,7 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string extensions = 5;</code>
+       * <code>optional string extensions = 5;</code>
        */
       public com.google.protobuf.ByteString
           getExtensionsBytes() {
@@ -4727,7 +4642,7 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string extensions = 5;</code>
+       * <code>optional string extensions = 5;</code>
        */
       public Builder setExtensions(
           java.lang.String value) {
@@ -4740,7 +4655,7 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string extensions = 5;</code>
+       * <code>optional string extensions = 5;</code>
        */
       public Builder clearExtensions() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -4749,7 +4664,7 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string extensions = 5;</code>
+       * <code>optional string extensions = 5;</code>
        */
       public Builder setExtensionsBytes(
           com.google.protobuf.ByteString value) {
@@ -6520,12 +6435,12 @@ public final class PassengerCount {
       " \002(\003\022\013\n\003lat\030\007 \002(\001\022\014\n\004long\030\010 \002(\001\022\013\n\003odo\030\t" +
       " \002(\001\022\014\n\004oday\030\n \002(\t\022\013\n\003jrn\030\013 \002(\005\022\014\n\004line\030" +
       "\014 \002(\005\022\r\n\005start\030\r \002(\t\022\013\n\003loc\030\016 \002(\t\022\014\n\004sto" +
-      "p\030\017 \002(\t\022\r\n\005route\030\020 \002(\t\022+\n\rvehicleCounts\030" +
+      "p\030\017 \002(\005\022\r\n\005route\030\020 \002(\t\022+\n\rvehicleCounts\030" +
       "\021 \002(\0132\024.proto.VehicleCounts\"\216\001\n\rVehicleC",
       "ounts\022\024\n\014countQuality\030\001 \002(\t\022\023\n\013vehicleLo" +
       "ad\030\002 \002(\005\022\030\n\020vehicleLoadRatio\030\003 \002(\001\022$\n\ndo" +
       "orCounts\030\004 \003(\0132\020.proto.DoorCount\022\022\n\nexte" +
-      "nsions\030\005 \002(\t\"6\n\tDoorCount\022\014\n\004door\030\001 \002(\t\022" +
+      "nsions\030\005 \001(\t\"6\n\tDoorCount\022\014\n\004door\030\001 \002(\t\022" +
       "\033\n\005count\030\002 \003(\0132\014.proto.Count\"/\n\005Count\022\r\n" +
       "\005clazz\030\001 \002(\t\022\n\n\002in\030\002 \002(\005\022\013\n\003out\030\003 \002(\005B4\n" +
       "\"fi.hsl.common.passengercount.protoB\016Pas" +

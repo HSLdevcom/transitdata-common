@@ -14,7 +14,7 @@
     "line": 264,
     "start": "13:40",
     "loc": "GPS",
-    "stop": "1234567",
+    "stop": 1234567,
     "route": "2551",
     "vehiclecounts": {
       "countquality": "regular | defect | other",

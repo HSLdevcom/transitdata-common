@@ -26,7 +26,7 @@ public class APC {
     public int line;
     public String start;
     public String loc;
-    public String stop;
+    public int stop;
     public String route;
     public Vehiclecounts vehiclecounts;
 }

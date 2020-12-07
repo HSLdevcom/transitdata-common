@@ -26,7 +26,7 @@ message Payload {
     required int32 line = 12;
     required string start = 13;
     required string loc = 14;
-    required string stop = 15;
+    required int32 stop = 15;
     required string route = 16;
     required VehicleCounts vehicleCounts = 17;
 }
@@ -36,7 +36,7 @@ message VehicleCounts{
     required int32 vehicleLoad = 2;
     required double vehicleLoadRatio = 3;
     repeated DoorCount doorCounts = 4;
-    required string extensions = 5;
+    optional string extensions = 5;
 }
 
 message DoorCount{
