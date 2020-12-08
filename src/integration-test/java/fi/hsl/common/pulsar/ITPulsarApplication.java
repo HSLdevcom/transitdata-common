@@ -128,6 +128,7 @@ public class ITPulsarApplication {
         o1.put("redis.enabled", false);
         o1.put("pulsar.producer.multipleProducers", true);
         o1.put("pulsar.producer.topics", String.join(",",formatTopicName("test-1") , formatTopicName("test-2")));
+        o1.put("pulsar.producer.topicKeys","test-1=test-1,test-2=test-2");
         Config producer1Config = PulsarMockApplication.readConfigWithOverrides("integration-multiprod-test.conf", o1);
 
         PulsarApplication app = PulsarMockApplication.newInstance(producer1Config, redis, pulsar);
