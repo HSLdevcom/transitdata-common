@@ -55,7 +55,9 @@ public class PassengerCountParser {
         vehicleBuilder.setVehicleLoad(payload.vehiclecounts.vehicleload);
         vehicleBuilder.setVehicleLoadRatio(payload.vehiclecounts.vehicleloadratio);
         vehicleBuilder.setCountQuality(payload.vehiclecounts.countquality);
-        vehicleBuilder.setExtensions(payload.vehiclecounts.extensions);
+        if(payload.vehiclecounts.extensions != null){
+            vehicleBuilder.setExtensions(payload.vehiclecounts.extensions);
+        }
 
         for(DoorCount doorcount : payload.vehiclecounts.doorcounts){
             PassengerCount.DoorCount.Builder doorCountBuilder = PassengerCount.DoorCount.newBuilder();
