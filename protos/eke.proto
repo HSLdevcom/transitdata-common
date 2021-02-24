@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package proto;
+
+option java_package = "fi.hsl.common.transitdata.proto";
+option java_outer_classname = "Eke";
+
+message EkeSummary {
+    required int64 ekeDate = 1;
+    required int32 trainNumber = 2;
+    required string topicPart = 3;
+}

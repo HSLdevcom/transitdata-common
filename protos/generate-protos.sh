@@ -15,3 +15,5 @@ protoc hfp.proto --java_out=../src/main/java/
 protoc metro-ats.proto --java_out=../src/main/java/
 
 protoc passenger-count.proto --java_out=../src/main/java/
+
+protoc eke.proto --java_out=../src/main/java/

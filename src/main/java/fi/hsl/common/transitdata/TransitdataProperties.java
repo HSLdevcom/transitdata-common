@@ -58,6 +58,8 @@ public class TransitdataProperties {
         HfpData("hfp-data"),
         TransitdataServiceAlert("transitdata-service-alert"),
         StopCancellations("stop-cancellations"),
+        Eke("eke"),
+        EkeSummary("ekeSummary"),
         PassengerCount("passenger-count");
         public final String key;
 
