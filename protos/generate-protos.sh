@@ -4,6 +4,8 @@
 
 protoc gtfs-realtime.proto --java_out=../src/main/java/
 
+protoc gtfs-realtime-extension.proto --java_out=../src/main/java/
+
 protoc pubtrans-tables.proto --java_out=../src/main/java/
 
 protoc internal-messages.proto --java_out=../src/main/java/
@@ -17,3 +19,4 @@ protoc metro-ats.proto --java_out=../src/main/java/
 protoc passenger-count.proto --java_out=../src/main/java/
 
 protoc eke.proto --java_out=../src/main/java/
+

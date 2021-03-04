@@ -1,0 +1,11 @@
+syntax = "proto2";
+package proto;
+
+option java_package = "fi.hsl.common.gtfsrt.proto";
+option java_outer_classname = "AlternativeStops";
+
+import public "gtfs-realtime.proto";
+
+extend transit_realtime.TripUpdate.StopTimeUpdate {
+    repeated string alternative_stop_ids = 1999;
+}
