@@ -10347,6 +10347,25 @@ public final class InternalMessages {
      * @return The lastModifiedUtcMs.
      */
     long getLastModifiedUtcMs();
+
+    /**
+     * <pre>
+     *True if the estimated time was observed (i.e. true if the vehicle has already passed the stop)
+     * </pre>
+     *
+     * <code>optional bool observed_time = 10 [default = false];</code>
+     * @return Whether the observedTime field is set.
+     */
+    boolean hasObservedTime();
+    /**
+     * <pre>
+     *True if the estimated time was observed (i.e. true if the vehicle has already passed the stop)
+     * </pre>
+     *
+     * <code>optional bool observed_time = 10 [default = false];</code>
+     * @return The observedTime.
+     */
+    boolean getObservedTime();
   }
   /**
    * Protobuf type {@code proto.StopEstimate}
@@ -10464,6 +10483,11 @@ public final class InternalMessages {
             case 72: {
               bitField0_ |= 0x00000100;
               lastModifiedUtcMs_ = input.readInt64();
+              break;
+            }
+            case 80: {
+              bitField0_ |= 0x00000200;
+              observedTime_ = input.readBool();
               break;
             }
             default: {
@@ -10915,6 +10939,33 @@ public final class InternalMessages {
       return lastModifiedUtcMs_;
     }
 
+    public static final int OBSERVED_TIME_FIELD_NUMBER = 10;
+    private boolean observedTime_;
+    /**
+     * <pre>
+     *True if the estimated time was observed (i.e. true if the vehicle has already passed the stop)
+     * </pre>
+     *
+     * <code>optional bool observed_time = 10 [default = false];</code>
+     * @return Whether the observedTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasObservedTime() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     * <pre>
+     *True if the estimated time was observed (i.e. true if the vehicle has already passed the stop)
+     * </pre>
+     *
+     * <code>optional bool observed_time = 10 [default = false];</code>
+     * @return The observedTime.
+     */
+    @java.lang.Override
+    public boolean getObservedTime() {
+      return observedTime_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10988,6 +11039,9 @@ public final class InternalMessages {
       if (((bitField0_ & 0x00000100) != 0)) {
         output.writeInt64(9, lastModifiedUtcMs_);
       }
+      if (((bitField0_ & 0x00000200) != 0)) {
+        output.writeBool(10, observedTime_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -11031,6 +11085,10 @@ public final class InternalMessages {
       if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(9, lastModifiedUtcMs_);
+      }
+      if (((bitField0_ & 0x00000200) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(10, observedTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11090,6 +11148,11 @@ public final class InternalMessages {
         if (getLastModifiedUtcMs()
             != other.getLastModifiedUtcMs()) return false;
       }
+      if (hasObservedTime() != other.hasObservedTime()) return false;
+      if (hasObservedTime()) {
+        if (getObservedTime()
+            != other.getObservedTime()) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11139,6 +11202,11 @@ public final class InternalMessages {
         hash = (37 * hash) + LAST_MODIFIED_UTC_MS_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getLastModifiedUtcMs());
+      }
+      if (hasObservedTime()) {
+        hash = (37 * hash) + OBSERVED_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getObservedTime());
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -11296,6 +11364,8 @@ public final class InternalMessages {
         bitField0_ = (bitField0_ & ~0x00000080);
         lastModifiedUtcMs_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000100);
+        observedTime_ = false;
+        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
 
@@ -11363,6 +11433,10 @@ public final class InternalMessages {
         if (((from_bitField0_ & 0x00000100) != 0)) {
           result.lastModifiedUtcMs_ = lastModifiedUtcMs_;
           to_bitField0_ |= 0x00000100;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.observedTime_ = observedTime_;
+          to_bitField0_ |= 0x00000200;
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -11441,6 +11515,9 @@ public final class InternalMessages {
         }
         if (other.hasLastModifiedUtcMs()) {
           setLastModifiedUtcMs(other.getLastModifiedUtcMs());
+        }
+        if (other.hasObservedTime()) {
+          setObservedTime(other.getObservedTime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11977,6 +12054,61 @@ public final class InternalMessages {
       public Builder clearLastModifiedUtcMs() {
         bitField0_ = (bitField0_ & ~0x00000100);
         lastModifiedUtcMs_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private boolean observedTime_ ;
+      /**
+       * <pre>
+       *True if the estimated time was observed (i.e. true if the vehicle has already passed the stop)
+       * </pre>
+       *
+       * <code>optional bool observed_time = 10 [default = false];</code>
+       * @return Whether the observedTime field is set.
+       */
+      @java.lang.Override
+      public boolean hasObservedTime() {
+        return ((bitField0_ & 0x00000200) != 0);
+      }
+      /**
+       * <pre>
+       *True if the estimated time was observed (i.e. true if the vehicle has already passed the stop)
+       * </pre>
+       *
+       * <code>optional bool observed_time = 10 [default = false];</code>
+       * @return The observedTime.
+       */
+      @java.lang.Override
+      public boolean getObservedTime() {
+        return observedTime_;
+      }
+      /**
+       * <pre>
+       *True if the estimated time was observed (i.e. true if the vehicle has already passed the stop)
+       * </pre>
+       *
+       * <code>optional bool observed_time = 10 [default = false];</code>
+       * @param value The observedTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setObservedTime(boolean value) {
+        bitField0_ |= 0x00000200;
+        observedTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *True if the estimated time was observed (i.e. true if the vehicle has already passed the stop)
+       * </pre>
+       *
+       * <code>optional bool observed_time = 10 [default = false];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearObservedTime() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        observedTime_ = false;
         onChanged();
         return this;
       }
@@ -18306,7 +18438,7 @@ public final class InternalMessages {
       "_ERROR\020)\022\031\n\025INSUFFICIENT_CAPASITY\020*\022 \n\034O" +
       "PERATOR_PERSONNEL_ON_STRIKE\020+\022\020\n\014OTHER_S" +
       "TRIKE\020,\022\031\n\025OTHER_OPERATOR_REASON\020-\022\021\n\rUN" +
-      "KNOWN_CAUSE\020.\022\024\n\020DOOR_MALFUNCTION\020/\"\373\002\n\014" +
+      "KNOWN_CAUSE\020.\022\024\n\020DOOR_MALFUNCTION\020/\"\231\003\n\014" +
       "StopEstimate\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\"" +
       "\n\ttrip_info\030\002 \002(\0132\017.proto.TripInfo\022\017\n\007st" +
       "op_id\030\003 \002(\t\022\025\n\rstop_sequence\030\004 \002(\r\022*\n\006st" +
@@ -18314,53 +18446,54 @@ public final class InternalMessages {
       "\n\004type\030\006 \002(\0162\030.proto.StopEstimate.Type\022\035" +
       "\n\025estimated_time_utc_ms\030\007 \001(\003\022\035\n\025schedul" +
       "ed_time_utc_ms\030\010 \001(\003\022\034\n\024last_modified_ut" +
-      "c_ms\030\t \002(\003\"1\n\006Status\022\r\n\tSCHEDULED\020\000\022\013\n\007S" +
-      "KIPPED\020\001\022\013\n\007NO_DATA\020\002\"\"\n\004Type\022\013\n\007ARRIVAL" +
-      "\020\000\022\r\n\tDEPARTURE\020\001\"\344\007\n\010Bulletin\022\023\n\013bullet" +
-      "in_id\030\001 \001(\t\022!\n\010category\030\002 \001(\0162\017.proto.Ca" +
-      "tegory\022\034\n\024last_modified_utc_ms\030\003 \002(\003\022\031\n\021" +
-      "valid_from_utc_ms\030\004 \002(\003\022\027\n\017valid_to_utc_" +
-      "ms\030\005 \002(\003\022\032\n\022affects_all_routes\030\006 \001(\010\022\031\n\021" +
-      "affects_all_stops\030\007 \001(\010\0227\n\017affected_rout" +
-      "es\030\010 \003(\0132\036.proto.Bulletin.AffectedEntity" +
-      "\0226\n\016affected_stops\030\t \003(\0132\036.proto.Bulleti" +
-      "n.AffectedEntity\022&\n\006impact\030\n \001(\0162\026.proto" +
-      ".Bulletin.Impact\022*\n\010priority\030\013 \001(\0162\030.pro" +
-      "to.Bulletin.Priority\022+\n\006titles\030\014 \003(\0132\033.p" +
-      "roto.Bulletin.Translation\0221\n\014description" +
-      "s\030\r \003(\0132\033.proto.Bulletin.Translation\022)\n\004" +
-      "urls\030\016 \003(\0132\033.proto.Bulletin.Translation\022" +
-      "\033\n\014display_only\030\017 \001(\010:\005false\032#\n\016Affected" +
-      "Entity\022\021\n\tentity_id\030\001 \002(\t\032-\n\013Translation" +
-      "\022\014\n\004text\030\001 \002(\t\022\020\n\010language\030\002 \001(\t\"\246\002\n\006Imp" +
-      "act\022\r\n\tCANCELLED\020\000\022\013\n\007DELAYED\020\001\022\026\n\022DEVIA" +
-      "TING_SCHEDULE\020\002\022\024\n\020DISRUPTION_ROUTE\020\003\022\030\n" +
-      "\024IRREGULAR_DEPARTURES\020\004\022\027\n\023POSSIBLE_DEVI" +
-      "ATIONS\020\005\022\024\n\020POSSIBLY_DELAYED\020\006\022\025\n\021REDUCE" +
-      "D_TRANSPORT\020\007\022\027\n\023RETURNING_TO_NORMAL\020\010\022 " +
-      "\n\034VENDING_MACHINE_OUT_OF_ORDER\020\t\022\010\n\004NULL" +
-      "\020\n\022\t\n\005OTHER\020\013\022\025\n\021NO_TRAFFIC_IMPACT\020\014\022\013\n\007" +
-      "UNKNOWN\020\r\"-\n\010Priority\022\010\n\004INFO\020\000\022\013\n\007WARNI" +
-      "NG\020\001\022\n\n\006SEVERE\020\002\"L\n\014ServiceAlert\022\030\n\rSche" +
-      "maVersion\030\001 \002(\005:\0011\022\"\n\tbulletins\030\002 \003(\0132\017." +
-      "proto.Bulletin*\202\005\n\010Category\022\025\n\021VEHICLE_B" +
-      "REAKDOWN\020\000\022\014\n\010ACCIDENT\020\001\022\r\n\tNO_DRIVER\020\002\022" +
-      "\013\n\007ASSAULT\020\003\022\013\n\007WEATHER\020\004\022\030\n\024VEHICLE_OFF" +
-      "_THE_ROAD\020\005\022\013\n\007SEIZURE\020\006\022\024\n\020ITS_SYSTEM_E" +
-      "RROR\020\007\022\026\n\022OTHER_DRIVER_ERROR\020\010\022\027\n\023TOO_MA" +
-      "NY_PASSENGERS\020\t\022\n\n\006STRIKE\020\n\022\t\n\005OTHER\020\013\022\026" +
-      "\n\022EARLIER_DISRUPTION\020\014\022\031\n\025NO_TRAFFIC_DIS" +
-      "RUPTION\020\r\022\021\n\rTRACK_BLOCKED\020\016\022\021\n\rSTAFF_DE" +
-      "FICIT\020\017\022\017\n\013DISTURBANCE\020\020\022\023\n\017VEHICLE_DEFI" +
-      "CIT\020\021\022\017\n\013ROAD_CLOSED\020\022\022\017\n\013ROAD_TRENCH\020\023\022" +
-      "\025\n\021TRACK_MAINTENANCE\020\024\022\024\n\020TRAFFIC_ACCIDE" +
-      "NT\020\025\022\017\n\013TRAFFIC_JAM\020\026\022\024\n\020MEDICAL_INCIDEN" +
-      "T\020\027\022\026\n\022WEATHER_CONDITIONS\020\030\022\025\n\021TECHNICAL" +
-      "_FAILURE\020\031\022\010\n\004TEST\020\032\022\024\n\020ROAD_MAINTENANCE" +
-      "\020\033\022\022\n\016SWITCH_FAILURE\020\034\022\017\n\013STATE_VISIT\020\035\022" +
-      "\021\n\rPOWER_FAILURE\020\036\022\025\n\021MISPARKED_VEHICLE\020" +
-      "\037\022\020\n\014PUBLIC_EVENT\020 B3\n\037fi.hsl.common.tra" +
-      "nsitdata.protoB\020InternalMessages"
+      "c_ms\030\t \002(\003\022\034\n\robserved_time\030\n \001(\010:\005false" +
+      "\"1\n\006Status\022\r\n\tSCHEDULED\020\000\022\013\n\007SKIPPED\020\001\022\013" +
+      "\n\007NO_DATA\020\002\"\"\n\004Type\022\013\n\007ARRIVAL\020\000\022\r\n\tDEPA" +
+      "RTURE\020\001\"\344\007\n\010Bulletin\022\023\n\013bulletin_id\030\001 \001(" +
+      "\t\022!\n\010category\030\002 \001(\0162\017.proto.Category\022\034\n\024" +
+      "last_modified_utc_ms\030\003 \002(\003\022\031\n\021valid_from" +
+      "_utc_ms\030\004 \002(\003\022\027\n\017valid_to_utc_ms\030\005 \002(\003\022\032" +
+      "\n\022affects_all_routes\030\006 \001(\010\022\031\n\021affects_al" +
+      "l_stops\030\007 \001(\010\0227\n\017affected_routes\030\010 \003(\0132\036" +
+      ".proto.Bulletin.AffectedEntity\0226\n\016affect" +
+      "ed_stops\030\t \003(\0132\036.proto.Bulletin.Affected" +
+      "Entity\022&\n\006impact\030\n \001(\0162\026.proto.Bulletin." +
+      "Impact\022*\n\010priority\030\013 \001(\0162\030.proto.Bulleti" +
+      "n.Priority\022+\n\006titles\030\014 \003(\0132\033.proto.Bulle" +
+      "tin.Translation\0221\n\014descriptions\030\r \003(\0132\033." +
+      "proto.Bulletin.Translation\022)\n\004urls\030\016 \003(\013" +
+      "2\033.proto.Bulletin.Translation\022\033\n\014display" +
+      "_only\030\017 \001(\010:\005false\032#\n\016AffectedEntity\022\021\n\t" +
+      "entity_id\030\001 \002(\t\032-\n\013Translation\022\014\n\004text\030\001" +
+      " \002(\t\022\020\n\010language\030\002 \001(\t\"\246\002\n\006Impact\022\r\n\tCAN" +
+      "CELLED\020\000\022\013\n\007DELAYED\020\001\022\026\n\022DEVIATING_SCHED" +
+      "ULE\020\002\022\024\n\020DISRUPTION_ROUTE\020\003\022\030\n\024IRREGULAR" +
+      "_DEPARTURES\020\004\022\027\n\023POSSIBLE_DEVIATIONS\020\005\022\024" +
+      "\n\020POSSIBLY_DELAYED\020\006\022\025\n\021REDUCED_TRANSPOR" +
+      "T\020\007\022\027\n\023RETURNING_TO_NORMAL\020\010\022 \n\034VENDING_" +
+      "MACHINE_OUT_OF_ORDER\020\t\022\010\n\004NULL\020\n\022\t\n\005OTHE" +
+      "R\020\013\022\025\n\021NO_TRAFFIC_IMPACT\020\014\022\013\n\007UNKNOWN\020\r\"" +
+      "-\n\010Priority\022\010\n\004INFO\020\000\022\013\n\007WARNING\020\001\022\n\n\006SE" +
+      "VERE\020\002\"L\n\014ServiceAlert\022\030\n\rSchemaVersion\030" +
+      "\001 \002(\005:\0011\022\"\n\tbulletins\030\002 \003(\0132\017.proto.Bull" +
+      "etin*\202\005\n\010Category\022\025\n\021VEHICLE_BREAKDOWN\020\000" +
+      "\022\014\n\010ACCIDENT\020\001\022\r\n\tNO_DRIVER\020\002\022\013\n\007ASSAULT" +
+      "\020\003\022\013\n\007WEATHER\020\004\022\030\n\024VEHICLE_OFF_THE_ROAD\020" +
+      "\005\022\013\n\007SEIZURE\020\006\022\024\n\020ITS_SYSTEM_ERROR\020\007\022\026\n\022" +
+      "OTHER_DRIVER_ERROR\020\010\022\027\n\023TOO_MANY_PASSENG" +
+      "ERS\020\t\022\n\n\006STRIKE\020\n\022\t\n\005OTHER\020\013\022\026\n\022EARLIER_" +
+      "DISRUPTION\020\014\022\031\n\025NO_TRAFFIC_DISRUPTION\020\r\022" +
+      "\021\n\rTRACK_BLOCKED\020\016\022\021\n\rSTAFF_DEFICIT\020\017\022\017\n" +
+      "\013DISTURBANCE\020\020\022\023\n\017VEHICLE_DEFICIT\020\021\022\017\n\013R" +
+      "OAD_CLOSED\020\022\022\017\n\013ROAD_TRENCH\020\023\022\025\n\021TRACK_M" +
+      "AINTENANCE\020\024\022\024\n\020TRAFFIC_ACCIDENT\020\025\022\017\n\013TR" +
+      "AFFIC_JAM\020\026\022\024\n\020MEDICAL_INCIDENT\020\027\022\026\n\022WEA" +
+      "THER_CONDITIONS\020\030\022\025\n\021TECHNICAL_FAILURE\020\031" +
+      "\022\010\n\004TEST\020\032\022\024\n\020ROAD_MAINTENANCE\020\033\022\022\n\016SWIT" +
+      "CH_FAILURE\020\034\022\017\n\013STATE_VISIT\020\035\022\021\n\rPOWER_F" +
+      "AILURE\020\036\022\025\n\021MISPARKED_VEHICLE\020\037\022\020\n\014PUBLI" +
+      "C_EVENT\020 B3\n\037fi.hsl.common.transitdata.p" +
+      "rotoB\020InternalMessages"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18407,7 +18540,7 @@ public final class InternalMessages {
     internal_static_proto_StopEstimate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_StopEstimate_descriptor,
-        new java.lang.String[] { "SchemaVersion", "TripInfo", "StopId", "StopSequence", "Status", "Type", "EstimatedTimeUtcMs", "ScheduledTimeUtcMs", "LastModifiedUtcMs", });
+        new java.lang.String[] { "SchemaVersion", "TripInfo", "StopId", "StopSequence", "Status", "Type", "EstimatedTimeUtcMs", "ScheduledTimeUtcMs", "LastModifiedUtcMs", "ObservedTime", });
     internal_static_proto_Bulletin_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_proto_Bulletin_fieldAccessorTable = new
