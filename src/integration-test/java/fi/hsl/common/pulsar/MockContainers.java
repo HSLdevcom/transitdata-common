@@ -21,13 +21,8 @@ public class MockContainers {
     private MockContainers() {}
 
     public static GenericContainer newRedisContainer() {
-        try {
-            return new GenericContainer("redis:5.0.6")
-                    .withExposedPorts(6379);
-        } catch (Throwable throwable) {
-            throwable.printStackTrace();
-            throw throwable;
-        }
+        return new GenericContainer("redis:5.0.6")
+                .withExposedPorts(6379);
     }
 
     public static Jedis newMockJedisConnection() {
