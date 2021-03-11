@@ -45,6 +45,14 @@
         </profile>
     </profiles>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub HSLdevcom Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/HSLdevcom/transitdata-common</url>
+        </repository>
+    </distributionManagement>
+
     <dependencies>
         <dependency>
             <groupId>com.google.protobuf</groupId>
@@ -307,7 +315,5 @@
                 </executions>
             </plugin>
         </plugins>
-
     </build>
-
 </project>
