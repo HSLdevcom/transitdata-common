@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>fi.hsl</groupId>
     <artifactId>transitdata-common</artifactId>
-    <version>1.3.20</version>
+    <version>1.3.21</version>
     <packaging>jar</packaging>
     <name>Common utilities for Transitdata projects</name>
     <properties>
@@ -10,7 +10,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <pulsar.version>2.3.1</pulsar.version>
-        <testcontainers.version>1.9.0</testcontainers.version>
+        <testcontainers.version>1.15.2</testcontainers.version>
     </properties>
 
     <profiles>
@@ -44,6 +44,14 @@
             </properties>
         </profile>
     </profiles>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub HSLdevcom Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/HSLdevcom/transitdata-common</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
@@ -307,7 +315,5 @@
                 </executions>
             </plugin>
         </plugins>
-
     </build>
-
 </project>
