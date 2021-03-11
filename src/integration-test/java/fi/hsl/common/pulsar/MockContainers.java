@@ -21,7 +21,7 @@ public class MockContainers {
     private MockContainers() {}
 
     public static GenericContainer newRedisContainer() {
-        return new GenericContainer("redis:3.0.2")
+        return new GenericContainer("redis:5.0.6")
                 .withExposedPorts(6379);
     }
 
