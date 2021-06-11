@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/HSLdevcom/transitdata-common.svg?branch=master)](https://travis-ci.org/HSLdevcom/transitdata-common) [![Download](https://api.bintray.com/packages/hsldevcom/maven/transitdata-common/images/download.svg) ](https://bintray.com/hsldevcom/maven/transitdata-common/_latestVersion)
+[![Build status](https://github.com/HSLdevcom/transitdata-common/actions/workflows/test-and-build.yml/badge.svg)](https://github.com/HSLdevcom/transitdata-common/actions/workflows/test-and-build.yml)
 
 # HSL Transitdata Common-library
 
