@@ -63,7 +63,7 @@
         <dependency>
             <groupId>com.dslplatform</groupId>
             <artifactId>dsl-json-java8</artifactId>
-            <version>1.9.3</version>
+            <version>1.9.8</version>
         </dependency>
 
         <dependency>
@@ -95,7 +95,7 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.2.0</version>
+            <version>1.2.3</version>
         </dependency>
 
         <dependency>
