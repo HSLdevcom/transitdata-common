@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/HSLdevcom/transitdata-common.svg?branch=master)](https://travis-ci.org/HSLdevcom/transitdata-common) [![Download](https://api.bintray.com/packages/hsldevcom/maven/transitdata-common/images/download.svg) ](https://bintray.com/hsldevcom/maven/transitdata-common/_latestVersion)
+[![Build status](https://github.com/HSLdevcom/transitdata-common/actions/workflows/test-and-build.yml/badge.svg)](https://github.com/HSLdevcom/transitdata-common/actions/workflows/test-and-build.yml)
 
 # HSL Transitdata Common-library
 
@@ -7,16 +7,15 @@ This repository contains code and constants to be shared between [Transitdata-pr
 
 ## Including the Library
 
-Project is published as fat-jar via [bintray maven repository](https://bintray.com/hsldevcom/maven/transitdata-common).
+Project is published as fat-jar via [GitHub Packages](https://github.com/orgs/HSLdevcom/packages?repo_name=transitdata-common).
 Add the dependency to the project by adding this snippet to your pom.xml file:
 
 ```
     <repositories>
-      <repository>
-        <id>bintray</id>
-        <name>bintray</name>
-        <url>https://dl.bintray.com/hsldevcom/maven</url>
-      </repository>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/HSLdevcom/*</url>
+        </repository>
     </repositories>
     <dependencies>
        <dependency>
@@ -24,8 +23,10 @@ Add the dependency to the project by adding this snippet to your pom.xml file:
          <artifactId>transitdata-common</artifactId>
          <version>${common.version}</version>
        </dependency>
-     </dependencies>
+    </dependencies>
 ```   
+
+To access GitHub Packages, you also need to create an access token and include it in Maven settings. See [GitHub documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-to-github-packages) for more details.
 
 
 It is also possible to compile the project yourself and use it via local maven repository.
@@ -44,7 +45,7 @@ in this repository but you can also generate the files yourself:
  `cd protos && ./generate-protos.sh`   
 
 
-## Configuration[ ![Download](https://api.bintray.com/packages/hsldevcom/maven/transitdata-common/images/download.svg) ](https://bintray.com/hsldevcom/maven/transitdata-common/_latestVersion)
+## Configuration
 
 Library contains package [config](src/main/java/fi/hsl/common/config) which has tools to configure the application.
 By default the configuration file is read from resources inside the application jar-bundle from a file named `environment.conf`.
