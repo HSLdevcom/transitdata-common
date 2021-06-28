@@ -24,6 +24,7 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>required int32 schema_version = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
     boolean hasSchemaVersion();
     /**
@@ -32,78 +33,95 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>required int32 schema_version = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
     int getSchemaVersion();
 
     /**
      * <code>required int64 id = 2;</code>
+     * @return Whether the id field is set.
      */
     boolean hasId();
     /**
      * <code>required int64 id = 2;</code>
+     * @return The id.
      */
     long getId();
 
     /**
      * <code>required int64 is_on_dated_vehicle_journey_id = 3;</code>
+     * @return Whether the isOnDatedVehicleJourneyId field is set.
      */
     boolean hasIsOnDatedVehicleJourneyId();
     /**
      * <code>required int64 is_on_dated_vehicle_journey_id = 3;</code>
+     * @return The isOnDatedVehicleJourneyId.
      */
     long getIsOnDatedVehicleJourneyId();
 
     /**
      * <code>optional int64 is_on_monitored_vehicle_journey_id = 4;</code>
+     * @return Whether the isOnMonitoredVehicleJourneyId field is set.
      */
     boolean hasIsOnMonitoredVehicleJourneyId();
     /**
      * <code>optional int64 is_on_monitored_vehicle_journey_id = 4;</code>
+     * @return The isOnMonitoredVehicleJourneyId.
      */
     long getIsOnMonitoredVehicleJourneyId();
 
     /**
      * <code>required int32 journey_pattern_sequence_number = 5;</code>
+     * @return Whether the journeyPatternSequenceNumber field is set.
      */
     boolean hasJourneyPatternSequenceNumber();
     /**
      * <code>required int32 journey_pattern_sequence_number = 5;</code>
+     * @return The journeyPatternSequenceNumber.
      */
     int getJourneyPatternSequenceNumber();
 
     /**
      * <code>required int64 is_timetabled_at_journey_pattern_point_gid = 6;</code>
+     * @return Whether the isTimetabledAtJourneyPatternPointGid field is set.
      */
     boolean hasIsTimetabledAtJourneyPatternPointGid();
     /**
      * <code>required int64 is_timetabled_at_journey_pattern_point_gid = 6;</code>
+     * @return The isTimetabledAtJourneyPatternPointGid.
      */
     long getIsTimetabledAtJourneyPatternPointGid();
 
     /**
      * <code>required int32 visit_count_number = 7;</code>
+     * @return Whether the visitCountNumber field is set.
      */
     boolean hasVisitCountNumber();
     /**
      * <code>required int32 visit_count_number = 7;</code>
+     * @return The visitCountNumber.
      */
     int getVisitCountNumber();
 
     /**
      * <code>optional int64 is_targeted_at_journey_pattern_point_gid = 8;</code>
+     * @return Whether the isTargetedAtJourneyPatternPointGid field is set.
      */
     boolean hasIsTargetedAtJourneyPatternPointGid();
     /**
      * <code>optional int64 is_targeted_at_journey_pattern_point_gid = 8;</code>
+     * @return The isTargetedAtJourneyPatternPointGid.
      */
     long getIsTargetedAtJourneyPatternPointGid();
 
     /**
      * <code>optional int64 was_observed_at_journey_pattern_point_gid = 9;</code>
+     * @return Whether the wasObservedAtJourneyPatternPointGid field is set.
      */
     boolean hasWasObservedAtJourneyPatternPointGid();
     /**
      * <code>optional int64 was_observed_at_journey_pattern_point_gid = 9;</code>
+     * @return The wasObservedAtJourneyPatternPointGid.
      */
     long getWasObservedAtJourneyPatternPointGid();
 
@@ -113,6 +131,7 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>optional int64 timetabled_latest_utc_date_time_ms = 10;</code>
+     * @return Whether the timetabledLatestUtcDateTimeMs field is set.
      */
     boolean hasTimetabledLatestUtcDateTimeMs();
     /**
@@ -121,101 +140,108 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>optional int64 timetabled_latest_utc_date_time_ms = 10;</code>
+     * @return The timetabledLatestUtcDateTimeMs.
      */
     long getTimetabledLatestUtcDateTimeMs();
 
     /**
      * <code>optional int64 target_utc_date_time_ms = 11;</code>
+     * @return Whether the targetUtcDateTimeMs field is set.
      */
     boolean hasTargetUtcDateTimeMs();
     /**
      * <code>optional int64 target_utc_date_time_ms = 11;</code>
+     * @return The targetUtcDateTimeMs.
      */
     long getTargetUtcDateTimeMs();
 
     /**
      * <code>optional int64 estimated_utc_date_time_ms = 12;</code>
+     * @return Whether the estimatedUtcDateTimeMs field is set.
      */
     boolean hasEstimatedUtcDateTimeMs();
     /**
      * <code>optional int64 estimated_utc_date_time_ms = 12;</code>
+     * @return The estimatedUtcDateTimeMs.
      */
     long getEstimatedUtcDateTimeMs();
 
     /**
      * <code>optional int64 observed_utc_date_time_ms = 13;</code>
+     * @return Whether the observedUtcDateTimeMs field is set.
      */
     boolean hasObservedUtcDateTimeMs();
     /**
      * <code>optional int64 observed_utc_date_time_ms = 13;</code>
+     * @return The observedUtcDateTimeMs.
      */
     long getObservedUtcDateTimeMs();
 
     /**
      * <code>required int64 state = 14;</code>
+     * @return Whether the state field is set.
      */
     boolean hasState();
     /**
      * <code>required int64 state = 14;</code>
+     * @return The state.
      */
     long getState();
 
     /**
      * <code>required int64 type = 15;</code>
+     * @return Whether the type field is set.
      */
     boolean hasType();
     /**
      * <code>required int64 type = 15;</code>
+     * @return The type.
      */
     long getType();
 
     /**
      * <code>required bool is_valid_yes_no = 16;</code>
+     * @return Whether the isValidYesNo field is set.
      */
     boolean hasIsValidYesNo();
     /**
      * <code>required bool is_valid_yes_no = 16;</code>
+     * @return The isValidYesNo.
      */
     boolean getIsValidYesNo();
 
     /**
      * <code>required int64 last_modified_utc_date_time_ms = 17;</code>
+     * @return Whether the lastModifiedUtcDateTimeMs field is set.
      */
     boolean hasLastModifiedUtcDateTimeMs();
     /**
      * <code>required int64 last_modified_utc_date_time_ms = 17;</code>
+     * @return The lastModifiedUtcDateTimeMs.
      */
     long getLastModifiedUtcDateTimeMs();
   }
   /**
    * Protobuf type {@code proto.Common}
    */
-  public  static final class Common extends
+  public static final class Common extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.Common)
       CommonOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Common.newBuilder() to construct.
     private Common(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private Common() {
       schemaVersion_ = 1;
-      id_ = 0L;
-      isOnDatedVehicleJourneyId_ = 0L;
-      isOnMonitoredVehicleJourneyId_ = 0L;
-      journeyPatternSequenceNumber_ = 0;
-      isTimetabledAtJourneyPatternPointGid_ = 0L;
-      visitCountNumber_ = 0;
-      isTargetedAtJourneyPatternPointGid_ = 0L;
-      wasObservedAtJourneyPatternPointGid_ = 0L;
-      timetabledLatestUtcDateTimeMs_ = 0L;
-      targetUtcDateTimeMs_ = 0L;
-      estimatedUtcDateTimeMs_ = 0L;
-      observedUtcDateTimeMs_ = 0L;
-      state_ = 0L;
-      type_ = 0L;
-      isValidYesNo_ = false;
-      lastModifiedUtcDateTimeMs_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Common();
     }
 
     @java.lang.Override
@@ -228,6 +254,9 @@ public final class PubtransTableProtos {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -239,13 +268,6 @@ public final class PubtransTableProtos {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               schemaVersion_ = input.readInt32();
@@ -331,6 +353,13 @@ public final class PubtransTableProtos {
               lastModifiedUtcDateTimeMs_ = input.readInt64();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -348,6 +377,7 @@ public final class PubtransTableProtos {
       return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_Common_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_Common_fieldAccessorTable
@@ -364,9 +394,11 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>required int32 schema_version = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
+    @java.lang.Override
     public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
@@ -374,7 +406,9 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>required int32 schema_version = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
+    @java.lang.Override
     public int getSchemaVersion() {
       return schemaVersion_;
     }
@@ -383,13 +417,17 @@ public final class PubtransTableProtos {
     private long id_;
     /**
      * <code>required int64 id = 2;</code>
+     * @return Whether the id field is set.
      */
+    @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>required int64 id = 2;</code>
+     * @return The id.
      */
+    @java.lang.Override
     public long getId() {
       return id_;
     }
@@ -398,13 +436,17 @@ public final class PubtransTableProtos {
     private long isOnDatedVehicleJourneyId_;
     /**
      * <code>required int64 is_on_dated_vehicle_journey_id = 3;</code>
+     * @return Whether the isOnDatedVehicleJourneyId field is set.
      */
+    @java.lang.Override
     public boolean hasIsOnDatedVehicleJourneyId() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>required int64 is_on_dated_vehicle_journey_id = 3;</code>
+     * @return The isOnDatedVehicleJourneyId.
      */
+    @java.lang.Override
     public long getIsOnDatedVehicleJourneyId() {
       return isOnDatedVehicleJourneyId_;
     }
@@ -413,13 +455,17 @@ public final class PubtransTableProtos {
     private long isOnMonitoredVehicleJourneyId_;
     /**
      * <code>optional int64 is_on_monitored_vehicle_journey_id = 4;</code>
+     * @return Whether the isOnMonitoredVehicleJourneyId field is set.
      */
+    @java.lang.Override
     public boolean hasIsOnMonitoredVehicleJourneyId() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>optional int64 is_on_monitored_vehicle_journey_id = 4;</code>
+     * @return The isOnMonitoredVehicleJourneyId.
      */
+    @java.lang.Override
     public long getIsOnMonitoredVehicleJourneyId() {
       return isOnMonitoredVehicleJourneyId_;
     }
@@ -428,13 +474,17 @@ public final class PubtransTableProtos {
     private int journeyPatternSequenceNumber_;
     /**
      * <code>required int32 journey_pattern_sequence_number = 5;</code>
+     * @return Whether the journeyPatternSequenceNumber field is set.
      */
+    @java.lang.Override
     public boolean hasJourneyPatternSequenceNumber() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <code>required int32 journey_pattern_sequence_number = 5;</code>
+     * @return The journeyPatternSequenceNumber.
      */
+    @java.lang.Override
     public int getJourneyPatternSequenceNumber() {
       return journeyPatternSequenceNumber_;
     }
@@ -443,13 +493,17 @@ public final class PubtransTableProtos {
     private long isTimetabledAtJourneyPatternPointGid_;
     /**
      * <code>required int64 is_timetabled_at_journey_pattern_point_gid = 6;</code>
+     * @return Whether the isTimetabledAtJourneyPatternPointGid field is set.
      */
+    @java.lang.Override
     public boolean hasIsTimetabledAtJourneyPatternPointGid() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <code>required int64 is_timetabled_at_journey_pattern_point_gid = 6;</code>
+     * @return The isTimetabledAtJourneyPatternPointGid.
      */
+    @java.lang.Override
     public long getIsTimetabledAtJourneyPatternPointGid() {
       return isTimetabledAtJourneyPatternPointGid_;
     }
@@ -458,13 +512,17 @@ public final class PubtransTableProtos {
     private int visitCountNumber_;
     /**
      * <code>required int32 visit_count_number = 7;</code>
+     * @return Whether the visitCountNumber field is set.
      */
+    @java.lang.Override
     public boolean hasVisitCountNumber() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      * <code>required int32 visit_count_number = 7;</code>
+     * @return The visitCountNumber.
      */
+    @java.lang.Override
     public int getVisitCountNumber() {
       return visitCountNumber_;
     }
@@ -473,13 +531,17 @@ public final class PubtransTableProtos {
     private long isTargetedAtJourneyPatternPointGid_;
     /**
      * <code>optional int64 is_targeted_at_journey_pattern_point_gid = 8;</code>
+     * @return Whether the isTargetedAtJourneyPatternPointGid field is set.
      */
+    @java.lang.Override
     public boolean hasIsTargetedAtJourneyPatternPointGid() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      * <code>optional int64 is_targeted_at_journey_pattern_point_gid = 8;</code>
+     * @return The isTargetedAtJourneyPatternPointGid.
      */
+    @java.lang.Override
     public long getIsTargetedAtJourneyPatternPointGid() {
       return isTargetedAtJourneyPatternPointGid_;
     }
@@ -488,13 +550,17 @@ public final class PubtransTableProtos {
     private long wasObservedAtJourneyPatternPointGid_;
     /**
      * <code>optional int64 was_observed_at_journey_pattern_point_gid = 9;</code>
+     * @return Whether the wasObservedAtJourneyPatternPointGid field is set.
      */
+    @java.lang.Override
     public boolean hasWasObservedAtJourneyPatternPointGid() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <code>optional int64 was_observed_at_journey_pattern_point_gid = 9;</code>
+     * @return The wasObservedAtJourneyPatternPointGid.
      */
+    @java.lang.Override
     public long getWasObservedAtJourneyPatternPointGid() {
       return wasObservedAtJourneyPatternPointGid_;
     }
@@ -507,9 +573,11 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>optional int64 timetabled_latest_utc_date_time_ms = 10;</code>
+     * @return Whether the timetabledLatestUtcDateTimeMs field is set.
      */
+    @java.lang.Override
     public boolean hasTimetabledLatestUtcDateTimeMs() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      * <pre>
@@ -517,7 +585,9 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>optional int64 timetabled_latest_utc_date_time_ms = 10;</code>
+     * @return The timetabledLatestUtcDateTimeMs.
      */
+    @java.lang.Override
     public long getTimetabledLatestUtcDateTimeMs() {
       return timetabledLatestUtcDateTimeMs_;
     }
@@ -526,13 +596,17 @@ public final class PubtransTableProtos {
     private long targetUtcDateTimeMs_;
     /**
      * <code>optional int64 target_utc_date_time_ms = 11;</code>
+     * @return Whether the targetUtcDateTimeMs field is set.
      */
+    @java.lang.Override
     public boolean hasTargetUtcDateTimeMs() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      * <code>optional int64 target_utc_date_time_ms = 11;</code>
+     * @return The targetUtcDateTimeMs.
      */
+    @java.lang.Override
     public long getTargetUtcDateTimeMs() {
       return targetUtcDateTimeMs_;
     }
@@ -541,13 +615,17 @@ public final class PubtransTableProtos {
     private long estimatedUtcDateTimeMs_;
     /**
      * <code>optional int64 estimated_utc_date_time_ms = 12;</code>
+     * @return Whether the estimatedUtcDateTimeMs field is set.
      */
+    @java.lang.Override
     public boolean hasEstimatedUtcDateTimeMs() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      * <code>optional int64 estimated_utc_date_time_ms = 12;</code>
+     * @return The estimatedUtcDateTimeMs.
      */
+    @java.lang.Override
     public long getEstimatedUtcDateTimeMs() {
       return estimatedUtcDateTimeMs_;
     }
@@ -556,13 +634,17 @@ public final class PubtransTableProtos {
     private long observedUtcDateTimeMs_;
     /**
      * <code>optional int64 observed_utc_date_time_ms = 13;</code>
+     * @return Whether the observedUtcDateTimeMs field is set.
      */
+    @java.lang.Override
     public boolean hasObservedUtcDateTimeMs() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      * <code>optional int64 observed_utc_date_time_ms = 13;</code>
+     * @return The observedUtcDateTimeMs.
      */
+    @java.lang.Override
     public long getObservedUtcDateTimeMs() {
       return observedUtcDateTimeMs_;
     }
@@ -571,13 +653,17 @@ public final class PubtransTableProtos {
     private long state_;
     /**
      * <code>required int64 state = 14;</code>
+     * @return Whether the state field is set.
      */
+    @java.lang.Override
     public boolean hasState() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      * <code>required int64 state = 14;</code>
+     * @return The state.
      */
+    @java.lang.Override
     public long getState() {
       return state_;
     }
@@ -586,13 +672,17 @@ public final class PubtransTableProtos {
     private long type_;
     /**
      * <code>required int64 type = 15;</code>
+     * @return Whether the type field is set.
      */
+    @java.lang.Override
     public boolean hasType() {
-      return ((bitField0_ & 0x00004000) == 0x00004000);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      * <code>required int64 type = 15;</code>
+     * @return The type.
      */
+    @java.lang.Override
     public long getType() {
       return type_;
     }
@@ -601,13 +691,17 @@ public final class PubtransTableProtos {
     private boolean isValidYesNo_;
     /**
      * <code>required bool is_valid_yes_no = 16;</code>
+     * @return Whether the isValidYesNo field is set.
      */
+    @java.lang.Override
     public boolean hasIsValidYesNo() {
-      return ((bitField0_ & 0x00008000) == 0x00008000);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      * <code>required bool is_valid_yes_no = 16;</code>
+     * @return The isValidYesNo.
      */
+    @java.lang.Override
     public boolean getIsValidYesNo() {
       return isValidYesNo_;
     }
@@ -616,18 +710,23 @@ public final class PubtransTableProtos {
     private long lastModifiedUtcDateTimeMs_;
     /**
      * <code>required int64 last_modified_utc_date_time_ms = 17;</code>
+     * @return Whether the lastModifiedUtcDateTimeMs field is set.
      */
+    @java.lang.Override
     public boolean hasLastModifiedUtcDateTimeMs() {
-      return ((bitField0_ & 0x00010000) == 0x00010000);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      * <code>required int64 last_modified_utc_date_time_ms = 17;</code>
+     * @return The lastModifiedUtcDateTimeMs.
      */
+    @java.lang.Override
     public long getLastModifiedUtcDateTimeMs() {
       return lastModifiedUtcDateTimeMs_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -677,132 +776,134 @@ public final class PubtransTableProtos {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt32(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeInt64(2, id_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         output.writeInt64(3, isOnDatedVehicleJourneyId_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         output.writeInt64(4, isOnMonitoredVehicleJourneyId_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         output.writeInt32(5, journeyPatternSequenceNumber_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         output.writeInt64(6, isTimetabledAtJourneyPatternPointGid_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         output.writeInt32(7, visitCountNumber_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         output.writeInt64(8, isTargetedAtJourneyPatternPointGid_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         output.writeInt64(9, wasObservedAtJourneyPatternPointGid_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         output.writeInt64(10, timetabledLatestUtcDateTimeMs_);
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         output.writeInt64(11, targetUtcDateTimeMs_);
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         output.writeInt64(12, estimatedUtcDateTimeMs_);
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         output.writeInt64(13, observedUtcDateTimeMs_);
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((bitField0_ & 0x00002000) != 0)) {
         output.writeInt64(14, state_);
       }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+      if (((bitField0_ & 0x00004000) != 0)) {
         output.writeInt64(15, type_);
       }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+      if (((bitField0_ & 0x00008000) != 0)) {
         output.writeBool(16, isValidYesNo_);
       }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+      if (((bitField0_ & 0x00010000) != 0)) {
         output.writeInt64(17, lastModifiedUtcDateTimeMs_);
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, id_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, isOnDatedVehicleJourneyId_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, isOnMonitoredVehicleJourneyId_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, journeyPatternSequenceNumber_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(6, isTimetabledAtJourneyPatternPointGid_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(7, visitCountNumber_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(8, isTargetedAtJourneyPatternPointGid_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(9, wasObservedAtJourneyPatternPointGid_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(10, timetabledLatestUtcDateTimeMs_);
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(11, targetUtcDateTimeMs_);
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(12, estimatedUtcDateTimeMs_);
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(13, observedUtcDateTimeMs_);
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((bitField0_ & 0x00002000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(14, state_);
       }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+      if (((bitField0_ & 0x00004000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(15, type_);
       }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+      if (((bitField0_ & 0x00008000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(16, isValidYesNo_);
       }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+      if (((bitField0_ & 0x00010000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(17, lastModifiedUtcDateTimeMs_);
       }
@@ -811,7 +912,6 @@ public final class PubtransTableProtos {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -822,94 +922,93 @@ public final class PubtransTableProtos {
       }
       fi.hsl.common.transitdata.proto.PubtransTableProtos.Common other = (fi.hsl.common.transitdata.proto.PubtransTableProtos.Common) obj;
 
-      boolean result = true;
-      result = result && (hasSchemaVersion() == other.hasSchemaVersion());
+      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
       if (hasSchemaVersion()) {
-        result = result && (getSchemaVersion()
-            == other.getSchemaVersion());
+        if (getSchemaVersion()
+            != other.getSchemaVersion()) return false;
       }
-      result = result && (hasId() == other.hasId());
+      if (hasId() != other.hasId()) return false;
       if (hasId()) {
-        result = result && (getId()
-            == other.getId());
+        if (getId()
+            != other.getId()) return false;
       }
-      result = result && (hasIsOnDatedVehicleJourneyId() == other.hasIsOnDatedVehicleJourneyId());
+      if (hasIsOnDatedVehicleJourneyId() != other.hasIsOnDatedVehicleJourneyId()) return false;
       if (hasIsOnDatedVehicleJourneyId()) {
-        result = result && (getIsOnDatedVehicleJourneyId()
-            == other.getIsOnDatedVehicleJourneyId());
+        if (getIsOnDatedVehicleJourneyId()
+            != other.getIsOnDatedVehicleJourneyId()) return false;
       }
-      result = result && (hasIsOnMonitoredVehicleJourneyId() == other.hasIsOnMonitoredVehicleJourneyId());
+      if (hasIsOnMonitoredVehicleJourneyId() != other.hasIsOnMonitoredVehicleJourneyId()) return false;
       if (hasIsOnMonitoredVehicleJourneyId()) {
-        result = result && (getIsOnMonitoredVehicleJourneyId()
-            == other.getIsOnMonitoredVehicleJourneyId());
+        if (getIsOnMonitoredVehicleJourneyId()
+            != other.getIsOnMonitoredVehicleJourneyId()) return false;
       }
-      result = result && (hasJourneyPatternSequenceNumber() == other.hasJourneyPatternSequenceNumber());
+      if (hasJourneyPatternSequenceNumber() != other.hasJourneyPatternSequenceNumber()) return false;
       if (hasJourneyPatternSequenceNumber()) {
-        result = result && (getJourneyPatternSequenceNumber()
-            == other.getJourneyPatternSequenceNumber());
+        if (getJourneyPatternSequenceNumber()
+            != other.getJourneyPatternSequenceNumber()) return false;
       }
-      result = result && (hasIsTimetabledAtJourneyPatternPointGid() == other.hasIsTimetabledAtJourneyPatternPointGid());
+      if (hasIsTimetabledAtJourneyPatternPointGid() != other.hasIsTimetabledAtJourneyPatternPointGid()) return false;
       if (hasIsTimetabledAtJourneyPatternPointGid()) {
-        result = result && (getIsTimetabledAtJourneyPatternPointGid()
-            == other.getIsTimetabledAtJourneyPatternPointGid());
+        if (getIsTimetabledAtJourneyPatternPointGid()
+            != other.getIsTimetabledAtJourneyPatternPointGid()) return false;
       }
-      result = result && (hasVisitCountNumber() == other.hasVisitCountNumber());
+      if (hasVisitCountNumber() != other.hasVisitCountNumber()) return false;
       if (hasVisitCountNumber()) {
-        result = result && (getVisitCountNumber()
-            == other.getVisitCountNumber());
+        if (getVisitCountNumber()
+            != other.getVisitCountNumber()) return false;
       }
-      result = result && (hasIsTargetedAtJourneyPatternPointGid() == other.hasIsTargetedAtJourneyPatternPointGid());
+      if (hasIsTargetedAtJourneyPatternPointGid() != other.hasIsTargetedAtJourneyPatternPointGid()) return false;
       if (hasIsTargetedAtJourneyPatternPointGid()) {
-        result = result && (getIsTargetedAtJourneyPatternPointGid()
-            == other.getIsTargetedAtJourneyPatternPointGid());
+        if (getIsTargetedAtJourneyPatternPointGid()
+            != other.getIsTargetedAtJourneyPatternPointGid()) return false;
       }
-      result = result && (hasWasObservedAtJourneyPatternPointGid() == other.hasWasObservedAtJourneyPatternPointGid());
+      if (hasWasObservedAtJourneyPatternPointGid() != other.hasWasObservedAtJourneyPatternPointGid()) return false;
       if (hasWasObservedAtJourneyPatternPointGid()) {
-        result = result && (getWasObservedAtJourneyPatternPointGid()
-            == other.getWasObservedAtJourneyPatternPointGid());
+        if (getWasObservedAtJourneyPatternPointGid()
+            != other.getWasObservedAtJourneyPatternPointGid()) return false;
       }
-      result = result && (hasTimetabledLatestUtcDateTimeMs() == other.hasTimetabledLatestUtcDateTimeMs());
+      if (hasTimetabledLatestUtcDateTimeMs() != other.hasTimetabledLatestUtcDateTimeMs()) return false;
       if (hasTimetabledLatestUtcDateTimeMs()) {
-        result = result && (getTimetabledLatestUtcDateTimeMs()
-            == other.getTimetabledLatestUtcDateTimeMs());
+        if (getTimetabledLatestUtcDateTimeMs()
+            != other.getTimetabledLatestUtcDateTimeMs()) return false;
       }
-      result = result && (hasTargetUtcDateTimeMs() == other.hasTargetUtcDateTimeMs());
+      if (hasTargetUtcDateTimeMs() != other.hasTargetUtcDateTimeMs()) return false;
       if (hasTargetUtcDateTimeMs()) {
-        result = result && (getTargetUtcDateTimeMs()
-            == other.getTargetUtcDateTimeMs());
+        if (getTargetUtcDateTimeMs()
+            != other.getTargetUtcDateTimeMs()) return false;
       }
-      result = result && (hasEstimatedUtcDateTimeMs() == other.hasEstimatedUtcDateTimeMs());
+      if (hasEstimatedUtcDateTimeMs() != other.hasEstimatedUtcDateTimeMs()) return false;
       if (hasEstimatedUtcDateTimeMs()) {
-        result = result && (getEstimatedUtcDateTimeMs()
-            == other.getEstimatedUtcDateTimeMs());
+        if (getEstimatedUtcDateTimeMs()
+            != other.getEstimatedUtcDateTimeMs()) return false;
       }
-      result = result && (hasObservedUtcDateTimeMs() == other.hasObservedUtcDateTimeMs());
+      if (hasObservedUtcDateTimeMs() != other.hasObservedUtcDateTimeMs()) return false;
       if (hasObservedUtcDateTimeMs()) {
-        result = result && (getObservedUtcDateTimeMs()
-            == other.getObservedUtcDateTimeMs());
+        if (getObservedUtcDateTimeMs()
+            != other.getObservedUtcDateTimeMs()) return false;
       }
-      result = result && (hasState() == other.hasState());
+      if (hasState() != other.hasState()) return false;
       if (hasState()) {
-        result = result && (getState()
-            == other.getState());
+        if (getState()
+            != other.getState()) return false;
       }
-      result = result && (hasType() == other.hasType());
+      if (hasType() != other.hasType()) return false;
       if (hasType()) {
-        result = result && (getType()
-            == other.getType());
+        if (getType()
+            != other.getType()) return false;
       }
-      result = result && (hasIsValidYesNo() == other.hasIsValidYesNo());
+      if (hasIsValidYesNo() != other.hasIsValidYesNo()) return false;
       if (hasIsValidYesNo()) {
-        result = result && (getIsValidYesNo()
-            == other.getIsValidYesNo());
+        if (getIsValidYesNo()
+            != other.getIsValidYesNo()) return false;
       }
-      result = result && (hasLastModifiedUtcDateTimeMs() == other.hasLastModifiedUtcDateTimeMs());
+      if (hasLastModifiedUtcDateTimeMs() != other.hasLastModifiedUtcDateTimeMs()) return false;
       if (hasLastModifiedUtcDateTimeMs()) {
-        result = result && (getLastModifiedUtcDateTimeMs()
-            == other.getLastModifiedUtcDateTimeMs());
+        if (getLastModifiedUtcDateTimeMs()
+            != other.getLastModifiedUtcDateTimeMs()) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -918,7 +1017,7 @@ public final class PubtransTableProtos {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasSchemaVersion()) {
         hash = (37 * hash) + SCHEMA_VERSION_FIELD_NUMBER;
         hash = (53 * hash) + getSchemaVersion();
@@ -1007,6 +1106,17 @@ public final class PubtransTableProtos {
     }
 
     public static fi.hsl.common.transitdata.proto.PubtransTableProtos.Common parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.Common parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.Common parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -1065,6 +1175,7 @@ public final class PubtransTableProtos {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1072,6 +1183,7 @@ public final class PubtransTableProtos {
     public static Builder newBuilder(fi.hsl.common.transitdata.proto.PubtransTableProtos.Common prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1095,6 +1207,7 @@ public final class PubtransTableProtos {
         return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_Common_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_Common_fieldAccessorTable
@@ -1117,6 +1230,7 @@ public final class PubtransTableProtos {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         schemaVersion_ = 1;
@@ -1156,15 +1270,18 @@ public final class PubtransTableProtos {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_Common_descriptor;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.PubtransTableProtos.Common getDefaultInstanceForType() {
         return fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.getDefaultInstance();
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.PubtransTableProtos.Common build() {
         fi.hsl.common.transitdata.proto.PubtransTableProtos.Common result = buildPartial();
         if (!result.isInitialized()) {
@@ -1173,109 +1290,117 @@ public final class PubtransTableProtos {
         return result;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.PubtransTableProtos.Common buildPartial() {
         fi.hsl.common.transitdata.proto.PubtransTableProtos.Common result = new fi.hsl.common.transitdata.proto.PubtransTableProtos.Common(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.schemaVersion_ = schemaVersion_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.id_ = id_;
           to_bitField0_ |= 0x00000002;
         }
-        result.id_ = id_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isOnDatedVehicleJourneyId_ = isOnDatedVehicleJourneyId_;
           to_bitField0_ |= 0x00000004;
         }
-        result.isOnDatedVehicleJourneyId_ = isOnDatedVehicleJourneyId_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.isOnMonitoredVehicleJourneyId_ = isOnMonitoredVehicleJourneyId_;
           to_bitField0_ |= 0x00000008;
         }
-        result.isOnMonitoredVehicleJourneyId_ = isOnMonitoredVehicleJourneyId_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.journeyPatternSequenceNumber_ = journeyPatternSequenceNumber_;
           to_bitField0_ |= 0x00000010;
         }
-        result.journeyPatternSequenceNumber_ = journeyPatternSequenceNumber_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.isTimetabledAtJourneyPatternPointGid_ = isTimetabledAtJourneyPatternPointGid_;
           to_bitField0_ |= 0x00000020;
         }
-        result.isTimetabledAtJourneyPatternPointGid_ = isTimetabledAtJourneyPatternPointGid_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.visitCountNumber_ = visitCountNumber_;
           to_bitField0_ |= 0x00000040;
         }
-        result.visitCountNumber_ = visitCountNumber_;
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.isTargetedAtJourneyPatternPointGid_ = isTargetedAtJourneyPatternPointGid_;
           to_bitField0_ |= 0x00000080;
         }
-        result.isTargetedAtJourneyPatternPointGid_ = isTargetedAtJourneyPatternPointGid_;
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.wasObservedAtJourneyPatternPointGid_ = wasObservedAtJourneyPatternPointGid_;
           to_bitField0_ |= 0x00000100;
         }
-        result.wasObservedAtJourneyPatternPointGid_ = wasObservedAtJourneyPatternPointGid_;
-        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.timetabledLatestUtcDateTimeMs_ = timetabledLatestUtcDateTimeMs_;
           to_bitField0_ |= 0x00000200;
         }
-        result.timetabledLatestUtcDateTimeMs_ = timetabledLatestUtcDateTimeMs_;
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.targetUtcDateTimeMs_ = targetUtcDateTimeMs_;
           to_bitField0_ |= 0x00000400;
         }
-        result.targetUtcDateTimeMs_ = targetUtcDateTimeMs_;
-        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.estimatedUtcDateTimeMs_ = estimatedUtcDateTimeMs_;
           to_bitField0_ |= 0x00000800;
         }
-        result.estimatedUtcDateTimeMs_ = estimatedUtcDateTimeMs_;
-        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.observedUtcDateTimeMs_ = observedUtcDateTimeMs_;
           to_bitField0_ |= 0x00001000;
         }
-        result.observedUtcDateTimeMs_ = observedUtcDateTimeMs_;
-        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.state_ = state_;
           to_bitField0_ |= 0x00002000;
         }
-        result.state_ = state_;
-        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.type_ = type_;
           to_bitField0_ |= 0x00004000;
         }
-        result.type_ = type_;
-        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.isValidYesNo_ = isValidYesNo_;
           to_bitField0_ |= 0x00008000;
         }
-        result.isValidYesNo_ = isValidYesNo_;
-        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
+        if (((from_bitField0_ & 0x00010000) != 0)) {
+          result.lastModifiedUtcDateTimeMs_ = lastModifiedUtcDateTimeMs_;
           to_bitField0_ |= 0x00010000;
         }
-        result.lastModifiedUtcDateTimeMs_ = lastModifiedUtcDateTimeMs_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.transitdata.proto.PubtransTableProtos.Common) {
           return mergeFrom((fi.hsl.common.transitdata.proto.PubtransTableProtos.Common)other);
@@ -1343,6 +1468,7 @@ public final class PubtransTableProtos {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasSchemaVersion()) {
           return false;
@@ -1377,6 +1503,7 @@ public final class PubtransTableProtos {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1403,9 +1530,11 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>required int32 schema_version = 1 [default = 1];</code>
+       * @return Whether the schemaVersion field is set.
        */
+      @java.lang.Override
       public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <pre>
@@ -1413,7 +1542,9 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>required int32 schema_version = 1 [default = 1];</code>
+       * @return The schemaVersion.
        */
+      @java.lang.Override
       public int getSchemaVersion() {
         return schemaVersion_;
       }
@@ -1423,6 +1554,8 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>required int32 schema_version = 1 [default = 1];</code>
+       * @param value The schemaVersion to set.
+       * @return This builder for chaining.
        */
       public Builder setSchemaVersion(int value) {
         bitField0_ |= 0x00000001;
@@ -1436,6 +1569,7 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>required int32 schema_version = 1 [default = 1];</code>
+       * @return This builder for chaining.
        */
       public Builder clearSchemaVersion() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1447,18 +1581,24 @@ public final class PubtransTableProtos {
       private long id_ ;
       /**
        * <code>required int64 id = 2;</code>
+       * @return Whether the id field is set.
        */
+      @java.lang.Override
       public boolean hasId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>required int64 id = 2;</code>
+       * @return The id.
        */
+      @java.lang.Override
       public long getId() {
         return id_;
       }
       /**
        * <code>required int64 id = 2;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(long value) {
         bitField0_ |= 0x00000002;
@@ -1468,6 +1608,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required int64 id = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -1479,18 +1620,24 @@ public final class PubtransTableProtos {
       private long isOnDatedVehicleJourneyId_ ;
       /**
        * <code>required int64 is_on_dated_vehicle_journey_id = 3;</code>
+       * @return Whether the isOnDatedVehicleJourneyId field is set.
        */
+      @java.lang.Override
       public boolean hasIsOnDatedVehicleJourneyId() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>required int64 is_on_dated_vehicle_journey_id = 3;</code>
+       * @return The isOnDatedVehicleJourneyId.
        */
+      @java.lang.Override
       public long getIsOnDatedVehicleJourneyId() {
         return isOnDatedVehicleJourneyId_;
       }
       /**
        * <code>required int64 is_on_dated_vehicle_journey_id = 3;</code>
+       * @param value The isOnDatedVehicleJourneyId to set.
+       * @return This builder for chaining.
        */
       public Builder setIsOnDatedVehicleJourneyId(long value) {
         bitField0_ |= 0x00000004;
@@ -1500,6 +1647,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required int64 is_on_dated_vehicle_journey_id = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIsOnDatedVehicleJourneyId() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -1511,18 +1659,24 @@ public final class PubtransTableProtos {
       private long isOnMonitoredVehicleJourneyId_ ;
       /**
        * <code>optional int64 is_on_monitored_vehicle_journey_id = 4;</code>
+       * @return Whether the isOnMonitoredVehicleJourneyId field is set.
        */
+      @java.lang.Override
       public boolean hasIsOnMonitoredVehicleJourneyId() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>optional int64 is_on_monitored_vehicle_journey_id = 4;</code>
+       * @return The isOnMonitoredVehicleJourneyId.
        */
+      @java.lang.Override
       public long getIsOnMonitoredVehicleJourneyId() {
         return isOnMonitoredVehicleJourneyId_;
       }
       /**
        * <code>optional int64 is_on_monitored_vehicle_journey_id = 4;</code>
+       * @param value The isOnMonitoredVehicleJourneyId to set.
+       * @return This builder for chaining.
        */
       public Builder setIsOnMonitoredVehicleJourneyId(long value) {
         bitField0_ |= 0x00000008;
@@ -1532,6 +1686,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>optional int64 is_on_monitored_vehicle_journey_id = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIsOnMonitoredVehicleJourneyId() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -1543,18 +1698,24 @@ public final class PubtransTableProtos {
       private int journeyPatternSequenceNumber_ ;
       /**
        * <code>required int32 journey_pattern_sequence_number = 5;</code>
+       * @return Whether the journeyPatternSequenceNumber field is set.
        */
+      @java.lang.Override
       public boolean hasJourneyPatternSequenceNumber() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>required int32 journey_pattern_sequence_number = 5;</code>
+       * @return The journeyPatternSequenceNumber.
        */
+      @java.lang.Override
       public int getJourneyPatternSequenceNumber() {
         return journeyPatternSequenceNumber_;
       }
       /**
        * <code>required int32 journey_pattern_sequence_number = 5;</code>
+       * @param value The journeyPatternSequenceNumber to set.
+       * @return This builder for chaining.
        */
       public Builder setJourneyPatternSequenceNumber(int value) {
         bitField0_ |= 0x00000010;
@@ -1564,6 +1725,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required int32 journey_pattern_sequence_number = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearJourneyPatternSequenceNumber() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -1575,18 +1737,24 @@ public final class PubtransTableProtos {
       private long isTimetabledAtJourneyPatternPointGid_ ;
       /**
        * <code>required int64 is_timetabled_at_journey_pattern_point_gid = 6;</code>
+       * @return Whether the isTimetabledAtJourneyPatternPointGid field is set.
        */
+      @java.lang.Override
       public boolean hasIsTimetabledAtJourneyPatternPointGid() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <code>required int64 is_timetabled_at_journey_pattern_point_gid = 6;</code>
+       * @return The isTimetabledAtJourneyPatternPointGid.
        */
+      @java.lang.Override
       public long getIsTimetabledAtJourneyPatternPointGid() {
         return isTimetabledAtJourneyPatternPointGid_;
       }
       /**
        * <code>required int64 is_timetabled_at_journey_pattern_point_gid = 6;</code>
+       * @param value The isTimetabledAtJourneyPatternPointGid to set.
+       * @return This builder for chaining.
        */
       public Builder setIsTimetabledAtJourneyPatternPointGid(long value) {
         bitField0_ |= 0x00000020;
@@ -1596,6 +1764,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required int64 is_timetabled_at_journey_pattern_point_gid = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIsTimetabledAtJourneyPatternPointGid() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -1607,18 +1776,24 @@ public final class PubtransTableProtos {
       private int visitCountNumber_ ;
       /**
        * <code>required int32 visit_count_number = 7;</code>
+       * @return Whether the visitCountNumber field is set.
        */
+      @java.lang.Override
       public boolean hasVisitCountNumber() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        * <code>required int32 visit_count_number = 7;</code>
+       * @return The visitCountNumber.
        */
+      @java.lang.Override
       public int getVisitCountNumber() {
         return visitCountNumber_;
       }
       /**
        * <code>required int32 visit_count_number = 7;</code>
+       * @param value The visitCountNumber to set.
+       * @return This builder for chaining.
        */
       public Builder setVisitCountNumber(int value) {
         bitField0_ |= 0x00000040;
@@ -1628,6 +1803,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required int32 visit_count_number = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearVisitCountNumber() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -1639,18 +1815,24 @@ public final class PubtransTableProtos {
       private long isTargetedAtJourneyPatternPointGid_ ;
       /**
        * <code>optional int64 is_targeted_at_journey_pattern_point_gid = 8;</code>
+       * @return Whether the isTargetedAtJourneyPatternPointGid field is set.
        */
+      @java.lang.Override
       public boolean hasIsTargetedAtJourneyPatternPointGid() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
        * <code>optional int64 is_targeted_at_journey_pattern_point_gid = 8;</code>
+       * @return The isTargetedAtJourneyPatternPointGid.
        */
+      @java.lang.Override
       public long getIsTargetedAtJourneyPatternPointGid() {
         return isTargetedAtJourneyPatternPointGid_;
       }
       /**
        * <code>optional int64 is_targeted_at_journey_pattern_point_gid = 8;</code>
+       * @param value The isTargetedAtJourneyPatternPointGid to set.
+       * @return This builder for chaining.
        */
       public Builder setIsTargetedAtJourneyPatternPointGid(long value) {
         bitField0_ |= 0x00000080;
@@ -1660,6 +1842,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>optional int64 is_targeted_at_journey_pattern_point_gid = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIsTargetedAtJourneyPatternPointGid() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -1671,18 +1854,24 @@ public final class PubtransTableProtos {
       private long wasObservedAtJourneyPatternPointGid_ ;
       /**
        * <code>optional int64 was_observed_at_journey_pattern_point_gid = 9;</code>
+       * @return Whether the wasObservedAtJourneyPatternPointGid field is set.
        */
+      @java.lang.Override
       public boolean hasWasObservedAtJourneyPatternPointGid() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
        * <code>optional int64 was_observed_at_journey_pattern_point_gid = 9;</code>
+       * @return The wasObservedAtJourneyPatternPointGid.
        */
+      @java.lang.Override
       public long getWasObservedAtJourneyPatternPointGid() {
         return wasObservedAtJourneyPatternPointGid_;
       }
       /**
        * <code>optional int64 was_observed_at_journey_pattern_point_gid = 9;</code>
+       * @param value The wasObservedAtJourneyPatternPointGid to set.
+       * @return This builder for chaining.
        */
       public Builder setWasObservedAtJourneyPatternPointGid(long value) {
         bitField0_ |= 0x00000100;
@@ -1692,6 +1881,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>optional int64 was_observed_at_journey_pattern_point_gid = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearWasObservedAtJourneyPatternPointGid() {
         bitField0_ = (bitField0_ & ~0x00000100);
@@ -1707,9 +1897,11 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>optional int64 timetabled_latest_utc_date_time_ms = 10;</code>
+       * @return Whether the timetabledLatestUtcDateTimeMs field is set.
        */
+      @java.lang.Override
       public boolean hasTimetabledLatestUtcDateTimeMs() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000200) != 0);
       }
       /**
        * <pre>
@@ -1717,7 +1909,9 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>optional int64 timetabled_latest_utc_date_time_ms = 10;</code>
+       * @return The timetabledLatestUtcDateTimeMs.
        */
+      @java.lang.Override
       public long getTimetabledLatestUtcDateTimeMs() {
         return timetabledLatestUtcDateTimeMs_;
       }
@@ -1727,6 +1921,8 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>optional int64 timetabled_latest_utc_date_time_ms = 10;</code>
+       * @param value The timetabledLatestUtcDateTimeMs to set.
+       * @return This builder for chaining.
        */
       public Builder setTimetabledLatestUtcDateTimeMs(long value) {
         bitField0_ |= 0x00000200;
@@ -1740,6 +1936,7 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>optional int64 timetabled_latest_utc_date_time_ms = 10;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTimetabledLatestUtcDateTimeMs() {
         bitField0_ = (bitField0_ & ~0x00000200);
@@ -1751,18 +1948,24 @@ public final class PubtransTableProtos {
       private long targetUtcDateTimeMs_ ;
       /**
        * <code>optional int64 target_utc_date_time_ms = 11;</code>
+       * @return Whether the targetUtcDateTimeMs field is set.
        */
+      @java.lang.Override
       public boolean hasTargetUtcDateTimeMs() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000400) != 0);
       }
       /**
        * <code>optional int64 target_utc_date_time_ms = 11;</code>
+       * @return The targetUtcDateTimeMs.
        */
+      @java.lang.Override
       public long getTargetUtcDateTimeMs() {
         return targetUtcDateTimeMs_;
       }
       /**
        * <code>optional int64 target_utc_date_time_ms = 11;</code>
+       * @param value The targetUtcDateTimeMs to set.
+       * @return This builder for chaining.
        */
       public Builder setTargetUtcDateTimeMs(long value) {
         bitField0_ |= 0x00000400;
@@ -1772,6 +1975,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>optional int64 target_utc_date_time_ms = 11;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTargetUtcDateTimeMs() {
         bitField0_ = (bitField0_ & ~0x00000400);
@@ -1783,18 +1987,24 @@ public final class PubtransTableProtos {
       private long estimatedUtcDateTimeMs_ ;
       /**
        * <code>optional int64 estimated_utc_date_time_ms = 12;</code>
+       * @return Whether the estimatedUtcDateTimeMs field is set.
        */
+      @java.lang.Override
       public boolean hasEstimatedUtcDateTimeMs() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
+        return ((bitField0_ & 0x00000800) != 0);
       }
       /**
        * <code>optional int64 estimated_utc_date_time_ms = 12;</code>
+       * @return The estimatedUtcDateTimeMs.
        */
+      @java.lang.Override
       public long getEstimatedUtcDateTimeMs() {
         return estimatedUtcDateTimeMs_;
       }
       /**
        * <code>optional int64 estimated_utc_date_time_ms = 12;</code>
+       * @param value The estimatedUtcDateTimeMs to set.
+       * @return This builder for chaining.
        */
       public Builder setEstimatedUtcDateTimeMs(long value) {
         bitField0_ |= 0x00000800;
@@ -1804,6 +2014,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>optional int64 estimated_utc_date_time_ms = 12;</code>
+       * @return This builder for chaining.
        */
       public Builder clearEstimatedUtcDateTimeMs() {
         bitField0_ = (bitField0_ & ~0x00000800);
@@ -1815,18 +2026,24 @@ public final class PubtransTableProtos {
       private long observedUtcDateTimeMs_ ;
       /**
        * <code>optional int64 observed_utc_date_time_ms = 13;</code>
+       * @return Whether the observedUtcDateTimeMs field is set.
        */
+      @java.lang.Override
       public boolean hasObservedUtcDateTimeMs() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
+        return ((bitField0_ & 0x00001000) != 0);
       }
       /**
        * <code>optional int64 observed_utc_date_time_ms = 13;</code>
+       * @return The observedUtcDateTimeMs.
        */
+      @java.lang.Override
       public long getObservedUtcDateTimeMs() {
         return observedUtcDateTimeMs_;
       }
       /**
        * <code>optional int64 observed_utc_date_time_ms = 13;</code>
+       * @param value The observedUtcDateTimeMs to set.
+       * @return This builder for chaining.
        */
       public Builder setObservedUtcDateTimeMs(long value) {
         bitField0_ |= 0x00001000;
@@ -1836,6 +2053,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>optional int64 observed_utc_date_time_ms = 13;</code>
+       * @return This builder for chaining.
        */
       public Builder clearObservedUtcDateTimeMs() {
         bitField0_ = (bitField0_ & ~0x00001000);
@@ -1847,18 +2065,24 @@ public final class PubtransTableProtos {
       private long state_ ;
       /**
        * <code>required int64 state = 14;</code>
+       * @return Whether the state field is set.
        */
+      @java.lang.Override
       public boolean hasState() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
+        return ((bitField0_ & 0x00002000) != 0);
       }
       /**
        * <code>required int64 state = 14;</code>
+       * @return The state.
        */
+      @java.lang.Override
       public long getState() {
         return state_;
       }
       /**
        * <code>required int64 state = 14;</code>
+       * @param value The state to set.
+       * @return This builder for chaining.
        */
       public Builder setState(long value) {
         bitField0_ |= 0x00002000;
@@ -1868,6 +2092,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required int64 state = 14;</code>
+       * @return This builder for chaining.
        */
       public Builder clearState() {
         bitField0_ = (bitField0_ & ~0x00002000);
@@ -1879,18 +2104,24 @@ public final class PubtransTableProtos {
       private long type_ ;
       /**
        * <code>required int64 type = 15;</code>
+       * @return Whether the type field is set.
        */
+      @java.lang.Override
       public boolean hasType() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
+        return ((bitField0_ & 0x00004000) != 0);
       }
       /**
        * <code>required int64 type = 15;</code>
+       * @return The type.
        */
+      @java.lang.Override
       public long getType() {
         return type_;
       }
       /**
        * <code>required int64 type = 15;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
       public Builder setType(long value) {
         bitField0_ |= 0x00004000;
@@ -1900,6 +2131,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required int64 type = 15;</code>
+       * @return This builder for chaining.
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00004000);
@@ -1911,18 +2143,24 @@ public final class PubtransTableProtos {
       private boolean isValidYesNo_ ;
       /**
        * <code>required bool is_valid_yes_no = 16;</code>
+       * @return Whether the isValidYesNo field is set.
        */
+      @java.lang.Override
       public boolean hasIsValidYesNo() {
-        return ((bitField0_ & 0x00008000) == 0x00008000);
+        return ((bitField0_ & 0x00008000) != 0);
       }
       /**
        * <code>required bool is_valid_yes_no = 16;</code>
+       * @return The isValidYesNo.
        */
+      @java.lang.Override
       public boolean getIsValidYesNo() {
         return isValidYesNo_;
       }
       /**
        * <code>required bool is_valid_yes_no = 16;</code>
+       * @param value The isValidYesNo to set.
+       * @return This builder for chaining.
        */
       public Builder setIsValidYesNo(boolean value) {
         bitField0_ |= 0x00008000;
@@ -1932,6 +2170,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required bool is_valid_yes_no = 16;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIsValidYesNo() {
         bitField0_ = (bitField0_ & ~0x00008000);
@@ -1943,18 +2182,24 @@ public final class PubtransTableProtos {
       private long lastModifiedUtcDateTimeMs_ ;
       /**
        * <code>required int64 last_modified_utc_date_time_ms = 17;</code>
+       * @return Whether the lastModifiedUtcDateTimeMs field is set.
        */
+      @java.lang.Override
       public boolean hasLastModifiedUtcDateTimeMs() {
-        return ((bitField0_ & 0x00010000) == 0x00010000);
+        return ((bitField0_ & 0x00010000) != 0);
       }
       /**
        * <code>required int64 last_modified_utc_date_time_ms = 17;</code>
+       * @return The lastModifiedUtcDateTimeMs.
        */
+      @java.lang.Override
       public long getLastModifiedUtcDateTimeMs() {
         return lastModifiedUtcDateTimeMs_;
       }
       /**
        * <code>required int64 last_modified_utc_date_time_ms = 17;</code>
+       * @param value The lastModifiedUtcDateTimeMs to set.
+       * @return This builder for chaining.
        */
       public Builder setLastModifiedUtcDateTimeMs(long value) {
         bitField0_ |= 0x00010000;
@@ -1964,6 +2209,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required int64 last_modified_utc_date_time_ms = 17;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLastModifiedUtcDateTimeMs() {
         bitField0_ = (bitField0_ & ~0x00010000);
@@ -1971,11 +2217,13 @@ public final class PubtransTableProtos {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1997,11 +2245,12 @@ public final class PubtransTableProtos {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Common>
         PARSER = new com.google.protobuf.AbstractParser<Common>() {
+      @java.lang.Override
       public Common parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Common(input, extensionRegistry);
+        return new Common(input, extensionRegistry);
       }
     };
 
@@ -2014,6 +2263,7 @@ public final class PubtransTableProtos {
       return PARSER;
     }
 
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.PubtransTableProtos.Common getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2030,6 +2280,7 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>required int64 dvj_id = 1;</code>
+     * @return Whether the dvjId field is set.
      */
     boolean hasDvjId();
     /**
@@ -2038,92 +2289,143 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>required int64 dvj_id = 1;</code>
+     * @return The dvjId.
      */
     long getDvjId();
 
     /**
      * <code>required string operating_day = 2;</code>
+     * @return Whether the operatingDay field is set.
      */
     boolean hasOperatingDay();
     /**
      * <code>required string operating_day = 2;</code>
+     * @return The operatingDay.
      */
     java.lang.String getOperatingDay();
     /**
      * <code>required string operating_day = 2;</code>
+     * @return The bytes for operatingDay.
      */
     com.google.protobuf.ByteString
         getOperatingDayBytes();
 
     /**
      * <code>required string route_id = 3;</code>
+     * @return Whether the routeId field is set.
      */
     boolean hasRouteId();
     /**
      * <code>required string route_id = 3;</code>
+     * @return The routeId.
      */
     java.lang.String getRouteId();
     /**
      * <code>required string route_id = 3;</code>
+     * @return The bytes for routeId.
      */
     com.google.protobuf.ByteString
         getRouteIdBytes();
 
     /**
      * <code>required uint32 direction_id = 4;</code>
+     * @return Whether the directionId field is set.
      */
     boolean hasDirectionId();
     /**
      * <code>required uint32 direction_id = 4;</code>
+     * @return The directionId.
      */
     int getDirectionId();
 
     /**
      * <code>required string start_time = 5;</code>
+     * @return Whether the startTime field is set.
      */
     boolean hasStartTime();
     /**
      * <code>required string start_time = 5;</code>
+     * @return The startTime.
      */
     java.lang.String getStartTime();
     /**
      * <code>required string start_time = 5;</code>
+     * @return The bytes for startTime.
      */
     com.google.protobuf.ByteString
         getStartTimeBytes();
 
     /**
+     * <pre>
+     *These fields are used for stop ID of the stop estimate
+     * </pre>
+     *
      * <code>required string stop_id = 6;</code>
+     * @return Whether the stopId field is set.
      */
     boolean hasStopId();
     /**
+     * <pre>
+     *These fields are used for stop ID of the stop estimate
+     * </pre>
+     *
      * <code>required string stop_id = 6;</code>
+     * @return The stopId.
      */
     java.lang.String getStopId();
     /**
+     * <pre>
+     *These fields are used for stop ID of the stop estimate
+     * </pre>
+     *
      * <code>required string stop_id = 6;</code>
+     * @return The bytes for stopId.
      */
     com.google.protobuf.ByteString
         getStopIdBytes();
+
+    /**
+     * <code>optional string targeted_stop_id = 7;</code>
+     * @return Whether the targetedStopId field is set.
+     */
+    boolean hasTargetedStopId();
+    /**
+     * <code>optional string targeted_stop_id = 7;</code>
+     * @return The targetedStopId.
+     */
+    java.lang.String getTargetedStopId();
+    /**
+     * <code>optional string targeted_stop_id = 7;</code>
+     * @return The bytes for targetedStopId.
+     */
+    com.google.protobuf.ByteString
+        getTargetedStopIdBytes();
   }
   /**
    * Protobuf type {@code proto.DOITripInfo}
    */
-  public  static final class DOITripInfo extends
+  public static final class DOITripInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.DOITripInfo)
       DOITripInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use DOITripInfo.newBuilder() to construct.
     private DOITripInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private DOITripInfo() {
-      dvjId_ = 0L;
       operatingDay_ = "";
       routeId_ = "";
-      directionId_ = 0;
       startTime_ = "";
       stopId_ = "";
+      targetedStopId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DOITripInfo();
     }
 
     @java.lang.Override
@@ -2136,6 +2438,9 @@ public final class PubtransTableProtos {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2147,13 +2452,6 @@ public final class PubtransTableProtos {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               dvjId_ = input.readInt64();
@@ -2188,6 +2486,19 @@ public final class PubtransTableProtos {
               stopId_ = bs;
               break;
             }
+            case 58: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000040;
+              targetedStopId_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2205,6 +2516,7 @@ public final class PubtransTableProtos {
       return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_DOITripInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_DOITripInfo_fieldAccessorTable
@@ -2221,9 +2533,11 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>required int64 dvj_id = 1;</code>
+     * @return Whether the dvjId field is set.
      */
+    @java.lang.Override
     public boolean hasDvjId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
@@ -2231,7 +2545,9 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>required int64 dvj_id = 1;</code>
+     * @return The dvjId.
      */
+    @java.lang.Override
     public long getDvjId() {
       return dvjId_;
     }
@@ -2240,13 +2556,17 @@ public final class PubtransTableProtos {
     private volatile java.lang.Object operatingDay_;
     /**
      * <code>required string operating_day = 2;</code>
+     * @return Whether the operatingDay field is set.
      */
+    @java.lang.Override
     public boolean hasOperatingDay() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>required string operating_day = 2;</code>
+     * @return The operatingDay.
      */
+    @java.lang.Override
     public java.lang.String getOperatingDay() {
       java.lang.Object ref = operatingDay_;
       if (ref instanceof java.lang.String) {
@@ -2263,7 +2583,9 @@ public final class PubtransTableProtos {
     }
     /**
      * <code>required string operating_day = 2;</code>
+     * @return The bytes for operatingDay.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getOperatingDayBytes() {
       java.lang.Object ref = operatingDay_;
@@ -2282,13 +2604,17 @@ public final class PubtransTableProtos {
     private volatile java.lang.Object routeId_;
     /**
      * <code>required string route_id = 3;</code>
+     * @return Whether the routeId field is set.
      */
+    @java.lang.Override
     public boolean hasRouteId() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>required string route_id = 3;</code>
+     * @return The routeId.
      */
+    @java.lang.Override
     public java.lang.String getRouteId() {
       java.lang.Object ref = routeId_;
       if (ref instanceof java.lang.String) {
@@ -2305,7 +2631,9 @@ public final class PubtransTableProtos {
     }
     /**
      * <code>required string route_id = 3;</code>
+     * @return The bytes for routeId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getRouteIdBytes() {
       java.lang.Object ref = routeId_;
@@ -2324,13 +2652,17 @@ public final class PubtransTableProtos {
     private int directionId_;
     /**
      * <code>required uint32 direction_id = 4;</code>
+     * @return Whether the directionId field is set.
      */
+    @java.lang.Override
     public boolean hasDirectionId() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>required uint32 direction_id = 4;</code>
+     * @return The directionId.
      */
+    @java.lang.Override
     public int getDirectionId() {
       return directionId_;
     }
@@ -2339,13 +2671,17 @@ public final class PubtransTableProtos {
     private volatile java.lang.Object startTime_;
     /**
      * <code>required string start_time = 5;</code>
+     * @return Whether the startTime field is set.
      */
+    @java.lang.Override
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <code>required string start_time = 5;</code>
+     * @return The startTime.
      */
+    @java.lang.Override
     public java.lang.String getStartTime() {
       java.lang.Object ref = startTime_;
       if (ref instanceof java.lang.String) {
@@ -2362,7 +2698,9 @@ public final class PubtransTableProtos {
     }
     /**
      * <code>required string start_time = 5;</code>
+     * @return The bytes for startTime.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getStartTimeBytes() {
       java.lang.Object ref = startTime_;
@@ -2380,14 +2718,26 @@ public final class PubtransTableProtos {
     public static final int STOP_ID_FIELD_NUMBER = 6;
     private volatile java.lang.Object stopId_;
     /**
+     * <pre>
+     *These fields are used for stop ID of the stop estimate
+     * </pre>
+     *
      * <code>required string stop_id = 6;</code>
+     * @return Whether the stopId field is set.
      */
+    @java.lang.Override
     public boolean hasStopId() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
+     * <pre>
+     *These fields are used for stop ID of the stop estimate
+     * </pre>
+     *
      * <code>required string stop_id = 6;</code>
+     * @return The stopId.
      */
+    @java.lang.Override
     public java.lang.String getStopId() {
       java.lang.Object ref = stopId_;
       if (ref instanceof java.lang.String) {
@@ -2403,8 +2753,14 @@ public final class PubtransTableProtos {
       }
     }
     /**
+     * <pre>
+     *These fields are used for stop ID of the stop estimate
+     * </pre>
+     *
      * <code>required string stop_id = 6;</code>
+     * @return The bytes for stopId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getStopIdBytes() {
       java.lang.Object ref = stopId_;
@@ -2419,7 +2775,56 @@ public final class PubtransTableProtos {
       }
     }
 
+    public static final int TARGETED_STOP_ID_FIELD_NUMBER = 7;
+    private volatile java.lang.Object targetedStopId_;
+    /**
+     * <code>optional string targeted_stop_id = 7;</code>
+     * @return Whether the targetedStopId field is set.
+     */
+    @java.lang.Override
+    public boolean hasTargetedStopId() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>optional string targeted_stop_id = 7;</code>
+     * @return The targetedStopId.
+     */
+    @java.lang.Override
+    public java.lang.String getTargetedStopId() {
+      java.lang.Object ref = targetedStopId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          targetedStopId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string targeted_stop_id = 7;</code>
+     * @return The bytes for targetedStopId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTargetedStopIdBytes() {
+      java.lang.Object ref = targetedStopId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        targetedStopId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2453,60 +2858,67 @@ public final class PubtransTableProtos {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt64(1, dvjId_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, operatingDay_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, routeId_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         output.writeUInt32(4, directionId_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, startTime_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, stopId_);
+      }
+      if (((bitField0_ & 0x00000040) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, targetedStopId_);
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, dvjId_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, operatingDay_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, routeId_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, directionId_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, startTime_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, stopId_);
+      }
+      if (((bitField0_ & 0x00000040) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, targetedStopId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2517,39 +2929,43 @@ public final class PubtransTableProtos {
       }
       fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo other = (fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo) obj;
 
-      boolean result = true;
-      result = result && (hasDvjId() == other.hasDvjId());
+      if (hasDvjId() != other.hasDvjId()) return false;
       if (hasDvjId()) {
-        result = result && (getDvjId()
-            == other.getDvjId());
+        if (getDvjId()
+            != other.getDvjId()) return false;
       }
-      result = result && (hasOperatingDay() == other.hasOperatingDay());
+      if (hasOperatingDay() != other.hasOperatingDay()) return false;
       if (hasOperatingDay()) {
-        result = result && getOperatingDay()
-            .equals(other.getOperatingDay());
+        if (!getOperatingDay()
+            .equals(other.getOperatingDay())) return false;
       }
-      result = result && (hasRouteId() == other.hasRouteId());
+      if (hasRouteId() != other.hasRouteId()) return false;
       if (hasRouteId()) {
-        result = result && getRouteId()
-            .equals(other.getRouteId());
+        if (!getRouteId()
+            .equals(other.getRouteId())) return false;
       }
-      result = result && (hasDirectionId() == other.hasDirectionId());
+      if (hasDirectionId() != other.hasDirectionId()) return false;
       if (hasDirectionId()) {
-        result = result && (getDirectionId()
-            == other.getDirectionId());
+        if (getDirectionId()
+            != other.getDirectionId()) return false;
       }
-      result = result && (hasStartTime() == other.hasStartTime());
+      if (hasStartTime() != other.hasStartTime()) return false;
       if (hasStartTime()) {
-        result = result && getStartTime()
-            .equals(other.getStartTime());
+        if (!getStartTime()
+            .equals(other.getStartTime())) return false;
       }
-      result = result && (hasStopId() == other.hasStopId());
+      if (hasStopId() != other.hasStopId()) return false;
       if (hasStopId()) {
-        result = result && getStopId()
-            .equals(other.getStopId());
+        if (!getStopId()
+            .equals(other.getStopId())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (hasTargetedStopId() != other.hasTargetedStopId()) return false;
+      if (hasTargetedStopId()) {
+        if (!getTargetedStopId()
+            .equals(other.getTargetedStopId())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2558,7 +2974,7 @@ public final class PubtransTableProtos {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasDvjId()) {
         hash = (37 * hash) + DVJ_ID_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
@@ -2584,11 +3000,26 @@ public final class PubtransTableProtos {
         hash = (37 * hash) + STOP_ID_FIELD_NUMBER;
         hash = (53 * hash) + getStopId().hashCode();
       }
+      if (hasTargetedStopId()) {
+        hash = (37 * hash) + TARGETED_STOP_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getTargetedStopId().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2648,6 +3079,7 @@ public final class PubtransTableProtos {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2655,6 +3087,7 @@ public final class PubtransTableProtos {
     public static Builder newBuilder(fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2678,6 +3111,7 @@ public final class PubtransTableProtos {
         return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_DOITripInfo_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_DOITripInfo_fieldAccessorTable
@@ -2700,6 +3134,7 @@ public final class PubtransTableProtos {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         dvjId_ = 0L;
@@ -2714,18 +3149,23 @@ public final class PubtransTableProtos {
         bitField0_ = (bitField0_ & ~0x00000010);
         stopId_ = "";
         bitField0_ = (bitField0_ & ~0x00000020);
+        targetedStopId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_DOITripInfo_descriptor;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo getDefaultInstanceForType() {
         return fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo.getDefaultInstance();
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo build() {
         fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -2734,65 +3174,77 @@ public final class PubtransTableProtos {
         return result;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo buildPartial() {
         fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo result = new fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dvjId_ = dvjId_;
           to_bitField0_ |= 0x00000001;
         }
-        result.dvjId_ = dvjId_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           to_bitField0_ |= 0x00000002;
         }
         result.operatingDay_ = operatingDay_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           to_bitField0_ |= 0x00000004;
         }
         result.routeId_ = routeId_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.directionId_ = directionId_;
           to_bitField0_ |= 0x00000008;
         }
-        result.directionId_ = directionId_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           to_bitField0_ |= 0x00000010;
         }
         result.startTime_ = startTime_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           to_bitField0_ |= 0x00000020;
         }
         result.stopId_ = stopId_;
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.targetedStopId_ = targetedStopId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo) {
           return mergeFrom((fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo)other);
@@ -2830,11 +3282,17 @@ public final class PubtransTableProtos {
           stopId_ = other.stopId_;
           onChanged();
         }
+        if (other.hasTargetedStopId()) {
+          bitField0_ |= 0x00000040;
+          targetedStopId_ = other.targetedStopId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasDvjId()) {
           return false;
@@ -2857,6 +3315,7 @@ public final class PubtransTableProtos {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2883,9 +3342,11 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>required int64 dvj_id = 1;</code>
+       * @return Whether the dvjId field is set.
        */
+      @java.lang.Override
       public boolean hasDvjId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <pre>
@@ -2893,7 +3354,9 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>required int64 dvj_id = 1;</code>
+       * @return The dvjId.
        */
+      @java.lang.Override
       public long getDvjId() {
         return dvjId_;
       }
@@ -2903,6 +3366,8 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>required int64 dvj_id = 1;</code>
+       * @param value The dvjId to set.
+       * @return This builder for chaining.
        */
       public Builder setDvjId(long value) {
         bitField0_ |= 0x00000001;
@@ -2916,6 +3381,7 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>required int64 dvj_id = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDvjId() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -2927,12 +3393,14 @@ public final class PubtransTableProtos {
       private java.lang.Object operatingDay_ = "";
       /**
        * <code>required string operating_day = 2;</code>
+       * @return Whether the operatingDay field is set.
        */
       public boolean hasOperatingDay() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>required string operating_day = 2;</code>
+       * @return The operatingDay.
        */
       public java.lang.String getOperatingDay() {
         java.lang.Object ref = operatingDay_;
@@ -2950,6 +3418,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required string operating_day = 2;</code>
+       * @return The bytes for operatingDay.
        */
       public com.google.protobuf.ByteString
           getOperatingDayBytes() {
@@ -2966,6 +3435,8 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required string operating_day = 2;</code>
+       * @param value The operatingDay to set.
+       * @return This builder for chaining.
        */
       public Builder setOperatingDay(
           java.lang.String value) {
@@ -2979,6 +3450,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required string operating_day = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOperatingDay() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -2988,6 +3460,8 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required string operating_day = 2;</code>
+       * @param value The bytes for operatingDay to set.
+       * @return This builder for chaining.
        */
       public Builder setOperatingDayBytes(
           com.google.protobuf.ByteString value) {
@@ -3003,12 +3477,14 @@ public final class PubtransTableProtos {
       private java.lang.Object routeId_ = "";
       /**
        * <code>required string route_id = 3;</code>
+       * @return Whether the routeId field is set.
        */
       public boolean hasRouteId() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>required string route_id = 3;</code>
+       * @return The routeId.
        */
       public java.lang.String getRouteId() {
         java.lang.Object ref = routeId_;
@@ -3026,6 +3502,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required string route_id = 3;</code>
+       * @return The bytes for routeId.
        */
       public com.google.protobuf.ByteString
           getRouteIdBytes() {
@@ -3042,6 +3519,8 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required string route_id = 3;</code>
+       * @param value The routeId to set.
+       * @return This builder for chaining.
        */
       public Builder setRouteId(
           java.lang.String value) {
@@ -3055,6 +3534,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required string route_id = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRouteId() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -3064,6 +3544,8 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required string route_id = 3;</code>
+       * @param value The bytes for routeId to set.
+       * @return This builder for chaining.
        */
       public Builder setRouteIdBytes(
           com.google.protobuf.ByteString value) {
@@ -3079,18 +3561,24 @@ public final class PubtransTableProtos {
       private int directionId_ ;
       /**
        * <code>required uint32 direction_id = 4;</code>
+       * @return Whether the directionId field is set.
        */
+      @java.lang.Override
       public boolean hasDirectionId() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>required uint32 direction_id = 4;</code>
+       * @return The directionId.
        */
+      @java.lang.Override
       public int getDirectionId() {
         return directionId_;
       }
       /**
        * <code>required uint32 direction_id = 4;</code>
+       * @param value The directionId to set.
+       * @return This builder for chaining.
        */
       public Builder setDirectionId(int value) {
         bitField0_ |= 0x00000008;
@@ -3100,6 +3588,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required uint32 direction_id = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDirectionId() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -3111,12 +3600,14 @@ public final class PubtransTableProtos {
       private java.lang.Object startTime_ = "";
       /**
        * <code>required string start_time = 5;</code>
+       * @return Whether the startTime field is set.
        */
       public boolean hasStartTime() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>required string start_time = 5;</code>
+       * @return The startTime.
        */
       public java.lang.String getStartTime() {
         java.lang.Object ref = startTime_;
@@ -3134,6 +3625,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required string start_time = 5;</code>
+       * @return The bytes for startTime.
        */
       public com.google.protobuf.ByteString
           getStartTimeBytes() {
@@ -3150,6 +3642,8 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required string start_time = 5;</code>
+       * @param value The startTime to set.
+       * @return This builder for chaining.
        */
       public Builder setStartTime(
           java.lang.String value) {
@@ -3163,6 +3657,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required string start_time = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStartTime() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -3172,6 +3667,8 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>required string start_time = 5;</code>
+       * @param value The bytes for startTime to set.
+       * @return This builder for chaining.
        */
       public Builder setStartTimeBytes(
           com.google.protobuf.ByteString value) {
@@ -3186,13 +3683,23 @@ public final class PubtransTableProtos {
 
       private java.lang.Object stopId_ = "";
       /**
+       * <pre>
+       *These fields are used for stop ID of the stop estimate
+       * </pre>
+       *
        * <code>required string stop_id = 6;</code>
+       * @return Whether the stopId field is set.
        */
       public boolean hasStopId() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
+       * <pre>
+       *These fields are used for stop ID of the stop estimate
+       * </pre>
+       *
        * <code>required string stop_id = 6;</code>
+       * @return The stopId.
        */
       public java.lang.String getStopId() {
         java.lang.Object ref = stopId_;
@@ -3209,7 +3716,12 @@ public final class PubtransTableProtos {
         }
       }
       /**
+       * <pre>
+       *These fields are used for stop ID of the stop estimate
+       * </pre>
+       *
        * <code>required string stop_id = 6;</code>
+       * @return The bytes for stopId.
        */
       public com.google.protobuf.ByteString
           getStopIdBytes() {
@@ -3225,7 +3737,13 @@ public final class PubtransTableProtos {
         }
       }
       /**
+       * <pre>
+       *These fields are used for stop ID of the stop estimate
+       * </pre>
+       *
        * <code>required string stop_id = 6;</code>
+       * @param value The stopId to set.
+       * @return This builder for chaining.
        */
       public Builder setStopId(
           java.lang.String value) {
@@ -3238,7 +3756,12 @@ public final class PubtransTableProtos {
         return this;
       }
       /**
+       * <pre>
+       *These fields are used for stop ID of the stop estimate
+       * </pre>
+       *
        * <code>required string stop_id = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStopId() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -3247,7 +3770,13 @@ public final class PubtransTableProtos {
         return this;
       }
       /**
+       * <pre>
+       *These fields are used for stop ID of the stop estimate
+       * </pre>
+       *
        * <code>required string stop_id = 6;</code>
+       * @param value The bytes for stopId to set.
+       * @return This builder for chaining.
        */
       public Builder setStopIdBytes(
           com.google.protobuf.ByteString value) {
@@ -3259,11 +3788,97 @@ public final class PubtransTableProtos {
         onChanged();
         return this;
       }
+
+      private java.lang.Object targetedStopId_ = "";
+      /**
+       * <code>optional string targeted_stop_id = 7;</code>
+       * @return Whether the targetedStopId field is set.
+       */
+      public boolean hasTargetedStopId() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       * <code>optional string targeted_stop_id = 7;</code>
+       * @return The targetedStopId.
+       */
+      public java.lang.String getTargetedStopId() {
+        java.lang.Object ref = targetedStopId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            targetedStopId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string targeted_stop_id = 7;</code>
+       * @return The bytes for targetedStopId.
+       */
+      public com.google.protobuf.ByteString
+          getTargetedStopIdBytes() {
+        java.lang.Object ref = targetedStopId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          targetedStopId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string targeted_stop_id = 7;</code>
+       * @param value The targetedStopId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetedStopId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        targetedStopId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string targeted_stop_id = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetedStopId() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        targetedStopId_ = getDefaultInstance().getTargetedStopId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string targeted_stop_id = 7;</code>
+       * @param value The bytes for targetedStopId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetedStopIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        targetedStopId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -3285,11 +3900,12 @@ public final class PubtransTableProtos {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<DOITripInfo>
         PARSER = new com.google.protobuf.AbstractParser<DOITripInfo>() {
+      @java.lang.Override
       public DOITripInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DOITripInfo(input, extensionRegistry);
+        return new DOITripInfo(input, extensionRegistry);
       }
     };
 
@@ -3302,6 +3918,7 @@ public final class PubtransTableProtos {
       return PARSER;
     }
 
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3318,6 +3935,7 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>required int32 schema_version = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
     boolean hasSchemaVersion();
     /**
@@ -3326,15 +3944,18 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>required int32 schema_version = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
     int getSchemaVersion();
 
     /**
      * <code>required .proto.Common common = 2;</code>
+     * @return Whether the common field is set.
      */
     boolean hasCommon();
     /**
      * <code>required .proto.Common common = 2;</code>
+     * @return The common.
      */
     fi.hsl.common.transitdata.proto.PubtransTableProtos.Common getCommon();
     /**
@@ -3344,10 +3965,12 @@ public final class PubtransTableProtos {
 
     /**
      * <code>required .proto.DOITripInfo trip_info = 3;</code>
+     * @return Whether the tripInfo field is set.
      */
     boolean hasTripInfo();
     /**
      * <code>required .proto.DOITripInfo trip_info = 3;</code>
+     * @return The tripInfo.
      */
     fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo getTripInfo();
     /**
@@ -3358,16 +3981,24 @@ public final class PubtransTableProtos {
   /**
    * Protobuf type {@code proto.ROIArrival}
    */
-  public  static final class ROIArrival extends
+  public static final class ROIArrival extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.ROIArrival)
       ROIArrivalOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ROIArrival.newBuilder() to construct.
     private ROIArrival(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private ROIArrival() {
       schemaVersion_ = 1;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ROIArrival();
     }
 
     @java.lang.Override
@@ -3380,6 +4011,9 @@ public final class PubtransTableProtos {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -3391,13 +4025,6 @@ public final class PubtransTableProtos {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               schemaVersion_ = input.readInt32();
@@ -3405,7 +4032,7 @@ public final class PubtransTableProtos {
             }
             case 18: {
               fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+              if (((bitField0_ & 0x00000002) != 0)) {
                 subBuilder = common_.toBuilder();
               }
               common_ = input.readMessage(fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.PARSER, extensionRegistry);
@@ -3418,7 +4045,7 @@ public final class PubtransTableProtos {
             }
             case 26: {
               fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+              if (((bitField0_ & 0x00000004) != 0)) {
                 subBuilder = tripInfo_.toBuilder();
               }
               tripInfo_ = input.readMessage(fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo.PARSER, extensionRegistry);
@@ -3427,6 +4054,13 @@ public final class PubtransTableProtos {
                 tripInfo_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000004;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -3446,6 +4080,7 @@ public final class PubtransTableProtos {
       return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_ROIArrival_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_ROIArrival_fieldAccessorTable
@@ -3462,9 +4097,11 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>required int32 schema_version = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
+    @java.lang.Override
     public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
@@ -3472,7 +4109,9 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>required int32 schema_version = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
+    @java.lang.Override
     public int getSchemaVersion() {
       return schemaVersion_;
     }
@@ -3481,19 +4120,24 @@ public final class PubtransTableProtos {
     private fi.hsl.common.transitdata.proto.PubtransTableProtos.Common common_;
     /**
      * <code>required .proto.Common common = 2;</code>
+     * @return Whether the common field is set.
      */
+    @java.lang.Override
     public boolean hasCommon() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>required .proto.Common common = 2;</code>
+     * @return The common.
      */
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.PubtransTableProtos.Common getCommon() {
       return common_ == null ? fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.getDefaultInstance() : common_;
     }
     /**
      * <code>required .proto.Common common = 2;</code>
      */
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.PubtransTableProtos.CommonOrBuilder getCommonOrBuilder() {
       return common_ == null ? fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.getDefaultInstance() : common_;
     }
@@ -3502,24 +4146,30 @@ public final class PubtransTableProtos {
     private fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo tripInfo_;
     /**
      * <code>required .proto.DOITripInfo trip_info = 3;</code>
+     * @return Whether the tripInfo field is set.
      */
+    @java.lang.Override
     public boolean hasTripInfo() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>required .proto.DOITripInfo trip_info = 3;</code>
+     * @return The tripInfo.
      */
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo getTripInfo() {
       return tripInfo_ == null ? fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo.getDefaultInstance() : tripInfo_;
     }
     /**
      * <code>required .proto.DOITripInfo trip_info = 3;</code>
      */
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfoOrBuilder getTripInfoOrBuilder() {
       return tripInfo_ == null ? fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo.getDefaultInstance() : tripInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3549,34 +4199,36 @@ public final class PubtransTableProtos {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt32(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(2, getCommon());
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(3, getTripInfo());
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getCommon());
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getTripInfo());
       }
@@ -3585,7 +4237,6 @@ public final class PubtransTableProtos {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3596,24 +4247,23 @@ public final class PubtransTableProtos {
       }
       fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival other = (fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival) obj;
 
-      boolean result = true;
-      result = result && (hasSchemaVersion() == other.hasSchemaVersion());
+      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
       if (hasSchemaVersion()) {
-        result = result && (getSchemaVersion()
-            == other.getSchemaVersion());
+        if (getSchemaVersion()
+            != other.getSchemaVersion()) return false;
       }
-      result = result && (hasCommon() == other.hasCommon());
+      if (hasCommon() != other.hasCommon()) return false;
       if (hasCommon()) {
-        result = result && getCommon()
-            .equals(other.getCommon());
+        if (!getCommon()
+            .equals(other.getCommon())) return false;
       }
-      result = result && (hasTripInfo() == other.hasTripInfo());
+      if (hasTripInfo() != other.hasTripInfo()) return false;
       if (hasTripInfo()) {
-        result = result && getTripInfo()
-            .equals(other.getTripInfo());
+        if (!getTripInfo()
+            .equals(other.getTripInfo())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3622,7 +4272,7 @@ public final class PubtransTableProtos {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasSchemaVersion()) {
         hash = (37 * hash) + SCHEMA_VERSION_FIELD_NUMBER;
         hash = (53 * hash) + getSchemaVersion();
@@ -3640,6 +4290,17 @@ public final class PubtransTableProtos {
       return hash;
     }
 
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3699,6 +4360,7 @@ public final class PubtransTableProtos {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3706,6 +4368,7 @@ public final class PubtransTableProtos {
     public static Builder newBuilder(fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3729,6 +4392,7 @@ public final class PubtransTableProtos {
         return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_ROIArrival_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_ROIArrival_fieldAccessorTable
@@ -3753,6 +4417,7 @@ public final class PubtransTableProtos {
           getTripInfoFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         schemaVersion_ = 1;
@@ -3772,15 +4437,18 @@ public final class PubtransTableProtos {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_ROIArrival_descriptor;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival getDefaultInstanceForType() {
         return fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival.getDefaultInstance();
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival build() {
         fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival result = buildPartial();
         if (!result.isInitialized()) {
@@ -3789,61 +4457,69 @@ public final class PubtransTableProtos {
         return result;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival buildPartial() {
         fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival result = new fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.schemaVersion_ = schemaVersion_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          if (commonBuilder_ == null) {
+            result.common_ = common_;
+          } else {
+            result.common_ = commonBuilder_.build();
+          }
           to_bitField0_ |= 0x00000002;
         }
-        if (commonBuilder_ == null) {
-          result.common_ = common_;
-        } else {
-          result.common_ = commonBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          if (tripInfoBuilder_ == null) {
+            result.tripInfo_ = tripInfo_;
+          } else {
+            result.tripInfo_ = tripInfoBuilder_.build();
+          }
           to_bitField0_ |= 0x00000004;
-        }
-        if (tripInfoBuilder_ == null) {
-          result.tripInfo_ = tripInfo_;
-        } else {
-          result.tripInfo_ = tripInfoBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival) {
           return mergeFrom((fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival)other);
@@ -3869,6 +4545,7 @@ public final class PubtransTableProtos {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasSchemaVersion()) {
           return false;
@@ -3888,6 +4565,7 @@ public final class PubtransTableProtos {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3914,9 +4592,11 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>required int32 schema_version = 1 [default = 1];</code>
+       * @return Whether the schemaVersion field is set.
        */
+      @java.lang.Override
       public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <pre>
@@ -3924,7 +4604,9 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>required int32 schema_version = 1 [default = 1];</code>
+       * @return The schemaVersion.
        */
+      @java.lang.Override
       public int getSchemaVersion() {
         return schemaVersion_;
       }
@@ -3934,6 +4616,8 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>required int32 schema_version = 1 [default = 1];</code>
+       * @param value The schemaVersion to set.
+       * @return This builder for chaining.
        */
       public Builder setSchemaVersion(int value) {
         bitField0_ |= 0x00000001;
@@ -3947,6 +4631,7 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>required int32 schema_version = 1 [default = 1];</code>
+       * @return This builder for chaining.
        */
       public Builder clearSchemaVersion() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -3955,17 +4640,19 @@ public final class PubtransTableProtos {
         return this;
       }
 
-      private fi.hsl.common.transitdata.proto.PubtransTableProtos.Common common_ = null;
+      private fi.hsl.common.transitdata.proto.PubtransTableProtos.Common common_;
       private com.google.protobuf.SingleFieldBuilderV3<
           fi.hsl.common.transitdata.proto.PubtransTableProtos.Common, fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.Builder, fi.hsl.common.transitdata.proto.PubtransTableProtos.CommonOrBuilder> commonBuilder_;
       /**
        * <code>required .proto.Common common = 2;</code>
+       * @return Whether the common field is set.
        */
       public boolean hasCommon() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>required .proto.Common common = 2;</code>
+       * @return The common.
        */
       public fi.hsl.common.transitdata.proto.PubtransTableProtos.Common getCommon() {
         if (commonBuilder_ == null) {
@@ -4009,7 +4696,7 @@ public final class PubtransTableProtos {
        */
       public Builder mergeCommon(fi.hsl.common.transitdata.proto.PubtransTableProtos.Common value) {
         if (commonBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+          if (((bitField0_ & 0x00000002) != 0) &&
               common_ != null &&
               common_ != fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.getDefaultInstance()) {
             common_ =
@@ -4073,17 +4760,19 @@ public final class PubtransTableProtos {
         return commonBuilder_;
       }
 
-      private fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo tripInfo_ = null;
+      private fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo tripInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo, fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo.Builder, fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfoOrBuilder> tripInfoBuilder_;
       /**
        * <code>required .proto.DOITripInfo trip_info = 3;</code>
+       * @return Whether the tripInfo field is set.
        */
       public boolean hasTripInfo() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>required .proto.DOITripInfo trip_info = 3;</code>
+       * @return The tripInfo.
        */
       public fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo getTripInfo() {
         if (tripInfoBuilder_ == null) {
@@ -4127,7 +4816,7 @@ public final class PubtransTableProtos {
        */
       public Builder mergeTripInfo(fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo value) {
         if (tripInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+          if (((bitField0_ & 0x00000004) != 0) &&
               tripInfo_ != null &&
               tripInfo_ != fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo.getDefaultInstance()) {
             tripInfo_ =
@@ -4190,11 +4879,13 @@ public final class PubtransTableProtos {
         }
         return tripInfoBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -4216,11 +4907,12 @@ public final class PubtransTableProtos {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ROIArrival>
         PARSER = new com.google.protobuf.AbstractParser<ROIArrival>() {
+      @java.lang.Override
       public ROIArrival parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ROIArrival(input, extensionRegistry);
+        return new ROIArrival(input, extensionRegistry);
       }
     };
 
@@ -4233,6 +4925,7 @@ public final class PubtransTableProtos {
       return PARSER;
     }
 
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIArrival getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4249,6 +4942,7 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>required int32 schema_version = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
     boolean hasSchemaVersion();
     /**
@@ -4257,15 +4951,18 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>required int32 schema_version = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
     int getSchemaVersion();
 
     /**
      * <code>required .proto.Common common = 2;</code>
+     * @return Whether the common field is set.
      */
     boolean hasCommon();
     /**
      * <code>required .proto.Common common = 2;</code>
+     * @return The common.
      */
     fi.hsl.common.transitdata.proto.PubtransTableProtos.Common getCommon();
     /**
@@ -4275,10 +4972,12 @@ public final class PubtransTableProtos {
 
     /**
      * <code>required .proto.DOITripInfo trip_info = 3;</code>
+     * @return Whether the tripInfo field is set.
      */
     boolean hasTripInfo();
     /**
      * <code>required .proto.DOITripInfo trip_info = 3;</code>
+     * @return The tripInfo.
      */
     fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo getTripInfo();
     /**
@@ -4288,47 +4987,58 @@ public final class PubtransTableProtos {
 
     /**
      * <code>optional int64 has_destination_display_id = 4;</code>
+     * @return Whether the hasDestinationDisplayId field is set.
      */
     boolean hasHasDestinationDisplayId();
     /**
      * <code>optional int64 has_destination_display_id = 4;</code>
+     * @return The hasDestinationDisplayId.
      */
     long getHasDestinationDisplayId();
 
     /**
      * <code>optional int64 has_destination_stop_area_gid = 5;</code>
+     * @return Whether the hasDestinationStopAreaGid field is set.
      */
     boolean hasHasDestinationStopAreaGid();
     /**
      * <code>optional int64 has_destination_stop_area_gid = 5;</code>
+     * @return The hasDestinationStopAreaGid.
      */
     long getHasDestinationStopAreaGid();
 
     /**
      * <code>optional int64 has_service_requirement_id = 6;</code>
+     * @return Whether the hasServiceRequirementId field is set.
      */
     boolean hasHasServiceRequirementId();
     /**
      * <code>optional int64 has_service_requirement_id = 6;</code>
+     * @return The hasServiceRequirementId.
      */
     long getHasServiceRequirementId();
   }
   /**
    * Protobuf type {@code proto.ROIDeparture}
    */
-  public  static final class ROIDeparture extends
+  public static final class ROIDeparture extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.ROIDeparture)
       ROIDepartureOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ROIDeparture.newBuilder() to construct.
     private ROIDeparture(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private ROIDeparture() {
       schemaVersion_ = 1;
-      hasDestinationDisplayId_ = 0L;
-      hasDestinationStopAreaGid_ = 0L;
-      hasServiceRequirementId_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ROIDeparture();
     }
 
     @java.lang.Override
@@ -4341,6 +5051,9 @@ public final class PubtransTableProtos {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -4352,13 +5065,6 @@ public final class PubtransTableProtos {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               schemaVersion_ = input.readInt32();
@@ -4366,7 +5072,7 @@ public final class PubtransTableProtos {
             }
             case 18: {
               fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+              if (((bitField0_ & 0x00000002) != 0)) {
                 subBuilder = common_.toBuilder();
               }
               common_ = input.readMessage(fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.PARSER, extensionRegistry);
@@ -4379,7 +5085,7 @@ public final class PubtransTableProtos {
             }
             case 26: {
               fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+              if (((bitField0_ & 0x00000004) != 0)) {
                 subBuilder = tripInfo_.toBuilder();
               }
               tripInfo_ = input.readMessage(fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo.PARSER, extensionRegistry);
@@ -4405,6 +5111,13 @@ public final class PubtransTableProtos {
               hasServiceRequirementId_ = input.readInt64();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -4422,6 +5135,7 @@ public final class PubtransTableProtos {
       return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_ROIDeparture_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_ROIDeparture_fieldAccessorTable
@@ -4438,9 +5152,11 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>required int32 schema_version = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
+    @java.lang.Override
     public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
@@ -4448,7 +5164,9 @@ public final class PubtransTableProtos {
      * </pre>
      *
      * <code>required int32 schema_version = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
+    @java.lang.Override
     public int getSchemaVersion() {
       return schemaVersion_;
     }
@@ -4457,19 +5175,24 @@ public final class PubtransTableProtos {
     private fi.hsl.common.transitdata.proto.PubtransTableProtos.Common common_;
     /**
      * <code>required .proto.Common common = 2;</code>
+     * @return Whether the common field is set.
      */
+    @java.lang.Override
     public boolean hasCommon() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>required .proto.Common common = 2;</code>
+     * @return The common.
      */
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.PubtransTableProtos.Common getCommon() {
       return common_ == null ? fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.getDefaultInstance() : common_;
     }
     /**
      * <code>required .proto.Common common = 2;</code>
      */
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.PubtransTableProtos.CommonOrBuilder getCommonOrBuilder() {
       return common_ == null ? fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.getDefaultInstance() : common_;
     }
@@ -4478,19 +5201,24 @@ public final class PubtransTableProtos {
     private fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo tripInfo_;
     /**
      * <code>required .proto.DOITripInfo trip_info = 3;</code>
+     * @return Whether the tripInfo field is set.
      */
+    @java.lang.Override
     public boolean hasTripInfo() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>required .proto.DOITripInfo trip_info = 3;</code>
+     * @return The tripInfo.
      */
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo getTripInfo() {
       return tripInfo_ == null ? fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo.getDefaultInstance() : tripInfo_;
     }
     /**
      * <code>required .proto.DOITripInfo trip_info = 3;</code>
      */
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfoOrBuilder getTripInfoOrBuilder() {
       return tripInfo_ == null ? fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo.getDefaultInstance() : tripInfo_;
     }
@@ -4499,13 +5227,17 @@ public final class PubtransTableProtos {
     private long hasDestinationDisplayId_;
     /**
      * <code>optional int64 has_destination_display_id = 4;</code>
+     * @return Whether the hasDestinationDisplayId field is set.
      */
+    @java.lang.Override
     public boolean hasHasDestinationDisplayId() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>optional int64 has_destination_display_id = 4;</code>
+     * @return The hasDestinationDisplayId.
      */
+    @java.lang.Override
     public long getHasDestinationDisplayId() {
       return hasDestinationDisplayId_;
     }
@@ -4514,13 +5246,17 @@ public final class PubtransTableProtos {
     private long hasDestinationStopAreaGid_;
     /**
      * <code>optional int64 has_destination_stop_area_gid = 5;</code>
+     * @return Whether the hasDestinationStopAreaGid field is set.
      */
+    @java.lang.Override
     public boolean hasHasDestinationStopAreaGid() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <code>optional int64 has_destination_stop_area_gid = 5;</code>
+     * @return The hasDestinationStopAreaGid.
      */
+    @java.lang.Override
     public long getHasDestinationStopAreaGid() {
       return hasDestinationStopAreaGid_;
     }
@@ -4529,18 +5265,23 @@ public final class PubtransTableProtos {
     private long hasServiceRequirementId_;
     /**
      * <code>optional int64 has_service_requirement_id = 6;</code>
+     * @return Whether the hasServiceRequirementId field is set.
      */
+    @java.lang.Override
     public boolean hasHasServiceRequirementId() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <code>optional int64 has_service_requirement_id = 6;</code>
+     * @return The hasServiceRequirementId.
      */
+    @java.lang.Override
     public long getHasServiceRequirementId() {
       return hasServiceRequirementId_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4570,55 +5311,57 @@ public final class PubtransTableProtos {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt32(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(2, getCommon());
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(3, getTripInfo());
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         output.writeInt64(4, hasDestinationDisplayId_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         output.writeInt64(5, hasDestinationStopAreaGid_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         output.writeInt64(6, hasServiceRequirementId_);
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getCommon());
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getTripInfo());
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, hasDestinationDisplayId_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(5, hasDestinationStopAreaGid_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(6, hasServiceRequirementId_);
       }
@@ -4627,7 +5370,6 @@ public final class PubtransTableProtos {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -4638,39 +5380,38 @@ public final class PubtransTableProtos {
       }
       fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture other = (fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture) obj;
 
-      boolean result = true;
-      result = result && (hasSchemaVersion() == other.hasSchemaVersion());
+      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
       if (hasSchemaVersion()) {
-        result = result && (getSchemaVersion()
-            == other.getSchemaVersion());
+        if (getSchemaVersion()
+            != other.getSchemaVersion()) return false;
       }
-      result = result && (hasCommon() == other.hasCommon());
+      if (hasCommon() != other.hasCommon()) return false;
       if (hasCommon()) {
-        result = result && getCommon()
-            .equals(other.getCommon());
+        if (!getCommon()
+            .equals(other.getCommon())) return false;
       }
-      result = result && (hasTripInfo() == other.hasTripInfo());
+      if (hasTripInfo() != other.hasTripInfo()) return false;
       if (hasTripInfo()) {
-        result = result && getTripInfo()
-            .equals(other.getTripInfo());
+        if (!getTripInfo()
+            .equals(other.getTripInfo())) return false;
       }
-      result = result && (hasHasDestinationDisplayId() == other.hasHasDestinationDisplayId());
+      if (hasHasDestinationDisplayId() != other.hasHasDestinationDisplayId()) return false;
       if (hasHasDestinationDisplayId()) {
-        result = result && (getHasDestinationDisplayId()
-            == other.getHasDestinationDisplayId());
+        if (getHasDestinationDisplayId()
+            != other.getHasDestinationDisplayId()) return false;
       }
-      result = result && (hasHasDestinationStopAreaGid() == other.hasHasDestinationStopAreaGid());
+      if (hasHasDestinationStopAreaGid() != other.hasHasDestinationStopAreaGid()) return false;
       if (hasHasDestinationStopAreaGid()) {
-        result = result && (getHasDestinationStopAreaGid()
-            == other.getHasDestinationStopAreaGid());
+        if (getHasDestinationStopAreaGid()
+            != other.getHasDestinationStopAreaGid()) return false;
       }
-      result = result && (hasHasServiceRequirementId() == other.hasHasServiceRequirementId());
+      if (hasHasServiceRequirementId() != other.hasHasServiceRequirementId()) return false;
       if (hasHasServiceRequirementId()) {
-        result = result && (getHasServiceRequirementId()
-            == other.getHasServiceRequirementId());
+        if (getHasServiceRequirementId()
+            != other.getHasServiceRequirementId()) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4679,7 +5420,7 @@ public final class PubtransTableProtos {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasSchemaVersion()) {
         hash = (37 * hash) + SCHEMA_VERSION_FIELD_NUMBER;
         hash = (53 * hash) + getSchemaVersion();
@@ -4712,6 +5453,17 @@ public final class PubtransTableProtos {
       return hash;
     }
 
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4771,6 +5523,7 @@ public final class PubtransTableProtos {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4778,6 +5531,7 @@ public final class PubtransTableProtos {
     public static Builder newBuilder(fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4801,6 +5555,7 @@ public final class PubtransTableProtos {
         return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_ROIDeparture_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_ROIDeparture_fieldAccessorTable
@@ -4825,6 +5580,7 @@ public final class PubtransTableProtos {
           getTripInfoFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         schemaVersion_ = 1;
@@ -4850,15 +5606,18 @@ public final class PubtransTableProtos {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.transitdata.proto.PubtransTableProtos.internal_static_proto_ROIDeparture_descriptor;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture getDefaultInstanceForType() {
         return fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture.getDefaultInstance();
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture build() {
         fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture result = buildPartial();
         if (!result.isInitialized()) {
@@ -4867,73 +5626,81 @@ public final class PubtransTableProtos {
         return result;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture buildPartial() {
         fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture result = new fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.schemaVersion_ = schemaVersion_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          if (commonBuilder_ == null) {
+            result.common_ = common_;
+          } else {
+            result.common_ = commonBuilder_.build();
+          }
           to_bitField0_ |= 0x00000002;
         }
-        if (commonBuilder_ == null) {
-          result.common_ = common_;
-        } else {
-          result.common_ = commonBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          if (tripInfoBuilder_ == null) {
+            result.tripInfo_ = tripInfo_;
+          } else {
+            result.tripInfo_ = tripInfoBuilder_.build();
+          }
           to_bitField0_ |= 0x00000004;
         }
-        if (tripInfoBuilder_ == null) {
-          result.tripInfo_ = tripInfo_;
-        } else {
-          result.tripInfo_ = tripInfoBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.hasDestinationDisplayId_ = hasDestinationDisplayId_;
           to_bitField0_ |= 0x00000008;
         }
-        result.hasDestinationDisplayId_ = hasDestinationDisplayId_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.hasDestinationStopAreaGid_ = hasDestinationStopAreaGid_;
           to_bitField0_ |= 0x00000010;
         }
-        result.hasDestinationStopAreaGid_ = hasDestinationStopAreaGid_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.hasServiceRequirementId_ = hasServiceRequirementId_;
           to_bitField0_ |= 0x00000020;
         }
-        result.hasServiceRequirementId_ = hasServiceRequirementId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture) {
           return mergeFrom((fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture)other);
@@ -4968,6 +5735,7 @@ public final class PubtransTableProtos {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasSchemaVersion()) {
           return false;
@@ -4987,6 +5755,7 @@ public final class PubtransTableProtos {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5013,9 +5782,11 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>required int32 schema_version = 1 [default = 1];</code>
+       * @return Whether the schemaVersion field is set.
        */
+      @java.lang.Override
       public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <pre>
@@ -5023,7 +5794,9 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>required int32 schema_version = 1 [default = 1];</code>
+       * @return The schemaVersion.
        */
+      @java.lang.Override
       public int getSchemaVersion() {
         return schemaVersion_;
       }
@@ -5033,6 +5806,8 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>required int32 schema_version = 1 [default = 1];</code>
+       * @param value The schemaVersion to set.
+       * @return This builder for chaining.
        */
       public Builder setSchemaVersion(int value) {
         bitField0_ |= 0x00000001;
@@ -5046,6 +5821,7 @@ public final class PubtransTableProtos {
        * </pre>
        *
        * <code>required int32 schema_version = 1 [default = 1];</code>
+       * @return This builder for chaining.
        */
       public Builder clearSchemaVersion() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -5054,17 +5830,19 @@ public final class PubtransTableProtos {
         return this;
       }
 
-      private fi.hsl.common.transitdata.proto.PubtransTableProtos.Common common_ = null;
+      private fi.hsl.common.transitdata.proto.PubtransTableProtos.Common common_;
       private com.google.protobuf.SingleFieldBuilderV3<
           fi.hsl.common.transitdata.proto.PubtransTableProtos.Common, fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.Builder, fi.hsl.common.transitdata.proto.PubtransTableProtos.CommonOrBuilder> commonBuilder_;
       /**
        * <code>required .proto.Common common = 2;</code>
+       * @return Whether the common field is set.
        */
       public boolean hasCommon() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>required .proto.Common common = 2;</code>
+       * @return The common.
        */
       public fi.hsl.common.transitdata.proto.PubtransTableProtos.Common getCommon() {
         if (commonBuilder_ == null) {
@@ -5108,7 +5886,7 @@ public final class PubtransTableProtos {
        */
       public Builder mergeCommon(fi.hsl.common.transitdata.proto.PubtransTableProtos.Common value) {
         if (commonBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+          if (((bitField0_ & 0x00000002) != 0) &&
               common_ != null &&
               common_ != fi.hsl.common.transitdata.proto.PubtransTableProtos.Common.getDefaultInstance()) {
             common_ =
@@ -5172,17 +5950,19 @@ public final class PubtransTableProtos {
         return commonBuilder_;
       }
 
-      private fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo tripInfo_ = null;
+      private fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo tripInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo, fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo.Builder, fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfoOrBuilder> tripInfoBuilder_;
       /**
        * <code>required .proto.DOITripInfo trip_info = 3;</code>
+       * @return Whether the tripInfo field is set.
        */
       public boolean hasTripInfo() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>required .proto.DOITripInfo trip_info = 3;</code>
+       * @return The tripInfo.
        */
       public fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo getTripInfo() {
         if (tripInfoBuilder_ == null) {
@@ -5226,7 +6006,7 @@ public final class PubtransTableProtos {
        */
       public Builder mergeTripInfo(fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo value) {
         if (tripInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+          if (((bitField0_ & 0x00000004) != 0) &&
               tripInfo_ != null &&
               tripInfo_ != fi.hsl.common.transitdata.proto.PubtransTableProtos.DOITripInfo.getDefaultInstance()) {
             tripInfo_ =
@@ -5293,18 +6073,24 @@ public final class PubtransTableProtos {
       private long hasDestinationDisplayId_ ;
       /**
        * <code>optional int64 has_destination_display_id = 4;</code>
+       * @return Whether the hasDestinationDisplayId field is set.
        */
+      @java.lang.Override
       public boolean hasHasDestinationDisplayId() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>optional int64 has_destination_display_id = 4;</code>
+       * @return The hasDestinationDisplayId.
        */
+      @java.lang.Override
       public long getHasDestinationDisplayId() {
         return hasDestinationDisplayId_;
       }
       /**
        * <code>optional int64 has_destination_display_id = 4;</code>
+       * @param value The hasDestinationDisplayId to set.
+       * @return This builder for chaining.
        */
       public Builder setHasDestinationDisplayId(long value) {
         bitField0_ |= 0x00000008;
@@ -5314,6 +6100,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>optional int64 has_destination_display_id = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHasDestinationDisplayId() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -5325,18 +6112,24 @@ public final class PubtransTableProtos {
       private long hasDestinationStopAreaGid_ ;
       /**
        * <code>optional int64 has_destination_stop_area_gid = 5;</code>
+       * @return Whether the hasDestinationStopAreaGid field is set.
        */
+      @java.lang.Override
       public boolean hasHasDestinationStopAreaGid() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>optional int64 has_destination_stop_area_gid = 5;</code>
+       * @return The hasDestinationStopAreaGid.
        */
+      @java.lang.Override
       public long getHasDestinationStopAreaGid() {
         return hasDestinationStopAreaGid_;
       }
       /**
        * <code>optional int64 has_destination_stop_area_gid = 5;</code>
+       * @param value The hasDestinationStopAreaGid to set.
+       * @return This builder for chaining.
        */
       public Builder setHasDestinationStopAreaGid(long value) {
         bitField0_ |= 0x00000010;
@@ -5346,6 +6139,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>optional int64 has_destination_stop_area_gid = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHasDestinationStopAreaGid() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -5357,18 +6151,24 @@ public final class PubtransTableProtos {
       private long hasServiceRequirementId_ ;
       /**
        * <code>optional int64 has_service_requirement_id = 6;</code>
+       * @return Whether the hasServiceRequirementId field is set.
        */
+      @java.lang.Override
       public boolean hasHasServiceRequirementId() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <code>optional int64 has_service_requirement_id = 6;</code>
+       * @return The hasServiceRequirementId.
        */
+      @java.lang.Override
       public long getHasServiceRequirementId() {
         return hasServiceRequirementId_;
       }
       /**
        * <code>optional int64 has_service_requirement_id = 6;</code>
+       * @param value The hasServiceRequirementId to set.
+       * @return This builder for chaining.
        */
       public Builder setHasServiceRequirementId(long value) {
         bitField0_ |= 0x00000020;
@@ -5378,6 +6178,7 @@ public final class PubtransTableProtos {
       }
       /**
        * <code>optional int64 has_service_requirement_id = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearHasServiceRequirementId() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -5385,11 +6186,13 @@ public final class PubtransTableProtos {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -5411,11 +6214,12 @@ public final class PubtransTableProtos {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<ROIDeparture>
         PARSER = new com.google.protobuf.AbstractParser<ROIDeparture>() {
+      @java.lang.Override
       public ROIDeparture parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ROIDeparture(input, extensionRegistry);
+        return new ROIDeparture(input, extensionRegistry);
       }
     };
 
@@ -5428,6 +6232,7 @@ public final class PubtransTableProtos {
       return PARSER;
     }
 
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.PubtransTableProtos.ROIDeparture getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5472,39 +6277,32 @@ public final class PubtransTableProtos {
       "n_point_gid\030\006 \002(\003\022\032\n\022visit_count_number\030" +
       "\007 \002(\005\0220\n(is_targeted_at_journey_pattern_" +
       "point_gid\030\010 \001(\003\0221\n)was_observed_at_journ" +
-      "ey_pattern_point_gid\030\t \001(\003\022*\n\"timetabled",
+      "ey_pattern_point_gid\030\t \001(\003\022*\n\"timetabled" +
       "_latest_utc_date_time_ms\030\n \001(\003\022\037\n\027target" +
       "_utc_date_time_ms\030\013 \001(\003\022\"\n\032estimated_utc" +
       "_date_time_ms\030\014 \001(\003\022!\n\031observed_utc_date" +
       "_time_ms\030\r \001(\003\022\r\n\005state\030\016 \002(\003\022\014\n\004type\030\017 " +
       "\002(\003\022\027\n\017is_valid_yes_no\030\020 \002(\010\022&\n\036last_mod" +
-      "ified_utc_date_time_ms\030\021 \002(\003\"\201\001\n\013DOITrip" +
+      "ified_utc_date_time_ms\030\021 \002(\003\"\233\001\n\013DOITrip" +
       "Info\022\016\n\006dvj_id\030\001 \002(\003\022\025\n\roperating_day\030\002 " +
       "\002(\t\022\020\n\010route_id\030\003 \002(\t\022\024\n\014direction_id\030\004 " +
       "\002(\r\022\022\n\nstart_time\030\005 \002(\t\022\017\n\007stop_id\030\006 \002(\t" +
-      "\"m\n\nROIArrival\022\031\n\016schema_version\030\001 \002(\005:\001",
-      "1\022\035\n\006common\030\002 \002(\0132\r.proto.Common\022%\n\ttrip" +
-      "_info\030\003 \002(\0132\022.proto.DOITripInfo\"\336\001\n\014ROID" +
-      "eparture\022\031\n\016schema_version\030\001 \002(\005:\0011\022\035\n\006c" +
-      "ommon\030\002 \002(\0132\r.proto.Common\022%\n\ttrip_info\030" +
-      "\003 \002(\0132\022.proto.DOITripInfo\022\"\n\032has_destina" +
-      "tion_display_id\030\004 \001(\003\022%\n\035has_destination" +
-      "_stop_area_gid\030\005 \001(\003\022\"\n\032has_service_requ" +
-      "irement_id\030\006 \001(\003B6\n\037fi.hsl.common.transi" +
-      "tdata.protoB\023PubtransTableProtos"
+      "\022\030\n\020targeted_stop_id\030\007 \001(\t\"m\n\nROIArrival" +
+      "\022\031\n\016schema_version\030\001 \002(\005:\0011\022\035\n\006common\030\002 " +
+      "\002(\0132\r.proto.Common\022%\n\ttrip_info\030\003 \002(\0132\022." +
+      "proto.DOITripInfo\"\336\001\n\014ROIDeparture\022\031\n\016sc" +
+      "hema_version\030\001 \002(\005:\0011\022\035\n\006common\030\002 \002(\0132\r." +
+      "proto.Common\022%\n\ttrip_info\030\003 \002(\0132\022.proto." +
+      "DOITripInfo\022\"\n\032has_destination_display_i" +
+      "d\030\004 \001(\003\022%\n\035has_destination_stop_area_gid" +
+      "\030\005 \001(\003\022\"\n\032has_service_requirement_id\030\006 \001" +
+      "(\003B6\n\037fi.hsl.common.transitdata.protoB\023P" +
+      "ubtransTableProtos"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_proto_Common_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_Common_fieldAccessorTable = new
@@ -5516,7 +6314,7 @@ public final class PubtransTableProtos {
     internal_static_proto_DOITripInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_DOITripInfo_descriptor,
-        new java.lang.String[] { "DvjId", "OperatingDay", "RouteId", "DirectionId", "StartTime", "StopId", });
+        new java.lang.String[] { "DvjId", "OperatingDay", "RouteId", "DirectionId", "StartTime", "StopId", "TargetedStopId", });
     internal_static_proto_ROIArrival_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_proto_ROIArrival_fieldAccessorTable = new
