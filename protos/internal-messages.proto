@@ -193,7 +193,7 @@ message StopEstimate {
     required int32 SchemaVersion = 1 [default = 1];
     required TripInfo trip_info = 2;
 
-    required string stop_id = 3;
+    required string stop_id = 3; //The stop where the vehicle is scheduled to stop
     required uint32 stop_sequence = 4;
 
     enum Status {
@@ -213,6 +213,9 @@ message StopEstimate {
     optional int64 scheduled_time_utc_ms = 8;
     required int64 last_modified_utc_ms = 9;
     optional bool observed_time = 10 [default = false]; //True if the estimated time was observed (i.e. true if the vehicle has already passed the stop)
+
+
+    optional string targeted_stop_id = 11; //The stop where the vehicle is targeted to stop (e.g. train using a different track than scheduled)
 }
 
 message Bulletin {
