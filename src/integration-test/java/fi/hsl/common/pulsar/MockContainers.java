@@ -21,7 +21,7 @@ public class MockContainers {
     private MockContainers() {}
 
     public static GenericContainer newRedisContainer() {
-        return new GenericContainer("redis:3.0.2")
+        return new GenericContainer("redis:5.0.6")
                 .withExposedPorts(6379);
     }
 
@@ -42,7 +42,7 @@ public class MockContainers {
      * For using the "real" tenant/namespace/topicname pattern @see MockContainers#configurePulsarContainer(PulsarContainer, String, String)
      */
     public static PulsarContainer newPulsarContainer() {
-        return new PulsarContainer("2.1.0-incubating");
+        return new PulsarContainer("2.3.1");
     }
 
     public static PulsarContainer configurePulsarContainer(PulsarContainer pulsar, final String tenant, final String namespace) throws Exception {

@@ -2,16 +2,17 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>fi.hsl</groupId>
     <artifactId>transitdata-common</artifactId>
-    <version>0.6.2</version>
+    <version>1.3.24</version>
     <packaging>jar</packaging>
     <name>Common utilities for Transitdata projects</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <pulsar.version>2.1.0-incubating</pulsar.version>
-        <testcontainers.version>1.9.0</testcontainers.version>
+        <pulsar.version>2.3.1</pulsar.version>
+        <testcontainers.version>1.15.3</testcontainers.version>
     </properties>
+
     <profiles>
         <!-- The Configuration of the unit-test profile -->
         <profile>
@@ -44,11 +45,25 @@
         </profile>
     </profiles>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub HSLdevcom Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/HSLdevcom/transitdata-common</url>
+        </repository>
+    </distributionManagement>
+
     <dependencies>
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>3.5.1</version>
+            <version>3.11.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dslplatform</groupId>
+            <artifactId>dsl-json-java8</artifactId>
+            <version>1.9.3</version>
         </dependency>
 
         <dependency>
@@ -80,7 +95,7 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.1.7</version>
+            <version>1.2.3</version>
         </dependency>
 
         <dependency>
@@ -98,13 +113,19 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.9.3</version>
+            <version>2.11.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>20.1.0</version>
         </dependency>
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
 
@@ -162,7 +183,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
+                <version>3.8.1</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
@@ -210,7 +231,8 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <phase>package</phase>
+                        <!--Do not run the assembly plugin twice -->
+                        <!--<phase>package</phase>-->
                         <goals>
                             <goal>single</goal>
                         </goals>
@@ -260,13 +282,20 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.0</version>
+                <version>2.22.2</version>
                 <configuration>
                     <skipTests>${skip.unit.tests}</skipTests>
                     <!-- Excludes integration tests when unit tests are run -->
                     <excludes>
                         <exclude>**/IT*.java</exclude>
                     </excludes>
+                    <environmentVariables>
+                        <ENV1>VAL1</ENV1>
+                        <ENV2>123</ENV2>
+                        <FILEPATH_CONNECTION_STRING>./src/test/resources/secret.testsecret</FILEPATH_CONNECTION_STRING>
+                        <FILEPATH_USERNAME_SECRET>./src/test/resources/username.testsecret</FILEPATH_USERNAME_SECRET>
+                        <FILEPATH_PASSWORD_SECRET>./src/test/resources/password.testsecret</FILEPATH_PASSWORD_SECRET>
+                    </environmentVariables>
                 </configuration>
             </plugin>
             <plugin>
@@ -287,7 +316,5 @@
                 </executions>
             </plugin>
         </plugins>
-
     </build>
-
 </project>

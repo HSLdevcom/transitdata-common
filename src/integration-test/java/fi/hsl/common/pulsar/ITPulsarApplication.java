@@ -1,16 +1,17 @@
 package fi.hsl.common.pulsar;
 
 import com.typesafe.config.Config;
-import com.typesafe.config.ConfigFactory;
-import com.typesafe.config.ConfigValue;
 import fi.hsl.common.config.ConfigParser;
 import fi.hsl.common.config.ConfigUtils;
-import org.apache.pulsar.client.admin.PulsarAdmin;
-import org.apache.pulsar.client.admin.PulsarAdminBuilder;
+import fi.hsl.common.health.HealthServer;
 import org.apache.pulsar.client.api.Consumer;
 import org.apache.pulsar.client.api.Message;
 import org.apache.pulsar.client.api.Producer;
-import org.apache.pulsar.common.policies.data.TenantInfo;
+import org.apache.pulsar.shade.org.apache.http.HttpResponse;
+import org.apache.pulsar.shade.org.apache.http.HttpStatus;
+import org.apache.pulsar.shade.org.apache.http.client.HttpClient;
+import org.apache.pulsar.shade.org.apache.http.client.methods.*;
+import org.apache.pulsar.shade.org.apache.http.impl.client.HttpClientBuilder;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Test;
@@ -20,10 +21,13 @@ import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.PulsarContainer;
 import redis.clients.jedis.Jedis;
 
-import javax.print.attribute.standard.MediaSize;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
+import java.util.function.BooleanSupplier;
 
 import static org.junit.Assert.*;
 
@@ -91,7 +95,7 @@ public class ITPulsarApplication {
 
         final String payload = "Test-message";
 
-        Producer<byte[]> producer = app.getContext().getProducer();
+        Producer<byte[]> producer = app.getContext().getSingleProducer();
         producer.send(payload.getBytes());
 
         logger.info("Message sent, reading it back");
@@ -122,17 +126,21 @@ public class ITPulsarApplication {
         Map<String, Object> o1 = new HashMap<>();
         o1.put("pulsar.consumer.enabled", false);
         o1.put("redis.enabled", false);
-        o1.put("pulsar.producer.topic", formatTopicName("test-1"));
-        Config producer1Config = PulsarMockApplication.readConfigWithOverrides(CONFIG_FILE, o1);
+        o1.put("pulsar.producer.multipleProducers", true);
+        String topic1 = formatTopicName("test-1");
+        String topic2 = formatTopicName("test-2");
+        o1.put("pulsar.producer.topics", String.join(",",topic1 , topic2));
+        o1.put("pulsar.producer.topicKeys",topic1 + "=test-1," + topic2 + "=test-2");
+        Config producer1Config = PulsarMockApplication.readConfigWithOverrides("integration-multiprod-test.conf", o1);
 
         PulsarApplication app = PulsarMockApplication.newInstance(producer1Config, redis, pulsar);
         assertNotNull(app);
 
-        Producer<byte[]> producer = app.getContext().getProducer();
+        Producer<byte[]> producer = app.getContext().getProducers().get("test-1");
 
         //Create a second producer but bind into different topic
-        Config producer2Config = PulsarMockApplication.readConfigWithOverride(CONFIG_FILE, "pulsar.producer.topic", formatTopicName("test-2"));
-        Producer<byte[]> secondProducer = app.createProducer(app.client, producer2Config);
+
+        Producer<byte[]> secondProducer = app.getContext().getProducers().get("test-2");
 
         logger.info("Multi-topic Pulsar Application created, testing to send a message");
 
@@ -140,7 +148,7 @@ public class ITPulsarApplication {
         Map<String, Object> overrides = new HashMap<>();
         overrides.put("pulsar.consumer.multipleTopics", true);
         overrides.put("pulsar.consumer.topicsPattern", formatTopicName("test-(1|2)"));
-        Config consumerConfig = PulsarMockApplication.readConfigWithOverrides(CONFIG_FILE, overrides);
+        Config consumerConfig = PulsarMockApplication.readConfigWithOverrides("integration-multiprod-test.conf", overrides);
         Consumer<byte[]> consumer = app.createConsumer(app.client, consumerConfig);
 
         logger.debug("Consumer topic: " + consumer.getTopic());
@@ -184,7 +192,7 @@ public class ITPulsarApplication {
             logger.info("Pulsar Application created within try-with-resources-block");
             assertNotNull(app);
 
-            producer = app.getContext().getProducer();
+            producer = app.getContext().getSingleProducer();
             assertTrue(producer.isConnected());
 
             consumer = app.getContext().getConsumer();
@@ -235,5 +243,120 @@ public class ITPulsarApplication {
         catch (Exception e) {
             logger.debug("Exception as expected");
         }
+    }
+
+    @Test
+    public void testHttpServer() throws Exception {
+        Config base = PulsarMockApplication.readConfig(CONFIG_FILE);
+
+        PulsarApplication app = PulsarMockApplication.newInstance(base, redis, pulsar);
+        assertNotNull(app);
+
+        logger.info("Pulsar Application created, testing HealthServer");
+
+        final Producer<byte[]> producer = app.getContext().getSingleProducer();
+        final Consumer<byte[]> consumer = app.getContext().getConsumer();
+        final Jedis jedis = app.getContext().getJedis();
+        final HealthServer healthServer = app.getContext().getHealthServer();
+
+        assertTrue(consumer.isConnected());
+        assertTrue(producer.isConnected());
+        assertTrue(jedis.isConnected());
+
+        logger.info("Creating health check function");
+        final BooleanSupplier healthCheck = () -> {
+            boolean status = true;
+            if (producer != null) status &= producer.isConnected();
+            if (consumer != null) status &= consumer.isConnected();
+            if (jedis != null) status &= jedis.isConnected();
+            return status;
+        };
+        healthServer.addCheck(healthCheck);
+
+        String url = "http://localhost:" + healthServer.port + healthServer.endpoint;
+
+        logger.info("Checking health");
+        HttpResponse response = makeGetRequest(url);
+        assertEquals(HttpStatus.SC_OK, response.getStatusLine().getStatusCode());
+        assertEquals("OK", getContent(response));
+
+        logger.info("Disconnecting Jedis and checking health");
+        jedis.disconnect();
+        assertFalse(jedis.isConnected());
+
+        response = makeGetRequest(url);
+        assertEquals(HttpStatus.SC_SERVICE_UNAVAILABLE, response.getStatusLine().getStatusCode());
+        assertEquals("FAIL", getContent(response));
+
+        logger.info("Reconnecting Jedis and checking health");
+        jedis.connect();
+        assertTrue(jedis.isConnected());
+
+        response = makeGetRequest(url);
+        assertEquals(HttpStatus.SC_OK, response.getStatusLine().getStatusCode());
+        assertEquals("OK", getContent(response));
+
+        logger.info("Closing Pulsar consumer and checking health");
+        consumer.close();
+        assertFalse(consumer.isConnected());
+
+        response = makeGetRequest(url);
+        assertEquals(HttpStatus.SC_SERVICE_UNAVAILABLE, response.getStatusLine().getStatusCode());
+        assertEquals("FAIL", getContent(response));
+
+        response = makePostRequest(url);
+        assertEquals(HttpStatus.SC_METHOD_NOT_ALLOWED, response.getStatusLine().getStatusCode());
+        assertEquals("Method Not Allowed", getContent(response));
+
+        url = "http://localhost:" + healthServer.port + "/foo";
+        response = makeGetRequest(url);
+        assertEquals(HttpStatus.SC_NOT_FOUND, response.getStatusLine().getStatusCode());
+        assertEquals("Not Found", getContent(response));
+
+        url = "http://localhost:" + healthServer.port + healthServer.endpoint + "foo";
+        response = makeGetRequest(url);
+        assertEquals(HttpStatus.SC_NOT_FOUND, response.getStatusLine().getStatusCode());
+        assertEquals("Not Found", getContent(response));
+
+        app.close();
+        assertFalse(consumer.isConnected());
+        assertFalse(producer.isConnected());
+        assertFalse(jedis.isConnected());
+    }
+
+    private HttpResponse makeGetRequest(final String url) throws IOException {
+        return makeRequest("GET", url);
+    }
+
+    private HttpResponse makePostRequest(final String url) throws IOException {
+        return makeRequest("POST", url);
+    }
+
+    private HttpResponse makeRequest(final String method, final String url) throws IOException {
+        HttpClient client = HttpClientBuilder.create().build();
+        HttpUriRequest request;
+        switch (method.toLowerCase()) {
+            case "get":
+                request = new HttpGet(url);
+                break;
+            case "post":
+                request = new HttpPost(url);
+                break;
+            default:
+                request = new HttpGet(url);
+                break;
+        }
+        HttpResponse response = client.execute(request);
+        return response;
+    }
+
+    private String getContent(final HttpResponse response) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        StringBuffer content = new StringBuffer();
+        String line;
+        while ((line = reader.readLine()) != null) {
+            content.append(line);
+        }
+        return content.toString();
     }
 }

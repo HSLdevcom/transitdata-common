@@ -5,6 +5,93 @@ package proto;
 option java_package = "fi.hsl.common.transitdata.proto";
 option java_outer_classname = "InternalMessages";
 
+message TripInfo {
+    // Unique key for the trip
+    // For example: Dated Vehicle Journey ID or Journey Section ID
+    required string trip_id = 1;
+    // All fields in JORE-format
+    required string operating_day = 2;
+    required string route_id = 3;
+    required uint32 direction_id = 4;
+    required string start_time = 5;
+    // Whether trip is included in static schedule or not
+    optional ScheduleType schedule_type = 6 [default = SCHEDULED];
+
+    enum ScheduleType {
+        SCHEDULED = 1; //Trip is present in the static schedule
+        ADDED = 2; //Trip is not present in the static schedule, but follows some schedule (e.g. replacement service for broken vehicle)
+        UNSCHEDULED = 3; //Trip does not have any schedule (e.g. shuttle bus that runs when full)
+    }
+}
+
+enum Category {
+    VEHICLE_BREAKDOWN = 0;
+    ACCIDENT = 1;
+    NO_DRIVER = 2;
+    ASSAULT = 3;
+    WEATHER = 4;
+    VEHICLE_OFF_THE_ROAD = 5;
+    SEIZURE = 6;
+    ITS_SYSTEM_ERROR = 7;
+    OTHER_DRIVER_ERROR = 8;
+    TOO_MANY_PASSENGERS = 9;
+    STRIKE = 10;
+    OTHER = 11;
+    EARLIER_DISRUPTION = 12;
+    NO_TRAFFIC_DISRUPTION = 13;
+    TRACK_BLOCKED = 14;
+    STAFF_DEFICIT = 15;
+    DISTURBANCE = 16;
+    VEHICLE_DEFICIT = 17;
+    ROAD_CLOSED = 18;
+    ROAD_TRENCH = 19;
+    TRACK_MAINTENANCE = 20;
+    TRAFFIC_ACCIDENT = 21;
+    TRAFFIC_JAM = 22;
+    MEDICAL_INCIDENT = 23;
+    WEATHER_CONDITIONS = 24;
+    TECHNICAL_FAILURE = 25;
+    TEST = 26;
+    ROAD_MAINTENANCE = 27;
+    SWITCH_FAILURE = 28;
+    STATE_VISIT = 29;
+    POWER_FAILURE = 30;
+    MISPARKED_VEHICLE = 31;
+    PUBLIC_EVENT = 32;
+}
+
+
+message JourneyPattern  {
+    required string journey_pattern_id = 1;
+    repeated Stop stops = 2;
+    repeated TripInfo trips = 3; //List of trips that use the journey pattern and are affected by one or more StopCancellation messages
+
+    message Stop {
+        required string stop_id = 1;
+        required uint32 stop_sequence = 2;
+    }
+}
+
+message StopCancellations {
+    repeated StopCancellation stop_cancellations = 1;
+    repeated JourneyPattern affected_journey_patterns = 2;
+
+    message StopCancellation {
+        required Cause cause = 1;
+        required string stop_id = 2;
+        optional int64 valid_from_unix_s = 3;
+        optional int64 valid_to_unix_s = 4;
+        repeated string affected_journey_pattern_ids = 5; //List of journey patterns (IDs) that are affected by the stop cancellation
+        optional TripInfo affected_trip = 6; //Refers to the affected trip if cause is JOURNEY_DETOUR - i.e. stopCancellation affects only one journey/trip
+    }
+
+    enum Cause {
+        CLOSED_STOP = 0; //Stop cancellation is caused by a closed stop and thus affects all journey patterns that use the stop
+        JOURNEY_PATTERN_DETOUR = 1; //Stop cancellation is caused by a detour and affects only some journey patterns
+        JOURNEY_DETOUR = 2; //Stop cancellation affects only one journey (i.e. trip) specified (above) in StopCancellation.affected_trip (TripInfo)
+    }
+}
+
 message TripCancellation {
     required int32 SchemaVersion = 1 [default = 1];
     optional string trip_id = 2;
@@ -20,4 +107,169 @@ message TripCancellation {
     }
 
     required Status status = 7;
+
+    enum DeviationCasesType {
+        CANCEL_DEPARTURE = 0;
+        DETOUR = 1;
+        SKIPPED_STOP_CALLS = 2;
+        EARLY_DEPARTURE = 3;
+        EARLY_DEPARTURE_FROM_TIMING_POINT = 4;
+        LATE_DEPARTURE = 5;
+        DEPARTURED_AFTER_NEXT_JOURNEY = 6;
+        BLOCK_FIRST_DEPARTURE_LATE = 7;
+        TIS_ERROR = 8;
+    }
+
+    optional DeviationCasesType deviation_cases_type = 8;
+
+    enum AffectedDeparturesType {
+        CANCEL_ENTIRE_DEPARTURE = 0;
+        CANCEL_STOPS_FROM_START = 1;
+        CANCEL_STOPS_FROM_MIDDLE = 2;
+        CANCEL_STOPS_FROM_END = 3;
+    }
+
+    optional AffectedDeparturesType affected_departures_type = 9;
+    optional string title = 10;
+    optional string description = 11;
+
+    optional Category category = 12;
+
+    enum SubCategory {
+        BREAK_MALFUNCTION = 0;
+        OUT_OF_FUEL = 1;
+        FLUID_LEAKAGE = 2;
+        ELECTRIC_MALFUNCTION = 3;
+        ENGINE_MALFUNCTION = 4;
+        OTHER_MALFUNCTION = 5;
+        OWN_FAULT = 6;
+        OPPOSITE_FAULT = 7;
+        FAULT_UNKNOWN = 8;
+        STAFF_SHORTAGE = 9;
+        ND_OPERATOR_PLANNING_ERROR = 10;
+        DRIVER_LATE = 11;
+        INSUFFICIENT_INSTRUCTIONS_BY_OPERATOR = 12;
+        INSUFFICIENT_INSTRUCTIONS_BY_AUTHORITY = 13;
+        NO_VEHICLE_AVAILABLE = 14;
+        ASSAULT_ON_DRIVER = 15;
+        ASSAULT_ON_PASSENGER = 16;
+        ASSAULT_ON_VEHICLE = 17;
+        PASSED_OUT_PASSENGER = 18;
+        OTHER_ASSAULT = 19;
+        UNDRIVEABLE_CONDITIONS = 20;
+        STUCK_CAUSED_BY_SLIPPERY = 21;
+        CONGESTION_CAUSED_BY_WEATHER = 22;
+        SLIPPERY_TRACK = 23;
+        ROAD_BLOCKED = 24;
+        VEHICLE_OFF_THE_ROAD_BY_DRIVER_ERROR = 25;
+        VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON = 26;
+        MISSPARKED_VEHICLE = 27;
+        CONGESTION_REASON_UKNOWN = 28;
+        CONGESTION_CAUSED_BY_ACCIDENT = 29;
+        DRIVER_SEIZURE = 30;
+        PASSENGER_SEIZURE = 31;
+        PASSENGER_INJURED = 32;
+        OTHER_SEIZURE = 33;
+        DEVICE_ERROR = 34;
+        OPERATOR_DEVICE_ERROR = 35;
+        WRONG_INFORMATION_IN_DEVICE = 36;
+        ITS_SYSTEM_NOT_INSTALLED = 37;
+        USER_ERROR = 38;
+        FALSE_ALARM = 39;
+        OTHER_ITS_ERROR = 40;
+        DRIVER_ERROR = 41;
+        INSUFFICIENT_CAPASITY = 42;
+        OPERATOR_PERSONNEL_ON_STRIKE = 43;
+        OTHER_STRIKE = 44;
+        OTHER_OPERATOR_REASON = 45;
+        UNKNOWN_CAUSE = 46;
+        DOOR_MALFUNCTION = 47;
+    }
+
+    optional SubCategory sub_category = 13;
+}
+
+message StopEstimate {
+    required int32 SchemaVersion = 1 [default = 1];
+    required TripInfo trip_info = 2;
+
+    required string stop_id = 3; //The stop where the vehicle is scheduled to stop
+    required uint32 stop_sequence = 4;
+
+    enum Status {
+        SCHEDULED = 0;
+        SKIPPED = 1;
+        NO_DATA = 2; // No estimate is available
+    }
+    required Status status = 5;
+
+    enum Type {
+        ARRIVAL = 0;
+        DEPARTURE = 1;
+    }
+
+    required Type type = 6;
+    optional int64 estimated_time_utc_ms = 7;
+    optional int64 scheduled_time_utc_ms = 8;
+    required int64 last_modified_utc_ms = 9;
+    optional bool observed_time = 10 [default = false]; //True if the estimated time was observed (i.e. true if the vehicle has already passed the stop)
+
+
+    optional string targeted_stop_id = 11; //The stop where the vehicle is targeted to stop (e.g. train using a different track than scheduled)
+}
+
+message Bulletin {
+    optional string bulletin_id = 1;
+    optional Category category = 2;
+    required int64 last_modified_utc_ms = 3;
+    required int64 valid_from_utc_ms = 4;
+    required int64 valid_to_utc_ms = 5;
+    optional bool affects_all_routes = 6;
+    optional bool affects_all_stops = 7;
+
+    message AffectedEntity {
+        required string entity_id = 1;
+    }
+    repeated AffectedEntity affected_routes = 8;
+    repeated AffectedEntity affected_stops = 9;
+
+    enum Impact {
+        CANCELLED = 0;
+        DELAYED = 1;
+        DEVIATING_SCHEDULE = 2;
+        DISRUPTION_ROUTE = 3;
+        IRREGULAR_DEPARTURES = 4;
+        POSSIBLE_DEVIATIONS = 5;
+        POSSIBLY_DELAYED = 6;
+        REDUCED_TRANSPORT = 7;
+        RETURNING_TO_NORMAL = 8;
+        VENDING_MACHINE_OUT_OF_ORDER = 9;
+        NULL = 10;
+        OTHER = 11;
+        NO_TRAFFIC_IMPACT = 12;
+        UNKNOWN = 13;
+    }
+    optional Impact impact = 10;
+
+    enum Priority {
+        INFO = 0;
+        WARNING = 1;
+        SEVERE = 2;
+    }
+    optional Priority priority = 11;
+
+    message Translation {
+        required string text = 1;
+        optional string language = 2;
+    }
+    repeated Translation titles = 12;
+    repeated Translation descriptions = 13;
+    repeated Translation urls = 14;
+
+    optional bool display_only = 15 [default = false]; //If true, the bulletin should be shown only on vehicle displays
+}
+
+message ServiceAlert {
+    required int32 SchemaVersion = 1 [default = 1];
+    repeated Bulletin bulletins = 2;
 }

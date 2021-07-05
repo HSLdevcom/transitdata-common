@@ -6,6 +6,8 @@ import java.util.Optional;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigException;
 import com.typesafe.config.ConfigFactory;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,6 +21,7 @@ public class ConfigParser {
      *
      * @see #createConfig(String)
      */
+    @NotNull
     public static Config createConfig() throws RuntimeException {
         return createConfig("environment.conf");
     }
@@ -33,7 +36,8 @@ public class ConfigParser {
      *
      * @return Complete and valid configuration.
      */
-    public static Config createConfig(String filename) throws RuntimeException {
+    @NotNull
+    public static Config createConfig(@NotNull String filename) throws RuntimeException {
         Config fileConfig = parseFileConfig();
         Config envConfig = ConfigFactory.parseResources(filename).resolve();
         return mergeConfigs(fileConfig, envConfig);
@@ -45,6 +49,7 @@ public class ConfigParser {
      *
      * @return Either a configuration parsed from the given path or null.
      */
+    @Nullable
     private static Config parseFileConfig() throws RuntimeException {
         Config fileConfig = null;
         Optional<String> configPath = ConfigUtils.getEnv("CONFIG_PATH");
@@ -68,7 +73,8 @@ public class ConfigParser {
      * @param envConfig The Config read from the environment variables.
      * @return The Config resulting from merging fileConfig and envConfig.
      */
-    public static Config mergeConfigs(Config fileConfig, Config envConfig) throws RuntimeException {
+    @NotNull
+    public static Config mergeConfigs(@Nullable Config fileConfig, @NotNull Config envConfig) throws RuntimeException {
         Config fullConfig;
         if (fileConfig != null) {
             fullConfig = envConfig.withFallback(fileConfig);

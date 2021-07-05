@@ -7,7 +7,7 @@ option java_outer_classname = "PubtransTableProtos";
 
 
 message Common {
-    required int32 schema_version = 1 [default = 1]; // Remember to bump up the version when updating the scema!
+    required int32 schema_version = 1 [default = 1]; // Remember to bump up the version when updating the schema!
     required int64 id = 2;
     required int64 is_on_dated_vehicle_journey_id = 3;
     optional int64 is_on_monitored_vehicle_journey_id = 4;
@@ -27,13 +27,30 @@ message Common {
     required int64 last_modified_utc_date_time_ms = 17;
 }
 
+message DOITripInfo {
+    // All fields in JORE-format
+    required int64 dvj_id = 1;
+    required string operating_day = 2;
+    required string route_id = 3;
+    required uint32 direction_id = 4;
+    required string start_time = 5;
+    
+    //These fields are used for stop ID of the stop estimate
+    required string stop_id = 6;
+    optional string targeted_stop_id = 7;
+}
+
 message ROIArrival {
-    required Common common = 1;
+    required int32 schema_version = 1 [default = 1]; // Remember to bump up the version when updating the schema!
+    required Common common = 2;
+    required DOITripInfo trip_info = 3;
 }
 
 message ROIDeparture {
-    required Common common = 1;
-    optional int64 has_destination_display_id = 2;
-    optional int64 has_destination_stop_area_gid = 3;
-    optional int64 has_service_requirement_id = 4;
+    required int32 schema_version = 1 [default = 1]; // Remember to bump up the version when updating the schema!
+    required Common common = 2;
+    required DOITripInfo trip_info = 3;
+    optional int64 has_destination_display_id = 4;
+    optional int64 has_destination_stop_area_gid = 5;
+    optional int64 has_service_requirement_id = 6;
 }

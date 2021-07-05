@@ -1,0 +1,167 @@
+syntax = "proto2";
+
+package proto;
+
+option java_package = "fi.hsl.common.hfp.proto";
+option java_outer_classname = "Hfp";
+
+// Message format is specified here: https://digitransit.fi/en/developers/apis/4-realtime-api/vehicle-positions/
+// Topic is parsed from the detailed MQTT Topic name and the Payload from the JSON-payload
+
+message Data {
+    required int32 SchemaVersion = 1 [default = 1];
+    optional Topic topic = 2;
+    required Payload payload = 3;
+}
+
+message Topic {
+    required int32 SchemaVersion = 1 [default = 1];
+
+    enum JourneyType {
+        journey = 0;
+        deadrun = 1;
+        signoff = 2;
+    }
+
+    enum TemporalType {
+        ongoing = 0;
+        upcoming = 1;
+    }
+
+    enum EventType {
+        VP = 0;
+        DUE = 1;
+        ARR = 2;
+        ARS = 3;
+        PDE = 4;
+        DEP = 5;
+        PAS = 6;
+        WAIT = 7;
+        DOO = 8;
+        DOC = 9;
+        TLR = 10;
+        TLA = 11;
+        DA = 12;
+        DOUT = 13;
+        BA = 14;
+        BOUT = 15;
+        VJA = 16;
+        VJOUT = 17;
+    }
+
+    enum TransportMode {
+        bus = 0;
+        train = 1;
+        tram = 2;
+        metro = 3;
+        ferry = 4;
+        ubus = 5; //Used by U-line buses and other lines with limited real-time information
+        robot = 6; //Used by robot buses
+    }
+
+    required int64 received_at = 2; // Our server timestamp as Epoch ms
+    required string topic_prefix = 3;
+    required string topic_version = 4;
+    required JourneyType journey_type = 5;
+    required TemporalType temporal_type = 6;
+
+    optional EventType event_type = 7; // v2
+
+    optional TransportMode transport_mode = 8; // Optional because of rare bug in data source systems
+
+    required int32 operator_id = 9;
+    required int32 vehicle_number = 10;
+    required string unique_vehicle_id = 11;
+    
+    optional string route_id = 12;
+    optional int32 direction_id = 13;
+    optional string headsign = 14;
+    optional string start_time = 15;
+    optional string next_stop = 16;
+    optional int32 geohash_level = 17;
+    optional double latitude = 18;
+    optional double longitude = 19;
+}
+
+message Payload {
+    required int32 SchemaVersion = 1 [default = 1];
+
+    enum LocationQualityMethod {
+        GPS = 0;
+        ODO = 1;
+        MAN = 2;
+        NA = 3;
+    }
+
+    enum TlpRequestType {
+        NORMAL = 0;
+        DOOR_CLOSE = 1;
+        DOOR_OPEN = 2;
+        ADVANCE= 3;
+    }
+
+    enum TlpPriorityLevel {
+        normal = 0;
+        high = 1;
+        norequest = 2;
+    }
+
+    enum TlpReason {
+        GLOBAL = 0;
+        AHEAD = 1;
+        LINE = 2;
+        PRIOEXEP = 3;
+    }
+
+    enum TlpDecision {
+        ACK = 0;
+        NAK = 1;
+    }
+
+    optional string desi = 2;
+    optional string dir = 3;
+    optional int32 oper = 4;
+    optional int32 veh = 5;
+
+    required string tst = 6;
+    required int64 tsi = 7;
+
+    optional double spd = 8;
+    optional int32 hdg = 9;
+    optional double lat = 10;
+    optional double long = 11;
+    optional double acc = 12;
+    optional uint32 dl = 13;
+    optional double odo = 14;
+    optional uint32 drst = 15;
+    optional string oday = 16;
+    optional int32 jrn = 17;
+    optional int32 line = 18;
+    optional string start = 19;
+
+    optional LocationQualityMethod loc = 20; // v2
+    optional int32 stop = 21; // v2
+    optional string route = 22; // v2
+    optional int32 occu = 23; // v2
+    optional int32 seq = 24;
+    optional string ttarr = 25;
+    optional string ttdep = 26;
+    optional int32 dr_type = 27;
+
+    optional int32 tlp_requestid = 28; // tlr
+    optional TlpRequestType tlp_requesttype = 29; // tlr
+    optional TlpPriorityLevel tlp_prioritylevel = 30; // tlr
+    optional TlpReason tlp_reason = 31; // tlr
+    optional int32 tlp_att_seq = 32; // tlr
+    optional TlpDecision tlp_decision = 33; // tlr
+
+    optional int32 sid = 34; // tlr
+    optional int32 signal_groupid = 35; // tlr
+    optional int32 tlp_signalgroupnbr = 36; // tlr
+    optional int32 tlp_line_configid = 38; // tlr
+    optional int32 tlp_point_configid = 39; // tlr
+    optional int32 tlp_frequency = 40; // tlr
+    optional string tlp_protocol = 41; // tlr
+
+    optional string label = 42;
+}
