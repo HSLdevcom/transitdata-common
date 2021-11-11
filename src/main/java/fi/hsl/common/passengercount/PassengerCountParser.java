@@ -55,15 +55,15 @@ public class PassengerCountParser {
         vehicleBuilder.setVehicleLoad(payload.vehiclecounts.vehicleload);
         vehicleBuilder.setVehicleLoadRatio(payload.vehiclecounts.vehicleloadratio);
         vehicleBuilder.setCountQuality(payload.vehiclecounts.countquality);
-        if(payload.vehiclecounts.extensions != null){
+        if (payload.vehiclecounts.extensions != null) {
             vehicleBuilder.setExtensions(payload.vehiclecounts.extensions);
         }
 
-        for(DoorCount doorcount : payload.vehiclecounts.doorcounts){
+        for (DoorCount doorcount : payload.vehiclecounts.doorcounts) {
             PassengerCount.DoorCount.Builder doorCountBuilder = PassengerCount.DoorCount.newBuilder();
             doorCountBuilder.setDoor(doorcount.door);
 
-            for(Count count : doorcount.count){
+            for (Count count : doorcount.count) {
                 PassengerCount.Count.Builder countBuilder = PassengerCount.Count.newBuilder();
                 countBuilder.setIn(count.in);
                 countBuilder.setOut(count.out);
@@ -102,10 +102,10 @@ public class PassengerCountParser {
         apcJson.apc.vehiclecounts.extensions = passengerCountPayload.getVehicleCounts().getExtensions();
         apcJson.apc.vehiclecounts.vehicleloadratio = passengerCountPayload.getVehicleCounts().getVehicleLoadRatio();
         apcJson.apc.vehiclecounts.doorcounts = new ArrayList<>();
-        for(PassengerCount.DoorCount doorCount : passengerCountPayload.getVehicleCounts().getDoorCountsList()){
+        for (PassengerCount.DoorCount doorCount : passengerCountPayload.getVehicleCounts().getDoorCountsList()) {
             DoorCount dc = new DoorCount();
             dc.count = new ArrayList<>();
-            for(PassengerCount.Count count : doorCount.getCountList()){
+            for (PassengerCount.Count count : doorCount.getCountList()) {
                 Count c = new Count();
                 c.clazz = count.getClazz();
                 c.in = count.getIn();

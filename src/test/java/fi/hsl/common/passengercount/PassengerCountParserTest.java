@@ -19,7 +19,7 @@ public class PassengerCountParserTest {
     public void parseJsonTest() throws Exception {
         APC apc = parseJsonFromResources("src/test/resources/passenger-count-sample.json").apc;
         assertEquals("555", apc.desi);
-        assertEquals(12, apc.oper);
+        assertEquals(12, (int)apc.oper);
         assertEquals("GPS", apc.loc);
         assertEquals("regular | defect | other", apc.vehiclecounts.countquality);
         assertEquals(15, apc.vehiclecounts.vehicleload);
