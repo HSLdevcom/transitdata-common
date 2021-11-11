@@ -20,33 +20,40 @@ public final class PassengerCount {
 
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
     boolean hasSchemaVersion();
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
     int getSchemaVersion();
 
     /**
      * <code>optional string topic = 2;</code>
+     * @return Whether the topic field is set.
      */
     boolean hasTopic();
     /**
      * <code>optional string topic = 2;</code>
+     * @return The topic.
      */
     java.lang.String getTopic();
     /**
      * <code>optional string topic = 2;</code>
+     * @return The bytes for topic.
      */
     com.google.protobuf.ByteString
         getTopicBytes();
 
     /**
      * <code>required .proto.Payload payload = 3;</code>
+     * @return Whether the payload field is set.
      */
     boolean hasPayload();
     /**
      * <code>required .proto.Payload payload = 3;</code>
+     * @return The payload.
      */
     fi.hsl.common.passengercount.proto.PassengerCount.Payload getPayload();
     /**
@@ -57,10 +64,11 @@ public final class PassengerCount {
   /**
    * Protobuf type {@code proto.Data}
    */
-  public  static final class Data extends
+  public static final class Data extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.Data)
       DataOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Data.newBuilder() to construct.
     private Data(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -68,6 +76,13 @@ public final class PassengerCount {
     private Data() {
       schemaVersion_ = 1;
       topic_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Data();
     }
 
     @java.lang.Override
@@ -80,6 +95,9 @@ public final class PassengerCount {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -91,13 +109,6 @@ public final class PassengerCount {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               schemaVersion_ = input.readInt32();
@@ -111,7 +122,7 @@ public final class PassengerCount {
             }
             case 26: {
               fi.hsl.common.passengercount.proto.PassengerCount.Payload.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+              if (((bitField0_ & 0x00000004) != 0)) {
                 subBuilder = payload_.toBuilder();
               }
               payload_ = input.readMessage(fi.hsl.common.passengercount.proto.PassengerCount.Payload.PARSER, extensionRegistry);
@@ -120,6 +131,13 @@ public final class PassengerCount {
                 payload_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000004;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -139,6 +157,7 @@ public final class PassengerCount {
       return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Data_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Data_fieldAccessorTable
@@ -151,13 +170,17 @@ public final class PassengerCount {
     private int schemaVersion_;
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
+    @java.lang.Override
     public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
+    @java.lang.Override
     public int getSchemaVersion() {
       return schemaVersion_;
     }
@@ -166,13 +189,17 @@ public final class PassengerCount {
     private volatile java.lang.Object topic_;
     /**
      * <code>optional string topic = 2;</code>
+     * @return Whether the topic field is set.
      */
+    @java.lang.Override
     public boolean hasTopic() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>optional string topic = 2;</code>
+     * @return The topic.
      */
+    @java.lang.Override
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
       if (ref instanceof java.lang.String) {
@@ -189,7 +216,9 @@ public final class PassengerCount {
     }
     /**
      * <code>optional string topic = 2;</code>
+     * @return The bytes for topic.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getTopicBytes() {
       java.lang.Object ref = topic_;
@@ -208,24 +237,30 @@ public final class PassengerCount {
     private fi.hsl.common.passengercount.proto.PassengerCount.Payload payload_;
     /**
      * <code>required .proto.Payload payload = 3;</code>
+     * @return Whether the payload field is set.
      */
+    @java.lang.Override
     public boolean hasPayload() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>required .proto.Payload payload = 3;</code>
+     * @return The payload.
      */
+    @java.lang.Override
     public fi.hsl.common.passengercount.proto.PassengerCount.Payload getPayload() {
       return payload_ == null ? fi.hsl.common.passengercount.proto.PassengerCount.Payload.getDefaultInstance() : payload_;
     }
     /**
      * <code>required .proto.Payload payload = 3;</code>
      */
+    @java.lang.Override
     public fi.hsl.common.passengercount.proto.PassengerCount.PayloadOrBuilder getPayloadOrBuilder() {
       return payload_ == null ? fi.hsl.common.passengercount.proto.PassengerCount.Payload.getDefaultInstance() : payload_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -239,41 +274,39 @@ public final class PassengerCount {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!getPayload().isInitialized()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       memoizedIsInitialized = 1;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt32(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, topic_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(3, getPayload());
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, schemaVersion_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, topic_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getPayload());
       }
@@ -282,7 +315,6 @@ public final class PassengerCount {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -293,24 +325,23 @@ public final class PassengerCount {
       }
       fi.hsl.common.passengercount.proto.PassengerCount.Data other = (fi.hsl.common.passengercount.proto.PassengerCount.Data) obj;
 
-      boolean result = true;
-      result = result && (hasSchemaVersion() == other.hasSchemaVersion());
+      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
       if (hasSchemaVersion()) {
-        result = result && (getSchemaVersion()
-            == other.getSchemaVersion());
+        if (getSchemaVersion()
+            != other.getSchemaVersion()) return false;
       }
-      result = result && (hasTopic() == other.hasTopic());
+      if (hasTopic() != other.hasTopic()) return false;
       if (hasTopic()) {
-        result = result && getTopic()
-            .equals(other.getTopic());
+        if (!getTopic()
+            .equals(other.getTopic())) return false;
       }
-      result = result && (hasPayload() == other.hasPayload());
+      if (hasPayload() != other.hasPayload()) return false;
       if (hasPayload()) {
-        result = result && getPayload()
-            .equals(other.getPayload());
+        if (!getPayload()
+            .equals(other.getPayload())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -319,7 +350,7 @@ public final class PassengerCount {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasSchemaVersion()) {
         hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
         hash = (53 * hash) + getSchemaVersion();
@@ -337,6 +368,17 @@ public final class PassengerCount {
       return hash;
     }
 
+    public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -396,6 +438,7 @@ public final class PassengerCount {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -403,6 +446,7 @@ public final class PassengerCount {
     public static Builder newBuilder(fi.hsl.common.passengercount.proto.PassengerCount.Data prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -426,6 +470,7 @@ public final class PassengerCount {
         return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Data_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Data_fieldAccessorTable
@@ -449,6 +494,7 @@ public final class PassengerCount {
           getPayloadFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         schemaVersion_ = 1;
@@ -464,15 +510,18 @@ public final class PassengerCount {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Data_descriptor;
       }
 
+      @java.lang.Override
       public fi.hsl.common.passengercount.proto.PassengerCount.Data getDefaultInstanceForType() {
         return fi.hsl.common.passengercount.proto.PassengerCount.Data.getDefaultInstance();
       }
 
+      @java.lang.Override
       public fi.hsl.common.passengercount.proto.PassengerCount.Data build() {
         fi.hsl.common.passengercount.proto.PassengerCount.Data result = buildPartial();
         if (!result.isInitialized()) {
@@ -481,57 +530,65 @@ public final class PassengerCount {
         return result;
       }
 
+      @java.lang.Override
       public fi.hsl.common.passengercount.proto.PassengerCount.Data buildPartial() {
         fi.hsl.common.passengercount.proto.PassengerCount.Data result = new fi.hsl.common.passengercount.proto.PassengerCount.Data(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.schemaVersion_ = schemaVersion_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           to_bitField0_ |= 0x00000002;
         }
         result.topic_ = topic_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          if (payloadBuilder_ == null) {
+            result.payload_ = payload_;
+          } else {
+            result.payload_ = payloadBuilder_.build();
+          }
           to_bitField0_ |= 0x00000004;
-        }
-        if (payloadBuilder_ == null) {
-          result.payload_ = payload_;
-        } else {
-          result.payload_ = payloadBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.passengercount.proto.PassengerCount.Data) {
           return mergeFrom((fi.hsl.common.passengercount.proto.PassengerCount.Data)other);
@@ -559,6 +616,7 @@ public final class PassengerCount {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasSchemaVersion()) {
           return false;
@@ -566,12 +624,10 @@ public final class PassengerCount {
         if (!hasPayload()) {
           return false;
         }
-        if (!getPayload().isInitialized()) {
-          return false;
-        }
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -594,18 +650,24 @@ public final class PassengerCount {
       private int schemaVersion_ = 1;
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return Whether the schemaVersion field is set.
        */
+      @java.lang.Override
       public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return The schemaVersion.
        */
+      @java.lang.Override
       public int getSchemaVersion() {
         return schemaVersion_;
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @param value The schemaVersion to set.
+       * @return This builder for chaining.
        */
       public Builder setSchemaVersion(int value) {
         bitField0_ |= 0x00000001;
@@ -615,6 +677,7 @@ public final class PassengerCount {
       }
       /**
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return This builder for chaining.
        */
       public Builder clearSchemaVersion() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -626,12 +689,14 @@ public final class PassengerCount {
       private java.lang.Object topic_ = "";
       /**
        * <code>optional string topic = 2;</code>
+       * @return Whether the topic field is set.
        */
       public boolean hasTopic() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>optional string topic = 2;</code>
+       * @return The topic.
        */
       public java.lang.String getTopic() {
         java.lang.Object ref = topic_;
@@ -649,6 +714,7 @@ public final class PassengerCount {
       }
       /**
        * <code>optional string topic = 2;</code>
+       * @return The bytes for topic.
        */
       public com.google.protobuf.ByteString
           getTopicBytes() {
@@ -665,6 +731,8 @@ public final class PassengerCount {
       }
       /**
        * <code>optional string topic = 2;</code>
+       * @param value The topic to set.
+       * @return This builder for chaining.
        */
       public Builder setTopic(
           java.lang.String value) {
@@ -678,6 +746,7 @@ public final class PassengerCount {
       }
       /**
        * <code>optional string topic = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTopic() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -687,6 +756,8 @@ public final class PassengerCount {
       }
       /**
        * <code>optional string topic = 2;</code>
+       * @param value The bytes for topic to set.
+       * @return This builder for chaining.
        */
       public Builder setTopicBytes(
           com.google.protobuf.ByteString value) {
@@ -699,17 +770,19 @@ public final class PassengerCount {
         return this;
       }
 
-      private fi.hsl.common.passengercount.proto.PassengerCount.Payload payload_ = null;
+      private fi.hsl.common.passengercount.proto.PassengerCount.Payload payload_;
       private com.google.protobuf.SingleFieldBuilderV3<
           fi.hsl.common.passengercount.proto.PassengerCount.Payload, fi.hsl.common.passengercount.proto.PassengerCount.Payload.Builder, fi.hsl.common.passengercount.proto.PassengerCount.PayloadOrBuilder> payloadBuilder_;
       /**
        * <code>required .proto.Payload payload = 3;</code>
+       * @return Whether the payload field is set.
        */
       public boolean hasPayload() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>required .proto.Payload payload = 3;</code>
+       * @return The payload.
        */
       public fi.hsl.common.passengercount.proto.PassengerCount.Payload getPayload() {
         if (payloadBuilder_ == null) {
@@ -753,7 +826,7 @@ public final class PassengerCount {
        */
       public Builder mergePayload(fi.hsl.common.passengercount.proto.PassengerCount.Payload value) {
         if (payloadBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+          if (((bitField0_ & 0x00000004) != 0) &&
               payload_ != null &&
               payload_ != fi.hsl.common.passengercount.proto.PassengerCount.Payload.getDefaultInstance()) {
             payload_ =
@@ -816,11 +889,13 @@ public final class PassengerCount {
         }
         return payloadBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -842,11 +917,12 @@ public final class PassengerCount {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Data>
         PARSER = new com.google.protobuf.AbstractParser<Data>() {
+      @java.lang.Override
       public Data parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Data(input, extensionRegistry);
+        return new Data(input, extensionRegistry);
       }
     };
 
@@ -859,6 +935,7 @@ public final class PassengerCount {
       return PARSER;
     }
 
+    @java.lang.Override
     public fi.hsl.common.passengercount.proto.PassengerCount.Data getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -870,199 +947,240 @@ public final class PassengerCount {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required string desi = 1;</code>
+     * <code>optional string desi = 1;</code>
+     * @return Whether the desi field is set.
      */
     boolean hasDesi();
     /**
-     * <code>required string desi = 1;</code>
+     * <code>optional string desi = 1;</code>
+     * @return The desi.
      */
     java.lang.String getDesi();
     /**
-     * <code>required string desi = 1;</code>
+     * <code>optional string desi = 1;</code>
+     * @return The bytes for desi.
      */
     com.google.protobuf.ByteString
         getDesiBytes();
 
     /**
-     * <code>required string dir = 2;</code>
+     * <code>optional string dir = 2;</code>
+     * @return Whether the dir field is set.
      */
     boolean hasDir();
     /**
-     * <code>required string dir = 2;</code>
+     * <code>optional string dir = 2;</code>
+     * @return The dir.
      */
     java.lang.String getDir();
     /**
-     * <code>required string dir = 2;</code>
+     * <code>optional string dir = 2;</code>
+     * @return The bytes for dir.
      */
     com.google.protobuf.ByteString
         getDirBytes();
 
     /**
-     * <code>required int32 oper = 3;</code>
+     * <code>optional int32 oper = 3;</code>
+     * @return Whether the oper field is set.
      */
     boolean hasOper();
     /**
-     * <code>required int32 oper = 3;</code>
+     * <code>optional int32 oper = 3;</code>
+     * @return The oper.
      */
     int getOper();
 
     /**
-     * <code>required int32 veh = 4;</code>
+     * <code>optional int32 veh = 4;</code>
+     * @return Whether the veh field is set.
      */
     boolean hasVeh();
     /**
-     * <code>required int32 veh = 4;</code>
+     * <code>optional int32 veh = 4;</code>
+     * @return The veh.
      */
     int getVeh();
 
     /**
-     * <code>required int64 tst = 5;</code>
+     * <code>optional int64 tst = 5;</code>
+     * @return Whether the tst field is set.
      */
     boolean hasTst();
     /**
-     * <code>required int64 tst = 5;</code>
+     * <code>optional int64 tst = 5;</code>
+     * @return The tst.
      */
     long getTst();
 
     /**
-     * <code>required int64 tsi = 6;</code>
+     * <code>optional int64 tsi = 6;</code>
+     * @return Whether the tsi field is set.
      */
     boolean hasTsi();
     /**
-     * <code>required int64 tsi = 6;</code>
+     * <code>optional int64 tsi = 6;</code>
+     * @return The tsi.
      */
     long getTsi();
 
     /**
-     * <code>required double lat = 7;</code>
+     * <code>optional double lat = 7;</code>
+     * @return Whether the lat field is set.
      */
     boolean hasLat();
     /**
-     * <code>required double lat = 7;</code>
+     * <code>optional double lat = 7;</code>
+     * @return The lat.
      */
     double getLat();
 
     /**
-     * <code>required double long = 8;</code>
+     * <code>optional double long = 8;</code>
+     * @return Whether the long field is set.
      */
     boolean hasLong();
     /**
-     * <code>required double long = 8;</code>
+     * <code>optional double long = 8;</code>
+     * @return The long.
      */
     double getLong();
 
     /**
-     * <code>required double odo = 9;</code>
+     * <code>optional double odo = 9;</code>
+     * @return Whether the odo field is set.
      */
     boolean hasOdo();
     /**
-     * <code>required double odo = 9;</code>
+     * <code>optional double odo = 9;</code>
+     * @return The odo.
      */
     double getOdo();
 
     /**
-     * <code>required string oday = 10;</code>
+     * <code>optional string oday = 10;</code>
+     * @return Whether the oday field is set.
      */
     boolean hasOday();
     /**
-     * <code>required string oday = 10;</code>
+     * <code>optional string oday = 10;</code>
+     * @return The oday.
      */
     java.lang.String getOday();
     /**
-     * <code>required string oday = 10;</code>
+     * <code>optional string oday = 10;</code>
+     * @return The bytes for oday.
      */
     com.google.protobuf.ByteString
         getOdayBytes();
 
     /**
-     * <code>required int32 jrn = 11;</code>
+     * <code>optional int32 jrn = 11;</code>
+     * @return Whether the jrn field is set.
      */
     boolean hasJrn();
     /**
-     * <code>required int32 jrn = 11;</code>
+     * <code>optional int32 jrn = 11;</code>
+     * @return The jrn.
      */
     int getJrn();
 
     /**
-     * <code>required int32 line = 12;</code>
+     * <code>optional int32 line = 12;</code>
+     * @return Whether the line field is set.
      */
     boolean hasLine();
     /**
-     * <code>required int32 line = 12;</code>
+     * <code>optional int32 line = 12;</code>
+     * @return The line.
      */
     int getLine();
 
     /**
-     * <code>required string start = 13;</code>
+     * <code>optional string start = 13;</code>
+     * @return Whether the start field is set.
      */
     boolean hasStart();
     /**
-     * <code>required string start = 13;</code>
+     * <code>optional string start = 13;</code>
+     * @return The start.
      */
     java.lang.String getStart();
     /**
-     * <code>required string start = 13;</code>
+     * <code>optional string start = 13;</code>
+     * @return The bytes for start.
      */
     com.google.protobuf.ByteString
         getStartBytes();
 
     /**
-     * <code>required string loc = 14;</code>
+     * <code>optional string loc = 14;</code>
+     * @return Whether the loc field is set.
      */
     boolean hasLoc();
     /**
-     * <code>required string loc = 14;</code>
+     * <code>optional string loc = 14;</code>
+     * @return The loc.
      */
     java.lang.String getLoc();
     /**
-     * <code>required string loc = 14;</code>
+     * <code>optional string loc = 14;</code>
+     * @return The bytes for loc.
      */
     com.google.protobuf.ByteString
         getLocBytes();
 
     /**
-     * <code>required int32 stop = 15;</code>
+     * <code>optional int32 stop = 15;</code>
+     * @return Whether the stop field is set.
      */
     boolean hasStop();
     /**
-     * <code>required int32 stop = 15;</code>
+     * <code>optional int32 stop = 15;</code>
+     * @return The stop.
      */
     int getStop();
 
     /**
-     * <code>required string route = 16;</code>
+     * <code>optional string route = 16;</code>
+     * @return Whether the route field is set.
      */
     boolean hasRoute();
     /**
-     * <code>required string route = 16;</code>
+     * <code>optional string route = 16;</code>
+     * @return The route.
      */
     java.lang.String getRoute();
     /**
-     * <code>required string route = 16;</code>
+     * <code>optional string route = 16;</code>
+     * @return The bytes for route.
      */
     com.google.protobuf.ByteString
         getRouteBytes();
 
     /**
-     * <code>required .proto.VehicleCounts vehicleCounts = 17;</code>
+     * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+     * @return Whether the vehicleCounts field is set.
      */
     boolean hasVehicleCounts();
     /**
-     * <code>required .proto.VehicleCounts vehicleCounts = 17;</code>
+     * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+     * @return The vehicleCounts.
      */
     fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts getVehicleCounts();
     /**
-     * <code>required .proto.VehicleCounts vehicleCounts = 17;</code>
+     * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
      */
     fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder getVehicleCountsOrBuilder();
   }
   /**
    * Protobuf type {@code proto.Payload}
    */
-  public  static final class Payload extends
+  public static final class Payload extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.Payload)
       PayloadOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Payload.newBuilder() to construct.
     private Payload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1070,20 +1188,17 @@ public final class PassengerCount {
     private Payload() {
       desi_ = "";
       dir_ = "";
-      oper_ = 0;
-      veh_ = 0;
-      tst_ = 0L;
-      tsi_ = 0L;
-      lat_ = 0D;
-      long_ = 0D;
-      odo_ = 0D;
       oday_ = "";
-      jrn_ = 0;
-      line_ = 0;
       start_ = "";
       loc_ = "";
-      stop_ = 0;
       route_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Payload();
     }
 
     @java.lang.Override
@@ -1096,6 +1211,9 @@ public final class PassengerCount {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1107,13 +1225,6 @@ public final class PassengerCount {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
@@ -1202,7 +1313,7 @@ public final class PassengerCount {
             }
             case 138: {
               fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder subBuilder = null;
-              if (((bitField0_ & 0x00010000) == 0x00010000)) {
+              if (((bitField0_ & 0x00010000) != 0)) {
                 subBuilder = vehicleCounts_.toBuilder();
               }
               vehicleCounts_ = input.readMessage(fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.PARSER, extensionRegistry);
@@ -1211,6 +1322,13 @@ public final class PassengerCount {
                 vehicleCounts_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00010000;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1230,6 +1348,7 @@ public final class PassengerCount {
       return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Payload_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Payload_fieldAccessorTable
@@ -1241,14 +1360,18 @@ public final class PassengerCount {
     public static final int DESI_FIELD_NUMBER = 1;
     private volatile java.lang.Object desi_;
     /**
-     * <code>required string desi = 1;</code>
+     * <code>optional string desi = 1;</code>
+     * @return Whether the desi field is set.
      */
+    @java.lang.Override
     public boolean hasDesi() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>required string desi = 1;</code>
+     * <code>optional string desi = 1;</code>
+     * @return The desi.
      */
+    @java.lang.Override
     public java.lang.String getDesi() {
       java.lang.Object ref = desi_;
       if (ref instanceof java.lang.String) {
@@ -1264,8 +1387,10 @@ public final class PassengerCount {
       }
     }
     /**
-     * <code>required string desi = 1;</code>
+     * <code>optional string desi = 1;</code>
+     * @return The bytes for desi.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDesiBytes() {
       java.lang.Object ref = desi_;
@@ -1283,14 +1408,18 @@ public final class PassengerCount {
     public static final int DIR_FIELD_NUMBER = 2;
     private volatile java.lang.Object dir_;
     /**
-     * <code>required string dir = 2;</code>
+     * <code>optional string dir = 2;</code>
+     * @return Whether the dir field is set.
      */
+    @java.lang.Override
     public boolean hasDir() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>required string dir = 2;</code>
+     * <code>optional string dir = 2;</code>
+     * @return The dir.
      */
+    @java.lang.Override
     public java.lang.String getDir() {
       java.lang.Object ref = dir_;
       if (ref instanceof java.lang.String) {
@@ -1306,8 +1435,10 @@ public final class PassengerCount {
       }
     }
     /**
-     * <code>required string dir = 2;</code>
+     * <code>optional string dir = 2;</code>
+     * @return The bytes for dir.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDirBytes() {
       java.lang.Object ref = dir_;
@@ -1325,14 +1456,18 @@ public final class PassengerCount {
     public static final int OPER_FIELD_NUMBER = 3;
     private int oper_;
     /**
-     * <code>required int32 oper = 3;</code>
+     * <code>optional int32 oper = 3;</code>
+     * @return Whether the oper field is set.
      */
+    @java.lang.Override
     public boolean hasOper() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>required int32 oper = 3;</code>
+     * <code>optional int32 oper = 3;</code>
+     * @return The oper.
      */
+    @java.lang.Override
     public int getOper() {
       return oper_;
     }
@@ -1340,14 +1475,18 @@ public final class PassengerCount {
     public static final int VEH_FIELD_NUMBER = 4;
     private int veh_;
     /**
-     * <code>required int32 veh = 4;</code>
+     * <code>optional int32 veh = 4;</code>
+     * @return Whether the veh field is set.
      */
+    @java.lang.Override
     public boolean hasVeh() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>required int32 veh = 4;</code>
+     * <code>optional int32 veh = 4;</code>
+     * @return The veh.
      */
+    @java.lang.Override
     public int getVeh() {
       return veh_;
     }
@@ -1355,14 +1494,18 @@ public final class PassengerCount {
     public static final int TST_FIELD_NUMBER = 5;
     private long tst_;
     /**
-     * <code>required int64 tst = 5;</code>
+     * <code>optional int64 tst = 5;</code>
+     * @return Whether the tst field is set.
      */
+    @java.lang.Override
     public boolean hasTst() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>required int64 tst = 5;</code>
+     * <code>optional int64 tst = 5;</code>
+     * @return The tst.
      */
+    @java.lang.Override
     public long getTst() {
       return tst_;
     }
@@ -1370,14 +1513,18 @@ public final class PassengerCount {
     public static final int TSI_FIELD_NUMBER = 6;
     private long tsi_;
     /**
-     * <code>required int64 tsi = 6;</code>
+     * <code>optional int64 tsi = 6;</code>
+     * @return Whether the tsi field is set.
      */
+    @java.lang.Override
     public boolean hasTsi() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>required int64 tsi = 6;</code>
+     * <code>optional int64 tsi = 6;</code>
+     * @return The tsi.
      */
+    @java.lang.Override
     public long getTsi() {
       return tsi_;
     }
@@ -1385,14 +1532,18 @@ public final class PassengerCount {
     public static final int LAT_FIELD_NUMBER = 7;
     private double lat_;
     /**
-     * <code>required double lat = 7;</code>
+     * <code>optional double lat = 7;</code>
+     * @return Whether the lat field is set.
      */
+    @java.lang.Override
     public boolean hasLat() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
-     * <code>required double lat = 7;</code>
+     * <code>optional double lat = 7;</code>
+     * @return The lat.
      */
+    @java.lang.Override
     public double getLat() {
       return lat_;
     }
@@ -1400,14 +1551,18 @@ public final class PassengerCount {
     public static final int LONG_FIELD_NUMBER = 8;
     private double long_;
     /**
-     * <code>required double long = 8;</code>
+     * <code>optional double long = 8;</code>
+     * @return Whether the long field is set.
      */
+    @java.lang.Override
     public boolean hasLong() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>required double long = 8;</code>
+     * <code>optional double long = 8;</code>
+     * @return The long.
      */
+    @java.lang.Override
     public double getLong() {
       return long_;
     }
@@ -1415,14 +1570,18 @@ public final class PassengerCount {
     public static final int ODO_FIELD_NUMBER = 9;
     private double odo_;
     /**
-     * <code>required double odo = 9;</code>
+     * <code>optional double odo = 9;</code>
+     * @return Whether the odo field is set.
      */
+    @java.lang.Override
     public boolean hasOdo() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <code>required double odo = 9;</code>
+     * <code>optional double odo = 9;</code>
+     * @return The odo.
      */
+    @java.lang.Override
     public double getOdo() {
       return odo_;
     }
@@ -1430,14 +1589,18 @@ public final class PassengerCount {
     public static final int ODAY_FIELD_NUMBER = 10;
     private volatile java.lang.Object oday_;
     /**
-     * <code>required string oday = 10;</code>
+     * <code>optional string oday = 10;</code>
+     * @return Whether the oday field is set.
      */
+    @java.lang.Override
     public boolean hasOday() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
-     * <code>required string oday = 10;</code>
+     * <code>optional string oday = 10;</code>
+     * @return The oday.
      */
+    @java.lang.Override
     public java.lang.String getOday() {
       java.lang.Object ref = oday_;
       if (ref instanceof java.lang.String) {
@@ -1453,8 +1616,10 @@ public final class PassengerCount {
       }
     }
     /**
-     * <code>required string oday = 10;</code>
+     * <code>optional string oday = 10;</code>
+     * @return The bytes for oday.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getOdayBytes() {
       java.lang.Object ref = oday_;
@@ -1472,14 +1637,18 @@ public final class PassengerCount {
     public static final int JRN_FIELD_NUMBER = 11;
     private int jrn_;
     /**
-     * <code>required int32 jrn = 11;</code>
+     * <code>optional int32 jrn = 11;</code>
+     * @return Whether the jrn field is set.
      */
+    @java.lang.Override
     public boolean hasJrn() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
-     * <code>required int32 jrn = 11;</code>
+     * <code>optional int32 jrn = 11;</code>
+     * @return The jrn.
      */
+    @java.lang.Override
     public int getJrn() {
       return jrn_;
     }
@@ -1487,14 +1656,18 @@ public final class PassengerCount {
     public static final int LINE_FIELD_NUMBER = 12;
     private int line_;
     /**
-     * <code>required int32 line = 12;</code>
+     * <code>optional int32 line = 12;</code>
+     * @return Whether the line field is set.
      */
+    @java.lang.Override
     public boolean hasLine() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
-     * <code>required int32 line = 12;</code>
+     * <code>optional int32 line = 12;</code>
+     * @return The line.
      */
+    @java.lang.Override
     public int getLine() {
       return line_;
     }
@@ -1502,14 +1675,18 @@ public final class PassengerCount {
     public static final int START_FIELD_NUMBER = 13;
     private volatile java.lang.Object start_;
     /**
-     * <code>required string start = 13;</code>
+     * <code>optional string start = 13;</code>
+     * @return Whether the start field is set.
      */
+    @java.lang.Override
     public boolean hasStart() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
-     * <code>required string start = 13;</code>
+     * <code>optional string start = 13;</code>
+     * @return The start.
      */
+    @java.lang.Override
     public java.lang.String getStart() {
       java.lang.Object ref = start_;
       if (ref instanceof java.lang.String) {
@@ -1525,8 +1702,10 @@ public final class PassengerCount {
       }
     }
     /**
-     * <code>required string start = 13;</code>
+     * <code>optional string start = 13;</code>
+     * @return The bytes for start.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getStartBytes() {
       java.lang.Object ref = start_;
@@ -1544,14 +1723,18 @@ public final class PassengerCount {
     public static final int LOC_FIELD_NUMBER = 14;
     private volatile java.lang.Object loc_;
     /**
-     * <code>required string loc = 14;</code>
+     * <code>optional string loc = 14;</code>
+     * @return Whether the loc field is set.
      */
+    @java.lang.Override
     public boolean hasLoc() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
-     * <code>required string loc = 14;</code>
+     * <code>optional string loc = 14;</code>
+     * @return The loc.
      */
+    @java.lang.Override
     public java.lang.String getLoc() {
       java.lang.Object ref = loc_;
       if (ref instanceof java.lang.String) {
@@ -1567,8 +1750,10 @@ public final class PassengerCount {
       }
     }
     /**
-     * <code>required string loc = 14;</code>
+     * <code>optional string loc = 14;</code>
+     * @return The bytes for loc.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getLocBytes() {
       java.lang.Object ref = loc_;
@@ -1586,14 +1771,18 @@ public final class PassengerCount {
     public static final int STOP_FIELD_NUMBER = 15;
     private int stop_;
     /**
-     * <code>required int32 stop = 15;</code>
+     * <code>optional int32 stop = 15;</code>
+     * @return Whether the stop field is set.
      */
+    @java.lang.Override
     public boolean hasStop() {
-      return ((bitField0_ & 0x00004000) == 0x00004000);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
-     * <code>required int32 stop = 15;</code>
+     * <code>optional int32 stop = 15;</code>
+     * @return The stop.
      */
+    @java.lang.Override
     public int getStop() {
       return stop_;
     }
@@ -1601,14 +1790,18 @@ public final class PassengerCount {
     public static final int ROUTE_FIELD_NUMBER = 16;
     private volatile java.lang.Object route_;
     /**
-     * <code>required string route = 16;</code>
+     * <code>optional string route = 16;</code>
+     * @return Whether the route field is set.
      */
+    @java.lang.Override
     public boolean hasRoute() {
-      return ((bitField0_ & 0x00008000) == 0x00008000);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
-     * <code>required string route = 16;</code>
+     * <code>optional string route = 16;</code>
+     * @return The route.
      */
+    @java.lang.Override
     public java.lang.String getRoute() {
       java.lang.Object ref = route_;
       if (ref instanceof java.lang.String) {
@@ -1624,8 +1817,10 @@ public final class PassengerCount {
       }
     }
     /**
-     * <code>required string route = 16;</code>
+     * <code>optional string route = 16;</code>
+     * @return The bytes for route.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getRouteBytes() {
       java.lang.Object ref = route_;
@@ -1643,226 +1838,162 @@ public final class PassengerCount {
     public static final int VEHICLECOUNTS_FIELD_NUMBER = 17;
     private fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts vehicleCounts_;
     /**
-     * <code>required .proto.VehicleCounts vehicleCounts = 17;</code>
+     * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+     * @return Whether the vehicleCounts field is set.
      */
+    @java.lang.Override
     public boolean hasVehicleCounts() {
-      return ((bitField0_ & 0x00010000) == 0x00010000);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
-     * <code>required .proto.VehicleCounts vehicleCounts = 17;</code>
+     * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+     * @return The vehicleCounts.
      */
+    @java.lang.Override
     public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts getVehicleCounts() {
       return vehicleCounts_ == null ? fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.getDefaultInstance() : vehicleCounts_;
     }
     /**
-     * <code>required .proto.VehicleCounts vehicleCounts = 17;</code>
+     * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
      */
+    @java.lang.Override
     public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder getVehicleCountsOrBuilder() {
       return vehicleCounts_ == null ? fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.getDefaultInstance() : vehicleCounts_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasDesi()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasDir()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasOper()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasVeh()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTst()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTsi()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasLat()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasLong()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasOdo()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasOday()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasJrn()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasLine()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasStart()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasLoc()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasStop()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasRoute()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasVehicleCounts()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!getVehicleCounts().isInitialized()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       memoizedIsInitialized = 1;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, desi_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, dir_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         output.writeInt32(3, oper_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         output.writeInt32(4, veh_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         output.writeInt64(5, tst_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         output.writeInt64(6, tsi_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         output.writeDouble(7, lat_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         output.writeDouble(8, long_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         output.writeDouble(9, odo_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, oday_);
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         output.writeInt32(11, jrn_);
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         output.writeInt32(12, line_);
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, start_);
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((bitField0_ & 0x00002000) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 14, loc_);
       }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+      if (((bitField0_ & 0x00004000) != 0)) {
         output.writeInt32(15, stop_);
       }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+      if (((bitField0_ & 0x00008000) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 16, route_);
       }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+      if (((bitField0_ & 0x00010000) != 0)) {
         output.writeMessage(17, getVehicleCounts());
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, desi_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, dir_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, oper_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, veh_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(5, tst_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(6, tsi_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(7, lat_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(8, long_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(9, odo_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, oday_);
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(11, jrn_);
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(12, line_);
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, start_);
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((bitField0_ & 0x00002000) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, loc_);
       }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+      if (((bitField0_ & 0x00004000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(15, stop_);
       }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+      if (((bitField0_ & 0x00008000) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, route_);
       }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+      if (((bitField0_ & 0x00010000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(17, getVehicleCounts());
       }
@@ -1871,7 +2002,6 @@ public final class PassengerCount {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1882,100 +2012,96 @@ public final class PassengerCount {
       }
       fi.hsl.common.passengercount.proto.PassengerCount.Payload other = (fi.hsl.common.passengercount.proto.PassengerCount.Payload) obj;
 
-      boolean result = true;
-      result = result && (hasDesi() == other.hasDesi());
+      if (hasDesi() != other.hasDesi()) return false;
       if (hasDesi()) {
-        result = result && getDesi()
-            .equals(other.getDesi());
+        if (!getDesi()
+            .equals(other.getDesi())) return false;
       }
-      result = result && (hasDir() == other.hasDir());
+      if (hasDir() != other.hasDir()) return false;
       if (hasDir()) {
-        result = result && getDir()
-            .equals(other.getDir());
+        if (!getDir()
+            .equals(other.getDir())) return false;
       }
-      result = result && (hasOper() == other.hasOper());
+      if (hasOper() != other.hasOper()) return false;
       if (hasOper()) {
-        result = result && (getOper()
-            == other.getOper());
+        if (getOper()
+            != other.getOper()) return false;
       }
-      result = result && (hasVeh() == other.hasVeh());
+      if (hasVeh() != other.hasVeh()) return false;
       if (hasVeh()) {
-        result = result && (getVeh()
-            == other.getVeh());
+        if (getVeh()
+            != other.getVeh()) return false;
       }
-      result = result && (hasTst() == other.hasTst());
+      if (hasTst() != other.hasTst()) return false;
       if (hasTst()) {
-        result = result && (getTst()
-            == other.getTst());
+        if (getTst()
+            != other.getTst()) return false;
       }
-      result = result && (hasTsi() == other.hasTsi());
+      if (hasTsi() != other.hasTsi()) return false;
       if (hasTsi()) {
-        result = result && (getTsi()
-            == other.getTsi());
+        if (getTsi()
+            != other.getTsi()) return false;
       }
-      result = result && (hasLat() == other.hasLat());
+      if (hasLat() != other.hasLat()) return false;
       if (hasLat()) {
-        result = result && (
-            java.lang.Double.doubleToLongBits(getLat())
-            == java.lang.Double.doubleToLongBits(
-                other.getLat()));
+        if (java.lang.Double.doubleToLongBits(getLat())
+            != java.lang.Double.doubleToLongBits(
+                other.getLat())) return false;
       }
-      result = result && (hasLong() == other.hasLong());
+      if (hasLong() != other.hasLong()) return false;
       if (hasLong()) {
-        result = result && (
-            java.lang.Double.doubleToLongBits(getLong())
-            == java.lang.Double.doubleToLongBits(
-                other.getLong()));
+        if (java.lang.Double.doubleToLongBits(getLong())
+            != java.lang.Double.doubleToLongBits(
+                other.getLong())) return false;
       }
-      result = result && (hasOdo() == other.hasOdo());
+      if (hasOdo() != other.hasOdo()) return false;
       if (hasOdo()) {
-        result = result && (
-            java.lang.Double.doubleToLongBits(getOdo())
-            == java.lang.Double.doubleToLongBits(
-                other.getOdo()));
+        if (java.lang.Double.doubleToLongBits(getOdo())
+            != java.lang.Double.doubleToLongBits(
+                other.getOdo())) return false;
       }
-      result = result && (hasOday() == other.hasOday());
+      if (hasOday() != other.hasOday()) return false;
       if (hasOday()) {
-        result = result && getOday()
-            .equals(other.getOday());
+        if (!getOday()
+            .equals(other.getOday())) return false;
       }
-      result = result && (hasJrn() == other.hasJrn());
+      if (hasJrn() != other.hasJrn()) return false;
       if (hasJrn()) {
-        result = result && (getJrn()
-            == other.getJrn());
+        if (getJrn()
+            != other.getJrn()) return false;
       }
-      result = result && (hasLine() == other.hasLine());
+      if (hasLine() != other.hasLine()) return false;
       if (hasLine()) {
-        result = result && (getLine()
-            == other.getLine());
+        if (getLine()
+            != other.getLine()) return false;
       }
-      result = result && (hasStart() == other.hasStart());
+      if (hasStart() != other.hasStart()) return false;
       if (hasStart()) {
-        result = result && getStart()
-            .equals(other.getStart());
+        if (!getStart()
+            .equals(other.getStart())) return false;
       }
-      result = result && (hasLoc() == other.hasLoc());
+      if (hasLoc() != other.hasLoc()) return false;
       if (hasLoc()) {
-        result = result && getLoc()
-            .equals(other.getLoc());
+        if (!getLoc()
+            .equals(other.getLoc())) return false;
       }
-      result = result && (hasStop() == other.hasStop());
+      if (hasStop() != other.hasStop()) return false;
       if (hasStop()) {
-        result = result && (getStop()
-            == other.getStop());
+        if (getStop()
+            != other.getStop()) return false;
       }
-      result = result && (hasRoute() == other.hasRoute());
+      if (hasRoute() != other.hasRoute()) return false;
       if (hasRoute()) {
-        result = result && getRoute()
-            .equals(other.getRoute());
+        if (!getRoute()
+            .equals(other.getRoute())) return false;
       }
-      result = result && (hasVehicleCounts() == other.hasVehicleCounts());
+      if (hasVehicleCounts() != other.hasVehicleCounts()) return false;
       if (hasVehicleCounts()) {
-        result = result && getVehicleCounts()
-            .equals(other.getVehicleCounts());
+        if (!getVehicleCounts()
+            .equals(other.getVehicleCounts())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1984,7 +2110,7 @@ public final class PassengerCount {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasDesi()) {
         hash = (37 * hash) + DESI_FIELD_NUMBER;
         hash = (53 * hash) + getDesi().hashCode();
@@ -2064,6 +2190,17 @@ public final class PassengerCount {
     }
 
     public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -2122,6 +2259,7 @@ public final class PassengerCount {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2129,6 +2267,7 @@ public final class PassengerCount {
     public static Builder newBuilder(fi.hsl.common.passengercount.proto.PassengerCount.Payload prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2152,6 +2291,7 @@ public final class PassengerCount {
         return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Payload_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Payload_fieldAccessorTable
@@ -2175,6 +2315,7 @@ public final class PassengerCount {
           getVehicleCountsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         desi_ = "";
@@ -2218,15 +2359,18 @@ public final class PassengerCount {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Payload_descriptor;
       }
 
+      @java.lang.Override
       public fi.hsl.common.passengercount.proto.PassengerCount.Payload getDefaultInstanceForType() {
         return fi.hsl.common.passengercount.proto.PassengerCount.Payload.getDefaultInstance();
       }
 
+      @java.lang.Override
       public fi.hsl.common.passengercount.proto.PassengerCount.Payload build() {
         fi.hsl.common.passengercount.proto.PassengerCount.Payload result = buildPartial();
         if (!result.isInitialized()) {
@@ -2235,113 +2379,121 @@ public final class PassengerCount {
         return result;
       }
 
+      @java.lang.Override
       public fi.hsl.common.passengercount.proto.PassengerCount.Payload buildPartial() {
         fi.hsl.common.passengercount.proto.PassengerCount.Payload result = new fi.hsl.common.passengercount.proto.PassengerCount.Payload(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.desi_ = desi_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           to_bitField0_ |= 0x00000002;
         }
         result.dir_ = dir_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.oper_ = oper_;
           to_bitField0_ |= 0x00000004;
         }
-        result.oper_ = oper_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.veh_ = veh_;
           to_bitField0_ |= 0x00000008;
         }
-        result.veh_ = veh_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.tst_ = tst_;
           to_bitField0_ |= 0x00000010;
         }
-        result.tst_ = tst_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.tsi_ = tsi_;
           to_bitField0_ |= 0x00000020;
         }
-        result.tsi_ = tsi_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.lat_ = lat_;
           to_bitField0_ |= 0x00000040;
         }
-        result.lat_ = lat_;
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.long_ = long_;
           to_bitField0_ |= 0x00000080;
         }
-        result.long_ = long_;
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.odo_ = odo_;
           to_bitField0_ |= 0x00000100;
         }
-        result.odo_ = odo_;
-        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((from_bitField0_ & 0x00000200) != 0)) {
           to_bitField0_ |= 0x00000200;
         }
         result.oday_ = oday_;
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.jrn_ = jrn_;
           to_bitField0_ |= 0x00000400;
         }
-        result.jrn_ = jrn_;
-        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.line_ = line_;
           to_bitField0_ |= 0x00000800;
         }
-        result.line_ = line_;
-        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+        if (((from_bitField0_ & 0x00001000) != 0)) {
           to_bitField0_ |= 0x00001000;
         }
         result.start_ = start_;
-        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+        if (((from_bitField0_ & 0x00002000) != 0)) {
           to_bitField0_ |= 0x00002000;
         }
         result.loc_ = loc_;
-        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.stop_ = stop_;
           to_bitField0_ |= 0x00004000;
         }
-        result.stop_ = stop_;
-        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+        if (((from_bitField0_ & 0x00008000) != 0)) {
           to_bitField0_ |= 0x00008000;
         }
         result.route_ = route_;
-        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
+        if (((from_bitField0_ & 0x00010000) != 0)) {
+          if (vehicleCountsBuilder_ == null) {
+            result.vehicleCounts_ = vehicleCounts_;
+          } else {
+            result.vehicleCounts_ = vehicleCountsBuilder_.build();
+          }
           to_bitField0_ |= 0x00010000;
-        }
-        if (vehicleCountsBuilder_ == null) {
-          result.vehicleCounts_ = vehicleCounts_;
-        } else {
-          result.vehicleCounts_ = vehicleCountsBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.passengercount.proto.PassengerCount.Payload) {
           return mergeFrom((fi.hsl.common.passengercount.proto.PassengerCount.Payload)other);
@@ -2421,64 +2573,12 @@ public final class PassengerCount {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
-        if (!hasDesi()) {
-          return false;
-        }
-        if (!hasDir()) {
-          return false;
-        }
-        if (!hasOper()) {
-          return false;
-        }
-        if (!hasVeh()) {
-          return false;
-        }
-        if (!hasTst()) {
-          return false;
-        }
-        if (!hasTsi()) {
-          return false;
-        }
-        if (!hasLat()) {
-          return false;
-        }
-        if (!hasLong()) {
-          return false;
-        }
-        if (!hasOdo()) {
-          return false;
-        }
-        if (!hasOday()) {
-          return false;
-        }
-        if (!hasJrn()) {
-          return false;
-        }
-        if (!hasLine()) {
-          return false;
-        }
-        if (!hasStart()) {
-          return false;
-        }
-        if (!hasLoc()) {
-          return false;
-        }
-        if (!hasStop()) {
-          return false;
-        }
-        if (!hasRoute()) {
-          return false;
-        }
-        if (!hasVehicleCounts()) {
-          return false;
-        }
-        if (!getVehicleCounts().isInitialized()) {
-          return false;
-        }
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2500,13 +2600,15 @@ public final class PassengerCount {
 
       private java.lang.Object desi_ = "";
       /**
-       * <code>required string desi = 1;</code>
+       * <code>optional string desi = 1;</code>
+       * @return Whether the desi field is set.
        */
       public boolean hasDesi() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
-       * <code>required string desi = 1;</code>
+       * <code>optional string desi = 1;</code>
+       * @return The desi.
        */
       public java.lang.String getDesi() {
         java.lang.Object ref = desi_;
@@ -2523,7 +2625,8 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string desi = 1;</code>
+       * <code>optional string desi = 1;</code>
+       * @return The bytes for desi.
        */
       public com.google.protobuf.ByteString
           getDesiBytes() {
@@ -2539,7 +2642,9 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string desi = 1;</code>
+       * <code>optional string desi = 1;</code>
+       * @param value The desi to set.
+       * @return This builder for chaining.
        */
       public Builder setDesi(
           java.lang.String value) {
@@ -2552,7 +2657,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string desi = 1;</code>
+       * <code>optional string desi = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDesi() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -2561,7 +2667,9 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string desi = 1;</code>
+       * <code>optional string desi = 1;</code>
+       * @param value The bytes for desi to set.
+       * @return This builder for chaining.
        */
       public Builder setDesiBytes(
           com.google.protobuf.ByteString value) {
@@ -2576,13 +2684,15 @@ public final class PassengerCount {
 
       private java.lang.Object dir_ = "";
       /**
-       * <code>required string dir = 2;</code>
+       * <code>optional string dir = 2;</code>
+       * @return Whether the dir field is set.
        */
       public boolean hasDir() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>required string dir = 2;</code>
+       * <code>optional string dir = 2;</code>
+       * @return The dir.
        */
       public java.lang.String getDir() {
         java.lang.Object ref = dir_;
@@ -2599,7 +2709,8 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string dir = 2;</code>
+       * <code>optional string dir = 2;</code>
+       * @return The bytes for dir.
        */
       public com.google.protobuf.ByteString
           getDirBytes() {
@@ -2615,7 +2726,9 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string dir = 2;</code>
+       * <code>optional string dir = 2;</code>
+       * @param value The dir to set.
+       * @return This builder for chaining.
        */
       public Builder setDir(
           java.lang.String value) {
@@ -2628,7 +2741,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string dir = 2;</code>
+       * <code>optional string dir = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDir() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -2637,7 +2751,9 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string dir = 2;</code>
+       * <code>optional string dir = 2;</code>
+       * @param value The bytes for dir to set.
+       * @return This builder for chaining.
        */
       public Builder setDirBytes(
           com.google.protobuf.ByteString value) {
@@ -2652,19 +2768,25 @@ public final class PassengerCount {
 
       private int oper_ ;
       /**
-       * <code>required int32 oper = 3;</code>
+       * <code>optional int32 oper = 3;</code>
+       * @return Whether the oper field is set.
        */
+      @java.lang.Override
       public boolean hasOper() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
-       * <code>required int32 oper = 3;</code>
+       * <code>optional int32 oper = 3;</code>
+       * @return The oper.
        */
+      @java.lang.Override
       public int getOper() {
         return oper_;
       }
       /**
-       * <code>required int32 oper = 3;</code>
+       * <code>optional int32 oper = 3;</code>
+       * @param value The oper to set.
+       * @return This builder for chaining.
        */
       public Builder setOper(int value) {
         bitField0_ |= 0x00000004;
@@ -2673,7 +2795,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required int32 oper = 3;</code>
+       * <code>optional int32 oper = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOper() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -2684,19 +2807,25 @@ public final class PassengerCount {
 
       private int veh_ ;
       /**
-       * <code>required int32 veh = 4;</code>
+       * <code>optional int32 veh = 4;</code>
+       * @return Whether the veh field is set.
        */
+      @java.lang.Override
       public boolean hasVeh() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
-       * <code>required int32 veh = 4;</code>
+       * <code>optional int32 veh = 4;</code>
+       * @return The veh.
        */
+      @java.lang.Override
       public int getVeh() {
         return veh_;
       }
       /**
-       * <code>required int32 veh = 4;</code>
+       * <code>optional int32 veh = 4;</code>
+       * @param value The veh to set.
+       * @return This builder for chaining.
        */
       public Builder setVeh(int value) {
         bitField0_ |= 0x00000008;
@@ -2705,7 +2834,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required int32 veh = 4;</code>
+       * <code>optional int32 veh = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearVeh() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -2716,19 +2846,25 @@ public final class PassengerCount {
 
       private long tst_ ;
       /**
-       * <code>required int64 tst = 5;</code>
+       * <code>optional int64 tst = 5;</code>
+       * @return Whether the tst field is set.
        */
+      @java.lang.Override
       public boolean hasTst() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
-       * <code>required int64 tst = 5;</code>
+       * <code>optional int64 tst = 5;</code>
+       * @return The tst.
        */
+      @java.lang.Override
       public long getTst() {
         return tst_;
       }
       /**
-       * <code>required int64 tst = 5;</code>
+       * <code>optional int64 tst = 5;</code>
+       * @param value The tst to set.
+       * @return This builder for chaining.
        */
       public Builder setTst(long value) {
         bitField0_ |= 0x00000010;
@@ -2737,7 +2873,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required int64 tst = 5;</code>
+       * <code>optional int64 tst = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTst() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -2748,19 +2885,25 @@ public final class PassengerCount {
 
       private long tsi_ ;
       /**
-       * <code>required int64 tsi = 6;</code>
+       * <code>optional int64 tsi = 6;</code>
+       * @return Whether the tsi field is set.
        */
+      @java.lang.Override
       public boolean hasTsi() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
-       * <code>required int64 tsi = 6;</code>
+       * <code>optional int64 tsi = 6;</code>
+       * @return The tsi.
        */
+      @java.lang.Override
       public long getTsi() {
         return tsi_;
       }
       /**
-       * <code>required int64 tsi = 6;</code>
+       * <code>optional int64 tsi = 6;</code>
+       * @param value The tsi to set.
+       * @return This builder for chaining.
        */
       public Builder setTsi(long value) {
         bitField0_ |= 0x00000020;
@@ -2769,7 +2912,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required int64 tsi = 6;</code>
+       * <code>optional int64 tsi = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTsi() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -2780,19 +2924,25 @@ public final class PassengerCount {
 
       private double lat_ ;
       /**
-       * <code>required double lat = 7;</code>
+       * <code>optional double lat = 7;</code>
+       * @return Whether the lat field is set.
        */
+      @java.lang.Override
       public boolean hasLat() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
-       * <code>required double lat = 7;</code>
+       * <code>optional double lat = 7;</code>
+       * @return The lat.
        */
+      @java.lang.Override
       public double getLat() {
         return lat_;
       }
       /**
-       * <code>required double lat = 7;</code>
+       * <code>optional double lat = 7;</code>
+       * @param value The lat to set.
+       * @return This builder for chaining.
        */
       public Builder setLat(double value) {
         bitField0_ |= 0x00000040;
@@ -2801,7 +2951,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required double lat = 7;</code>
+       * <code>optional double lat = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLat() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -2812,19 +2963,25 @@ public final class PassengerCount {
 
       private double long_ ;
       /**
-       * <code>required double long = 8;</code>
+       * <code>optional double long = 8;</code>
+       * @return Whether the long field is set.
        */
+      @java.lang.Override
       public boolean hasLong() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
-       * <code>required double long = 8;</code>
+       * <code>optional double long = 8;</code>
+       * @return The long.
        */
+      @java.lang.Override
       public double getLong() {
         return long_;
       }
       /**
-       * <code>required double long = 8;</code>
+       * <code>optional double long = 8;</code>
+       * @param value The long to set.
+       * @return This builder for chaining.
        */
       public Builder setLong(double value) {
         bitField0_ |= 0x00000080;
@@ -2833,7 +2990,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required double long = 8;</code>
+       * <code>optional double long = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLong() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -2844,19 +3002,25 @@ public final class PassengerCount {
 
       private double odo_ ;
       /**
-       * <code>required double odo = 9;</code>
+       * <code>optional double odo = 9;</code>
+       * @return Whether the odo field is set.
        */
+      @java.lang.Override
       public boolean hasOdo() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
-       * <code>required double odo = 9;</code>
+       * <code>optional double odo = 9;</code>
+       * @return The odo.
        */
+      @java.lang.Override
       public double getOdo() {
         return odo_;
       }
       /**
-       * <code>required double odo = 9;</code>
+       * <code>optional double odo = 9;</code>
+       * @param value The odo to set.
+       * @return This builder for chaining.
        */
       public Builder setOdo(double value) {
         bitField0_ |= 0x00000100;
@@ -2865,7 +3029,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required double odo = 9;</code>
+       * <code>optional double odo = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOdo() {
         bitField0_ = (bitField0_ & ~0x00000100);
@@ -2876,13 +3041,15 @@ public final class PassengerCount {
 
       private java.lang.Object oday_ = "";
       /**
-       * <code>required string oday = 10;</code>
+       * <code>optional string oday = 10;</code>
+       * @return Whether the oday field is set.
        */
       public boolean hasOday() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000200) != 0);
       }
       /**
-       * <code>required string oday = 10;</code>
+       * <code>optional string oday = 10;</code>
+       * @return The oday.
        */
       public java.lang.String getOday() {
         java.lang.Object ref = oday_;
@@ -2899,7 +3066,8 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string oday = 10;</code>
+       * <code>optional string oday = 10;</code>
+       * @return The bytes for oday.
        */
       public com.google.protobuf.ByteString
           getOdayBytes() {
@@ -2915,7 +3083,9 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string oday = 10;</code>
+       * <code>optional string oday = 10;</code>
+       * @param value The oday to set.
+       * @return This builder for chaining.
        */
       public Builder setOday(
           java.lang.String value) {
@@ -2928,7 +3098,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string oday = 10;</code>
+       * <code>optional string oday = 10;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOday() {
         bitField0_ = (bitField0_ & ~0x00000200);
@@ -2937,7 +3108,9 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string oday = 10;</code>
+       * <code>optional string oday = 10;</code>
+       * @param value The bytes for oday to set.
+       * @return This builder for chaining.
        */
       public Builder setOdayBytes(
           com.google.protobuf.ByteString value) {
@@ -2952,19 +3125,25 @@ public final class PassengerCount {
 
       private int jrn_ ;
       /**
-       * <code>required int32 jrn = 11;</code>
+       * <code>optional int32 jrn = 11;</code>
+       * @return Whether the jrn field is set.
        */
+      @java.lang.Override
       public boolean hasJrn() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000400) != 0);
       }
       /**
-       * <code>required int32 jrn = 11;</code>
+       * <code>optional int32 jrn = 11;</code>
+       * @return The jrn.
        */
+      @java.lang.Override
       public int getJrn() {
         return jrn_;
       }
       /**
-       * <code>required int32 jrn = 11;</code>
+       * <code>optional int32 jrn = 11;</code>
+       * @param value The jrn to set.
+       * @return This builder for chaining.
        */
       public Builder setJrn(int value) {
         bitField0_ |= 0x00000400;
@@ -2973,7 +3152,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required int32 jrn = 11;</code>
+       * <code>optional int32 jrn = 11;</code>
+       * @return This builder for chaining.
        */
       public Builder clearJrn() {
         bitField0_ = (bitField0_ & ~0x00000400);
@@ -2984,19 +3164,25 @@ public final class PassengerCount {
 
       private int line_ ;
       /**
-       * <code>required int32 line = 12;</code>
+       * <code>optional int32 line = 12;</code>
+       * @return Whether the line field is set.
        */
+      @java.lang.Override
       public boolean hasLine() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
+        return ((bitField0_ & 0x00000800) != 0);
       }
       /**
-       * <code>required int32 line = 12;</code>
+       * <code>optional int32 line = 12;</code>
+       * @return The line.
        */
+      @java.lang.Override
       public int getLine() {
         return line_;
       }
       /**
-       * <code>required int32 line = 12;</code>
+       * <code>optional int32 line = 12;</code>
+       * @param value The line to set.
+       * @return This builder for chaining.
        */
       public Builder setLine(int value) {
         bitField0_ |= 0x00000800;
@@ -3005,7 +3191,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required int32 line = 12;</code>
+       * <code>optional int32 line = 12;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLine() {
         bitField0_ = (bitField0_ & ~0x00000800);
@@ -3016,13 +3203,15 @@ public final class PassengerCount {
 
       private java.lang.Object start_ = "";
       /**
-       * <code>required string start = 13;</code>
+       * <code>optional string start = 13;</code>
+       * @return Whether the start field is set.
        */
       public boolean hasStart() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
+        return ((bitField0_ & 0x00001000) != 0);
       }
       /**
-       * <code>required string start = 13;</code>
+       * <code>optional string start = 13;</code>
+       * @return The start.
        */
       public java.lang.String getStart() {
         java.lang.Object ref = start_;
@@ -3039,7 +3228,8 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string start = 13;</code>
+       * <code>optional string start = 13;</code>
+       * @return The bytes for start.
        */
       public com.google.protobuf.ByteString
           getStartBytes() {
@@ -3055,7 +3245,9 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string start = 13;</code>
+       * <code>optional string start = 13;</code>
+       * @param value The start to set.
+       * @return This builder for chaining.
        */
       public Builder setStart(
           java.lang.String value) {
@@ -3068,7 +3260,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string start = 13;</code>
+       * <code>optional string start = 13;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStart() {
         bitField0_ = (bitField0_ & ~0x00001000);
@@ -3077,7 +3270,9 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string start = 13;</code>
+       * <code>optional string start = 13;</code>
+       * @param value The bytes for start to set.
+       * @return This builder for chaining.
        */
       public Builder setStartBytes(
           com.google.protobuf.ByteString value) {
@@ -3092,13 +3287,15 @@ public final class PassengerCount {
 
       private java.lang.Object loc_ = "";
       /**
-       * <code>required string loc = 14;</code>
+       * <code>optional string loc = 14;</code>
+       * @return Whether the loc field is set.
        */
       public boolean hasLoc() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
+        return ((bitField0_ & 0x00002000) != 0);
       }
       /**
-       * <code>required string loc = 14;</code>
+       * <code>optional string loc = 14;</code>
+       * @return The loc.
        */
       public java.lang.String getLoc() {
         java.lang.Object ref = loc_;
@@ -3115,7 +3312,8 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string loc = 14;</code>
+       * <code>optional string loc = 14;</code>
+       * @return The bytes for loc.
        */
       public com.google.protobuf.ByteString
           getLocBytes() {
@@ -3131,7 +3329,9 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string loc = 14;</code>
+       * <code>optional string loc = 14;</code>
+       * @param value The loc to set.
+       * @return This builder for chaining.
        */
       public Builder setLoc(
           java.lang.String value) {
@@ -3144,7 +3344,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string loc = 14;</code>
+       * <code>optional string loc = 14;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLoc() {
         bitField0_ = (bitField0_ & ~0x00002000);
@@ -3153,7 +3354,9 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string loc = 14;</code>
+       * <code>optional string loc = 14;</code>
+       * @param value The bytes for loc to set.
+       * @return This builder for chaining.
        */
       public Builder setLocBytes(
           com.google.protobuf.ByteString value) {
@@ -3168,19 +3371,25 @@ public final class PassengerCount {
 
       private int stop_ ;
       /**
-       * <code>required int32 stop = 15;</code>
+       * <code>optional int32 stop = 15;</code>
+       * @return Whether the stop field is set.
        */
+      @java.lang.Override
       public boolean hasStop() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
+        return ((bitField0_ & 0x00004000) != 0);
       }
       /**
-       * <code>required int32 stop = 15;</code>
+       * <code>optional int32 stop = 15;</code>
+       * @return The stop.
        */
+      @java.lang.Override
       public int getStop() {
         return stop_;
       }
       /**
-       * <code>required int32 stop = 15;</code>
+       * <code>optional int32 stop = 15;</code>
+       * @param value The stop to set.
+       * @return This builder for chaining.
        */
       public Builder setStop(int value) {
         bitField0_ |= 0x00004000;
@@ -3189,7 +3398,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required int32 stop = 15;</code>
+       * <code>optional int32 stop = 15;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStop() {
         bitField0_ = (bitField0_ & ~0x00004000);
@@ -3200,13 +3410,15 @@ public final class PassengerCount {
 
       private java.lang.Object route_ = "";
       /**
-       * <code>required string route = 16;</code>
+       * <code>optional string route = 16;</code>
+       * @return Whether the route field is set.
        */
       public boolean hasRoute() {
-        return ((bitField0_ & 0x00008000) == 0x00008000);
+        return ((bitField0_ & 0x00008000) != 0);
       }
       /**
-       * <code>required string route = 16;</code>
+       * <code>optional string route = 16;</code>
+       * @return The route.
        */
       public java.lang.String getRoute() {
         java.lang.Object ref = route_;
@@ -3223,7 +3435,8 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string route = 16;</code>
+       * <code>optional string route = 16;</code>
+       * @return The bytes for route.
        */
       public com.google.protobuf.ByteString
           getRouteBytes() {
@@ -3239,7 +3452,9 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string route = 16;</code>
+       * <code>optional string route = 16;</code>
+       * @param value The route to set.
+       * @return This builder for chaining.
        */
       public Builder setRoute(
           java.lang.String value) {
@@ -3252,7 +3467,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string route = 16;</code>
+       * <code>optional string route = 16;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRoute() {
         bitField0_ = (bitField0_ & ~0x00008000);
@@ -3261,7 +3477,9 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string route = 16;</code>
+       * <code>optional string route = 16;</code>
+       * @param value The bytes for route to set.
+       * @return This builder for chaining.
        */
       public Builder setRouteBytes(
           com.google.protobuf.ByteString value) {
@@ -3274,17 +3492,19 @@ public final class PassengerCount {
         return this;
       }
 
-      private fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts vehicleCounts_ = null;
+      private fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts vehicleCounts_;
       private com.google.protobuf.SingleFieldBuilderV3<
           fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts, fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder, fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder> vehicleCountsBuilder_;
       /**
-       * <code>required .proto.VehicleCounts vehicleCounts = 17;</code>
+       * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+       * @return Whether the vehicleCounts field is set.
        */
       public boolean hasVehicleCounts() {
-        return ((bitField0_ & 0x00010000) == 0x00010000);
+        return ((bitField0_ & 0x00010000) != 0);
       }
       /**
-       * <code>required .proto.VehicleCounts vehicleCounts = 17;</code>
+       * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+       * @return The vehicleCounts.
        */
       public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts getVehicleCounts() {
         if (vehicleCountsBuilder_ == null) {
@@ -3294,7 +3514,7 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required .proto.VehicleCounts vehicleCounts = 17;</code>
+       * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
        */
       public Builder setVehicleCounts(fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts value) {
         if (vehicleCountsBuilder_ == null) {
@@ -3310,7 +3530,7 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required .proto.VehicleCounts vehicleCounts = 17;</code>
+       * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
        */
       public Builder setVehicleCounts(
           fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder builderForValue) {
@@ -3324,11 +3544,11 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required .proto.VehicleCounts vehicleCounts = 17;</code>
+       * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
        */
       public Builder mergeVehicleCounts(fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts value) {
         if (vehicleCountsBuilder_ == null) {
-          if (((bitField0_ & 0x00010000) == 0x00010000) &&
+          if (((bitField0_ & 0x00010000) != 0) &&
               vehicleCounts_ != null &&
               vehicleCounts_ != fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.getDefaultInstance()) {
             vehicleCounts_ =
@@ -3344,7 +3564,7 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required .proto.VehicleCounts vehicleCounts = 17;</code>
+       * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
        */
       public Builder clearVehicleCounts() {
         if (vehicleCountsBuilder_ == null) {
@@ -3357,7 +3577,7 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required .proto.VehicleCounts vehicleCounts = 17;</code>
+       * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
        */
       public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder getVehicleCountsBuilder() {
         bitField0_ |= 0x00010000;
@@ -3365,7 +3585,7 @@ public final class PassengerCount {
         return getVehicleCountsFieldBuilder().getBuilder();
       }
       /**
-       * <code>required .proto.VehicleCounts vehicleCounts = 17;</code>
+       * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
        */
       public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder getVehicleCountsOrBuilder() {
         if (vehicleCountsBuilder_ != null) {
@@ -3376,7 +3596,7 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required .proto.VehicleCounts vehicleCounts = 17;</code>
+       * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts, fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder, fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder> 
@@ -3391,11 +3611,13 @@ public final class PassengerCount {
         }
         return vehicleCountsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -3417,11 +3639,12 @@ public final class PassengerCount {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Payload>
         PARSER = new com.google.protobuf.AbstractParser<Payload>() {
+      @java.lang.Override
       public Payload parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Payload(input, extensionRegistry);
+        return new Payload(input, extensionRegistry);
       }
     };
 
@@ -3434,6 +3657,7 @@ public final class PassengerCount {
       return PARSER;
     }
 
+    @java.lang.Override
     public fi.hsl.common.passengercount.proto.PassengerCount.Payload getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3445,34 +3669,41 @@ public final class PassengerCount {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required string countQuality = 1;</code>
+     * <code>optional string countQuality = 1;</code>
+     * @return Whether the countQuality field is set.
      */
     boolean hasCountQuality();
     /**
-     * <code>required string countQuality = 1;</code>
+     * <code>optional string countQuality = 1;</code>
+     * @return The countQuality.
      */
     java.lang.String getCountQuality();
     /**
-     * <code>required string countQuality = 1;</code>
+     * <code>optional string countQuality = 1;</code>
+     * @return The bytes for countQuality.
      */
     com.google.protobuf.ByteString
         getCountQualityBytes();
 
     /**
-     * <code>required int32 vehicleLoad = 2;</code>
+     * <code>optional int32 vehicleLoad = 2;</code>
+     * @return Whether the vehicleLoad field is set.
      */
     boolean hasVehicleLoad();
     /**
-     * <code>required int32 vehicleLoad = 2;</code>
+     * <code>optional int32 vehicleLoad = 2;</code>
+     * @return The vehicleLoad.
      */
     int getVehicleLoad();
 
     /**
-     * <code>required double vehicleLoadRatio = 3;</code>
+     * <code>optional double vehicleLoadRatio = 3;</code>
+     * @return Whether the vehicleLoadRatio field is set.
      */
     boolean hasVehicleLoadRatio();
     /**
-     * <code>required double vehicleLoadRatio = 3;</code>
+     * <code>optional double vehicleLoadRatio = 3;</code>
+     * @return The vehicleLoadRatio.
      */
     double getVehicleLoadRatio();
 
@@ -3502,14 +3733,17 @@ public final class PassengerCount {
 
     /**
      * <code>optional string extensions = 5;</code>
+     * @return Whether the extensions field is set.
      */
     boolean hasExtensions();
     /**
      * <code>optional string extensions = 5;</code>
+     * @return The extensions.
      */
     java.lang.String getExtensions();
     /**
      * <code>optional string extensions = 5;</code>
+     * @return The bytes for extensions.
      */
     com.google.protobuf.ByteString
         getExtensionsBytes();
@@ -3517,20 +3751,26 @@ public final class PassengerCount {
   /**
    * Protobuf type {@code proto.VehicleCounts}
    */
-  public  static final class VehicleCounts extends
+  public static final class VehicleCounts extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.VehicleCounts)
       VehicleCountsOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use VehicleCounts.newBuilder() to construct.
     private VehicleCounts(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private VehicleCounts() {
       countQuality_ = "";
-      vehicleLoad_ = 0;
-      vehicleLoadRatio_ = 0D;
       doorCounts_ = java.util.Collections.emptyList();
       extensions_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new VehicleCounts();
     }
 
     @java.lang.Override
@@ -3543,6 +3783,9 @@ public final class PassengerCount {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -3554,13 +3797,6 @@ public final class PassengerCount {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
@@ -3578,7 +3814,7 @@ public final class PassengerCount {
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 doorCounts_ = new java.util.ArrayList<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount>();
                 mutable_bitField0_ |= 0x00000008;
               }
@@ -3592,6 +3828,13 @@ public final class PassengerCount {
               extensions_ = bs;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -3600,7 +3843,7 @@ public final class PassengerCount {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
           doorCounts_ = java.util.Collections.unmodifiableList(doorCounts_);
         }
         this.unknownFields = unknownFields.build();
@@ -3612,6 +3855,7 @@ public final class PassengerCount {
       return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_VehicleCounts_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_VehicleCounts_fieldAccessorTable
@@ -3623,14 +3867,18 @@ public final class PassengerCount {
     public static final int COUNTQUALITY_FIELD_NUMBER = 1;
     private volatile java.lang.Object countQuality_;
     /**
-     * <code>required string countQuality = 1;</code>
+     * <code>optional string countQuality = 1;</code>
+     * @return Whether the countQuality field is set.
      */
+    @java.lang.Override
     public boolean hasCountQuality() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>required string countQuality = 1;</code>
+     * <code>optional string countQuality = 1;</code>
+     * @return The countQuality.
      */
+    @java.lang.Override
     public java.lang.String getCountQuality() {
       java.lang.Object ref = countQuality_;
       if (ref instanceof java.lang.String) {
@@ -3646,8 +3894,10 @@ public final class PassengerCount {
       }
     }
     /**
-     * <code>required string countQuality = 1;</code>
+     * <code>optional string countQuality = 1;</code>
+     * @return The bytes for countQuality.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getCountQualityBytes() {
       java.lang.Object ref = countQuality_;
@@ -3665,14 +3915,18 @@ public final class PassengerCount {
     public static final int VEHICLELOAD_FIELD_NUMBER = 2;
     private int vehicleLoad_;
     /**
-     * <code>required int32 vehicleLoad = 2;</code>
+     * <code>optional int32 vehicleLoad = 2;</code>
+     * @return Whether the vehicleLoad field is set.
      */
+    @java.lang.Override
     public boolean hasVehicleLoad() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>required int32 vehicleLoad = 2;</code>
+     * <code>optional int32 vehicleLoad = 2;</code>
+     * @return The vehicleLoad.
      */
+    @java.lang.Override
     public int getVehicleLoad() {
       return vehicleLoad_;
     }
@@ -3680,14 +3934,18 @@ public final class PassengerCount {
     public static final int VEHICLELOADRATIO_FIELD_NUMBER = 3;
     private double vehicleLoadRatio_;
     /**
-     * <code>required double vehicleLoadRatio = 3;</code>
+     * <code>optional double vehicleLoadRatio = 3;</code>
+     * @return Whether the vehicleLoadRatio field is set.
      */
+    @java.lang.Override
     public boolean hasVehicleLoadRatio() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>required double vehicleLoadRatio = 3;</code>
+     * <code>optional double vehicleLoadRatio = 3;</code>
+     * @return The vehicleLoadRatio.
      */
+    @java.lang.Override
     public double getVehicleLoadRatio() {
       return vehicleLoadRatio_;
     }
@@ -3697,12 +3955,14 @@ public final class PassengerCount {
     /**
      * <code>repeated .proto.DoorCount doorCounts = 4;</code>
      */
+    @java.lang.Override
     public java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount> getDoorCountsList() {
       return doorCounts_;
     }
     /**
      * <code>repeated .proto.DoorCount doorCounts = 4;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder> 
         getDoorCountsOrBuilderList() {
       return doorCounts_;
@@ -3710,18 +3970,21 @@ public final class PassengerCount {
     /**
      * <code>repeated .proto.DoorCount doorCounts = 4;</code>
      */
+    @java.lang.Override
     public int getDoorCountsCount() {
       return doorCounts_.size();
     }
     /**
      * <code>repeated .proto.DoorCount doorCounts = 4;</code>
      */
+    @java.lang.Override
     public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount getDoorCounts(int index) {
       return doorCounts_.get(index);
     }
     /**
      * <code>repeated .proto.DoorCount doorCounts = 4;</code>
      */
+    @java.lang.Override
     public fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder getDoorCountsOrBuilder(
         int index) {
       return doorCounts_.get(index);
@@ -3731,13 +3994,17 @@ public final class PassengerCount {
     private volatile java.lang.Object extensions_;
     /**
      * <code>optional string extensions = 5;</code>
+     * @return Whether the extensions field is set.
      */
+    @java.lang.Override
     public boolean hasExtensions() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>optional string extensions = 5;</code>
+     * @return The extensions.
      */
+    @java.lang.Override
     public java.lang.String getExtensions() {
       java.lang.Object ref = extensions_;
       if (ref instanceof java.lang.String) {
@@ -3754,7 +4021,9 @@ public final class PassengerCount {
     }
     /**
      * <code>optional string extensions = 5;</code>
+     * @return The bytes for extensions.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getExtensionsBytes() {
       java.lang.Object ref = extensions_;
@@ -3770,66 +4039,51 @@ public final class PassengerCount {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasCountQuality()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasVehicleLoad()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasVehicleLoadRatio()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      for (int i = 0; i < getDoorCountsCount(); i++) {
-        if (!getDoorCounts(i).isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
       memoizedIsInitialized = 1;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, countQuality_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeInt32(2, vehicleLoad_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         output.writeDouble(3, vehicleLoadRatio_);
       }
       for (int i = 0; i < doorCounts_.size(); i++) {
         output.writeMessage(4, doorCounts_.get(i));
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, extensions_);
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, countQuality_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, vehicleLoad_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(3, vehicleLoadRatio_);
       }
@@ -3837,7 +4091,7 @@ public final class PassengerCount {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, doorCounts_.get(i));
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, extensions_);
       }
       size += unknownFields.getSerializedSize();
@@ -3845,7 +4099,6 @@ public final class PassengerCount {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3856,33 +4109,31 @@ public final class PassengerCount {
       }
       fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts other = (fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts) obj;
 
-      boolean result = true;
-      result = result && (hasCountQuality() == other.hasCountQuality());
+      if (hasCountQuality() != other.hasCountQuality()) return false;
       if (hasCountQuality()) {
-        result = result && getCountQuality()
-            .equals(other.getCountQuality());
+        if (!getCountQuality()
+            .equals(other.getCountQuality())) return false;
       }
-      result = result && (hasVehicleLoad() == other.hasVehicleLoad());
+      if (hasVehicleLoad() != other.hasVehicleLoad()) return false;
       if (hasVehicleLoad()) {
-        result = result && (getVehicleLoad()
-            == other.getVehicleLoad());
+        if (getVehicleLoad()
+            != other.getVehicleLoad()) return false;
       }
-      result = result && (hasVehicleLoadRatio() == other.hasVehicleLoadRatio());
+      if (hasVehicleLoadRatio() != other.hasVehicleLoadRatio()) return false;
       if (hasVehicleLoadRatio()) {
-        result = result && (
-            java.lang.Double.doubleToLongBits(getVehicleLoadRatio())
-            == java.lang.Double.doubleToLongBits(
-                other.getVehicleLoadRatio()));
+        if (java.lang.Double.doubleToLongBits(getVehicleLoadRatio())
+            != java.lang.Double.doubleToLongBits(
+                other.getVehicleLoadRatio())) return false;
       }
-      result = result && getDoorCountsList()
-          .equals(other.getDoorCountsList());
-      result = result && (hasExtensions() == other.hasExtensions());
+      if (!getDoorCountsList()
+          .equals(other.getDoorCountsList())) return false;
+      if (hasExtensions() != other.hasExtensions()) return false;
       if (hasExtensions()) {
-        result = result && getExtensions()
-            .equals(other.getExtensions());
+        if (!getExtensions()
+            .equals(other.getExtensions())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3891,7 +4142,7 @@ public final class PassengerCount {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasCountQuality()) {
         hash = (37 * hash) + COUNTQUALITY_FIELD_NUMBER;
         hash = (53 * hash) + getCountQuality().hashCode();
@@ -3918,6 +4169,17 @@ public final class PassengerCount {
       return hash;
     }
 
+    public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3977,6 +4239,7 @@ public final class PassengerCount {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3984,6 +4247,7 @@ public final class PassengerCount {
     public static Builder newBuilder(fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4007,6 +4271,7 @@ public final class PassengerCount {
         return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_VehicleCounts_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_VehicleCounts_fieldAccessorTable
@@ -4030,6 +4295,7 @@ public final class PassengerCount {
           getDoorCountsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         countQuality_ = "";
@@ -4049,15 +4315,18 @@ public final class PassengerCount {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_VehicleCounts_descriptor;
       }
 
+      @java.lang.Override
       public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts getDefaultInstanceForType() {
         return fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.getDefaultInstance();
       }
 
+      @java.lang.Override
       public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts build() {
         fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts result = buildPartial();
         if (!result.isInitialized()) {
@@ -4066,24 +4335,25 @@ public final class PassengerCount {
         return result;
       }
 
+      @java.lang.Override
       public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts buildPartial() {
         fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts result = new fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.countQuality_ = countQuality_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.vehicleLoad_ = vehicleLoad_;
           to_bitField0_ |= 0x00000002;
         }
-        result.vehicleLoad_ = vehicleLoad_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.vehicleLoadRatio_ = vehicleLoadRatio_;
           to_bitField0_ |= 0x00000004;
         }
-        result.vehicleLoadRatio_ = vehicleLoadRatio_;
         if (doorCountsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             doorCounts_ = java.util.Collections.unmodifiableList(doorCounts_);
             bitField0_ = (bitField0_ & ~0x00000008);
           }
@@ -4091,7 +4361,7 @@ public final class PassengerCount {
         } else {
           result.doorCounts_ = doorCountsBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           to_bitField0_ |= 0x00000008;
         }
         result.extensions_ = extensions_;
@@ -4100,32 +4370,39 @@ public final class PassengerCount {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts) {
           return mergeFrom((fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts)other);
@@ -4184,24 +4461,12 @@ public final class PassengerCount {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
-        if (!hasCountQuality()) {
-          return false;
-        }
-        if (!hasVehicleLoad()) {
-          return false;
-        }
-        if (!hasVehicleLoadRatio()) {
-          return false;
-        }
-        for (int i = 0; i < getDoorCountsCount(); i++) {
-          if (!getDoorCounts(i).isInitialized()) {
-            return false;
-          }
-        }
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4223,13 +4488,15 @@ public final class PassengerCount {
 
       private java.lang.Object countQuality_ = "";
       /**
-       * <code>required string countQuality = 1;</code>
+       * <code>optional string countQuality = 1;</code>
+       * @return Whether the countQuality field is set.
        */
       public boolean hasCountQuality() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
-       * <code>required string countQuality = 1;</code>
+       * <code>optional string countQuality = 1;</code>
+       * @return The countQuality.
        */
       public java.lang.String getCountQuality() {
         java.lang.Object ref = countQuality_;
@@ -4246,7 +4513,8 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string countQuality = 1;</code>
+       * <code>optional string countQuality = 1;</code>
+       * @return The bytes for countQuality.
        */
       public com.google.protobuf.ByteString
           getCountQualityBytes() {
@@ -4262,7 +4530,9 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string countQuality = 1;</code>
+       * <code>optional string countQuality = 1;</code>
+       * @param value The countQuality to set.
+       * @return This builder for chaining.
        */
       public Builder setCountQuality(
           java.lang.String value) {
@@ -4275,7 +4545,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string countQuality = 1;</code>
+       * <code>optional string countQuality = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCountQuality() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -4284,7 +4555,9 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string countQuality = 1;</code>
+       * <code>optional string countQuality = 1;</code>
+       * @param value The bytes for countQuality to set.
+       * @return This builder for chaining.
        */
       public Builder setCountQualityBytes(
           com.google.protobuf.ByteString value) {
@@ -4299,19 +4572,25 @@ public final class PassengerCount {
 
       private int vehicleLoad_ ;
       /**
-       * <code>required int32 vehicleLoad = 2;</code>
+       * <code>optional int32 vehicleLoad = 2;</code>
+       * @return Whether the vehicleLoad field is set.
        */
+      @java.lang.Override
       public boolean hasVehicleLoad() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>required int32 vehicleLoad = 2;</code>
+       * <code>optional int32 vehicleLoad = 2;</code>
+       * @return The vehicleLoad.
        */
+      @java.lang.Override
       public int getVehicleLoad() {
         return vehicleLoad_;
       }
       /**
-       * <code>required int32 vehicleLoad = 2;</code>
+       * <code>optional int32 vehicleLoad = 2;</code>
+       * @param value The vehicleLoad to set.
+       * @return This builder for chaining.
        */
       public Builder setVehicleLoad(int value) {
         bitField0_ |= 0x00000002;
@@ -4320,7 +4599,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required int32 vehicleLoad = 2;</code>
+       * <code>optional int32 vehicleLoad = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearVehicleLoad() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -4331,19 +4611,25 @@ public final class PassengerCount {
 
       private double vehicleLoadRatio_ ;
       /**
-       * <code>required double vehicleLoadRatio = 3;</code>
+       * <code>optional double vehicleLoadRatio = 3;</code>
+       * @return Whether the vehicleLoadRatio field is set.
        */
+      @java.lang.Override
       public boolean hasVehicleLoadRatio() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
-       * <code>required double vehicleLoadRatio = 3;</code>
+       * <code>optional double vehicleLoadRatio = 3;</code>
+       * @return The vehicleLoadRatio.
        */
+      @java.lang.Override
       public double getVehicleLoadRatio() {
         return vehicleLoadRatio_;
       }
       /**
-       * <code>required double vehicleLoadRatio = 3;</code>
+       * <code>optional double vehicleLoadRatio = 3;</code>
+       * @param value The vehicleLoadRatio to set.
+       * @return This builder for chaining.
        */
       public Builder setVehicleLoadRatio(double value) {
         bitField0_ |= 0x00000004;
@@ -4352,7 +4638,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required double vehicleLoadRatio = 3;</code>
+       * <code>optional double vehicleLoadRatio = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearVehicleLoadRatio() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -4364,7 +4651,7 @@ public final class PassengerCount {
       private java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount> doorCounts_ =
         java.util.Collections.emptyList();
       private void ensureDoorCountsIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           doorCounts_ = new java.util.ArrayList<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount>(doorCounts_);
           bitField0_ |= 0x00000008;
          }
@@ -4593,7 +4880,7 @@ public final class PassengerCount {
           doorCountsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               fi.hsl.common.passengercount.proto.PassengerCount.DoorCount, fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder, fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder>(
                   doorCounts_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           doorCounts_ = null;
@@ -4604,12 +4891,14 @@ public final class PassengerCount {
       private java.lang.Object extensions_ = "";
       /**
        * <code>optional string extensions = 5;</code>
+       * @return Whether the extensions field is set.
        */
       public boolean hasExtensions() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>optional string extensions = 5;</code>
+       * @return The extensions.
        */
       public java.lang.String getExtensions() {
         java.lang.Object ref = extensions_;
@@ -4627,6 +4916,7 @@ public final class PassengerCount {
       }
       /**
        * <code>optional string extensions = 5;</code>
+       * @return The bytes for extensions.
        */
       public com.google.protobuf.ByteString
           getExtensionsBytes() {
@@ -4643,6 +4933,8 @@ public final class PassengerCount {
       }
       /**
        * <code>optional string extensions = 5;</code>
+       * @param value The extensions to set.
+       * @return This builder for chaining.
        */
       public Builder setExtensions(
           java.lang.String value) {
@@ -4656,6 +4948,7 @@ public final class PassengerCount {
       }
       /**
        * <code>optional string extensions = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearExtensions() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -4665,6 +4958,8 @@ public final class PassengerCount {
       }
       /**
        * <code>optional string extensions = 5;</code>
+       * @param value The bytes for extensions to set.
+       * @return This builder for chaining.
        */
       public Builder setExtensionsBytes(
           com.google.protobuf.ByteString value) {
@@ -4676,11 +4971,13 @@ public final class PassengerCount {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -4702,11 +4999,12 @@ public final class PassengerCount {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<VehicleCounts>
         PARSER = new com.google.protobuf.AbstractParser<VehicleCounts>() {
+      @java.lang.Override
       public VehicleCounts parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new VehicleCounts(input, extensionRegistry);
+        return new VehicleCounts(input, extensionRegistry);
       }
     };
 
@@ -4719,6 +5017,7 @@ public final class PassengerCount {
       return PARSER;
     }
 
+    @java.lang.Override
     public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4730,15 +5029,18 @@ public final class PassengerCount {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required string door = 1;</code>
+     * <code>optional string door = 1;</code>
+     * @return Whether the door field is set.
      */
     boolean hasDoor();
     /**
-     * <code>required string door = 1;</code>
+     * <code>optional string door = 1;</code>
+     * @return The door.
      */
     java.lang.String getDoor();
     /**
-     * <code>required string door = 1;</code>
+     * <code>optional string door = 1;</code>
+     * @return The bytes for door.
      */
     com.google.protobuf.ByteString
         getDoorBytes();
@@ -4770,10 +5072,11 @@ public final class PassengerCount {
   /**
    * Protobuf type {@code proto.DoorCount}
    */
-  public  static final class DoorCount extends
+  public static final class DoorCount extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.DoorCount)
       DoorCountOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use DoorCount.newBuilder() to construct.
     private DoorCount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4781,6 +5084,13 @@ public final class PassengerCount {
     private DoorCount() {
       door_ = "";
       count_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DoorCount();
     }
 
     @java.lang.Override
@@ -4793,6 +5103,9 @@ public final class PassengerCount {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -4804,13 +5117,6 @@ public final class PassengerCount {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
@@ -4818,12 +5124,19 @@ public final class PassengerCount {
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 count_ = new java.util.ArrayList<fi.hsl.common.passengercount.proto.PassengerCount.Count>();
                 mutable_bitField0_ |= 0x00000002;
               }
               count_.add(
                   input.readMessage(fi.hsl.common.passengercount.proto.PassengerCount.Count.PARSER, extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -4834,7 +5147,7 @@ public final class PassengerCount {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           count_ = java.util.Collections.unmodifiableList(count_);
         }
         this.unknownFields = unknownFields.build();
@@ -4846,6 +5159,7 @@ public final class PassengerCount {
       return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_DoorCount_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_DoorCount_fieldAccessorTable
@@ -4857,14 +5171,18 @@ public final class PassengerCount {
     public static final int DOOR_FIELD_NUMBER = 1;
     private volatile java.lang.Object door_;
     /**
-     * <code>required string door = 1;</code>
+     * <code>optional string door = 1;</code>
+     * @return Whether the door field is set.
      */
+    @java.lang.Override
     public boolean hasDoor() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>required string door = 1;</code>
+     * <code>optional string door = 1;</code>
+     * @return The door.
      */
+    @java.lang.Override
     public java.lang.String getDoor() {
       java.lang.Object ref = door_;
       if (ref instanceof java.lang.String) {
@@ -4880,8 +5198,10 @@ public final class PassengerCount {
       }
     }
     /**
-     * <code>required string door = 1;</code>
+     * <code>optional string door = 1;</code>
+     * @return The bytes for door.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDoorBytes() {
       java.lang.Object ref = door_;
@@ -4901,12 +5221,14 @@ public final class PassengerCount {
     /**
      * <code>repeated .proto.Count count = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.Count> getCountList() {
       return count_;
     }
     /**
      * <code>repeated .proto.Count count = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder> 
         getCountOrBuilderList() {
       return count_;
@@ -4914,46 +5236,41 @@ public final class PassengerCount {
     /**
      * <code>repeated .proto.Count count = 2;</code>
      */
+    @java.lang.Override
     public int getCountCount() {
       return count_.size();
     }
     /**
      * <code>repeated .proto.Count count = 2;</code>
      */
+    @java.lang.Override
     public fi.hsl.common.passengercount.proto.PassengerCount.Count getCount(int index) {
       return count_.get(index);
     }
     /**
      * <code>repeated .proto.Count count = 2;</code>
      */
+    @java.lang.Override
     public fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder getCountOrBuilder(
         int index) {
       return count_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasDoor()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      for (int i = 0; i < getCountCount(); i++) {
-        if (!getCount(i).isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
       memoizedIsInitialized = 1;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, door_);
       }
       for (int i = 0; i < count_.size(); i++) {
@@ -4962,12 +5279,13 @@ public final class PassengerCount {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, door_);
       }
       for (int i = 0; i < count_.size(); i++) {
@@ -4979,7 +5297,6 @@ public final class PassengerCount {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -4990,16 +5307,15 @@ public final class PassengerCount {
       }
       fi.hsl.common.passengercount.proto.PassengerCount.DoorCount other = (fi.hsl.common.passengercount.proto.PassengerCount.DoorCount) obj;
 
-      boolean result = true;
-      result = result && (hasDoor() == other.hasDoor());
+      if (hasDoor() != other.hasDoor()) return false;
       if (hasDoor()) {
-        result = result && getDoor()
-            .equals(other.getDoor());
+        if (!getDoor()
+            .equals(other.getDoor())) return false;
       }
-      result = result && getCountList()
-          .equals(other.getCountList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getCountList()
+          .equals(other.getCountList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -5008,7 +5324,7 @@ public final class PassengerCount {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasDoor()) {
         hash = (37 * hash) + DOOR_FIELD_NUMBER;
         hash = (53 * hash) + getDoor().hashCode();
@@ -5022,6 +5338,17 @@ public final class PassengerCount {
       return hash;
     }
 
+    public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5081,6 +5408,7 @@ public final class PassengerCount {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5088,6 +5416,7 @@ public final class PassengerCount {
     public static Builder newBuilder(fi.hsl.common.passengercount.proto.PassengerCount.DoorCount prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5111,6 +5440,7 @@ public final class PassengerCount {
         return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_DoorCount_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_DoorCount_fieldAccessorTable
@@ -5134,6 +5464,7 @@ public final class PassengerCount {
           getCountFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         door_ = "";
@@ -5147,15 +5478,18 @@ public final class PassengerCount {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_DoorCount_descriptor;
       }
 
+      @java.lang.Override
       public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount getDefaultInstanceForType() {
         return fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.getDefaultInstance();
       }
 
+      @java.lang.Override
       public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount build() {
         fi.hsl.common.passengercount.proto.PassengerCount.DoorCount result = buildPartial();
         if (!result.isInitialized()) {
@@ -5164,16 +5498,17 @@ public final class PassengerCount {
         return result;
       }
 
+      @java.lang.Override
       public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount buildPartial() {
         fi.hsl.common.passengercount.proto.PassengerCount.DoorCount result = new fi.hsl.common.passengercount.proto.PassengerCount.DoorCount(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.door_ = door_;
         if (countBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             count_ = java.util.Collections.unmodifiableList(count_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
@@ -5186,32 +5521,39 @@ public final class PassengerCount {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.passengercount.proto.PassengerCount.DoorCount) {
           return mergeFrom((fi.hsl.common.passengercount.proto.PassengerCount.DoorCount)other);
@@ -5259,18 +5601,12 @@ public final class PassengerCount {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
-        if (!hasDoor()) {
-          return false;
-        }
-        for (int i = 0; i < getCountCount(); i++) {
-          if (!getCount(i).isInitialized()) {
-            return false;
-          }
-        }
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5292,13 +5628,15 @@ public final class PassengerCount {
 
       private java.lang.Object door_ = "";
       /**
-       * <code>required string door = 1;</code>
+       * <code>optional string door = 1;</code>
+       * @return Whether the door field is set.
        */
       public boolean hasDoor() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
-       * <code>required string door = 1;</code>
+       * <code>optional string door = 1;</code>
+       * @return The door.
        */
       public java.lang.String getDoor() {
         java.lang.Object ref = door_;
@@ -5315,7 +5653,8 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string door = 1;</code>
+       * <code>optional string door = 1;</code>
+       * @return The bytes for door.
        */
       public com.google.protobuf.ByteString
           getDoorBytes() {
@@ -5331,7 +5670,9 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string door = 1;</code>
+       * <code>optional string door = 1;</code>
+       * @param value The door to set.
+       * @return This builder for chaining.
        */
       public Builder setDoor(
           java.lang.String value) {
@@ -5344,7 +5685,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string door = 1;</code>
+       * <code>optional string door = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDoor() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -5353,7 +5695,9 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string door = 1;</code>
+       * <code>optional string door = 1;</code>
+       * @param value The bytes for door to set.
+       * @return This builder for chaining.
        */
       public Builder setDoorBytes(
           com.google.protobuf.ByteString value) {
@@ -5369,7 +5713,7 @@ public final class PassengerCount {
       private java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.Count> count_ =
         java.util.Collections.emptyList();
       private void ensureCountIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           count_ = new java.util.ArrayList<fi.hsl.common.passengercount.proto.PassengerCount.Count>(count_);
           bitField0_ |= 0x00000002;
          }
@@ -5598,18 +5942,20 @@ public final class PassengerCount {
           countBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               fi.hsl.common.passengercount.proto.PassengerCount.Count, fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder, fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder>(
                   count_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           count_ = null;
         }
         return countBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -5631,11 +5977,12 @@ public final class PassengerCount {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<DoorCount>
         PARSER = new com.google.protobuf.AbstractParser<DoorCount>() {
+      @java.lang.Override
       public DoorCount parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DoorCount(input, extensionRegistry);
+        return new DoorCount(input, extensionRegistry);
       }
     };
 
@@ -5648,6 +5995,7 @@ public final class PassengerCount {
       return PARSER;
     }
 
+    @java.lang.Override
     public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5659,52 +6007,77 @@ public final class PassengerCount {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required string clazz = 1;</code>
+     * <pre>
+     *Field 'class' in JSON, represents passenger class. clazz is used for variable name here, because 'class' is reserved keyword in Java
+     * </pre>
+     *
+     * <code>optional string clazz = 1;</code>
+     * @return Whether the clazz field is set.
      */
     boolean hasClazz();
     /**
-     * <code>required string clazz = 1;</code>
+     * <pre>
+     *Field 'class' in JSON, represents passenger class. clazz is used for variable name here, because 'class' is reserved keyword in Java
+     * </pre>
+     *
+     * <code>optional string clazz = 1;</code>
+     * @return The clazz.
      */
     java.lang.String getClazz();
     /**
-     * <code>required string clazz = 1;</code>
+     * <pre>
+     *Field 'class' in JSON, represents passenger class. clazz is used for variable name here, because 'class' is reserved keyword in Java
+     * </pre>
+     *
+     * <code>optional string clazz = 1;</code>
+     * @return The bytes for clazz.
      */
     com.google.protobuf.ByteString
         getClazzBytes();
 
     /**
-     * <code>required int32 in = 2;</code>
+     * <code>optional int32 in = 2;</code>
+     * @return Whether the in field is set.
      */
     boolean hasIn();
     /**
-     * <code>required int32 in = 2;</code>
+     * <code>optional int32 in = 2;</code>
+     * @return The in.
      */
     int getIn();
 
     /**
-     * <code>required int32 out = 3;</code>
+     * <code>optional int32 out = 3;</code>
+     * @return Whether the out field is set.
      */
     boolean hasOut();
     /**
-     * <code>required int32 out = 3;</code>
+     * <code>optional int32 out = 3;</code>
+     * @return The out.
      */
     int getOut();
   }
   /**
    * Protobuf type {@code proto.Count}
    */
-  public  static final class Count extends
+  public static final class Count extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.Count)
       CountOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Count.newBuilder() to construct.
     private Count(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private Count() {
       clazz_ = "";
-      in_ = 0;
-      out_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Count();
     }
 
     @java.lang.Override
@@ -5717,6 +6090,9 @@ public final class PassengerCount {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -5728,13 +6104,6 @@ public final class PassengerCount {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
@@ -5749,6 +6118,13 @@ public final class PassengerCount {
             case 24: {
               bitField0_ |= 0x00000004;
               out_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -5768,6 +6144,7 @@ public final class PassengerCount {
       return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Count_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Count_fieldAccessorTable
@@ -5779,14 +6156,26 @@ public final class PassengerCount {
     public static final int CLAZZ_FIELD_NUMBER = 1;
     private volatile java.lang.Object clazz_;
     /**
-     * <code>required string clazz = 1;</code>
+     * <pre>
+     *Field 'class' in JSON, represents passenger class. clazz is used for variable name here, because 'class' is reserved keyword in Java
+     * </pre>
+     *
+     * <code>optional string clazz = 1;</code>
+     * @return Whether the clazz field is set.
      */
+    @java.lang.Override
     public boolean hasClazz() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>required string clazz = 1;</code>
+     * <pre>
+     *Field 'class' in JSON, represents passenger class. clazz is used for variable name here, because 'class' is reserved keyword in Java
+     * </pre>
+     *
+     * <code>optional string clazz = 1;</code>
+     * @return The clazz.
      */
+    @java.lang.Override
     public java.lang.String getClazz() {
       java.lang.Object ref = clazz_;
       if (ref instanceof java.lang.String) {
@@ -5802,8 +6191,14 @@ public final class PassengerCount {
       }
     }
     /**
-     * <code>required string clazz = 1;</code>
+     * <pre>
+     *Field 'class' in JSON, represents passenger class. clazz is used for variable name here, because 'class' is reserved keyword in Java
+     * </pre>
+     *
+     * <code>optional string clazz = 1;</code>
+     * @return The bytes for clazz.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getClazzBytes() {
       java.lang.Object ref = clazz_;
@@ -5821,14 +6216,18 @@ public final class PassengerCount {
     public static final int IN_FIELD_NUMBER = 2;
     private int in_;
     /**
-     * <code>required int32 in = 2;</code>
+     * <code>optional int32 in = 2;</code>
+     * @return Whether the in field is set.
      */
+    @java.lang.Override
     public boolean hasIn() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>required int32 in = 2;</code>
+     * <code>optional int32 in = 2;</code>
+     * @return The in.
      */
+    @java.lang.Override
     public int getIn() {
       return in_;
     }
@@ -5836,67 +6235,62 @@ public final class PassengerCount {
     public static final int OUT_FIELD_NUMBER = 3;
     private int out_;
     /**
-     * <code>required int32 out = 3;</code>
+     * <code>optional int32 out = 3;</code>
+     * @return Whether the out field is set.
      */
+    @java.lang.Override
     public boolean hasOut() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>required int32 out = 3;</code>
+     * <code>optional int32 out = 3;</code>
+     * @return The out.
      */
+    @java.lang.Override
     public int getOut() {
       return out_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasClazz()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasIn()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasOut()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       memoizedIsInitialized = 1;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, clazz_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeInt32(2, in_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         output.writeInt32(3, out_);
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, clazz_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, in_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, out_);
       }
@@ -5905,7 +6299,6 @@ public final class PassengerCount {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5916,24 +6309,23 @@ public final class PassengerCount {
       }
       fi.hsl.common.passengercount.proto.PassengerCount.Count other = (fi.hsl.common.passengercount.proto.PassengerCount.Count) obj;
 
-      boolean result = true;
-      result = result && (hasClazz() == other.hasClazz());
+      if (hasClazz() != other.hasClazz()) return false;
       if (hasClazz()) {
-        result = result && getClazz()
-            .equals(other.getClazz());
+        if (!getClazz()
+            .equals(other.getClazz())) return false;
       }
-      result = result && (hasIn() == other.hasIn());
+      if (hasIn() != other.hasIn()) return false;
       if (hasIn()) {
-        result = result && (getIn()
-            == other.getIn());
+        if (getIn()
+            != other.getIn()) return false;
       }
-      result = result && (hasOut() == other.hasOut());
+      if (hasOut() != other.hasOut()) return false;
       if (hasOut()) {
-        result = result && (getOut()
-            == other.getOut());
+        if (getOut()
+            != other.getOut()) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -5942,7 +6334,7 @@ public final class PassengerCount {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasClazz()) {
         hash = (37 * hash) + CLAZZ_FIELD_NUMBER;
         hash = (53 * hash) + getClazz().hashCode();
@@ -5960,6 +6352,17 @@ public final class PassengerCount {
       return hash;
     }
 
+    public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6019,6 +6422,7 @@ public final class PassengerCount {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6026,6 +6430,7 @@ public final class PassengerCount {
     public static Builder newBuilder(fi.hsl.common.passengercount.proto.PassengerCount.Count prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6049,6 +6454,7 @@ public final class PassengerCount {
         return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Count_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Count_fieldAccessorTable
@@ -6071,6 +6477,7 @@ public final class PassengerCount {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         clazz_ = "";
@@ -6082,15 +6489,18 @@ public final class PassengerCount {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Count_descriptor;
       }
 
+      @java.lang.Override
       public fi.hsl.common.passengercount.proto.PassengerCount.Count getDefaultInstanceForType() {
         return fi.hsl.common.passengercount.proto.PassengerCount.Count.getDefaultInstance();
       }
 
+      @java.lang.Override
       public fi.hsl.common.passengercount.proto.PassengerCount.Count build() {
         fi.hsl.common.passengercount.proto.PassengerCount.Count result = buildPartial();
         if (!result.isInitialized()) {
@@ -6099,53 +6509,61 @@ public final class PassengerCount {
         return result;
       }
 
+      @java.lang.Override
       public fi.hsl.common.passengercount.proto.PassengerCount.Count buildPartial() {
         fi.hsl.common.passengercount.proto.PassengerCount.Count result = new fi.hsl.common.passengercount.proto.PassengerCount.Count(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.clazz_ = clazz_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.in_ = in_;
           to_bitField0_ |= 0x00000002;
         }
-        result.in_ = in_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.out_ = out_;
           to_bitField0_ |= 0x00000004;
         }
-        result.out_ = out_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.passengercount.proto.PassengerCount.Count) {
           return mergeFrom((fi.hsl.common.passengercount.proto.PassengerCount.Count)other);
@@ -6173,19 +6591,12 @@ public final class PassengerCount {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
-        if (!hasClazz()) {
-          return false;
-        }
-        if (!hasIn()) {
-          return false;
-        }
-        if (!hasOut()) {
-          return false;
-        }
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6207,13 +6618,23 @@ public final class PassengerCount {
 
       private java.lang.Object clazz_ = "";
       /**
-       * <code>required string clazz = 1;</code>
+       * <pre>
+       *Field 'class' in JSON, represents passenger class. clazz is used for variable name here, because 'class' is reserved keyword in Java
+       * </pre>
+       *
+       * <code>optional string clazz = 1;</code>
+       * @return Whether the clazz field is set.
        */
       public boolean hasClazz() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
-       * <code>required string clazz = 1;</code>
+       * <pre>
+       *Field 'class' in JSON, represents passenger class. clazz is used for variable name here, because 'class' is reserved keyword in Java
+       * </pre>
+       *
+       * <code>optional string clazz = 1;</code>
+       * @return The clazz.
        */
       public java.lang.String getClazz() {
         java.lang.Object ref = clazz_;
@@ -6230,7 +6651,12 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string clazz = 1;</code>
+       * <pre>
+       *Field 'class' in JSON, represents passenger class. clazz is used for variable name here, because 'class' is reserved keyword in Java
+       * </pre>
+       *
+       * <code>optional string clazz = 1;</code>
+       * @return The bytes for clazz.
        */
       public com.google.protobuf.ByteString
           getClazzBytes() {
@@ -6246,7 +6672,13 @@ public final class PassengerCount {
         }
       }
       /**
-       * <code>required string clazz = 1;</code>
+       * <pre>
+       *Field 'class' in JSON, represents passenger class. clazz is used for variable name here, because 'class' is reserved keyword in Java
+       * </pre>
+       *
+       * <code>optional string clazz = 1;</code>
+       * @param value The clazz to set.
+       * @return This builder for chaining.
        */
       public Builder setClazz(
           java.lang.String value) {
@@ -6259,7 +6691,12 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string clazz = 1;</code>
+       * <pre>
+       *Field 'class' in JSON, represents passenger class. clazz is used for variable name here, because 'class' is reserved keyword in Java
+       * </pre>
+       *
+       * <code>optional string clazz = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearClazz() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -6268,7 +6705,13 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required string clazz = 1;</code>
+       * <pre>
+       *Field 'class' in JSON, represents passenger class. clazz is used for variable name here, because 'class' is reserved keyword in Java
+       * </pre>
+       *
+       * <code>optional string clazz = 1;</code>
+       * @param value The bytes for clazz to set.
+       * @return This builder for chaining.
        */
       public Builder setClazzBytes(
           com.google.protobuf.ByteString value) {
@@ -6283,19 +6726,25 @@ public final class PassengerCount {
 
       private int in_ ;
       /**
-       * <code>required int32 in = 2;</code>
+       * <code>optional int32 in = 2;</code>
+       * @return Whether the in field is set.
        */
+      @java.lang.Override
       public boolean hasIn() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>required int32 in = 2;</code>
+       * <code>optional int32 in = 2;</code>
+       * @return The in.
        */
+      @java.lang.Override
       public int getIn() {
         return in_;
       }
       /**
-       * <code>required int32 in = 2;</code>
+       * <code>optional int32 in = 2;</code>
+       * @param value The in to set.
+       * @return This builder for chaining.
        */
       public Builder setIn(int value) {
         bitField0_ |= 0x00000002;
@@ -6304,7 +6753,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required int32 in = 2;</code>
+       * <code>optional int32 in = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIn() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -6315,19 +6765,25 @@ public final class PassengerCount {
 
       private int out_ ;
       /**
-       * <code>required int32 out = 3;</code>
+       * <code>optional int32 out = 3;</code>
+       * @return Whether the out field is set.
        */
+      @java.lang.Override
       public boolean hasOut() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
-       * <code>required int32 out = 3;</code>
+       * <code>optional int32 out = 3;</code>
+       * @return The out.
        */
+      @java.lang.Override
       public int getOut() {
         return out_;
       }
       /**
-       * <code>required int32 out = 3;</code>
+       * <code>optional int32 out = 3;</code>
+       * @param value The out to set.
+       * @return This builder for chaining.
        */
       public Builder setOut(int value) {
         bitField0_ |= 0x00000004;
@@ -6336,7 +6792,8 @@ public final class PassengerCount {
         return this;
       }
       /**
-       * <code>required int32 out = 3;</code>
+       * <code>optional int32 out = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOut() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -6344,11 +6801,13 @@ public final class PassengerCount {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -6370,11 +6829,12 @@ public final class PassengerCount {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Count>
         PARSER = new com.google.protobuf.AbstractParser<Count>() {
+      @java.lang.Override
       public Count parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Count(input, extensionRegistry);
+        return new Count(input, extensionRegistry);
       }
     };
 
@@ -6387,6 +6847,7 @@ public final class PassengerCount {
       return PARSER;
     }
 
+    @java.lang.Override
     public fi.hsl.common.passengercount.proto.PassengerCount.Count getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6430,34 +6891,26 @@ public final class PassengerCount {
       "\n\025passenger-count.proto\022\005proto\"P\n\004Data\022\030" +
       "\n\rSchemaVersion\030\001 \002(\005:\0011\022\r\n\005topic\030\002 \001(\t\022" +
       "\037\n\007payload\030\003 \002(\0132\016.proto.Payload\"\220\002\n\007Pay" +
-      "load\022\014\n\004desi\030\001 \002(\t\022\013\n\003dir\030\002 \002(\t\022\014\n\004oper\030" +
-      "\003 \002(\005\022\013\n\003veh\030\004 \002(\005\022\013\n\003tst\030\005 \002(\003\022\013\n\003tsi\030\006" +
-      " \002(\003\022\013\n\003lat\030\007 \002(\001\022\014\n\004long\030\010 \002(\001\022\013\n\003odo\030\t" +
-      " \002(\001\022\014\n\004oday\030\n \002(\t\022\013\n\003jrn\030\013 \002(\005\022\014\n\004line\030" +
-      "\014 \002(\005\022\r\n\005start\030\r \002(\t\022\013\n\003loc\030\016 \002(\t\022\014\n\004sto" +
-      "p\030\017 \002(\005\022\r\n\005route\030\020 \002(\t\022+\n\rvehicleCounts\030" +
-      "\021 \002(\0132\024.proto.VehicleCounts\"\216\001\n\rVehicleC",
-      "ounts\022\024\n\014countQuality\030\001 \002(\t\022\023\n\013vehicleLo" +
-      "ad\030\002 \002(\005\022\030\n\020vehicleLoadRatio\030\003 \002(\001\022$\n\ndo" +
+      "load\022\014\n\004desi\030\001 \001(\t\022\013\n\003dir\030\002 \001(\t\022\014\n\004oper\030" +
+      "\003 \001(\005\022\013\n\003veh\030\004 \001(\005\022\013\n\003tst\030\005 \001(\003\022\013\n\003tsi\030\006" +
+      " \001(\003\022\013\n\003lat\030\007 \001(\001\022\014\n\004long\030\010 \001(\001\022\013\n\003odo\030\t" +
+      " \001(\001\022\014\n\004oday\030\n \001(\t\022\013\n\003jrn\030\013 \001(\005\022\014\n\004line\030" +
+      "\014 \001(\005\022\r\n\005start\030\r \001(\t\022\013\n\003loc\030\016 \001(\t\022\014\n\004sto" +
+      "p\030\017 \001(\005\022\r\n\005route\030\020 \001(\t\022+\n\rvehicleCounts\030" +
+      "\021 \001(\0132\024.proto.VehicleCounts\"\216\001\n\rVehicleC" +
+      "ounts\022\024\n\014countQuality\030\001 \001(\t\022\023\n\013vehicleLo" +
+      "ad\030\002 \001(\005\022\030\n\020vehicleLoadRatio\030\003 \001(\001\022$\n\ndo" +
       "orCounts\030\004 \003(\0132\020.proto.DoorCount\022\022\n\nexte" +
-      "nsions\030\005 \001(\t\"6\n\tDoorCount\022\014\n\004door\030\001 \002(\t\022" +
+      "nsions\030\005 \001(\t\"6\n\tDoorCount\022\014\n\004door\030\001 \001(\t\022" +
       "\033\n\005count\030\002 \003(\0132\014.proto.Count\"/\n\005Count\022\r\n" +
-      "\005clazz\030\001 \002(\t\022\n\n\002in\030\002 \002(\005\022\013\n\003out\030\003 \002(\005B4\n" +
+      "\005clazz\030\001 \001(\t\022\n\n\002in\030\002 \001(\005\022\013\n\003out\030\003 \001(\005B4\n" +
       "\"fi.hsl.common.passengercount.protoB\016Pas" +
       "sengerCount"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_proto_Data_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_Data_fieldAccessorTable = new
