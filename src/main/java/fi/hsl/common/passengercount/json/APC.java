@@ -5,7 +5,6 @@ import com.dslplatform.json.JsonAttribute;
 
 import java.util.Date;
 
-
 @CompiledJson(onUnknown = CompiledJson.Behavior.IGNORE)
 public class APC {
     public String desi;
@@ -23,6 +22,8 @@ public class APC {
     public Integer line;
     public String start;
     public String loc;
+    //Stop values are strings in the JSON, so we need custom converter that can handle "null" text
+    @JsonAttribute(converter = StringIntegerConverter.class)
     public Integer stop;
     public String route;
     public Vehiclecounts vehiclecounts;
