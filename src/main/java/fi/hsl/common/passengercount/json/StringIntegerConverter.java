@@ -4,7 +4,7 @@ import com.dslplatform.json.JsonReader;
 import com.dslplatform.json.JsonWriter;
 import com.dslplatform.json.StringConverter;
 
-class StringIntegerConverter {
+public class StringIntegerConverter {
     public static final JsonReader.ReadObject<Integer> JSON_READER = reader -> {
         final String value = StringConverter.deserialize(reader);
         if ("null".equals(value)) {
