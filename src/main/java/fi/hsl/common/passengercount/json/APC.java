@@ -23,7 +23,7 @@ public class APC {
     public String start;
     public String loc;
     //Stop values are strings in the JSON, so we need custom converter that can handle "null" text
-    @JsonAttribute(converter = StringIntegerConverter.class)
+    @JsonAttribute(converter = IntegerWithNullStringConverter.class)
     public Integer stop;
     public String route;
     public Vehiclecounts vehiclecounts;

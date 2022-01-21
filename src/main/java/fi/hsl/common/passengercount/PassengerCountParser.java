@@ -48,7 +48,9 @@ public class PassengerCountParser {
         payloadBuilder.setLine(payload.line);
         payloadBuilder.setStart(payload.start);
         payloadBuilder.setLoc(payload.loc);
-        payloadBuilder.setStop(payload.stop);
+        if (payload.stop != null) {
+            payloadBuilder.setStop(payload.stop);
+        }
         payloadBuilder.setRoute(payload.route);
 
         PassengerCount.VehicleCounts.Builder vehicleBuilder = PassengerCount.VehicleCounts.newBuilder();
