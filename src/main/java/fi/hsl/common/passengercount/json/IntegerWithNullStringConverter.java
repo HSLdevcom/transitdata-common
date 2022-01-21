@@ -11,7 +11,6 @@ public class IntegerWithNullStringConverter {
     public static final JsonReader.ReadObject<Integer> JSON_READER = reader -> {
         if (reader.last() == '"') {
             final String str = reader.readSimpleString();
-            System.out.println(str);
             if ("null".equals(str)) {
                 return null;
             }
