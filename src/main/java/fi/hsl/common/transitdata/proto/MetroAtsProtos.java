@@ -44,6 +44,8 @@ public final class MetroAtsProtos {
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -51,6 +53,10 @@ public final class MetroAtsProtos {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static MetroTrainType forNumber(int value) {
       switch (value) {
         case 0: return M;
@@ -150,6 +156,8 @@ public final class MetroAtsProtos {
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -157,6 +165,10 @@ public final class MetroAtsProtos {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static MetroProgress forNumber(int value) {
       switch (value) {
         case 0: return SCHEDULED;
@@ -222,6 +234,7 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>required string station = 1;</code>
+     * @return Whether the station field is set.
      */
     boolean hasStation();
     /**
@@ -230,6 +243,7 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>required string station = 1;</code>
+     * @return The station.
      */
     java.lang.String getStation();
     /**
@@ -238,152 +252,183 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>required string station = 1;</code>
+     * @return The bytes for station.
      */
     com.google.protobuf.ByteString
         getStationBytes();
 
     /**
      * <code>required string platform = 2;</code>
+     * @return Whether the platform field is set.
      */
     boolean hasPlatform();
     /**
      * <code>required string platform = 2;</code>
+     * @return The platform.
      */
     java.lang.String getPlatform();
     /**
      * <code>required string platform = 2;</code>
+     * @return The bytes for platform.
      */
     com.google.protobuf.ByteString
         getPlatformBytes();
 
     /**
      * <code>required string arrival_time_planned = 3;</code>
+     * @return Whether the arrivalTimePlanned field is set.
      */
     boolean hasArrivalTimePlanned();
     /**
      * <code>required string arrival_time_planned = 3;</code>
+     * @return The arrivalTimePlanned.
      */
     java.lang.String getArrivalTimePlanned();
     /**
      * <code>required string arrival_time_planned = 3;</code>
+     * @return The bytes for arrivalTimePlanned.
      */
     com.google.protobuf.ByteString
         getArrivalTimePlannedBytes();
 
     /**
      * <code>optional string arrival_time_forecast = 4;</code>
+     * @return Whether the arrivalTimeForecast field is set.
      */
     boolean hasArrivalTimeForecast();
     /**
      * <code>optional string arrival_time_forecast = 4;</code>
+     * @return The arrivalTimeForecast.
      */
     java.lang.String getArrivalTimeForecast();
     /**
      * <code>optional string arrival_time_forecast = 4;</code>
+     * @return The bytes for arrivalTimeForecast.
      */
     com.google.protobuf.ByteString
         getArrivalTimeForecastBytes();
 
     /**
      * <code>optional string arrival_time_measured = 5;</code>
+     * @return Whether the arrivalTimeMeasured field is set.
      */
     boolean hasArrivalTimeMeasured();
     /**
      * <code>optional string arrival_time_measured = 5;</code>
+     * @return The arrivalTimeMeasured.
      */
     java.lang.String getArrivalTimeMeasured();
     /**
      * <code>optional string arrival_time_measured = 5;</code>
+     * @return The bytes for arrivalTimeMeasured.
      */
     com.google.protobuf.ByteString
         getArrivalTimeMeasuredBytes();
 
     /**
      * <code>required string departure_time_planned = 6;</code>
+     * @return Whether the departureTimePlanned field is set.
      */
     boolean hasDepartureTimePlanned();
     /**
      * <code>required string departure_time_planned = 6;</code>
+     * @return The departureTimePlanned.
      */
     java.lang.String getDepartureTimePlanned();
     /**
      * <code>required string departure_time_planned = 6;</code>
+     * @return The bytes for departureTimePlanned.
      */
     com.google.protobuf.ByteString
         getDepartureTimePlannedBytes();
 
     /**
      * <code>optional string departure_time_forecast = 7;</code>
+     * @return Whether the departureTimeForecast field is set.
      */
     boolean hasDepartureTimeForecast();
     /**
      * <code>optional string departure_time_forecast = 7;</code>
+     * @return The departureTimeForecast.
      */
     java.lang.String getDepartureTimeForecast();
     /**
      * <code>optional string departure_time_forecast = 7;</code>
+     * @return The bytes for departureTimeForecast.
      */
     com.google.protobuf.ByteString
         getDepartureTimeForecastBytes();
 
     /**
      * <code>optional string departure_time_measured = 8;</code>
+     * @return Whether the departureTimeMeasured field is set.
      */
     boolean hasDepartureTimeMeasured();
     /**
      * <code>optional string departure_time_measured = 8;</code>
+     * @return The departureTimeMeasured.
      */
     java.lang.String getDepartureTimeMeasured();
     /**
      * <code>optional string departure_time_measured = 8;</code>
+     * @return The bytes for departureTimeMeasured.
      */
     com.google.protobuf.ByteString
         getDepartureTimeMeasuredBytes();
 
     /**
      * <code>required string source = 9;</code>
+     * @return Whether the source field is set.
      */
     boolean hasSource();
     /**
      * <code>required string source = 9;</code>
+     * @return The source.
      */
     java.lang.String getSource();
     /**
      * <code>required string source = 9;</code>
+     * @return The bytes for source.
      */
     com.google.protobuf.ByteString
         getSourceBytes();
 
     /**
      * <code>required string stop_number = 10;</code>
+     * @return Whether the stopNumber field is set.
      */
     boolean hasStopNumber();
     /**
      * <code>required string stop_number = 10;</code>
+     * @return The stopNumber.
      */
     java.lang.String getStopNumber();
     /**
      * <code>required string stop_number = 10;</code>
+     * @return The bytes for stopNumber.
      */
     com.google.protobuf.ByteString
         getStopNumberBytes();
 
     /**
      * <code>optional .proto.MetroProgress row_progress = 11;</code>
+     * @return Whether the rowProgress field is set.
      */
     boolean hasRowProgress();
     /**
      * <code>optional .proto.MetroProgress row_progress = 11;</code>
+     * @return The rowProgress.
      */
     fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress getRowProgress();
   }
   /**
    * Protobuf type {@code proto.MetroStopEstimate}
    */
-  public  static final class MetroStopEstimate extends
+  public static final class MetroStopEstimate extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.MetroStopEstimate)
       MetroStopEstimateOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MetroStopEstimate.newBuilder() to construct.
     private MetroStopEstimate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -403,6 +448,13 @@ public final class MetroAtsProtos {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MetroStopEstimate();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -412,6 +464,9 @@ public final class MetroAtsProtos {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -423,13 +478,6 @@ public final class MetroAtsProtos {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
@@ -492,12 +540,20 @@ public final class MetroAtsProtos {
             }
             case 88: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress value = fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(11, rawValue);
               } else {
                 bitField0_ |= 0x00000400;
                 rowProgress_ = rawValue;
+              }
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
               }
               break;
             }
@@ -518,6 +574,7 @@ public final class MetroAtsProtos {
       return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroStopEstimate_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroStopEstimate_fieldAccessorTable
@@ -534,9 +591,11 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>required string station = 1;</code>
+     * @return Whether the station field is set.
      */
+    @java.lang.Override
     public boolean hasStation() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
@@ -544,7 +603,9 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>required string station = 1;</code>
+     * @return The station.
      */
+    @java.lang.Override
     public java.lang.String getStation() {
       java.lang.Object ref = station_;
       if (ref instanceof java.lang.String) {
@@ -565,7 +626,9 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>required string station = 1;</code>
+     * @return The bytes for station.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getStationBytes() {
       java.lang.Object ref = station_;
@@ -584,13 +647,17 @@ public final class MetroAtsProtos {
     private volatile java.lang.Object platform_;
     /**
      * <code>required string platform = 2;</code>
+     * @return Whether the platform field is set.
      */
+    @java.lang.Override
     public boolean hasPlatform() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>required string platform = 2;</code>
+     * @return The platform.
      */
+    @java.lang.Override
     public java.lang.String getPlatform() {
       java.lang.Object ref = platform_;
       if (ref instanceof java.lang.String) {
@@ -607,7 +674,9 @@ public final class MetroAtsProtos {
     }
     /**
      * <code>required string platform = 2;</code>
+     * @return The bytes for platform.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getPlatformBytes() {
       java.lang.Object ref = platform_;
@@ -626,13 +695,17 @@ public final class MetroAtsProtos {
     private volatile java.lang.Object arrivalTimePlanned_;
     /**
      * <code>required string arrival_time_planned = 3;</code>
+     * @return Whether the arrivalTimePlanned field is set.
      */
+    @java.lang.Override
     public boolean hasArrivalTimePlanned() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>required string arrival_time_planned = 3;</code>
+     * @return The arrivalTimePlanned.
      */
+    @java.lang.Override
     public java.lang.String getArrivalTimePlanned() {
       java.lang.Object ref = arrivalTimePlanned_;
       if (ref instanceof java.lang.String) {
@@ -649,7 +722,9 @@ public final class MetroAtsProtos {
     }
     /**
      * <code>required string arrival_time_planned = 3;</code>
+     * @return The bytes for arrivalTimePlanned.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getArrivalTimePlannedBytes() {
       java.lang.Object ref = arrivalTimePlanned_;
@@ -668,13 +743,17 @@ public final class MetroAtsProtos {
     private volatile java.lang.Object arrivalTimeForecast_;
     /**
      * <code>optional string arrival_time_forecast = 4;</code>
+     * @return Whether the arrivalTimeForecast field is set.
      */
+    @java.lang.Override
     public boolean hasArrivalTimeForecast() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>optional string arrival_time_forecast = 4;</code>
+     * @return The arrivalTimeForecast.
      */
+    @java.lang.Override
     public java.lang.String getArrivalTimeForecast() {
       java.lang.Object ref = arrivalTimeForecast_;
       if (ref instanceof java.lang.String) {
@@ -691,7 +770,9 @@ public final class MetroAtsProtos {
     }
     /**
      * <code>optional string arrival_time_forecast = 4;</code>
+     * @return The bytes for arrivalTimeForecast.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getArrivalTimeForecastBytes() {
       java.lang.Object ref = arrivalTimeForecast_;
@@ -710,13 +791,17 @@ public final class MetroAtsProtos {
     private volatile java.lang.Object arrivalTimeMeasured_;
     /**
      * <code>optional string arrival_time_measured = 5;</code>
+     * @return Whether the arrivalTimeMeasured field is set.
      */
+    @java.lang.Override
     public boolean hasArrivalTimeMeasured() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <code>optional string arrival_time_measured = 5;</code>
+     * @return The arrivalTimeMeasured.
      */
+    @java.lang.Override
     public java.lang.String getArrivalTimeMeasured() {
       java.lang.Object ref = arrivalTimeMeasured_;
       if (ref instanceof java.lang.String) {
@@ -733,7 +818,9 @@ public final class MetroAtsProtos {
     }
     /**
      * <code>optional string arrival_time_measured = 5;</code>
+     * @return The bytes for arrivalTimeMeasured.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getArrivalTimeMeasuredBytes() {
       java.lang.Object ref = arrivalTimeMeasured_;
@@ -752,13 +839,17 @@ public final class MetroAtsProtos {
     private volatile java.lang.Object departureTimePlanned_;
     /**
      * <code>required string departure_time_planned = 6;</code>
+     * @return Whether the departureTimePlanned field is set.
      */
+    @java.lang.Override
     public boolean hasDepartureTimePlanned() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <code>required string departure_time_planned = 6;</code>
+     * @return The departureTimePlanned.
      */
+    @java.lang.Override
     public java.lang.String getDepartureTimePlanned() {
       java.lang.Object ref = departureTimePlanned_;
       if (ref instanceof java.lang.String) {
@@ -775,7 +866,9 @@ public final class MetroAtsProtos {
     }
     /**
      * <code>required string departure_time_planned = 6;</code>
+     * @return The bytes for departureTimePlanned.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDepartureTimePlannedBytes() {
       java.lang.Object ref = departureTimePlanned_;
@@ -794,13 +887,17 @@ public final class MetroAtsProtos {
     private volatile java.lang.Object departureTimeForecast_;
     /**
      * <code>optional string departure_time_forecast = 7;</code>
+     * @return Whether the departureTimeForecast field is set.
      */
+    @java.lang.Override
     public boolean hasDepartureTimeForecast() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      * <code>optional string departure_time_forecast = 7;</code>
+     * @return The departureTimeForecast.
      */
+    @java.lang.Override
     public java.lang.String getDepartureTimeForecast() {
       java.lang.Object ref = departureTimeForecast_;
       if (ref instanceof java.lang.String) {
@@ -817,7 +914,9 @@ public final class MetroAtsProtos {
     }
     /**
      * <code>optional string departure_time_forecast = 7;</code>
+     * @return The bytes for departureTimeForecast.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDepartureTimeForecastBytes() {
       java.lang.Object ref = departureTimeForecast_;
@@ -836,13 +935,17 @@ public final class MetroAtsProtos {
     private volatile java.lang.Object departureTimeMeasured_;
     /**
      * <code>optional string departure_time_measured = 8;</code>
+     * @return Whether the departureTimeMeasured field is set.
      */
+    @java.lang.Override
     public boolean hasDepartureTimeMeasured() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      * <code>optional string departure_time_measured = 8;</code>
+     * @return The departureTimeMeasured.
      */
+    @java.lang.Override
     public java.lang.String getDepartureTimeMeasured() {
       java.lang.Object ref = departureTimeMeasured_;
       if (ref instanceof java.lang.String) {
@@ -859,7 +962,9 @@ public final class MetroAtsProtos {
     }
     /**
      * <code>optional string departure_time_measured = 8;</code>
+     * @return The bytes for departureTimeMeasured.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDepartureTimeMeasuredBytes() {
       java.lang.Object ref = departureTimeMeasured_;
@@ -878,13 +983,17 @@ public final class MetroAtsProtos {
     private volatile java.lang.Object source_;
     /**
      * <code>required string source = 9;</code>
+     * @return Whether the source field is set.
      */
+    @java.lang.Override
     public boolean hasSource() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <code>required string source = 9;</code>
+     * @return The source.
      */
+    @java.lang.Override
     public java.lang.String getSource() {
       java.lang.Object ref = source_;
       if (ref instanceof java.lang.String) {
@@ -901,7 +1010,9 @@ public final class MetroAtsProtos {
     }
     /**
      * <code>required string source = 9;</code>
+     * @return The bytes for source.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getSourceBytes() {
       java.lang.Object ref = source_;
@@ -920,13 +1031,17 @@ public final class MetroAtsProtos {
     private volatile java.lang.Object stopNumber_;
     /**
      * <code>required string stop_number = 10;</code>
+     * @return Whether the stopNumber field is set.
      */
+    @java.lang.Override
     public boolean hasStopNumber() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      * <code>required string stop_number = 10;</code>
+     * @return The stopNumber.
      */
+    @java.lang.Override
     public java.lang.String getStopNumber() {
       java.lang.Object ref = stopNumber_;
       if (ref instanceof java.lang.String) {
@@ -943,7 +1058,9 @@ public final class MetroAtsProtos {
     }
     /**
      * <code>required string stop_number = 10;</code>
+     * @return The bytes for stopNumber.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getStopNumberBytes() {
       java.lang.Object ref = stopNumber_;
@@ -962,19 +1079,23 @@ public final class MetroAtsProtos {
     private int rowProgress_;
     /**
      * <code>optional .proto.MetroProgress row_progress = 11;</code>
+     * @return Whether the rowProgress field is set.
      */
-    public boolean hasRowProgress() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
+    @java.lang.Override public boolean hasRowProgress() {
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      * <code>optional .proto.MetroProgress row_progress = 11;</code>
+     * @return The rowProgress.
      */
-    public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress getRowProgress() {
+    @java.lang.Override public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress getRowProgress() {
+      @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress result = fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.valueOf(rowProgress_);
       return result == null ? fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.SCHEDULED : result;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1008,80 +1129,82 @@ public final class MetroAtsProtos {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, station_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, platform_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, arrivalTimePlanned_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, arrivalTimeForecast_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, arrivalTimeMeasured_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, departureTimePlanned_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, departureTimeForecast_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, departureTimeMeasured_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, source_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, stopNumber_);
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         output.writeEnum(11, rowProgress_);
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, station_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, platform_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, arrivalTimePlanned_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, arrivalTimeForecast_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, arrivalTimeMeasured_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, departureTimePlanned_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, departureTimeForecast_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, departureTimeMeasured_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, source_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, stopNumber_);
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, rowProgress_);
       }
@@ -1090,7 +1213,6 @@ public final class MetroAtsProtos {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1101,63 +1223,62 @@ public final class MetroAtsProtos {
       }
       fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate other = (fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate) obj;
 
-      boolean result = true;
-      result = result && (hasStation() == other.hasStation());
+      if (hasStation() != other.hasStation()) return false;
       if (hasStation()) {
-        result = result && getStation()
-            .equals(other.getStation());
+        if (!getStation()
+            .equals(other.getStation())) return false;
       }
-      result = result && (hasPlatform() == other.hasPlatform());
+      if (hasPlatform() != other.hasPlatform()) return false;
       if (hasPlatform()) {
-        result = result && getPlatform()
-            .equals(other.getPlatform());
+        if (!getPlatform()
+            .equals(other.getPlatform())) return false;
       }
-      result = result && (hasArrivalTimePlanned() == other.hasArrivalTimePlanned());
+      if (hasArrivalTimePlanned() != other.hasArrivalTimePlanned()) return false;
       if (hasArrivalTimePlanned()) {
-        result = result && getArrivalTimePlanned()
-            .equals(other.getArrivalTimePlanned());
+        if (!getArrivalTimePlanned()
+            .equals(other.getArrivalTimePlanned())) return false;
       }
-      result = result && (hasArrivalTimeForecast() == other.hasArrivalTimeForecast());
+      if (hasArrivalTimeForecast() != other.hasArrivalTimeForecast()) return false;
       if (hasArrivalTimeForecast()) {
-        result = result && getArrivalTimeForecast()
-            .equals(other.getArrivalTimeForecast());
+        if (!getArrivalTimeForecast()
+            .equals(other.getArrivalTimeForecast())) return false;
       }
-      result = result && (hasArrivalTimeMeasured() == other.hasArrivalTimeMeasured());
+      if (hasArrivalTimeMeasured() != other.hasArrivalTimeMeasured()) return false;
       if (hasArrivalTimeMeasured()) {
-        result = result && getArrivalTimeMeasured()
-            .equals(other.getArrivalTimeMeasured());
+        if (!getArrivalTimeMeasured()
+            .equals(other.getArrivalTimeMeasured())) return false;
       }
-      result = result && (hasDepartureTimePlanned() == other.hasDepartureTimePlanned());
+      if (hasDepartureTimePlanned() != other.hasDepartureTimePlanned()) return false;
       if (hasDepartureTimePlanned()) {
-        result = result && getDepartureTimePlanned()
-            .equals(other.getDepartureTimePlanned());
+        if (!getDepartureTimePlanned()
+            .equals(other.getDepartureTimePlanned())) return false;
       }
-      result = result && (hasDepartureTimeForecast() == other.hasDepartureTimeForecast());
+      if (hasDepartureTimeForecast() != other.hasDepartureTimeForecast()) return false;
       if (hasDepartureTimeForecast()) {
-        result = result && getDepartureTimeForecast()
-            .equals(other.getDepartureTimeForecast());
+        if (!getDepartureTimeForecast()
+            .equals(other.getDepartureTimeForecast())) return false;
       }
-      result = result && (hasDepartureTimeMeasured() == other.hasDepartureTimeMeasured());
+      if (hasDepartureTimeMeasured() != other.hasDepartureTimeMeasured()) return false;
       if (hasDepartureTimeMeasured()) {
-        result = result && getDepartureTimeMeasured()
-            .equals(other.getDepartureTimeMeasured());
+        if (!getDepartureTimeMeasured()
+            .equals(other.getDepartureTimeMeasured())) return false;
       }
-      result = result && (hasSource() == other.hasSource());
+      if (hasSource() != other.hasSource()) return false;
       if (hasSource()) {
-        result = result && getSource()
-            .equals(other.getSource());
+        if (!getSource()
+            .equals(other.getSource())) return false;
       }
-      result = result && (hasStopNumber() == other.hasStopNumber());
+      if (hasStopNumber() != other.hasStopNumber()) return false;
       if (hasStopNumber()) {
-        result = result && getStopNumber()
-            .equals(other.getStopNumber());
+        if (!getStopNumber()
+            .equals(other.getStopNumber())) return false;
       }
-      result = result && (hasRowProgress() == other.hasRowProgress());
+      if (hasRowProgress() != other.hasRowProgress()) return false;
       if (hasRowProgress()) {
-        result = result && rowProgress_ == other.rowProgress_;
+        if (rowProgress_ != other.rowProgress_) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1166,7 +1287,7 @@ public final class MetroAtsProtos {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasStation()) {
         hash = (37 * hash) + STATION_FIELD_NUMBER;
         hash = (53 * hash) + getStation().hashCode();
@@ -1216,6 +1337,17 @@ public final class MetroAtsProtos {
       return hash;
     }
 
+    public static fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1275,6 +1407,7 @@ public final class MetroAtsProtos {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1282,6 +1415,7 @@ public final class MetroAtsProtos {
     public static Builder newBuilder(fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1305,6 +1439,7 @@ public final class MetroAtsProtos {
         return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroStopEstimate_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroStopEstimate_fieldAccessorTable
@@ -1327,6 +1462,7 @@ public final class MetroAtsProtos {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         station_ = "";
@@ -1354,15 +1490,18 @@ public final class MetroAtsProtos {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroStopEstimate_descriptor;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate getDefaultInstanceForType() {
         return fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.getDefaultInstance();
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate build() {
         fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate result = buildPartial();
         if (!result.isInitialized()) {
@@ -1371,51 +1510,52 @@ public final class MetroAtsProtos {
         return result;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate buildPartial() {
         fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate result = new fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.station_ = station_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           to_bitField0_ |= 0x00000002;
         }
         result.platform_ = platform_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           to_bitField0_ |= 0x00000004;
         }
         result.arrivalTimePlanned_ = arrivalTimePlanned_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           to_bitField0_ |= 0x00000008;
         }
         result.arrivalTimeForecast_ = arrivalTimeForecast_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           to_bitField0_ |= 0x00000010;
         }
         result.arrivalTimeMeasured_ = arrivalTimeMeasured_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           to_bitField0_ |= 0x00000020;
         }
         result.departureTimePlanned_ = departureTimePlanned_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
           to_bitField0_ |= 0x00000040;
         }
         result.departureTimeForecast_ = departureTimeForecast_;
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((from_bitField0_ & 0x00000080) != 0)) {
           to_bitField0_ |= 0x00000080;
         }
         result.departureTimeMeasured_ = departureTimeMeasured_;
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((from_bitField0_ & 0x00000100) != 0)) {
           to_bitField0_ |= 0x00000100;
         }
         result.source_ = source_;
-        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((from_bitField0_ & 0x00000200) != 0)) {
           to_bitField0_ |= 0x00000200;
         }
         result.stopNumber_ = stopNumber_;
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((from_bitField0_ & 0x00000400) != 0)) {
           to_bitField0_ |= 0x00000400;
         }
         result.rowProgress_ = rowProgress_;
@@ -1424,32 +1564,39 @@ public final class MetroAtsProtos {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate) {
           return mergeFrom((fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate)other);
@@ -1519,6 +1666,7 @@ public final class MetroAtsProtos {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasStation()) {
           return false;
@@ -1541,6 +1689,7 @@ public final class MetroAtsProtos {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1567,9 +1716,10 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>required string station = 1;</code>
+       * @return Whether the station field is set.
        */
       public boolean hasStation() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <pre>
@@ -1577,6 +1727,7 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>required string station = 1;</code>
+       * @return The station.
        */
       public java.lang.String getStation() {
         java.lang.Object ref = station_;
@@ -1598,6 +1749,7 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>required string station = 1;</code>
+       * @return The bytes for station.
        */
       public com.google.protobuf.ByteString
           getStationBytes() {
@@ -1618,6 +1770,8 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>required string station = 1;</code>
+       * @param value The station to set.
+       * @return This builder for chaining.
        */
       public Builder setStation(
           java.lang.String value) {
@@ -1635,6 +1789,7 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>required string station = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStation() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1648,6 +1803,8 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>required string station = 1;</code>
+       * @param value The bytes for station to set.
+       * @return This builder for chaining.
        */
       public Builder setStationBytes(
           com.google.protobuf.ByteString value) {
@@ -1663,12 +1820,14 @@ public final class MetroAtsProtos {
       private java.lang.Object platform_ = "";
       /**
        * <code>required string platform = 2;</code>
+       * @return Whether the platform field is set.
        */
       public boolean hasPlatform() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>required string platform = 2;</code>
+       * @return The platform.
        */
       public java.lang.String getPlatform() {
         java.lang.Object ref = platform_;
@@ -1686,6 +1845,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string platform = 2;</code>
+       * @return The bytes for platform.
        */
       public com.google.protobuf.ByteString
           getPlatformBytes() {
@@ -1702,6 +1862,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string platform = 2;</code>
+       * @param value The platform to set.
+       * @return This builder for chaining.
        */
       public Builder setPlatform(
           java.lang.String value) {
@@ -1715,6 +1877,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string platform = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPlatform() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -1724,6 +1887,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string platform = 2;</code>
+       * @param value The bytes for platform to set.
+       * @return This builder for chaining.
        */
       public Builder setPlatformBytes(
           com.google.protobuf.ByteString value) {
@@ -1739,12 +1904,14 @@ public final class MetroAtsProtos {
       private java.lang.Object arrivalTimePlanned_ = "";
       /**
        * <code>required string arrival_time_planned = 3;</code>
+       * @return Whether the arrivalTimePlanned field is set.
        */
       public boolean hasArrivalTimePlanned() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>required string arrival_time_planned = 3;</code>
+       * @return The arrivalTimePlanned.
        */
       public java.lang.String getArrivalTimePlanned() {
         java.lang.Object ref = arrivalTimePlanned_;
@@ -1762,6 +1929,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string arrival_time_planned = 3;</code>
+       * @return The bytes for arrivalTimePlanned.
        */
       public com.google.protobuf.ByteString
           getArrivalTimePlannedBytes() {
@@ -1778,6 +1946,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string arrival_time_planned = 3;</code>
+       * @param value The arrivalTimePlanned to set.
+       * @return This builder for chaining.
        */
       public Builder setArrivalTimePlanned(
           java.lang.String value) {
@@ -1791,6 +1961,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string arrival_time_planned = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearArrivalTimePlanned() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -1800,6 +1971,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string arrival_time_planned = 3;</code>
+       * @param value The bytes for arrivalTimePlanned to set.
+       * @return This builder for chaining.
        */
       public Builder setArrivalTimePlannedBytes(
           com.google.protobuf.ByteString value) {
@@ -1815,12 +1988,14 @@ public final class MetroAtsProtos {
       private java.lang.Object arrivalTimeForecast_ = "";
       /**
        * <code>optional string arrival_time_forecast = 4;</code>
+       * @return Whether the arrivalTimeForecast field is set.
        */
       public boolean hasArrivalTimeForecast() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>optional string arrival_time_forecast = 4;</code>
+       * @return The arrivalTimeForecast.
        */
       public java.lang.String getArrivalTimeForecast() {
         java.lang.Object ref = arrivalTimeForecast_;
@@ -1838,6 +2013,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string arrival_time_forecast = 4;</code>
+       * @return The bytes for arrivalTimeForecast.
        */
       public com.google.protobuf.ByteString
           getArrivalTimeForecastBytes() {
@@ -1854,6 +2030,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string arrival_time_forecast = 4;</code>
+       * @param value The arrivalTimeForecast to set.
+       * @return This builder for chaining.
        */
       public Builder setArrivalTimeForecast(
           java.lang.String value) {
@@ -1867,6 +2045,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string arrival_time_forecast = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearArrivalTimeForecast() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -1876,6 +2055,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string arrival_time_forecast = 4;</code>
+       * @param value The bytes for arrivalTimeForecast to set.
+       * @return This builder for chaining.
        */
       public Builder setArrivalTimeForecastBytes(
           com.google.protobuf.ByteString value) {
@@ -1891,12 +2072,14 @@ public final class MetroAtsProtos {
       private java.lang.Object arrivalTimeMeasured_ = "";
       /**
        * <code>optional string arrival_time_measured = 5;</code>
+       * @return Whether the arrivalTimeMeasured field is set.
        */
       public boolean hasArrivalTimeMeasured() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>optional string arrival_time_measured = 5;</code>
+       * @return The arrivalTimeMeasured.
        */
       public java.lang.String getArrivalTimeMeasured() {
         java.lang.Object ref = arrivalTimeMeasured_;
@@ -1914,6 +2097,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string arrival_time_measured = 5;</code>
+       * @return The bytes for arrivalTimeMeasured.
        */
       public com.google.protobuf.ByteString
           getArrivalTimeMeasuredBytes() {
@@ -1930,6 +2114,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string arrival_time_measured = 5;</code>
+       * @param value The arrivalTimeMeasured to set.
+       * @return This builder for chaining.
        */
       public Builder setArrivalTimeMeasured(
           java.lang.String value) {
@@ -1943,6 +2129,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string arrival_time_measured = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearArrivalTimeMeasured() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -1952,6 +2139,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string arrival_time_measured = 5;</code>
+       * @param value The bytes for arrivalTimeMeasured to set.
+       * @return This builder for chaining.
        */
       public Builder setArrivalTimeMeasuredBytes(
           com.google.protobuf.ByteString value) {
@@ -1967,12 +2156,14 @@ public final class MetroAtsProtos {
       private java.lang.Object departureTimePlanned_ = "";
       /**
        * <code>required string departure_time_planned = 6;</code>
+       * @return Whether the departureTimePlanned field is set.
        */
       public boolean hasDepartureTimePlanned() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <code>required string departure_time_planned = 6;</code>
+       * @return The departureTimePlanned.
        */
       public java.lang.String getDepartureTimePlanned() {
         java.lang.Object ref = departureTimePlanned_;
@@ -1990,6 +2181,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string departure_time_planned = 6;</code>
+       * @return The bytes for departureTimePlanned.
        */
       public com.google.protobuf.ByteString
           getDepartureTimePlannedBytes() {
@@ -2006,6 +2198,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string departure_time_planned = 6;</code>
+       * @param value The departureTimePlanned to set.
+       * @return This builder for chaining.
        */
       public Builder setDepartureTimePlanned(
           java.lang.String value) {
@@ -2019,6 +2213,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string departure_time_planned = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDepartureTimePlanned() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -2028,6 +2223,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string departure_time_planned = 6;</code>
+       * @param value The bytes for departureTimePlanned to set.
+       * @return This builder for chaining.
        */
       public Builder setDepartureTimePlannedBytes(
           com.google.protobuf.ByteString value) {
@@ -2043,12 +2240,14 @@ public final class MetroAtsProtos {
       private java.lang.Object departureTimeForecast_ = "";
       /**
        * <code>optional string departure_time_forecast = 7;</code>
+       * @return Whether the departureTimeForecast field is set.
        */
       public boolean hasDepartureTimeForecast() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        * <code>optional string departure_time_forecast = 7;</code>
+       * @return The departureTimeForecast.
        */
       public java.lang.String getDepartureTimeForecast() {
         java.lang.Object ref = departureTimeForecast_;
@@ -2066,6 +2265,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string departure_time_forecast = 7;</code>
+       * @return The bytes for departureTimeForecast.
        */
       public com.google.protobuf.ByteString
           getDepartureTimeForecastBytes() {
@@ -2082,6 +2282,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string departure_time_forecast = 7;</code>
+       * @param value The departureTimeForecast to set.
+       * @return This builder for chaining.
        */
       public Builder setDepartureTimeForecast(
           java.lang.String value) {
@@ -2095,6 +2297,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string departure_time_forecast = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDepartureTimeForecast() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -2104,6 +2307,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string departure_time_forecast = 7;</code>
+       * @param value The bytes for departureTimeForecast to set.
+       * @return This builder for chaining.
        */
       public Builder setDepartureTimeForecastBytes(
           com.google.protobuf.ByteString value) {
@@ -2119,12 +2324,14 @@ public final class MetroAtsProtos {
       private java.lang.Object departureTimeMeasured_ = "";
       /**
        * <code>optional string departure_time_measured = 8;</code>
+       * @return Whether the departureTimeMeasured field is set.
        */
       public boolean hasDepartureTimeMeasured() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
        * <code>optional string departure_time_measured = 8;</code>
+       * @return The departureTimeMeasured.
        */
       public java.lang.String getDepartureTimeMeasured() {
         java.lang.Object ref = departureTimeMeasured_;
@@ -2142,6 +2349,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string departure_time_measured = 8;</code>
+       * @return The bytes for departureTimeMeasured.
        */
       public com.google.protobuf.ByteString
           getDepartureTimeMeasuredBytes() {
@@ -2158,6 +2366,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string departure_time_measured = 8;</code>
+       * @param value The departureTimeMeasured to set.
+       * @return This builder for chaining.
        */
       public Builder setDepartureTimeMeasured(
           java.lang.String value) {
@@ -2171,6 +2381,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string departure_time_measured = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDepartureTimeMeasured() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -2180,6 +2391,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string departure_time_measured = 8;</code>
+       * @param value The bytes for departureTimeMeasured to set.
+       * @return This builder for chaining.
        */
       public Builder setDepartureTimeMeasuredBytes(
           com.google.protobuf.ByteString value) {
@@ -2195,12 +2408,14 @@ public final class MetroAtsProtos {
       private java.lang.Object source_ = "";
       /**
        * <code>required string source = 9;</code>
+       * @return Whether the source field is set.
        */
       public boolean hasSource() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
        * <code>required string source = 9;</code>
+       * @return The source.
        */
       public java.lang.String getSource() {
         java.lang.Object ref = source_;
@@ -2218,6 +2433,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string source = 9;</code>
+       * @return The bytes for source.
        */
       public com.google.protobuf.ByteString
           getSourceBytes() {
@@ -2234,6 +2450,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string source = 9;</code>
+       * @param value The source to set.
+       * @return This builder for chaining.
        */
       public Builder setSource(
           java.lang.String value) {
@@ -2247,6 +2465,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string source = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSource() {
         bitField0_ = (bitField0_ & ~0x00000100);
@@ -2256,6 +2475,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string source = 9;</code>
+       * @param value The bytes for source to set.
+       * @return This builder for chaining.
        */
       public Builder setSourceBytes(
           com.google.protobuf.ByteString value) {
@@ -2271,12 +2492,14 @@ public final class MetroAtsProtos {
       private java.lang.Object stopNumber_ = "";
       /**
        * <code>required string stop_number = 10;</code>
+       * @return Whether the stopNumber field is set.
        */
       public boolean hasStopNumber() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000200) != 0);
       }
       /**
        * <code>required string stop_number = 10;</code>
+       * @return The stopNumber.
        */
       public java.lang.String getStopNumber() {
         java.lang.Object ref = stopNumber_;
@@ -2294,6 +2517,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string stop_number = 10;</code>
+       * @return The bytes for stopNumber.
        */
       public com.google.protobuf.ByteString
           getStopNumberBytes() {
@@ -2310,6 +2534,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string stop_number = 10;</code>
+       * @param value The stopNumber to set.
+       * @return This builder for chaining.
        */
       public Builder setStopNumber(
           java.lang.String value) {
@@ -2323,6 +2549,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string stop_number = 10;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStopNumber() {
         bitField0_ = (bitField0_ & ~0x00000200);
@@ -2332,6 +2559,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string stop_number = 10;</code>
+       * @param value The bytes for stopNumber to set.
+       * @return This builder for chaining.
        */
       public Builder setStopNumberBytes(
           com.google.protobuf.ByteString value) {
@@ -2347,19 +2576,25 @@ public final class MetroAtsProtos {
       private int rowProgress_ = 0;
       /**
        * <code>optional .proto.MetroProgress row_progress = 11;</code>
+       * @return Whether the rowProgress field is set.
        */
-      public boolean hasRowProgress() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+      @java.lang.Override public boolean hasRowProgress() {
+        return ((bitField0_ & 0x00000400) != 0);
       }
       /**
        * <code>optional .proto.MetroProgress row_progress = 11;</code>
+       * @return The rowProgress.
        */
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress getRowProgress() {
+        @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress result = fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.valueOf(rowProgress_);
         return result == null ? fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.SCHEDULED : result;
       }
       /**
        * <code>optional .proto.MetroProgress row_progress = 11;</code>
+       * @param value The rowProgress to set.
+       * @return This builder for chaining.
        */
       public Builder setRowProgress(fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress value) {
         if (value == null) {
@@ -2372,6 +2607,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional .proto.MetroProgress row_progress = 11;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRowProgress() {
         bitField0_ = (bitField0_ & ~0x00000400);
@@ -2379,11 +2615,13 @@ public final class MetroAtsProtos {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2405,11 +2643,12 @@ public final class MetroAtsProtos {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<MetroStopEstimate>
         PARSER = new com.google.protobuf.AbstractParser<MetroStopEstimate>() {
+      @java.lang.Override
       public MetroStopEstimate parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MetroStopEstimate(input, extensionRegistry);
+        return new MetroStopEstimate(input, extensionRegistry);
       }
     };
 
@@ -2422,6 +2661,7 @@ public final class MetroAtsProtos {
       return PARSER;
     }
 
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2438,6 +2678,7 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
     boolean hasSchemaVersion();
     /**
@@ -2446,6 +2687,7 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
     int getSchemaVersion();
 
@@ -2475,60 +2717,73 @@ public final class MetroAtsProtos {
 
     /**
      * <code>required .proto.MetroTrainType train_type = 3;</code>
+     * @return Whether the trainType field is set.
      */
     boolean hasTrainType();
     /**
      * <code>required .proto.MetroTrainType train_type = 3;</code>
+     * @return The trainType.
      */
     fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType getTrainType();
 
     /**
      * <code>required .proto.MetroProgress journey_sectionprogress = 4;</code>
+     * @return Whether the journeySectionprogress field is set.
      */
     boolean hasJourneySectionprogress();
     /**
      * <code>required .proto.MetroProgress journey_sectionprogress = 4;</code>
+     * @return The journeySectionprogress.
      */
     fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress getJourneySectionprogress();
 
     /**
      * <code>required string begin_time = 5;</code>
+     * @return Whether the beginTime field is set.
      */
     boolean hasBeginTime();
     /**
      * <code>required string begin_time = 5;</code>
+     * @return The beginTime.
      */
     java.lang.String getBeginTime();
     /**
      * <code>required string begin_time = 5;</code>
+     * @return The bytes for beginTime.
      */
     com.google.protobuf.ByteString
         getBeginTimeBytes();
 
     /**
      * <code>required string end_time = 6;</code>
+     * @return Whether the endTime field is set.
      */
     boolean hasEndTime();
     /**
      * <code>required string end_time = 6;</code>
+     * @return The endTime.
      */
     java.lang.String getEndTime();
     /**
      * <code>required string end_time = 6;</code>
+     * @return The bytes for endTime.
      */
     com.google.protobuf.ByteString
         getEndTimeBytes();
 
     /**
      * <code>required string start_stop_short_name = 7;</code>
+     * @return Whether the startStopShortName field is set.
      */
     boolean hasStartStopShortName();
     /**
      * <code>required string start_stop_short_name = 7;</code>
+     * @return The startStopShortName.
      */
     java.lang.String getStartStopShortName();
     /**
      * <code>required string start_stop_short_name = 7;</code>
+     * @return The bytes for startStopShortName.
      */
     com.google.protobuf.ByteString
         getStartStopShortNameBytes();
@@ -2539,6 +2794,7 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>optional string operating_day = 8;</code>
+     * @return Whether the operatingDay field is set.
      */
     boolean hasOperatingDay();
     /**
@@ -2547,6 +2803,7 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>optional string operating_day = 8;</code>
+     * @return The operatingDay.
      */
     java.lang.String getOperatingDay();
     /**
@@ -2555,90 +2812,109 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>optional string operating_day = 8;</code>
+     * @return The bytes for operatingDay.
      */
     com.google.protobuf.ByteString
         getOperatingDayBytes();
 
     /**
      * <code>optional string start_stop_number = 9;</code>
+     * @return Whether the startStopNumber field is set.
      */
     boolean hasStartStopNumber();
     /**
      * <code>optional string start_stop_number = 9;</code>
+     * @return The startStopNumber.
      */
     java.lang.String getStartStopNumber();
     /**
      * <code>optional string start_stop_number = 9;</code>
+     * @return The bytes for startStopNumber.
      */
     com.google.protobuf.ByteString
         getStartStopNumberBytes();
 
     /**
      * <code>optional string start_time = 10;</code>
+     * @return Whether the startTime field is set.
      */
     boolean hasStartTime();
     /**
      * <code>optional string start_time = 10;</code>
+     * @return The startTime.
      */
     java.lang.String getStartTime();
     /**
      * <code>optional string start_time = 10;</code>
+     * @return The bytes for startTime.
      */
     com.google.protobuf.ByteString
         getStartTimeBytes();
 
     /**
      * <code>optional string dvj_id = 11;</code>
+     * @return Whether the dvjId field is set.
      */
     boolean hasDvjId();
     /**
      * <code>optional string dvj_id = 11;</code>
+     * @return The dvjId.
      */
     java.lang.String getDvjId();
     /**
      * <code>optional string dvj_id = 11;</code>
+     * @return The bytes for dvjId.
      */
     com.google.protobuf.ByteString
         getDvjIdBytes();
 
     /**
      * <code>optional string route_name = 12;</code>
+     * @return Whether the routeName field is set.
      */
     boolean hasRouteName();
     /**
      * <code>optional string route_name = 12;</code>
+     * @return The routeName.
      */
     java.lang.String getRouteName();
     /**
      * <code>optional string route_name = 12;</code>
+     * @return The bytes for routeName.
      */
     com.google.protobuf.ByteString
         getRouteNameBytes();
 
     /**
      * <code>optional string start_datetime = 13;</code>
+     * @return Whether the startDatetime field is set.
      */
     boolean hasStartDatetime();
     /**
      * <code>optional string start_datetime = 13;</code>
+     * @return The startDatetime.
      */
     java.lang.String getStartDatetime();
     /**
      * <code>optional string start_datetime = 13;</code>
+     * @return The bytes for startDatetime.
      */
     com.google.protobuf.ByteString
         getStartDatetimeBytes();
 
     /**
      * <code>optional string direction = 14;</code>
+     * @return Whether the direction field is set.
      */
     boolean hasDirection();
     /**
      * <code>optional string direction = 14;</code>
+     * @return The direction.
      */
     java.lang.String getDirection();
     /**
      * <code>optional string direction = 14;</code>
+     * @return The bytes for direction.
      */
     com.google.protobuf.ByteString
         getDirectionBytes();
@@ -2649,6 +2925,7 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>optional bool scheduled = 15;</code>
+     * @return Whether the scheduled field is set.
      */
     boolean hasScheduled();
     /**
@@ -2657,16 +2934,18 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>optional bool scheduled = 15;</code>
+     * @return The scheduled.
      */
     boolean getScheduled();
   }
   /**
    * Protobuf type {@code proto.MetroEstimate}
    */
-  public  static final class MetroEstimate extends
+  public static final class MetroEstimate extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.MetroEstimate)
       MetroEstimateOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MetroEstimate.newBuilder() to construct.
     private MetroEstimate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2686,7 +2965,13 @@ public final class MetroAtsProtos {
       routeName_ = "";
       startDatetime_ = "";
       direction_ = "";
-      scheduled_ = false;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MetroEstimate();
     }
 
     @java.lang.Override
@@ -2699,6 +2984,9 @@ public final class MetroAtsProtos {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2710,20 +2998,13 @@ public final class MetroAtsProtos {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               schemaVersion_ = input.readInt32();
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 metroRows_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate>();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -2733,6 +3014,7 @@ public final class MetroAtsProtos {
             }
             case 24: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType value = fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(3, rawValue);
@@ -2744,6 +3026,7 @@ public final class MetroAtsProtos {
             }
             case 32: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress value = fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(4, rawValue);
@@ -2818,6 +3101,13 @@ public final class MetroAtsProtos {
               scheduled_ = input.readBool();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2826,7 +3116,7 @@ public final class MetroAtsProtos {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           metroRows_ = java.util.Collections.unmodifiableList(metroRows_);
         }
         this.unknownFields = unknownFields.build();
@@ -2838,6 +3128,7 @@ public final class MetroAtsProtos {
       return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroEstimate_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroEstimate_fieldAccessorTable
@@ -2854,9 +3145,11 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return Whether the schemaVersion field is set.
      */
+    @java.lang.Override
     public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
@@ -2864,7 +3157,9 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+     * @return The schemaVersion.
      */
+    @java.lang.Override
     public int getSchemaVersion() {
       return schemaVersion_;
     }
@@ -2874,12 +3169,14 @@ public final class MetroAtsProtos {
     /**
      * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate> getMetroRowsList() {
       return metroRows_;
     }
     /**
      * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimateOrBuilder> 
         getMetroRowsOrBuilderList() {
       return metroRows_;
@@ -2887,18 +3184,21 @@ public final class MetroAtsProtos {
     /**
      * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
      */
+    @java.lang.Override
     public int getMetroRowsCount() {
       return metroRows_.size();
     }
     /**
      * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
      */
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate getMetroRows(int index) {
       return metroRows_.get(index);
     }
     /**
      * <code>repeated .proto.MetroStopEstimate metro_rows = 2;</code>
      */
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimateOrBuilder getMetroRowsOrBuilder(
         int index) {
       return metroRows_.get(index);
@@ -2908,14 +3208,17 @@ public final class MetroAtsProtos {
     private int trainType_;
     /**
      * <code>required .proto.MetroTrainType train_type = 3;</code>
+     * @return Whether the trainType field is set.
      */
-    public boolean hasTrainType() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+    @java.lang.Override public boolean hasTrainType() {
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>required .proto.MetroTrainType train_type = 3;</code>
+     * @return The trainType.
      */
-    public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType getTrainType() {
+    @java.lang.Override public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType getTrainType() {
+      @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType result = fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType.valueOf(trainType_);
       return result == null ? fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType.M : result;
     }
@@ -2924,14 +3227,17 @@ public final class MetroAtsProtos {
     private int journeySectionprogress_;
     /**
      * <code>required .proto.MetroProgress journey_sectionprogress = 4;</code>
+     * @return Whether the journeySectionprogress field is set.
      */
-    public boolean hasJourneySectionprogress() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+    @java.lang.Override public boolean hasJourneySectionprogress() {
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>required .proto.MetroProgress journey_sectionprogress = 4;</code>
+     * @return The journeySectionprogress.
      */
-    public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress getJourneySectionprogress() {
+    @java.lang.Override public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress getJourneySectionprogress() {
+      @SuppressWarnings("deprecation")
       fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress result = fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.valueOf(journeySectionprogress_);
       return result == null ? fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.SCHEDULED : result;
     }
@@ -2940,13 +3246,17 @@ public final class MetroAtsProtos {
     private volatile java.lang.Object beginTime_;
     /**
      * <code>required string begin_time = 5;</code>
+     * @return Whether the beginTime field is set.
      */
+    @java.lang.Override
     public boolean hasBeginTime() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>required string begin_time = 5;</code>
+     * @return The beginTime.
      */
+    @java.lang.Override
     public java.lang.String getBeginTime() {
       java.lang.Object ref = beginTime_;
       if (ref instanceof java.lang.String) {
@@ -2963,7 +3273,9 @@ public final class MetroAtsProtos {
     }
     /**
      * <code>required string begin_time = 5;</code>
+     * @return The bytes for beginTime.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getBeginTimeBytes() {
       java.lang.Object ref = beginTime_;
@@ -2982,13 +3294,17 @@ public final class MetroAtsProtos {
     private volatile java.lang.Object endTime_;
     /**
      * <code>required string end_time = 6;</code>
+     * @return Whether the endTime field is set.
      */
+    @java.lang.Override
     public boolean hasEndTime() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <code>required string end_time = 6;</code>
+     * @return The endTime.
      */
+    @java.lang.Override
     public java.lang.String getEndTime() {
       java.lang.Object ref = endTime_;
       if (ref instanceof java.lang.String) {
@@ -3005,7 +3321,9 @@ public final class MetroAtsProtos {
     }
     /**
      * <code>required string end_time = 6;</code>
+     * @return The bytes for endTime.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getEndTimeBytes() {
       java.lang.Object ref = endTime_;
@@ -3024,13 +3342,17 @@ public final class MetroAtsProtos {
     private volatile java.lang.Object startStopShortName_;
     /**
      * <code>required string start_stop_short_name = 7;</code>
+     * @return Whether the startStopShortName field is set.
      */
+    @java.lang.Override
     public boolean hasStartStopShortName() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <code>required string start_stop_short_name = 7;</code>
+     * @return The startStopShortName.
      */
+    @java.lang.Override
     public java.lang.String getStartStopShortName() {
       java.lang.Object ref = startStopShortName_;
       if (ref instanceof java.lang.String) {
@@ -3047,7 +3369,9 @@ public final class MetroAtsProtos {
     }
     /**
      * <code>required string start_stop_short_name = 7;</code>
+     * @return The bytes for startStopShortName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getStartStopShortNameBytes() {
       java.lang.Object ref = startStopShortName_;
@@ -3070,9 +3394,11 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>optional string operating_day = 8;</code>
+     * @return Whether the operatingDay field is set.
      */
+    @java.lang.Override
     public boolean hasOperatingDay() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      * <pre>
@@ -3080,7 +3406,9 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>optional string operating_day = 8;</code>
+     * @return The operatingDay.
      */
+    @java.lang.Override
     public java.lang.String getOperatingDay() {
       java.lang.Object ref = operatingDay_;
       if (ref instanceof java.lang.String) {
@@ -3101,7 +3429,9 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>optional string operating_day = 8;</code>
+     * @return The bytes for operatingDay.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getOperatingDayBytes() {
       java.lang.Object ref = operatingDay_;
@@ -3120,13 +3450,17 @@ public final class MetroAtsProtos {
     private volatile java.lang.Object startStopNumber_;
     /**
      * <code>optional string start_stop_number = 9;</code>
+     * @return Whether the startStopNumber field is set.
      */
+    @java.lang.Override
     public boolean hasStartStopNumber() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      * <code>optional string start_stop_number = 9;</code>
+     * @return The startStopNumber.
      */
+    @java.lang.Override
     public java.lang.String getStartStopNumber() {
       java.lang.Object ref = startStopNumber_;
       if (ref instanceof java.lang.String) {
@@ -3143,7 +3477,9 @@ public final class MetroAtsProtos {
     }
     /**
      * <code>optional string start_stop_number = 9;</code>
+     * @return The bytes for startStopNumber.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getStartStopNumberBytes() {
       java.lang.Object ref = startStopNumber_;
@@ -3162,13 +3498,17 @@ public final class MetroAtsProtos {
     private volatile java.lang.Object startTime_;
     /**
      * <code>optional string start_time = 10;</code>
+     * @return Whether the startTime field is set.
      */
+    @java.lang.Override
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <code>optional string start_time = 10;</code>
+     * @return The startTime.
      */
+    @java.lang.Override
     public java.lang.String getStartTime() {
       java.lang.Object ref = startTime_;
       if (ref instanceof java.lang.String) {
@@ -3185,7 +3525,9 @@ public final class MetroAtsProtos {
     }
     /**
      * <code>optional string start_time = 10;</code>
+     * @return The bytes for startTime.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getStartTimeBytes() {
       java.lang.Object ref = startTime_;
@@ -3204,13 +3546,17 @@ public final class MetroAtsProtos {
     private volatile java.lang.Object dvjId_;
     /**
      * <code>optional string dvj_id = 11;</code>
+     * @return Whether the dvjId field is set.
      */
+    @java.lang.Override
     public boolean hasDvjId() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      * <code>optional string dvj_id = 11;</code>
+     * @return The dvjId.
      */
+    @java.lang.Override
     public java.lang.String getDvjId() {
       java.lang.Object ref = dvjId_;
       if (ref instanceof java.lang.String) {
@@ -3227,7 +3573,9 @@ public final class MetroAtsProtos {
     }
     /**
      * <code>optional string dvj_id = 11;</code>
+     * @return The bytes for dvjId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDvjIdBytes() {
       java.lang.Object ref = dvjId_;
@@ -3246,13 +3594,17 @@ public final class MetroAtsProtos {
     private volatile java.lang.Object routeName_;
     /**
      * <code>optional string route_name = 12;</code>
+     * @return Whether the routeName field is set.
      */
+    @java.lang.Override
     public boolean hasRouteName() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      * <code>optional string route_name = 12;</code>
+     * @return The routeName.
      */
+    @java.lang.Override
     public java.lang.String getRouteName() {
       java.lang.Object ref = routeName_;
       if (ref instanceof java.lang.String) {
@@ -3269,7 +3621,9 @@ public final class MetroAtsProtos {
     }
     /**
      * <code>optional string route_name = 12;</code>
+     * @return The bytes for routeName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getRouteNameBytes() {
       java.lang.Object ref = routeName_;
@@ -3288,13 +3642,17 @@ public final class MetroAtsProtos {
     private volatile java.lang.Object startDatetime_;
     /**
      * <code>optional string start_datetime = 13;</code>
+     * @return Whether the startDatetime field is set.
      */
+    @java.lang.Override
     public boolean hasStartDatetime() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      * <code>optional string start_datetime = 13;</code>
+     * @return The startDatetime.
      */
+    @java.lang.Override
     public java.lang.String getStartDatetime() {
       java.lang.Object ref = startDatetime_;
       if (ref instanceof java.lang.String) {
@@ -3311,7 +3669,9 @@ public final class MetroAtsProtos {
     }
     /**
      * <code>optional string start_datetime = 13;</code>
+     * @return The bytes for startDatetime.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getStartDatetimeBytes() {
       java.lang.Object ref = startDatetime_;
@@ -3330,13 +3690,17 @@ public final class MetroAtsProtos {
     private volatile java.lang.Object direction_;
     /**
      * <code>optional string direction = 14;</code>
+     * @return Whether the direction field is set.
      */
+    @java.lang.Override
     public boolean hasDirection() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      * <code>optional string direction = 14;</code>
+     * @return The direction.
      */
+    @java.lang.Override
     public java.lang.String getDirection() {
       java.lang.Object ref = direction_;
       if (ref instanceof java.lang.String) {
@@ -3353,7 +3717,9 @@ public final class MetroAtsProtos {
     }
     /**
      * <code>optional string direction = 14;</code>
+     * @return The bytes for direction.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getDirectionBytes() {
       java.lang.Object ref = direction_;
@@ -3376,9 +3742,11 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>optional bool scheduled = 15;</code>
+     * @return Whether the scheduled field is set.
      */
+    @java.lang.Override
     public boolean hasScheduled() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      * <pre>
@@ -3386,12 +3754,15 @@ public final class MetroAtsProtos {
      * </pre>
      *
      * <code>optional bool scheduled = 15;</code>
+     * @return The scheduled.
      */
+    @java.lang.Override
     public boolean getScheduled() {
       return scheduled_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3431,62 +3802,64 @@ public final class MetroAtsProtos {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt32(1, schemaVersion_);
       }
       for (int i = 0; i < metroRows_.size(); i++) {
         output.writeMessage(2, metroRows_.get(i));
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeEnum(3, trainType_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         output.writeEnum(4, journeySectionprogress_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, beginTime_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, endTime_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, startStopShortName_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, operatingDay_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, startStopNumber_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, startTime_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, dvjId_);
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, routeName_);
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, startDatetime_);
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 14, direction_);
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((bitField0_ & 0x00002000) != 0)) {
         output.writeBool(15, scheduled_);
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, schemaVersion_);
       }
@@ -3494,45 +3867,45 @@ public final class MetroAtsProtos {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, metroRows_.get(i));
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, trainType_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, journeySectionprogress_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, beginTime_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, endTime_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, startStopShortName_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, operatingDay_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, startStopNumber_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, startTime_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, dvjId_);
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, routeName_);
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, startDatetime_);
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, direction_);
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((bitField0_ & 0x00002000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, scheduled_);
       }
@@ -3541,7 +3914,6 @@ public final class MetroAtsProtos {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3552,79 +3924,78 @@ public final class MetroAtsProtos {
       }
       fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate other = (fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate) obj;
 
-      boolean result = true;
-      result = result && (hasSchemaVersion() == other.hasSchemaVersion());
+      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
       if (hasSchemaVersion()) {
-        result = result && (getSchemaVersion()
-            == other.getSchemaVersion());
+        if (getSchemaVersion()
+            != other.getSchemaVersion()) return false;
       }
-      result = result && getMetroRowsList()
-          .equals(other.getMetroRowsList());
-      result = result && (hasTrainType() == other.hasTrainType());
+      if (!getMetroRowsList()
+          .equals(other.getMetroRowsList())) return false;
+      if (hasTrainType() != other.hasTrainType()) return false;
       if (hasTrainType()) {
-        result = result && trainType_ == other.trainType_;
+        if (trainType_ != other.trainType_) return false;
       }
-      result = result && (hasJourneySectionprogress() == other.hasJourneySectionprogress());
+      if (hasJourneySectionprogress() != other.hasJourneySectionprogress()) return false;
       if (hasJourneySectionprogress()) {
-        result = result && journeySectionprogress_ == other.journeySectionprogress_;
+        if (journeySectionprogress_ != other.journeySectionprogress_) return false;
       }
-      result = result && (hasBeginTime() == other.hasBeginTime());
+      if (hasBeginTime() != other.hasBeginTime()) return false;
       if (hasBeginTime()) {
-        result = result && getBeginTime()
-            .equals(other.getBeginTime());
+        if (!getBeginTime()
+            .equals(other.getBeginTime())) return false;
       }
-      result = result && (hasEndTime() == other.hasEndTime());
+      if (hasEndTime() != other.hasEndTime()) return false;
       if (hasEndTime()) {
-        result = result && getEndTime()
-            .equals(other.getEndTime());
+        if (!getEndTime()
+            .equals(other.getEndTime())) return false;
       }
-      result = result && (hasStartStopShortName() == other.hasStartStopShortName());
+      if (hasStartStopShortName() != other.hasStartStopShortName()) return false;
       if (hasStartStopShortName()) {
-        result = result && getStartStopShortName()
-            .equals(other.getStartStopShortName());
+        if (!getStartStopShortName()
+            .equals(other.getStartStopShortName())) return false;
       }
-      result = result && (hasOperatingDay() == other.hasOperatingDay());
+      if (hasOperatingDay() != other.hasOperatingDay()) return false;
       if (hasOperatingDay()) {
-        result = result && getOperatingDay()
-            .equals(other.getOperatingDay());
+        if (!getOperatingDay()
+            .equals(other.getOperatingDay())) return false;
       }
-      result = result && (hasStartStopNumber() == other.hasStartStopNumber());
+      if (hasStartStopNumber() != other.hasStartStopNumber()) return false;
       if (hasStartStopNumber()) {
-        result = result && getStartStopNumber()
-            .equals(other.getStartStopNumber());
+        if (!getStartStopNumber()
+            .equals(other.getStartStopNumber())) return false;
       }
-      result = result && (hasStartTime() == other.hasStartTime());
+      if (hasStartTime() != other.hasStartTime()) return false;
       if (hasStartTime()) {
-        result = result && getStartTime()
-            .equals(other.getStartTime());
+        if (!getStartTime()
+            .equals(other.getStartTime())) return false;
       }
-      result = result && (hasDvjId() == other.hasDvjId());
+      if (hasDvjId() != other.hasDvjId()) return false;
       if (hasDvjId()) {
-        result = result && getDvjId()
-            .equals(other.getDvjId());
+        if (!getDvjId()
+            .equals(other.getDvjId())) return false;
       }
-      result = result && (hasRouteName() == other.hasRouteName());
+      if (hasRouteName() != other.hasRouteName()) return false;
       if (hasRouteName()) {
-        result = result && getRouteName()
-            .equals(other.getRouteName());
+        if (!getRouteName()
+            .equals(other.getRouteName())) return false;
       }
-      result = result && (hasStartDatetime() == other.hasStartDatetime());
+      if (hasStartDatetime() != other.hasStartDatetime()) return false;
       if (hasStartDatetime()) {
-        result = result && getStartDatetime()
-            .equals(other.getStartDatetime());
+        if (!getStartDatetime()
+            .equals(other.getStartDatetime())) return false;
       }
-      result = result && (hasDirection() == other.hasDirection());
+      if (hasDirection() != other.hasDirection()) return false;
       if (hasDirection()) {
-        result = result && getDirection()
-            .equals(other.getDirection());
+        if (!getDirection()
+            .equals(other.getDirection())) return false;
       }
-      result = result && (hasScheduled() == other.hasScheduled());
+      if (hasScheduled() != other.hasScheduled()) return false;
       if (hasScheduled()) {
-        result = result && (getScheduled()
-            == other.getScheduled());
+        if (getScheduled()
+            != other.getScheduled()) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3633,7 +4004,7 @@ public final class MetroAtsProtos {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasSchemaVersion()) {
         hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
         hash = (53 * hash) + getSchemaVersion();
@@ -3701,6 +4072,17 @@ public final class MetroAtsProtos {
     }
 
     public static fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -3759,6 +4141,7 @@ public final class MetroAtsProtos {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3766,6 +4149,7 @@ public final class MetroAtsProtos {
     public static Builder newBuilder(fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3789,6 +4173,7 @@ public final class MetroAtsProtos {
         return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroEstimate_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroEstimate_fieldAccessorTable
@@ -3812,6 +4197,7 @@ public final class MetroAtsProtos {
           getMetroRowsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         schemaVersion_ = 1;
@@ -3851,15 +4237,18 @@ public final class MetroAtsProtos {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.transitdata.proto.MetroAtsProtos.internal_static_proto_MetroEstimate_descriptor;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate getDefaultInstanceForType() {
         return fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate.getDefaultInstance();
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate build() {
         fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate result = buildPartial();
         if (!result.isInitialized()) {
@@ -3868,16 +4257,17 @@ public final class MetroAtsProtos {
         return result;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate buildPartial() {
         fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate result = new fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.schemaVersion_ = schemaVersion_;
         if (metroRowsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             metroRows_ = java.util.Collections.unmodifiableList(metroRows_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
@@ -3885,89 +4275,96 @@ public final class MetroAtsProtos {
         } else {
           result.metroRows_ = metroRowsBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           to_bitField0_ |= 0x00000002;
         }
         result.trainType_ = trainType_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           to_bitField0_ |= 0x00000004;
         }
         result.journeySectionprogress_ = journeySectionprogress_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           to_bitField0_ |= 0x00000008;
         }
         result.beginTime_ = beginTime_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           to_bitField0_ |= 0x00000010;
         }
         result.endTime_ = endTime_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
           to_bitField0_ |= 0x00000020;
         }
         result.startStopShortName_ = startStopShortName_;
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((from_bitField0_ & 0x00000080) != 0)) {
           to_bitField0_ |= 0x00000040;
         }
         result.operatingDay_ = operatingDay_;
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((from_bitField0_ & 0x00000100) != 0)) {
           to_bitField0_ |= 0x00000080;
         }
         result.startStopNumber_ = startStopNumber_;
-        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((from_bitField0_ & 0x00000200) != 0)) {
           to_bitField0_ |= 0x00000100;
         }
         result.startTime_ = startTime_;
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((from_bitField0_ & 0x00000400) != 0)) {
           to_bitField0_ |= 0x00000200;
         }
         result.dvjId_ = dvjId_;
-        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+        if (((from_bitField0_ & 0x00000800) != 0)) {
           to_bitField0_ |= 0x00000400;
         }
         result.routeName_ = routeName_;
-        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+        if (((from_bitField0_ & 0x00001000) != 0)) {
           to_bitField0_ |= 0x00000800;
         }
         result.startDatetime_ = startDatetime_;
-        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+        if (((from_bitField0_ & 0x00002000) != 0)) {
           to_bitField0_ |= 0x00001000;
         }
         result.direction_ = direction_;
-        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.scheduled_ = scheduled_;
           to_bitField0_ |= 0x00002000;
         }
-        result.scheduled_ = scheduled_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate) {
           return mergeFrom((fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate)other);
@@ -4072,6 +4469,7 @@ public final class MetroAtsProtos {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasSchemaVersion()) {
           return false;
@@ -4099,6 +4497,7 @@ public final class MetroAtsProtos {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4125,9 +4524,11 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return Whether the schemaVersion field is set.
        */
+      @java.lang.Override
       public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <pre>
@@ -4135,7 +4536,9 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return The schemaVersion.
        */
+      @java.lang.Override
       public int getSchemaVersion() {
         return schemaVersion_;
       }
@@ -4145,6 +4548,8 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @param value The schemaVersion to set.
+       * @return This builder for chaining.
        */
       public Builder setSchemaVersion(int value) {
         bitField0_ |= 0x00000001;
@@ -4158,6 +4563,7 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+       * @return This builder for chaining.
        */
       public Builder clearSchemaVersion() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -4169,7 +4575,7 @@ public final class MetroAtsProtos {
       private java.util.List<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate> metroRows_ =
         java.util.Collections.emptyList();
       private void ensureMetroRowsIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           metroRows_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate>(metroRows_);
           bitField0_ |= 0x00000002;
          }
@@ -4398,7 +4804,7 @@ public final class MetroAtsProtos {
           metroRowsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate, fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimate.Builder, fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroStopEstimateOrBuilder>(
                   metroRows_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           metroRows_ = null;
@@ -4409,19 +4815,25 @@ public final class MetroAtsProtos {
       private int trainType_ = 0;
       /**
        * <code>required .proto.MetroTrainType train_type = 3;</code>
+       * @return Whether the trainType field is set.
        */
-      public boolean hasTrainType() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+      @java.lang.Override public boolean hasTrainType() {
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>required .proto.MetroTrainType train_type = 3;</code>
+       * @return The trainType.
        */
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType getTrainType() {
+        @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType result = fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType.valueOf(trainType_);
         return result == null ? fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType.M : result;
       }
       /**
        * <code>required .proto.MetroTrainType train_type = 3;</code>
+       * @param value The trainType to set.
+       * @return This builder for chaining.
        */
       public Builder setTrainType(fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroTrainType value) {
         if (value == null) {
@@ -4434,6 +4846,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required .proto.MetroTrainType train_type = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTrainType() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -4445,19 +4858,25 @@ public final class MetroAtsProtos {
       private int journeySectionprogress_ = 0;
       /**
        * <code>required .proto.MetroProgress journey_sectionprogress = 4;</code>
+       * @return Whether the journeySectionprogress field is set.
        */
-      public boolean hasJourneySectionprogress() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+      @java.lang.Override public boolean hasJourneySectionprogress() {
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>required .proto.MetroProgress journey_sectionprogress = 4;</code>
+       * @return The journeySectionprogress.
        */
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress getJourneySectionprogress() {
+        @SuppressWarnings("deprecation")
         fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress result = fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.valueOf(journeySectionprogress_);
         return result == null ? fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress.SCHEDULED : result;
       }
       /**
        * <code>required .proto.MetroProgress journey_sectionprogress = 4;</code>
+       * @param value The journeySectionprogress to set.
+       * @return This builder for chaining.
        */
       public Builder setJourneySectionprogress(fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroProgress value) {
         if (value == null) {
@@ -4470,6 +4889,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required .proto.MetroProgress journey_sectionprogress = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearJourneySectionprogress() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -4481,12 +4901,14 @@ public final class MetroAtsProtos {
       private java.lang.Object beginTime_ = "";
       /**
        * <code>required string begin_time = 5;</code>
+       * @return Whether the beginTime field is set.
        */
       public boolean hasBeginTime() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>required string begin_time = 5;</code>
+       * @return The beginTime.
        */
       public java.lang.String getBeginTime() {
         java.lang.Object ref = beginTime_;
@@ -4504,6 +4926,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string begin_time = 5;</code>
+       * @return The bytes for beginTime.
        */
       public com.google.protobuf.ByteString
           getBeginTimeBytes() {
@@ -4520,6 +4943,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string begin_time = 5;</code>
+       * @param value The beginTime to set.
+       * @return This builder for chaining.
        */
       public Builder setBeginTime(
           java.lang.String value) {
@@ -4533,6 +4958,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string begin_time = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearBeginTime() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -4542,6 +4968,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string begin_time = 5;</code>
+       * @param value The bytes for beginTime to set.
+       * @return This builder for chaining.
        */
       public Builder setBeginTimeBytes(
           com.google.protobuf.ByteString value) {
@@ -4557,12 +4985,14 @@ public final class MetroAtsProtos {
       private java.lang.Object endTime_ = "";
       /**
        * <code>required string end_time = 6;</code>
+       * @return Whether the endTime field is set.
        */
       public boolean hasEndTime() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <code>required string end_time = 6;</code>
+       * @return The endTime.
        */
       public java.lang.String getEndTime() {
         java.lang.Object ref = endTime_;
@@ -4580,6 +5010,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string end_time = 6;</code>
+       * @return The bytes for endTime.
        */
       public com.google.protobuf.ByteString
           getEndTimeBytes() {
@@ -4596,6 +5027,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string end_time = 6;</code>
+       * @param value The endTime to set.
+       * @return This builder for chaining.
        */
       public Builder setEndTime(
           java.lang.String value) {
@@ -4609,6 +5042,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string end_time = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearEndTime() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -4618,6 +5052,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string end_time = 6;</code>
+       * @param value The bytes for endTime to set.
+       * @return This builder for chaining.
        */
       public Builder setEndTimeBytes(
           com.google.protobuf.ByteString value) {
@@ -4633,12 +5069,14 @@ public final class MetroAtsProtos {
       private java.lang.Object startStopShortName_ = "";
       /**
        * <code>required string start_stop_short_name = 7;</code>
+       * @return Whether the startStopShortName field is set.
        */
       public boolean hasStartStopShortName() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        * <code>required string start_stop_short_name = 7;</code>
+       * @return The startStopShortName.
        */
       public java.lang.String getStartStopShortName() {
         java.lang.Object ref = startStopShortName_;
@@ -4656,6 +5094,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string start_stop_short_name = 7;</code>
+       * @return The bytes for startStopShortName.
        */
       public com.google.protobuf.ByteString
           getStartStopShortNameBytes() {
@@ -4672,6 +5111,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string start_stop_short_name = 7;</code>
+       * @param value The startStopShortName to set.
+       * @return This builder for chaining.
        */
       public Builder setStartStopShortName(
           java.lang.String value) {
@@ -4685,6 +5126,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string start_stop_short_name = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStartStopShortName() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -4694,6 +5136,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>required string start_stop_short_name = 7;</code>
+       * @param value The bytes for startStopShortName to set.
+       * @return This builder for chaining.
        */
       public Builder setStartStopShortNameBytes(
           com.google.protobuf.ByteString value) {
@@ -4713,9 +5157,10 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>optional string operating_day = 8;</code>
+       * @return Whether the operatingDay field is set.
        */
       public boolean hasOperatingDay() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
        * <pre>
@@ -4723,6 +5168,7 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>optional string operating_day = 8;</code>
+       * @return The operatingDay.
        */
       public java.lang.String getOperatingDay() {
         java.lang.Object ref = operatingDay_;
@@ -4744,6 +5190,7 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>optional string operating_day = 8;</code>
+       * @return The bytes for operatingDay.
        */
       public com.google.protobuf.ByteString
           getOperatingDayBytes() {
@@ -4764,6 +5211,8 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>optional string operating_day = 8;</code>
+       * @param value The operatingDay to set.
+       * @return This builder for chaining.
        */
       public Builder setOperatingDay(
           java.lang.String value) {
@@ -4781,6 +5230,7 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>optional string operating_day = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOperatingDay() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -4794,6 +5244,8 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>optional string operating_day = 8;</code>
+       * @param value The bytes for operatingDay to set.
+       * @return This builder for chaining.
        */
       public Builder setOperatingDayBytes(
           com.google.protobuf.ByteString value) {
@@ -4809,12 +5261,14 @@ public final class MetroAtsProtos {
       private java.lang.Object startStopNumber_ = "";
       /**
        * <code>optional string start_stop_number = 9;</code>
+       * @return Whether the startStopNumber field is set.
        */
       public boolean hasStartStopNumber() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
        * <code>optional string start_stop_number = 9;</code>
+       * @return The startStopNumber.
        */
       public java.lang.String getStartStopNumber() {
         java.lang.Object ref = startStopNumber_;
@@ -4832,6 +5286,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string start_stop_number = 9;</code>
+       * @return The bytes for startStopNumber.
        */
       public com.google.protobuf.ByteString
           getStartStopNumberBytes() {
@@ -4848,6 +5303,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string start_stop_number = 9;</code>
+       * @param value The startStopNumber to set.
+       * @return This builder for chaining.
        */
       public Builder setStartStopNumber(
           java.lang.String value) {
@@ -4861,6 +5318,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string start_stop_number = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStartStopNumber() {
         bitField0_ = (bitField0_ & ~0x00000100);
@@ -4870,6 +5328,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string start_stop_number = 9;</code>
+       * @param value The bytes for startStopNumber to set.
+       * @return This builder for chaining.
        */
       public Builder setStartStopNumberBytes(
           com.google.protobuf.ByteString value) {
@@ -4885,12 +5345,14 @@ public final class MetroAtsProtos {
       private java.lang.Object startTime_ = "";
       /**
        * <code>optional string start_time = 10;</code>
+       * @return Whether the startTime field is set.
        */
       public boolean hasStartTime() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000200) != 0);
       }
       /**
        * <code>optional string start_time = 10;</code>
+       * @return The startTime.
        */
       public java.lang.String getStartTime() {
         java.lang.Object ref = startTime_;
@@ -4908,6 +5370,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string start_time = 10;</code>
+       * @return The bytes for startTime.
        */
       public com.google.protobuf.ByteString
           getStartTimeBytes() {
@@ -4924,6 +5387,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string start_time = 10;</code>
+       * @param value The startTime to set.
+       * @return This builder for chaining.
        */
       public Builder setStartTime(
           java.lang.String value) {
@@ -4937,6 +5402,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string start_time = 10;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStartTime() {
         bitField0_ = (bitField0_ & ~0x00000200);
@@ -4946,6 +5412,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string start_time = 10;</code>
+       * @param value The bytes for startTime to set.
+       * @return This builder for chaining.
        */
       public Builder setStartTimeBytes(
           com.google.protobuf.ByteString value) {
@@ -4961,12 +5429,14 @@ public final class MetroAtsProtos {
       private java.lang.Object dvjId_ = "";
       /**
        * <code>optional string dvj_id = 11;</code>
+       * @return Whether the dvjId field is set.
        */
       public boolean hasDvjId() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000400) != 0);
       }
       /**
        * <code>optional string dvj_id = 11;</code>
+       * @return The dvjId.
        */
       public java.lang.String getDvjId() {
         java.lang.Object ref = dvjId_;
@@ -4984,6 +5454,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string dvj_id = 11;</code>
+       * @return The bytes for dvjId.
        */
       public com.google.protobuf.ByteString
           getDvjIdBytes() {
@@ -5000,6 +5471,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string dvj_id = 11;</code>
+       * @param value The dvjId to set.
+       * @return This builder for chaining.
        */
       public Builder setDvjId(
           java.lang.String value) {
@@ -5013,6 +5486,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string dvj_id = 11;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDvjId() {
         bitField0_ = (bitField0_ & ~0x00000400);
@@ -5022,6 +5496,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string dvj_id = 11;</code>
+       * @param value The bytes for dvjId to set.
+       * @return This builder for chaining.
        */
       public Builder setDvjIdBytes(
           com.google.protobuf.ByteString value) {
@@ -5037,12 +5513,14 @@ public final class MetroAtsProtos {
       private java.lang.Object routeName_ = "";
       /**
        * <code>optional string route_name = 12;</code>
+       * @return Whether the routeName field is set.
        */
       public boolean hasRouteName() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
+        return ((bitField0_ & 0x00000800) != 0);
       }
       /**
        * <code>optional string route_name = 12;</code>
+       * @return The routeName.
        */
       public java.lang.String getRouteName() {
         java.lang.Object ref = routeName_;
@@ -5060,6 +5538,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string route_name = 12;</code>
+       * @return The bytes for routeName.
        */
       public com.google.protobuf.ByteString
           getRouteNameBytes() {
@@ -5076,6 +5555,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string route_name = 12;</code>
+       * @param value The routeName to set.
+       * @return This builder for chaining.
        */
       public Builder setRouteName(
           java.lang.String value) {
@@ -5089,6 +5570,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string route_name = 12;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRouteName() {
         bitField0_ = (bitField0_ & ~0x00000800);
@@ -5098,6 +5580,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string route_name = 12;</code>
+       * @param value The bytes for routeName to set.
+       * @return This builder for chaining.
        */
       public Builder setRouteNameBytes(
           com.google.protobuf.ByteString value) {
@@ -5113,12 +5597,14 @@ public final class MetroAtsProtos {
       private java.lang.Object startDatetime_ = "";
       /**
        * <code>optional string start_datetime = 13;</code>
+       * @return Whether the startDatetime field is set.
        */
       public boolean hasStartDatetime() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
+        return ((bitField0_ & 0x00001000) != 0);
       }
       /**
        * <code>optional string start_datetime = 13;</code>
+       * @return The startDatetime.
        */
       public java.lang.String getStartDatetime() {
         java.lang.Object ref = startDatetime_;
@@ -5136,6 +5622,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string start_datetime = 13;</code>
+       * @return The bytes for startDatetime.
        */
       public com.google.protobuf.ByteString
           getStartDatetimeBytes() {
@@ -5152,6 +5639,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string start_datetime = 13;</code>
+       * @param value The startDatetime to set.
+       * @return This builder for chaining.
        */
       public Builder setStartDatetime(
           java.lang.String value) {
@@ -5165,6 +5654,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string start_datetime = 13;</code>
+       * @return This builder for chaining.
        */
       public Builder clearStartDatetime() {
         bitField0_ = (bitField0_ & ~0x00001000);
@@ -5174,6 +5664,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string start_datetime = 13;</code>
+       * @param value The bytes for startDatetime to set.
+       * @return This builder for chaining.
        */
       public Builder setStartDatetimeBytes(
           com.google.protobuf.ByteString value) {
@@ -5189,12 +5681,14 @@ public final class MetroAtsProtos {
       private java.lang.Object direction_ = "";
       /**
        * <code>optional string direction = 14;</code>
+       * @return Whether the direction field is set.
        */
       public boolean hasDirection() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
+        return ((bitField0_ & 0x00002000) != 0);
       }
       /**
        * <code>optional string direction = 14;</code>
+       * @return The direction.
        */
       public java.lang.String getDirection() {
         java.lang.Object ref = direction_;
@@ -5212,6 +5706,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string direction = 14;</code>
+       * @return The bytes for direction.
        */
       public com.google.protobuf.ByteString
           getDirectionBytes() {
@@ -5228,6 +5723,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string direction = 14;</code>
+       * @param value The direction to set.
+       * @return This builder for chaining.
        */
       public Builder setDirection(
           java.lang.String value) {
@@ -5241,6 +5738,7 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string direction = 14;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDirection() {
         bitField0_ = (bitField0_ & ~0x00002000);
@@ -5250,6 +5748,8 @@ public final class MetroAtsProtos {
       }
       /**
        * <code>optional string direction = 14;</code>
+       * @param value The bytes for direction to set.
+       * @return This builder for chaining.
        */
       public Builder setDirectionBytes(
           com.google.protobuf.ByteString value) {
@@ -5269,9 +5769,11 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>optional bool scheduled = 15;</code>
+       * @return Whether the scheduled field is set.
        */
+      @java.lang.Override
       public boolean hasScheduled() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
+        return ((bitField0_ & 0x00004000) != 0);
       }
       /**
        * <pre>
@@ -5279,7 +5781,9 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>optional bool scheduled = 15;</code>
+       * @return The scheduled.
        */
+      @java.lang.Override
       public boolean getScheduled() {
         return scheduled_;
       }
@@ -5289,6 +5793,8 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>optional bool scheduled = 15;</code>
+       * @param value The scheduled to set.
+       * @return This builder for chaining.
        */
       public Builder setScheduled(boolean value) {
         bitField0_ |= 0x00004000;
@@ -5302,6 +5808,7 @@ public final class MetroAtsProtos {
        * </pre>
        *
        * <code>optional bool scheduled = 15;</code>
+       * @return This builder for chaining.
        */
       public Builder clearScheduled() {
         bitField0_ = (bitField0_ & ~0x00004000);
@@ -5309,11 +5816,13 @@ public final class MetroAtsProtos {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -5335,11 +5844,12 @@ public final class MetroAtsProtos {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<MetroEstimate>
         PARSER = new com.google.protobuf.AbstractParser<MetroEstimate>() {
+      @java.lang.Override
       public MetroEstimate parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MetroEstimate(input, extensionRegistry);
+        return new MetroEstimate(input, extensionRegistry);
       }
     };
 
@@ -5352,6 +5862,7 @@ public final class MetroAtsProtos {
       return PARSER;
     }
 
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.MetroAtsProtos.MetroEstimate getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5386,7 +5897,7 @@ public final class MetroAtsProtos {
       "\n\027departure_time_measured\030\010 \001(\t\022\016\n\006sourc" +
       "e\030\t \002(\t\022\023\n\013stop_number\030\n \002(\t\022*\n\014row_prog" +
       "ress\030\013 \001(\0162\024.proto.MetroProgress\"\246\003\n\rMet" +
-      "roEstimate\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022,\n\n",
+      "roEstimate\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022,\n\n" +
       "metro_rows\030\002 \003(\0132\030.proto.MetroStopEstima" +
       "te\022)\n\ntrain_type\030\003 \002(\0162\025.proto.MetroTrai" +
       "nType\0225\n\027journey_sectionprogress\030\004 \002(\0162\024" +
@@ -5396,24 +5907,16 @@ public final class MetroAtsProtos {
       "t_stop_number\030\t \001(\t\022\022\n\nstart_time\030\n \001(\t\022" +
       "\016\n\006dvj_id\030\013 \001(\t\022\022\n\nroute_name\030\014 \001(\t\022\026\n\016s" +
       "tart_datetime\030\r \001(\t\022\021\n\tdirection\030\016 \001(\t\022\021" +
-      "\n\tscheduled\030\017 \001(\010*\036\n\016MetroTrainType\022\005\n\001M",
+      "\n\tscheduled\030\017 \001(\010*\036\n\016MetroTrainType\022\005\n\001M" +
       "\020\000\022\005\n\001T\020\001*L\n\rMetroProgress\022\r\n\tSCHEDULED\020" +
       "\000\022\016\n\nINPROGRESS\020\001\022\r\n\tCOMPLETED\020\002\022\r\n\tCANC" +
       "ELLED\020\003B1\n\037fi.hsl.common.transitdata.pro" +
       "toB\016MetroAtsProtos"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_proto_MetroStopEstimate_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_MetroStopEstimate_fieldAccessorTable = new

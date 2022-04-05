@@ -12690,6 +12690,30 @@ public final class InternalMessages {
      * @return The displayOnly.
      */
     boolean getDisplayOnly();
+
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+     */
+    java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> 
+        getAffectedDisruptionRoutesList();
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity getAffectedDisruptionRoutes(int index);
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+     */
+    int getAffectedDisruptionRoutesCount();
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+     */
+    java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder> 
+        getAffectedDisruptionRoutesOrBuilderList();
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+     */
+    fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder getAffectedDisruptionRoutesOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code proto.Bulletin}
@@ -12713,6 +12737,7 @@ public final class InternalMessages {
       titles_ = java.util.Collections.emptyList();
       descriptions_ = java.util.Collections.emptyList();
       urls_ = java.util.Collections.emptyList();
+      affectedDisruptionRoutes_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -12863,6 +12888,15 @@ public final class InternalMessages {
               displayOnly_ = input.readBool();
               break;
             }
+            case 130: {
+              if (!((mutable_bitField0_ & 0x00008000) != 0)) {
+                affectedDisruptionRoutes_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity>();
+                mutable_bitField0_ |= 0x00008000;
+              }
+              affectedDisruptionRoutes_.add(
+                  input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.PARSER, extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -12892,6 +12926,9 @@ public final class InternalMessages {
         }
         if (((mutable_bitField0_ & 0x00002000) != 0)) {
           urls_ = java.util.Collections.unmodifiableList(urls_);
+        }
+        if (((mutable_bitField0_ & 0x00008000) != 0)) {
+          affectedDisruptionRoutes_ = java.util.Collections.unmodifiableList(affectedDisruptionRoutes_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -15055,6 +15092,46 @@ public final class InternalMessages {
       return displayOnly_;
     }
 
+    public static final int AFFECTED_DISRUPTION_ROUTES_FIELD_NUMBER = 16;
+    private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> affectedDisruptionRoutes_;
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+     */
+    @java.lang.Override
+    public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> getAffectedDisruptionRoutesList() {
+      return affectedDisruptionRoutes_;
+    }
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder> 
+        getAffectedDisruptionRoutesOrBuilderList() {
+      return affectedDisruptionRoutes_;
+    }
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+     */
+    @java.lang.Override
+    public int getAffectedDisruptionRoutesCount() {
+      return affectedDisruptionRoutes_.size();
+    }
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+     */
+    @java.lang.Override
+    public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity getAffectedDisruptionRoutes(int index) {
+      return affectedDisruptionRoutes_.get(index);
+    }
+    /**
+     * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+     */
+    @java.lang.Override
+    public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder getAffectedDisruptionRoutesOrBuilder(
+        int index) {
+      return affectedDisruptionRoutes_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -15100,6 +15177,12 @@ public final class InternalMessages {
       }
       for (int i = 0; i < getUrlsCount(); i++) {
         if (!getUrls(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getAffectedDisruptionRoutesCount(); i++) {
+        if (!getAffectedDisruptionRoutes(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -15155,6 +15238,9 @@ public final class InternalMessages {
       }
       if (((bitField0_ & 0x00000200) != 0)) {
         output.writeBool(15, displayOnly_);
+      }
+      for (int i = 0; i < affectedDisruptionRoutes_.size(); i++) {
+        output.writeMessage(16, affectedDisruptionRoutes_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -15223,6 +15309,10 @@ public final class InternalMessages {
       if (((bitField0_ & 0x00000200) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, displayOnly_);
+      }
+      for (int i = 0; i < affectedDisruptionRoutes_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, affectedDisruptionRoutes_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -15296,6 +15386,8 @@ public final class InternalMessages {
         if (getDisplayOnly()
             != other.getDisplayOnly()) return false;
       }
+      if (!getAffectedDisruptionRoutesList()
+          .equals(other.getAffectedDisruptionRoutesList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -15372,6 +15464,10 @@ public final class InternalMessages {
         hash = (37 * hash) + DISPLAY_ONLY_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getDisplayOnly());
+      }
+      if (getAffectedDisruptionRoutesCount() > 0) {
+        hash = (37 * hash) + AFFECTED_DISRUPTION_ROUTES_FIELD_NUMBER;
+        hash = (53 * hash) + getAffectedDisruptionRoutesList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -15506,6 +15602,7 @@ public final class InternalMessages {
           getTitlesFieldBuilder();
           getDescriptionsFieldBuilder();
           getUrlsFieldBuilder();
+          getAffectedDisruptionRoutesFieldBuilder();
         }
       }
       @java.lang.Override
@@ -15561,6 +15658,12 @@ public final class InternalMessages {
         }
         displayOnly_ = false;
         bitField0_ = (bitField0_ & ~0x00004000);
+        if (affectedDisruptionRoutesBuilder_ == null) {
+          affectedDisruptionRoutes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00008000);
+        } else {
+          affectedDisruptionRoutesBuilder_.clear();
+        }
         return this;
       }
 
@@ -15673,6 +15776,15 @@ public final class InternalMessages {
         if (((from_bitField0_ & 0x00004000) != 0)) {
           result.displayOnly_ = displayOnly_;
           to_bitField0_ |= 0x00000200;
+        }
+        if (affectedDisruptionRoutesBuilder_ == null) {
+          if (((bitField0_ & 0x00008000) != 0)) {
+            affectedDisruptionRoutes_ = java.util.Collections.unmodifiableList(affectedDisruptionRoutes_);
+            bitField0_ = (bitField0_ & ~0x00008000);
+          }
+          result.affectedDisruptionRoutes_ = affectedDisruptionRoutes_;
+        } else {
+          result.affectedDisruptionRoutes_ = affectedDisruptionRoutesBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -15885,6 +15997,32 @@ public final class InternalMessages {
         if (other.hasDisplayOnly()) {
           setDisplayOnly(other.getDisplayOnly());
         }
+        if (affectedDisruptionRoutesBuilder_ == null) {
+          if (!other.affectedDisruptionRoutes_.isEmpty()) {
+            if (affectedDisruptionRoutes_.isEmpty()) {
+              affectedDisruptionRoutes_ = other.affectedDisruptionRoutes_;
+              bitField0_ = (bitField0_ & ~0x00008000);
+            } else {
+              ensureAffectedDisruptionRoutesIsMutable();
+              affectedDisruptionRoutes_.addAll(other.affectedDisruptionRoutes_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.affectedDisruptionRoutes_.isEmpty()) {
+            if (affectedDisruptionRoutesBuilder_.isEmpty()) {
+              affectedDisruptionRoutesBuilder_.dispose();
+              affectedDisruptionRoutesBuilder_ = null;
+              affectedDisruptionRoutes_ = other.affectedDisruptionRoutes_;
+              bitField0_ = (bitField0_ & ~0x00008000);
+              affectedDisruptionRoutesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAffectedDisruptionRoutesFieldBuilder() : null;
+            } else {
+              affectedDisruptionRoutesBuilder_.addAllMessages(other.affectedDisruptionRoutes_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -15923,6 +16061,11 @@ public final class InternalMessages {
         }
         for (int i = 0; i < getUrlsCount(); i++) {
           if (!getUrls(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getAffectedDisruptionRoutesCount(); i++) {
+          if (!getAffectedDisruptionRoutes(i).isInitialized()) {
             return false;
           }
         }
@@ -17611,6 +17754,246 @@ public final class InternalMessages {
         onChanged();
         return this;
       }
+
+      private java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> affectedDisruptionRoutes_ =
+        java.util.Collections.emptyList();
+      private void ensureAffectedDisruptionRoutesIsMutable() {
+        if (!((bitField0_ & 0x00008000) != 0)) {
+          affectedDisruptionRoutes_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity>(affectedDisruptionRoutes_);
+          bitField0_ |= 0x00008000;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder> affectedDisruptionRoutesBuilder_;
+
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+       */
+      public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> getAffectedDisruptionRoutesList() {
+        if (affectedDisruptionRoutesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(affectedDisruptionRoutes_);
+        } else {
+          return affectedDisruptionRoutesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+       */
+      public int getAffectedDisruptionRoutesCount() {
+        if (affectedDisruptionRoutesBuilder_ == null) {
+          return affectedDisruptionRoutes_.size();
+        } else {
+          return affectedDisruptionRoutesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity getAffectedDisruptionRoutes(int index) {
+        if (affectedDisruptionRoutesBuilder_ == null) {
+          return affectedDisruptionRoutes_.get(index);
+        } else {
+          return affectedDisruptionRoutesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+       */
+      public Builder setAffectedDisruptionRoutes(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity value) {
+        if (affectedDisruptionRoutesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAffectedDisruptionRoutesIsMutable();
+          affectedDisruptionRoutes_.set(index, value);
+          onChanged();
+        } else {
+          affectedDisruptionRoutesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+       */
+      public Builder setAffectedDisruptionRoutes(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder builderForValue) {
+        if (affectedDisruptionRoutesBuilder_ == null) {
+          ensureAffectedDisruptionRoutesIsMutable();
+          affectedDisruptionRoutes_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          affectedDisruptionRoutesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+       */
+      public Builder addAffectedDisruptionRoutes(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity value) {
+        if (affectedDisruptionRoutesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAffectedDisruptionRoutesIsMutable();
+          affectedDisruptionRoutes_.add(value);
+          onChanged();
+        } else {
+          affectedDisruptionRoutesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+       */
+      public Builder addAffectedDisruptionRoutes(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity value) {
+        if (affectedDisruptionRoutesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAffectedDisruptionRoutesIsMutable();
+          affectedDisruptionRoutes_.add(index, value);
+          onChanged();
+        } else {
+          affectedDisruptionRoutesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+       */
+      public Builder addAffectedDisruptionRoutes(
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder builderForValue) {
+        if (affectedDisruptionRoutesBuilder_ == null) {
+          ensureAffectedDisruptionRoutesIsMutable();
+          affectedDisruptionRoutes_.add(builderForValue.build());
+          onChanged();
+        } else {
+          affectedDisruptionRoutesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+       */
+      public Builder addAffectedDisruptionRoutes(
+          int index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder builderForValue) {
+        if (affectedDisruptionRoutesBuilder_ == null) {
+          ensureAffectedDisruptionRoutesIsMutable();
+          affectedDisruptionRoutes_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          affectedDisruptionRoutesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+       */
+      public Builder addAllAffectedDisruptionRoutes(
+          java.lang.Iterable<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity> values) {
+        if (affectedDisruptionRoutesBuilder_ == null) {
+          ensureAffectedDisruptionRoutesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, affectedDisruptionRoutes_);
+          onChanged();
+        } else {
+          affectedDisruptionRoutesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+       */
+      public Builder clearAffectedDisruptionRoutes() {
+        if (affectedDisruptionRoutesBuilder_ == null) {
+          affectedDisruptionRoutes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00008000);
+          onChanged();
+        } else {
+          affectedDisruptionRoutesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+       */
+      public Builder removeAffectedDisruptionRoutes(int index) {
+        if (affectedDisruptionRoutesBuilder_ == null) {
+          ensureAffectedDisruptionRoutesIsMutable();
+          affectedDisruptionRoutes_.remove(index);
+          onChanged();
+        } else {
+          affectedDisruptionRoutesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder getAffectedDisruptionRoutesBuilder(
+          int index) {
+        return getAffectedDisruptionRoutesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder getAffectedDisruptionRoutesOrBuilder(
+          int index) {
+        if (affectedDisruptionRoutesBuilder_ == null) {
+          return affectedDisruptionRoutes_.get(index);  } else {
+          return affectedDisruptionRoutesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+       */
+      public java.util.List<? extends fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder> 
+           getAffectedDisruptionRoutesOrBuilderList() {
+        if (affectedDisruptionRoutesBuilder_ != null) {
+          return affectedDisruptionRoutesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(affectedDisruptionRoutes_);
+        }
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder addAffectedDisruptionRoutesBuilder() {
+        return getAffectedDisruptionRoutesFieldBuilder().addBuilder(
+            fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+       */
+      public fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder addAffectedDisruptionRoutesBuilder(
+          int index) {
+        return getAffectedDisruptionRoutesFieldBuilder().addBuilder(
+            index, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Bulletin.AffectedEntity affected_disruption_routes = 16;</code>
+       */
+      public java.util.List<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder> 
+           getAffectedDisruptionRoutesBuilderList() {
+        return getAffectedDisruptionRoutesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder> 
+          getAffectedDisruptionRoutesFieldBuilder() {
+        if (affectedDisruptionRoutesBuilder_ == null) {
+          affectedDisruptionRoutesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.Builder, fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntityOrBuilder>(
+                  affectedDisruptionRoutes_,
+                  ((bitField0_ & 0x00008000) != 0),
+                  getParentForChildren(),
+                  isClean());
+          affectedDisruptionRoutes_ = null;
+        }
+        return affectedDisruptionRoutesBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -18727,7 +19110,7 @@ public final class InternalMessages {
       "c_ms\030\t \002(\003\022\034\n\robserved_time\030\n \001(\010:\005false" +
       "\022\030\n\020targeted_stop_id\030\013 \001(\t\"1\n\006Status\022\r\n\t" +
       "SCHEDULED\020\000\022\013\n\007SKIPPED\020\001\022\013\n\007NO_DATA\020\002\"\"\n" +
-      "\004Type\022\013\n\007ARRIVAL\020\000\022\r\n\tDEPARTURE\020\001\"\344\007\n\010Bu" +
+      "\004Type\022\013\n\007ARRIVAL\020\000\022\r\n\tDEPARTURE\020\001\"\250\010\n\010Bu" +
       "lletin\022\023\n\013bulletin_id\030\001 \001(\t\022!\n\010category\030" +
       "\002 \001(\0162\017.proto.Category\022\034\n\024last_modified_" +
       "utc_ms\030\003 \002(\003\022\031\n\021valid_from_utc_ms\030\004 \002(\003\022" +
@@ -18742,37 +19125,38 @@ public final class InternalMessages {
       "n\0221\n\014descriptions\030\r \003(\0132\033.proto.Bulletin" +
       ".Translation\022)\n\004urls\030\016 \003(\0132\033.proto.Bulle" +
       "tin.Translation\022\033\n\014display_only\030\017 \001(\010:\005f" +
-      "alse\032#\n\016AffectedEntity\022\021\n\tentity_id\030\001 \002(" +
-      "\t\032-\n\013Translation\022\014\n\004text\030\001 \002(\t\022\020\n\010langua" +
-      "ge\030\002 \001(\t\"\246\002\n\006Impact\022\r\n\tCANCELLED\020\000\022\013\n\007DE" +
-      "LAYED\020\001\022\026\n\022DEVIATING_SCHEDULE\020\002\022\024\n\020DISRU" +
-      "PTION_ROUTE\020\003\022\030\n\024IRREGULAR_DEPARTURES\020\004\022" +
-      "\027\n\023POSSIBLE_DEVIATIONS\020\005\022\024\n\020POSSIBLY_DEL" +
-      "AYED\020\006\022\025\n\021REDUCED_TRANSPORT\020\007\022\027\n\023RETURNI" +
-      "NG_TO_NORMAL\020\010\022 \n\034VENDING_MACHINE_OUT_OF" +
-      "_ORDER\020\t\022\010\n\004NULL\020\n\022\t\n\005OTHER\020\013\022\025\n\021NO_TRAF" +
-      "FIC_IMPACT\020\014\022\013\n\007UNKNOWN\020\r\"-\n\010Priority\022\010\n" +
-      "\004INFO\020\000\022\013\n\007WARNING\020\001\022\n\n\006SEVERE\020\002\"L\n\014Serv" +
-      "iceAlert\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\"\n\tbu" +
-      "lletins\030\002 \003(\0132\017.proto.Bulletin*\202\005\n\010Categ" +
-      "ory\022\025\n\021VEHICLE_BREAKDOWN\020\000\022\014\n\010ACCIDENT\020\001" +
-      "\022\r\n\tNO_DRIVER\020\002\022\013\n\007ASSAULT\020\003\022\013\n\007WEATHER\020" +
-      "\004\022\030\n\024VEHICLE_OFF_THE_ROAD\020\005\022\013\n\007SEIZURE\020\006" +
-      "\022\024\n\020ITS_SYSTEM_ERROR\020\007\022\026\n\022OTHER_DRIVER_E" +
-      "RROR\020\010\022\027\n\023TOO_MANY_PASSENGERS\020\t\022\n\n\006STRIK" +
-      "E\020\n\022\t\n\005OTHER\020\013\022\026\n\022EARLIER_DISRUPTION\020\014\022\031" +
-      "\n\025NO_TRAFFIC_DISRUPTION\020\r\022\021\n\rTRACK_BLOCK" +
-      "ED\020\016\022\021\n\rSTAFF_DEFICIT\020\017\022\017\n\013DISTURBANCE\020\020" +
-      "\022\023\n\017VEHICLE_DEFICIT\020\021\022\017\n\013ROAD_CLOSED\020\022\022\017" +
-      "\n\013ROAD_TRENCH\020\023\022\025\n\021TRACK_MAINTENANCE\020\024\022\024" +
-      "\n\020TRAFFIC_ACCIDENT\020\025\022\017\n\013TRAFFIC_JAM\020\026\022\024\n" +
-      "\020MEDICAL_INCIDENT\020\027\022\026\n\022WEATHER_CONDITION" +
-      "S\020\030\022\025\n\021TECHNICAL_FAILURE\020\031\022\010\n\004TEST\020\032\022\024\n\020" +
-      "ROAD_MAINTENANCE\020\033\022\022\n\016SWITCH_FAILURE\020\034\022\017" +
-      "\n\013STATE_VISIT\020\035\022\021\n\rPOWER_FAILURE\020\036\022\025\n\021MI" +
-      "SPARKED_VEHICLE\020\037\022\020\n\014PUBLIC_EVENT\020 B3\n\037f" +
-      "i.hsl.common.transitdata.protoB\020Internal" +
-      "Messages"
+      "alse\022B\n\032affected_disruption_routes\030\020 \003(\013" +
+      "2\036.proto.Bulletin.AffectedEntity\032#\n\016Affe" +
+      "ctedEntity\022\021\n\tentity_id\030\001 \002(\t\032-\n\013Transla" +
+      "tion\022\014\n\004text\030\001 \002(\t\022\020\n\010language\030\002 \001(\t\"\246\002\n" +
+      "\006Impact\022\r\n\tCANCELLED\020\000\022\013\n\007DELAYED\020\001\022\026\n\022D" +
+      "EVIATING_SCHEDULE\020\002\022\024\n\020DISRUPTION_ROUTE\020" +
+      "\003\022\030\n\024IRREGULAR_DEPARTURES\020\004\022\027\n\023POSSIBLE_" +
+      "DEVIATIONS\020\005\022\024\n\020POSSIBLY_DELAYED\020\006\022\025\n\021RE" +
+      "DUCED_TRANSPORT\020\007\022\027\n\023RETURNING_TO_NORMAL" +
+      "\020\010\022 \n\034VENDING_MACHINE_OUT_OF_ORDER\020\t\022\010\n\004" +
+      "NULL\020\n\022\t\n\005OTHER\020\013\022\025\n\021NO_TRAFFIC_IMPACT\020\014" +
+      "\022\013\n\007UNKNOWN\020\r\"-\n\010Priority\022\010\n\004INFO\020\000\022\013\n\007W" +
+      "ARNING\020\001\022\n\n\006SEVERE\020\002\"L\n\014ServiceAlert\022\030\n\r" +
+      "SchemaVersion\030\001 \002(\005:\0011\022\"\n\tbulletins\030\002 \003(" +
+      "\0132\017.proto.Bulletin*\202\005\n\010Category\022\025\n\021VEHIC" +
+      "LE_BREAKDOWN\020\000\022\014\n\010ACCIDENT\020\001\022\r\n\tNO_DRIVE" +
+      "R\020\002\022\013\n\007ASSAULT\020\003\022\013\n\007WEATHER\020\004\022\030\n\024VEHICLE" +
+      "_OFF_THE_ROAD\020\005\022\013\n\007SEIZURE\020\006\022\024\n\020ITS_SYST" +
+      "EM_ERROR\020\007\022\026\n\022OTHER_DRIVER_ERROR\020\010\022\027\n\023TO" +
+      "O_MANY_PASSENGERS\020\t\022\n\n\006STRIKE\020\n\022\t\n\005OTHER" +
+      "\020\013\022\026\n\022EARLIER_DISRUPTION\020\014\022\031\n\025NO_TRAFFIC" +
+      "_DISRUPTION\020\r\022\021\n\rTRACK_BLOCKED\020\016\022\021\n\rSTAF" +
+      "F_DEFICIT\020\017\022\017\n\013DISTURBANCE\020\020\022\023\n\017VEHICLE_" +
+      "DEFICIT\020\021\022\017\n\013ROAD_CLOSED\020\022\022\017\n\013ROAD_TRENC" +
+      "H\020\023\022\025\n\021TRACK_MAINTENANCE\020\024\022\024\n\020TRAFFIC_AC" +
+      "CIDENT\020\025\022\017\n\013TRAFFIC_JAM\020\026\022\024\n\020MEDICAL_INC" +
+      "IDENT\020\027\022\026\n\022WEATHER_CONDITIONS\020\030\022\025\n\021TECHN" +
+      "ICAL_FAILURE\020\031\022\010\n\004TEST\020\032\022\024\n\020ROAD_MAINTEN" +
+      "ANCE\020\033\022\022\n\016SWITCH_FAILURE\020\034\022\017\n\013STATE_VISI" +
+      "T\020\035\022\021\n\rPOWER_FAILURE\020\036\022\025\n\021MISPARKED_VEHI" +
+      "CLE\020\037\022\020\n\014PUBLIC_EVENT\020 B3\n\037fi.hsl.common" +
+      ".transitdata.protoB\020InternalMessages"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18825,7 +19209,7 @@ public final class InternalMessages {
     internal_static_proto_Bulletin_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Bulletin_descriptor,
-        new java.lang.String[] { "BulletinId", "Category", "LastModifiedUtcMs", "ValidFromUtcMs", "ValidToUtcMs", "AffectsAllRoutes", "AffectsAllStops", "AffectedRoutes", "AffectedStops", "Impact", "Priority", "Titles", "Descriptions", "Urls", "DisplayOnly", });
+        new java.lang.String[] { "BulletinId", "Category", "LastModifiedUtcMs", "ValidFromUtcMs", "ValidToUtcMs", "AffectsAllRoutes", "AffectsAllStops", "AffectedRoutes", "AffectedStops", "Impact", "Priority", "Titles", "Descriptions", "Urls", "DisplayOnly", "AffectedDisruptionRoutes", });
     internal_static_proto_Bulletin_AffectedEntity_descriptor =
       internal_static_proto_Bulletin_descriptor.getNestedTypes().get(0);
     internal_static_proto_Bulletin_AffectedEntity_fieldAccessorTable = new
