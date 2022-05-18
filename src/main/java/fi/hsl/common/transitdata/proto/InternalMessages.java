@@ -151,6 +151,10 @@ public final class InternalMessages {
      * <code>PUBLIC_EVENT = 32;</code>
      */
     PUBLIC_EVENT(32),
+    /**
+     * <code>CHARGING_SERVICE = 33;</code>
+     */
+    CHARGING_SERVICE(33),
     ;
 
     /**
@@ -285,6 +289,10 @@ public final class InternalMessages {
      * <code>PUBLIC_EVENT = 32;</code>
      */
     public static final int PUBLIC_EVENT_VALUE = 32;
+    /**
+     * <code>CHARGING_SERVICE = 33;</code>
+     */
+    public static final int CHARGING_SERVICE_VALUE = 33;
 
 
     public final int getNumber() {
@@ -340,6 +348,7 @@ public final class InternalMessages {
         case 30: return POWER_FAILURE;
         case 31: return MISPARKED_VEHICLE;
         case 32: return PUBLIC_EVENT;
+        case 33: return CHARGING_SERVICE;
         default: return null;
       }
     }
@@ -8022,6 +8031,14 @@ public final class InternalMessages {
        * <code>DOOR_MALFUNCTION = 47;</code>
        */
       DOOR_MALFUNCTION(47),
+      /**
+       * <code>OPERATOR_CHARGING_SERVICE = 48;</code>
+       */
+      OPERATOR_CHARGING_SERVICE(48),
+      /**
+       * <code>OTHER_CHARGING_SERVICE = 49;</code>
+       */
+      OTHER_CHARGING_SERVICE(49),
       ;
 
       /**
@@ -8216,6 +8233,14 @@ public final class InternalMessages {
        * <code>DOOR_MALFUNCTION = 47;</code>
        */
       public static final int DOOR_MALFUNCTION_VALUE = 47;
+      /**
+       * <code>OPERATOR_CHARGING_SERVICE = 48;</code>
+       */
+      public static final int OPERATOR_CHARGING_SERVICE_VALUE = 48;
+      /**
+       * <code>OTHER_CHARGING_SERVICE = 49;</code>
+       */
+      public static final int OTHER_CHARGING_SERVICE_VALUE = 49;
 
 
       public final int getNumber() {
@@ -8286,6 +8311,8 @@ public final class InternalMessages {
           case 45: return OTHER_OPERATOR_REASON;
           case 46: return UNKNOWN_CAUSE;
           case 47: return DOOR_MALFUNCTION;
+          case 48: return OPERATOR_CHARGING_SERVICE;
+          case 49: return OTHER_CHARGING_SERVICE;
           default: return null;
         }
       }
@@ -18663,7 +18690,7 @@ public final class InternalMessages {
       "\030\004 \001(\003\022$\n\034affected_journey_pattern_ids\030\005" +
       " \003(\t\022&\n\raffected_trip\030\006 \001(\0132\017.proto.Trip" +
       "Info\"H\n\005Cause\022\017\n\013CLOSED_STOP\020\000\022\032\n\026JOURNE" +
-      "Y_PATTERN_DETOUR\020\001\022\022\n\016JOURNEY_DETOUR\020\002\"\302" +
+      "Y_PATTERN_DETOUR\020\001\022\022\n\016JOURNEY_DETOUR\020\002\"\375" +
       "\020\n\020TripCancellation\022\030\n\rSchemaVersion\030\001 \002" +
       "(\005:\0011\022\017\n\007trip_id\030\002 \001(\t\022\020\n\010route_id\030\003 \001(\t" +
       "\022\024\n\014direction_id\030\004 \001(\r\022\022\n\nstart_time\030\005 \001" +
@@ -18686,7 +18713,7 @@ public final class InternalMessages {
       "\026AffectedDeparturesType\022\033\n\027CANCEL_ENTIRE" +
       "_DEPARTURE\020\000\022\033\n\027CANCEL_STOPS_FROM_START\020" +
       "\001\022\034\n\030CANCEL_STOPS_FROM_MIDDLE\020\002\022\031\n\025CANCE" +
-      "L_STOPS_FROM_END\020\003\"\276\t\n\013SubCategory\022\025\n\021BR" +
+      "L_STOPS_FROM_END\020\003\"\371\t\n\013SubCategory\022\025\n\021BR" +
       "EAK_MALFUNCTION\020\000\022\017\n\013OUT_OF_FUEL\020\001\022\021\n\rFL" +
       "UID_LEAKAGE\020\002\022\030\n\024ELECTRIC_MALFUNCTION\020\003\022" +
       "\026\n\022ENGINE_MALFUNCTION\020\004\022\025\n\021OTHER_MALFUNC" +
@@ -18716,63 +18743,65 @@ public final class InternalMessages {
       "_ERROR\020)\022\031\n\025INSUFFICIENT_CAPASITY\020*\022 \n\034O" +
       "PERATOR_PERSONNEL_ON_STRIKE\020+\022\020\n\014OTHER_S" +
       "TRIKE\020,\022\031\n\025OTHER_OPERATOR_REASON\020-\022\021\n\rUN" +
-      "KNOWN_CAUSE\020.\022\024\n\020DOOR_MALFUNCTION\020/\"\263\003\n\014" +
-      "StopEstimate\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\"" +
-      "\n\ttrip_info\030\002 \002(\0132\017.proto.TripInfo\022\017\n\007st" +
-      "op_id\030\003 \002(\t\022\025\n\rstop_sequence\030\004 \002(\r\022*\n\006st" +
-      "atus\030\005 \002(\0162\032.proto.StopEstimate.Status\022&" +
-      "\n\004type\030\006 \002(\0162\030.proto.StopEstimate.Type\022\035" +
-      "\n\025estimated_time_utc_ms\030\007 \001(\003\022\035\n\025schedul" +
-      "ed_time_utc_ms\030\010 \001(\003\022\034\n\024last_modified_ut" +
-      "c_ms\030\t \002(\003\022\034\n\robserved_time\030\n \001(\010:\005false" +
-      "\022\030\n\020targeted_stop_id\030\013 \001(\t\"1\n\006Status\022\r\n\t" +
-      "SCHEDULED\020\000\022\013\n\007SKIPPED\020\001\022\013\n\007NO_DATA\020\002\"\"\n" +
-      "\004Type\022\013\n\007ARRIVAL\020\000\022\r\n\tDEPARTURE\020\001\"\344\007\n\010Bu" +
-      "lletin\022\023\n\013bulletin_id\030\001 \001(\t\022!\n\010category\030" +
-      "\002 \001(\0162\017.proto.Category\022\034\n\024last_modified_" +
-      "utc_ms\030\003 \002(\003\022\031\n\021valid_from_utc_ms\030\004 \002(\003\022" +
-      "\027\n\017valid_to_utc_ms\030\005 \002(\003\022\032\n\022affects_all_" +
-      "routes\030\006 \001(\010\022\031\n\021affects_all_stops\030\007 \001(\010\022" +
-      "7\n\017affected_routes\030\010 \003(\0132\036.proto.Bulleti" +
-      "n.AffectedEntity\0226\n\016affected_stops\030\t \003(\013" +
-      "2\036.proto.Bulletin.AffectedEntity\022&\n\006impa" +
-      "ct\030\n \001(\0162\026.proto.Bulletin.Impact\022*\n\010prio" +
-      "rity\030\013 \001(\0162\030.proto.Bulletin.Priority\022+\n\006" +
-      "titles\030\014 \003(\0132\033.proto.Bulletin.Translatio" +
-      "n\0221\n\014descriptions\030\r \003(\0132\033.proto.Bulletin" +
-      ".Translation\022)\n\004urls\030\016 \003(\0132\033.proto.Bulle" +
-      "tin.Translation\022\033\n\014display_only\030\017 \001(\010:\005f" +
-      "alse\032#\n\016AffectedEntity\022\021\n\tentity_id\030\001 \002(" +
-      "\t\032-\n\013Translation\022\014\n\004text\030\001 \002(\t\022\020\n\010langua" +
-      "ge\030\002 \001(\t\"\246\002\n\006Impact\022\r\n\tCANCELLED\020\000\022\013\n\007DE" +
-      "LAYED\020\001\022\026\n\022DEVIATING_SCHEDULE\020\002\022\024\n\020DISRU" +
-      "PTION_ROUTE\020\003\022\030\n\024IRREGULAR_DEPARTURES\020\004\022" +
-      "\027\n\023POSSIBLE_DEVIATIONS\020\005\022\024\n\020POSSIBLY_DEL" +
-      "AYED\020\006\022\025\n\021REDUCED_TRANSPORT\020\007\022\027\n\023RETURNI" +
-      "NG_TO_NORMAL\020\010\022 \n\034VENDING_MACHINE_OUT_OF" +
-      "_ORDER\020\t\022\010\n\004NULL\020\n\022\t\n\005OTHER\020\013\022\025\n\021NO_TRAF" +
-      "FIC_IMPACT\020\014\022\013\n\007UNKNOWN\020\r\"-\n\010Priority\022\010\n" +
-      "\004INFO\020\000\022\013\n\007WARNING\020\001\022\n\n\006SEVERE\020\002\"L\n\014Serv" +
-      "iceAlert\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\"\n\tbu" +
-      "lletins\030\002 \003(\0132\017.proto.Bulletin*\202\005\n\010Categ" +
-      "ory\022\025\n\021VEHICLE_BREAKDOWN\020\000\022\014\n\010ACCIDENT\020\001" +
-      "\022\r\n\tNO_DRIVER\020\002\022\013\n\007ASSAULT\020\003\022\013\n\007WEATHER\020" +
-      "\004\022\030\n\024VEHICLE_OFF_THE_ROAD\020\005\022\013\n\007SEIZURE\020\006" +
-      "\022\024\n\020ITS_SYSTEM_ERROR\020\007\022\026\n\022OTHER_DRIVER_E" +
-      "RROR\020\010\022\027\n\023TOO_MANY_PASSENGERS\020\t\022\n\n\006STRIK" +
-      "E\020\n\022\t\n\005OTHER\020\013\022\026\n\022EARLIER_DISRUPTION\020\014\022\031" +
-      "\n\025NO_TRAFFIC_DISRUPTION\020\r\022\021\n\rTRACK_BLOCK" +
-      "ED\020\016\022\021\n\rSTAFF_DEFICIT\020\017\022\017\n\013DISTURBANCE\020\020" +
-      "\022\023\n\017VEHICLE_DEFICIT\020\021\022\017\n\013ROAD_CLOSED\020\022\022\017" +
-      "\n\013ROAD_TRENCH\020\023\022\025\n\021TRACK_MAINTENANCE\020\024\022\024" +
-      "\n\020TRAFFIC_ACCIDENT\020\025\022\017\n\013TRAFFIC_JAM\020\026\022\024\n" +
-      "\020MEDICAL_INCIDENT\020\027\022\026\n\022WEATHER_CONDITION" +
-      "S\020\030\022\025\n\021TECHNICAL_FAILURE\020\031\022\010\n\004TEST\020\032\022\024\n\020" +
-      "ROAD_MAINTENANCE\020\033\022\022\n\016SWITCH_FAILURE\020\034\022\017" +
-      "\n\013STATE_VISIT\020\035\022\021\n\rPOWER_FAILURE\020\036\022\025\n\021MI" +
-      "SPARKED_VEHICLE\020\037\022\020\n\014PUBLIC_EVENT\020 B3\n\037f" +
-      "i.hsl.common.transitdata.protoB\020Internal" +
-      "Messages"
+      "KNOWN_CAUSE\020.\022\024\n\020DOOR_MALFUNCTION\020/\022\035\n\031O" +
+      "PERATOR_CHARGING_SERVICE\0200\022\032\n\026OTHER_CHAR" +
+      "GING_SERVICE\0201\"\263\003\n\014StopEstimate\022\030\n\rSchem" +
+      "aVersion\030\001 \002(\005:\0011\022\"\n\ttrip_info\030\002 \002(\0132\017.p" +
+      "roto.TripInfo\022\017\n\007stop_id\030\003 \002(\t\022\025\n\rstop_s" +
+      "equence\030\004 \002(\r\022*\n\006status\030\005 \002(\0162\032.proto.St" +
+      "opEstimate.Status\022&\n\004type\030\006 \002(\0162\030.proto." +
+      "StopEstimate.Type\022\035\n\025estimated_time_utc_" +
+      "ms\030\007 \001(\003\022\035\n\025scheduled_time_utc_ms\030\010 \001(\003\022" +
+      "\034\n\024last_modified_utc_ms\030\t \002(\003\022\034\n\robserve" +
+      "d_time\030\n \001(\010:\005false\022\030\n\020targeted_stop_id\030" +
+      "\013 \001(\t\"1\n\006Status\022\r\n\tSCHEDULED\020\000\022\013\n\007SKIPPE" +
+      "D\020\001\022\013\n\007NO_DATA\020\002\"\"\n\004Type\022\013\n\007ARRIVAL\020\000\022\r\n" +
+      "\tDEPARTURE\020\001\"\344\007\n\010Bulletin\022\023\n\013bulletin_id" +
+      "\030\001 \001(\t\022!\n\010category\030\002 \001(\0162\017.proto.Categor" +
+      "y\022\034\n\024last_modified_utc_ms\030\003 \002(\003\022\031\n\021valid" +
+      "_from_utc_ms\030\004 \002(\003\022\027\n\017valid_to_utc_ms\030\005 " +
+      "\002(\003\022\032\n\022affects_all_routes\030\006 \001(\010\022\031\n\021affec" +
+      "ts_all_stops\030\007 \001(\010\0227\n\017affected_routes\030\010 " +
+      "\003(\0132\036.proto.Bulletin.AffectedEntity\0226\n\016a" +
+      "ffected_stops\030\t \003(\0132\036.proto.Bulletin.Aff" +
+      "ectedEntity\022&\n\006impact\030\n \001(\0162\026.proto.Bull" +
+      "etin.Impact\022*\n\010priority\030\013 \001(\0162\030.proto.Bu" +
+      "lletin.Priority\022+\n\006titles\030\014 \003(\0132\033.proto." +
+      "Bulletin.Translation\0221\n\014descriptions\030\r \003" +
+      "(\0132\033.proto.Bulletin.Translation\022)\n\004urls\030" +
+      "\016 \003(\0132\033.proto.Bulletin.Translation\022\033\n\014di" +
+      "splay_only\030\017 \001(\010:\005false\032#\n\016AffectedEntit" +
+      "y\022\021\n\tentity_id\030\001 \002(\t\032-\n\013Translation\022\014\n\004t" +
+      "ext\030\001 \002(\t\022\020\n\010language\030\002 \001(\t\"\246\002\n\006Impact\022\r" +
+      "\n\tCANCELLED\020\000\022\013\n\007DELAYED\020\001\022\026\n\022DEVIATING_" +
+      "SCHEDULE\020\002\022\024\n\020DISRUPTION_ROUTE\020\003\022\030\n\024IRRE" +
+      "GULAR_DEPARTURES\020\004\022\027\n\023POSSIBLE_DEVIATION" +
+      "S\020\005\022\024\n\020POSSIBLY_DELAYED\020\006\022\025\n\021REDUCED_TRA" +
+      "NSPORT\020\007\022\027\n\023RETURNING_TO_NORMAL\020\010\022 \n\034VEN" +
+      "DING_MACHINE_OUT_OF_ORDER\020\t\022\010\n\004NULL\020\n\022\t\n" +
+      "\005OTHER\020\013\022\025\n\021NO_TRAFFIC_IMPACT\020\014\022\013\n\007UNKNO" +
+      "WN\020\r\"-\n\010Priority\022\010\n\004INFO\020\000\022\013\n\007WARNING\020\001\022" +
+      "\n\n\006SEVERE\020\002\"L\n\014ServiceAlert\022\030\n\rSchemaVer" +
+      "sion\030\001 \002(\005:\0011\022\"\n\tbulletins\030\002 \003(\0132\017.proto" +
+      ".Bulletin*\230\005\n\010Category\022\025\n\021VEHICLE_BREAKD" +
+      "OWN\020\000\022\014\n\010ACCIDENT\020\001\022\r\n\tNO_DRIVER\020\002\022\013\n\007AS" +
+      "SAULT\020\003\022\013\n\007WEATHER\020\004\022\030\n\024VEHICLE_OFF_THE_" +
+      "ROAD\020\005\022\013\n\007SEIZURE\020\006\022\024\n\020ITS_SYSTEM_ERROR\020" +
+      "\007\022\026\n\022OTHER_DRIVER_ERROR\020\010\022\027\n\023TOO_MANY_PA" +
+      "SSENGERS\020\t\022\n\n\006STRIKE\020\n\022\t\n\005OTHER\020\013\022\026\n\022EAR" +
+      "LIER_DISRUPTION\020\014\022\031\n\025NO_TRAFFIC_DISRUPTI" +
+      "ON\020\r\022\021\n\rTRACK_BLOCKED\020\016\022\021\n\rSTAFF_DEFICIT" +
+      "\020\017\022\017\n\013DISTURBANCE\020\020\022\023\n\017VEHICLE_DEFICIT\020\021" +
+      "\022\017\n\013ROAD_CLOSED\020\022\022\017\n\013ROAD_TRENCH\020\023\022\025\n\021TR" +
+      "ACK_MAINTENANCE\020\024\022\024\n\020TRAFFIC_ACCIDENT\020\025\022" +
+      "\017\n\013TRAFFIC_JAM\020\026\022\024\n\020MEDICAL_INCIDENT\020\027\022\026" +
+      "\n\022WEATHER_CONDITIONS\020\030\022\025\n\021TECHNICAL_FAIL" +
+      "URE\020\031\022\010\n\004TEST\020\032\022\024\n\020ROAD_MAINTENANCE\020\033\022\022\n" +
+      "\016SWITCH_FAILURE\020\034\022\017\n\013STATE_VISIT\020\035\022\021\n\rPO" +
+      "WER_FAILURE\020\036\022\025\n\021MISPARKED_VEHICLE\020\037\022\020\n\014" +
+      "PUBLIC_EVENT\020 \022\024\n\020CHARGING_SERVICE\020!B3\n\037" +
+      "fi.hsl.common.transitdata.protoB\020Interna" +
+      "lMessages"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

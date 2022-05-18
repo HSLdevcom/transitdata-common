@@ -3,9 +3,6 @@ package fi.hsl.common.passengercount;
 import com.dslplatform.json.DslJson;
 import com.dslplatform.json.ParsingException;
 import com.dslplatform.json.runtime.Settings;
-import fi.hsl.common.hfp.HfpJson;
-import fi.hsl.common.hfp.HfpValidator;
-import fi.hsl.common.hfp.proto.Hfp;
 import fi.hsl.common.passengercount.json.*;
 import fi.hsl.common.passengercount.proto.PassengerCount;
 import org.jetbrains.annotations.NotNull;
@@ -17,6 +14,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Optional;
+import java.util.OptionalInt;
 
 public class PassengerCountParser {
     private static final Logger log = LoggerFactory.getLogger(PassengerCountParser.class);
@@ -48,7 +47,7 @@ public class PassengerCountParser {
         payloadBuilder.setLine(payload.line);
         payloadBuilder.setStart(payload.start);
         payloadBuilder.setLoc(payload.loc);
-        payloadBuilder.setStop(payload.stop);
+        safeParseInt(payload.stop).ifPresent(payloadBuilder::setStop);
         payloadBuilder.setRoute(payload.route);
 
         PassengerCount.VehicleCounts.Builder vehicleBuilder = PassengerCount.VehicleCounts.newBuilder();
@@ -87,7 +86,7 @@ public class PassengerCountParser {
         apcJson.apc.oper = passengerCountPayload.getOper();
         apcJson.apc.route = passengerCountPayload.getRoute();
         apcJson.apc.start = passengerCountPayload.getStart();
-        apcJson.apc.stop = passengerCountPayload.getStop();
+        apcJson.apc.stop = String.valueOf(passengerCountPayload.getStop());
         apcJson.apc.tst = new Date(passengerCountPayload.getTst());
         apcJson.apc.jrn = passengerCountPayload.getJrn();
         apcJson.apc.lat = passengerCountPayload.getLat();
@@ -137,6 +136,14 @@ public class PassengerCountParser {
             }
         }
 
+    }
+
+    private static OptionalInt safeParseInt(String s) {
+        try {
+            return OptionalInt.of(Integer.parseInt(s));
+        } catch (NumberFormatException nfe) {
+            return OptionalInt.empty();
+        }
     }
 
     public static class InvalidAPCTopicException extends Exception {
