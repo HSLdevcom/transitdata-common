@@ -60,6 +60,17 @@ public final class PassengerCount {
      * <code>required .proto.Payload payload = 3;</code>
      */
     fi.hsl.common.passengercount.proto.PassengerCount.PayloadOrBuilder getPayloadOrBuilder();
+
+    /**
+     * <code>optional int64 received_at = 4;</code>
+     * @return Whether the receivedAt field is set.
+     */
+    boolean hasReceivedAt();
+    /**
+     * <code>optional int64 received_at = 4;</code>
+     * @return The receivedAt.
+     */
+    long getReceivedAt();
   }
   /**
    * Protobuf type {@code proto.Data}
@@ -133,6 +144,11 @@ public final class PassengerCount {
               bitField0_ |= 0x00000004;
               break;
             }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              receivedAt_ = input.readInt64();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -144,6 +160,8 @@ public final class PassengerCount {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -259,6 +277,25 @@ public final class PassengerCount {
       return payload_ == null ? fi.hsl.common.passengercount.proto.PassengerCount.Payload.getDefaultInstance() : payload_;
     }
 
+    public static final int RECEIVED_AT_FIELD_NUMBER = 4;
+    private long receivedAt_;
+    /**
+     * <code>optional int64 received_at = 4;</code>
+     * @return Whether the receivedAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasReceivedAt() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>optional int64 received_at = 4;</code>
+     * @return The receivedAt.
+     */
+    @java.lang.Override
+    public long getReceivedAt() {
+      return receivedAt_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -290,6 +327,9 @@ public final class PassengerCount {
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(3, getPayload());
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeInt64(4, receivedAt_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -309,6 +349,10 @@ public final class PassengerCount {
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getPayload());
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, receivedAt_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -340,6 +384,11 @@ public final class PassengerCount {
         if (!getPayload()
             .equals(other.getPayload())) return false;
       }
+      if (hasReceivedAt() != other.hasReceivedAt()) return false;
+      if (hasReceivedAt()) {
+        if (getReceivedAt()
+            != other.getReceivedAt()) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -362,6 +411,11 @@ public final class PassengerCount {
       if (hasPayload()) {
         hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
         hash = (53 * hash) + getPayload().hashCode();
+      }
+      if (hasReceivedAt()) {
+        hash = (37 * hash) + RECEIVED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getReceivedAt());
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -507,6 +561,8 @@ public final class PassengerCount {
           payloadBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000004);
+        receivedAt_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -550,6 +606,10 @@ public final class PassengerCount {
             result.payload_ = payloadBuilder_.build();
           }
           to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.receivedAt_ = receivedAt_;
+          to_bitField0_ |= 0x00000008;
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -610,6 +670,9 @@ public final class PassengerCount {
         }
         if (other.hasPayload()) {
           mergePayload(other.getPayload());
+        }
+        if (other.hasReceivedAt()) {
+          setReceivedAt(other.getReceivedAt());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -888,6 +951,45 @@ public final class PassengerCount {
           payload_ = null;
         }
         return payloadBuilder_;
+      }
+
+      private long receivedAt_ ;
+      /**
+       * <code>optional int64 received_at = 4;</code>
+       * @return Whether the receivedAt field is set.
+       */
+      @java.lang.Override
+      public boolean hasReceivedAt() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       * <code>optional int64 received_at = 4;</code>
+       * @return The receivedAt.
+       */
+      @java.lang.Override
+      public long getReceivedAt() {
+        return receivedAt_;
+      }
+      /**
+       * <code>optional int64 received_at = 4;</code>
+       * @param value The receivedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReceivedAt(long value) {
+        bitField0_ |= 0x00000008;
+        receivedAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 received_at = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReceivedAt() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        receivedAt_ = 0L;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1335,6 +1437,8 @@ public final class PassengerCount {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -3839,6 +3943,8 @@ public final class PassengerCount {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -5143,6 +5249,8 @@ public final class PassengerCount {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -6131,6 +6239,8 @@ public final class PassengerCount {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -6888,24 +6998,24 @@ public final class PassengerCount {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025passenger-count.proto\022\005proto\"P\n\004Data\022\030" +
+      "\n\025passenger-count.proto\022\005proto\"e\n\004Data\022\030" +
       "\n\rSchemaVersion\030\001 \002(\005:\0011\022\r\n\005topic\030\002 \001(\t\022" +
-      "\037\n\007payload\030\003 \002(\0132\016.proto.Payload\"\220\002\n\007Pay" +
-      "load\022\014\n\004desi\030\001 \001(\t\022\013\n\003dir\030\002 \001(\t\022\014\n\004oper\030" +
-      "\003 \001(\005\022\013\n\003veh\030\004 \001(\005\022\013\n\003tst\030\005 \001(\003\022\013\n\003tsi\030\006" +
-      " \001(\003\022\013\n\003lat\030\007 \001(\001\022\014\n\004long\030\010 \001(\001\022\013\n\003odo\030\t" +
-      " \001(\001\022\014\n\004oday\030\n \001(\t\022\013\n\003jrn\030\013 \001(\005\022\014\n\004line\030" +
-      "\014 \001(\005\022\r\n\005start\030\r \001(\t\022\013\n\003loc\030\016 \001(\t\022\014\n\004sto" +
-      "p\030\017 \001(\005\022\r\n\005route\030\020 \001(\t\022+\n\rvehicleCounts\030" +
-      "\021 \001(\0132\024.proto.VehicleCounts\"\216\001\n\rVehicleC" +
-      "ounts\022\024\n\014countQuality\030\001 \001(\t\022\023\n\013vehicleLo" +
-      "ad\030\002 \001(\005\022\030\n\020vehicleLoadRatio\030\003 \001(\001\022$\n\ndo" +
-      "orCounts\030\004 \003(\0132\020.proto.DoorCount\022\022\n\nexte" +
-      "nsions\030\005 \001(\t\"6\n\tDoorCount\022\014\n\004door\030\001 \001(\t\022" +
-      "\033\n\005count\030\002 \003(\0132\014.proto.Count\"/\n\005Count\022\r\n" +
-      "\005clazz\030\001 \001(\t\022\n\n\002in\030\002 \001(\005\022\013\n\003out\030\003 \001(\005B4\n" +
-      "\"fi.hsl.common.passengercount.protoB\016Pas" +
-      "sengerCount"
+      "\037\n\007payload\030\003 \002(\0132\016.proto.Payload\022\023\n\013rece" +
+      "ived_at\030\004 \001(\003\"\220\002\n\007Payload\022\014\n\004desi\030\001 \001(\t\022" +
+      "\013\n\003dir\030\002 \001(\t\022\014\n\004oper\030\003 \001(\005\022\013\n\003veh\030\004 \001(\005\022" +
+      "\013\n\003tst\030\005 \001(\003\022\013\n\003tsi\030\006 \001(\003\022\013\n\003lat\030\007 \001(\001\022\014" +
+      "\n\004long\030\010 \001(\001\022\013\n\003odo\030\t \001(\001\022\014\n\004oday\030\n \001(\t\022" +
+      "\013\n\003jrn\030\013 \001(\005\022\014\n\004line\030\014 \001(\005\022\r\n\005start\030\r \001(" +
+      "\t\022\013\n\003loc\030\016 \001(\t\022\014\n\004stop\030\017 \001(\005\022\r\n\005route\030\020 " +
+      "\001(\t\022+\n\rvehicleCounts\030\021 \001(\0132\024.proto.Vehic" +
+      "leCounts\"\216\001\n\rVehicleCounts\022\024\n\014countQuali" +
+      "ty\030\001 \001(\t\022\023\n\013vehicleLoad\030\002 \001(\005\022\030\n\020vehicle" +
+      "LoadRatio\030\003 \001(\001\022$\n\ndoorCounts\030\004 \003(\0132\020.pr" +
+      "oto.DoorCount\022\022\n\nextensions\030\005 \001(\t\"6\n\tDoo" +
+      "rCount\022\014\n\004door\030\001 \001(\t\022\033\n\005count\030\002 \003(\0132\014.pr" +
+      "oto.Count\"/\n\005Count\022\r\n\005clazz\030\001 \001(\t\022\n\n\002in\030" +
+      "\002 \001(\005\022\013\n\003out\030\003 \001(\005B4\n\"fi.hsl.common.pass" +
+      "engercount.protoB\016PassengerCount"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6916,7 +7026,7 @@ public final class PassengerCount {
     internal_static_proto_Data_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Data_descriptor,
-        new java.lang.String[] { "SchemaVersion", "Topic", "Payload", });
+        new java.lang.String[] { "SchemaVersion", "Topic", "Payload", "ReceivedAt", });
     internal_static_proto_Payload_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_Payload_fieldAccessorTable = new

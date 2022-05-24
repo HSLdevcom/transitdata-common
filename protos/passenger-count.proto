@@ -9,6 +9,7 @@ message Data {
     required int32 SchemaVersion = 1 [default = 1];
     optional string topic = 2;
     required Payload payload = 3;
+    optional int64 received_at = 4;
 }
 
 message Payload {
