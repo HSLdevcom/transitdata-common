@@ -1,4 +1,5 @@
 [![Build status](https://github.com/HSLdevcom/transitdata-common/actions/workflows/test-and-build.yml/badge.svg)](https://github.com/HSLdevcom/transitdata-common/actions/workflows/test-and-build.yml)
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/hsldevcom/transitdata-common)](https://github.com/HSLdevcom/transitdata-common/tags)
 
 # HSL Transitdata Common-library
 
@@ -28,9 +29,9 @@ Add the dependency to the project by adding this snippet to your pom.xml file:
 
 To access GitHub Packages, you also need to create an access token and include it in Maven settings. See [GitHub documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-to-github-packages) for more details.
 
+Note that older versions of transitdata-common are automatically removed from GitHub Packages to encourage keeping the package up-to-date. If the build of a project that depends on transitdata-common stops working, update transitdata-common to the [latest version](https://github.com/HSLdevcom/transitdata-common/packages/665985).
 
 It is also possible to compile the project yourself and use it via local maven repository.
-
 
 ## Protobuf
 
