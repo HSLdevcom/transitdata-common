@@ -34,3 +34,8 @@ jobs:
         run: mvn --batch-mode deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Delete old versions of the package
+        uses: actions/delete-package-versions@v3
+        with:
+          package-name: 'fi.hsl.transitdata-common'
+          min-versions-to-keep: 5
