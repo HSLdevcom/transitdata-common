@@ -19,7 +19,7 @@ public class PassengerCountParserTest {
     public void parseJsonTest() throws Exception {
         APC apc = parseJsonFromResources("src/test/resources/passenger-count-sample.json").apc;
         assertEquals("555", apc.desi);
-        assertEquals(12, (int)apc.oper);
+        assertEquals(12, Integer.parseInt(apc.oper));
         assertEquals("GPS", apc.loc);
         assertEquals("regular | defect | other", apc.vehiclecounts.countquality);
         assertEquals(15, apc.vehiclecounts.vehicleload);
@@ -38,7 +38,7 @@ public class PassengerCountParserTest {
     @Test
     public void convertJsonToProtobufMessageTest() throws Exception{
         APCJson apcJson = parseJsonFromResources("src/test/resources/passenger-count-sample.json");
-        PassengerCount.Payload payload = PassengerCountParser.newInstance().parsePayload(apcJson);
+        PassengerCount.Payload payload = PassengerCountParser.newInstance().parsePayload(apcJson).get();
         assertEquals("555", payload.getDesi());
         assertEquals(12, payload.getOper());
         assertEquals("GPS", payload.getLoc());
@@ -52,7 +52,7 @@ public class PassengerCountParserTest {
     public void convertProtobufToJsonTest() throws Exception{
         PassengerCountParser parser = PassengerCountParser.newInstance();
         APCJson apcJson = parseJsonFromResources("src/test/resources/passenger-count-sample.json");
-        PassengerCount.Payload payload = parser.parsePayload(apcJson);
+        PassengerCount.Payload payload = parser.parsePayload(apcJson).get();
         APCJson newApcJson = parser.toJson(payload);
         assertEquals(apcJson.apc.desi, newApcJson.apc.desi);
         assertEquals(apcJson.apc.loc, newApcJson.apc.loc);

@@ -5,6 +5,7 @@ updates:
     schedule:
       interval: "monthly"
     target-branch: "develop"
+    open-pull-requests-limit: 8
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
