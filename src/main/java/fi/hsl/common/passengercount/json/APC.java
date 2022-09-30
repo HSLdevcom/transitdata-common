@@ -10,17 +10,17 @@ import java.util.Date;
 public class APC {
     public String desi;
     public String dir;
-    public Integer oper;
-    public Integer veh;
+    public String oper;
+    public String veh;
     public Date tst;
     public Long tsi;
-    public Double lat;
+    public String lat;
     @JsonAttribute(name = "long")
-    public Double lon;
-    public Double odo;
+    public String lon;
+    public String odo;
     public String oday;
-    public Integer jrn;
-    public Integer line;
+    public String jrn;
+    public String line;
     public String start;
     public String loc;
     public String stop;
