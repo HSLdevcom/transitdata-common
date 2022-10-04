@@ -89,6 +89,11 @@ public class PassengerCountParser {
         safeParseInt(payload.stop).ifPresent(payloadBuilder::setStop);
         payloadBuilder.setRoute(payload.route);
 
+        if (payload.vehiclecounts == null) {
+            log.warn("Field 'vehiclecounts' was null for vehicle {}/{}", payload.oper, payload.veh);
+            return Optional.empty();
+        }
+
         PassengerCount.VehicleCounts.Builder vehicleBuilder = PassengerCount.VehicleCounts.newBuilder();
         vehicleBuilder.setVehicleLoad(payload.vehiclecounts.vehicleload);
 
@@ -103,19 +108,22 @@ public class PassengerCountParser {
             vehicleBuilder.setExtensions(payload.vehiclecounts.extensions);
         }
 
-        for (DoorCount doorcount : payload.vehiclecounts.doorcounts) {
-            PassengerCount.DoorCount.Builder doorCountBuilder = PassengerCount.DoorCount.newBuilder();
-            doorCountBuilder.setDoor(doorcount.door);
+        if (payload.vehiclecounts.doorcounts != null) {
+            for (DoorCount doorcount : payload.vehiclecounts.doorcounts) {
+                PassengerCount.DoorCount.Builder doorCountBuilder = PassengerCount.DoorCount.newBuilder();
+                doorCountBuilder.setDoor(doorcount.door);
 
-            for (Count count : doorcount.count) {
-                PassengerCount.Count.Builder countBuilder = PassengerCount.Count.newBuilder();
-                countBuilder.setIn(count.in);
-                countBuilder.setOut(count.out);
-                countBuilder.setClazz(count.clazz);
-                doorCountBuilder.addCount(countBuilder);
+                for (Count count : doorcount.count) {
+                    PassengerCount.Count.Builder countBuilder = PassengerCount.Count.newBuilder();
+                    countBuilder.setIn(count.in);
+                    countBuilder.setOut(count.out);
+                    countBuilder.setClazz(count.clazz);
+                    doorCountBuilder.addCount(countBuilder);
+                }
+                vehicleBuilder.addDoorCounts(doorCountBuilder);
             }
-            vehicleBuilder.addDoorCounts(doorCountBuilder);
         }
+        
         payloadBuilder.setVehicleCounts(vehicleBuilder);
         return Optional.of(payloadBuilder.build());
     }
