@@ -62,7 +62,7 @@ public class PassengerCountParser {
         if (!maybeLon.isPresent()) {
             log.warn("Failed to parse lon from {}", payload.lon);
         }
-        maybeLat.ifPresent(payloadBuilder::setLong);
+        maybeLon.ifPresent(payloadBuilder::setLong);
 
         final OptionalDouble maybeOdo = safeParseDouble(payload.odo);
         if (!maybeOdo.isPresent()) {
