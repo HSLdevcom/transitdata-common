@@ -108,20 +108,22 @@ public class PassengerCountParser {
             vehicleBuilder.setExtensions(payload.vehiclecounts.extensions);
         }
 
-        Collection<DoorCount> doorcounts = payload.vehiclecounts.doorcounts != null ? payload.vehiclecounts.doorcounts : Collections.emptyList();
-        for (DoorCount doorcount : doorcounts) {
-            PassengerCount.DoorCount.Builder doorCountBuilder = PassengerCount.DoorCount.newBuilder();
-            doorCountBuilder.setDoor(doorcount.door);
+        if (payload.vehiclecounts.doorcounts != null) {
+            for (DoorCount doorcount : payload.vehiclecounts.doorcounts) {
+                PassengerCount.DoorCount.Builder doorCountBuilder = PassengerCount.DoorCount.newBuilder();
+                doorCountBuilder.setDoor(doorcount.door);
 
-            for (Count count : doorcount.count) {
-                PassengerCount.Count.Builder countBuilder = PassengerCount.Count.newBuilder();
-                countBuilder.setIn(count.in);
-                countBuilder.setOut(count.out);
-                countBuilder.setClazz(count.clazz);
-                doorCountBuilder.addCount(countBuilder);
+                for (Count count : doorcount.count) {
+                    PassengerCount.Count.Builder countBuilder = PassengerCount.Count.newBuilder();
+                    countBuilder.setIn(count.in);
+                    countBuilder.setOut(count.out);
+                    countBuilder.setClazz(count.clazz);
+                    doorCountBuilder.addCount(countBuilder);
+                }
+                vehicleBuilder.addDoorCounts(doorCountBuilder);
             }
-            vehicleBuilder.addDoorCounts(doorCountBuilder);
         }
+        
         payloadBuilder.setVehicleCounts(vehicleBuilder);
         return Optional.of(payloadBuilder.build());
     }
