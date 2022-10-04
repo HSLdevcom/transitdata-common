@@ -89,6 +89,11 @@ public class PassengerCountParser {
         safeParseInt(payload.stop).ifPresent(payloadBuilder::setStop);
         payloadBuilder.setRoute(payload.route);
 
+        if (payload.vehiclecounts == null) {
+            log.warn("Field 'vehiclecounts' was null for vehicle {}/{}", payload.oper, payload.veh);
+            return Optional.empty();
+        }
+
         PassengerCount.VehicleCounts.Builder vehicleBuilder = PassengerCount.VehicleCounts.newBuilder();
         vehicleBuilder.setVehicleLoad(payload.vehiclecounts.vehicleload);
 
@@ -103,7 +108,8 @@ public class PassengerCountParser {
             vehicleBuilder.setExtensions(payload.vehiclecounts.extensions);
         }
 
-        for (DoorCount doorcount : payload.vehiclecounts.doorcounts) {
+        Collection<DoorCount> doorcounts = payload.vehiclecounts.doorcounts != null ? payload.vehiclecounts.doorcounts : Collections.emptyList();
+        for (DoorCount doorcount : doorcounts) {
             PassengerCount.DoorCount.Builder doorCountBuilder = PassengerCount.DoorCount.newBuilder();
             doorCountBuilder.setDoor(doorcount.door);
 
