@@ -91,6 +91,7 @@ message Payload {
         ODO = 1;
         MAN = 2;
         NA = 3;
+        DR = 4;
     }
 
     enum TlpRequestType {
