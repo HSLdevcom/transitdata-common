@@ -7,8 +7,9 @@ import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.*;
+import redis.clients.jedis.params.ScanParams;
+import redis.clients.jedis.resps.ScanResult;
 
-import javax.swing.text.html.Option;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -136,7 +137,7 @@ public class RedisUtils {
                 ScanResult<String> scanResult = jedis.scan(cursor, scanParams);
                 List<String> result = scanResult.getResult();
                 keys.addAll(result);
-                cursor = scanResult.getStringCursor();
+                cursor = scanResult.getCursor();
             } while(!"0".equals(cursor));
 
             return new ArrayList<>(keys);
