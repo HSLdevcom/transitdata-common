@@ -10,6 +10,9 @@ message Data {
     optional string topic = 2;
     required Payload payload = 3;
     optional int64 received_at = 4;
+    //This field contains randomized vehicle load ratio (+-5 percentage points) that should be used when publishing passenger count publicly to preserve user privacy
+    //This field should be used instead of adding randomization in different places to avoid making statistical analysis possible
+    optional double randomizedVehicleLoadRatio = 5;
 }
 
 message Payload {
