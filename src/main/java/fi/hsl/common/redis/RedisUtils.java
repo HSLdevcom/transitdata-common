@@ -7,8 +7,9 @@ import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.*;
+import redis.clients.jedis.params.ScanParams;
+import redis.clients.jedis.resps.ScanResult;
 
-import javax.swing.text.html.Option;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -28,10 +29,22 @@ public class RedisUtils {
         return instance;
     }
 
-    private RedisUtils(@NotNull final PulsarApplicationContext context) {
-        jedis = context.getJedis();
-        ttlSeconds = context.getConfig().getInt("redis.ttlSeconds");
+    /**
+     * Creates RedisUtils with specified jedis instance.
+     *
+     * This constructor should only be used for testing.
+     *
+     * @param jedis
+     * @param ttlSeconds
+     */
+    RedisUtils(@NotNull final Jedis jedis, final int ttlSeconds) {
+        this.jedis = jedis;
+        this.ttlSeconds = ttlSeconds;
         log.info("Redis TTL: {} seconds", ttlSeconds);
+    }
+
+    private RedisUtils(@NotNull final PulsarApplicationContext context) {
+        this(context.getJedis(), context.getConfig().getInt("redis.ttlSeconds"));
     }
 
     @NotNull
@@ -88,7 +101,7 @@ public class RedisUtils {
     public Optional<String> getValue(@NotNull final String key) {
         synchronized (jedis) {
             final String value = jedis.get(key);
-            if (value.isEmpty()) {
+            if (value == null || value.isEmpty()) {
                 return Optional.empty();
             }
             return Optional.ofNullable(value);
@@ -98,7 +111,7 @@ public class RedisUtils {
     public Optional<Map<@NotNull String, @NotNull String>> getValues(@NotNull final String key) {
         synchronized (jedis) {
             final Map<String, String> values = jedis.hgetAll(key);
-            if (values.isEmpty()) {
+            if (values == null || values.isEmpty()) {
                 return Optional.empty();
             }
             return Optional.ofNullable(values);
@@ -136,7 +149,7 @@ public class RedisUtils {
                 ScanResult<String> scanResult = jedis.scan(cursor, scanParams);
                 List<String> result = scanResult.getResult();
                 keys.addAll(result);
-                cursor = scanResult.getStringCursor();
+                cursor = scanResult.getCursor();
             } while(!"0".equals(cursor));
 
             return new ArrayList<>(keys);
