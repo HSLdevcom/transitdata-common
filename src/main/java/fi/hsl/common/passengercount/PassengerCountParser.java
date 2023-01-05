@@ -33,75 +33,69 @@ public class PassengerCountParser {
         payloadBuilder.setDesi(payload.desi);
         payloadBuilder.setDir(payload.dir);
 
-        final OptionalInt maybeOper = safeParseInt(payload.oper);
-        if (!maybeOper.isPresent()) {
-            log.warn("Failed to parse oper from {}", payload.oper);
+        if (payload.oper == null) {
+            log.warn("Value for oper is null");
             //oper value is mandatory -> return empty
             return Optional.empty();
         }
-        maybeOper.ifPresent(payloadBuilder::setOper);
+        payloadBuilder.setOper(payload.oper);
 
-        final OptionalInt maybeVeh = safeParseInt(payload.veh);
-        if (!maybeVeh.isPresent()) {
-            log.warn("Failed to parse veh from {}", payload.veh);
+        if (payload.veh == null) {
+            log.warn("Value for veh is null");
             //veh value is mandatory -> return empty
             return Optional.empty();
         }
-        maybeVeh.ifPresent(payloadBuilder::setVeh);
+        payloadBuilder.setVeh(payload.veh);
 
         payloadBuilder.setTst(payload.tst.getTime());
         payloadBuilder.setTsi(payload.tsi);
 
-        final OptionalDouble maybeLat = safeParseDouble(payload.lat);
-        if (!maybeLat.isPresent()) {
-            log.warn("Failed to parse lat from {}", payload.lat);
+        if (payload.lat == null) {
+            log.warn("Value for lat is null for vehicle {}/{}", payload.oper, payload.veh);
         }
-        maybeLat.ifPresent(payloadBuilder::setLat);
+        payloadBuilder.setLat(payload.lat);
 
-        final OptionalDouble maybeLon = safeParseDouble(payload.lon);
-        if (!maybeLon.isPresent()) {
-            log.warn("Failed to parse lon from {}", payload.lon);
+        if (payload.lon == null) {
+            log.warn("Value for lon is null for vehicle {}/{}", payload.oper, payload.veh);
         }
-        maybeLon.ifPresent(payloadBuilder::setLong);
+        payloadBuilder.setLong(payload.lon);
 
-        final OptionalDouble maybeOdo = safeParseDouble(payload.odo);
-        if (!maybeOdo.isPresent()) {
-            log.warn("Failed to parse odo from {}", payload.odo);
+        if (payload.odo == null) {
+            log.warn("Value for odo is null for vehicle {}/{}", payload.oper, payload.veh);
         }
-        maybeOdo.ifPresent(payloadBuilder::setOdo);
+        payloadBuilder.setOdo(payload.odo);
 
         payloadBuilder.setOday(payload.oday);
 
-        final OptionalInt maybeJrn = safeParseInt(payload.jrn);
-        if (!maybeJrn.isPresent()) {
-            log.warn("Failed to parse jrn from {}", payload.jrn);
+        if (payload.jrn == null) {
+            log.warn("Value for jrn is null for vehicle {}/{}", payload.oper, payload.veh);
         }
-        maybeJrn.ifPresent(payloadBuilder::setJrn);
+        payloadBuilder.setJrn(payload.jrn);
 
-        final OptionalInt maybeLine = safeParseInt(payload.line);
-        if (!maybeLine.isPresent()) {
-            log.warn("Failed to parse line from {}", payload.line);
+        if (payload.line == null) {
+            log.warn("Value for line is null for vehicle {}/{}", payload.oper, payload.veh);
         }
-        maybeLine.ifPresent(payloadBuilder::setLine);
+        payloadBuilder.setLine(payload.line);
 
         payloadBuilder.setStart(payload.start);
         payloadBuilder.setLoc(payload.loc);
-        safeParseInt(payload.stop).ifPresent(payloadBuilder::setStop);
+        if (payload.stop != null) {
+            payloadBuilder.setStop(payload.stop);
+        }
         payloadBuilder.setRoute(payload.route);
 
         if (payload.vehiclecounts == null) {
-            log.warn("Field 'vehiclecounts' was null for vehicle {}/{}", payload.oper, payload.veh);
+            log.warn("Field 'vehiclecounts' is null for vehicle {}/{}", payload.oper, payload.veh);
             return Optional.empty();
         }
 
         PassengerCount.VehicleCounts.Builder vehicleBuilder = PassengerCount.VehicleCounts.newBuilder();
         vehicleBuilder.setVehicleLoad(payload.vehiclecounts.vehicleload);
 
-        final OptionalDouble maybeVehicleLoadRatio = safeParseDouble(payload.vehiclecounts.vehicleloadratio);
-        if (!maybeVehicleLoadRatio.isPresent()) {
-            log.warn("Failed to parse vehicleloadratio from {}", payload.vehiclecounts.vehicleloadratio);
+        if (payload.vehiclecounts.vehicleloadratio == null) {
+            log.warn("Value for vehicleloadratio is null for vehicle {}/{}", payload.oper, payload.veh);
         }
-        maybeVehicleLoadRatio.ifPresent(vehicleBuilder::setVehicleLoadRatio);
+        vehicleBuilder.setVehicleLoadRatio(payload.vehiclecounts.vehicleloadratio);
 
         vehicleBuilder.setCountQuality(payload.vehiclecounts.countquality);
         if (payload.vehiclecounts.extensions != null) {
@@ -131,28 +125,28 @@ public class PassengerCountParser {
     public APCJson toJson(PassengerCount.Payload passengerCountPayload){
         APCJson apcJson = new APCJson();
         apcJson.apc = new APC();
-        apcJson.apc.veh = String.valueOf(passengerCountPayload.getVeh());
+        apcJson.apc.veh = passengerCountPayload.getVeh();
         apcJson.apc.desi = passengerCountPayload.getDesi();
         apcJson.apc.loc = passengerCountPayload.getLoc();
         apcJson.apc.dir = passengerCountPayload.getDir();
         apcJson.apc.oday = passengerCountPayload.getOday();
-        apcJson.apc.oper = String.valueOf(passengerCountPayload.getOper());
+        apcJson.apc.oper = passengerCountPayload.getOper();
         apcJson.apc.route = passengerCountPayload.getRoute();
         apcJson.apc.start = passengerCountPayload.getStart();
-        apcJson.apc.stop = String.valueOf(passengerCountPayload.getStop());
+        apcJson.apc.stop = passengerCountPayload.getStop();
         apcJson.apc.tst = new Date(passengerCountPayload.getTst());
-        apcJson.apc.jrn = String.valueOf(passengerCountPayload.getJrn());
-        apcJson.apc.lat = String.valueOf(passengerCountPayload.getLat());
-        apcJson.apc.line = String.valueOf(passengerCountPayload.getLine());
-        apcJson.apc.lon = String.valueOf(passengerCountPayload.getLong());
-        apcJson.apc.odo = String.valueOf(passengerCountPayload.getOdo());
+        apcJson.apc.jrn = passengerCountPayload.getJrn();
+        apcJson.apc.lat = passengerCountPayload.getLat();
+        apcJson.apc.line = passengerCountPayload.getLine();
+        apcJson.apc.lon = passengerCountPayload.getLong();
+        apcJson.apc.odo = passengerCountPayload.getOdo();
         apcJson.apc.tsi = passengerCountPayload.getTsi();
 
         apcJson.apc.vehiclecounts = new Vehiclecounts();
         apcJson.apc.vehiclecounts.countquality = passengerCountPayload.getVehicleCounts().getCountQuality();
         apcJson.apc.vehiclecounts.vehicleload = passengerCountPayload.getVehicleCounts().getVehicleLoad();
         apcJson.apc.vehiclecounts.extensions = passengerCountPayload.getVehicleCounts().getExtensions();
-        apcJson.apc.vehiclecounts.vehicleloadratio = String.valueOf(passengerCountPayload.getVehicleCounts().getVehicleLoadRatio());
+        apcJson.apc.vehiclecounts.vehicleloadratio = passengerCountPayload.getVehicleCounts().getVehicleLoadRatio();
         apcJson.apc.vehiclecounts.doorcounts = new ArrayList<>();
         for (PassengerCount.DoorCount doorCount : passengerCountPayload.getVehicleCounts().getDoorCountsList()) {
             DoorCount dc = new DoorCount();
