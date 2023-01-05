@@ -29,10 +29,22 @@ public class RedisUtils {
         return instance;
     }
 
-    private RedisUtils(@NotNull final PulsarApplicationContext context) {
-        jedis = context.getJedis();
-        ttlSeconds = context.getConfig().getInt("redis.ttlSeconds");
+    /**
+     * Creates RedisUtils with specified jedis instance.
+     *
+     * This constructor should only be used for testing.
+     *
+     * @param jedis
+     * @param ttlSeconds
+     */
+    RedisUtils(@NotNull final Jedis jedis, final int ttlSeconds) {
+        this.jedis = jedis;
+        this.ttlSeconds = ttlSeconds;
         log.info("Redis TTL: {} seconds", ttlSeconds);
+    }
+
+    private RedisUtils(@NotNull final PulsarApplicationContext context) {
+        this(context.getJedis(), context.getConfig().getInt("redis.ttlSeconds"));
     }
 
     @NotNull
@@ -89,7 +101,7 @@ public class RedisUtils {
     public Optional<String> getValue(@NotNull final String key) {
         synchronized (jedis) {
             final String value = jedis.get(key);
-            if (value.isEmpty()) {
+            if (value == null || value.isEmpty()) {
                 return Optional.empty();
             }
             return Optional.ofNullable(value);
@@ -99,7 +111,7 @@ public class RedisUtils {
     public Optional<Map<@NotNull String, @NotNull String>> getValues(@NotNull final String key) {
         synchronized (jedis) {
             final Map<String, String> values = jedis.hgetAll(key);
-            if (values.isEmpty()) {
+            if (values == null || values.isEmpty()) {
                 return Optional.empty();
             }
             return Optional.ofNullable(values);
