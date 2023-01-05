@@ -89,7 +89,7 @@ public class ConfigUtils {
 
         String secret;
         try {
-            secret = Files.readString(Path.of(secretFilePath), StandardCharsets.UTF_8);
+            secret = Files.readString(Path.of(secretFilePath), StandardCharsets.UTF_8).strip();
         } catch (Exception e) {
             log.error("Failed to read secret file ({})", secretFilePath, e);
             throw e;
