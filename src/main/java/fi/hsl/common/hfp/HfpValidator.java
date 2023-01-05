@@ -27,6 +27,7 @@ public class HfpValidator {
                 case "GPS":
                 case "ODO":
                 case "MAN":
+                case "DR":
                 case "N/A":
                     return Optional.of(str);
                 default:

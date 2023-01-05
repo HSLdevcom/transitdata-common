@@ -8,7 +8,7 @@ import java.util.List;
 public class Vehiclecounts {
     public String countquality;
     public int vehicleload;
-    public double vehicleloadratio;
+    public String vehicleloadratio;
     public List<DoorCount> doorcounts;
     public String extensions;
 }
