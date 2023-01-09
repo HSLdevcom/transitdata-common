@@ -5,6 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -85,15 +88,15 @@ public class ConfigUtils {
         }
 
         String secret;
-        try (Scanner scanner = new Scanner(new File(secretFilePath)).useDelimiter("\\Z")) {
-            secret = scanner.next();
+        try {
+            secret = Files.readString(Path.of(secretFilePath), StandardCharsets.UTF_8).strip();
         } catch (Exception e) {
-            log.error("Failed to read secret file", e);
+            log.error("Failed to read secret file ({})", secretFilePath, e);
             throw e;
         }
 
         if (secret.isEmpty()) {
-            throw new Exception("Failed to get secret from file");
+            throw new Exception("Secret file was empty (" + secretFilePath + ")");
         }
 
         return secret;
