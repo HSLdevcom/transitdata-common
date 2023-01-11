@@ -559,85 +559,6 @@ public final class InternalMessages {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TripInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              tripId_ = bs;
-              break;
-            }
-            case 18: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000002;
-              operatingDay_ = bs;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
-              routeId_ = bs;
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
-              directionId_ = input.readUInt32();
-              break;
-            }
-            case 42: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000010;
-              startTime_ = bs;
-              break;
-            }
-            case 48: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType value = fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(6, rawValue);
-              } else {
-                bitField0_ |= 0x00000020;
-                scheduleType_ = rawValue;
-              }
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_TripInfo_descriptor;
@@ -1098,7 +1019,7 @@ public final class InternalMessages {
       if (((bitField0_ & 0x00000020) != 0)) {
         output.writeEnum(6, scheduleType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1127,7 +1048,7 @@ public final class InternalMessages {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, scheduleType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1171,7 +1092,7 @@ public final class InternalMessages {
       if (hasScheduleType()) {
         if (scheduleType_ != other.scheduleType_) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1206,7 +1127,7 @@ public final class InternalMessages {
         hash = (37 * hash) + SCHEDULE_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + scheduleType_;
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1323,18 +1244,13 @@ public final class InternalMessages {
 
       // Construct using fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -1478,7 +1394,7 @@ public final class InternalMessages {
         if (other.hasScheduleType()) {
           setScheduleType(other.getScheduleType());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1508,17 +1424,67 @@ public final class InternalMessages {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        fi.hsl.common.transitdata.proto.InternalMessages.TripInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                tripId_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                operatingDay_ = input.readBytes();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                routeId_ = input.readBytes();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 32: {
+                directionId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 42: {
+                startTime_ = input.readBytes();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              case 48: {
+                int tmpRaw = input.readEnum();
+                fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType tmpValue =
+                    fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.ScheduleType.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(6, tmpRaw);
+                } else {
+                  scheduleType_ = tmpRaw;
+                  bitField0_ |= 0x00000020;
+                }
+                break;
+              } // case 48
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (fi.hsl.common.transitdata.proto.InternalMessages.TripInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -2043,7 +2009,18 @@ public final class InternalMessages {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TripInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2182,74 +2159,6 @@ public final class InternalMessages {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private JourneyPattern(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              journeyPatternId_ = bs;
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                stops_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.JourneyPattern.Stop>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              stops_.add(
-                  input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.JourneyPattern.Stop.PARSER, extensionRegistry));
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                trips_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.TripInfo>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              trips_.add(
-                  input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.PARSER, extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          stops_ = java.util.Collections.unmodifiableList(stops_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          trips_ = java.util.Collections.unmodifiableList(trips_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_JourneyPattern_descriptor;
@@ -2322,55 +2231,6 @@ public final class InternalMessages {
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
-      }
-      private Stop(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                com.google.protobuf.ByteString bs = input.readBytes();
-                bitField0_ |= 0x00000001;
-                stopId_ = bs;
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                stopSequence_ = input.readUInt32();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -2481,7 +2341,7 @@ public final class InternalMessages {
         if (((bitField0_ & 0x00000002) != 0)) {
           output.writeUInt32(2, stopSequence_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -2497,7 +2357,7 @@ public final class InternalMessages {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(2, stopSequence_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -2522,7 +2382,7 @@ public final class InternalMessages {
           if (getStopSequence()
               != other.getStopSequence()) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -2541,7 +2401,7 @@ public final class InternalMessages {
           hash = (37 * hash) + STOP_SEQUENCE_FIELD_NUMBER;
           hash = (53 * hash) + getStopSequence();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -2658,18 +2518,13 @@ public final class InternalMessages {
 
         // Construct using fi.hsl.common.transitdata.proto.InternalMessages.JourneyPattern.Stop.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
@@ -2771,7 +2626,7 @@ public final class InternalMessages {
           if (other.hasStopSequence()) {
             setStopSequence(other.getStopSequence());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -2792,17 +2647,40 @@ public final class InternalMessages {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          fi.hsl.common.transitdata.proto.InternalMessages.JourneyPattern.Stop parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  stopId_ = input.readBytes();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+                case 16: {
+                  stopSequence_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (fi.hsl.common.transitdata.proto.InternalMessages.JourneyPattern.Stop) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -2962,7 +2840,18 @@ public final class InternalMessages {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Stop(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -3170,7 +3059,7 @@ public final class InternalMessages {
       for (int i = 0; i < trips_.size(); i++) {
         output.writeMessage(3, trips_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3190,7 +3079,7 @@ public final class InternalMessages {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, trips_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3214,7 +3103,7 @@ public final class InternalMessages {
           .equals(other.getStopsList())) return false;
       if (!getTripsList()
           .equals(other.getTripsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3237,7 +3126,7 @@ public final class InternalMessages {
         hash = (37 * hash) + TRIPS_FIELD_NUMBER;
         hash = (53 * hash) + getTripsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3354,20 +3243,13 @@ public final class InternalMessages {
 
       // Construct using fi.hsl.common.transitdata.proto.InternalMessages.JourneyPattern.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getStopsFieldBuilder();
-          getTripsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -3376,16 +3258,18 @@ public final class InternalMessages {
         bitField0_ = (bitField0_ & ~0x00000001);
         if (stopsBuilder_ == null) {
           stops_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          stops_ = null;
           stopsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (tripsBuilder_ == null) {
           trips_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          trips_ = null;
           tripsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -3542,7 +3426,7 @@ public final class InternalMessages {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3570,17 +3454,61 @@ public final class InternalMessages {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        fi.hsl.common.transitdata.proto.InternalMessages.JourneyPattern parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                journeyPatternId_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                fi.hsl.common.transitdata.proto.InternalMessages.JourneyPattern.Stop m =
+                    input.readMessage(
+                        fi.hsl.common.transitdata.proto.InternalMessages.JourneyPattern.Stop.PARSER,
+                        extensionRegistry);
+                if (stopsBuilder_ == null) {
+                  ensureStopsIsMutable();
+                  stops_.add(m);
+                } else {
+                  stopsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 26: {
+                fi.hsl.common.transitdata.proto.InternalMessages.TripInfo m =
+                    input.readMessage(
+                        fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.PARSER,
+                        extensionRegistry);
+                if (tripsBuilder_ == null) {
+                  ensureTripsIsMutable();
+                  trips_.add(m);
+                } else {
+                  tripsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (fi.hsl.common.transitdata.proto.InternalMessages.JourneyPattern) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -4253,7 +4181,18 @@ public final class InternalMessages {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new JourneyPattern(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -4353,68 +4292,6 @@ public final class InternalMessages {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private StopCancellations(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                stopCancellations_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.StopCancellation>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              stopCancellations_.add(
-                  input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.StopCancellation.PARSER, extensionRegistry));
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                affectedJourneyPatterns_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.JourneyPattern>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              affectedJourneyPatterns_.add(
-                  input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.JourneyPattern.PARSER, extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          stopCancellations_ = java.util.Collections.unmodifiableList(stopCancellations_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          affectedJourneyPatterns_ = java.util.Collections.unmodifiableList(affectedJourneyPatterns_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -4710,97 +4587,6 @@ public final class InternalMessages {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private StopCancellation(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                int rawValue = input.readEnum();
-                  @SuppressWarnings("deprecation")
-                fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.Cause value = fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.Cause.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  cause_ = rawValue;
-                }
-                break;
-              }
-              case 18: {
-                com.google.protobuf.ByteString bs = input.readBytes();
-                bitField0_ |= 0x00000002;
-                stopId_ = bs;
-                break;
-              }
-              case 24: {
-                bitField0_ |= 0x00000004;
-                validFromUnixS_ = input.readInt64();
-                break;
-              }
-              case 32: {
-                bitField0_ |= 0x00000008;
-                validToUnixS_ = input.readInt64();
-                break;
-              }
-              case 42: {
-                com.google.protobuf.ByteString bs = input.readBytes();
-                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                  affectedJourneyPatternIds_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000010;
-                }
-                affectedJourneyPatternIds_.add(bs);
-                break;
-              }
-              case 50: {
-                fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000010) != 0)) {
-                  subBuilder = affectedTrip_.toBuilder();
-                }
-                affectedTrip_ = input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(affectedTrip_);
-                  affectedTrip_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000010;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000010) != 0)) {
-            affectedJourneyPatternIds_ = affectedJourneyPatternIds_.getUnmodifiableView();
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_StopCancellations_StopCancellation_descriptor;
@@ -5055,7 +4841,7 @@ public final class InternalMessages {
         if (((bitField0_ & 0x00000010) != 0)) {
           output.writeMessage(6, getAffectedTrip());
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -5091,7 +4877,7 @@ public final class InternalMessages {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(6, getAffectedTrip());
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -5132,7 +4918,7 @@ public final class InternalMessages {
           if (!getAffectedTrip()
               .equals(other.getAffectedTrip())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -5169,7 +4955,7 @@ public final class InternalMessages {
           hash = (37 * hash) + AFFECTED_TRIP_FIELD_NUMBER;
           hash = (53 * hash) + getAffectedTrip().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -5452,7 +5238,7 @@ public final class InternalMessages {
           if (other.hasAffectedTrip()) {
             mergeAffectedTrip(other.getAffectedTrip());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -5478,17 +5264,70 @@ public final class InternalMessages {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.StopCancellation parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  int tmpRaw = input.readEnum();
+                  fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.Cause tmpValue =
+                      fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.Cause.forNumber(tmpRaw);
+                  if (tmpValue == null) {
+                    mergeUnknownVarintField(1, tmpRaw);
+                  } else {
+                    cause_ = tmpRaw;
+                    bitField0_ |= 0x00000001;
+                  }
+                  break;
+                } // case 8
+                case 18: {
+                  stopId_ = input.readBytes();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+                case 24: {
+                  validFromUnixS_ = input.readInt64();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+                case 32: {
+                  validToUnixS_ = input.readInt64();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+                case 42: {
+                  com.google.protobuf.ByteString bs = input.readBytes();
+                  ensureAffectedJourneyPatternIdsIsMutable();
+                  affectedJourneyPatternIds_.add(bs);
+                  break;
+                } // case 42
+                case 50: {
+                  input.readMessage(
+                      getAffectedTripFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.StopCancellation) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -6031,7 +5870,18 @@ public final class InternalMessages {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StopCancellation(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -6163,7 +6013,7 @@ public final class InternalMessages {
       for (int i = 0; i < affectedJourneyPatterns_.size(); i++) {
         output.writeMessage(2, affectedJourneyPatterns_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -6180,7 +6030,7 @@ public final class InternalMessages {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, affectedJourneyPatterns_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -6199,7 +6049,7 @@ public final class InternalMessages {
           .equals(other.getStopCancellationsList())) return false;
       if (!getAffectedJourneyPatternsList()
           .equals(other.getAffectedJourneyPatternsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -6218,7 +6068,7 @@ public final class InternalMessages {
         hash = (37 * hash) + AFFECTED_JOURNEY_PATTERNS_FIELD_NUMBER;
         hash = (53 * hash) + getAffectedJourneyPatternsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -6335,36 +6185,31 @@ public final class InternalMessages {
 
       // Construct using fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getStopCancellationsFieldBuilder();
-          getAffectedJourneyPatternsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (stopCancellationsBuilder_ == null) {
           stopCancellations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          stopCancellations_ = null;
           stopCancellationsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (affectedJourneyPatternsBuilder_ == null) {
           affectedJourneyPatterns_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          affectedJourneyPatterns_ = null;
           affectedJourneyPatternsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -6510,7 +6355,7 @@ public final class InternalMessages {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -6535,17 +6380,56 @@ public final class InternalMessages {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.StopCancellation m =
+                    input.readMessage(
+                        fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations.StopCancellation.PARSER,
+                        extensionRegistry);
+                if (stopCancellationsBuilder_ == null) {
+                  ensureStopCancellationsIsMutable();
+                  stopCancellations_.add(m);
+                } else {
+                  stopCancellationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 18: {
+                fi.hsl.common.transitdata.proto.InternalMessages.JourneyPattern m =
+                    input.readMessage(
+                        fi.hsl.common.transitdata.proto.InternalMessages.JourneyPattern.PARSER,
+                        extensionRegistry);
+                if (affectedJourneyPatternsBuilder_ == null) {
+                  ensureAffectedJourneyPatternsIsMutable();
+                  affectedJourneyPatterns_.add(m);
+                } else {
+                  affectedJourneyPatternsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (fi.hsl.common.transitdata.proto.InternalMessages.StopCancellations) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -7062,7 +6946,18 @@ public final class InternalMessages {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StopCancellations(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -7264,6 +7159,17 @@ public final class InternalMessages {
      * @return The subCategory.
      */
     fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory getSubCategory();
+
+    /**
+     * <code>optional int64 deviation_case_id = 14;</code>
+     * @return Whether the deviationCaseId field is set.
+     */
+    boolean hasDeviationCaseId();
+    /**
+     * <code>optional int64 deviation_case_id = 14;</code>
+     * @return The deviationCaseId.
+     */
+    long getDeviationCaseId();
   }
   /**
    * Protobuf type {@code proto.TripCancellation}
@@ -7303,150 +7209,6 @@ public final class InternalMessages {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private TripCancellation(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              bitField0_ |= 0x00000001;
-              schemaVersion_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000002;
-              tripId_ = bs;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
-              routeId_ = bs;
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
-              directionId_ = input.readUInt32();
-              break;
-            }
-            case 42: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000010;
-              startTime_ = bs;
-              break;
-            }
-            case 50: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000020;
-              startDate_ = bs;
-              break;
-            }
-            case 56: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status value = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(7, rawValue);
-              } else {
-                bitField0_ |= 0x00000040;
-                status_ = rawValue;
-              }
-              break;
-            }
-            case 64: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType value = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(8, rawValue);
-              } else {
-                bitField0_ |= 0x00000080;
-                deviationCasesType_ = rawValue;
-              }
-              break;
-            }
-            case 72: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType value = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(9, rawValue);
-              } else {
-                bitField0_ |= 0x00000100;
-                affectedDeparturesType_ = rawValue;
-              }
-              break;
-            }
-            case 82: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000200;
-              title_ = bs;
-              break;
-            }
-            case 90: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000400;
-              description_ = bs;
-              break;
-            }
-            case 96: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              fi.hsl.common.transitdata.proto.InternalMessages.Category value = fi.hsl.common.transitdata.proto.InternalMessages.Category.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(12, rawValue);
-              } else {
-                bitField0_ |= 0x00000800;
-                category_ = rawValue;
-              }
-              break;
-            }
-            case 104: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory value = fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(13, rawValue);
-              } else {
-                bitField0_ |= 0x00001000;
-                subCategory_ = rawValue;
-              }
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -8784,6 +8546,25 @@ public final class InternalMessages {
       return result == null ? fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory.BREAK_MALFUNCTION : result;
     }
 
+    public static final int DEVIATION_CASE_ID_FIELD_NUMBER = 14;
+    private long deviationCaseId_;
+    /**
+     * <code>optional int64 deviation_case_id = 14;</code>
+     * @return Whether the deviationCaseId field is set.
+     */
+    @java.lang.Override
+    public boolean hasDeviationCaseId() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     * <code>optional int64 deviation_case_id = 14;</code>
+     * @return The deviationCaseId.
+     */
+    @java.lang.Override
+    public long getDeviationCaseId() {
+      return deviationCaseId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8845,7 +8626,10 @@ public final class InternalMessages {
       if (((bitField0_ & 0x00001000) != 0)) {
         output.writeEnum(13, subCategory_);
       }
-      unknownFields.writeTo(output);
+      if (((bitField0_ & 0x00002000) != 0)) {
+        output.writeInt64(14, deviationCaseId_);
+      }
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -8900,7 +8684,11 @@ public final class InternalMessages {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(13, subCategory_);
       }
-      size += unknownFields.getSerializedSize();
+      if (((bitField0_ & 0x00002000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(14, deviationCaseId_);
+      }
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -8975,7 +8763,12 @@ public final class InternalMessages {
       if (hasSubCategory()) {
         if (subCategory_ != other.subCategory_) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (hasDeviationCaseId() != other.hasDeviationCaseId()) return false;
+      if (hasDeviationCaseId()) {
+        if (getDeviationCaseId()
+            != other.getDeviationCaseId()) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -9038,7 +8831,12 @@ public final class InternalMessages {
         hash = (37 * hash) + SUB_CATEGORY_FIELD_NUMBER;
         hash = (53 * hash) + subCategory_;
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      if (hasDeviationCaseId()) {
+        hash = (37 * hash) + DEVIATION_CASE_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getDeviationCaseId());
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -9155,18 +8953,13 @@ public final class InternalMessages {
 
       // Construct using fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -9197,6 +8990,8 @@ public final class InternalMessages {
         bitField0_ = (bitField0_ & ~0x00000800);
         subCategory_ = 0;
         bitField0_ = (bitField0_ & ~0x00001000);
+        deviationCaseId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00002000);
         return this;
       }
 
@@ -9277,6 +9072,10 @@ public final class InternalMessages {
           to_bitField0_ |= 0x00001000;
         }
         result.subCategory_ = subCategory_;
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.deviationCaseId_ = deviationCaseId_;
+          to_bitField0_ |= 0x00002000;
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -9377,7 +9176,10 @@ public final class InternalMessages {
         if (other.hasSubCategory()) {
           setSubCategory(other.getSubCategory());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        if (other.hasDeviationCaseId()) {
+          setDeviationCaseId(other.getDeviationCaseId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -9398,17 +9200,135 @@ public final class InternalMessages {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                schemaVersion_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                tripId_ = input.readBytes();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                routeId_ = input.readBytes();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 32: {
+                directionId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 42: {
+                startTime_ = input.readBytes();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              case 50: {
+                startDate_ = input.readBytes();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+              case 56: {
+                int tmpRaw = input.readEnum();
+                fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status tmpValue =
+                    fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.Status.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(7, tmpRaw);
+                } else {
+                  status_ = tmpRaw;
+                  bitField0_ |= 0x00000040;
+                }
+                break;
+              } // case 56
+              case 64: {
+                int tmpRaw = input.readEnum();
+                fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType tmpValue =
+                    fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.DeviationCasesType.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(8, tmpRaw);
+                } else {
+                  deviationCasesType_ = tmpRaw;
+                  bitField0_ |= 0x00000080;
+                }
+                break;
+              } // case 64
+              case 72: {
+                int tmpRaw = input.readEnum();
+                fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType tmpValue =
+                    fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.AffectedDeparturesType.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(9, tmpRaw);
+                } else {
+                  affectedDeparturesType_ = tmpRaw;
+                  bitField0_ |= 0x00000100;
+                }
+                break;
+              } // case 72
+              case 82: {
+                title_ = input.readBytes();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
+              case 90: {
+                description_ = input.readBytes();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
+              case 96: {
+                int tmpRaw = input.readEnum();
+                fi.hsl.common.transitdata.proto.InternalMessages.Category tmpValue =
+                    fi.hsl.common.transitdata.proto.InternalMessages.Category.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(12, tmpRaw);
+                } else {
+                  category_ = tmpRaw;
+                  bitField0_ |= 0x00000800;
+                }
+                break;
+              } // case 96
+              case 104: {
+                int tmpRaw = input.readEnum();
+                fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory tmpValue =
+                    fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation.SubCategory.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(13, tmpRaw);
+                } else {
+                  subCategory_ = tmpRaw;
+                  bitField0_ |= 0x00001000;
+                }
+                break;
+              } // case 104
+              case 112: {
+                deviationCaseId_ = input.readInt64();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (fi.hsl.common.transitdata.proto.InternalMessages.TripCancellation) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -10209,6 +10129,45 @@ public final class InternalMessages {
         onChanged();
         return this;
       }
+
+      private long deviationCaseId_ ;
+      /**
+       * <code>optional int64 deviation_case_id = 14;</code>
+       * @return Whether the deviationCaseId field is set.
+       */
+      @java.lang.Override
+      public boolean hasDeviationCaseId() {
+        return ((bitField0_ & 0x00002000) != 0);
+      }
+      /**
+       * <code>optional int64 deviation_case_id = 14;</code>
+       * @return The deviationCaseId.
+       */
+      @java.lang.Override
+      public long getDeviationCaseId() {
+        return deviationCaseId_;
+      }
+      /**
+       * <code>optional int64 deviation_case_id = 14;</code>
+       * @param value The deviationCaseId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDeviationCaseId(long value) {
+        bitField0_ |= 0x00002000;
+        deviationCaseId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 deviation_case_id = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDeviationCaseId() {
+        bitField0_ = (bitField0_ & ~0x00002000);
+        deviationCaseId_ = 0L;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -10242,7 +10201,18 @@ public final class InternalMessages {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TripCancellation(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -10466,123 +10436,6 @@ public final class InternalMessages {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private StopEstimate(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              bitField0_ |= 0x00000001;
-              schemaVersion_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) != 0)) {
-                subBuilder = tripInfo_.toBuilder();
-              }
-              tripInfo_ = input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.TripInfo.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(tripInfo_);
-                tripInfo_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000002;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
-              stopId_ = bs;
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
-              stopSequence_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status value = fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(5, rawValue);
-              } else {
-                bitField0_ |= 0x00000010;
-                status_ = rawValue;
-              }
-              break;
-            }
-            case 48: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Type value = fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Type.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(6, rawValue);
-              } else {
-                bitField0_ |= 0x00000020;
-                type_ = rawValue;
-              }
-              break;
-            }
-            case 56: {
-              bitField0_ |= 0x00000040;
-              estimatedTimeUtcMs_ = input.readInt64();
-              break;
-            }
-            case 64: {
-              bitField0_ |= 0x00000080;
-              scheduledTimeUtcMs_ = input.readInt64();
-              break;
-            }
-            case 72: {
-              bitField0_ |= 0x00000100;
-              lastModifiedUtcMs_ = input.readInt64();
-              break;
-            }
-            case 80: {
-              bitField0_ |= 0x00000200;
-              observedTime_ = input.readBool();
-              break;
-            }
-            case 90: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000400;
-              targetedStopId_ = bs;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -11192,7 +11045,7 @@ public final class InternalMessages {
       if (((bitField0_ & 0x00000400) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, targetedStopId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -11243,7 +11096,7 @@ public final class InternalMessages {
       if (((bitField0_ & 0x00000400) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, targetedStopId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -11311,7 +11164,7 @@ public final class InternalMessages {
         if (!getTargetedStopId()
             .equals(other.getTargetedStopId())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -11370,7 +11223,7 @@ public final class InternalMessages {
         hash = (37 * hash) + TARGETED_STOP_ID_FIELD_NUMBER;
         hash = (53 * hash) + getTargetedStopId().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -11692,7 +11545,7 @@ public final class InternalMessages {
           targetedStopId_ = other.targetedStopId_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -11731,17 +11584,101 @@ public final class InternalMessages {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                schemaVersion_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                input.readMessage(
+                    getTripInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                stopId_ = input.readBytes();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 32: {
+                stopSequence_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                int tmpRaw = input.readEnum();
+                fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status tmpValue =
+                    fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Status.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(5, tmpRaw);
+                } else {
+                  status_ = tmpRaw;
+                  bitField0_ |= 0x00000010;
+                }
+                break;
+              } // case 40
+              case 48: {
+                int tmpRaw = input.readEnum();
+                fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Type tmpValue =
+                    fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate.Type.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(6, tmpRaw);
+                } else {
+                  type_ = tmpRaw;
+                  bitField0_ |= 0x00000020;
+                }
+                break;
+              } // case 48
+              case 56: {
+                estimatedTimeUtcMs_ = input.readInt64();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+              case 64: {
+                scheduledTimeUtcMs_ = input.readInt64();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+              case 72: {
+                lastModifiedUtcMs_ = input.readInt64();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
+              case 80: {
+                observedTime_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 80
+              case 90: {
+                targetedStopId_ = input.readBytes();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (fi.hsl.common.transitdata.proto.InternalMessages.StopEstimate) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -12450,7 +12387,18 @@ public final class InternalMessages {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StopEstimate(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -12753,176 +12701,6 @@ public final class InternalMessages {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private Bulletin(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              bulletinId_ = bs;
-              break;
-            }
-            case 16: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              fi.hsl.common.transitdata.proto.InternalMessages.Category value = fi.hsl.common.transitdata.proto.InternalMessages.Category.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(2, rawValue);
-              } else {
-                bitField0_ |= 0x00000002;
-                category_ = rawValue;
-              }
-              break;
-            }
-            case 24: {
-              bitField0_ |= 0x00000004;
-              lastModifiedUtcMs_ = input.readInt64();
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
-              validFromUtcMs_ = input.readInt64();
-              break;
-            }
-            case 40: {
-              bitField0_ |= 0x00000010;
-              validToUtcMs_ = input.readInt64();
-              break;
-            }
-            case 48: {
-              bitField0_ |= 0x00000020;
-              affectsAllRoutes_ = input.readBool();
-              break;
-            }
-            case 56: {
-              bitField0_ |= 0x00000040;
-              affectsAllStops_ = input.readBool();
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
-                affectedRoutes_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity>();
-                mutable_bitField0_ |= 0x00000080;
-              }
-              affectedRoutes_.add(
-                  input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.PARSER, extensionRegistry));
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
-                affectedStops_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity>();
-                mutable_bitField0_ |= 0x00000100;
-              }
-              affectedStops_.add(
-                  input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.PARSER, extensionRegistry));
-              break;
-            }
-            case 80: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact value = fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(10, rawValue);
-              } else {
-                bitField0_ |= 0x00000080;
-                impact_ = rawValue;
-              }
-              break;
-            }
-            case 88: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority value = fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(11, rawValue);
-              } else {
-                bitField0_ |= 0x00000100;
-                priority_ = rawValue;
-              }
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
-                titles_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation>();
-                mutable_bitField0_ |= 0x00000800;
-              }
-              titles_.add(
-                  input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.PARSER, extensionRegistry));
-              break;
-            }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
-                descriptions_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation>();
-                mutable_bitField0_ |= 0x00001000;
-              }
-              descriptions_.add(
-                  input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.PARSER, extensionRegistry));
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
-                urls_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation>();
-                mutable_bitField0_ |= 0x00002000;
-              }
-              urls_.add(
-                  input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.PARSER, extensionRegistry));
-              break;
-            }
-            case 120: {
-              bitField0_ |= 0x00000200;
-              displayOnly_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000080) != 0)) {
-          affectedRoutes_ = java.util.Collections.unmodifiableList(affectedRoutes_);
-        }
-        if (((mutable_bitField0_ & 0x00000100) != 0)) {
-          affectedStops_ = java.util.Collections.unmodifiableList(affectedStops_);
-        }
-        if (((mutable_bitField0_ & 0x00000800) != 0)) {
-          titles_ = java.util.Collections.unmodifiableList(titles_);
-        }
-        if (((mutable_bitField0_ & 0x00001000) != 0)) {
-          descriptions_ = java.util.Collections.unmodifiableList(descriptions_);
-        }
-        if (((mutable_bitField0_ & 0x00002000) != 0)) {
-          urls_ = java.util.Collections.unmodifiableList(urls_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -13295,50 +13073,6 @@ public final class InternalMessages {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private AffectedEntity(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                com.google.protobuf.ByteString bs = input.readBytes();
-                bitField0_ |= 0x00000001;
-                entityId_ = bs;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return fi.hsl.common.transitdata.proto.InternalMessages.internal_static_proto_Bulletin_AffectedEntity_descriptor;
@@ -13422,7 +13156,7 @@ public final class InternalMessages {
         if (((bitField0_ & 0x00000001) != 0)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, entityId_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -13434,7 +13168,7 @@ public final class InternalMessages {
         if (((bitField0_ & 0x00000001) != 0)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, entityId_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -13454,7 +13188,7 @@ public final class InternalMessages {
           if (!getEntityId()
               .equals(other.getEntityId())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -13469,7 +13203,7 @@ public final class InternalMessages {
           hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
           hash = (53 * hash) + getEntityId().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -13586,18 +13320,13 @@ public final class InternalMessages {
 
         // Construct using fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
@@ -13690,7 +13419,7 @@ public final class InternalMessages {
             entityId_ = other.entityId_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -13708,17 +13437,35 @@ public final class InternalMessages {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  entityId_ = input.readBytes();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -13839,7 +13586,18 @@ public final class InternalMessages {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AffectedEntity(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -13925,56 +13683,6 @@ public final class InternalMessages {
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
-      }
-      private Translation(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                com.google.protobuf.ByteString bs = input.readBytes();
-                bitField0_ |= 0x00000001;
-                text_ = bs;
-                break;
-              }
-              case 18: {
-                com.google.protobuf.ByteString bs = input.readBytes();
-                bitField0_ |= 0x00000002;
-                language_ = bs;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -14110,7 +13818,7 @@ public final class InternalMessages {
         if (((bitField0_ & 0x00000002) != 0)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, language_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -14125,7 +13833,7 @@ public final class InternalMessages {
         if (((bitField0_ & 0x00000002) != 0)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, language_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -14150,7 +13858,7 @@ public final class InternalMessages {
           if (!getLanguage()
               .equals(other.getLanguage())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -14169,7 +13877,7 @@ public final class InternalMessages {
           hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
           hash = (53 * hash) + getLanguage().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -14286,18 +13994,13 @@ public final class InternalMessages {
 
         // Construct using fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
@@ -14401,7 +14104,7 @@ public final class InternalMessages {
             language_ = other.language_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -14419,17 +14122,40 @@ public final class InternalMessages {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  text_ = input.readBytes();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+                case 18: {
+                  language_ = input.readBytes();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -14634,7 +14360,18 @@ public final class InternalMessages {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Translation(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -15183,7 +14920,7 @@ public final class InternalMessages {
       if (((bitField0_ & 0x00000200) != 0)) {
         output.writeBool(15, displayOnly_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -15251,7 +14988,7 @@ public final class InternalMessages {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, displayOnly_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -15323,7 +15060,7 @@ public final class InternalMessages {
         if (getDisplayOnly()
             != other.getDisplayOnly()) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -15400,7 +15137,7 @@ public final class InternalMessages {
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getDisplayOnly());
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -15517,23 +15254,13 @@ public final class InternalMessages {
 
       // Construct using fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getAffectedRoutesFieldBuilder();
-          getAffectedStopsFieldBuilder();
-          getTitlesFieldBuilder();
-          getDescriptionsFieldBuilder();
-          getUrlsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -15554,38 +15281,43 @@ public final class InternalMessages {
         bitField0_ = (bitField0_ & ~0x00000040);
         if (affectedRoutesBuilder_ == null) {
           affectedRoutes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
+          affectedRoutes_ = null;
           affectedRoutesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000080);
         if (affectedStopsBuilder_ == null) {
           affectedStops_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
+          affectedStops_ = null;
           affectedStopsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000100);
         impact_ = 0;
         bitField0_ = (bitField0_ & ~0x00000200);
         priority_ = 0;
         bitField0_ = (bitField0_ & ~0x00000400);
         if (titlesBuilder_ == null) {
           titles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000800);
         } else {
+          titles_ = null;
           titlesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000800);
         if (descriptionsBuilder_ == null) {
           descriptions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00001000);
         } else {
+          descriptions_ = null;
           descriptionsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00001000);
         if (urlsBuilder_ == null) {
           urls_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00002000);
         } else {
+          urls_ = null;
           urlsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00002000);
         displayOnly_ = false;
         bitField0_ = (bitField0_ & ~0x00004000);
         return this;
@@ -15912,7 +15644,7 @@ public final class InternalMessages {
         if (other.hasDisplayOnly()) {
           setDisplayOnly(other.getDisplayOnly());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -15961,17 +15693,166 @@ public final class InternalMessages {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        fi.hsl.common.transitdata.proto.InternalMessages.Bulletin parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                bulletinId_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 16: {
+                int tmpRaw = input.readEnum();
+                fi.hsl.common.transitdata.proto.InternalMessages.Category tmpValue =
+                    fi.hsl.common.transitdata.proto.InternalMessages.Category.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(2, tmpRaw);
+                } else {
+                  category_ = tmpRaw;
+                  bitField0_ |= 0x00000002;
+                }
+                break;
+              } // case 16
+              case 24: {
+                lastModifiedUtcMs_ = input.readInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                validFromUtcMs_ = input.readInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                validToUtcMs_ = input.readInt64();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 48: {
+                affectsAllRoutes_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              case 56: {
+                affectsAllStops_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+              case 66: {
+                fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity m =
+                    input.readMessage(
+                        fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.PARSER,
+                        extensionRegistry);
+                if (affectedRoutesBuilder_ == null) {
+                  ensureAffectedRoutesIsMutable();
+                  affectedRoutes_.add(m);
+                } else {
+                  affectedRoutesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              case 74: {
+                fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity m =
+                    input.readMessage(
+                        fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.AffectedEntity.PARSER,
+                        extensionRegistry);
+                if (affectedStopsBuilder_ == null) {
+                  ensureAffectedStopsIsMutable();
+                  affectedStops_.add(m);
+                } else {
+                  affectedStopsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              case 80: {
+                int tmpRaw = input.readEnum();
+                fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact tmpValue =
+                    fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Impact.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(10, tmpRaw);
+                } else {
+                  impact_ = tmpRaw;
+                  bitField0_ |= 0x00000200;
+                }
+                break;
+              } // case 80
+              case 88: {
+                int tmpRaw = input.readEnum();
+                fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority tmpValue =
+                    fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Priority.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(11, tmpRaw);
+                } else {
+                  priority_ = tmpRaw;
+                  bitField0_ |= 0x00000400;
+                }
+                break;
+              } // case 88
+              case 98: {
+                fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation m =
+                    input.readMessage(
+                        fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.PARSER,
+                        extensionRegistry);
+                if (titlesBuilder_ == null) {
+                  ensureTitlesIsMutable();
+                  titles_.add(m);
+                } else {
+                  titlesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+              case 106: {
+                fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation m =
+                    input.readMessage(
+                        fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.PARSER,
+                        extensionRegistry);
+                if (descriptionsBuilder_ == null) {
+                  ensureDescriptionsIsMutable();
+                  descriptions_.add(m);
+                } else {
+                  descriptionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
+              case 114: {
+                fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation m =
+                    input.readMessage(
+                        fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.Translation.PARSER,
+                        extensionRegistry);
+                if (urlsBuilder_ == null) {
+                  ensureUrlsIsMutable();
+                  urls_.add(m);
+                } else {
+                  urlsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
+              case 120: {
+                displayOnly_ = input.readBool();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (fi.hsl.common.transitdata.proto.InternalMessages.Bulletin) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -17671,7 +17552,18 @@ public final class InternalMessages {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Bulletin(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -17758,61 +17650,6 @@ public final class InternalMessages {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private ServiceAlert(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              bitField0_ |= 0x00000001;
-              schemaVersion_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                bulletins_ = new java.util.ArrayList<fi.hsl.common.transitdata.proto.InternalMessages.Bulletin>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              bulletins_.add(
-                  input.readMessage(fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.PARSER, extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          bulletins_ = java.util.Collections.unmodifiableList(bulletins_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -17917,7 +17754,7 @@ public final class InternalMessages {
       for (int i = 0; i < bulletins_.size(); i++) {
         output.writeMessage(2, bulletins_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -17934,7 +17771,7 @@ public final class InternalMessages {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, bulletins_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -17956,7 +17793,7 @@ public final class InternalMessages {
       }
       if (!getBulletinsList()
           .equals(other.getBulletinsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -17975,7 +17812,7 @@ public final class InternalMessages {
         hash = (37 * hash) + BULLETINS_FIELD_NUMBER;
         hash = (53 * hash) + getBulletinsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -18092,19 +17929,13 @@ public final class InternalMessages {
 
       // Construct using fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getBulletinsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -18113,10 +17944,11 @@ public final class InternalMessages {
         bitField0_ = (bitField0_ & ~0x00000001);
         if (bulletinsBuilder_ == null) {
           bulletins_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          bulletins_ = null;
           bulletinsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -18236,7 +18068,7 @@ public final class InternalMessages {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -18259,17 +18091,48 @@ public final class InternalMessages {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                schemaVersion_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                fi.hsl.common.transitdata.proto.InternalMessages.Bulletin m =
+                    input.readMessage(
+                        fi.hsl.common.transitdata.proto.InternalMessages.Bulletin.PARSER,
+                        extensionRegistry);
+                if (bulletinsBuilder_ == null) {
+                  ensureBulletinsIsMutable();
+                  bulletins_.add(m);
+                } else {
+                  bulletinsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (fi.hsl.common.transitdata.proto.InternalMessages.ServiceAlert) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -18585,7 +18448,18 @@ public final class InternalMessages {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ServiceAlert(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -18690,8 +18564,8 @@ public final class InternalMessages {
       "\030\004 \001(\003\022$\n\034affected_journey_pattern_ids\030\005" +
       " \003(\t\022&\n\raffected_trip\030\006 \001(\0132\017.proto.Trip" +
       "Info\"H\n\005Cause\022\017\n\013CLOSED_STOP\020\000\022\032\n\026JOURNE" +
-      "Y_PATTERN_DETOUR\020\001\022\022\n\016JOURNEY_DETOUR\020\002\"\375" +
-      "\020\n\020TripCancellation\022\030\n\rSchemaVersion\030\001 \002" +
+      "Y_PATTERN_DETOUR\020\001\022\022\n\016JOURNEY_DETOUR\020\002\"\230" +
+      "\021\n\020TripCancellation\022\030\n\rSchemaVersion\030\001 \002" +
       "(\005:\0011\022\017\n\007trip_id\030\002 \001(\t\022\020\n\010route_id\030\003 \001(\t" +
       "\022\024\n\014direction_id\030\004 \001(\r\022\022\n\nstart_time\030\005 \001" +
       "(\t\022\022\n\nstart_date\030\006 \001(\t\022.\n\006status\030\007 \002(\0162\036" +
@@ -18702,106 +18576,106 @@ public final class InternalMessages {
       "ion.AffectedDeparturesType\022\r\n\005title\030\n \001(" +
       "\t\022\023\n\013description\030\013 \001(\t\022!\n\010category\030\014 \001(\016" +
       "2\017.proto.Category\0229\n\014sub_category\030\r \001(\0162" +
-      "#.proto.TripCancellation.SubCategory\"#\n\006" +
-      "Status\022\013\n\007RUNNING\020\000\022\014\n\010CANCELED\020\001\"\360\001\n\022De" +
-      "viationCasesType\022\024\n\020CANCEL_DEPARTURE\020\000\022\n" +
-      "\n\006DETOUR\020\001\022\026\n\022SKIPPED_STOP_CALLS\020\002\022\023\n\017EA" +
-      "RLY_DEPARTURE\020\003\022%\n!EARLY_DEPARTURE_FROM_" +
-      "TIMING_POINT\020\004\022\022\n\016LATE_DEPARTURE\020\005\022!\n\035DE" +
-      "PARTURED_AFTER_NEXT_JOURNEY\020\006\022\036\n\032BLOCK_F" +
-      "IRST_DEPARTURE_LATE\020\007\022\r\n\tTIS_ERROR\020\010\"\213\001\n" +
-      "\026AffectedDeparturesType\022\033\n\027CANCEL_ENTIRE" +
-      "_DEPARTURE\020\000\022\033\n\027CANCEL_STOPS_FROM_START\020" +
-      "\001\022\034\n\030CANCEL_STOPS_FROM_MIDDLE\020\002\022\031\n\025CANCE" +
-      "L_STOPS_FROM_END\020\003\"\371\t\n\013SubCategory\022\025\n\021BR" +
-      "EAK_MALFUNCTION\020\000\022\017\n\013OUT_OF_FUEL\020\001\022\021\n\rFL" +
-      "UID_LEAKAGE\020\002\022\030\n\024ELECTRIC_MALFUNCTION\020\003\022" +
-      "\026\n\022ENGINE_MALFUNCTION\020\004\022\025\n\021OTHER_MALFUNC" +
-      "TION\020\005\022\r\n\tOWN_FAULT\020\006\022\022\n\016OPPOSITE_FAULT\020" +
-      "\007\022\021\n\rFAULT_UNKNOWN\020\010\022\022\n\016STAFF_SHORTAGE\020\t" +
-      "\022\036\n\032ND_OPERATOR_PLANNING_ERROR\020\n\022\017\n\013DRIV" +
-      "ER_LATE\020\013\022)\n%INSUFFICIENT_INSTRUCTIONS_B" +
-      "Y_OPERATOR\020\014\022*\n&INSUFFICIENT_INSTRUCTION" +
-      "S_BY_AUTHORITY\020\r\022\030\n\024NO_VEHICLE_AVAILABLE" +
-      "\020\016\022\025\n\021ASSAULT_ON_DRIVER\020\017\022\030\n\024ASSAULT_ON_" +
-      "PASSENGER\020\020\022\026\n\022ASSAULT_ON_VEHICLE\020\021\022\030\n\024P" +
-      "ASSED_OUT_PASSENGER\020\022\022\021\n\rOTHER_ASSAULT\020\023" +
-      "\022\032\n\026UNDRIVEABLE_CONDITIONS\020\024\022\034\n\030STUCK_CA" +
-      "USED_BY_SLIPPERY\020\025\022 \n\034CONGESTION_CAUSED_" +
-      "BY_WEATHER\020\026\022\022\n\016SLIPPERY_TRACK\020\027\022\020\n\014ROAD" +
-      "_BLOCKED\020\030\022(\n$VEHICLE_OFF_THE_ROAD_BY_DR" +
-      "IVER_ERROR\020\031\022(\n$VEHICLE_OFF_THE_ROAD_BY_" +
-      "OTHER_REASON\020\032\022\026\n\022MISSPARKED_VEHICLE\020\033\022\034" +
-      "\n\030CONGESTION_REASON_UKNOWN\020\034\022!\n\035CONGESTI" +
-      "ON_CAUSED_BY_ACCIDENT\020\035\022\022\n\016DRIVER_SEIZUR" +
-      "E\020\036\022\025\n\021PASSENGER_SEIZURE\020\037\022\025\n\021PASSENGER_" +
-      "INJURED\020 \022\021\n\rOTHER_SEIZURE\020!\022\020\n\014DEVICE_E" +
-      "RROR\020\"\022\031\n\025OPERATOR_DEVICE_ERROR\020#\022\037\n\033WRO" +
-      "NG_INFORMATION_IN_DEVICE\020$\022\034\n\030ITS_SYSTEM" +
-      "_NOT_INSTALLED\020%\022\016\n\nUSER_ERROR\020&\022\017\n\013FALS" +
-      "E_ALARM\020\'\022\023\n\017OTHER_ITS_ERROR\020(\022\020\n\014DRIVER" +
-      "_ERROR\020)\022\031\n\025INSUFFICIENT_CAPASITY\020*\022 \n\034O" +
-      "PERATOR_PERSONNEL_ON_STRIKE\020+\022\020\n\014OTHER_S" +
-      "TRIKE\020,\022\031\n\025OTHER_OPERATOR_REASON\020-\022\021\n\rUN" +
-      "KNOWN_CAUSE\020.\022\024\n\020DOOR_MALFUNCTION\020/\022\035\n\031O" +
-      "PERATOR_CHARGING_SERVICE\0200\022\032\n\026OTHER_CHAR" +
-      "GING_SERVICE\0201\"\263\003\n\014StopEstimate\022\030\n\rSchem" +
-      "aVersion\030\001 \002(\005:\0011\022\"\n\ttrip_info\030\002 \002(\0132\017.p" +
-      "roto.TripInfo\022\017\n\007stop_id\030\003 \002(\t\022\025\n\rstop_s" +
-      "equence\030\004 \002(\r\022*\n\006status\030\005 \002(\0162\032.proto.St" +
-      "opEstimate.Status\022&\n\004type\030\006 \002(\0162\030.proto." +
-      "StopEstimate.Type\022\035\n\025estimated_time_utc_" +
-      "ms\030\007 \001(\003\022\035\n\025scheduled_time_utc_ms\030\010 \001(\003\022" +
-      "\034\n\024last_modified_utc_ms\030\t \002(\003\022\034\n\robserve" +
-      "d_time\030\n \001(\010:\005false\022\030\n\020targeted_stop_id\030" +
-      "\013 \001(\t\"1\n\006Status\022\r\n\tSCHEDULED\020\000\022\013\n\007SKIPPE" +
-      "D\020\001\022\013\n\007NO_DATA\020\002\"\"\n\004Type\022\013\n\007ARRIVAL\020\000\022\r\n" +
-      "\tDEPARTURE\020\001\"\344\007\n\010Bulletin\022\023\n\013bulletin_id" +
-      "\030\001 \001(\t\022!\n\010category\030\002 \001(\0162\017.proto.Categor" +
-      "y\022\034\n\024last_modified_utc_ms\030\003 \002(\003\022\031\n\021valid" +
-      "_from_utc_ms\030\004 \002(\003\022\027\n\017valid_to_utc_ms\030\005 " +
-      "\002(\003\022\032\n\022affects_all_routes\030\006 \001(\010\022\031\n\021affec" +
-      "ts_all_stops\030\007 \001(\010\0227\n\017affected_routes\030\010 " +
-      "\003(\0132\036.proto.Bulletin.AffectedEntity\0226\n\016a" +
-      "ffected_stops\030\t \003(\0132\036.proto.Bulletin.Aff" +
-      "ectedEntity\022&\n\006impact\030\n \001(\0162\026.proto.Bull" +
-      "etin.Impact\022*\n\010priority\030\013 \001(\0162\030.proto.Bu" +
-      "lletin.Priority\022+\n\006titles\030\014 \003(\0132\033.proto." +
-      "Bulletin.Translation\0221\n\014descriptions\030\r \003" +
-      "(\0132\033.proto.Bulletin.Translation\022)\n\004urls\030" +
-      "\016 \003(\0132\033.proto.Bulletin.Translation\022\033\n\014di" +
-      "splay_only\030\017 \001(\010:\005false\032#\n\016AffectedEntit" +
-      "y\022\021\n\tentity_id\030\001 \002(\t\032-\n\013Translation\022\014\n\004t" +
-      "ext\030\001 \002(\t\022\020\n\010language\030\002 \001(\t\"\246\002\n\006Impact\022\r" +
-      "\n\tCANCELLED\020\000\022\013\n\007DELAYED\020\001\022\026\n\022DEVIATING_" +
-      "SCHEDULE\020\002\022\024\n\020DISRUPTION_ROUTE\020\003\022\030\n\024IRRE" +
-      "GULAR_DEPARTURES\020\004\022\027\n\023POSSIBLE_DEVIATION" +
-      "S\020\005\022\024\n\020POSSIBLY_DELAYED\020\006\022\025\n\021REDUCED_TRA" +
-      "NSPORT\020\007\022\027\n\023RETURNING_TO_NORMAL\020\010\022 \n\034VEN" +
-      "DING_MACHINE_OUT_OF_ORDER\020\t\022\010\n\004NULL\020\n\022\t\n" +
-      "\005OTHER\020\013\022\025\n\021NO_TRAFFIC_IMPACT\020\014\022\013\n\007UNKNO" +
-      "WN\020\r\"-\n\010Priority\022\010\n\004INFO\020\000\022\013\n\007WARNING\020\001\022" +
-      "\n\n\006SEVERE\020\002\"L\n\014ServiceAlert\022\030\n\rSchemaVer" +
-      "sion\030\001 \002(\005:\0011\022\"\n\tbulletins\030\002 \003(\0132\017.proto" +
-      ".Bulletin*\230\005\n\010Category\022\025\n\021VEHICLE_BREAKD" +
-      "OWN\020\000\022\014\n\010ACCIDENT\020\001\022\r\n\tNO_DRIVER\020\002\022\013\n\007AS" +
-      "SAULT\020\003\022\013\n\007WEATHER\020\004\022\030\n\024VEHICLE_OFF_THE_" +
-      "ROAD\020\005\022\013\n\007SEIZURE\020\006\022\024\n\020ITS_SYSTEM_ERROR\020" +
-      "\007\022\026\n\022OTHER_DRIVER_ERROR\020\010\022\027\n\023TOO_MANY_PA" +
-      "SSENGERS\020\t\022\n\n\006STRIKE\020\n\022\t\n\005OTHER\020\013\022\026\n\022EAR" +
-      "LIER_DISRUPTION\020\014\022\031\n\025NO_TRAFFIC_DISRUPTI" +
-      "ON\020\r\022\021\n\rTRACK_BLOCKED\020\016\022\021\n\rSTAFF_DEFICIT" +
-      "\020\017\022\017\n\013DISTURBANCE\020\020\022\023\n\017VEHICLE_DEFICIT\020\021" +
-      "\022\017\n\013ROAD_CLOSED\020\022\022\017\n\013ROAD_TRENCH\020\023\022\025\n\021TR" +
-      "ACK_MAINTENANCE\020\024\022\024\n\020TRAFFIC_ACCIDENT\020\025\022" +
-      "\017\n\013TRAFFIC_JAM\020\026\022\024\n\020MEDICAL_INCIDENT\020\027\022\026" +
-      "\n\022WEATHER_CONDITIONS\020\030\022\025\n\021TECHNICAL_FAIL" +
-      "URE\020\031\022\010\n\004TEST\020\032\022\024\n\020ROAD_MAINTENANCE\020\033\022\022\n" +
-      "\016SWITCH_FAILURE\020\034\022\017\n\013STATE_VISIT\020\035\022\021\n\rPO" +
-      "WER_FAILURE\020\036\022\025\n\021MISPARKED_VEHICLE\020\037\022\020\n\014" +
-      "PUBLIC_EVENT\020 \022\024\n\020CHARGING_SERVICE\020!B3\n\037" +
-      "fi.hsl.common.transitdata.protoB\020Interna" +
-      "lMessages"
+      "#.proto.TripCancellation.SubCategory\022\031\n\021" +
+      "deviation_case_id\030\016 \001(\003\"#\n\006Status\022\013\n\007RUN" +
+      "NING\020\000\022\014\n\010CANCELED\020\001\"\360\001\n\022DeviationCasesT" +
+      "ype\022\024\n\020CANCEL_DEPARTURE\020\000\022\n\n\006DETOUR\020\001\022\026\n" +
+      "\022SKIPPED_STOP_CALLS\020\002\022\023\n\017EARLY_DEPARTURE" +
+      "\020\003\022%\n!EARLY_DEPARTURE_FROM_TIMING_POINT\020" +
+      "\004\022\022\n\016LATE_DEPARTURE\020\005\022!\n\035DEPARTURED_AFTE" +
+      "R_NEXT_JOURNEY\020\006\022\036\n\032BLOCK_FIRST_DEPARTUR" +
+      "E_LATE\020\007\022\r\n\tTIS_ERROR\020\010\"\213\001\n\026AffectedDepa" +
+      "rturesType\022\033\n\027CANCEL_ENTIRE_DEPARTURE\020\000\022" +
+      "\033\n\027CANCEL_STOPS_FROM_START\020\001\022\034\n\030CANCEL_S" +
+      "TOPS_FROM_MIDDLE\020\002\022\031\n\025CANCEL_STOPS_FROM_" +
+      "END\020\003\"\371\t\n\013SubCategory\022\025\n\021BREAK_MALFUNCTI" +
+      "ON\020\000\022\017\n\013OUT_OF_FUEL\020\001\022\021\n\rFLUID_LEAKAGE\020\002" +
+      "\022\030\n\024ELECTRIC_MALFUNCTION\020\003\022\026\n\022ENGINE_MAL" +
+      "FUNCTION\020\004\022\025\n\021OTHER_MALFUNCTION\020\005\022\r\n\tOWN" +
+      "_FAULT\020\006\022\022\n\016OPPOSITE_FAULT\020\007\022\021\n\rFAULT_UN" +
+      "KNOWN\020\010\022\022\n\016STAFF_SHORTAGE\020\t\022\036\n\032ND_OPERAT" +
+      "OR_PLANNING_ERROR\020\n\022\017\n\013DRIVER_LATE\020\013\022)\n%" +
+      "INSUFFICIENT_INSTRUCTIONS_BY_OPERATOR\020\014\022" +
+      "*\n&INSUFFICIENT_INSTRUCTIONS_BY_AUTHORIT" +
+      "Y\020\r\022\030\n\024NO_VEHICLE_AVAILABLE\020\016\022\025\n\021ASSAULT" +
+      "_ON_DRIVER\020\017\022\030\n\024ASSAULT_ON_PASSENGER\020\020\022\026" +
+      "\n\022ASSAULT_ON_VEHICLE\020\021\022\030\n\024PASSED_OUT_PAS" +
+      "SENGER\020\022\022\021\n\rOTHER_ASSAULT\020\023\022\032\n\026UNDRIVEAB" +
+      "LE_CONDITIONS\020\024\022\034\n\030STUCK_CAUSED_BY_SLIPP" +
+      "ERY\020\025\022 \n\034CONGESTION_CAUSED_BY_WEATHER\020\026\022" +
+      "\022\n\016SLIPPERY_TRACK\020\027\022\020\n\014ROAD_BLOCKED\020\030\022(\n" +
+      "$VEHICLE_OFF_THE_ROAD_BY_DRIVER_ERROR\020\031\022" +
+      "(\n$VEHICLE_OFF_THE_ROAD_BY_OTHER_REASON\020" +
+      "\032\022\026\n\022MISSPARKED_VEHICLE\020\033\022\034\n\030CONGESTION_" +
+      "REASON_UKNOWN\020\034\022!\n\035CONGESTION_CAUSED_BY_" +
+      "ACCIDENT\020\035\022\022\n\016DRIVER_SEIZURE\020\036\022\025\n\021PASSEN" +
+      "GER_SEIZURE\020\037\022\025\n\021PASSENGER_INJURED\020 \022\021\n\r" +
+      "OTHER_SEIZURE\020!\022\020\n\014DEVICE_ERROR\020\"\022\031\n\025OPE" +
+      "RATOR_DEVICE_ERROR\020#\022\037\n\033WRONG_INFORMATIO" +
+      "N_IN_DEVICE\020$\022\034\n\030ITS_SYSTEM_NOT_INSTALLE" +
+      "D\020%\022\016\n\nUSER_ERROR\020&\022\017\n\013FALSE_ALARM\020\'\022\023\n\017" +
+      "OTHER_ITS_ERROR\020(\022\020\n\014DRIVER_ERROR\020)\022\031\n\025I" +
+      "NSUFFICIENT_CAPASITY\020*\022 \n\034OPERATOR_PERSO" +
+      "NNEL_ON_STRIKE\020+\022\020\n\014OTHER_STRIKE\020,\022\031\n\025OT" +
+      "HER_OPERATOR_REASON\020-\022\021\n\rUNKNOWN_CAUSE\020." +
+      "\022\024\n\020DOOR_MALFUNCTION\020/\022\035\n\031OPERATOR_CHARG" +
+      "ING_SERVICE\0200\022\032\n\026OTHER_CHARGING_SERVICE\020" +
+      "1\"\263\003\n\014StopEstimate\022\030\n\rSchemaVersion\030\001 \002(" +
+      "\005:\0011\022\"\n\ttrip_info\030\002 \002(\0132\017.proto.TripInfo" +
+      "\022\017\n\007stop_id\030\003 \002(\t\022\025\n\rstop_sequence\030\004 \002(\r" +
+      "\022*\n\006status\030\005 \002(\0162\032.proto.StopEstimate.St" +
+      "atus\022&\n\004type\030\006 \002(\0162\030.proto.StopEstimate." +
+      "Type\022\035\n\025estimated_time_utc_ms\030\007 \001(\003\022\035\n\025s" +
+      "cheduled_time_utc_ms\030\010 \001(\003\022\034\n\024last_modif" +
+      "ied_utc_ms\030\t \002(\003\022\034\n\robserved_time\030\n \001(\010:" +
+      "\005false\022\030\n\020targeted_stop_id\030\013 \001(\t\"1\n\006Stat" +
+      "us\022\r\n\tSCHEDULED\020\000\022\013\n\007SKIPPED\020\001\022\013\n\007NO_DAT" +
+      "A\020\002\"\"\n\004Type\022\013\n\007ARRIVAL\020\000\022\r\n\tDEPARTURE\020\001\"" +
+      "\344\007\n\010Bulletin\022\023\n\013bulletin_id\030\001 \001(\t\022!\n\010cat" +
+      "egory\030\002 \001(\0162\017.proto.Category\022\034\n\024last_mod" +
+      "ified_utc_ms\030\003 \002(\003\022\031\n\021valid_from_utc_ms\030" +
+      "\004 \002(\003\022\027\n\017valid_to_utc_ms\030\005 \002(\003\022\032\n\022affect" +
+      "s_all_routes\030\006 \001(\010\022\031\n\021affects_all_stops\030" +
+      "\007 \001(\010\0227\n\017affected_routes\030\010 \003(\0132\036.proto.B" +
+      "ulletin.AffectedEntity\0226\n\016affected_stops" +
+      "\030\t \003(\0132\036.proto.Bulletin.AffectedEntity\022&" +
+      "\n\006impact\030\n \001(\0162\026.proto.Bulletin.Impact\022*" +
+      "\n\010priority\030\013 \001(\0162\030.proto.Bulletin.Priori" +
+      "ty\022+\n\006titles\030\014 \003(\0132\033.proto.Bulletin.Tran" +
+      "slation\0221\n\014descriptions\030\r \003(\0132\033.proto.Bu" +
+      "lletin.Translation\022)\n\004urls\030\016 \003(\0132\033.proto" +
+      ".Bulletin.Translation\022\033\n\014display_only\030\017 " +
+      "\001(\010:\005false\032#\n\016AffectedEntity\022\021\n\tentity_i" +
+      "d\030\001 \002(\t\032-\n\013Translation\022\014\n\004text\030\001 \002(\t\022\020\n\010" +
+      "language\030\002 \001(\t\"\246\002\n\006Impact\022\r\n\tCANCELLED\020\000" +
+      "\022\013\n\007DELAYED\020\001\022\026\n\022DEVIATING_SCHEDULE\020\002\022\024\n" +
+      "\020DISRUPTION_ROUTE\020\003\022\030\n\024IRREGULAR_DEPARTU" +
+      "RES\020\004\022\027\n\023POSSIBLE_DEVIATIONS\020\005\022\024\n\020POSSIB" +
+      "LY_DELAYED\020\006\022\025\n\021REDUCED_TRANSPORT\020\007\022\027\n\023R" +
+      "ETURNING_TO_NORMAL\020\010\022 \n\034VENDING_MACHINE_" +
+      "OUT_OF_ORDER\020\t\022\010\n\004NULL\020\n\022\t\n\005OTHER\020\013\022\025\n\021N" +
+      "O_TRAFFIC_IMPACT\020\014\022\013\n\007UNKNOWN\020\r\"-\n\010Prior" +
+      "ity\022\010\n\004INFO\020\000\022\013\n\007WARNING\020\001\022\n\n\006SEVERE\020\002\"L" +
+      "\n\014ServiceAlert\022\030\n\rSchemaVersion\030\001 \002(\005:\0011" +
+      "\022\"\n\tbulletins\030\002 \003(\0132\017.proto.Bulletin*\230\005\n" +
+      "\010Category\022\025\n\021VEHICLE_BREAKDOWN\020\000\022\014\n\010ACCI" +
+      "DENT\020\001\022\r\n\tNO_DRIVER\020\002\022\013\n\007ASSAULT\020\003\022\013\n\007WE" +
+      "ATHER\020\004\022\030\n\024VEHICLE_OFF_THE_ROAD\020\005\022\013\n\007SEI" +
+      "ZURE\020\006\022\024\n\020ITS_SYSTEM_ERROR\020\007\022\026\n\022OTHER_DR" +
+      "IVER_ERROR\020\010\022\027\n\023TOO_MANY_PASSENGERS\020\t\022\n\n" +
+      "\006STRIKE\020\n\022\t\n\005OTHER\020\013\022\026\n\022EARLIER_DISRUPTI" +
+      "ON\020\014\022\031\n\025NO_TRAFFIC_DISRUPTION\020\r\022\021\n\rTRACK" +
+      "_BLOCKED\020\016\022\021\n\rSTAFF_DEFICIT\020\017\022\017\n\013DISTURB" +
+      "ANCE\020\020\022\023\n\017VEHICLE_DEFICIT\020\021\022\017\n\013ROAD_CLOS" +
+      "ED\020\022\022\017\n\013ROAD_TRENCH\020\023\022\025\n\021TRACK_MAINTENAN" +
+      "CE\020\024\022\024\n\020TRAFFIC_ACCIDENT\020\025\022\017\n\013TRAFFIC_JA" +
+      "M\020\026\022\024\n\020MEDICAL_INCIDENT\020\027\022\026\n\022WEATHER_CON" +
+      "DITIONS\020\030\022\025\n\021TECHNICAL_FAILURE\020\031\022\010\n\004TEST" +
+      "\020\032\022\024\n\020ROAD_MAINTENANCE\020\033\022\022\n\016SWITCH_FAILU" +
+      "RE\020\034\022\017\n\013STATE_VISIT\020\035\022\021\n\rPOWER_FAILURE\020\036" +
+      "\022\025\n\021MISPARKED_VEHICLE\020\037\022\020\n\014PUBLIC_EVENT\020" +
+      " \022\024\n\020CHARGING_SERVICE\020!B3\n\037fi.hsl.common" +
+      ".transitdata.protoB\020InternalMessages"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18842,7 +18716,7 @@ public final class InternalMessages {
     internal_static_proto_TripCancellation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_TripCancellation_descriptor,
-        new java.lang.String[] { "SchemaVersion", "TripId", "RouteId", "DirectionId", "StartTime", "StartDate", "Status", "DeviationCasesType", "AffectedDeparturesType", "Title", "Description", "Category", "SubCategory", });
+        new java.lang.String[] { "SchemaVersion", "TripId", "RouteId", "DirectionId", "StartTime", "StartDate", "Status", "DeviationCasesType", "AffectedDeparturesType", "Title", "Description", "Category", "SubCategory", "DeviationCaseId", });
     internal_static_proto_StopEstimate_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_proto_StopEstimate_fieldAccessorTable = new
