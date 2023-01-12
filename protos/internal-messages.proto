@@ -190,6 +190,8 @@ message TripCancellation {
     }
 
     optional SubCategory sub_category = 13;
+
+    optional int64 deviation_case_id = 14;
 }
 
 message StopEstimate {
