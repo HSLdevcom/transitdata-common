@@ -35,7 +35,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Delete old versions of the package
-        uses: actions/delete-package-versions@v3
+        uses: actions/delete-package-versions@v4
         with:
           package-name: 'fi.hsl.transitdata-common'
           min-versions-to-keep: 5
