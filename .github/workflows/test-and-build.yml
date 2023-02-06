@@ -37,5 +37,6 @@ jobs:
       - name: Delete old versions of the package
         uses: actions/delete-package-versions@v4
         with:
+          package-type: 'maven'
           package-name: 'fi.hsl.transitdata-common'
           min-versions-to-keep: 5
