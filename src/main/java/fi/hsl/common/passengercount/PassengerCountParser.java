@@ -30,7 +30,9 @@ public class PassengerCountParser {
 
         // Required attributes
         PassengerCount.Payload.Builder payloadBuilder = PassengerCount.Payload.newBuilder();
-        payloadBuilder.setDesi(payload.desi);
+        if (payload.desi != null) {
+            payloadBuilder.setDesi(payload.desi);
+        }
         payloadBuilder.setDir(payload.dir);
 
         if (payload.oper == null) {
