@@ -54,30 +54,35 @@ public class PassengerCountParser {
 
         if (payload.lat == null) {
             log.warn("Value for lat is null for vehicle {}/{}", payload.oper, payload.veh);
+        } else {
+            payloadBuilder.setLat(payload.lat);
         }
-        payloadBuilder.setLat(payload.lat);
 
         if (payload.lon == null) {
             log.warn("Value for lon is null for vehicle {}/{}", payload.oper, payload.veh);
+        } else {
+            payloadBuilder.setLong(payload.lon);
         }
-        payloadBuilder.setLong(payload.lon);
 
         if (payload.odo == null) {
             log.warn("Value for odo is null for vehicle {}/{}", payload.oper, payload.veh);
+        } else {
+            payloadBuilder.setOdo(payload.odo);
         }
-        payloadBuilder.setOdo(payload.odo);
 
         payloadBuilder.setOday(payload.oday);
 
         if (payload.jrn == null) {
             log.warn("Value for jrn is null for vehicle {}/{}", payload.oper, payload.veh);
+        } else {
+            payloadBuilder.setJrn(payload.jrn);
         }
-        payloadBuilder.setJrn(payload.jrn);
 
         if (payload.line == null) {
             log.warn("Value for line is null for vehicle {}/{}", payload.oper, payload.veh);
+        } else {
+            payloadBuilder.setLine(payload.line);
         }
-        payloadBuilder.setLine(payload.line);
 
         payloadBuilder.setStart(payload.start);
         payloadBuilder.setLoc(payload.loc);
@@ -96,8 +101,9 @@ public class PassengerCountParser {
 
         if (payload.vehiclecounts.vehicleloadratio == null) {
             log.warn("Value for vehicleloadratio is null for vehicle {}/{}", payload.oper, payload.veh);
+        } else {
+            vehicleBuilder.setVehicleLoadRatio(payload.vehiclecounts.vehicleloadratio);
         }
-        vehicleBuilder.setVehicleLoadRatio(payload.vehiclecounts.vehicleloadratio);
 
         vehicleBuilder.setCountQuality(payload.vehiclecounts.countquality);
         if (payload.vehiclecounts.extensions != null) {
