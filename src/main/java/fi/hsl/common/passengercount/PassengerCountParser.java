@@ -33,7 +33,9 @@ public class PassengerCountParser {
         if (payload.desi != null) {
             payloadBuilder.setDesi(payload.desi);
         }
-        payloadBuilder.setDir(payload.dir);
+        if (payload.dir != null) {
+            payloadBuilder.setDir(payload.dir);
+        }
 
         if (payload.oper == null) {
             log.warn("Value for oper is null");
@@ -84,12 +86,18 @@ public class PassengerCountParser {
             payloadBuilder.setLine(payload.line);
         }
 
-        payloadBuilder.setStart(payload.start);
-        payloadBuilder.setLoc(payload.loc);
+        if (payload.start != null) {
+            payloadBuilder.setStart(payload.start);
+        }
+        if (payload.loc != null) {
+            payloadBuilder.setLoc(payload.loc);
+        }
         if (payload.stop != null) {
             payloadBuilder.setStop(payload.stop);
         }
-        payloadBuilder.setRoute(payload.route);
+        if (payload.route != null) {
+            payloadBuilder.setRoute(payload.route);
+        }
 
         if (payload.vehiclecounts == null) {
             log.warn("Field 'vehiclecounts' is null for vehicle {}/{}", payload.oper, payload.veh);
