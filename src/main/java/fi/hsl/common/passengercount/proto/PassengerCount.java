@@ -71,6 +71,27 @@ public final class PassengerCount {
      * @return The receivedAt.
      */
     long getReceivedAt();
+
+    /**
+     * <pre>
+     *This field contains randomized vehicle load ratio (+-5 percentage points) that should be used when publishing passenger count publicly to preserve user privacy
+     *This field should be used instead of adding randomization in different places to avoid making statistical analysis possible
+     * </pre>
+     *
+     * <code>optional double randomizedVehicleLoadRatio = 5;</code>
+     * @return Whether the randomizedVehicleLoadRatio field is set.
+     */
+    boolean hasRandomizedVehicleLoadRatio();
+    /**
+     * <pre>
+     *This field contains randomized vehicle load ratio (+-5 percentage points) that should be used when publishing passenger count publicly to preserve user privacy
+     *This field should be used instead of adding randomization in different places to avoid making statistical analysis possible
+     * </pre>
+     *
+     * <code>optional double randomizedVehicleLoadRatio = 5;</code>
+     * @return The randomizedVehicleLoadRatio.
+     */
+    double getRandomizedVehicleLoadRatio();
   }
   /**
    * Protobuf type {@code proto.Data}
@@ -100,75 +121,6 @@ public final class PassengerCount {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private Data(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              bitField0_ |= 0x00000001;
-              schemaVersion_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000002;
-              topic_ = bs;
-              break;
-            }
-            case 26: {
-              fi.hsl.common.passengercount.proto.PassengerCount.Payload.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) != 0)) {
-                subBuilder = payload_.toBuilder();
-              }
-              payload_ = input.readMessage(fi.hsl.common.passengercount.proto.PassengerCount.Payload.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(payload_);
-                payload_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000004;
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
-              receivedAt_ = input.readInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -296,6 +248,35 @@ public final class PassengerCount {
       return receivedAt_;
     }
 
+    public static final int RANDOMIZEDVEHICLELOADRATIO_FIELD_NUMBER = 5;
+    private double randomizedVehicleLoadRatio_;
+    /**
+     * <pre>
+     *This field contains randomized vehicle load ratio (+-5 percentage points) that should be used when publishing passenger count publicly to preserve user privacy
+     *This field should be used instead of adding randomization in different places to avoid making statistical analysis possible
+     * </pre>
+     *
+     * <code>optional double randomizedVehicleLoadRatio = 5;</code>
+     * @return Whether the randomizedVehicleLoadRatio field is set.
+     */
+    @java.lang.Override
+    public boolean hasRandomizedVehicleLoadRatio() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <pre>
+     *This field contains randomized vehicle load ratio (+-5 percentage points) that should be used when publishing passenger count publicly to preserve user privacy
+     *This field should be used instead of adding randomization in different places to avoid making statistical analysis possible
+     * </pre>
+     *
+     * <code>optional double randomizedVehicleLoadRatio = 5;</code>
+     * @return The randomizedVehicleLoadRatio.
+     */
+    @java.lang.Override
+    public double getRandomizedVehicleLoadRatio() {
+      return randomizedVehicleLoadRatio_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -330,7 +311,10 @@ public final class PassengerCount {
       if (((bitField0_ & 0x00000008) != 0)) {
         output.writeInt64(4, receivedAt_);
       }
-      unknownFields.writeTo(output);
+      if (((bitField0_ & 0x00000010) != 0)) {
+        output.writeDouble(5, randomizedVehicleLoadRatio_);
+      }
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -354,7 +338,11 @@ public final class PassengerCount {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, receivedAt_);
       }
-      size += unknownFields.getSerializedSize();
+      if (((bitField0_ & 0x00000010) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(5, randomizedVehicleLoadRatio_);
+      }
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -389,7 +377,13 @@ public final class PassengerCount {
         if (getReceivedAt()
             != other.getReceivedAt()) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (hasRandomizedVehicleLoadRatio() != other.hasRandomizedVehicleLoadRatio()) return false;
+      if (hasRandomizedVehicleLoadRatio()) {
+        if (java.lang.Double.doubleToLongBits(getRandomizedVehicleLoadRatio())
+            != java.lang.Double.doubleToLongBits(
+                other.getRandomizedVehicleLoadRatio())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -417,7 +411,12 @@ public final class PassengerCount {
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getReceivedAt());
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      if (hasRandomizedVehicleLoadRatio()) {
+        hash = (37 * hash) + RANDOMIZEDVEHICLELOADRATIO_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            java.lang.Double.doubleToLongBits(getRandomizedVehicleLoadRatio()));
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -563,6 +562,8 @@ public final class PassengerCount {
         bitField0_ = (bitField0_ & ~0x00000004);
         receivedAt_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000008);
+        randomizedVehicleLoadRatio_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -610,6 +611,10 @@ public final class PassengerCount {
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.receivedAt_ = receivedAt_;
           to_bitField0_ |= 0x00000008;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.randomizedVehicleLoadRatio_ = randomizedVehicleLoadRatio_;
+          to_bitField0_ |= 0x00000010;
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -674,7 +679,10 @@ public final class PassengerCount {
         if (other.hasReceivedAt()) {
           setReceivedAt(other.getReceivedAt());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        if (other.hasRandomizedVehicleLoadRatio()) {
+          setRandomizedVehicleLoadRatio(other.getRandomizedVehicleLoadRatio());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -695,17 +703,57 @@ public final class PassengerCount {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        fi.hsl.common.passengercount.proto.PassengerCount.Data parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                schemaVersion_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                topic_ = input.readBytes();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getPayloadFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 32: {
+                receivedAt_ = input.readInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 41: {
+                randomizedVehicleLoadRatio_ = input.readDouble();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 41
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (fi.hsl.common.passengercount.proto.PassengerCount.Data) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -991,6 +1039,65 @@ public final class PassengerCount {
         onChanged();
         return this;
       }
+
+      private double randomizedVehicleLoadRatio_ ;
+      /**
+       * <pre>
+       *This field contains randomized vehicle load ratio (+-5 percentage points) that should be used when publishing passenger count publicly to preserve user privacy
+       *This field should be used instead of adding randomization in different places to avoid making statistical analysis possible
+       * </pre>
+       *
+       * <code>optional double randomizedVehicleLoadRatio = 5;</code>
+       * @return Whether the randomizedVehicleLoadRatio field is set.
+       */
+      @java.lang.Override
+      public boolean hasRandomizedVehicleLoadRatio() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       * <pre>
+       *This field contains randomized vehicle load ratio (+-5 percentage points) that should be used when publishing passenger count publicly to preserve user privacy
+       *This field should be used instead of adding randomization in different places to avoid making statistical analysis possible
+       * </pre>
+       *
+       * <code>optional double randomizedVehicleLoadRatio = 5;</code>
+       * @return The randomizedVehicleLoadRatio.
+       */
+      @java.lang.Override
+      public double getRandomizedVehicleLoadRatio() {
+        return randomizedVehicleLoadRatio_;
+      }
+      /**
+       * <pre>
+       *This field contains randomized vehicle load ratio (+-5 percentage points) that should be used when publishing passenger count publicly to preserve user privacy
+       *This field should be used instead of adding randomization in different places to avoid making statistical analysis possible
+       * </pre>
+       *
+       * <code>optional double randomizedVehicleLoadRatio = 5;</code>
+       * @param value The randomizedVehicleLoadRatio to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRandomizedVehicleLoadRatio(double value) {
+        bitField0_ |= 0x00000010;
+        randomizedVehicleLoadRatio_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *This field contains randomized vehicle load ratio (+-5 percentage points) that should be used when publishing passenger count publicly to preserve user privacy
+       *This field should be used instead of adding randomization in different places to avoid making statistical analysis possible
+       * </pre>
+       *
+       * <code>optional double randomizedVehicleLoadRatio = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRandomizedVehicleLoadRatio() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        randomizedVehicleLoadRatio_ = 0D;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1024,7 +1131,18 @@ public final class PassengerCount {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Data(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1307,145 +1425,6 @@ public final class PassengerCount {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private Payload(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              desi_ = bs;
-              break;
-            }
-            case 18: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000002;
-              dir_ = bs;
-              break;
-            }
-            case 24: {
-              bitField0_ |= 0x00000004;
-              oper_ = input.readInt32();
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
-              veh_ = input.readInt32();
-              break;
-            }
-            case 40: {
-              bitField0_ |= 0x00000010;
-              tst_ = input.readInt64();
-              break;
-            }
-            case 48: {
-              bitField0_ |= 0x00000020;
-              tsi_ = input.readInt64();
-              break;
-            }
-            case 57: {
-              bitField0_ |= 0x00000040;
-              lat_ = input.readDouble();
-              break;
-            }
-            case 65: {
-              bitField0_ |= 0x00000080;
-              long_ = input.readDouble();
-              break;
-            }
-            case 73: {
-              bitField0_ |= 0x00000100;
-              odo_ = input.readDouble();
-              break;
-            }
-            case 82: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000200;
-              oday_ = bs;
-              break;
-            }
-            case 88: {
-              bitField0_ |= 0x00000400;
-              jrn_ = input.readInt32();
-              break;
-            }
-            case 96: {
-              bitField0_ |= 0x00000800;
-              line_ = input.readInt32();
-              break;
-            }
-            case 106: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00001000;
-              start_ = bs;
-              break;
-            }
-            case 114: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00002000;
-              loc_ = bs;
-              break;
-            }
-            case 120: {
-              bitField0_ |= 0x00004000;
-              stop_ = input.readInt32();
-              break;
-            }
-            case 130: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00008000;
-              route_ = bs;
-              break;
-            }
-            case 138: {
-              fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder subBuilder = null;
-              if (((bitField0_ & 0x00010000) != 0)) {
-                subBuilder = vehicleCounts_.toBuilder();
-              }
-              vehicleCounts_ = input.readMessage(fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(vehicleCounts_);
-                vehicleCounts_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00010000;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -2030,7 +2009,7 @@ public final class PassengerCount {
       if (((bitField0_ & 0x00010000) != 0)) {
         output.writeMessage(17, getVehicleCounts());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2101,7 +2080,7 @@ public final class PassengerCount {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(17, getVehicleCounts());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2204,7 +2183,7 @@ public final class PassengerCount {
         if (!getVehicleCounts()
             .equals(other.getVehicleCounts())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2288,7 +2267,7 @@ public final class PassengerCount {
         hash = (37 * hash) + VEHICLECOUNTS_FIELD_NUMBER;
         hash = (53 * hash) + getVehicleCounts().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2672,7 +2651,7 @@ public final class PassengerCount {
         if (other.hasVehicleCounts()) {
           mergeVehicleCounts(other.getVehicleCounts());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2687,17 +2666,117 @@ public final class PassengerCount {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        fi.hsl.common.passengercount.proto.PassengerCount.Payload parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                desi_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                dir_ = input.readBytes();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                oper_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                veh_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                tst_ = input.readInt64();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 48: {
+                tsi_ = input.readInt64();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              case 57: {
+                lat_ = input.readDouble();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 57
+              case 65: {
+                long_ = input.readDouble();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 65
+              case 73: {
+                odo_ = input.readDouble();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 73
+              case 82: {
+                oday_ = input.readBytes();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
+              case 88: {
+                jrn_ = input.readInt32();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 88
+              case 96: {
+                line_ = input.readInt32();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 96
+              case 106: {
+                start_ = input.readBytes();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
+              case 114: {
+                loc_ = input.readBytes();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 114
+              case 120: {
+                stop_ = input.readInt32();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 120
+              case 130: {
+                route_ = input.readBytes();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 130
+              case 138: {
+                input.readMessage(
+                    getVehicleCountsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 138
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (fi.hsl.common.passengercount.proto.PassengerCount.Payload) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -3748,7 +3827,18 @@ public final class PassengerCount {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Payload(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -3881,80 +3971,6 @@ public final class PassengerCount {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private VehicleCounts(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              countQuality_ = bs;
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              vehicleLoad_ = input.readInt32();
-              break;
-            }
-            case 25: {
-              bitField0_ |= 0x00000004;
-              vehicleLoadRatio_ = input.readDouble();
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                doorCounts_ = new java.util.ArrayList<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              doorCounts_.add(
-                  input.readMessage(fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.PARSER, extensionRegistry));
-              break;
-            }
-            case 42: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000008;
-              extensions_ = bs;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          doorCounts_ = java.util.Collections.unmodifiableList(doorCounts_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -4173,7 +4189,7 @@ public final class PassengerCount {
       if (((bitField0_ & 0x00000008) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, extensions_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4200,7 +4216,7 @@ public final class PassengerCount {
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, extensions_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4238,7 +4254,7 @@ public final class PassengerCount {
         if (!getExtensions()
             .equals(other.getExtensions())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4270,7 +4286,7 @@ public final class PassengerCount {
         hash = (37 * hash) + EXTENSIONS_FIELD_NUMBER;
         hash = (53 * hash) + getExtensions().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4387,19 +4403,13 @@ public final class PassengerCount {
 
       // Construct using fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getDoorCountsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -4412,10 +4422,11 @@ public final class PassengerCount {
         bitField0_ = (bitField0_ & ~0x00000004);
         if (doorCountsBuilder_ == null) {
           doorCounts_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          doorCounts_ = null;
           doorCountsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         extensions_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
         return this;
@@ -4562,7 +4573,7 @@ public final class PassengerCount {
           extensions_ = other.extensions_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4577,17 +4588,63 @@ public final class PassengerCount {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                countQuality_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 16: {
+                vehicleLoad_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 25: {
+                vehicleLoadRatio_ = input.readDouble();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 25
+              case 34: {
+                fi.hsl.common.passengercount.proto.PassengerCount.DoorCount m =
+                    input.readMessage(
+                        fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.PARSER,
+                        extensionRegistry);
+                if (doorCountsBuilder_ == null) {
+                  ensureDoorCountsIsMutable();
+                  doorCounts_.add(m);
+                } else {
+                  doorCountsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              case 42: {
+                extensions_ = input.readBytes();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -5110,7 +5167,18 @@ public final class PassengerCount {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new VehicleCounts(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -5203,64 +5271,6 @@ public final class PassengerCount {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private DoorCount(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              door_ = bs;
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                count_ = new java.util.ArrayList<fi.hsl.common.passengercount.proto.PassengerCount.Count>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              count_.add(
-                  input.readMessage(fi.hsl.common.passengercount.proto.PassengerCount.Count.PARSER, extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          count_ = java.util.Collections.unmodifiableList(count_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -5384,7 +5394,7 @@ public final class PassengerCount {
       for (int i = 0; i < count_.size(); i++) {
         output.writeMessage(2, count_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5400,7 +5410,7 @@ public final class PassengerCount {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, count_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5422,7 +5432,7 @@ public final class PassengerCount {
       }
       if (!getCountList()
           .equals(other.getCountList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5441,7 +5451,7 @@ public final class PassengerCount {
         hash = (37 * hash) + COUNT_FIELD_NUMBER;
         hash = (53 * hash) + getCountList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5558,19 +5568,13 @@ public final class PassengerCount {
 
       // Construct using fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getCountFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -5579,10 +5583,11 @@ public final class PassengerCount {
         bitField0_ = (bitField0_ & ~0x00000001);
         if (countBuilder_ == null) {
           count_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          count_ = null;
           countBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -5704,7 +5709,7 @@ public final class PassengerCount {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5719,17 +5724,48 @@ public final class PassengerCount {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                door_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                fi.hsl.common.passengercount.proto.PassengerCount.Count m =
+                    input.readMessage(
+                        fi.hsl.common.passengercount.proto.PassengerCount.Count.PARSER,
+                        extensionRegistry);
+                if (countBuilder_ == null) {
+                  ensureCountIsMutable();
+                  count_.add(m);
+                } else {
+                  countBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (fi.hsl.common.passengercount.proto.PassengerCount.DoorCount) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -6090,7 +6126,18 @@ public final class PassengerCount {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DoorCount(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -6192,62 +6239,6 @@ public final class PassengerCount {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private Count(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              clazz_ = bs;
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              in_ = input.readInt32();
-              break;
-            }
-            case 24: {
-              bitField0_ |= 0x00000004;
-              out_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -6384,7 +6375,7 @@ public final class PassengerCount {
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeInt32(3, out_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -6404,7 +6395,7 @@ public final class PassengerCount {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, out_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -6434,7 +6425,7 @@ public final class PassengerCount {
         if (getOut()
             != other.getOut()) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -6457,7 +6448,7 @@ public final class PassengerCount {
         hash = (37 * hash) + OUT_FIELD_NUMBER;
         hash = (53 * hash) + getOut();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -6574,18 +6565,13 @@ public final class PassengerCount {
 
       // Construct using fi.hsl.common.passengercount.proto.PassengerCount.Count.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -6696,7 +6682,7 @@ public final class PassengerCount {
         if (other.hasOut()) {
           setOut(other.getOut());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -6711,17 +6697,45 @@ public final class PassengerCount {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        fi.hsl.common.passengercount.proto.PassengerCount.Count parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                clazz_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 16: {
+                in_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                out_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (fi.hsl.common.passengercount.proto.PassengerCount.Count) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -6944,7 +6958,18 @@ public final class PassengerCount {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Count(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -6998,24 +7023,25 @@ public final class PassengerCount {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025passenger-count.proto\022\005proto\"e\n\004Data\022\030" +
-      "\n\rSchemaVersion\030\001 \002(\005:\0011\022\r\n\005topic\030\002 \001(\t\022" +
-      "\037\n\007payload\030\003 \002(\0132\016.proto.Payload\022\023\n\013rece" +
-      "ived_at\030\004 \001(\003\"\220\002\n\007Payload\022\014\n\004desi\030\001 \001(\t\022" +
-      "\013\n\003dir\030\002 \001(\t\022\014\n\004oper\030\003 \001(\005\022\013\n\003veh\030\004 \001(\005\022" +
-      "\013\n\003tst\030\005 \001(\003\022\013\n\003tsi\030\006 \001(\003\022\013\n\003lat\030\007 \001(\001\022\014" +
-      "\n\004long\030\010 \001(\001\022\013\n\003odo\030\t \001(\001\022\014\n\004oday\030\n \001(\t\022" +
-      "\013\n\003jrn\030\013 \001(\005\022\014\n\004line\030\014 \001(\005\022\r\n\005start\030\r \001(" +
-      "\t\022\013\n\003loc\030\016 \001(\t\022\014\n\004stop\030\017 \001(\005\022\r\n\005route\030\020 " +
-      "\001(\t\022+\n\rvehicleCounts\030\021 \001(\0132\024.proto.Vehic" +
-      "leCounts\"\216\001\n\rVehicleCounts\022\024\n\014countQuali" +
-      "ty\030\001 \001(\t\022\023\n\013vehicleLoad\030\002 \001(\005\022\030\n\020vehicle" +
-      "LoadRatio\030\003 \001(\001\022$\n\ndoorCounts\030\004 \003(\0132\020.pr" +
-      "oto.DoorCount\022\022\n\nextensions\030\005 \001(\t\"6\n\tDoo" +
-      "rCount\022\014\n\004door\030\001 \001(\t\022\033\n\005count\030\002 \003(\0132\014.pr" +
-      "oto.Count\"/\n\005Count\022\r\n\005clazz\030\001 \001(\t\022\n\n\002in\030" +
-      "\002 \001(\005\022\013\n\003out\030\003 \001(\005B4\n\"fi.hsl.common.pass" +
-      "engercount.protoB\016PassengerCount"
+      "\n\025passenger-count.proto\022\005proto\"\211\001\n\004Data\022" +
+      "\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\r\n\005topic\030\002 \001(\t" +
+      "\022\037\n\007payload\030\003 \002(\0132\016.proto.Payload\022\023\n\013rec" +
+      "eived_at\030\004 \001(\003\022\"\n\032randomizedVehicleLoadR" +
+      "atio\030\005 \001(\001\"\220\002\n\007Payload\022\014\n\004desi\030\001 \001(\t\022\013\n\003" +
+      "dir\030\002 \001(\t\022\014\n\004oper\030\003 \001(\005\022\013\n\003veh\030\004 \001(\005\022\013\n\003" +
+      "tst\030\005 \001(\003\022\013\n\003tsi\030\006 \001(\003\022\013\n\003lat\030\007 \001(\001\022\014\n\004l" +
+      "ong\030\010 \001(\001\022\013\n\003odo\030\t \001(\001\022\014\n\004oday\030\n \001(\t\022\013\n\003" +
+      "jrn\030\013 \001(\005\022\014\n\004line\030\014 \001(\005\022\r\n\005start\030\r \001(\t\022\013" +
+      "\n\003loc\030\016 \001(\t\022\014\n\004stop\030\017 \001(\005\022\r\n\005route\030\020 \001(\t" +
+      "\022+\n\rvehicleCounts\030\021 \001(\0132\024.proto.VehicleC" +
+      "ounts\"\216\001\n\rVehicleCounts\022\024\n\014countQuality\030" +
+      "\001 \001(\t\022\023\n\013vehicleLoad\030\002 \001(\005\022\030\n\020vehicleLoa" +
+      "dRatio\030\003 \001(\001\022$\n\ndoorCounts\030\004 \003(\0132\020.proto" +
+      ".DoorCount\022\022\n\nextensions\030\005 \001(\t\"6\n\tDoorCo" +
+      "unt\022\014\n\004door\030\001 \001(\t\022\033\n\005count\030\002 \003(\0132\014.proto" +
+      ".Count\"/\n\005Count\022\r\n\005clazz\030\001 \001(\t\022\n\n\002in\030\002 \001" +
+      "(\005\022\013\n\003out\030\003 \001(\005B4\n\"fi.hsl.common.passeng" +
+      "ercount.protoB\016PassengerCount"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7026,7 +7052,7 @@ public final class PassengerCount {
     internal_static_proto_Data_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Data_descriptor,
-        new java.lang.String[] { "SchemaVersion", "Topic", "Payload", "ReceivedAt", });
+        new java.lang.String[] { "SchemaVersion", "Topic", "Payload", "ReceivedAt", "RandomizedVehicleLoadRatio", });
     internal_static_proto_Payload_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_Payload_fieldAccessorTable = new
