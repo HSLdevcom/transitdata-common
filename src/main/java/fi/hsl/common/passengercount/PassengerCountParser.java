@@ -144,7 +144,7 @@ public class PassengerCountParser {
     @NotNull
     public static Optional<PassengerCount.Topic> safeParseTopic(@NotNull String topic) {
         try {
-            return Optional.of(parseTopic(topic, System.currentTimeMillis()));
+            return Optional.of(parseTopic(topic));
         } catch (Exception e) {
             log.error("Failed to parse topic " + topic, e);
             return Optional.empty();
