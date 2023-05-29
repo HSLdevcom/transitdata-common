@@ -140,6 +140,31 @@ public class PassengerCountParser {
         payloadBuilder.setVehicleCounts(vehicleBuilder);
         return Optional.of(payloadBuilder.build());
     }
+
+    @NotNull
+    public static Optional<PassengerCount.Topic> safeParseTopic(@NotNull String topic) {
+        try {
+            return Optional.of(parseTopic(topic, System.currentTimeMillis()));
+        } catch (Exception e) {
+            log.error("Failed to parse topic " + topic, e);
+            return Optional.empty();
+        }
+    }
+
+    @NotNull
+    public static Optional<PassengerCount.Topic> safeParseTopic(@NotNull String topic, long receivedAtMs) {
+        try {
+            return Optional.of(parseTopic(topic, receivedAtMs));
+        } catch (Exception e) {
+            log.error("Failed to parse topic " + topic, e);
+            return Optional.empty();
+        }
+    }
+
+    @NotNull
+    public static PassengerCount.Topic parseTopic(@NotNull String topic) throws InvalidAPCTopicException {
+        return parseTopic(topic, System.currentTimeMillis());
+    }
     
     @NotNull
     public static PassengerCount.Topic parseTopic(@NotNull String topic, long receivedMs) throws InvalidAPCTopicException {
