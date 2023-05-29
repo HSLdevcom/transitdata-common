@@ -3,6 +3,8 @@ package fi.hsl.common.passengercount;
 import com.dslplatform.json.DslJson;
 import com.dslplatform.json.ParsingException;
 import com.dslplatform.json.runtime.Settings;
+import fi.hsl.common.hfp.HfpParser;
+import fi.hsl.common.hfp.proto.Hfp;
 import fi.hsl.common.passengercount.json.*;
 import fi.hsl.common.passengercount.proto.PassengerCount;
 import org.jetbrains.annotations.NotNull;
@@ -13,9 +15,12 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class PassengerCountParser {
     private static final Logger log = LoggerFactory.getLogger(PassengerCountParser.class);
+
+    static final Pattern topicVersionRegex = Pattern.compile("(^v\\d+|dev)");
 
     final DslJson<Object> dslJson = new DslJson<>(Settings.withRuntime().allowArrayFormat(true).includeServiceLoader());
 
@@ -137,6 +142,56 @@ public class PassengerCountParser {
         payloadBuilder.setVehicleCounts(vehicleBuilder);
         return Optional.of(payloadBuilder.build());
     }
+    
+    @NotNull
+    public static PassengerCount.Topic parseTopic(@NotNull String topic, long receivedMs) throws InvalidAPCTopicException {
+        //log.debug("Parsing metadata from topic: " + topic);
+
+        final String[] parts = topic.split("/", -1); //-1 to include empty substrings
+        
+        final PassengerCount.Topic.Builder builder = PassengerCount.Topic.newBuilder();
+        
+        builder.setSchemaVersion(builder.getSchemaVersion());
+        builder.setReceivedAt(receivedMs);
+        
+        
+        int versionIndex = findVersionIndex(parts);
+        if (versionIndex < 0 ) {
+            throw new InvalidAPCTopicException("Failed to find topic version from topic " + topic);
+        }
+        builder.setTopicPrefix(joinFirstNParts(parts, versionIndex, "/"));
+        int index = versionIndex;
+        final String versionStr = parts[index++];
+        builder.setTopicVersion(versionStr);
+
+        final PassengerCount.Topic.JourneyType journeyType =
+                safeValueOf(PassengerCount.Topic.JourneyType.class, parts[index++])
+                        .orElseThrow(() -> new InvalidAPCTopicException("Unknown journey type: " + topic));
+        builder.setJourneyType(journeyType);
+
+        final PassengerCount.Topic.TemporalType temporalType =
+                safeValueOf(PassengerCount.Topic.TemporalType.class, parts[index++])
+                        .orElseThrow(() -> new InvalidAPCTopicException("Unknown temporal type: " + topic));
+        builder.setTemporalType(temporalType);
+
+        final String strTransportMode = parts[index++];
+        if (strTransportMode != null && !strTransportMode.isEmpty()) {
+            final PassengerCount.Topic.TransportMode transportMode =
+                    safeValueOf(PassengerCount.Topic.TransportMode.class, strTransportMode)
+                            .orElseThrow(() -> new InvalidAPCTopicException("Unknown transport mode: " + topic));
+            builder.setTransportMode(transportMode);
+        }
+
+        builder.setOperatorId(Integer.parseInt(parts[index++]));
+        builder.setVehicleNumber(Integer.parseInt(parts[index++]));
+
+        if (index + 3 <= parts.length) {
+            //Validator
+        }
+
+        return builder.build();
+    }
+    
 
     public APCJson toJson(PassengerCount.Payload passengerCountPayload){
         APCJson apcJson = new APCJson();
@@ -215,6 +270,39 @@ public class PassengerCountParser {
         } catch (NumberFormatException nfe) {
             return OptionalInt.empty();
         }
+    }
+
+    static <E extends Enum<E>> Optional<E> safeValueOf(Class<E> enumType, String value) {
+        try {
+            return Optional.of(Enum.valueOf(enumType, value));
+        } catch (IllegalArgumentException | NullPointerException e) {
+            log.debug("Failed to parse value {} for enum {}", value, enumType.getCanonicalName());
+            return Optional.empty();
+        }
+    }
+
+    public static int findVersionIndex(@NotNull String[] parts) {
+        for (int n = 0; n < parts.length; n++) {
+            String p = parts[n];
+            if (topicVersionRegex.matcher(p).matches()) {
+                return n;
+            }
+        }
+        return -1;
+    }
+
+    @NotNull
+    static String joinFirstNParts(@NotNull String[] parts, int upToIndexExcludingThis, @NotNull String delimiter) {
+        StringBuffer buffer = new StringBuffer();
+        int index = 0;
+
+        buffer.append(delimiter);
+        while (index < upToIndexExcludingThis - 1) {
+            index++;
+            buffer.append(parts[index]);
+            buffer.append(delimiter);
+        }
+        return buffer.toString();
     }
 
     public static class InvalidAPCTopicException extends Exception {
