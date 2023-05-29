@@ -4,7 +4,7 @@ import com.dslplatform.json.CompiledJson;
 import com.dslplatform.json.JsonAttribute;
 
 @CompiledJson(onUnknown = CompiledJson.Behavior.IGNORE)
-public class APCJson {
+public class ApcJson {
     @JsonAttribute(nullable = false, name = "APC")
-    public APC apc;
+    public Apc apc;
 }

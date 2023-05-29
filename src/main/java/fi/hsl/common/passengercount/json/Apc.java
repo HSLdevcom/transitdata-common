@@ -6,7 +6,7 @@ import com.dslplatform.json.JsonAttribute;
 import java.util.Date;
 
 @CompiledJson(onUnknown = CompiledJson.Behavior.IGNORE)
-public class APC {
+public class Apc {
     public String desi;
     public String dir;
     public Integer oper;

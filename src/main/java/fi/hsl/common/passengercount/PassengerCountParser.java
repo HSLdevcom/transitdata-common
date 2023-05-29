@@ -3,8 +3,6 @@ package fi.hsl.common.passengercount;
 import com.dslplatform.json.DslJson;
 import com.dslplatform.json.ParsingException;
 import com.dslplatform.json.runtime.Settings;
-import fi.hsl.common.hfp.HfpParser;
-import fi.hsl.common.hfp.proto.Hfp;
 import fi.hsl.common.passengercount.json.*;
 import fi.hsl.common.passengercount.proto.PassengerCount;
 import org.jetbrains.annotations.NotNull;
@@ -30,8 +28,8 @@ public class PassengerCountParser {
     }
 
     @NotNull
-    public Optional<PassengerCount.Payload> parsePayload(@NotNull APCJson json) {
-        final APC payload = json.apc;
+    public Optional<PassengerCount.Payload> parsePayload(@NotNull ApcJson json) {
+        final Apc payload = json.apc;
 
         // Required attributes
         PassengerCount.Payload.Builder payloadBuilder = PassengerCount.Payload.newBuilder();
@@ -189,9 +187,9 @@ public class PassengerCountParser {
     }
     
 
-    public APCJson toJson(PassengerCount.Payload passengerCountPayload){
-        APCJson apcJson = new APCJson();
-        apcJson.apc = new APC();
+    public ApcJson toJson(PassengerCount.Payload passengerCountPayload){
+        ApcJson apcJson = new ApcJson();
+        apcJson.apc = new Apc();
         apcJson.apc.veh = passengerCountPayload.getVeh();
         apcJson.apc.desi = passengerCountPayload.getDesi();
         apcJson.apc.loc = passengerCountPayload.getLoc();
@@ -232,16 +230,16 @@ public class PassengerCountParser {
     }
 
 
-    public OutputStream serializeJson(APCJson apcJson, OutputStream outputStream) throws IOException {
+    public OutputStream serializeJson(ApcJson apcJson, OutputStream outputStream) throws IOException {
         dslJson.serialize(apcJson, outputStream);
         return outputStream;
     }
 
 
     @Nullable
-    public APCJson parseJson(byte @NotNull [] data) throws IOException, InvalidAPCPayloadException {
+    public ApcJson parseJson(byte @NotNull [] data) throws IOException, InvalidAPCPayloadException {
         try {
-            return dslJson.deserialize(APCJson.class, data, data.length);
+            return dslJson.deserialize(ApcJson.class, data, data.length);
         } catch (IOException ioe) {
             if (ioe instanceof ParsingException) {
                 throw new PassengerCountParser.InvalidAPCPayloadException("Failed to parse APC JSON", (ParsingException)ioe);
