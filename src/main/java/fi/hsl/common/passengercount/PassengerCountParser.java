@@ -185,10 +185,6 @@ public class PassengerCountParser {
         builder.setOperatorId(Integer.parseInt(parts[index++]));
         builder.setVehicleNumber(Integer.parseInt(parts[index++]));
 
-        if (index + 3 <= parts.length) {
-            //Validator
-        }
-
         return builder.build();
     }
     
