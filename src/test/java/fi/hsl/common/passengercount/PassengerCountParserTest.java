@@ -1,5 +1,6 @@
 package fi.hsl.common.passengercount;
 
+import fi.hsl.common.hfp.HfpParser;
 import fi.hsl.common.passengercount.json.Apc;
 import fi.hsl.common.passengercount.json.ApcJson;
 import fi.hsl.common.passengercount.proto.PassengerCount;
@@ -14,6 +15,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 public class PassengerCountParserTest {
+
+    private final String TEST_TOPIC = "/hfp/v2/journey/ongoing/apc/bus/0022/01288";
 
     @Test
     public void parseJsonTest() throws Exception {
@@ -90,5 +93,39 @@ public class PassengerCountParserTest {
         assertEquals(apcJson.apc.vehiclecounts.doorcounts.get(0).door, parsedJson.apc.vehiclecounts.doorcounts.get(0).door);
         assertEquals(apcJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).clazz, parsedJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).clazz);
         assertEquals(apcJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).in, parsedJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).in);
+    }
+
+    private String parseTopicPrefix(String topic) throws Exception {
+        final String[] allParts = topic.split("/");
+        int versionIndex = HfpParser.findVersionIndex(allParts);
+        return PassengerCountParser.joinFirstNParts(allParts, versionIndex, "/");
+    }
+
+    @Test
+    public void testTopicPrefixParsing() throws Exception {
+        String prefix = parseTopicPrefix(TEST_TOPIC);
+        assertEquals("/hfp/", prefix);
+
+    }
+
+    private PassengerCount.Topic parseAndValidateTopic(String topic) throws Exception {
+        long now = System.currentTimeMillis();
+        PassengerCount.Topic apcTopic = PassengerCountParser.parseTopic(topic, now);
+        assertEquals(now, apcTopic.getReceivedAt());
+        assertEquals("v2", apcTopic.getTopicVersion());
+        return apcTopic;
+    }
+
+    @Test
+    public void parseTopicTest() throws Exception {
+        PassengerCount.Topic topic = parseAndValidateTopic(TEST_TOPIC);
+        assertEquals(PassengerCount.Topic.JourneyType.journey, topic.getJourneyType());
+        assertEquals(PassengerCount.Topic.TemporalType.ongoing, topic.getTemporalType());
+        assertEquals(PassengerCount.Topic.TransportMode.bus, topic.getTransportMode());
+        assertEquals(PassengerCount.Topic.EventType.apc, topic.getEventType());
+
+        assertEquals(22, topic.getOperatorId());
+        assertEquals(1288, topic.getVehicleNumber());
+
     }
 }
