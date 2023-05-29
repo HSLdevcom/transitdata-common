@@ -36,16 +36,22 @@ message Topic {
         robot = 6; //Used by robot buses
     }
 
+    enum EventType {
+        apc = 0;
+    }
+
     required int64 received_at = 2; // Our server timestamp as Epoch ms
     required string topic_prefix = 3;
     required string topic_version = 4;
     required JourneyType journey_type = 5;
     required TemporalType temporal_type = 6;
 
-    optional TransportMode transport_mode = 7; // Optional because of rare bug in data source systems
+    required EventType event_type = 7;
 
-    required int32 operator_id = 8;
-    required int32 vehicle_number = 9;
+    optional TransportMode transport_mode = 8; // Optional because of rare bug in data source systems
+
+    required int32 operator_id = 9;
+    required int32 vehicle_number = 10;
 }
 
 message Payload {

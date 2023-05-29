@@ -197,6 +197,12 @@ public class PassengerCountParser {
                         .orElseThrow(() -> new InvalidAPCTopicException("Unknown temporal type: " + topic));
         builder.setTemporalType(temporalType);
 
+        final PassengerCount.Topic.EventType eventType =
+                safeValueOf(PassengerCount.Topic.EventType.class, parts[index++])
+                        .orElseThrow(() -> new InvalidAPCTopicException("Unknown event type: " + topic));
+        builder.setEventType(eventType);
+
+
         final String strTransportMode = parts[index++];
         if (strTransportMode != null && !strTransportMode.isEmpty()) {
             final PassengerCount.Topic.TransportMode transportMode =

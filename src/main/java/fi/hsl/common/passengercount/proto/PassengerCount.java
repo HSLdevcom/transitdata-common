@@ -1109,11 +1109,22 @@ public final class PassengerCount {
     fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType getTemporalType();
 
     /**
+     * <code>required .proto.Topic.EventType event_type = 7;</code>
+     * @return Whether the eventType field is set.
+     */
+    boolean hasEventType();
+    /**
+     * <code>required .proto.Topic.EventType event_type = 7;</code>
+     * @return The eventType.
+     */
+    fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType getEventType();
+
+    /**
      * <pre>
      * Optional because of rare bug in data source systems
      * </pre>
      *
-     * <code>optional .proto.Topic.TransportMode transport_mode = 7;</code>
+     * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
      * @return Whether the transportMode field is set.
      */
     boolean hasTransportMode();
@@ -1122,29 +1133,29 @@ public final class PassengerCount {
      * Optional because of rare bug in data source systems
      * </pre>
      *
-     * <code>optional .proto.Topic.TransportMode transport_mode = 7;</code>
+     * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
      * @return The transportMode.
      */
     fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode getTransportMode();
 
     /**
-     * <code>required int32 operator_id = 8;</code>
+     * <code>required int32 operator_id = 9;</code>
      * @return Whether the operatorId field is set.
      */
     boolean hasOperatorId();
     /**
-     * <code>required int32 operator_id = 8;</code>
+     * <code>required int32 operator_id = 9;</code>
      * @return The operatorId.
      */
     int getOperatorId();
 
     /**
-     * <code>required int32 vehicle_number = 9;</code>
+     * <code>required int32 vehicle_number = 10;</code>
      * @return Whether the vehicleNumber field is set.
      */
     boolean hasVehicleNumber();
     /**
-     * <code>required int32 vehicle_number = 9;</code>
+     * <code>required int32 vehicle_number = 10;</code>
      * @return The vehicleNumber.
      */
     int getVehicleNumber();
@@ -1167,6 +1178,7 @@ public final class PassengerCount {
       topicVersion_ = "";
       journeyType_ = 0;
       temporalType_ = 0;
+      eventType_ = 0;
       transportMode_ = 0;
     }
 
@@ -1577,6 +1589,93 @@ public final class PassengerCount {
       // @@protoc_insertion_point(enum_scope:proto.Topic.TransportMode)
     }
 
+    /**
+     * Protobuf enum {@code proto.Topic.EventType}
+     */
+    public enum EventType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>apc = 0;</code>
+       */
+      apc(0),
+      ;
+
+      /**
+       * <code>apc = 0;</code>
+       */
+      public static final int apc_VALUE = 0;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static EventType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static EventType forNumber(int value) {
+        switch (value) {
+          case 0: return apc;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<EventType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          EventType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<EventType>() {
+              public EventType findValueByNumber(int number) {
+                return EventType.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDescriptor().getEnumTypes().get(3);
+      }
+
+      private static final EventType[] VALUES = values();
+
+      public static EventType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private EventType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.Topic.EventType)
+    }
+
     private int bitField0_;
     public static final int SCHEMAVERSION_FIELD_NUMBER = 1;
     private int schemaVersion_ = 1;
@@ -1758,25 +1857,43 @@ public final class PassengerCount {
       return result == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType.ongoing : result;
     }
 
-    public static final int TRANSPORT_MODE_FIELD_NUMBER = 7;
+    public static final int EVENT_TYPE_FIELD_NUMBER = 7;
+    private int eventType_ = 0;
+    /**
+     * <code>required .proto.Topic.EventType event_type = 7;</code>
+     * @return Whether the eventType field is set.
+     */
+    @java.lang.Override public boolean hasEventType() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>required .proto.Topic.EventType event_type = 7;</code>
+     * @return The eventType.
+     */
+    @java.lang.Override public fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType getEventType() {
+      fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType result = fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType.forNumber(eventType_);
+      return result == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType.apc : result;
+    }
+
+    public static final int TRANSPORT_MODE_FIELD_NUMBER = 8;
     private int transportMode_ = 0;
     /**
      * <pre>
      * Optional because of rare bug in data source systems
      * </pre>
      *
-     * <code>optional .proto.Topic.TransportMode transport_mode = 7;</code>
+     * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
      * @return Whether the transportMode field is set.
      */
     @java.lang.Override public boolean hasTransportMode() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      * <pre>
      * Optional because of rare bug in data source systems
      * </pre>
      *
-     * <code>optional .proto.Topic.TransportMode transport_mode = 7;</code>
+     * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
      * @return The transportMode.
      */
     @java.lang.Override public fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode getTransportMode() {
@@ -1784,18 +1901,18 @@ public final class PassengerCount {
       return result == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode.bus : result;
     }
 
-    public static final int OPERATOR_ID_FIELD_NUMBER = 8;
+    public static final int OPERATOR_ID_FIELD_NUMBER = 9;
     private int operatorId_ = 0;
     /**
-     * <code>required int32 operator_id = 8;</code>
+     * <code>required int32 operator_id = 9;</code>
      * @return Whether the operatorId field is set.
      */
     @java.lang.Override
     public boolean hasOperatorId() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <code>required int32 operator_id = 8;</code>
+     * <code>required int32 operator_id = 9;</code>
      * @return The operatorId.
      */
     @java.lang.Override
@@ -1803,18 +1920,18 @@ public final class PassengerCount {
       return operatorId_;
     }
 
-    public static final int VEHICLE_NUMBER_FIELD_NUMBER = 9;
+    public static final int VEHICLE_NUMBER_FIELD_NUMBER = 10;
     private int vehicleNumber_ = 0;
     /**
-     * <code>required int32 vehicle_number = 9;</code>
+     * <code>required int32 vehicle_number = 10;</code>
      * @return Whether the vehicleNumber field is set.
      */
     @java.lang.Override
     public boolean hasVehicleNumber() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
-     * <code>required int32 vehicle_number = 9;</code>
+     * <code>required int32 vehicle_number = 10;</code>
      * @return The vehicleNumber.
      */
     @java.lang.Override
@@ -1853,6 +1970,10 @@ public final class PassengerCount {
         memoizedIsInitialized = 0;
         return false;
       }
+      if (!hasEventType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       if (!hasOperatorId()) {
         memoizedIsInitialized = 0;
         return false;
@@ -1887,13 +2008,16 @@ public final class PassengerCount {
         output.writeEnum(6, temporalType_);
       }
       if (((bitField0_ & 0x00000040) != 0)) {
-        output.writeEnum(7, transportMode_);
+        output.writeEnum(7, eventType_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
-        output.writeInt32(8, operatorId_);
+        output.writeEnum(8, transportMode_);
       }
       if (((bitField0_ & 0x00000100) != 0)) {
-        output.writeInt32(9, vehicleNumber_);
+        output.writeInt32(9, operatorId_);
+      }
+      if (((bitField0_ & 0x00000200) != 0)) {
+        output.writeInt32(10, vehicleNumber_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1928,15 +2052,19 @@ public final class PassengerCount {
       }
       if (((bitField0_ & 0x00000040) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, transportMode_);
+          .computeEnumSize(7, eventType_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, operatorId_);
+          .computeEnumSize(8, transportMode_);
       }
       if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, vehicleNumber_);
+          .computeInt32Size(9, operatorId_);
+      }
+      if (((bitField0_ & 0x00000200) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, vehicleNumber_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1980,6 +2108,10 @@ public final class PassengerCount {
       if (hasTemporalType() != other.hasTemporalType()) return false;
       if (hasTemporalType()) {
         if (temporalType_ != other.temporalType_) return false;
+      }
+      if (hasEventType() != other.hasEventType()) return false;
+      if (hasEventType()) {
+        if (eventType_ != other.eventType_) return false;
       }
       if (hasTransportMode() != other.hasTransportMode()) return false;
       if (hasTransportMode()) {
@@ -2030,6 +2162,10 @@ public final class PassengerCount {
       if (hasTemporalType()) {
         hash = (37 * hash) + TEMPORAL_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + temporalType_;
+      }
+      if (hasEventType()) {
+        hash = (37 * hash) + EVENT_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + eventType_;
       }
       if (hasTransportMode()) {
         hash = (37 * hash) + TRANSPORT_MODE_FIELD_NUMBER;
@@ -2178,6 +2314,7 @@ public final class PassengerCount {
         topicVersion_ = "";
         journeyType_ = 0;
         temporalType_ = 0;
+        eventType_ = 0;
         transportMode_ = 0;
         operatorId_ = 0;
         vehicleNumber_ = 0;
@@ -2240,16 +2377,20 @@ public final class PassengerCount {
           to_bitField0_ |= 0x00000020;
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.transportMode_ = transportMode_;
+          result.eventType_ = eventType_;
           to_bitField0_ |= 0x00000040;
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.operatorId_ = operatorId_;
+          result.transportMode_ = transportMode_;
           to_bitField0_ |= 0x00000080;
         }
         if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.vehicleNumber_ = vehicleNumber_;
+          result.operatorId_ = operatorId_;
           to_bitField0_ |= 0x00000100;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.vehicleNumber_ = vehicleNumber_;
+          to_bitField0_ |= 0x00000200;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -2320,6 +2461,9 @@ public final class PassengerCount {
         if (other.hasTemporalType()) {
           setTemporalType(other.getTemporalType());
         }
+        if (other.hasEventType()) {
+          setEventType(other.getEventType());
+        }
         if (other.hasTransportMode()) {
           setTransportMode(other.getTransportMode());
         }
@@ -2352,6 +2496,9 @@ public final class PassengerCount {
           return false;
         }
         if (!hasTemporalType()) {
+          return false;
+        }
+        if (!hasEventType()) {
           return false;
         }
         if (!hasOperatorId()) {
@@ -2425,26 +2572,38 @@ public final class PassengerCount {
               } // case 48
               case 56: {
                 int tmpRaw = input.readEnum();
-                fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode tmpValue =
-                    fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode.forNumber(tmpRaw);
+                fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType tmpValue =
+                    fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType.forNumber(tmpRaw);
                 if (tmpValue == null) {
                   mergeUnknownVarintField(7, tmpRaw);
                 } else {
-                  transportMode_ = tmpRaw;
+                  eventType_ = tmpRaw;
                   bitField0_ |= 0x00000040;
                 }
                 break;
               } // case 56
               case 64: {
-                operatorId_ = input.readInt32();
-                bitField0_ |= 0x00000080;
+                int tmpRaw = input.readEnum();
+                fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode tmpValue =
+                    fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode.forNumber(tmpRaw);
+                if (tmpValue == null) {
+                  mergeUnknownVarintField(8, tmpRaw);
+                } else {
+                  transportMode_ = tmpRaw;
+                  bitField0_ |= 0x00000080;
+                }
                 break;
               } // case 64
               case 72: {
-                vehicleNumber_ = input.readInt32();
+                operatorId_ = input.readInt32();
                 bitField0_ |= 0x00000100;
                 break;
               } // case 72
+              case 80: {
+                vehicleNumber_ = input.readInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 80
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2802,24 +2961,66 @@ public final class PassengerCount {
         return this;
       }
 
+      private int eventType_ = 0;
+      /**
+       * <code>required .proto.Topic.EventType event_type = 7;</code>
+       * @return Whether the eventType field is set.
+       */
+      @java.lang.Override public boolean hasEventType() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       * <code>required .proto.Topic.EventType event_type = 7;</code>
+       * @return The eventType.
+       */
+      @java.lang.Override
+      public fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType getEventType() {
+        fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType result = fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType.forNumber(eventType_);
+        return result == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType.apc : result;
+      }
+      /**
+       * <code>required .proto.Topic.EventType event_type = 7;</code>
+       * @param value The eventType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEventType(fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000040;
+        eventType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required .proto.Topic.EventType event_type = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEventType() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        eventType_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int transportMode_ = 0;
       /**
        * <pre>
        * Optional because of rare bug in data source systems
        * </pre>
        *
-       * <code>optional .proto.Topic.TransportMode transport_mode = 7;</code>
+       * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
        * @return Whether the transportMode field is set.
        */
       @java.lang.Override public boolean hasTransportMode() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
        * <pre>
        * Optional because of rare bug in data source systems
        * </pre>
        *
-       * <code>optional .proto.Topic.TransportMode transport_mode = 7;</code>
+       * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
        * @return The transportMode.
        */
       @java.lang.Override
@@ -2832,7 +3033,7 @@ public final class PassengerCount {
        * Optional because of rare bug in data source systems
        * </pre>
        *
-       * <code>optional .proto.Topic.TransportMode transport_mode = 7;</code>
+       * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
        * @param value The transportMode to set.
        * @return This builder for chaining.
        */
@@ -2840,7 +3041,7 @@ public final class PassengerCount {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         transportMode_ = value.getNumber();
         onChanged();
         return this;
@@ -2850,11 +3051,11 @@ public final class PassengerCount {
        * Optional because of rare bug in data source systems
        * </pre>
        *
-       * <code>optional .proto.Topic.TransportMode transport_mode = 7;</code>
+       * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearTransportMode() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         transportMode_ = 0;
         onChanged();
         return this;
@@ -2862,15 +3063,15 @@ public final class PassengerCount {
 
       private int operatorId_ ;
       /**
-       * <code>required int32 operator_id = 8;</code>
+       * <code>required int32 operator_id = 9;</code>
        * @return Whether the operatorId field is set.
        */
       @java.lang.Override
       public boolean hasOperatorId() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
-       * <code>required int32 operator_id = 8;</code>
+       * <code>required int32 operator_id = 9;</code>
        * @return The operatorId.
        */
       @java.lang.Override
@@ -2878,23 +3079,23 @@ public final class PassengerCount {
         return operatorId_;
       }
       /**
-       * <code>required int32 operator_id = 8;</code>
+       * <code>required int32 operator_id = 9;</code>
        * @param value The operatorId to set.
        * @return This builder for chaining.
        */
       public Builder setOperatorId(int value) {
         
         operatorId_ = value;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
       /**
-       * <code>required int32 operator_id = 8;</code>
+       * <code>required int32 operator_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearOperatorId() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         operatorId_ = 0;
         onChanged();
         return this;
@@ -2902,15 +3103,15 @@ public final class PassengerCount {
 
       private int vehicleNumber_ ;
       /**
-       * <code>required int32 vehicle_number = 9;</code>
+       * <code>required int32 vehicle_number = 10;</code>
        * @return Whether the vehicleNumber field is set.
        */
       @java.lang.Override
       public boolean hasVehicleNumber() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return ((bitField0_ & 0x00000200) != 0);
       }
       /**
-       * <code>required int32 vehicle_number = 9;</code>
+       * <code>required int32 vehicle_number = 10;</code>
        * @return The vehicleNumber.
        */
       @java.lang.Override
@@ -2918,23 +3119,23 @@ public final class PassengerCount {
         return vehicleNumber_;
       }
       /**
-       * <code>required int32 vehicle_number = 9;</code>
+       * <code>required int32 vehicle_number = 10;</code>
        * @param value The vehicleNumber to set.
        * @return This builder for chaining.
        */
       public Builder setVehicleNumber(int value) {
         
         vehicleNumber_ = value;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
       /**
-       * <code>required int32 vehicle_number = 9;</code>
+       * <code>required int32 vehicle_number = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearVehicleNumber() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         vehicleNumber_ = 0;
         onChanged();
         return this;
@@ -8858,33 +9059,35 @@ public final class PassengerCount {
       "\n\025passenger-count.proto\022\005proto\"e\n\004Data\022\030" +
       "\n\rSchemaVersion\030\001 \002(\005:\0011\022\r\n\005topic\030\002 \001(\t\022" +
       "\037\n\007payload\030\003 \002(\0132\016.proto.Payload\022\023\n\013rece" +
-      "ived_at\030\004 \001(\003\"\341\003\n\005Topic\022\030\n\rSchemaVersion" +
+      "ived_at\030\004 \001(\003\"\243\004\n\005Topic\022\030\n\rSchemaVersion" +
       "\030\001 \002(\005:\0011\022\023\n\013received_at\030\002 \002(\003\022\024\n\014topic_" +
       "prefix\030\003 \002(\t\022\025\n\rtopic_version\030\004 \002(\t\022.\n\014j" +
       "ourney_type\030\005 \002(\0162\030.proto.Topic.JourneyT" +
       "ype\0220\n\rtemporal_type\030\006 \002(\0162\031.proto.Topic" +
-      ".TemporalType\0222\n\016transport_mode\030\007 \001(\0162\032." +
-      "proto.Topic.TransportMode\022\023\n\013operator_id" +
-      "\030\010 \002(\005\022\026\n\016vehicle_number\030\t \002(\005\"4\n\013Journe" +
-      "yType\022\013\n\007journey\020\000\022\013\n\007deadrun\020\001\022\013\n\007signo" +
-      "ff\020\002\")\n\014TemporalType\022\013\n\007ongoing\020\000\022\014\n\010upc" +
-      "oming\020\001\"X\n\rTransportMode\022\007\n\003bus\020\000\022\t\n\005tra" +
-      "in\020\001\022\010\n\004tram\020\002\022\t\n\005metro\020\003\022\t\n\005ferry\020\004\022\010\n\004" +
-      "ubus\020\005\022\t\n\005robot\020\006\"\220\002\n\007Payload\022\014\n\004desi\030\001 " +
-      "\001(\t\022\013\n\003dir\030\002 \001(\t\022\014\n\004oper\030\003 \001(\005\022\013\n\003veh\030\004 " +
-      "\001(\005\022\013\n\003tst\030\005 \001(\003\022\013\n\003tsi\030\006 \001(\003\022\013\n\003lat\030\007 \001" +
-      "(\001\022\014\n\004long\030\010 \001(\001\022\013\n\003odo\030\t \001(\001\022\014\n\004oday\030\n " +
-      "\001(\t\022\013\n\003jrn\030\013 \001(\005\022\014\n\004line\030\014 \001(\005\022\r\n\005start\030" +
-      "\r \001(\t\022\013\n\003loc\030\016 \001(\t\022\014\n\004stop\030\017 \001(\005\022\r\n\005rout" +
-      "e\030\020 \001(\t\022+\n\rvehicleCounts\030\021 \001(\0132\024.proto.V" +
-      "ehicleCounts\"\216\001\n\rVehicleCounts\022\024\n\014countQ" +
-      "uality\030\001 \001(\t\022\023\n\013vehicleLoad\030\002 \001(\005\022\030\n\020veh" +
-      "icleLoadRatio\030\003 \001(\001\022$\n\ndoorCounts\030\004 \003(\0132" +
-      "\020.proto.DoorCount\022\022\n\nextensions\030\005 \001(\t\"6\n" +
-      "\tDoorCount\022\014\n\004door\030\001 \001(\t\022\033\n\005count\030\002 \003(\0132" +
-      "\014.proto.Count\"/\n\005Count\022\r\n\005clazz\030\001 \001(\t\022\n\n" +
-      "\002in\030\002 \001(\005\022\013\n\003out\030\003 \001(\005B4\n\"fi.hsl.common." +
-      "passengercount.protoB\016PassengerCount"
+      ".TemporalType\022*\n\nevent_type\030\007 \002(\0162\026.prot" +
+      "o.Topic.EventType\0222\n\016transport_mode\030\010 \001(" +
+      "\0162\032.proto.Topic.TransportMode\022\023\n\013operato" +
+      "r_id\030\t \002(\005\022\026\n\016vehicle_number\030\n \002(\005\"4\n\013Jo" +
+      "urneyType\022\013\n\007journey\020\000\022\013\n\007deadrun\020\001\022\013\n\007s" +
+      "ignoff\020\002\")\n\014TemporalType\022\013\n\007ongoing\020\000\022\014\n" +
+      "\010upcoming\020\001\"X\n\rTransportMode\022\007\n\003bus\020\000\022\t\n" +
+      "\005train\020\001\022\010\n\004tram\020\002\022\t\n\005metro\020\003\022\t\n\005ferry\020\004" +
+      "\022\010\n\004ubus\020\005\022\t\n\005robot\020\006\"\024\n\tEventType\022\007\n\003ap" +
+      "c\020\000\"\220\002\n\007Payload\022\014\n\004desi\030\001 \001(\t\022\013\n\003dir\030\002 \001" +
+      "(\t\022\014\n\004oper\030\003 \001(\005\022\013\n\003veh\030\004 \001(\005\022\013\n\003tst\030\005 \001" +
+      "(\003\022\013\n\003tsi\030\006 \001(\003\022\013\n\003lat\030\007 \001(\001\022\014\n\004long\030\010 \001" +
+      "(\001\022\013\n\003odo\030\t \001(\001\022\014\n\004oday\030\n \001(\t\022\013\n\003jrn\030\013 \001" +
+      "(\005\022\014\n\004line\030\014 \001(\005\022\r\n\005start\030\r \001(\t\022\013\n\003loc\030\016" +
+      " \001(\t\022\014\n\004stop\030\017 \001(\005\022\r\n\005route\030\020 \001(\t\022+\n\rveh" +
+      "icleCounts\030\021 \001(\0132\024.proto.VehicleCounts\"\216" +
+      "\001\n\rVehicleCounts\022\024\n\014countQuality\030\001 \001(\t\022\023" +
+      "\n\013vehicleLoad\030\002 \001(\005\022\030\n\020vehicleLoadRatio\030" +
+      "\003 \001(\001\022$\n\ndoorCounts\030\004 \003(\0132\020.proto.DoorCo" +
+      "unt\022\022\n\nextensions\030\005 \001(\t\"6\n\tDoorCount\022\014\n\004" +
+      "door\030\001 \001(\t\022\033\n\005count\030\002 \003(\0132\014.proto.Count\"" +
+      "/\n\005Count\022\r\n\005clazz\030\001 \001(\t\022\n\n\002in\030\002 \001(\005\022\013\n\003o" +
+      "ut\030\003 \001(\005B4\n\"fi.hsl.common.passengercount" +
+      ".protoB\016PassengerCount"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8901,7 +9104,7 @@ public final class PassengerCount {
     internal_static_proto_Topic_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Topic_descriptor,
-        new java.lang.String[] { "SchemaVersion", "ReceivedAt", "TopicPrefix", "TopicVersion", "JourneyType", "TemporalType", "TransportMode", "OperatorId", "VehicleNumber", });
+        new java.lang.String[] { "SchemaVersion", "ReceivedAt", "TopicPrefix", "TopicVersion", "JourneyType", "TemporalType", "EventType", "TransportMode", "OperatorId", "VehicleNumber", });
     internal_static_proto_Payload_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_proto_Payload_fieldAccessorTable = new
