@@ -7,7 +7,7 @@ option java_outer_classname = "PassengerCount";
 
 message Data {
     required int32 SchemaVersion = 1 [default = 1];
-    optional string topic = 2;
+    optional Topic topic = 2;
     required Payload payload = 3;
     optional int64 received_at = 4;
 }

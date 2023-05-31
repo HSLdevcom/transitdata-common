@@ -30,21 +30,19 @@ public final class PassengerCount {
     int getSchemaVersion();
 
     /**
-     * <code>optional string topic = 2;</code>
+     * <code>optional .proto.Topic topic = 2;</code>
      * @return Whether the topic field is set.
      */
     boolean hasTopic();
     /**
-     * <code>optional string topic = 2;</code>
+     * <code>optional .proto.Topic topic = 2;</code>
      * @return The topic.
      */
-    java.lang.String getTopic();
+    fi.hsl.common.passengercount.proto.PassengerCount.Topic getTopic();
     /**
-     * <code>optional string topic = 2;</code>
-     * @return The bytes for topic.
+     * <code>optional .proto.Topic topic = 2;</code>
      */
-    com.google.protobuf.ByteString
-        getTopicBytes();
+    fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder getTopicOrBuilder();
 
     /**
      * <code>required .proto.Payload payload = 3;</code>
@@ -86,7 +84,6 @@ public final class PassengerCount {
     }
     private Data() {
       schemaVersion_ = 1;
-      topic_ = "";
     }
 
     @java.lang.Override
@@ -135,10 +132,9 @@ public final class PassengerCount {
     }
 
     public static final int TOPIC_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object topic_ = "";
+    private fi.hsl.common.passengercount.proto.PassengerCount.Topic topic_;
     /**
-     * <code>optional string topic = 2;</code>
+     * <code>optional .proto.Topic topic = 2;</code>
      * @return Whether the topic field is set.
      */
     @java.lang.Override
@@ -146,41 +142,19 @@ public final class PassengerCount {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>optional string topic = 2;</code>
+     * <code>optional .proto.Topic topic = 2;</code>
      * @return The topic.
      */
     @java.lang.Override
-    public java.lang.String getTopic() {
-      java.lang.Object ref = topic_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          topic_ = s;
-        }
-        return s;
-      }
+    public fi.hsl.common.passengercount.proto.PassengerCount.Topic getTopic() {
+      return topic_ == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDefaultInstance() : topic_;
     }
     /**
-     * <code>optional string topic = 2;</code>
-     * @return The bytes for topic.
+     * <code>optional .proto.Topic topic = 2;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTopicBytes() {
-      java.lang.Object ref = topic_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        topic_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder getTopicOrBuilder() {
+      return topic_ == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDefaultInstance() : topic_;
     }
 
     public static final int PAYLOAD_FIELD_NUMBER = 3;
@@ -243,6 +217,12 @@ public final class PassengerCount {
         memoizedIsInitialized = 0;
         return false;
       }
+      if (hasTopic()) {
+        if (!getTopic().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -254,7 +234,7 @@ public final class PassengerCount {
         output.writeInt32(1, schemaVersion_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, topic_);
+        output.writeMessage(2, getTopic());
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(3, getPayload());
@@ -276,7 +256,8 @@ public final class PassengerCount {
           .computeInt32Size(1, schemaVersion_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, topic_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getTopic());
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
@@ -477,6 +458,7 @@ public final class PassengerCount {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getTopicFieldBuilder();
           getPayloadFieldBuilder();
         }
       }
@@ -485,7 +467,11 @@ public final class PassengerCount {
         super.clear();
         bitField0_ = 0;
         schemaVersion_ = 1;
-        topic_ = "";
+        topic_ = null;
+        if (topicBuilder_ != null) {
+          topicBuilder_.dispose();
+          topicBuilder_ = null;
+        }
         payload_ = null;
         if (payloadBuilder_ != null) {
           payloadBuilder_.dispose();
@@ -531,7 +517,9 @@ public final class PassengerCount {
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.topic_ = topic_;
+          result.topic_ = topicBuilder_ == null
+              ? topic_
+              : topicBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
@@ -595,9 +583,7 @@ public final class PassengerCount {
           setSchemaVersion(other.getSchemaVersion());
         }
         if (other.hasTopic()) {
-          topic_ = other.topic_;
-          bitField0_ |= 0x00000002;
-          onChanged();
+          mergeTopic(other.getTopic());
         }
         if (other.hasPayload()) {
           mergePayload(other.getPayload());
@@ -617,6 +603,11 @@ public final class PassengerCount {
         }
         if (!hasPayload()) {
           return false;
+        }
+        if (hasTopic()) {
+          if (!getTopic().isInitialized()) {
+            return false;
+          }
         }
         return true;
       }
@@ -643,7 +634,9 @@ public final class PassengerCount {
                 break;
               } // case 8
               case 18: {
-                topic_ = input.readBytes();
+                input.readMessage(
+                    getTopicFieldBuilder().getBuilder(),
+                    extensionRegistry);
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
@@ -716,84 +709,123 @@ public final class PassengerCount {
         return this;
       }
 
-      private java.lang.Object topic_ = "";
+      private fi.hsl.common.passengercount.proto.PassengerCount.Topic topic_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          fi.hsl.common.passengercount.proto.PassengerCount.Topic, fi.hsl.common.passengercount.proto.PassengerCount.Topic.Builder, fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder> topicBuilder_;
       /**
-       * <code>optional string topic = 2;</code>
+       * <code>optional .proto.Topic topic = 2;</code>
        * @return Whether the topic field is set.
        */
       public boolean hasTopic() {
         return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>optional string topic = 2;</code>
+       * <code>optional .proto.Topic topic = 2;</code>
        * @return The topic.
        */
-      public java.lang.String getTopic() {
-        java.lang.Object ref = topic_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            topic_ = s;
-          }
-          return s;
+      public fi.hsl.common.passengercount.proto.PassengerCount.Topic getTopic() {
+        if (topicBuilder_ == null) {
+          return topic_ == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDefaultInstance() : topic_;
         } else {
-          return (java.lang.String) ref;
+          return topicBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional string topic = 2;</code>
-       * @return The bytes for topic.
+       * <code>optional .proto.Topic topic = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getTopicBytes() {
-        java.lang.Object ref = topic_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          topic_ = b;
-          return b;
+      public Builder setTopic(fi.hsl.common.passengercount.proto.PassengerCount.Topic value) {
+        if (topicBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          topic_ = value;
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          topicBuilder_.setMessage(value);
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
       }
       /**
-       * <code>optional string topic = 2;</code>
-       * @param value The topic to set.
-       * @return This builder for chaining.
+       * <code>optional .proto.Topic topic = 2;</code>
        */
       public Builder setTopic(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        topic_ = value;
+          fi.hsl.common.passengercount.proto.PassengerCount.Topic.Builder builderForValue) {
+        if (topicBuilder_ == null) {
+          topic_ = builderForValue.build();
+        } else {
+          topicBuilder_.setMessage(builderForValue.build());
+        }
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string topic = 2;</code>
-       * @return This builder for chaining.
+       * <code>optional .proto.Topic topic = 2;</code>
+       */
+      public Builder mergeTopic(fi.hsl.common.passengercount.proto.PassengerCount.Topic value) {
+        if (topicBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0) &&
+            topic_ != null &&
+            topic_ != fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDefaultInstance()) {
+            getTopicBuilder().mergeFrom(value);
+          } else {
+            topic_ = value;
+          }
+        } else {
+          topicBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.Topic topic = 2;</code>
        */
       public Builder clearTopic() {
-        topic_ = getDefaultInstance().getTopic();
         bitField0_ = (bitField0_ & ~0x00000002);
+        topic_ = null;
+        if (topicBuilder_ != null) {
+          topicBuilder_.dispose();
+          topicBuilder_ = null;
+        }
         onChanged();
         return this;
       }
       /**
-       * <code>optional string topic = 2;</code>
-       * @param value The bytes for topic to set.
-       * @return This builder for chaining.
+       * <code>optional .proto.Topic topic = 2;</code>
        */
-      public Builder setTopicBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        topic_ = value;
+      public fi.hsl.common.passengercount.proto.PassengerCount.Topic.Builder getTopicBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
-        return this;
+        return getTopicFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.Topic topic = 2;</code>
+       */
+      public fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder getTopicOrBuilder() {
+        if (topicBuilder_ != null) {
+          return topicBuilder_.getMessageOrBuilder();
+        } else {
+          return topic_ == null ?
+              fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDefaultInstance() : topic_;
+        }
+      }
+      /**
+       * <code>optional .proto.Topic topic = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          fi.hsl.common.passengercount.proto.PassengerCount.Topic, fi.hsl.common.passengercount.proto.PassengerCount.Topic.Builder, fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder> 
+          getTopicFieldBuilder() {
+        if (topicBuilder_ == null) {
+          topicBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              fi.hsl.common.passengercount.proto.PassengerCount.Topic, fi.hsl.common.passengercount.proto.PassengerCount.Topic.Builder, fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder>(
+                  getTopic(),
+                  getParentForChildren(),
+                  isClean());
+          topic_ = null;
+        }
+        return topicBuilder_;
       }
 
       private fi.hsl.common.passengercount.proto.PassengerCount.Payload payload_;
@@ -9056,38 +9088,38 @@ public final class PassengerCount {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025passenger-count.proto\022\005proto\"e\n\004Data\022\030" +
-      "\n\rSchemaVersion\030\001 \002(\005:\0011\022\r\n\005topic\030\002 \001(\t\022" +
-      "\037\n\007payload\030\003 \002(\0132\016.proto.Payload\022\023\n\013rece" +
-      "ived_at\030\004 \001(\003\"\243\004\n\005Topic\022\030\n\rSchemaVersion" +
-      "\030\001 \002(\005:\0011\022\023\n\013received_at\030\002 \002(\003\022\024\n\014topic_" +
-      "prefix\030\003 \002(\t\022\025\n\rtopic_version\030\004 \002(\t\022.\n\014j" +
-      "ourney_type\030\005 \002(\0162\030.proto.Topic.JourneyT" +
-      "ype\0220\n\rtemporal_type\030\006 \002(\0162\031.proto.Topic" +
-      ".TemporalType\022*\n\nevent_type\030\007 \002(\0162\026.prot" +
-      "o.Topic.EventType\0222\n\016transport_mode\030\010 \001(" +
-      "\0162\032.proto.Topic.TransportMode\022\023\n\013operato" +
-      "r_id\030\t \002(\005\022\026\n\016vehicle_number\030\n \002(\005\"4\n\013Jo" +
-      "urneyType\022\013\n\007journey\020\000\022\013\n\007deadrun\020\001\022\013\n\007s" +
-      "ignoff\020\002\")\n\014TemporalType\022\013\n\007ongoing\020\000\022\014\n" +
-      "\010upcoming\020\001\"X\n\rTransportMode\022\007\n\003bus\020\000\022\t\n" +
-      "\005train\020\001\022\010\n\004tram\020\002\022\t\n\005metro\020\003\022\t\n\005ferry\020\004" +
-      "\022\010\n\004ubus\020\005\022\t\n\005robot\020\006\"\024\n\tEventType\022\007\n\003ap" +
-      "c\020\000\"\220\002\n\007Payload\022\014\n\004desi\030\001 \001(\t\022\013\n\003dir\030\002 \001" +
-      "(\t\022\014\n\004oper\030\003 \001(\005\022\013\n\003veh\030\004 \001(\005\022\013\n\003tst\030\005 \001" +
-      "(\003\022\013\n\003tsi\030\006 \001(\003\022\013\n\003lat\030\007 \001(\001\022\014\n\004long\030\010 \001" +
-      "(\001\022\013\n\003odo\030\t \001(\001\022\014\n\004oday\030\n \001(\t\022\013\n\003jrn\030\013 \001" +
-      "(\005\022\014\n\004line\030\014 \001(\005\022\r\n\005start\030\r \001(\t\022\013\n\003loc\030\016" +
-      " \001(\t\022\014\n\004stop\030\017 \001(\005\022\r\n\005route\030\020 \001(\t\022+\n\rveh" +
-      "icleCounts\030\021 \001(\0132\024.proto.VehicleCounts\"\216" +
-      "\001\n\rVehicleCounts\022\024\n\014countQuality\030\001 \001(\t\022\023" +
-      "\n\013vehicleLoad\030\002 \001(\005\022\030\n\020vehicleLoadRatio\030" +
-      "\003 \001(\001\022$\n\ndoorCounts\030\004 \003(\0132\020.proto.DoorCo" +
-      "unt\022\022\n\nextensions\030\005 \001(\t\"6\n\tDoorCount\022\014\n\004" +
-      "door\030\001 \001(\t\022\033\n\005count\030\002 \003(\0132\014.proto.Count\"" +
-      "/\n\005Count\022\r\n\005clazz\030\001 \001(\t\022\n\n\002in\030\002 \001(\005\022\013\n\003o" +
-      "ut\030\003 \001(\005B4\n\"fi.hsl.common.passengercount" +
-      ".protoB\016PassengerCount"
+      "\n\025passenger-count.proto\022\005proto\"s\n\004Data\022\030" +
+      "\n\rSchemaVersion\030\001 \002(\005:\0011\022\033\n\005topic\030\002 \001(\0132" +
+      "\014.proto.Topic\022\037\n\007payload\030\003 \002(\0132\016.proto.P" +
+      "ayload\022\023\n\013received_at\030\004 \001(\003\"\243\004\n\005Topic\022\030\n" +
+      "\rSchemaVersion\030\001 \002(\005:\0011\022\023\n\013received_at\030\002" +
+      " \002(\003\022\024\n\014topic_prefix\030\003 \002(\t\022\025\n\rtopic_vers" +
+      "ion\030\004 \002(\t\022.\n\014journey_type\030\005 \002(\0162\030.proto." +
+      "Topic.JourneyType\0220\n\rtemporal_type\030\006 \002(\016" +
+      "2\031.proto.Topic.TemporalType\022*\n\nevent_typ" +
+      "e\030\007 \002(\0162\026.proto.Topic.EventType\0222\n\016trans" +
+      "port_mode\030\010 \001(\0162\032.proto.Topic.TransportM" +
+      "ode\022\023\n\013operator_id\030\t \002(\005\022\026\n\016vehicle_numb" +
+      "er\030\n \002(\005\"4\n\013JourneyType\022\013\n\007journey\020\000\022\013\n\007" +
+      "deadrun\020\001\022\013\n\007signoff\020\002\")\n\014TemporalType\022\013" +
+      "\n\007ongoing\020\000\022\014\n\010upcoming\020\001\"X\n\rTransportMo" +
+      "de\022\007\n\003bus\020\000\022\t\n\005train\020\001\022\010\n\004tram\020\002\022\t\n\005metr" +
+      "o\020\003\022\t\n\005ferry\020\004\022\010\n\004ubus\020\005\022\t\n\005robot\020\006\"\024\n\tE" +
+      "ventType\022\007\n\003apc\020\000\"\220\002\n\007Payload\022\014\n\004desi\030\001 " +
+      "\001(\t\022\013\n\003dir\030\002 \001(\t\022\014\n\004oper\030\003 \001(\005\022\013\n\003veh\030\004 " +
+      "\001(\005\022\013\n\003tst\030\005 \001(\003\022\013\n\003tsi\030\006 \001(\003\022\013\n\003lat\030\007 \001" +
+      "(\001\022\014\n\004long\030\010 \001(\001\022\013\n\003odo\030\t \001(\001\022\014\n\004oday\030\n " +
+      "\001(\t\022\013\n\003jrn\030\013 \001(\005\022\014\n\004line\030\014 \001(\005\022\r\n\005start\030" +
+      "\r \001(\t\022\013\n\003loc\030\016 \001(\t\022\014\n\004stop\030\017 \001(\005\022\r\n\005rout" +
+      "e\030\020 \001(\t\022+\n\rvehicleCounts\030\021 \001(\0132\024.proto.V" +
+      "ehicleCounts\"\216\001\n\rVehicleCounts\022\024\n\014countQ" +
+      "uality\030\001 \001(\t\022\023\n\013vehicleLoad\030\002 \001(\005\022\030\n\020veh" +
+      "icleLoadRatio\030\003 \001(\001\022$\n\ndoorCounts\030\004 \003(\0132" +
+      "\020.proto.DoorCount\022\022\n\nextensions\030\005 \001(\t\"6\n" +
+      "\tDoorCount\022\014\n\004door\030\001 \001(\t\022\033\n\005count\030\002 \003(\0132" +
+      "\014.proto.Count\"/\n\005Count\022\r\n\005clazz\030\001 \001(\t\022\n\n" +
+      "\002in\030\002 \001(\005\022\013\n\003out\030\003 \001(\005B4\n\"fi.hsl.common." +
+      "passengercount.protoB\016PassengerCount"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
