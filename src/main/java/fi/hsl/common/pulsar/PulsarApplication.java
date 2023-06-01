@@ -199,7 +199,7 @@ public class PulsarApplication implements AutoCloseable {
 
         if (config.getBoolean("pulsar.consumer.multipleTopics")) {
             if (config.hasPath("pulsar.consumer.topics")) {
-                List<String> topics = config.getStringList("pulsar.consumer.topics");
+                List<String> topics = Arrays.asList(config.getString("pulsar.consumer.topics").split(","));
                 log.info("Creating Pulsar consumer for topics: [ {} ]", String.join(", ", topics));
                 builder = builder.topics(topics);
             } else {
