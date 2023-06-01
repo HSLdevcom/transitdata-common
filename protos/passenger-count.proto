@@ -7,9 +7,51 @@ option java_outer_classname = "PassengerCount";
 
 message Data {
     required int32 SchemaVersion = 1 [default = 1];
-    optional string topic = 2;
+    optional Topic topic = 2;
     required Payload payload = 3;
     optional int64 received_at = 4;
+}
+
+message Topic {
+    required int32 SchemaVersion = 1 [default = 1];
+
+    enum JourneyType {
+        journey = 0;
+        deadrun = 1; // Probably never used but included just in case
+        signoff = 2; // Probably never used but included just in case
+    }
+
+    enum TemporalType {
+        ongoing = 0;
+        upcoming = 1; // Probably never used but included just in case
+    }
+
+    enum TransportMode {
+        bus = 0;
+        train = 1;
+        tram = 2;
+        metro = 3;
+        ferry = 4;
+        ubus = 5; //Used by U-line buses and other lines with limited real-time information
+        robot = 6; //Used by robot buses
+    }
+
+    enum EventType {
+        apc = 0;
+    }
+
+    required int64 received_at = 2; // Our server timestamp as Epoch ms
+    required string topic_prefix = 3;
+    required string topic_version = 4;
+    required JourneyType journey_type = 5;
+    required TemporalType temporal_type = 6;
+
+    required EventType event_type = 7;
+
+    optional TransportMode transport_mode = 8; // Optional because of rare bug in data source systems
+
+    required int32 operator_id = 9;
+    required int32 vehicle_number = 10;
 }
 
 message Payload {
@@ -46,7 +88,7 @@ message DoorCount {
 }
 
 message Count {
-    optional string clazz = 1; //Field 'class' in JSON, represents passenger class. clazz is used for variable name here, because 'class' is reserved keyword in Java
+    optional string clazz = 1; //Field 'class' in JSON, represents passenger class.
     optional int32 in = 2;
     optional int32 out = 3;
 }

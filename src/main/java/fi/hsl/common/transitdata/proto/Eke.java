@@ -20,32 +20,39 @@ public final class Eke {
 
     /**
      * <code>required int64 ekeDate = 1;</code>
+     * @return Whether the ekeDate field is set.
      */
     boolean hasEkeDate();
     /**
      * <code>required int64 ekeDate = 1;</code>
+     * @return The ekeDate.
      */
     long getEkeDate();
 
     /**
      * <code>required int32 trainNumber = 2;</code>
+     * @return Whether the trainNumber field is set.
      */
     boolean hasTrainNumber();
     /**
      * <code>required int32 trainNumber = 2;</code>
+     * @return The trainNumber.
      */
     int getTrainNumber();
 
     /**
      * <code>required string topicPart = 3;</code>
+     * @return Whether the topicPart field is set.
      */
     boolean hasTopicPart();
     /**
      * <code>required string topicPart = 3;</code>
+     * @return The topicPart.
      */
     java.lang.String getTopicPart();
     /**
      * <code>required string topicPart = 3;</code>
+     * @return The bytes for topicPart.
      */
     com.google.protobuf.ByteString
         getTopicPartBytes();
@@ -53,18 +60,24 @@ public final class Eke {
   /**
    * Protobuf type {@code proto.EkeSummary}
    */
-  public  static final class EkeSummary extends
+  public static final class EkeSummary extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.EkeSummary)
       EkeSummaryOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use EkeSummary.newBuilder() to construct.
     private EkeSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private EkeSummary() {
-      ekeDate_ = 0L;
-      trainNumber_ = 0;
       topicPart_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new EkeSummary();
     }
 
     @java.lang.Override
@@ -72,62 +85,12 @@ public final class Eke {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EkeSummary(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              ekeDate_ = input.readInt64();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              trainNumber_ = input.readInt32();
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
-              topicPart_ = bs;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return fi.hsl.common.transitdata.proto.Eke.internal_static_proto_EkeSummary_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return fi.hsl.common.transitdata.proto.Eke.internal_static_proto_EkeSummary_fieldAccessorTable
@@ -137,46 +100,59 @@ public final class Eke {
 
     private int bitField0_;
     public static final int EKEDATE_FIELD_NUMBER = 1;
-    private long ekeDate_;
+    private long ekeDate_ = 0L;
     /**
      * <code>required int64 ekeDate = 1;</code>
+     * @return Whether the ekeDate field is set.
      */
+    @java.lang.Override
     public boolean hasEkeDate() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>required int64 ekeDate = 1;</code>
+     * @return The ekeDate.
      */
+    @java.lang.Override
     public long getEkeDate() {
       return ekeDate_;
     }
 
     public static final int TRAINNUMBER_FIELD_NUMBER = 2;
-    private int trainNumber_;
+    private int trainNumber_ = 0;
     /**
      * <code>required int32 trainNumber = 2;</code>
+     * @return Whether the trainNumber field is set.
      */
+    @java.lang.Override
     public boolean hasTrainNumber() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>required int32 trainNumber = 2;</code>
+     * @return The trainNumber.
      */
+    @java.lang.Override
     public int getTrainNumber() {
       return trainNumber_;
     }
 
     public static final int TOPICPART_FIELD_NUMBER = 3;
-    private volatile java.lang.Object topicPart_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object topicPart_ = "";
     /**
      * <code>required string topicPart = 3;</code>
+     * @return Whether the topicPart field is set.
      */
+    @java.lang.Override
     public boolean hasTopicPart() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>required string topicPart = 3;</code>
+     * @return The topicPart.
      */
+    @java.lang.Override
     public java.lang.String getTopicPart() {
       java.lang.Object ref = topicPart_;
       if (ref instanceof java.lang.String) {
@@ -193,7 +169,9 @@ public final class Eke {
     }
     /**
      * <code>required string topicPart = 3;</code>
+     * @return The bytes for topicPart.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getTopicPartBytes() {
       java.lang.Object ref = topicPart_;
@@ -209,6 +187,7 @@ public final class Eke {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -230,42 +209,43 @@ public final class Eke {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt64(1, ekeDate_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeInt32(2, trainNumber_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, topicPart_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, ekeDate_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, trainNumber_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, topicPart_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -276,24 +256,23 @@ public final class Eke {
       }
       fi.hsl.common.transitdata.proto.Eke.EkeSummary other = (fi.hsl.common.transitdata.proto.Eke.EkeSummary) obj;
 
-      boolean result = true;
-      result = result && (hasEkeDate() == other.hasEkeDate());
+      if (hasEkeDate() != other.hasEkeDate()) return false;
       if (hasEkeDate()) {
-        result = result && (getEkeDate()
-            == other.getEkeDate());
+        if (getEkeDate()
+            != other.getEkeDate()) return false;
       }
-      result = result && (hasTrainNumber() == other.hasTrainNumber());
+      if (hasTrainNumber() != other.hasTrainNumber()) return false;
       if (hasTrainNumber()) {
-        result = result && (getTrainNumber()
-            == other.getTrainNumber());
+        if (getTrainNumber()
+            != other.getTrainNumber()) return false;
       }
-      result = result && (hasTopicPart() == other.hasTopicPart());
+      if (hasTopicPart() != other.hasTopicPart()) return false;
       if (hasTopicPart()) {
-        result = result && getTopicPart()
-            .equals(other.getTopicPart());
+        if (!getTopicPart()
+            .equals(other.getTopicPart())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -302,7 +281,7 @@ public final class Eke {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasEkeDate()) {
         hash = (37 * hash) + EKEDATE_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
@@ -316,11 +295,22 @@ public final class Eke {
         hash = (37 * hash) + TOPICPART_FIELD_NUMBER;
         hash = (53 * hash) + getTopicPart().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static fi.hsl.common.transitdata.proto.Eke.EkeSummary parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static fi.hsl.common.transitdata.proto.Eke.EkeSummary parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static fi.hsl.common.transitdata.proto.Eke.EkeSummary parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -380,6 +370,7 @@ public final class Eke {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -387,6 +378,7 @@ public final class Eke {
     public static Builder newBuilder(fi.hsl.common.transitdata.proto.Eke.EkeSummary prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -410,6 +402,7 @@ public final class Eke {
         return fi.hsl.common.transitdata.proto.Eke.internal_static_proto_EkeSummary_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return fi.hsl.common.transitdata.proto.Eke.internal_static_proto_EkeSummary_fieldAccessorTable
@@ -419,39 +412,36 @@ public final class Eke {
 
       // Construct using fi.hsl.common.transitdata.proto.Eke.EkeSummary.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
+
       }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         ekeDate_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
         trainNumber_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000002);
         topicPart_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return fi.hsl.common.transitdata.proto.Eke.internal_static_proto_EkeSummary_descriptor;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.Eke.EkeSummary getDefaultInstanceForType() {
         return fi.hsl.common.transitdata.proto.Eke.EkeSummary.getDefaultInstance();
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.Eke.EkeSummary build() {
         fi.hsl.common.transitdata.proto.Eke.EkeSummary result = buildPartial();
         if (!result.isInitialized()) {
@@ -460,53 +450,65 @@ public final class Eke {
         return result;
       }
 
+      @java.lang.Override
       public fi.hsl.common.transitdata.proto.Eke.EkeSummary buildPartial() {
         fi.hsl.common.transitdata.proto.Eke.EkeSummary result = new fi.hsl.common.transitdata.proto.Eke.EkeSummary(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.ekeDate_ = ekeDate_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.trainNumber_ = trainNumber_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.topicPart_ = topicPart_;
-        result.bitField0_ = to_bitField0_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      public Builder clone() {
-        return (Builder) super.clone();
+      private void buildPartial0(fi.hsl.common.transitdata.proto.Eke.EkeSummary result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.ekeDate_ = ekeDate_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.trainNumber_ = trainNumber_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.topicPart_ = topicPart_;
+          to_bitField0_ |= 0x00000004;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof fi.hsl.common.transitdata.proto.Eke.EkeSummary) {
           return mergeFrom((fi.hsl.common.transitdata.proto.Eke.EkeSummary)other);
@@ -525,15 +527,16 @@ public final class Eke {
           setTrainNumber(other.getTrainNumber());
         }
         if (other.hasTopicPart()) {
-          bitField0_ |= 0x00000004;
           topicPart_ = other.topicPart_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasEkeDate()) {
           return false;
@@ -547,21 +550,50 @@ public final class Eke {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        fi.hsl.common.transitdata.proto.Eke.EkeSummary parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                ekeDate_ = input.readInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                trainNumber_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 26: {
+                topicPart_ = input.readBytes();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (fi.hsl.common.transitdata.proto.Eke.EkeSummary) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -569,27 +601,35 @@ public final class Eke {
       private long ekeDate_ ;
       /**
        * <code>required int64 ekeDate = 1;</code>
+       * @return Whether the ekeDate field is set.
        */
+      @java.lang.Override
       public boolean hasEkeDate() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>required int64 ekeDate = 1;</code>
+       * @return The ekeDate.
        */
+      @java.lang.Override
       public long getEkeDate() {
         return ekeDate_;
       }
       /**
        * <code>required int64 ekeDate = 1;</code>
+       * @param value The ekeDate to set.
+       * @return This builder for chaining.
        */
       public Builder setEkeDate(long value) {
-        bitField0_ |= 0x00000001;
+        
         ekeDate_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
        * <code>required int64 ekeDate = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearEkeDate() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -601,27 +641,35 @@ public final class Eke {
       private int trainNumber_ ;
       /**
        * <code>required int32 trainNumber = 2;</code>
+       * @return Whether the trainNumber field is set.
        */
+      @java.lang.Override
       public boolean hasTrainNumber() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>required int32 trainNumber = 2;</code>
+       * @return The trainNumber.
        */
+      @java.lang.Override
       public int getTrainNumber() {
         return trainNumber_;
       }
       /**
        * <code>required int32 trainNumber = 2;</code>
+       * @param value The trainNumber to set.
+       * @return This builder for chaining.
        */
       public Builder setTrainNumber(int value) {
-        bitField0_ |= 0x00000002;
+        
         trainNumber_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
        * <code>required int32 trainNumber = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTrainNumber() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -633,12 +681,14 @@ public final class Eke {
       private java.lang.Object topicPart_ = "";
       /**
        * <code>required string topicPart = 3;</code>
+       * @return Whether the topicPart field is set.
        */
       public boolean hasTopicPart() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>required string topicPart = 3;</code>
+       * @return The topicPart.
        */
       public java.lang.String getTopicPart() {
         java.lang.Object ref = topicPart_;
@@ -656,6 +706,7 @@ public final class Eke {
       }
       /**
        * <code>required string topicPart = 3;</code>
+       * @return The bytes for topicPart.
        */
       public com.google.protobuf.ByteString
           getTopicPartBytes() {
@@ -672,44 +723,47 @@ public final class Eke {
       }
       /**
        * <code>required string topicPart = 3;</code>
+       * @param value The topicPart to set.
+       * @return This builder for chaining.
        */
       public Builder setTopicPart(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
+        if (value == null) { throw new NullPointerException(); }
         topicPart_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
        * <code>required string topicPart = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTopicPart() {
-        bitField0_ = (bitField0_ & ~0x00000004);
         topicPart_ = getDefaultInstance().getTopicPart();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
       /**
        * <code>required string topicPart = 3;</code>
+       * @param value The bytes for topicPart to set.
+       * @return This builder for chaining.
        */
       public Builder setTopicPartBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
+        if (value == null) { throw new NullPointerException(); }
         topicPart_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -731,11 +785,23 @@ public final class Eke {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<EkeSummary>
         PARSER = new com.google.protobuf.AbstractParser<EkeSummary>() {
+      @java.lang.Override
       public EkeSummary parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new EkeSummary(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -748,6 +814,7 @@ public final class Eke {
       return PARSER;
     }
 
+    @java.lang.Override
     public fi.hsl.common.transitdata.proto.Eke.EkeSummary getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -773,18 +840,10 @@ public final class Eke {
       "art\030\003 \002(\tB&\n\037fi.hsl.common.transitdata.p" +
       "rotoB\003Eke"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_proto_EkeSummary_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_EkeSummary_fieldAccessorTable = new
