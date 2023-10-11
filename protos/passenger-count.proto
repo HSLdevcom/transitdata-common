@@ -72,6 +72,7 @@ message Payload {
     optional int32 stop = 15;
     optional string route = 16;
     optional VehicleCounts vehicleCounts = 17;
+    optional bool invalid = 18;
 }
 
 message VehicleCounts {
