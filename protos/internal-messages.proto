@@ -221,6 +221,7 @@ message StopEstimate {
 
 
     optional string targeted_stop_id = 11; //The stop where the vehicle is targeted to stop (e.g. train using a different track than scheduled)
+    optional bool is_via_point = 12 [default = false];
 }
 
 message Bulletin {

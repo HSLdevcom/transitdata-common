@@ -10368,6 +10368,17 @@ public final class InternalMessages {
      */
     com.google.protobuf.ByteString
         getTargetedStopIdBytes();
+
+    /**
+     * <code>optional bool is_via_point = 12 [default = false];</code>
+     * @return Whether the isViaPoint field is set.
+     */
+    boolean hasIsViaPoint();
+    /**
+     * <code>optional bool is_via_point = 12 [default = false];</code>
+     * @return The isViaPoint.
+     */
+    boolean getIsViaPoint();
   }
   /**
    * Protobuf type {@code proto.StopEstimate}
@@ -10930,6 +10941,25 @@ public final class InternalMessages {
       }
     }
 
+    public static final int IS_VIA_POINT_FIELD_NUMBER = 12;
+    private boolean isViaPoint_ = false;
+    /**
+     * <code>optional bool is_via_point = 12 [default = false];</code>
+     * @return Whether the isViaPoint field is set.
+     */
+    @java.lang.Override
+    public boolean hasIsViaPoint() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     * <code>optional bool is_via_point = 12 [default = false];</code>
+     * @return The isViaPoint.
+     */
+    @java.lang.Override
+    public boolean getIsViaPoint() {
+      return isViaPoint_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -11009,6 +11039,9 @@ public final class InternalMessages {
       if (((bitField0_ & 0x00000400) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, targetedStopId_);
       }
+      if (((bitField0_ & 0x00000800) != 0)) {
+        output.writeBool(12, isViaPoint_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -11059,6 +11092,10 @@ public final class InternalMessages {
       }
       if (((bitField0_ & 0x00000400) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, targetedStopId_);
+      }
+      if (((bitField0_ & 0x00000800) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, isViaPoint_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -11128,6 +11165,11 @@ public final class InternalMessages {
         if (!getTargetedStopId()
             .equals(other.getTargetedStopId())) return false;
       }
+      if (hasIsViaPoint() != other.hasIsViaPoint()) return false;
+      if (hasIsViaPoint()) {
+        if (getIsViaPoint()
+            != other.getIsViaPoint()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -11186,6 +11228,11 @@ public final class InternalMessages {
       if (hasTargetedStopId()) {
         hash = (37 * hash) + TARGETED_STOP_ID_FIELD_NUMBER;
         hash = (53 * hash) + getTargetedStopId().hashCode();
+      }
+      if (hasIsViaPoint()) {
+        hash = (37 * hash) + IS_VIA_POINT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getIsViaPoint());
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -11337,6 +11384,7 @@ public final class InternalMessages {
         lastModifiedUtcMs_ = 0L;
         observedTime_ = false;
         targetedStopId_ = "";
+        isViaPoint_ = false;
         return this;
       }
 
@@ -11416,6 +11464,10 @@ public final class InternalMessages {
         if (((from_bitField0_ & 0x00000400) != 0)) {
           result.targetedStopId_ = targetedStopId_;
           to_bitField0_ |= 0x00000400;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.isViaPoint_ = isViaPoint_;
+          to_bitField0_ |= 0x00000800;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -11500,6 +11552,9 @@ public final class InternalMessages {
           targetedStopId_ = other.targetedStopId_;
           bitField0_ |= 0x00000400;
           onChanged();
+        }
+        if (other.hasIsViaPoint()) {
+          setIsViaPoint(other.getIsViaPoint());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -11622,6 +11677,11 @@ public final class InternalMessages {
                 bitField0_ |= 0x00000400;
                 break;
               } // case 90
+              case 96: {
+                isViaPoint_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 96
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -12302,6 +12362,46 @@ public final class InternalMessages {
         if (value == null) { throw new NullPointerException(); }
         targetedStopId_ = value;
         bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+
+      private boolean isViaPoint_ ;
+      /**
+       * <code>optional bool is_via_point = 12 [default = false];</code>
+       * @return Whether the isViaPoint field is set.
+       */
+      @java.lang.Override
+      public boolean hasIsViaPoint() {
+        return ((bitField0_ & 0x00000800) != 0);
+      }
+      /**
+       * <code>optional bool is_via_point = 12 [default = false];</code>
+       * @return The isViaPoint.
+       */
+      @java.lang.Override
+      public boolean getIsViaPoint() {
+        return isViaPoint_;
+      }
+      /**
+       * <code>optional bool is_via_point = 12 [default = false];</code>
+       * @param value The isViaPoint to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsViaPoint(boolean value) {
+        
+        isViaPoint_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool is_via_point = 12 [default = false];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsViaPoint() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        isViaPoint_ = false;
         onChanged();
         return this;
       }
@@ -18580,7 +18680,7 @@ public final class InternalMessages {
       "HER_OPERATOR_REASON\020-\022\021\n\rUNKNOWN_CAUSE\020." +
       "\022\024\n\020DOOR_MALFUNCTION\020/\022\035\n\031OPERATOR_CHARG" +
       "ING_SERVICE\0200\022\032\n\026OTHER_CHARGING_SERVICE\020" +
-      "1\"\263\003\n\014StopEstimate\022\030\n\rSchemaVersion\030\001 \002(" +
+      "1\"\320\003\n\014StopEstimate\022\030\n\rSchemaVersion\030\001 \002(" +
       "\005:\0011\022\"\n\ttrip_info\030\002 \002(\0132\017.proto.TripInfo" +
       "\022\017\n\007stop_id\030\003 \002(\t\022\025\n\rstop_sequence\030\004 \002(\r" +
       "\022*\n\006status\030\005 \002(\0162\032.proto.StopEstimate.St" +
@@ -18588,54 +18688,55 @@ public final class InternalMessages {
       "Type\022\035\n\025estimated_time_utc_ms\030\007 \001(\003\022\035\n\025s" +
       "cheduled_time_utc_ms\030\010 \001(\003\022\034\n\024last_modif" +
       "ied_utc_ms\030\t \002(\003\022\034\n\robserved_time\030\n \001(\010:" +
-      "\005false\022\030\n\020targeted_stop_id\030\013 \001(\t\"1\n\006Stat" +
-      "us\022\r\n\tSCHEDULED\020\000\022\013\n\007SKIPPED\020\001\022\013\n\007NO_DAT" +
-      "A\020\002\"\"\n\004Type\022\013\n\007ARRIVAL\020\000\022\r\n\tDEPARTURE\020\001\"" +
-      "\344\007\n\010Bulletin\022\023\n\013bulletin_id\030\001 \001(\t\022!\n\010cat" +
-      "egory\030\002 \001(\0162\017.proto.Category\022\034\n\024last_mod" +
-      "ified_utc_ms\030\003 \002(\003\022\031\n\021valid_from_utc_ms\030" +
-      "\004 \002(\003\022\027\n\017valid_to_utc_ms\030\005 \002(\003\022\032\n\022affect" +
-      "s_all_routes\030\006 \001(\010\022\031\n\021affects_all_stops\030" +
-      "\007 \001(\010\0227\n\017affected_routes\030\010 \003(\0132\036.proto.B" +
-      "ulletin.AffectedEntity\0226\n\016affected_stops" +
-      "\030\t \003(\0132\036.proto.Bulletin.AffectedEntity\022&" +
-      "\n\006impact\030\n \001(\0162\026.proto.Bulletin.Impact\022*" +
-      "\n\010priority\030\013 \001(\0162\030.proto.Bulletin.Priori" +
-      "ty\022+\n\006titles\030\014 \003(\0132\033.proto.Bulletin.Tran" +
-      "slation\0221\n\014descriptions\030\r \003(\0132\033.proto.Bu" +
-      "lletin.Translation\022)\n\004urls\030\016 \003(\0132\033.proto" +
-      ".Bulletin.Translation\022\033\n\014display_only\030\017 " +
-      "\001(\010:\005false\032#\n\016AffectedEntity\022\021\n\tentity_i" +
-      "d\030\001 \002(\t\032-\n\013Translation\022\014\n\004text\030\001 \002(\t\022\020\n\010" +
-      "language\030\002 \001(\t\"\246\002\n\006Impact\022\r\n\tCANCELLED\020\000" +
-      "\022\013\n\007DELAYED\020\001\022\026\n\022DEVIATING_SCHEDULE\020\002\022\024\n" +
-      "\020DISRUPTION_ROUTE\020\003\022\030\n\024IRREGULAR_DEPARTU" +
-      "RES\020\004\022\027\n\023POSSIBLE_DEVIATIONS\020\005\022\024\n\020POSSIB" +
-      "LY_DELAYED\020\006\022\025\n\021REDUCED_TRANSPORT\020\007\022\027\n\023R" +
-      "ETURNING_TO_NORMAL\020\010\022 \n\034VENDING_MACHINE_" +
-      "OUT_OF_ORDER\020\t\022\010\n\004NULL\020\n\022\t\n\005OTHER\020\013\022\025\n\021N" +
-      "O_TRAFFIC_IMPACT\020\014\022\013\n\007UNKNOWN\020\r\"-\n\010Prior" +
-      "ity\022\010\n\004INFO\020\000\022\013\n\007WARNING\020\001\022\n\n\006SEVERE\020\002\"L" +
-      "\n\014ServiceAlert\022\030\n\rSchemaVersion\030\001 \002(\005:\0011" +
-      "\022\"\n\tbulletins\030\002 \003(\0132\017.proto.Bulletin*\230\005\n" +
-      "\010Category\022\025\n\021VEHICLE_BREAKDOWN\020\000\022\014\n\010ACCI" +
-      "DENT\020\001\022\r\n\tNO_DRIVER\020\002\022\013\n\007ASSAULT\020\003\022\013\n\007WE" +
-      "ATHER\020\004\022\030\n\024VEHICLE_OFF_THE_ROAD\020\005\022\013\n\007SEI" +
-      "ZURE\020\006\022\024\n\020ITS_SYSTEM_ERROR\020\007\022\026\n\022OTHER_DR" +
-      "IVER_ERROR\020\010\022\027\n\023TOO_MANY_PASSENGERS\020\t\022\n\n" +
-      "\006STRIKE\020\n\022\t\n\005OTHER\020\013\022\026\n\022EARLIER_DISRUPTI" +
-      "ON\020\014\022\031\n\025NO_TRAFFIC_DISRUPTION\020\r\022\021\n\rTRACK" +
-      "_BLOCKED\020\016\022\021\n\rSTAFF_DEFICIT\020\017\022\017\n\013DISTURB" +
-      "ANCE\020\020\022\023\n\017VEHICLE_DEFICIT\020\021\022\017\n\013ROAD_CLOS" +
-      "ED\020\022\022\017\n\013ROAD_TRENCH\020\023\022\025\n\021TRACK_MAINTENAN" +
-      "CE\020\024\022\024\n\020TRAFFIC_ACCIDENT\020\025\022\017\n\013TRAFFIC_JA" +
-      "M\020\026\022\024\n\020MEDICAL_INCIDENT\020\027\022\026\n\022WEATHER_CON" +
-      "DITIONS\020\030\022\025\n\021TECHNICAL_FAILURE\020\031\022\010\n\004TEST" +
-      "\020\032\022\024\n\020ROAD_MAINTENANCE\020\033\022\022\n\016SWITCH_FAILU" +
-      "RE\020\034\022\017\n\013STATE_VISIT\020\035\022\021\n\rPOWER_FAILURE\020\036" +
-      "\022\025\n\021MISPARKED_VEHICLE\020\037\022\020\n\014PUBLIC_EVENT\020" +
-      " \022\024\n\020CHARGING_SERVICE\020!B3\n\037fi.hsl.common" +
-      ".transitdata.protoB\020InternalMessages"
+      "\005false\022\030\n\020targeted_stop_id\030\013 \001(\t\022\033\n\014is_v" +
+      "ia_point\030\014 \001(\010:\005false\"1\n\006Status\022\r\n\tSCHED" +
+      "ULED\020\000\022\013\n\007SKIPPED\020\001\022\013\n\007NO_DATA\020\002\"\"\n\004Type" +
+      "\022\013\n\007ARRIVAL\020\000\022\r\n\tDEPARTURE\020\001\"\344\007\n\010Bulleti" +
+      "n\022\023\n\013bulletin_id\030\001 \001(\t\022!\n\010category\030\002 \001(\016" +
+      "2\017.proto.Category\022\034\n\024last_modified_utc_m" +
+      "s\030\003 \002(\003\022\031\n\021valid_from_utc_ms\030\004 \002(\003\022\027\n\017va" +
+      "lid_to_utc_ms\030\005 \002(\003\022\032\n\022affects_all_route" +
+      "s\030\006 \001(\010\022\031\n\021affects_all_stops\030\007 \001(\010\0227\n\017af" +
+      "fected_routes\030\010 \003(\0132\036.proto.Bulletin.Aff" +
+      "ectedEntity\0226\n\016affected_stops\030\t \003(\0132\036.pr" +
+      "oto.Bulletin.AffectedEntity\022&\n\006impact\030\n " +
+      "\001(\0162\026.proto.Bulletin.Impact\022*\n\010priority\030" +
+      "\013 \001(\0162\030.proto.Bulletin.Priority\022+\n\006title" +
+      "s\030\014 \003(\0132\033.proto.Bulletin.Translation\0221\n\014" +
+      "descriptions\030\r \003(\0132\033.proto.Bulletin.Tran" +
+      "slation\022)\n\004urls\030\016 \003(\0132\033.proto.Bulletin.T" +
+      "ranslation\022\033\n\014display_only\030\017 \001(\010:\005false\032" +
+      "#\n\016AffectedEntity\022\021\n\tentity_id\030\001 \002(\t\032-\n\013" +
+      "Translation\022\014\n\004text\030\001 \002(\t\022\020\n\010language\030\002 " +
+      "\001(\t\"\246\002\n\006Impact\022\r\n\tCANCELLED\020\000\022\013\n\007DELAYED" +
+      "\020\001\022\026\n\022DEVIATING_SCHEDULE\020\002\022\024\n\020DISRUPTION" +
+      "_ROUTE\020\003\022\030\n\024IRREGULAR_DEPARTURES\020\004\022\027\n\023PO" +
+      "SSIBLE_DEVIATIONS\020\005\022\024\n\020POSSIBLY_DELAYED\020" +
+      "\006\022\025\n\021REDUCED_TRANSPORT\020\007\022\027\n\023RETURNING_TO" +
+      "_NORMAL\020\010\022 \n\034VENDING_MACHINE_OUT_OF_ORDE" +
+      "R\020\t\022\010\n\004NULL\020\n\022\t\n\005OTHER\020\013\022\025\n\021NO_TRAFFIC_I" +
+      "MPACT\020\014\022\013\n\007UNKNOWN\020\r\"-\n\010Priority\022\010\n\004INFO" +
+      "\020\000\022\013\n\007WARNING\020\001\022\n\n\006SEVERE\020\002\"L\n\014ServiceAl" +
+      "ert\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\"\n\tbulleti" +
+      "ns\030\002 \003(\0132\017.proto.Bulletin*\230\005\n\010Category\022\025" +
+      "\n\021VEHICLE_BREAKDOWN\020\000\022\014\n\010ACCIDENT\020\001\022\r\n\tN" +
+      "O_DRIVER\020\002\022\013\n\007ASSAULT\020\003\022\013\n\007WEATHER\020\004\022\030\n\024" +
+      "VEHICLE_OFF_THE_ROAD\020\005\022\013\n\007SEIZURE\020\006\022\024\n\020I" +
+      "TS_SYSTEM_ERROR\020\007\022\026\n\022OTHER_DRIVER_ERROR\020" +
+      "\010\022\027\n\023TOO_MANY_PASSENGERS\020\t\022\n\n\006STRIKE\020\n\022\t" +
+      "\n\005OTHER\020\013\022\026\n\022EARLIER_DISRUPTION\020\014\022\031\n\025NO_" +
+      "TRAFFIC_DISRUPTION\020\r\022\021\n\rTRACK_BLOCKED\020\016\022" +
+      "\021\n\rSTAFF_DEFICIT\020\017\022\017\n\013DISTURBANCE\020\020\022\023\n\017V" +
+      "EHICLE_DEFICIT\020\021\022\017\n\013ROAD_CLOSED\020\022\022\017\n\013ROA" +
+      "D_TRENCH\020\023\022\025\n\021TRACK_MAINTENANCE\020\024\022\024\n\020TRA" +
+      "FFIC_ACCIDENT\020\025\022\017\n\013TRAFFIC_JAM\020\026\022\024\n\020MEDI" +
+      "CAL_INCIDENT\020\027\022\026\n\022WEATHER_CONDITIONS\020\030\022\025" +
+      "\n\021TECHNICAL_FAILURE\020\031\022\010\n\004TEST\020\032\022\024\n\020ROAD_" +
+      "MAINTENANCE\020\033\022\022\n\016SWITCH_FAILURE\020\034\022\017\n\013STA" +
+      "TE_VISIT\020\035\022\021\n\rPOWER_FAILURE\020\036\022\025\n\021MISPARK" +
+      "ED_VEHICLE\020\037\022\020\n\014PUBLIC_EVENT\020 \022\024\n\020CHARGI" +
+      "NG_SERVICE\020!B3\n\037fi.hsl.common.transitdat" +
+      "a.protoB\020InternalMessages"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18682,7 +18783,7 @@ public final class InternalMessages {
     internal_static_proto_StopEstimate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_StopEstimate_descriptor,
-        new java.lang.String[] { "SchemaVersion", "TripInfo", "StopId", "StopSequence", "Status", "Type", "EstimatedTimeUtcMs", "ScheduledTimeUtcMs", "LastModifiedUtcMs", "ObservedTime", "TargetedStopId", });
+        new java.lang.String[] { "SchemaVersion", "TripInfo", "StopId", "StopSequence", "Status", "Type", "EstimatedTimeUtcMs", "ScheduledTimeUtcMs", "LastModifiedUtcMs", "ObservedTime", "TargetedStopId", "IsViaPoint", });
     internal_static_proto_Bulletin_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_proto_Bulletin_fieldAccessorTable = new
