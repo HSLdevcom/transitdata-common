@@ -5234,6 +5234,857 @@ public final class GtfsRealtime {
 
     }
 
+    public interface StopTimePropertiesOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:transit_realtime.TripUpdate.StopTimeProperties)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * Supports real-time stop assignments. Refers to a stop_id defined in the
+       * GTFS stops.txt.
+       * The new assigned_stop_id should not result in a significantly different
+       * trip experience for the end user than the stop_id defined in GTFS
+       * stop_times.txt. In other words, the end user should not view this new
+       * stop_id as an "unusual change" if the new stop was presented within an
+       * app without any additional context. For example, this field is intended
+       * to be used for platform assignments by using a stop_id that belongs to
+       * the same station as the stop originally defined in GTFS stop_times.txt.
+       * To assign a stop without providing any real-time arrival or departure
+       * predictions, populate this field and set
+       * StopTimeUpdate.schedule_relationship = NO_DATA.
+       * If this field is populated, StopTimeUpdate.stop_sequence must be
+       * populated and StopTimeUpdate.stop_id should not be populated. Stop
+       * assignments should be reflected in other GTFS-realtime fields as well
+       * (e.g., VehiclePosition.stop_id).
+       * Caution: this field is still experimental, and subject to change. It
+       * may be formally adopted in the future.
+       * </pre>
+       *
+       * <code>optional string assigned_stop_id = 1;</code>
+       * @return Whether the assignedStopId field is set.
+       */
+      boolean hasAssignedStopId();
+      /**
+       * <pre>
+       * Supports real-time stop assignments. Refers to a stop_id defined in the
+       * GTFS stops.txt.
+       * The new assigned_stop_id should not result in a significantly different
+       * trip experience for the end user than the stop_id defined in GTFS
+       * stop_times.txt. In other words, the end user should not view this new
+       * stop_id as an "unusual change" if the new stop was presented within an
+       * app without any additional context. For example, this field is intended
+       * to be used for platform assignments by using a stop_id that belongs to
+       * the same station as the stop originally defined in GTFS stop_times.txt.
+       * To assign a stop without providing any real-time arrival or departure
+       * predictions, populate this field and set
+       * StopTimeUpdate.schedule_relationship = NO_DATA.
+       * If this field is populated, StopTimeUpdate.stop_sequence must be
+       * populated and StopTimeUpdate.stop_id should not be populated. Stop
+       * assignments should be reflected in other GTFS-realtime fields as well
+       * (e.g., VehiclePosition.stop_id).
+       * Caution: this field is still experimental, and subject to change. It
+       * may be formally adopted in the future.
+       * </pre>
+       *
+       * <code>optional string assigned_stop_id = 1;</code>
+       * @return The assignedStopId.
+       */
+      java.lang.String getAssignedStopId();
+      /**
+       * <pre>
+       * Supports real-time stop assignments. Refers to a stop_id defined in the
+       * GTFS stops.txt.
+       * The new assigned_stop_id should not result in a significantly different
+       * trip experience for the end user than the stop_id defined in GTFS
+       * stop_times.txt. In other words, the end user should not view this new
+       * stop_id as an "unusual change" if the new stop was presented within an
+       * app without any additional context. For example, this field is intended
+       * to be used for platform assignments by using a stop_id that belongs to
+       * the same station as the stop originally defined in GTFS stop_times.txt.
+       * To assign a stop without providing any real-time arrival or departure
+       * predictions, populate this field and set
+       * StopTimeUpdate.schedule_relationship = NO_DATA.
+       * If this field is populated, StopTimeUpdate.stop_sequence must be
+       * populated and StopTimeUpdate.stop_id should not be populated. Stop
+       * assignments should be reflected in other GTFS-realtime fields as well
+       * (e.g., VehiclePosition.stop_id).
+       * Caution: this field is still experimental, and subject to change. It
+       * may be formally adopted in the future.
+       * </pre>
+       *
+       * <code>optional string assigned_stop_id = 1;</code>
+       * @return The bytes for assignedStopId.
+       */
+      com.google.protobuf.ByteString
+          getAssignedStopIdBytes();
+    }
+    /**
+     * <pre>
+     * Realtime update for certain properties defined within GTFS stop_times.txt.
+     * Caution: this message is still experimental, and subject to change. It
+     * may be formally adopted in the future.
+     * </pre>
+     *
+     * Protobuf type {@code transit_realtime.TripUpdate.StopTimeProperties}
+     */
+    public static final class StopTimeProperties extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:transit_realtime.TripUpdate.StopTimeProperties)
+        StopTimePropertiesOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use StopTimeProperties.newBuilder() to construct.
+      private StopTimeProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private StopTimeProperties() {
+        assignedStopId_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new StopTimeProperties();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.transit.realtime.GtfsRealtime.internal_static_transit_realtime_TripUpdate_StopTimeProperties_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.transit.realtime.GtfsRealtime.internal_static_transit_realtime_TripUpdate_StopTimeProperties_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties.class, com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int ASSIGNED_STOP_ID_FIELD_NUMBER = 1;
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object assignedStopId_ = "";
+      /**
+       * <pre>
+       * Supports real-time stop assignments. Refers to a stop_id defined in the
+       * GTFS stops.txt.
+       * The new assigned_stop_id should not result in a significantly different
+       * trip experience for the end user than the stop_id defined in GTFS
+       * stop_times.txt. In other words, the end user should not view this new
+       * stop_id as an "unusual change" if the new stop was presented within an
+       * app without any additional context. For example, this field is intended
+       * to be used for platform assignments by using a stop_id that belongs to
+       * the same station as the stop originally defined in GTFS stop_times.txt.
+       * To assign a stop without providing any real-time arrival or departure
+       * predictions, populate this field and set
+       * StopTimeUpdate.schedule_relationship = NO_DATA.
+       * If this field is populated, StopTimeUpdate.stop_sequence must be
+       * populated and StopTimeUpdate.stop_id should not be populated. Stop
+       * assignments should be reflected in other GTFS-realtime fields as well
+       * (e.g., VehiclePosition.stop_id).
+       * Caution: this field is still experimental, and subject to change. It
+       * may be formally adopted in the future.
+       * </pre>
+       *
+       * <code>optional string assigned_stop_id = 1;</code>
+       * @return Whether the assignedStopId field is set.
+       */
+      @java.lang.Override
+      public boolean hasAssignedStopId() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <pre>
+       * Supports real-time stop assignments. Refers to a stop_id defined in the
+       * GTFS stops.txt.
+       * The new assigned_stop_id should not result in a significantly different
+       * trip experience for the end user than the stop_id defined in GTFS
+       * stop_times.txt. In other words, the end user should not view this new
+       * stop_id as an "unusual change" if the new stop was presented within an
+       * app without any additional context. For example, this field is intended
+       * to be used for platform assignments by using a stop_id that belongs to
+       * the same station as the stop originally defined in GTFS stop_times.txt.
+       * To assign a stop without providing any real-time arrival or departure
+       * predictions, populate this field and set
+       * StopTimeUpdate.schedule_relationship = NO_DATA.
+       * If this field is populated, StopTimeUpdate.stop_sequence must be
+       * populated and StopTimeUpdate.stop_id should not be populated. Stop
+       * assignments should be reflected in other GTFS-realtime fields as well
+       * (e.g., VehiclePosition.stop_id).
+       * Caution: this field is still experimental, and subject to change. It
+       * may be formally adopted in the future.
+       * </pre>
+       *
+       * <code>optional string assigned_stop_id = 1;</code>
+       * @return The assignedStopId.
+       */
+      @java.lang.Override
+      public java.lang.String getAssignedStopId() {
+        java.lang.Object ref = assignedStopId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            assignedStopId_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Supports real-time stop assignments. Refers to a stop_id defined in the
+       * GTFS stops.txt.
+       * The new assigned_stop_id should not result in a significantly different
+       * trip experience for the end user than the stop_id defined in GTFS
+       * stop_times.txt. In other words, the end user should not view this new
+       * stop_id as an "unusual change" if the new stop was presented within an
+       * app without any additional context. For example, this field is intended
+       * to be used for platform assignments by using a stop_id that belongs to
+       * the same station as the stop originally defined in GTFS stop_times.txt.
+       * To assign a stop without providing any real-time arrival or departure
+       * predictions, populate this field and set
+       * StopTimeUpdate.schedule_relationship = NO_DATA.
+       * If this field is populated, StopTimeUpdate.stop_sequence must be
+       * populated and StopTimeUpdate.stop_id should not be populated. Stop
+       * assignments should be reflected in other GTFS-realtime fields as well
+       * (e.g., VehiclePosition.stop_id).
+       * Caution: this field is still experimental, and subject to change. It
+       * may be formally adopted in the future.
+       * </pre>
+       *
+       * <code>optional string assigned_stop_id = 1;</code>
+       * @return The bytes for assignedStopId.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getAssignedStopIdBytes() {
+        java.lang.Object ref = assignedStopId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          assignedStopId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, assignedStopId_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, assignedStopId_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties)) {
+          return super.equals(obj);
+        }
+        com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties other = (com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties) obj;
+
+        if (hasAssignedStopId() != other.hasAssignedStopId()) return false;
+        if (hasAssignedStopId()) {
+          if (!getAssignedStopId()
+              .equals(other.getAssignedStopId())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasAssignedStopId()) {
+          hash = (37 * hash) + ASSIGNED_STOP_ID_FIELD_NUMBER;
+          hash = (53 * hash) + getAssignedStopId().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * Realtime update for certain properties defined within GTFS stop_times.txt.
+       * Caution: this message is still experimental, and subject to change. It
+       * may be formally adopted in the future.
+       * </pre>
+       *
+       * Protobuf type {@code transit_realtime.TripUpdate.StopTimeProperties}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:transit_realtime.TripUpdate.StopTimeProperties)
+          com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimePropertiesOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.google.transit.realtime.GtfsRealtime.internal_static_transit_realtime_TripUpdate_StopTimeProperties_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.transit.realtime.GtfsRealtime.internal_static_transit_realtime_TripUpdate_StopTimeProperties_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties.class, com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties.Builder.class);
+        }
+
+        // Construct using com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties.newBuilder()
+        private Builder() {
+
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          assignedStopId_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.google.transit.realtime.GtfsRealtime.internal_static_transit_realtime_TripUpdate_StopTimeProperties_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties getDefaultInstanceForType() {
+          return com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties build() {
+          com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties buildPartial() {
+          com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties result = new com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.assignedStopId_ = assignedStopId_;
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties) {
+            return mergeFrom((com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties other) {
+          if (other == com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties.getDefaultInstance()) return this;
+          if (other.hasAssignedStopId()) {
+            assignedStopId_ = other.assignedStopId_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  assignedStopId_ = input.readBytes();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+        private int bitField0_;
+
+        private java.lang.Object assignedStopId_ = "";
+        /**
+         * <pre>
+         * Supports real-time stop assignments. Refers to a stop_id defined in the
+         * GTFS stops.txt.
+         * The new assigned_stop_id should not result in a significantly different
+         * trip experience for the end user than the stop_id defined in GTFS
+         * stop_times.txt. In other words, the end user should not view this new
+         * stop_id as an "unusual change" if the new stop was presented within an
+         * app without any additional context. For example, this field is intended
+         * to be used for platform assignments by using a stop_id that belongs to
+         * the same station as the stop originally defined in GTFS stop_times.txt.
+         * To assign a stop without providing any real-time arrival or departure
+         * predictions, populate this field and set
+         * StopTimeUpdate.schedule_relationship = NO_DATA.
+         * If this field is populated, StopTimeUpdate.stop_sequence must be
+         * populated and StopTimeUpdate.stop_id should not be populated. Stop
+         * assignments should be reflected in other GTFS-realtime fields as well
+         * (e.g., VehiclePosition.stop_id).
+         * Caution: this field is still experimental, and subject to change. It
+         * may be formally adopted in the future.
+         * </pre>
+         *
+         * <code>optional string assigned_stop_id = 1;</code>
+         * @return Whether the assignedStopId field is set.
+         */
+        public boolean hasAssignedStopId() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         * <pre>
+         * Supports real-time stop assignments. Refers to a stop_id defined in the
+         * GTFS stops.txt.
+         * The new assigned_stop_id should not result in a significantly different
+         * trip experience for the end user than the stop_id defined in GTFS
+         * stop_times.txt. In other words, the end user should not view this new
+         * stop_id as an "unusual change" if the new stop was presented within an
+         * app without any additional context. For example, this field is intended
+         * to be used for platform assignments by using a stop_id that belongs to
+         * the same station as the stop originally defined in GTFS stop_times.txt.
+         * To assign a stop without providing any real-time arrival or departure
+         * predictions, populate this field and set
+         * StopTimeUpdate.schedule_relationship = NO_DATA.
+         * If this field is populated, StopTimeUpdate.stop_sequence must be
+         * populated and StopTimeUpdate.stop_id should not be populated. Stop
+         * assignments should be reflected in other GTFS-realtime fields as well
+         * (e.g., VehiclePosition.stop_id).
+         * Caution: this field is still experimental, and subject to change. It
+         * may be formally adopted in the future.
+         * </pre>
+         *
+         * <code>optional string assigned_stop_id = 1;</code>
+         * @return The assignedStopId.
+         */
+        public java.lang.String getAssignedStopId() {
+          java.lang.Object ref = assignedStopId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              assignedStopId_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Supports real-time stop assignments. Refers to a stop_id defined in the
+         * GTFS stops.txt.
+         * The new assigned_stop_id should not result in a significantly different
+         * trip experience for the end user than the stop_id defined in GTFS
+         * stop_times.txt. In other words, the end user should not view this new
+         * stop_id as an "unusual change" if the new stop was presented within an
+         * app without any additional context. For example, this field is intended
+         * to be used for platform assignments by using a stop_id that belongs to
+         * the same station as the stop originally defined in GTFS stop_times.txt.
+         * To assign a stop without providing any real-time arrival or departure
+         * predictions, populate this field and set
+         * StopTimeUpdate.schedule_relationship = NO_DATA.
+         * If this field is populated, StopTimeUpdate.stop_sequence must be
+         * populated and StopTimeUpdate.stop_id should not be populated. Stop
+         * assignments should be reflected in other GTFS-realtime fields as well
+         * (e.g., VehiclePosition.stop_id).
+         * Caution: this field is still experimental, and subject to change. It
+         * may be formally adopted in the future.
+         * </pre>
+         *
+         * <code>optional string assigned_stop_id = 1;</code>
+         * @return The bytes for assignedStopId.
+         */
+        public com.google.protobuf.ByteString
+            getAssignedStopIdBytes() {
+          java.lang.Object ref = assignedStopId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            assignedStopId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Supports real-time stop assignments. Refers to a stop_id defined in the
+         * GTFS stops.txt.
+         * The new assigned_stop_id should not result in a significantly different
+         * trip experience for the end user than the stop_id defined in GTFS
+         * stop_times.txt. In other words, the end user should not view this new
+         * stop_id as an "unusual change" if the new stop was presented within an
+         * app without any additional context. For example, this field is intended
+         * to be used for platform assignments by using a stop_id that belongs to
+         * the same station as the stop originally defined in GTFS stop_times.txt.
+         * To assign a stop without providing any real-time arrival or departure
+         * predictions, populate this field and set
+         * StopTimeUpdate.schedule_relationship = NO_DATA.
+         * If this field is populated, StopTimeUpdate.stop_sequence must be
+         * populated and StopTimeUpdate.stop_id should not be populated. Stop
+         * assignments should be reflected in other GTFS-realtime fields as well
+         * (e.g., VehiclePosition.stop_id).
+         * Caution: this field is still experimental, and subject to change. It
+         * may be formally adopted in the future.
+         * </pre>
+         *
+         * <code>optional string assigned_stop_id = 1;</code>
+         * @param value The assignedStopId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAssignedStopId(
+            java.lang.String value) {
+          if (value == null) { throw new NullPointerException(); }
+          assignedStopId_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Supports real-time stop assignments. Refers to a stop_id defined in the
+         * GTFS stops.txt.
+         * The new assigned_stop_id should not result in a significantly different
+         * trip experience for the end user than the stop_id defined in GTFS
+         * stop_times.txt. In other words, the end user should not view this new
+         * stop_id as an "unusual change" if the new stop was presented within an
+         * app without any additional context. For example, this field is intended
+         * to be used for platform assignments by using a stop_id that belongs to
+         * the same station as the stop originally defined in GTFS stop_times.txt.
+         * To assign a stop without providing any real-time arrival or departure
+         * predictions, populate this field and set
+         * StopTimeUpdate.schedule_relationship = NO_DATA.
+         * If this field is populated, StopTimeUpdate.stop_sequence must be
+         * populated and StopTimeUpdate.stop_id should not be populated. Stop
+         * assignments should be reflected in other GTFS-realtime fields as well
+         * (e.g., VehiclePosition.stop_id).
+         * Caution: this field is still experimental, and subject to change. It
+         * may be formally adopted in the future.
+         * </pre>
+         *
+         * <code>optional string assigned_stop_id = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearAssignedStopId() {
+          assignedStopId_ = getDefaultInstance().getAssignedStopId();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Supports real-time stop assignments. Refers to a stop_id defined in the
+         * GTFS stops.txt.
+         * The new assigned_stop_id should not result in a significantly different
+         * trip experience for the end user than the stop_id defined in GTFS
+         * stop_times.txt. In other words, the end user should not view this new
+         * stop_id as an "unusual change" if the new stop was presented within an
+         * app without any additional context. For example, this field is intended
+         * to be used for platform assignments by using a stop_id that belongs to
+         * the same station as the stop originally defined in GTFS stop_times.txt.
+         * To assign a stop without providing any real-time arrival or departure
+         * predictions, populate this field and set
+         * StopTimeUpdate.schedule_relationship = NO_DATA.
+         * If this field is populated, StopTimeUpdate.stop_sequence must be
+         * populated and StopTimeUpdate.stop_id should not be populated. Stop
+         * assignments should be reflected in other GTFS-realtime fields as well
+         * (e.g., VehiclePosition.stop_id).
+         * Caution: this field is still experimental, and subject to change. It
+         * may be formally adopted in the future.
+         * </pre>
+         *
+         * <code>optional string assigned_stop_id = 1;</code>
+         * @param value The bytes for assignedStopId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAssignedStopIdBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) { throw new NullPointerException(); }
+          assignedStopId_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:transit_realtime.TripUpdate.StopTimeProperties)
+      }
+
+      // @@protoc_insertion_point(class_scope:transit_realtime.TripUpdate.StopTimeProperties)
+      private static final com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties();
+      }
+
+      public static com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<StopTimeProperties>
+          PARSER = new com.google.protobuf.AbstractParser<StopTimeProperties>() {
+        @java.lang.Override
+        public StopTimeProperties parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
+
+      public static com.google.protobuf.Parser<StopTimeProperties> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<StopTimeProperties> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
     public interface StopTimeUpdateOrBuilder extends
         // @@protoc_insertion_point(interface_extends:transit_realtime.TripUpdate.StopTimeUpdate)
         com.google.protobuf.GeneratedMessageV3.
@@ -5327,6 +6178,21 @@ public final class GtfsRealtime {
        * @return The scheduleRelationship.
        */
       com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeUpdate.ScheduleRelationship getScheduleRelationship();
+
+      /**
+       * <code>optional .transit_realtime.TripUpdate.StopTimeProperties stop_time_properties = 6;</code>
+       * @return Whether the stopTimeProperties field is set.
+       */
+      boolean hasStopTimeProperties();
+      /**
+       * <code>optional .transit_realtime.TripUpdate.StopTimeProperties stop_time_properties = 6;</code>
+       * @return The stopTimeProperties.
+       */
+      com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties getStopTimeProperties();
+      /**
+       * <code>optional .transit_realtime.TripUpdate.StopTimeProperties stop_time_properties = 6;</code>
+       */
+      com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimePropertiesOrBuilder getStopTimePropertiesOrBuilder();
     }
     /**
      * <pre>
@@ -5687,6 +6553,32 @@ public final class GtfsRealtime {
         return result == null ? com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeUpdate.ScheduleRelationship.SCHEDULED : result;
       }
 
+      public static final int STOP_TIME_PROPERTIES_FIELD_NUMBER = 6;
+      private com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties stopTimeProperties_;
+      /**
+       * <code>optional .transit_realtime.TripUpdate.StopTimeProperties stop_time_properties = 6;</code>
+       * @return Whether the stopTimeProperties field is set.
+       */
+      @java.lang.Override
+      public boolean hasStopTimeProperties() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       * <code>optional .transit_realtime.TripUpdate.StopTimeProperties stop_time_properties = 6;</code>
+       * @return The stopTimeProperties.
+       */
+      @java.lang.Override
+      public com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties getStopTimeProperties() {
+        return stopTimeProperties_ == null ? com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties.getDefaultInstance() : stopTimeProperties_;
+      }
+      /**
+       * <code>optional .transit_realtime.TripUpdate.StopTimeProperties stop_time_properties = 6;</code>
+       */
+      @java.lang.Override
+      public com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimePropertiesOrBuilder getStopTimePropertiesOrBuilder() {
+        return stopTimeProperties_ == null ? com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties.getDefaultInstance() : stopTimeProperties_;
+      }
+
       private byte memoizedIsInitialized = -1;
       @java.lang.Override
       public final boolean isInitialized() {
@@ -5735,6 +6627,9 @@ public final class GtfsRealtime {
         if (((bitField0_ & 0x00000010) != 0)) {
           output.writeEnum(5, scheduleRelationship_);
         }
+        if (((bitField0_ & 0x00000020) != 0)) {
+          output.writeMessage(6, getStopTimeProperties());
+        }
         extensionWriter.writeUntil(2000, output);
         getUnknownFields().writeTo(output);
       }
@@ -5763,6 +6658,10 @@ public final class GtfsRealtime {
         if (((bitField0_ & 0x00000010) != 0)) {
           size += com.google.protobuf.CodedOutputStream
             .computeEnumSize(5, scheduleRelationship_);
+        }
+        if (((bitField0_ & 0x00000020) != 0)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(6, getStopTimeProperties());
         }
         size += extensionsSerializedSize();
         size += getUnknownFields().getSerializedSize();
@@ -5804,6 +6703,11 @@ public final class GtfsRealtime {
         if (hasScheduleRelationship()) {
           if (scheduleRelationship_ != other.scheduleRelationship_) return false;
         }
+        if (hasStopTimeProperties() != other.hasStopTimeProperties()) return false;
+        if (hasStopTimeProperties()) {
+          if (!getStopTimeProperties()
+              .equals(other.getStopTimeProperties())) return false;
+        }
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         if (!getExtensionFields().equals(other.getExtensionFields()))
           return false;
@@ -5836,6 +6740,10 @@ public final class GtfsRealtime {
         if (hasScheduleRelationship()) {
           hash = (37 * hash) + SCHEDULE_RELATIONSHIP_FIELD_NUMBER;
           hash = (53 * hash) + scheduleRelationship_;
+        }
+        if (hasStopTimeProperties()) {
+          hash = (37 * hash) + STOP_TIME_PROPERTIES_FIELD_NUMBER;
+          hash = (53 * hash) + getStopTimeProperties().hashCode();
         }
         hash = hashFields(hash, getExtensionFields());
         hash = (29 * hash) + getUnknownFields().hashCode();
@@ -5975,6 +6883,7 @@ public final class GtfsRealtime {
                   .alwaysUseFieldBuilders) {
             getArrivalFieldBuilder();
             getDepartureFieldBuilder();
+            getStopTimePropertiesFieldBuilder();
           }
         }
         @java.lang.Override
@@ -5994,6 +6903,11 @@ public final class GtfsRealtime {
             departureBuilder_ = null;
           }
           scheduleRelationship_ = 0;
+          stopTimeProperties_ = null;
+          if (stopTimePropertiesBuilder_ != null) {
+            stopTimePropertiesBuilder_.dispose();
+            stopTimePropertiesBuilder_ = null;
+          }
           return this;
         }
 
@@ -6051,6 +6965,12 @@ public final class GtfsRealtime {
           if (((from_bitField0_ & 0x00000010) != 0)) {
             result.scheduleRelationship_ = scheduleRelationship_;
             to_bitField0_ |= 0x00000010;
+          }
+          if (((from_bitField0_ & 0x00000020) != 0)) {
+            result.stopTimeProperties_ = stopTimePropertiesBuilder_ == null
+                ? stopTimeProperties_
+                : stopTimePropertiesBuilder_.build();
+            to_bitField0_ |= 0x00000020;
           }
           result.bitField0_ |= to_bitField0_;
         }
@@ -6143,6 +7063,9 @@ public final class GtfsRealtime {
           if (other.hasScheduleRelationship()) {
             setScheduleRelationship(other.getScheduleRelationship());
           }
+          if (other.hasStopTimeProperties()) {
+            mergeStopTimeProperties(other.getStopTimeProperties());
+          }
           this.mergeExtensionFields(other);
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
@@ -6219,6 +7142,13 @@ public final class GtfsRealtime {
                   }
                   break;
                 } // case 40
+                case 50: {
+                  input.readMessage(
+                      getStopTimePropertiesFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
                 default: {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                     done = true; // was an endgroup tag
@@ -6674,6 +7604,125 @@ public final class GtfsRealtime {
           scheduleRelationship_ = 0;
           onChanged();
           return this;
+        }
+
+        private com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties stopTimeProperties_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties, com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties.Builder, com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimePropertiesOrBuilder> stopTimePropertiesBuilder_;
+        /**
+         * <code>optional .transit_realtime.TripUpdate.StopTimeProperties stop_time_properties = 6;</code>
+         * @return Whether the stopTimeProperties field is set.
+         */
+        public boolean hasStopTimeProperties() {
+          return ((bitField0_ & 0x00000020) != 0);
+        }
+        /**
+         * <code>optional .transit_realtime.TripUpdate.StopTimeProperties stop_time_properties = 6;</code>
+         * @return The stopTimeProperties.
+         */
+        public com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties getStopTimeProperties() {
+          if (stopTimePropertiesBuilder_ == null) {
+            return stopTimeProperties_ == null ? com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties.getDefaultInstance() : stopTimeProperties_;
+          } else {
+            return stopTimePropertiesBuilder_.getMessage();
+          }
+        }
+        /**
+         * <code>optional .transit_realtime.TripUpdate.StopTimeProperties stop_time_properties = 6;</code>
+         */
+        public Builder setStopTimeProperties(com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties value) {
+          if (stopTimePropertiesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            stopTimeProperties_ = value;
+          } else {
+            stopTimePropertiesBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional .transit_realtime.TripUpdate.StopTimeProperties stop_time_properties = 6;</code>
+         */
+        public Builder setStopTimeProperties(
+            com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties.Builder builderForValue) {
+          if (stopTimePropertiesBuilder_ == null) {
+            stopTimeProperties_ = builderForValue.build();
+          } else {
+            stopTimePropertiesBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional .transit_realtime.TripUpdate.StopTimeProperties stop_time_properties = 6;</code>
+         */
+        public Builder mergeStopTimeProperties(com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties value) {
+          if (stopTimePropertiesBuilder_ == null) {
+            if (((bitField0_ & 0x00000020) != 0) &&
+              stopTimeProperties_ != null &&
+              stopTimeProperties_ != com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties.getDefaultInstance()) {
+              getStopTimePropertiesBuilder().mergeFrom(value);
+            } else {
+              stopTimeProperties_ = value;
+            }
+          } else {
+            stopTimePropertiesBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional .transit_realtime.TripUpdate.StopTimeProperties stop_time_properties = 6;</code>
+         */
+        public Builder clearStopTimeProperties() {
+          bitField0_ = (bitField0_ & ~0x00000020);
+          stopTimeProperties_ = null;
+          if (stopTimePropertiesBuilder_ != null) {
+            stopTimePropertiesBuilder_.dispose();
+            stopTimePropertiesBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional .transit_realtime.TripUpdate.StopTimeProperties stop_time_properties = 6;</code>
+         */
+        public com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties.Builder getStopTimePropertiesBuilder() {
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return getStopTimePropertiesFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>optional .transit_realtime.TripUpdate.StopTimeProperties stop_time_properties = 6;</code>
+         */
+        public com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimePropertiesOrBuilder getStopTimePropertiesOrBuilder() {
+          if (stopTimePropertiesBuilder_ != null) {
+            return stopTimePropertiesBuilder_.getMessageOrBuilder();
+          } else {
+            return stopTimeProperties_ == null ?
+                com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties.getDefaultInstance() : stopTimeProperties_;
+          }
+        }
+        /**
+         * <code>optional .transit_realtime.TripUpdate.StopTimeProperties stop_time_properties = 6;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties, com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties.Builder, com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimePropertiesOrBuilder> 
+            getStopTimePropertiesFieldBuilder() {
+          if (stopTimePropertiesBuilder_ == null) {
+            stopTimePropertiesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties, com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimeProperties.Builder, com.google.transit.realtime.GtfsRealtime.TripUpdate.StopTimePropertiesOrBuilder>(
+                    getStopTimeProperties(),
+                    getParentForChildren(),
+                    isClean());
+            stopTimeProperties_ = null;
+          }
+          return stopTimePropertiesBuilder_;
         }
         @java.lang.Override
         public final Builder setUnknownFields(
@@ -23888,6 +24937,11 @@ public final class GtfsRealtime {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_transit_realtime_TripUpdate_StopTimeEvent_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_transit_realtime_TripUpdate_StopTimeProperties_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_transit_realtime_TripUpdate_StopTimeProperties_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_transit_realtime_TripUpdate_StopTimeUpdate_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -23960,95 +25014,98 @@ public final class GtfsRealtime {
       "\034.transit_realtime.TripUpdate\0222\n\007vehicle" +
       "\030\004 \001(\0132!.transit_realtime.VehiclePositio" +
       "n\022&\n\005alert\030\005 \001(\0132\027.transit_realtime.Aler" +
-      "t*\006\010\350\007\020\320\017\"\232\005\n\nTripUpdate\022.\n\004trip\030\001 \002(\0132 " +
+      "t*\006\010\350\007\020\320\017\"\231\006\n\nTripUpdate\022.\n\004trip\030\001 \002(\0132 " +
       ".transit_realtime.TripDescriptor\0224\n\007vehi" +
       "cle\030\003 \001(\0132#.transit_realtime.VehicleDesc" +
       "riptor\022E\n\020stop_time_update\030\002 \003(\0132+.trans" +
       "it_realtime.TripUpdate.StopTimeUpdate\022\021\n" +
       "\ttimestamp\030\004 \001(\004\022\r\n\005delay\030\005 \001(\005\032I\n\rStopT" +
       "imeEvent\022\r\n\005delay\030\001 \001(\005\022\014\n\004time\030\002 \001(\003\022\023\n" +
-      "\013uncertainty\030\003 \001(\005*\006\010\350\007\020\320\017\032\351\002\n\016StopTimeU" +
-      "pdate\022\025\n\rstop_sequence\030\001 \001(\r\022\017\n\007stop_id\030" +
-      "\004 \001(\t\022;\n\007arrival\030\002 \001(\0132*.transit_realtim" +
-      "e.TripUpdate.StopTimeEvent\022=\n\tdeparture\030" +
-      "\003 \001(\0132*.transit_realtime.TripUpdate.Stop" +
-      "TimeEvent\022j\n\025schedule_relationship\030\005 \001(\016" +
-      "2@.transit_realtime.TripUpdate.StopTimeU" +
-      "pdate.ScheduleRelationship:\tSCHEDULED\"?\n" +
-      "\024ScheduleRelationship\022\r\n\tSCHEDULED\020\000\022\013\n\007" +
-      "SKIPPED\020\001\022\013\n\007NO_DATA\020\002*\006\010\350\007\020\320\017*\006\010\350\007\020\320\017\"\340" +
-      "\006\n\017VehiclePosition\022.\n\004trip\030\001 \001(\0132 .trans" +
-      "it_realtime.TripDescriptor\0224\n\007vehicle\030\010 " +
-      "\001(\0132#.transit_realtime.VehicleDescriptor" +
-      "\022,\n\010position\030\002 \001(\0132\032.transit_realtime.Po" +
-      "sition\022\035\n\025current_stop_sequence\030\003 \001(\r\022\017\n" +
-      "\007stop_id\030\007 \001(\t\022Z\n\016current_status\030\004 \001(\01623" +
-      ".transit_realtime.VehiclePosition.Vehicl" +
-      "eStopStatus:\rIN_TRANSIT_TO\022\021\n\ttimestamp\030" +
-      "\005 \001(\004\022K\n\020congestion_level\030\006 \001(\01621.transi" +
-      "t_realtime.VehiclePosition.CongestionLev" +
-      "el\022K\n\020occupancy_status\030\t \001(\01621.transit_r" +
-      "ealtime.VehiclePosition.OccupancyStatus\"" +
-      "G\n\021VehicleStopStatus\022\017\n\013INCOMING_AT\020\000\022\016\n" +
-      "\nSTOPPED_AT\020\001\022\021\n\rIN_TRANSIT_TO\020\002\"}\n\017Cong" +
-      "estionLevel\022\034\n\030UNKNOWN_CONGESTION_LEVEL\020" +
-      "\000\022\024\n\020RUNNING_SMOOTHLY\020\001\022\017\n\013STOP_AND_GO\020\002" +
-      "\022\016\n\nCONGESTION\020\003\022\025\n\021SEVERE_CONGESTION\020\004\"" +
-      "\257\001\n\017OccupancyStatus\022\t\n\005EMPTY\020\000\022\030\n\024MANY_S" +
-      "EATS_AVAILABLE\020\001\022\027\n\023FEW_SEATS_AVAILABLE\020" +
-      "\002\022\026\n\022STANDING_ROOM_ONLY\020\003\022\036\n\032CRUSHED_STA" +
-      "NDING_ROOM_ONLY\020\004\022\010\n\004FULL\020\005\022\034\n\030NOT_ACCEP" +
-      "TING_PASSENGERS\020\006*\006\010\350\007\020\320\017\"\337\010\n\005Alert\0222\n\ra" +
-      "ctive_period\030\001 \003(\0132\033.transit_realtime.Ti" +
-      "meRange\0229\n\017informed_entity\030\005 \003(\0132 .trans" +
-      "it_realtime.EntitySelector\022;\n\005cause\030\006 \001(" +
-      "\0162\035.transit_realtime.Alert.Cause:\rUNKNOW" +
-      "N_CAUSE\022>\n\006effect\030\007 \001(\0162\036.transit_realti" +
-      "me.Alert.Effect:\016UNKNOWN_EFFECT\022/\n\003url\030\010" +
-      " \001(\0132\".transit_realtime.TranslatedString" +
-      "\0227\n\013header_text\030\n \001(\0132\".transit_realtime" +
-      ".TranslatedString\022<\n\020description_text\030\013 " +
-      "\001(\0132\".transit_realtime.TranslatedString\022" +
-      ";\n\017tts_header_text\030\014 \001(\0132\".transit_realt" +
-      "ime.TranslatedString\022@\n\024tts_description_" +
-      "text\030\r \001(\0132\".transit_realtime.Translated" +
-      "String\022O\n\016severity_level\030\016 \001(\0162%.transit" +
-      "_realtime.Alert.SeverityLevel:\020UNKNOWN_S" +
-      "EVERITY\"\330\001\n\005Cause\022\021\n\rUNKNOWN_CAUSE\020\001\022\017\n\013" +
-      "OTHER_CAUSE\020\002\022\025\n\021TECHNICAL_PROBLEM\020\003\022\n\n\006" +
-      "STRIKE\020\004\022\021\n\rDEMONSTRATION\020\005\022\014\n\010ACCIDENT\020" +
-      "\006\022\013\n\007HOLIDAY\020\007\022\013\n\007WEATHER\020\010\022\017\n\013MAINTENAN" +
-      "CE\020\t\022\020\n\014CONSTRUCTION\020\n\022\023\n\017POLICE_ACTIVIT" +
-      "Y\020\013\022\025\n\021MEDICAL_EMERGENCY\020\014\"\304\001\n\006Effect\022\016\n" +
-      "\nNO_SERVICE\020\001\022\023\n\017REDUCED_SERVICE\020\002\022\026\n\022SI" +
-      "GNIFICANT_DELAYS\020\003\022\n\n\006DETOUR\020\004\022\026\n\022ADDITI" +
-      "ONAL_SERVICE\020\005\022\024\n\020MODIFIED_SERVICE\020\006\022\020\n\014" +
-      "OTHER_EFFECT\020\007\022\022\n\016UNKNOWN_EFFECT\020\010\022\016\n\nST" +
-      "OP_MOVED\020\t\022\r\n\tNO_EFFECT\020\n\"H\n\rSeverityLev" +
-      "el\022\024\n\020UNKNOWN_SEVERITY\020\001\022\010\n\004INFO\020\002\022\013\n\007WA" +
-      "RNING\020\003\022\n\n\006SEVERE\020\004*\006\010\350\007\020\320\017\"/\n\tTimeRange" +
-      "\022\r\n\005start\030\001 \001(\004\022\013\n\003end\030\002 \001(\004*\006\010\350\007\020\320\017\"i\n\010" +
-      "Position\022\020\n\010latitude\030\001 \002(\002\022\021\n\tlongitude\030" +
-      "\002 \002(\002\022\017\n\007bearing\030\003 \001(\002\022\020\n\010odometer\030\004 \001(\001" +
-      "\022\r\n\005speed\030\005 \001(\002*\006\010\350\007\020\320\017\"\265\002\n\016TripDescript" +
-      "or\022\017\n\007trip_id\030\001 \001(\t\022\020\n\010route_id\030\005 \001(\t\022\024\n" +
-      "\014direction_id\030\006 \001(\r\022\022\n\nstart_time\030\002 \001(\t\022" +
-      "\022\n\nstart_date\030\003 \001(\t\022T\n\025schedule_relation" +
-      "ship\030\004 \001(\01625.transit_realtime.TripDescri" +
-      "ptor.ScheduleRelationship\"d\n\024ScheduleRel" +
-      "ationship\022\r\n\tSCHEDULED\020\000\022\t\n\005ADDED\020\001\022\017\n\013U" +
-      "NSCHEDULED\020\002\022\014\n\010CANCELED\020\003\022\023\n\013REPLACEMEN" +
-      "T\020\005\032\002\010\001*\006\010\350\007\020\320\017\"M\n\021VehicleDescriptor\022\n\n\002" +
-      "id\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\025\n\rlicense_plate" +
-      "\030\003 \001(\t*\006\010\350\007\020\320\017\"\222\001\n\016EntitySelector\022\021\n\tage" +
-      "ncy_id\030\001 \001(\t\022\020\n\010route_id\030\002 \001(\t\022\022\n\nroute_" +
-      "type\030\003 \001(\005\022.\n\004trip\030\004 \001(\0132 .transit_realt" +
-      "ime.TripDescriptor\022\017\n\007stop_id\030\005 \001(\t*\006\010\350\007" +
-      "\020\320\017\"\226\001\n\020TranslatedString\022C\n\013translation\030" +
-      "\001 \003(\0132..transit_realtime.TranslatedStrin" +
-      "g.Translation\0325\n\013Translation\022\014\n\004text\030\001 \002" +
-      "(\t\022\020\n\010language\030\002 \001(\t*\006\010\350\007\020\320\017*\006\010\350\007\020\320\017B\035\n\033" +
-      "com.google.transit.realtime"
+      "\013uncertainty\030\003 \001(\005*\006\010\350\007\020\320\017\032.\n\022StopTimePr" +
+      "operties\022\030\n\020assigned_stop_id\030\001 \001(\t\032\270\003\n\016S" +
+      "topTimeUpdate\022\025\n\rstop_sequence\030\001 \001(\r\022\017\n\007" +
+      "stop_id\030\004 \001(\t\022;\n\007arrival\030\002 \001(\0132*.transit" +
+      "_realtime.TripUpdate.StopTimeEvent\022=\n\tde" +
+      "parture\030\003 \001(\0132*.transit_realtime.TripUpd" +
+      "ate.StopTimeEvent\022j\n\025schedule_relationsh" +
+      "ip\030\005 \001(\0162@.transit_realtime.TripUpdate.S" +
+      "topTimeUpdate.ScheduleRelationship:\tSCHE" +
+      "DULED\022M\n\024stop_time_properties\030\006 \001(\0132/.tr" +
+      "ansit_realtime.TripUpdate.StopTimeProper" +
+      "ties\"?\n\024ScheduleRelationship\022\r\n\tSCHEDULE" +
+      "D\020\000\022\013\n\007SKIPPED\020\001\022\013\n\007NO_DATA\020\002*\006\010\350\007\020\320\017*\006\010" +
+      "\350\007\020\320\017\"\340\006\n\017VehiclePosition\022.\n\004trip\030\001 \001(\0132" +
+      " .transit_realtime.TripDescriptor\0224\n\007veh" +
+      "icle\030\010 \001(\0132#.transit_realtime.VehicleDes" +
+      "criptor\022,\n\010position\030\002 \001(\0132\032.transit_real" +
+      "time.Position\022\035\n\025current_stop_sequence\030\003" +
+      " \001(\r\022\017\n\007stop_id\030\007 \001(\t\022Z\n\016current_status\030" +
+      "\004 \001(\01623.transit_realtime.VehiclePosition" +
+      ".VehicleStopStatus:\rIN_TRANSIT_TO\022\021\n\ttim" +
+      "estamp\030\005 \001(\004\022K\n\020congestion_level\030\006 \001(\01621" +
+      ".transit_realtime.VehiclePosition.Conges" +
+      "tionLevel\022K\n\020occupancy_status\030\t \001(\01621.tr" +
+      "ansit_realtime.VehiclePosition.Occupancy" +
+      "Status\"G\n\021VehicleStopStatus\022\017\n\013INCOMING_" +
+      "AT\020\000\022\016\n\nSTOPPED_AT\020\001\022\021\n\rIN_TRANSIT_TO\020\002\"" +
+      "}\n\017CongestionLevel\022\034\n\030UNKNOWN_CONGESTION" +
+      "_LEVEL\020\000\022\024\n\020RUNNING_SMOOTHLY\020\001\022\017\n\013STOP_A" +
+      "ND_GO\020\002\022\016\n\nCONGESTION\020\003\022\025\n\021SEVERE_CONGES" +
+      "TION\020\004\"\257\001\n\017OccupancyStatus\022\t\n\005EMPTY\020\000\022\030\n" +
+      "\024MANY_SEATS_AVAILABLE\020\001\022\027\n\023FEW_SEATS_AVA" +
+      "ILABLE\020\002\022\026\n\022STANDING_ROOM_ONLY\020\003\022\036\n\032CRUS" +
+      "HED_STANDING_ROOM_ONLY\020\004\022\010\n\004FULL\020\005\022\034\n\030NO" +
+      "T_ACCEPTING_PASSENGERS\020\006*\006\010\350\007\020\320\017\"\337\010\n\005Ale" +
+      "rt\0222\n\ractive_period\030\001 \003(\0132\033.transit_real" +
+      "time.TimeRange\0229\n\017informed_entity\030\005 \003(\0132" +
+      " .transit_realtime.EntitySelector\022;\n\005cau" +
+      "se\030\006 \001(\0162\035.transit_realtime.Alert.Cause:" +
+      "\rUNKNOWN_CAUSE\022>\n\006effect\030\007 \001(\0162\036.transit" +
+      "_realtime.Alert.Effect:\016UNKNOWN_EFFECT\022/" +
+      "\n\003url\030\010 \001(\0132\".transit_realtime.Translate" +
+      "dString\0227\n\013header_text\030\n \001(\0132\".transit_r" +
+      "ealtime.TranslatedString\022<\n\020description_" +
+      "text\030\013 \001(\0132\".transit_realtime.Translated" +
+      "String\022;\n\017tts_header_text\030\014 \001(\0132\".transi" +
+      "t_realtime.TranslatedString\022@\n\024tts_descr" +
+      "iption_text\030\r \001(\0132\".transit_realtime.Tra" +
+      "nslatedString\022O\n\016severity_level\030\016 \001(\0162%." +
+      "transit_realtime.Alert.SeverityLevel:\020UN" +
+      "KNOWN_SEVERITY\"\330\001\n\005Cause\022\021\n\rUNKNOWN_CAUS" +
+      "E\020\001\022\017\n\013OTHER_CAUSE\020\002\022\025\n\021TECHNICAL_PROBLE" +
+      "M\020\003\022\n\n\006STRIKE\020\004\022\021\n\rDEMONSTRATION\020\005\022\014\n\010AC" +
+      "CIDENT\020\006\022\013\n\007HOLIDAY\020\007\022\013\n\007WEATHER\020\010\022\017\n\013MA" +
+      "INTENANCE\020\t\022\020\n\014CONSTRUCTION\020\n\022\023\n\017POLICE_" +
+      "ACTIVITY\020\013\022\025\n\021MEDICAL_EMERGENCY\020\014\"\304\001\n\006Ef" +
+      "fect\022\016\n\nNO_SERVICE\020\001\022\023\n\017REDUCED_SERVICE\020" +
+      "\002\022\026\n\022SIGNIFICANT_DELAYS\020\003\022\n\n\006DETOUR\020\004\022\026\n" +
+      "\022ADDITIONAL_SERVICE\020\005\022\024\n\020MODIFIED_SERVIC" +
+      "E\020\006\022\020\n\014OTHER_EFFECT\020\007\022\022\n\016UNKNOWN_EFFECT\020" +
+      "\010\022\016\n\nSTOP_MOVED\020\t\022\r\n\tNO_EFFECT\020\n\"H\n\rSeve" +
+      "rityLevel\022\024\n\020UNKNOWN_SEVERITY\020\001\022\010\n\004INFO\020" +
+      "\002\022\013\n\007WARNING\020\003\022\n\n\006SEVERE\020\004*\006\010\350\007\020\320\017\"/\n\tTi" +
+      "meRange\022\r\n\005start\030\001 \001(\004\022\013\n\003end\030\002 \001(\004*\006\010\350\007" +
+      "\020\320\017\"i\n\010Position\022\020\n\010latitude\030\001 \002(\002\022\021\n\tlon" +
+      "gitude\030\002 \002(\002\022\017\n\007bearing\030\003 \001(\002\022\020\n\010odomete" +
+      "r\030\004 \001(\001\022\r\n\005speed\030\005 \001(\002*\006\010\350\007\020\320\017\"\265\002\n\016TripD" +
+      "escriptor\022\017\n\007trip_id\030\001 \001(\t\022\020\n\010route_id\030\005" +
+      " \001(\t\022\024\n\014direction_id\030\006 \001(\r\022\022\n\nstart_time" +
+      "\030\002 \001(\t\022\022\n\nstart_date\030\003 \001(\t\022T\n\025schedule_r" +
+      "elationship\030\004 \001(\01625.transit_realtime.Tri" +
+      "pDescriptor.ScheduleRelationship\"d\n\024Sche" +
+      "duleRelationship\022\r\n\tSCHEDULED\020\000\022\t\n\005ADDED" +
+      "\020\001\022\017\n\013UNSCHEDULED\020\002\022\014\n\010CANCELED\020\003\022\023\n\013REP" +
+      "LACEMENT\020\005\032\002\010\001*\006\010\350\007\020\320\017\"M\n\021VehicleDescrip" +
+      "tor\022\n\n\002id\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\025\n\rlicens" +
+      "e_plate\030\003 \001(\t*\006\010\350\007\020\320\017\"\222\001\n\016EntitySelector" +
+      "\022\021\n\tagency_id\030\001 \001(\t\022\020\n\010route_id\030\002 \001(\t\022\022\n" +
+      "\nroute_type\030\003 \001(\005\022.\n\004trip\030\004 \001(\0132 .transi" +
+      "t_realtime.TripDescriptor\022\017\n\007stop_id\030\005 \001" +
+      "(\t*\006\010\350\007\020\320\017\"\226\001\n\020TranslatedString\022C\n\013trans" +
+      "lation\030\001 \003(\0132..transit_realtime.Translat" +
+      "edString.Translation\0325\n\013Translation\022\014\n\004t" +
+      "ext\030\001 \002(\t\022\020\n\010language\030\002 \001(\t*\006\010\350\007\020\320\017*\006\010\350\007" +
+      "\020\320\017B\035\n\033com.google.transit.realtime"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -24084,12 +25141,18 @@ public final class GtfsRealtime {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_transit_realtime_TripUpdate_StopTimeEvent_descriptor,
         new java.lang.String[] { "Delay", "Time", "Uncertainty", });
-    internal_static_transit_realtime_TripUpdate_StopTimeUpdate_descriptor =
+    internal_static_transit_realtime_TripUpdate_StopTimeProperties_descriptor =
       internal_static_transit_realtime_TripUpdate_descriptor.getNestedTypes().get(1);
+    internal_static_transit_realtime_TripUpdate_StopTimeProperties_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_transit_realtime_TripUpdate_StopTimeProperties_descriptor,
+        new java.lang.String[] { "AssignedStopId", });
+    internal_static_transit_realtime_TripUpdate_StopTimeUpdate_descriptor =
+      internal_static_transit_realtime_TripUpdate_descriptor.getNestedTypes().get(2);
     internal_static_transit_realtime_TripUpdate_StopTimeUpdate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_transit_realtime_TripUpdate_StopTimeUpdate_descriptor,
-        new java.lang.String[] { "StopSequence", "StopId", "Arrival", "Departure", "ScheduleRelationship", });
+        new java.lang.String[] { "StopSequence", "StopId", "Arrival", "Departure", "ScheduleRelationship", "StopTimeProperties", });
     internal_static_transit_realtime_VehiclePosition_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_transit_realtime_VehiclePosition_fieldAccessorTable = new
