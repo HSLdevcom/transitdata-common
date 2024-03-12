@@ -202,9 +202,25 @@ public class MockDataUtils {
                 stopId, startTimeEpochMs);
         return PubtransFactory.createStopEstimate(common, mockTripInfo, eventType);
     }
+    
+    public static InternalMessages.StopEstimate mockStopEstimate(String routeName,
+                                                                 InternalMessages.StopEstimate.Type eventType,
+                                                                 long stopId,
+                                                                 long targetedStopId,
+                                                                 int stopSequence,
+                                                                 int directionId) throws Exception {
+        long dvjId = generateValidJoreId();
+        PubtransTableProtos.Common common = MockDataUtils.mockCommon(dvjId, stopSequence).build();
+        PubtransTableProtos.DOITripInfo mockTripInfo = mockDOITripInfo(dvjId, routeName, stopId, targetedStopId, directionId);
+        return PubtransFactory.createStopEstimate(common, mockTripInfo, eventType);
+    }
 
     public static PubtransTableProtos.DOITripInfo mockDOITripInfo(long dvjId, String routeName) throws Exception {
         return mockDOITripInfo(dvjId, routeName, generateValidJoreId());
+    }
+    
+    public static PubtransTableProtos.DOITripInfo mockDOITripInfo(long dvjId, String routeName, long stopId, long targetedStopId, int directionId) throws Exception {
+        return mockDOITripInfo(dvjId, routeName, stopId, targetedStopId, directionId, MOCK_START_DATE, MOCK_START_TIME);
     }
 
     public static PubtransTableProtos.DOITripInfo mockDOITripInfo(long dvjId, String routeName, int joreDirection) throws Exception {
@@ -243,12 +259,31 @@ public class MockDataUtils {
                                                            int joreDirection, String startDate, String startTime) throws Exception {
         return mockDOITripInfoBuilder(dvjId, routeName, stopId, joreDirection, startDate, startTime).build();
     }
+    
+    public static PubtransTableProtos.DOITripInfo mockDOITripInfo(long dvjId, String routeName, long stopId, long targetedStopId,
+                                                                  int joreDirection, String startDate, String startTime) throws Exception {
+        return mockDOITripInfoBuilder(dvjId, routeName, stopId, targetedStopId, joreDirection, startDate, startTime).build();
+    }
 
     public static PubtransTableProtos.DOITripInfo.Builder mockDOITripInfoBuilder(long dvjId, String routeName, long stopId,
                                                                   int joreDirection, String startDate,
                                                                   String startTime) {
         PubtransTableProtos.DOITripInfo.Builder builder = PubtransTableProtos.DOITripInfo.newBuilder();
         builder.setStopId(Long.toString(stopId));
+        builder.setDirectionId(joreDirection);
+        builder.setRouteId(routeName);
+        builder.setStartTime(startTime);
+        builder.setOperatingDay(startDate);
+        builder.setDvjId(dvjId);
+        return builder;
+    }
+    
+    public static PubtransTableProtos.DOITripInfo.Builder mockDOITripInfoBuilder(long dvjId, String routeName, long stopId,
+                                                                                 long targetedStopId, int joreDirection,
+                                                                                 String startDate, String startTime) {
+        PubtransTableProtos.DOITripInfo.Builder builder = PubtransTableProtos.DOITripInfo.newBuilder();
+        builder.setStopId(Long.toString(stopId));
+        builder.setTargetedStopId(Long.toString(targetedStopId));
         builder.setDirectionId(joreDirection);
         builder.setRouteId(routeName);
         builder.setStartTime(startTime);
