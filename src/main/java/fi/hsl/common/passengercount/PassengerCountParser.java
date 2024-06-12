@@ -29,6 +29,17 @@ public class PassengerCountParser {
 
     @NotNull
     public Optional<PassengerCount.Payload> parsePayload(@NotNull ApcJson json) {
+        final PassengerCount.Payload payload = parsePassengerCountPayload(json);
+        
+        if (payload.hasInvalid()) {
+            return Optional.empty();
+        }
+        
+        return Optional.of(payload);
+    }
+    
+    @NotNull
+    public PassengerCount.Payload parsePassengerCountPayload(@NotNull ApcJson json) {
         final Apc payload = json.apc;
 
         // Required attributes
@@ -42,15 +53,15 @@ public class PassengerCountParser {
 
         if (payload.oper == null) {
             log.warn("Value for oper is null");
-            //oper value is mandatory -> return empty
-            return Optional.empty();
+            //oper value is mandatory -> this payload is not valid
+            payloadBuilder.setInvalid(true);
         }
         payloadBuilder.setOper(payload.oper);
 
         if (payload.veh == null) {
             log.warn("Value for veh is null");
-            //veh value is mandatory -> return empty
-            return Optional.empty();
+            //veh value is mandatory -> this payload is not valid
+            payloadBuilder.setInvalid(true);
         }
         payloadBuilder.setVeh(payload.veh);
 
@@ -104,7 +115,7 @@ public class PassengerCountParser {
 
         if (payload.vehiclecounts == null) {
             log.warn("Field 'vehiclecounts' is null for vehicle {}/{}", payload.oper, payload.veh);
-            return Optional.empty();
+            payloadBuilder.setInvalid(true);
         }
 
         PassengerCount.VehicleCounts.Builder vehicleBuilder = PassengerCount.VehicleCounts.newBuilder();
@@ -138,7 +149,7 @@ public class PassengerCountParser {
         }
         
         payloadBuilder.setVehicleCounts(vehicleBuilder);
-        return Optional.of(payloadBuilder.build());
+        return payloadBuilder.build();
     }
 
     @NotNull
