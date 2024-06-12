@@ -1,7 +1,8 @@
 package fi.hsl.common.passengercount;
 
-import fi.hsl.common.passengercount.json.APC;
-import fi.hsl.common.passengercount.json.APCJson;
+import fi.hsl.common.hfp.HfpParser;
+import fi.hsl.common.passengercount.json.Apc;
+import fi.hsl.common.passengercount.json.ApcJson;
 import fi.hsl.common.passengercount.proto.PassengerCount;
 import org.junit.Test;
 
@@ -15,9 +16,11 @@ import static org.junit.Assert.assertNotNull;
 
 public class PassengerCountParserTest {
 
+    private final String TEST_TOPIC = "/hfp/v2/journey/ongoing/apc/bus/0022/01288";
+
     @Test
     public void parseJsonTest() throws Exception {
-        APC apc = parseJsonFromResources("src/test/resources/passenger-count-sample.json").apc;
+        Apc apc = parseJsonFromResources("src/test/resources/passenger-count-sample.json").apc;
         assertEquals("555", apc.desi);
         assertEquals(12, (int)apc.oper);
         assertEquals("GPS", apc.loc);
@@ -28,16 +31,16 @@ public class PassengerCountParserTest {
 
     }
 
-    private APCJson parseJsonFromResources(String filename) throws Exception {
+    private ApcJson parseJsonFromResources(String filename) throws Exception {
         byte[] data = Files.readAllBytes(Paths.get(filename));
-        APCJson apcJson = PassengerCountParser.newInstance().parseJson(data);
+        ApcJson apcJson = PassengerCountParser.newInstance().parseJson(data);
         assertNotNull(apcJson);
         return apcJson;
     }
 
     @Test
     public void convertJsonToProtobufMessageTest() throws Exception{
-        APCJson apcJson = parseJsonFromResources("src/test/resources/passenger-count-sample.json");
+        ApcJson apcJson = parseJsonFromResources("src/test/resources/passenger-count-sample.json");
         PassengerCount.Payload payload = PassengerCountParser.newInstance().parsePayload(apcJson).get();
         assertEquals("555", payload.getDesi());
         assertEquals(12, payload.getOper());
@@ -51,9 +54,9 @@ public class PassengerCountParserTest {
     @Test
     public void convertProtobufToJsonTest() throws Exception{
         PassengerCountParser parser = PassengerCountParser.newInstance();
-        APCJson apcJson = parseJsonFromResources("src/test/resources/passenger-count-sample.json");
+        ApcJson apcJson = parseJsonFromResources("src/test/resources/passenger-count-sample.json");
         PassengerCount.Payload payload = parser.parsePayload(apcJson).get();
-        APCJson newApcJson = parser.toJson(payload);
+        ApcJson newApcJson = parser.toJson(payload);
         assertEquals(apcJson.apc.desi, newApcJson.apc.desi);
         assertEquals(apcJson.apc.loc, newApcJson.apc.loc);
         assertEquals(apcJson.apc.dir, newApcJson.apc.dir);
@@ -72,11 +75,11 @@ public class PassengerCountParserTest {
     @Test
     public void serializeJsonTest() throws Exception {
         OutputStream os = new ByteArrayOutputStream();
-        APCJson apcJson = parseJsonFromResources("src/test/resources/passenger-count-sample.json");
+        ApcJson apcJson = parseJsonFromResources("src/test/resources/passenger-count-sample.json");
         os = PassengerCountParser.newInstance().serializeJson(apcJson, os);
         String serializedJson = os.toString();
         os.close();
-        APCJson parsedJson = PassengerCountParser.newInstance().parseJson(serializedJson.getBytes("UTF-8"));
+        ApcJson parsedJson = PassengerCountParser.newInstance().parseJson(serializedJson.getBytes("UTF-8"));
         assertEquals(apcJson.apc.desi, parsedJson.apc.desi);
         assertEquals(apcJson.apc.loc, parsedJson.apc.loc);
         assertEquals(apcJson.apc.dir, parsedJson.apc.dir);
@@ -90,5 +93,39 @@ public class PassengerCountParserTest {
         assertEquals(apcJson.apc.vehiclecounts.doorcounts.get(0).door, parsedJson.apc.vehiclecounts.doorcounts.get(0).door);
         assertEquals(apcJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).clazz, parsedJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).clazz);
         assertEquals(apcJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).in, parsedJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).in);
+    }
+
+    private String parseTopicPrefix(String topic) throws Exception {
+        final String[] allParts = topic.split("/");
+        int versionIndex = HfpParser.findVersionIndex(allParts);
+        return PassengerCountParser.joinFirstNParts(allParts, versionIndex, "/");
+    }
+
+    @Test
+    public void testTopicPrefixParsing() throws Exception {
+        String prefix = parseTopicPrefix(TEST_TOPIC);
+        assertEquals("/hfp/", prefix);
+
+    }
+
+    private PassengerCount.Topic parseAndValidateTopic(String topic) throws Exception {
+        long now = System.currentTimeMillis();
+        PassengerCount.Topic apcTopic = PassengerCountParser.parseTopic(topic, now);
+        assertEquals(now, apcTopic.getReceivedAt());
+        assertEquals("v2", apcTopic.getTopicVersion());
+        return apcTopic;
+    }
+
+    @Test
+    public void parseTopicTest() throws Exception {
+        PassengerCount.Topic topic = parseAndValidateTopic(TEST_TOPIC);
+        assertEquals(PassengerCount.Topic.JourneyType.journey, topic.getJourneyType());
+        assertEquals(PassengerCount.Topic.TemporalType.ongoing, topic.getTemporalType());
+        assertEquals(PassengerCount.Topic.TransportMode.bus, topic.getTransportMode());
+        assertEquals(PassengerCount.Topic.EventType.apc, topic.getEventType());
+
+        assertEquals(22, topic.getOperatorId());
+        assertEquals(1288, topic.getVehicleNumber());
+
     }
 }

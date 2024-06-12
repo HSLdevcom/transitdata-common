@@ -42,6 +42,7 @@ public class PubtransFactory {
         builder.setTripInfo(tripInfo);
 
         builder.setStopId(doiTripInfo.getStopId()); //Use to be Long in old internal model
+        builder.setTargetedStopId(doiTripInfo.getTargetedStopId());
         builder.setStopSequence(common.getJourneyPatternSequenceNumber());
 
         InternalMessages.StopEstimate.Status scheduledStatus = (common.getState() == PUBTRANS_SKIPPED_STATE) ?
