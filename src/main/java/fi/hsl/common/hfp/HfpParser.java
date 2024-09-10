@@ -226,9 +226,24 @@ public class HfpParser {
         if (strTransportMode != null && !strTransportMode.isEmpty()) {
             final Hfp.Topic.TransportMode transportMode = safeValueOf(Hfp.Topic.TransportMode.class, strTransportMode).orElseThrow(() -> new InvalidHfpTopicException("Unknown transport mode: " + topic));
             builder.setTransportMode(transportMode);
+        } else {
+            throw new InvalidHfpTopicException("Transport mode missing");
         }
-        builder.setOperatorId(Integer.parseInt(parts[index++]));
-        builder.setVehicleNumber(Integer.parseInt(parts[index++]));
+        
+        final String operatorIdStr = parts[index++];
+        try {
+            builder.setOperatorId(Integer.parseInt(operatorIdStr));
+        } catch (NumberFormatException e) {
+            throw new InvalidHfpTopicException("Operator id is not number: " + operatorIdStr);
+        }
+        
+        final String vehicleNumberString = parts[index++];
+        try {
+            builder.setVehicleNumber(Integer.parseInt(vehicleNumberString));
+        } catch (NumberFormatException e) {
+            throw new InvalidHfpTopicException("Vehicle number is not number: " + vehicleNumberString);
+        }
+        
         builder.setUniqueVehicleId(createUniqueVehicleId(builder.getOperatorId(), builder.getVehicleNumber()));
         if (index + 6 <= parts.length) {
             HfpValidator.validateString(parts[index++]).ifPresent(builder::setRouteId);

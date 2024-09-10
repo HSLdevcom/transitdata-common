@@ -284,10 +284,10 @@ public class HfpParserTest {
 
     @Test
     public void parseTopicWhenItemsMissing() throws Exception {
-        Hfp.Topic meta = parseAndValidateTopic("/hfp/v1/journey/ongoing//0022/00854//////////");
+        Hfp.Topic meta = parseAndValidateTopic("/hfp/v1/journey/ongoing/bus/0022/00854//////////");
         assertEquals(Hfp.Topic.JourneyType.journey, meta.getJourneyType());
         assertEquals(Hfp.Topic.TemporalType.ongoing, meta.getTemporalType());
-        assertFalse(meta.hasTransportMode());
+        assertEquals(Hfp.Topic.TransportMode.bus, meta.getTransportMode());
 
         assertEquals(22, meta.getOperatorId());
         assertEquals(854, meta.getVehicleNumber());
