@@ -227,7 +227,7 @@ public class HfpParser {
             final Hfp.Topic.TransportMode transportMode = safeValueOf(Hfp.Topic.TransportMode.class, strTransportMode).orElseThrow(() -> new InvalidHfpTopicException("Unknown transport mode: " + topic));
             builder.setTransportMode(transportMode);
         } else {
-            throw new InvalidHfpTopicException("Transport mode missing");
+            log.info("Transport mode is empty for topic: " + topic);
         }
         
         final String operatorIdStr = parts[index++];
@@ -237,11 +237,11 @@ public class HfpParser {
             throw new InvalidHfpTopicException("Operator id is not number: " + operatorIdStr);
         }
         
-        final String vehicleNumberString = parts[index++];
+        final String vehicleNumberStr = parts[index++];
         try {
-            builder.setVehicleNumber(Integer.parseInt(vehicleNumberString));
+            builder.setVehicleNumber(Integer.parseInt(vehicleNumberStr));
         } catch (NumberFormatException e) {
-            throw new InvalidHfpTopicException("Vehicle number is not number: " + vehicleNumberString);
+            throw new InvalidHfpTopicException("Vehicle number is not number: " + vehicleNumberStr);
         }
         
         builder.setUniqueVehicleId(createUniqueVehicleId(builder.getOperatorId(), builder.getVehicleNumber()));
