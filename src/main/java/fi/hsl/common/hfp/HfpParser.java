@@ -16,7 +16,9 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalTime;
 import java.time.OffsetDateTime;
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 import java.util.regex.Pattern;
 import java.io.ByteArrayOutputStream;
 
@@ -24,6 +26,8 @@ public class HfpParser {
     private static final Logger log = LoggerFactory.getLogger(HfpParser.class);
 
     static final Pattern topicVersionRegex = Pattern.compile("(^v\\d+|dev)");
+    
+    private static Set<String> vehiclesWithEmptyTransportMode = new HashSet<>();
 
     // Let's use dsl-json (https://github.com/ngs-doo/dsl-json) for performance.
     // Based on this benchmark: https://github.com/fabienrenaud/java-json-benchmark
@@ -32,6 +36,15 @@ public class HfpParser {
 
     //Note! Apparently not thread safe, for per thread reuse use ThreadLocal pattern or create separate instances
     final DslJson<Object> dslJson = new DslJson<>(Settings.withRuntime().allowArrayFormat(true).includeServiceLoader());
+    
+    private static void foundVehicleWithEmptyTransportMode(String uniqueVehicleId) {
+        vehiclesWithEmptyTransportMode.add(uniqueVehicleId);
+        
+        if (vehiclesWithEmptyTransportMode.size() > 100) {
+            log.warn("Vehicles with empty transport mode: " + vehiclesWithEmptyTransportMode);
+            vehiclesWithEmptyTransportMode.clear();
+        }
+    }
 
     @NotNull
     public static HfpParser newInstance() {
@@ -223,13 +236,32 @@ public class HfpParser {
         }
 
         final String strTransportMode = parts[index++];
+        boolean transportModeIsEmpty = false;
         if (strTransportMode != null && !strTransportMode.isEmpty()) {
             final Hfp.Topic.TransportMode transportMode = safeValueOf(Hfp.Topic.TransportMode.class, strTransportMode).orElseThrow(() -> new InvalidHfpTopicException("Unknown transport mode: " + topic));
             builder.setTransportMode(transportMode);
+        } else {
+            transportModeIsEmpty = true;
         }
-        builder.setOperatorId(Integer.parseInt(parts[index++]));
-        builder.setVehicleNumber(Integer.parseInt(parts[index++]));
+        
+        final String operatorIdStr = parts[index++];
+        try {
+            builder.setOperatorId(Integer.parseInt(operatorIdStr));
+        } catch (NumberFormatException e) {
+            throw new InvalidHfpTopicException("Operator id is not number: " + operatorIdStr);
+        }
+        
+        final String vehicleNumberStr = parts[index++];
+        try {
+            builder.setVehicleNumber(Integer.parseInt(vehicleNumberStr));
+        } catch (NumberFormatException e) {
+            throw new InvalidHfpTopicException("Vehicle number is not number: " + vehicleNumberStr);
+        }
+        
         builder.setUniqueVehicleId(createUniqueVehicleId(builder.getOperatorId(), builder.getVehicleNumber()));
+        if (transportModeIsEmpty) {
+            foundVehicleWithEmptyTransportMode(builder.getUniqueVehicleId());
+        }
         if (index + 6 <= parts.length) {
             HfpValidator.validateString(parts[index++]).ifPresent(builder::setRouteId);
             safeParseInt(parts[index++]).ifPresent(builder::setDirectionId);
