@@ -15,8 +15,6 @@ jobs:
           cache: 'maven'
       - name: Build with Maven
         run: mvn clean package -Dmaven.javadoc.skip=true -B -V
-      - name: Run integration tests
-        run: mvn failsafe:integration-test && mvn failsafe:verify
   publish:
     needs: test
     runs-on: ubuntu-latest

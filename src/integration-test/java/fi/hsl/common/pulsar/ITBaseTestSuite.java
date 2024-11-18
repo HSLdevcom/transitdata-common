@@ -4,7 +4,6 @@ import com.typesafe.config.Config;
 import fi.hsl.common.config.ConfigUtils;
 import fi.hsl.common.transitdata.TransitdataProperties;
 import org.apache.pulsar.client.api.*;
-import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,15 +39,6 @@ public class ITBaseTestSuite {
 
     @ClassRule
     public static PulsarContainer pulsar = MockContainers.newPulsarContainer();
-
-    @BeforeClass
-    public static void setUp() throws Exception {
-        MockContainers.configurePulsarContainer(pulsar, TENANT, NAMESPACE);
-
-        if (PRINT_PULSAR_LOG) {
-            MockContainers.tail(pulsar, logger);
-        }
-    }
 
     protected static PulsarApplication createPulsarApp(String config, String testId) throws Exception {
         logger.info("Creating Pulsar Application for config " + config);
