@@ -132,6 +132,9 @@ public class PassengerCountParser {
                 }
                 vehicleBuilder.addDoorCounts(doorCountBuilder);
             }
+        } else {
+            log.warn("Field 'doorcounts' is null for vehicle {}/{}", payload.oper, payload.veh);
+            return Optional.empty();
         }
         
         payloadBuilder.setVehicleCounts(vehicleBuilder);
