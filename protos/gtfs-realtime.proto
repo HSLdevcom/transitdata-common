@@ -529,7 +529,7 @@ message Shape {
 
   // Encoded polyline representation of the shape. This polyline must contain at least two points. For more information
   // about encoded polylines, see https://developers.google.com/maps/documentation/utilities/polylinealgorithm
-  repeated string encoded_polyline = 2;
+  required string encoded_polyline = 2;
 
   // The extensions namespace allows 3rd-party developers to extend the
   // GTFS Realtime Specification in order to add and evaluate new features
