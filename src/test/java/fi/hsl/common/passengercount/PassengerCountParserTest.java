@@ -104,7 +104,7 @@ public class PassengerCountParserTest {
     @Test
     public void testTopicPrefixParsing() throws Exception {
         String prefix = parseTopicPrefix(TEST_TOPIC);
-        assertEquals("/hfp/", prefix);
+        assertEquals("/hfp", prefix);
 
     }
 
