@@ -351,8 +351,6 @@ public class HfpParser {
             buffer.append(parts[index]);
             buffer.append(delimiter);
         }
-        if (buffer.length() > 1 && buffer.charAt(buffer.length() - 1) == '/')
-            buffer.deleteCharAt(buffer.length() - 1);
         return buffer.toString();
     }
 
