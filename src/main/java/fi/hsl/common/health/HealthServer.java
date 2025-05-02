@@ -12,7 +12,9 @@ import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.function.BooleanSupplier;
 
 public class HealthServer {
@@ -89,13 +91,26 @@ public class HealthServer {
     public void clearChecks() {
         checks.clear();
     }
-
+    
     public boolean checkHealth() {
-        boolean isHealthy = true;
-        for (final BooleanSupplier check : checks) {
-            isHealthy &= check.getAsBoolean();
+        ExecutorService executor = Executors.newCachedThreadPool();
+        try {
+            List<Future<Boolean>> results = new ArrayList<>();
+            for (BooleanSupplier check : checks) {
+                results.add(executor.submit(check::getAsBoolean));
+            }
+            for (Future<Boolean> result : results) {
+                if (!result.get()) {
+                    return false; // If any check fails, return false
+                }
+            }
+            return true; // All checks passed
+        } catch (Exception e) {
+            log.error("Exception during health checks", e);
+            return false;
+        } finally {
+            executor.shutdown();
         }
-        return isHealthy;
     }
 
     public void close() {
