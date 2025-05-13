@@ -12,9 +12,7 @@ import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 import java.util.function.BooleanSupplier;
 
 public class HealthServer {
@@ -23,7 +21,8 @@ public class HealthServer {
     public final int port;
     public final String endpoint;
     public final HttpServer httpServer;
-    private List<BooleanSupplier> checks = new ArrayList<>();
+    private ExecutorService healthCheckExecutor = Executors.newCachedThreadPool();
+    private List<BooleanSupplier> checks = new CopyOnWriteArrayList<>();
 
     public HealthServer(final int port, @NotNull final String endpoint) throws IOException {
         this.port = port;
@@ -32,7 +31,7 @@ public class HealthServer {
         httpServer = HttpServer.create(new InetSocketAddress(port), 0);
         httpServer.createContext("/", createDefaultHandler());
         httpServer.createContext(endpoint, createHandler());
-        httpServer.setExecutor(Executors.newSingleThreadExecutor());
+        httpServer.setExecutor(healthCheckExecutor);
         httpServer.start();
         log.info("HealthServer started");
     }
@@ -91,13 +90,12 @@ public class HealthServer {
     public void clearChecks() {
         checks.clear();
     }
-    
+
     public boolean checkHealth() {
-        ExecutorService executor = Executors.newCachedThreadPool();
         try {
             List<Future<Boolean>> results = new ArrayList<>();
             for (BooleanSupplier check : checks) {
-                results.add(executor.submit(check::getAsBoolean));
+                results.add(healthCheckExecutor.submit(check::getAsBoolean));
             }
             for (Future<Boolean> result : results) {
                 if (!result.get()) {
@@ -108,14 +106,23 @@ public class HealthServer {
         } catch (Exception e) {
             log.error("Exception during health checks", e);
             return false;
-        } finally {
-            executor.shutdown();
         }
     }
 
     public void close() {
         if (httpServer != null) {
             httpServer.stop(0);
+        }
+        if (healthCheckExecutor != null) {
+            healthCheckExecutor.shutdown();
+            try {
+                if (!healthCheckExecutor.awaitTermination(3, TimeUnit.SECONDS)) {
+                    healthCheckExecutor.shutdownNow();
+                }
+            } catch (InterruptedException ie) {
+                healthCheckExecutor.shutdownNow();
+                Thread.currentThread().interrupt();
+            }
         }
     }
 }
