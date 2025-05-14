@@ -93,16 +93,29 @@ public class HealthServer {
 
     public boolean checkHealth() {
         try {
-            List<Future<Boolean>> results = new ArrayList<>();
-            for (BooleanSupplier check : checks) {
-                results.add(healthCheckExecutor.submit(check::getAsBoolean));
-            }
-            for (Future<Boolean> result : results) {
-                if (!result.get()) {
-                    return false; // If any check fails, return false
+            CompletionService<Boolean> executorCompletionService
+                    = new ExecutorCompletionService<>(healthCheckExecutor);
+            int n = checks.size();
+            List<Future<Boolean>> futures = new ArrayList<>(n);
+            try {
+                for (BooleanSupplier check : checks) {
+                    futures.add(executorCompletionService.submit(checkToCallable(check)));
+                }
+                for (int i = 0; i < n; ++i) {
+                    try {
+                        Boolean result = executorCompletionService.take().get();
+                        if (result == null || !result) {
+                            return false; // Return false immediately if any check fails
+                        }
+                    } catch (ExecutionException ignore) {}
+                }
+            } finally {
+                for (Future<Boolean> f : futures) {
+                    f.cancel(true);
                 }
             }
-            return true; // All checks passed
+            
+            return true; // Return true only if all checks pass
         } catch (Exception e) {
             log.error("Exception during health checks", e);
             return false;
@@ -124,5 +137,16 @@ public class HealthServer {
                 Thread.currentThread().interrupt();
             }
         }
+    }
+    
+    private static Callable<Boolean> checkToCallable(BooleanSupplier check) {
+        return () -> {
+            try {
+                return check.getAsBoolean();
+            } catch (Exception e) {
+                log.error("Exception during health check", e);
+                return false;
+            }
+        };
     }
 }
