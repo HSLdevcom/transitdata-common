@@ -25,10 +25,12 @@ public class DuplicateLogFilter extends Filter<ILoggingEvent> {
         String message = event.getFormattedMessage();
         long currentTimeMillis = System.currentTimeMillis();
 
-        Long lastTimestamp = messageTimestamps.put(message, currentTimeMillis);
+        Long lastTimestamp = messageTimestamps.get(message);
         if (lastTimestamp != null && (currentTimeMillis - lastTimestamp) < suppressIntervalMillis) {
             return FilterReply.DENY;
         }
+
+        messageTimestamps.put(message, currentTimeMillis);
 
         // Evict old entries (example: entries older than 1 hour)
         cleanMapByLogAge(currentTimeMillis);
