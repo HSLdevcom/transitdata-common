@@ -116,7 +116,6 @@ public class HealthServer {
                     f.cancel(true);
                 }
             }
-            
             return true; // Return true only if all checks pass
         } catch (Exception e) {
             log.error("Exception during health checks", e);
@@ -140,7 +139,7 @@ public class HealthServer {
             }
         }
     }
-    
+
     private static Callable<Boolean> checkToCallable(BooleanSupplier check) {
         return () -> {
             try {
