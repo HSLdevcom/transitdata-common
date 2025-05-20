@@ -21,8 +21,9 @@ public class HealthServer {
     public final int port;
     public final String endpoint;
     public final HttpServer httpServer;
-    private ExecutorService healthCheckExecutor = Executors.newCachedThreadPool();
-    private List<BooleanSupplier> checks = new CopyOnWriteArrayList<>();
+    private final ExecutorService healthCheckExecutor =
+        Executors.newCachedThreadPool();
+    private final List<BooleanSupplier> checks = new CopyOnWriteArrayList<>();
 
     public HealthServer(final int port, @NotNull final String endpoint) throws IOException {
         this.port = port;
