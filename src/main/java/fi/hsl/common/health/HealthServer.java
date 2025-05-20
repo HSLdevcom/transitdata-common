@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
@@ -38,8 +39,8 @@ public class HealthServer {
     }
 
     private void writeResponse(@NotNull final HttpExchange httpExchange, @NotNull final int responseCode, @NotNull final String responseBody) throws IOException {
-        final byte[] response = responseBody.getBytes("UTF-8");
-        httpExchange.getResponseHeaders().add("Content-Type", "text/plain; charset=UTF-8");
+        final byte[] response = responseBody.getBytes(StandardCharsets.UTF_8);
+        httpExchange.getResponseHeaders().add("Content-Type", "text/plain; charset=" + StandardCharsets.UTF_8.name());
         httpExchange.sendResponseHeaders(responseCode, response.length);
         final OutputStream out = httpExchange.getResponseBody();
         out.write(response);
