@@ -109,7 +109,14 @@ public class HealthServer {
                         if (result == null || !result) {
                             return false; // Return false immediately if any check fails
                         }
-                    } catch (ExecutionException ignore) {}
+                    } catch (ExecutionException e) {
+                        log.error("A health check task execution failed. Marking unhealthy.", e.getCause() != null ? e.getCause() : e);
+                        return false;
+                    } catch (InterruptedException e) {
+                        log.error("Health check interrupted. Marking unhealthy.", e);
+                        Thread.currentThread().interrupt();
+                        return false;
+                    }
                 }
             } finally {
                 for (Future<Boolean> f : futures) {
