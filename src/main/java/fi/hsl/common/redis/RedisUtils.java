@@ -7,9 +7,7 @@ import com.azure.core.util.CoreUtils;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import fi.hsl.common.pulsar.PulsarApplicationContext;
-import fi.hsl.common.transitdata.TransitdataProperties;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.*;
@@ -19,7 +17,6 @@ import redis.clients.jedis.resps.ScanResult;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.time.OffsetDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -163,78 +160,6 @@ public class RedisUtils {
 
             return new ArrayList<>(keys);
         }
-    }
-
-    /**
-     * Fetches hash values for keys
-     * @param keys
-     * @return HashMap of keys and their hash values if they exist
-     */
-    @NotNull
-    public Map<@NotNull String, Optional<Map<@NotNull String, @NotNull String>>> getValuesByKeys(@NotNull final List<@NotNull String> keys) {
-        synchronized (jedis) {
-            final Transaction transaction = jedis.multi();
-            final Map<String, Response<Map<String, String>>> responses = new HashMap<>();
-            keys.forEach(key -> responses.put(key, transaction.hgetAll(key)));
-            transaction.exec();
-
-            final Map<String, Optional<Map<String, String>>> values = new HashMap<>(responses.size());
-            responses.forEach((k, v) -> {
-                final Map<String, String> value = v.get();
-                if (value == null || value.isEmpty()) {
-                    values.put(k, Optional.empty());
-                } else {
-                    values.put(k, Optional.of(value));
-                }
-            });
-
-            return values;
-        }
-    }
-
-    /**
-     * Fetches string values for keys
-     * @param keys
-     * @return HashMap of keys and their values if they exist
-     */
-    @NotNull
-    public Map<@NotNull String, Optional<String>> getValueBykeys(@NotNull final List<@NotNull String> keys) {
-        synchronized (jedis) {
-            final Transaction transaction = jedis.multi();
-            final Map<String, Response<String>> responses = new HashMap<>();
-            keys.forEach(key -> responses.put(key, transaction.get(key)));
-            transaction.exec();
-
-            final Map<String, Optional<String>> values = new HashMap<>(responses.size());
-            responses.forEach((k, v) -> {
-                final String value = v.get();
-                if (value == null || value.isEmpty()) {
-                    values.put(k, Optional.empty());
-                } else {
-                    values.put(k, Optional.of(value));
-                }
-            });
-
-            return values;
-        }
-    }
-
-    @NotNull
-    public String updateTimestamp() {
-        synchronized (jedis) {
-            final OffsetDateTime now = OffsetDateTime.now();
-            final String ts = DateTimeFormatter.ISO_INSTANT.format(now);
-            log.info("Updating Redis timestamp to {}", ts);
-            return jedis.set(TransitdataProperties.KEY_LAST_CACHE_UPDATE_TIMESTAMP, ts);
-        }
-    }
-
-    public boolean checkResponse(@Nullable final String response) {
-        return response != null && response.trim().equalsIgnoreCase("OK");
-    }
-
-    public boolean checkResponse(@Nullable final Long response) {
-        return response != null && response == 1;
     }
     
     // Azure Cache for Redis helper code

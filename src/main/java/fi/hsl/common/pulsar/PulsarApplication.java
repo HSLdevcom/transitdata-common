@@ -93,14 +93,9 @@ public class PulsarApplication implements AutoCloseable {
         }
 
         if (config.getBoolean("redis.enabled")) {
-            int connTimeOutSecs = 2;
-            if (config.hasPath("redis.connTimeOutSecs")) {
-                connTimeOutSecs = config.getInt("redis.connTimeOutSecs");
-            }
             jedis = createRedisClient(
                     config.getString("redis.host"),
-                    config.getInt("redis.port"),
-                    connTimeOutSecs);
+                    config.getInt("redis.port"));
         }
 
         if (config.getBoolean("health.enabled")) {
@@ -159,8 +154,8 @@ public class PulsarApplication implements AutoCloseable {
     }
 
     @NotNull
-    protected Jedis createRedisClient(@NotNull String redisHost, int port, int connTimeOutSecs) {
-        log.info("Connecting to Redis at " + redisHost + ":" + port + " with connection timeout of (s): "+ connTimeOutSecs);
+    protected Jedis createRedisClient(@NotNull String redisHost, int port) {
+        log.info("Connecting to Redis at " + redisHost + ":" + port);
         
         //Construct a Token Credential from Identity library, e.g. DefaultAzureCredential / ClientSecretCredential / Client CertificateCredential / ManagedIdentityCredential etc.
         DefaultAzureCredential defaultAzureCredential = new DefaultAzureCredentialBuilder().build();
