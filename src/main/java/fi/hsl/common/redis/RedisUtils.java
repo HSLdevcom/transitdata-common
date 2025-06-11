@@ -249,23 +249,24 @@ public class RedisUtils {
     public static String extractUsernameFromToken(String token) {
         String[] parts = token.split("\\.");
         String base64 = parts[1];
-        
-        switch (base64.length() % 4) {
-            case 2:
-                base64 += "==";
-                break;
-            case 3:
-                base64 += "=";
-                break;
-        }
-        
+
+        base64 = addPaddingToBase64String(base64);
+
         byte[] jsonBytes = Base64.getDecoder().decode(base64);
         String json = new String(jsonBytes, StandardCharsets.UTF_8);
         JsonObject jwt = JsonParser.parseString(json).getAsJsonObject();
         
         return jwt.get("oid").getAsString();
     }
-    
+
+    private static String addPaddingToBase64String(String input) {
+        if (input != null && !input.isEmpty()) {
+            int paddingLength = (4 - input.length() % 4) % 4;
+            input += "=".repeat(paddingLength);
+        }
+        return input;
+    }
+
     /**
      * The token cache to store and proactively refresh the access token.
      */
