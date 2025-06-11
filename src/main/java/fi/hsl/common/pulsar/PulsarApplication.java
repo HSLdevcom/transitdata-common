@@ -1,7 +1,12 @@
 package fi.hsl.common.pulsar;
 
+import com.azure.core.credential.AccessToken;
+import com.azure.core.credential.TokenRequestContext;
+import com.azure.identity.DefaultAzureCredential;
+import com.azure.identity.DefaultAzureCredentialBuilder;
 import com.typesafe.config.Config;
 import fi.hsl.common.health.HealthServer;
+import fi.hsl.common.redis.RedisUtils;
 import org.apache.pulsar.client.admin.PulsarAdmin;
 import org.apache.pulsar.client.api.*;
 import org.jetbrains.annotations.NotNull;
@@ -18,6 +23,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.BooleanSupplier;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+
+import static fi.hsl.common.redis.RedisUtils.createJedisClient;
+import static fi.hsl.common.redis.RedisUtils.extractUsernameFromToken;
 
 public class PulsarApplication implements AutoCloseable {
     private static final Logger log = LoggerFactory.getLogger(PulsarApplication.class);
@@ -84,14 +92,9 @@ public class PulsarApplication implements AutoCloseable {
         }
 
         if (config.getBoolean("redis.enabled")) {
-            int connTimeOutSecs = 2;
-            if (config.hasPath("redis.connTimeOutSecs")) {
-                connTimeOutSecs = config.getInt("redis.connTimeOutSecs");
-            }
             jedis = createRedisClient(
                     config.getString("redis.host"),
-                    config.getInt("redis.port"),
-                    connTimeOutSecs);
+                    config.getInt("redis.port"));
         }
 
         if (config.getBoolean("health.enabled")) {
@@ -150,11 +153,28 @@ public class PulsarApplication implements AutoCloseable {
     }
 
     @NotNull
-    protected Jedis createRedisClient(@NotNull String redisHost, int port, int connTimeOutSecs) {
-        log.info("Connecting to Redis at " + redisHost + ":" + port + " with connection timeout of (s): "+ connTimeOutSecs);
-        int timeOutMs = connTimeOutSecs * 1000;
-        Jedis jedis = new Jedis(redisHost, port, timeOutMs);
-        jedis.connect();
+    protected Jedis createRedisClient(@NotNull String redisHost, int port) {
+        log.info("Connecting to Redis at {}:{}", redisHost, port);
+        
+        //Construct a Token Credential from Identity library, e.g. DefaultAzureCredential / ClientSecretCredential / Client CertificateCredential / ManagedIdentityCredential etc.
+        DefaultAzureCredential defaultAzureCredential = new DefaultAzureCredentialBuilder().build();
+
+        // Fetch a Microsoft Entra token to be used for authentication. This token will be used as the password.
+        TokenRequestContext trc = new TokenRequestContext().addScopes("https://redis.azure.com/.default");
+        RedisUtils.TokenRefreshCache tokenRefreshCache = new RedisUtils.TokenRefreshCache(defaultAzureCredential, trc);
+        AccessToken accessToken = tokenRefreshCache.getAccessToken();
+
+        // SSL connection is required.
+        boolean useSsl = true;
+        String username = extractUsernameFromToken(accessToken.getToken());
+        
+        // Create Jedis client and connect to the Azure Cache for Redis over the TLS/SSL port using the access token as password.
+        // Note: Cache Host Name, Port, Microsoft Entra access token and SSL connections are required below.
+        jedis = createJedisClient(redisHost, port, username, accessToken, useSsl);
+
+        // Configure the jedis instance for proactive authentication before token expires.
+        tokenRefreshCache.setJedisInstanceToAuthenticate(jedis);
+        
         log.info("Redis connected: " + jedis.isConnected());
         return jedis;
     }

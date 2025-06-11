@@ -1,5 +1,11 @@
 package fi.hsl.common.redis;
 
+import com.azure.core.credential.AccessToken;
+import com.azure.core.credential.TokenCredential;
+import com.azure.core.credential.TokenRequestContext;
+import com.azure.core.util.CoreUtils;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import fi.hsl.common.pulsar.PulsarApplicationContext;
 import fi.hsl.common.transitdata.TransitdataProperties;
 import org.jetbrains.annotations.NotNull;
@@ -10,9 +16,12 @@ import redis.clients.jedis.*;
 import redis.clients.jedis.params.ScanParams;
 import redis.clients.jedis.resps.ScanResult;
 
+import java.nio.charset.StandardCharsets;
+import java.time.Duration;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class RedisUtils {
     private static final Logger log = LoggerFactory.getLogger(RedisUtils.class);
@@ -226,5 +235,107 @@ public class RedisUtils {
 
     public boolean checkResponse(@Nullable final Long response) {
         return response != null && response == 1;
+    }
+    
+    // Azure Cache for Redis helper code
+    public static Jedis createJedisClient(String cacheHostname, int port, String username, AccessToken accessToken, boolean useSsl) {
+        return new Jedis(cacheHostname, port, DefaultJedisClientConfig.builder()
+                .password(accessToken.getToken())
+                .user(username)
+                .ssl(useSsl)
+                .build());
+    }
+    
+    public static String extractUsernameFromToken(String token) {
+        String[] parts = token.split("\\.");
+        String base64 = parts[1];
+
+        base64 = addPaddingToBase64String(base64);
+
+        byte[] jsonBytes = Base64.getDecoder().decode(base64);
+        String json = new String(jsonBytes, StandardCharsets.UTF_8);
+        JsonObject jwt = JsonParser.parseString(json).getAsJsonObject();
+        
+        return jwt.get("oid").getAsString();
+    }
+
+    private static String addPaddingToBase64String(String input) {
+        if (input != null && !input.isEmpty()) {
+            int paddingLength = (4 - input.length() % 4) % 4;
+            input += "=".repeat(paddingLength);
+        }
+        return input;
+    }
+
+    /**
+     * The token cache to store and proactively refresh the access token.
+     */
+    public static class TokenRefreshCache {
+        private final TokenCredential tokenCredential;
+        private final TokenRequestContext tokenRequestContext;
+        private final Timer timer;
+        private volatile AccessToken accessToken;
+        private final Duration maxRefreshOffset = Duration.ofMinutes(5);
+        private final Duration baseRefreshOffset = Duration.ofMinutes(2);
+        private Jedis jedisInstanceToAuthenticate;
+        private String username;
+        
+        /**
+         * Creates an instance of TokenRefreshCache
+         * @param tokenCredential the token credential to be used for authentication.
+         * @param tokenRequestContext the token request context to be used for authentication.
+         */
+        public TokenRefreshCache(TokenCredential tokenCredential, TokenRequestContext tokenRequestContext) {
+            this.tokenCredential = tokenCredential;
+            this.tokenRequestContext = tokenRequestContext;
+            this.timer = new Timer();
+        }
+        
+        /**
+         * Gets the cached access token.
+         * @return the AccessToken
+         */
+        public AccessToken getAccessToken() {
+            if (accessToken != null) {
+                return  accessToken;
+            } else {
+                TokenRefreshTask tokenRefreshTask = new TokenRefreshTask();
+                accessToken = tokenCredential.getToken(tokenRequestContext).block();
+                timer.schedule(tokenRefreshTask, getTokenRefreshDelay());
+                return accessToken;
+            }
+        }
+        
+        private class TokenRefreshTask extends TimerTask {
+            // Add your task here
+            public void run() {
+                accessToken = tokenCredential.getToken(tokenRequestContext).block();
+                username = extractUsernameFromToken(accessToken.getToken());
+                log.info("Refreshed Token with Expiry: " + accessToken.getExpiresAt().toEpochSecond());
+                
+                if (jedisInstanceToAuthenticate != null && !CoreUtils.isNullOrEmpty(username)) {
+                    jedisInstanceToAuthenticate.auth(username, accessToken.getToken());
+                    log.info("Refreshed Jedis Connection with fresh access token, token expires at : "
+                            + accessToken.getExpiresAt().toEpochSecond());
+                }
+                timer.schedule(new TokenRefreshTask(), getTokenRefreshDelay());
+            }
+        }
+        
+        private long getTokenRefreshDelay() {
+            return ((accessToken.getExpiresAt()
+                    .minusSeconds(ThreadLocalRandom.current().nextLong(baseRefreshOffset.getSeconds(), maxRefreshOffset.getSeconds()))
+                    .toEpochSecond() - OffsetDateTime.now().toEpochSecond()) * 1000);
+        }
+        
+        /**
+         * Sets the Jedis to proactively authenticate before token expiry.
+         * @param jedisInstanceToAuthenticate the instance to authenticate
+         * @return the updated instance
+         */
+        public TokenRefreshCache setJedisInstanceToAuthenticate(Jedis jedisInstanceToAuthenticate) {
+            this.jedisInstanceToAuthenticate = jedisInstanceToAuthenticate;
+            return this;
+        }
     }
 }
