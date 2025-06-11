@@ -8,6 +8,8 @@ import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.utility.DockerImageName;
 import redis.clients.jedis.Jedis;
 
+import java.util.Base64;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
@@ -50,5 +52,21 @@ public class RedisUtilsTest {
         Thread.sleep(500 + 1000 * TTL_SECONDS);
 
         assertFalse(redisUtils.getValue("test").isPresent());
+    }
+
+    @Test
+    public void extractUsernameFromTokenBase64PaddingWorks() {
+        // Payload with length not a multiple of 4 (e.g., 2 or 3 mod 4)
+        String header = Base64.getUrlEncoder().withoutPadding().encodeToString("{\"alg\":\"none\"}".getBytes());
+
+        // 2 mod 4 length
+        String payload2 = Base64.getUrlEncoder().withoutPadding().encodeToString("{\"oid\":\"ab\"}".getBytes());
+        String token2 = header + "." + payload2 + ".sig";
+        assertEquals("ab", RedisUtils.extractUsernameFromToken(token2));
+
+        // 3 mod 4 length
+        String payload3 = Base64.getUrlEncoder().withoutPadding().encodeToString("{\"oid\":\"abc\"}".getBytes());
+        String token3 = header + "." + payload3 + ".sig";
+        assertEquals("abc", RedisUtils.extractUsernameFromToken(token3));
     }
 }
