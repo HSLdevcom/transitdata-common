@@ -310,11 +310,11 @@ public class RedisUtils {
             public void run() {
                 accessToken = tokenCredential.getToken(tokenRequestContext).block();
                 username = extractUsernameFromToken(accessToken.getToken());
-                System.out.println("Refreshed Token with Expiry: " + accessToken.getExpiresAt().toEpochSecond());
+                log.info("Refreshed Token with Expiry: " + accessToken.getExpiresAt().toEpochSecond());
                 
                 if (jedisInstanceToAuthenticate != null && !CoreUtils.isNullOrEmpty(username)) {
                     jedisInstanceToAuthenticate.auth(username, accessToken.getToken());
-                    System.out.println("Refreshed Jedis Connection with fresh access token, token expires at : "
+                    log.info("Refreshed Jedis Connection with fresh access token, token expires at : "
                             + accessToken.getExpiresAt().toEpochSecond());
                 }
                 timer.schedule(new TokenRefreshTask(), getTokenRefreshDelay());
