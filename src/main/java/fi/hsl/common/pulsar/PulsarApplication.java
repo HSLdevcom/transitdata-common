@@ -155,7 +155,7 @@ public class PulsarApplication implements AutoCloseable {
 
     @NotNull
     protected Jedis createRedisClient(@NotNull String redisHost, int port) {
-        log.info("Connecting to Redis at " + redisHost + ":" + port);
+        log.info("Connecting to Redis at {}:{}", redisHost, port);
         
         //Construct a Token Credential from Identity library, e.g. DefaultAzureCredential / ClientSecretCredential / Client CertificateCredential / ManagedIdentityCredential etc.
         DefaultAzureCredential defaultAzureCredential = new DefaultAzureCredentialBuilder().build();
