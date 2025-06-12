@@ -10,9 +10,10 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 import java.util.function.BooleanSupplier;
 
 public class HealthServer {
@@ -21,7 +22,9 @@ public class HealthServer {
     public final int port;
     public final String endpoint;
     public final HttpServer httpServer;
-    private List<BooleanSupplier> checks = new ArrayList<>();
+    private final ExecutorService healthCheckExecutor =
+        Executors.newCachedThreadPool();
+    private final List<BooleanSupplier> checks = new CopyOnWriteArrayList<>();
 
     public HealthServer(final int port, @NotNull final String endpoint) throws IOException {
         this.port = port;
@@ -30,14 +33,14 @@ public class HealthServer {
         httpServer = HttpServer.create(new InetSocketAddress(port), 0);
         httpServer.createContext("/", createDefaultHandler());
         httpServer.createContext(endpoint, createHandler());
-        httpServer.setExecutor(Executors.newSingleThreadExecutor());
+        httpServer.setExecutor(healthCheckExecutor);
         httpServer.start();
         log.info("HealthServer started");
     }
 
     private void writeResponse(@NotNull final HttpExchange httpExchange, @NotNull final int responseCode, @NotNull final String responseBody) throws IOException {
-        final byte[] response = responseBody.getBytes("UTF-8");
-        httpExchange.getResponseHeaders().add("Content-Type", "text/plain; charset=UTF-8");
+        final byte[] response = responseBody.getBytes(StandardCharsets.UTF_8);
+        httpExchange.getResponseHeaders().add("Content-Type", "text/plain; charset=" + StandardCharsets.UTF_8.name());
         httpExchange.sendResponseHeaders(responseCode, response.length);
         final OutputStream out = httpExchange.getResponseBody();
         out.write(response);
@@ -91,16 +94,67 @@ public class HealthServer {
     }
 
     public boolean checkHealth() {
-        boolean isHealthy = true;
-        for (final BooleanSupplier check : checks) {
-            isHealthy &= check.getAsBoolean();
+        try {
+            CompletionService<Boolean> executorCompletionService
+                    = new ExecutorCompletionService<>(healthCheckExecutor);
+            int n = checks.size();
+            List<Future<Boolean>> futures = new ArrayList<>(n);
+            try {
+                for (BooleanSupplier check : checks) {
+                    futures.add(executorCompletionService.submit(checkToCallable(check)));
+                }
+                for (int i = 0; i < n; ++i) {
+                    try {
+                        Boolean result = executorCompletionService.take().get();
+                        if (result == null || !result) {
+                            return false; // Return false immediately if any check fails
+                        }
+                    } catch (ExecutionException e) {
+                        log.error("A health check task execution failed. Marking unhealthy.", e.getCause() != null ? e.getCause() : e);
+                        return false;
+                    } catch (InterruptedException e) {
+                        log.error("Health check interrupted. Marking unhealthy.", e);
+                        Thread.currentThread().interrupt();
+                        return false;
+                    }
+                }
+            } finally {
+                for (Future<Boolean> f : futures) {
+                    f.cancel(true);
+                }
+            }
+            return true; // Return true only if all checks pass
+        } catch (Exception e) {
+            log.error("Exception during health checks", e);
+            return false;
         }
-        return isHealthy;
     }
 
     public void close() {
         if (httpServer != null) {
             httpServer.stop(0);
         }
+        if (healthCheckExecutor != null) {
+            healthCheckExecutor.shutdown();
+            try {
+                if (!healthCheckExecutor.awaitTermination(3, TimeUnit.SECONDS)) {
+                    healthCheckExecutor.shutdownNow();
+                }
+            } catch (InterruptedException ie) {
+                healthCheckExecutor.shutdownNow();
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+
+    private static Callable<Boolean> checkToCallable(BooleanSupplier check) {
+        return () -> {
+            try {
+                return check.getAsBoolean();
+            } catch (Exception e) {
+                log.error("Exception during health check", e);
+                return false;
+            }
+        };
     }
 }
