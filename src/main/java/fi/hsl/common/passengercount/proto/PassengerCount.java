@@ -3466,6 +3466,17 @@ public final class PassengerCount {
      * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
      */
     fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder getVehicleCountsOrBuilder();
+
+    /**
+     * <code>optional bool invalid = 18;</code>
+     * @return Whether the invalid field is set.
+     */
+    boolean hasInvalid();
+    /**
+     * <code>optional bool invalid = 18;</code>
+     * @return The invalid.
+     */
+    boolean getInvalid();
   }
   /**
    * Protobuf type {@code proto.Payload}
@@ -4024,6 +4035,25 @@ public final class PassengerCount {
       return vehicleCounts_ == null ? fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.getDefaultInstance() : vehicleCounts_;
     }
 
+    public static final int INVALID_FIELD_NUMBER = 18;
+    private boolean invalid_ = false;
+    /**
+     * <code>optional bool invalid = 18;</code>
+     * @return Whether the invalid field is set.
+     */
+    @java.lang.Override
+    public boolean hasInvalid() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     * <code>optional bool invalid = 18;</code>
+     * @return The invalid.
+     */
+    @java.lang.Override
+    public boolean getInvalid() {
+      return invalid_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4088,6 +4118,9 @@ public final class PassengerCount {
       }
       if (((bitField0_ & 0x00010000) != 0)) {
         output.writeMessage(17, getVehicleCounts());
+      }
+      if (((bitField0_ & 0x00020000) != 0)) {
+        output.writeBool(18, invalid_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -4159,6 +4192,10 @@ public final class PassengerCount {
       if (((bitField0_ & 0x00010000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(17, getVehicleCounts());
+      }
+      if (((bitField0_ & 0x00020000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(18, invalid_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4263,6 +4300,11 @@ public final class PassengerCount {
         if (!getVehicleCounts()
             .equals(other.getVehicleCounts())) return false;
       }
+      if (hasInvalid() != other.hasInvalid()) return false;
+      if (hasInvalid()) {
+        if (getInvalid()
+            != other.getInvalid()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4346,6 +4388,11 @@ public final class PassengerCount {
       if (hasVehicleCounts()) {
         hash = (37 * hash) + VEHICLECOUNTS_FIELD_NUMBER;
         hash = (53 * hash) + getVehicleCounts().hashCode();
+      }
+      if (hasInvalid()) {
+        hash = (37 * hash) + INVALID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getInvalid());
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -4503,6 +4550,7 @@ public final class PassengerCount {
           vehicleCountsBuilder_.dispose();
           vehicleCountsBuilder_ = null;
         }
+        invalid_ = false;
         return this;
       }
 
@@ -4606,6 +4654,10 @@ public final class PassengerCount {
               ? vehicleCounts_
               : vehicleCountsBuilder_.build();
           to_bitField0_ |= 0x00010000;
+        }
+        if (((from_bitField0_ & 0x00020000) != 0)) {
+          result.invalid_ = invalid_;
+          to_bitField0_ |= 0x00020000;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -4716,6 +4768,9 @@ public final class PassengerCount {
         }
         if (other.hasVehicleCounts()) {
           mergeVehicleCounts(other.getVehicleCounts());
+        }
+        if (other.hasInvalid()) {
+          setInvalid(other.getInvalid());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -4830,6 +4885,11 @@ public final class PassengerCount {
                 bitField0_ |= 0x00010000;
                 break;
               } // case 138
+              case 144: {
+                invalid_ = input.readBool();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 144
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -5844,6 +5904,46 @@ public final class PassengerCount {
           vehicleCounts_ = null;
         }
         return vehicleCountsBuilder_;
+      }
+
+      private boolean invalid_ ;
+      /**
+       * <code>optional bool invalid = 18;</code>
+       * @return Whether the invalid field is set.
+       */
+      @java.lang.Override
+      public boolean hasInvalid() {
+        return ((bitField0_ & 0x00020000) != 0);
+      }
+      /**
+       * <code>optional bool invalid = 18;</code>
+       * @return The invalid.
+       */
+      @java.lang.Override
+      public boolean getInvalid() {
+        return invalid_;
+      }
+      /**
+       * <code>optional bool invalid = 18;</code>
+       * @param value The invalid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInvalid(boolean value) {
+        
+        invalid_ = value;
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool invalid = 18;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInvalid() {
+        bitField0_ = (bitField0_ & ~0x00020000);
+        invalid_ = false;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -9105,21 +9205,22 @@ public final class PassengerCount {
       "\n\007ongoing\020\000\022\014\n\010upcoming\020\001\"X\n\rTransportMo" +
       "de\022\007\n\003bus\020\000\022\t\n\005train\020\001\022\010\n\004tram\020\002\022\t\n\005metr" +
       "o\020\003\022\t\n\005ferry\020\004\022\010\n\004ubus\020\005\022\t\n\005robot\020\006\"\024\n\tE" +
-      "ventType\022\007\n\003apc\020\000\"\220\002\n\007Payload\022\014\n\004desi\030\001 " +
+      "ventType\022\007\n\003apc\020\000\"\241\002\n\007Payload\022\014\n\004desi\030\001 " +
       "\001(\t\022\013\n\003dir\030\002 \001(\t\022\014\n\004oper\030\003 \001(\005\022\013\n\003veh\030\004 " +
       "\001(\005\022\013\n\003tst\030\005 \001(\003\022\013\n\003tsi\030\006 \001(\003\022\013\n\003lat\030\007 \001" +
       "(\001\022\014\n\004long\030\010 \001(\001\022\013\n\003odo\030\t \001(\001\022\014\n\004oday\030\n " +
       "\001(\t\022\013\n\003jrn\030\013 \001(\005\022\014\n\004line\030\014 \001(\005\022\r\n\005start\030" +
       "\r \001(\t\022\013\n\003loc\030\016 \001(\t\022\014\n\004stop\030\017 \001(\005\022\r\n\005rout" +
       "e\030\020 \001(\t\022+\n\rvehicleCounts\030\021 \001(\0132\024.proto.V" +
-      "ehicleCounts\"\216\001\n\rVehicleCounts\022\024\n\014countQ" +
-      "uality\030\001 \001(\t\022\023\n\013vehicleLoad\030\002 \001(\005\022\030\n\020veh" +
-      "icleLoadRatio\030\003 \001(\001\022$\n\ndoorCounts\030\004 \003(\0132" +
-      "\020.proto.DoorCount\022\022\n\nextensions\030\005 \001(\t\"6\n" +
-      "\tDoorCount\022\014\n\004door\030\001 \001(\t\022\033\n\005count\030\002 \003(\0132" +
-      "\014.proto.Count\"/\n\005Count\022\r\n\005clazz\030\001 \001(\t\022\n\n" +
-      "\002in\030\002 \001(\005\022\013\n\003out\030\003 \001(\005B4\n\"fi.hsl.common." +
-      "passengercount.protoB\016PassengerCount"
+      "ehicleCounts\022\017\n\007invalid\030\022 \001(\010\"\216\001\n\rVehicl" +
+      "eCounts\022\024\n\014countQuality\030\001 \001(\t\022\023\n\013vehicle" +
+      "Load\030\002 \001(\005\022\030\n\020vehicleLoadRatio\030\003 \001(\001\022$\n\n" +
+      "doorCounts\030\004 \003(\0132\020.proto.DoorCount\022\022\n\nex" +
+      "tensions\030\005 \001(\t\"6\n\tDoorCount\022\014\n\004door\030\001 \001(" +
+      "\t\022\033\n\005count\030\002 \003(\0132\014.proto.Count\"/\n\005Count\022" +
+      "\r\n\005clazz\030\001 \001(\t\022\n\n\002in\030\002 \001(\005\022\013\n\003out\030\003 \001(\005B" +
+      "4\n\"fi.hsl.common.passengercount.protoB\016P" +
+      "assengerCount"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9142,7 +9243,7 @@ public final class PassengerCount {
     internal_static_proto_Payload_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Payload_descriptor,
-        new java.lang.String[] { "Desi", "Dir", "Oper", "Veh", "Tst", "Tsi", "Lat", "Long", "Odo", "Oday", "Jrn", "Line", "Start", "Loc", "Stop", "Route", "VehicleCounts", });
+        new java.lang.String[] { "Desi", "Dir", "Oper", "Veh", "Tst", "Tsi", "Lat", "Long", "Odo", "Oday", "Jrn", "Line", "Start", "Loc", "Stop", "Route", "VehicleCounts", "Invalid", });
     internal_static_proto_VehicleCounts_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_proto_VehicleCounts_fieldAccessorTable = new
