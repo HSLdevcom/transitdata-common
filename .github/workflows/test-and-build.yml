@@ -39,4 +39,4 @@ jobs:
         with:
           package-type: 'maven'
           package-name: 'fi.hsl.transitdata-common'
-          min-versions-to-keep: 5
+          min-versions-to-keep: 50
