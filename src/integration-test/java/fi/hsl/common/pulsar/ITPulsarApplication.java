@@ -16,6 +16,7 @@ import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.PulsarContainer;
 import redis.clients.jedis.Jedis;
 
+import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -285,7 +286,7 @@ public class ITPulsarApplication {
 
         logger.info("Checking health");
         HttpResponse<String> response = makeGetRequest(url);
-        assertEquals(1, response.statusCode());
+        assertEquals(HttpURLConnection.HTTP_OK, response.statusCode());
         assertEquals("OK", getContent(response));
 
         logger.info("Disconnecting Jedis and checking health");
@@ -293,7 +294,7 @@ public class ITPulsarApplication {
         assertFalse(jedis.isConnected());
 
         response = makeGetRequest(url);
-        assertEquals(1, response.statusCode());
+        assertEquals(HttpURLConnection.HTTP_UNAVAILABLE, response.statusCode());
         assertEquals("FAIL", getContent(response));
 
         logger.info("Reconnecting Jedis and checking health");
@@ -301,7 +302,7 @@ public class ITPulsarApplication {
         assertTrue(jedis.isConnected());
 
         response = makeGetRequest(url);
-        assertEquals(1, response.statusCode());
+        assertEquals(HttpURLConnection.HTTP_OK, response.statusCode());
         assertEquals("OK", getContent(response));
 
         logger.info("Closing Pulsar consumer and checking health");
@@ -309,21 +310,21 @@ public class ITPulsarApplication {
         assertFalse(consumer.isConnected());
 
         response = makeGetRequest(url);
-        assertEquals(1, response.statusCode());
+        assertEquals(HttpURLConnection.HTTP_UNAVAILABLE, response.statusCode());
         assertEquals("FAIL", getContent(response));
 
         response = makePostRequest(url);
-        assertEquals(1, response.statusCode());
+        assertEquals(HttpURLConnection.HTTP_BAD_METHOD, response.statusCode());
         assertEquals("Method Not Allowed", getContent(response));
 
         url = "http://localhost:" + healthServer.port + "/foo";
         response = makeGetRequest(url);
-        assertEquals(1, response.statusCode());
+        assertEquals(HttpURLConnection.HTTP_NOT_FOUND, response.statusCode());
         assertEquals("Not Found", getContent(response));
 
         url = "http://localhost:" + healthServer.port + healthServer.endpoint + "foo";
         response = makeGetRequest(url);
-        assertEquals(1, response.statusCode());
+        assertEquals(HttpURLConnection.HTTP_NOT_FOUND, response.statusCode());
         assertEquals("Not Found", getContent(response));
 
         app.close();
