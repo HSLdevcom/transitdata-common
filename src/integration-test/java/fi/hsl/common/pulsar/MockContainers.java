@@ -1,12 +1,17 @@
 package fi.hsl.common.pulsar;
 
-import org.apache.pulsar.client.api.PulsarClient;
+import org.apache.pulsar.client.admin.PulsarAdmin;
+import org.apache.pulsar.common.policies.data.TenantInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.PulsarContainer;
 import org.testcontainers.containers.output.Slf4jLogConsumer;
 import redis.clients.jedis.Jedis;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class MockContainers {
 
@@ -36,13 +41,24 @@ public class MockContainers {
      * For using the "real" tenant/namespace/topicname pattern @see MockContainers#configurePulsarContainer(PulsarContainer, String, String)
      */
     public static PulsarContainer newPulsarContainer() {
-        return new PulsarContainer("2.3.1");
+        return new PulsarContainer("3.0.7");
     }
-    
-    public static PulsarClient newMockPulsarClient(PulsarContainer pulsar) throws Exception {
-        return PulsarClient.builder()
-                .serviceUrl(pulsar.getPulsarBrokerUrl())
+
+    public static PulsarContainer configurePulsarContainer(PulsarContainer pulsar, final String tenant, final String namespace) throws Exception {
+        PulsarAdmin admin = PulsarAdmin.builder()
+                .serviceHttpUrl(pulsar.getHttpServiceUrl())
                 .build();
+
+        Set<String> clusters = new HashSet<>(List.of("standalone"));
+        TenantInfo info = TenantInfo.builder()
+                .allowedClusters(clusters)
+                .adminRoles(new HashSet<>(List.of("all")))
+                .build();
+        admin.tenants().createTenant(tenant, info);
+
+        admin.namespaces().createNamespace(tenant + "/" + namespace, clusters);
+        logger.info("Pulsar setup done");
+        return pulsar;
     }
 
     public static void tail(GenericContainer container, Logger logger) {

@@ -3,9 +3,11 @@ package fi.hsl.common.pulsar;
 import com.typesafe.config.Config;
 import fi.hsl.common.config.ConfigParser;
 import fi.hsl.common.config.ConfigUtils;
+import fi.hsl.common.health.HealthServer;
 import org.apache.pulsar.client.api.Consumer;
 import org.apache.pulsar.client.api.Message;
 import org.apache.pulsar.client.api.Producer;
+import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -14,9 +16,15 @@ import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.PulsarContainer;
 import redis.clients.jedis.Jedis;
 
+import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.nio.charset.Charset;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
+import java.util.function.BooleanSupplier;
 
 import static org.junit.Assert.*;
 
@@ -36,13 +44,22 @@ public class ITPulsarApplication {
 
     @ClassRule
     public static PulsarContainer pulsar = MockContainers.newPulsarContainer();
-    
+
+    @BeforeClass
+    public static void setUp() throws Exception {
+        MockContainers.configurePulsarContainer(pulsar, TENANT, NAMESPACE);
+
+        if (PRINT_PULSAR_LOG) {
+            MockContainers.tail(pulsar, logger);
+        }
+    }
+
     @Test
     public void testRedisContainer() {
         Jedis jedis = MockContainers.newMockJedisConnection(redis);
         jedis.set("key", "value");
         String value = jedis.get("key");
-        assertEquals(value, "value");
+        assertEquals("value", value);
     }
 
     @Test
@@ -51,10 +68,11 @@ public class ITPulsarApplication {
         assertNotNull(config);
         PulsarApplication app = PulsarMockApplication.newInstance(config, redis, pulsar);
         assertNotNull(app);
-
+        
+        assertNotNull(app.getContext().getJedis());
         app.getContext().getJedis().set("pulsar-application-jedis", "should work");
         String value = app.getContext().getJedis().get("pulsar-application-jedis");
-        assertEquals(value, "should work");
+        assertEquals("should work", value);
     }
 
 
@@ -76,17 +94,20 @@ public class ITPulsarApplication {
         final String payload = "Test-message";
 
         Producer<byte[]> producer = app.getContext().getSingleProducer();
+        assertNotNull(producer);
         producer.send(payload.getBytes());
 
         logger.info("Message sent, reading it back");
 
         Consumer<byte[]> consumer = app.getContext().getConsumer();
-        readAndValidateMsg(consumer, new HashSet<>(Arrays.asList(payload)));
+        readAndValidateMsg(consumer, new HashSet<>(List.of(payload)));
 
         Jedis jedis = app.getContext().getJedis();
-
+        
+        assertNotNull(consumer);
         assertTrue(consumer.isConnected());
         assertTrue(producer.isConnected());
+        assertNotNull(jedis);
         assertTrue(jedis.isConnected());
 
         app.close();
@@ -115,7 +136,8 @@ public class ITPulsarApplication {
 
         PulsarApplication app = PulsarMockApplication.newInstance(producer1Config, redis, pulsar);
         assertNotNull(app);
-
+        
+        assertNotNull(app.getContext().getProducers());
         Producer<byte[]> producer = app.getContext().getProducers().get("test-1");
 
         //Create a second producer but bind into different topic
@@ -173,12 +195,15 @@ public class ITPulsarApplication {
             assertNotNull(app);
 
             producer = app.getContext().getSingleProducer();
+            assertNotNull(producer);
             assertTrue(producer.isConnected());
 
             consumer = app.getContext().getConsumer();
+            assertNotNull(consumer);
             assertTrue(consumer.isConnected());
 
             jedis = app.getContext().getJedis();
+            assertNotNull(jedis);
             assertTrue(jedis.isConnected());
         }
 
@@ -218,10 +243,120 @@ public class ITPulsarApplication {
     public void testInitFailure(Config config) {
         try(PulsarApplication app = PulsarMockApplication.newInstance(config, redis, pulsar)) {
             logger.info("You should never see this message, init should throw an exception");
-            assertTrue(false);
+            fail();
         }
         catch (Exception e) {
             logger.debug("Exception as expected");
         }
+    }
+
+    @Test
+    public void testHttpServer() throws Exception {
+        Config base = PulsarMockApplication.readConfig(CONFIG_FILE);
+
+        PulsarApplication app = PulsarMockApplication.newInstance(base, redis, pulsar);
+        assertNotNull(app);
+
+        logger.info("Pulsar Application created, testing HealthServer");
+
+        final Producer<byte[]> producer = app.getContext().getSingleProducer();
+        final Consumer<byte[]> consumer = app.getContext().getConsumer();
+        final Jedis jedis = app.getContext().getJedis();
+        final HealthServer healthServer = app.getContext().getHealthServer();
+        
+        assertNotNull(consumer);
+        assertTrue(consumer.isConnected());
+        assertNotNull(producer);
+        assertTrue(producer.isConnected());
+        assertNotNull(jedis);
+        assertTrue(jedis.isConnected());
+
+        logger.info("Creating health check function");
+        final BooleanSupplier healthCheck = () -> {
+            boolean status = true;
+            status &= producer.isConnected();
+            status &= consumer.isConnected();
+            status &= jedis.isConnected();
+            return status;
+        };
+        assertNotNull(healthServer);
+        healthServer.addCheck(healthCheck);
+
+        String url = "http://localhost:" + healthServer.port + healthServer.endpoint;
+
+        logger.info("Checking health");
+        HttpResponse<String> response = makeGetRequest(url);
+        assertEquals(HttpURLConnection.HTTP_OK, response.statusCode());
+        assertEquals("OK", getContent(response));
+
+        logger.info("Disconnecting Jedis and checking health");
+        jedis.disconnect();
+        assertFalse(jedis.isConnected());
+
+        response = makeGetRequest(url);
+        assertEquals(HttpURLConnection.HTTP_UNAVAILABLE, response.statusCode());
+        assertEquals("FAIL", getContent(response));
+
+        logger.info("Reconnecting Jedis and checking health");
+        jedis.connect();
+        assertTrue(jedis.isConnected());
+
+        response = makeGetRequest(url);
+        assertEquals(HttpURLConnection.HTTP_OK, response.statusCode());
+        assertEquals("OK", getContent(response));
+
+        logger.info("Closing Pulsar consumer and checking health");
+        consumer.close();
+        assertFalse(consumer.isConnected());
+
+        response = makeGetRequest(url);
+        assertEquals(HttpURLConnection.HTTP_UNAVAILABLE, response.statusCode());
+        assertEquals("FAIL", getContent(response));
+
+        response = makePostRequest(url);
+        assertEquals(HttpURLConnection.HTTP_BAD_METHOD, response.statusCode());
+        assertEquals("Method Not Allowed", getContent(response));
+
+        url = "http://localhost:" + healthServer.port + "/foo";
+        response = makeGetRequest(url);
+        assertEquals(HttpURLConnection.HTTP_NOT_FOUND, response.statusCode());
+        assertEquals("Not Found", getContent(response));
+
+        url = "http://localhost:" + healthServer.port + healthServer.endpoint + "foo";
+        response = makeGetRequest(url);
+        assertEquals(HttpURLConnection.HTTP_NOT_FOUND, response.statusCode());
+        assertEquals("Not Found", getContent(response));
+
+        app.close();
+        assertFalse(consumer.isConnected());
+        assertFalse(producer.isConnected());
+        assertFalse(jedis.isConnected());
+    }
+
+    private HttpResponse<String> makeGetRequest(final String url) {
+        return makeRequest("GET", url);
+    }
+
+    private HttpResponse<String> makePostRequest(final String url) {
+        return makeRequest("POST", url);
+    }
+
+    private HttpResponse<String> makeRequest(final String method, final String url) {
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request;
+        if (method.equalsIgnoreCase("post")) {
+            request = HttpRequest.newBuilder(URI.create(url)).POST(HttpRequest.BodyPublishers.noBody()).build();
+        } else {
+            request = HttpRequest.newBuilder(URI.create(url)).GET().build();
+        }
+        try {
+            return client.send(request, HttpResponse.BodyHandlers.ofString());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private String getContent(final HttpResponse<String> response) {
+        return response.body();
     }
 }

@@ -15,6 +15,8 @@ jobs:
           cache: 'maven'
       - name: Build with Maven
         run: mvn clean package -Dmaven.javadoc.skip=true -B -V
+      - name: Run integration tests
+        run: mvn failsafe:integration-test && mvn failsafe:verify
   publish:
     needs: test
     runs-on: ubuntu-latest
@@ -37,4 +39,4 @@ jobs:
         with:
           package-type: 'maven'
           package-name: 'fi.hsl.transitdata-common'
-          min-versions-to-keep: 5
+          min-versions-to-keep: 50
