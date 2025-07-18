@@ -289,11 +289,6 @@ public class PulsarApplication implements AutoCloseable {
                 if (msg != null) {
                     handler.handleMessage(msg);
                 }
-                else if (!consumer.isConnected()) {
-                    //Pulsar client goes into retry-mode in case the connection is lost after once acquired.
-                    //We will rather abort and handle the errors ourselves
-                    throw new PulsarClientException("Connection lost");
-                }
                 //TODO move Ack and possibly message sending to here
             }
         }
