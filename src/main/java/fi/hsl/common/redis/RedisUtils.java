@@ -14,6 +14,10 @@ import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
+/**
+ * Use {@link RedisStore}
+ */
+@Deprecated(forRemoval = true)
 public class RedisUtils {
     private static final Logger log = LoggerFactory.getLogger(RedisUtils.class);
 
