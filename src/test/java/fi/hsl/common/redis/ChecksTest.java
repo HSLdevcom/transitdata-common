@@ -4,11 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static fi.hsl.common.lang.Checks.checkEither;
 import static fi.hsl.common.lang.Checks.checkNotEmpty;
 import static fi.hsl.common.lang.Checks.checkRequired;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class ChecksTest {
@@ -102,24 +100,5 @@ class ChecksTest {
         assertThatThrownBy(() -> checkNotEmpty("param", value))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("param must not be blank");
-    }
-
-    @Test
-    void shouldNotThrowWhenExactlyOneBooleanIsTrue() {
-        // when / then
-        assertThatCode(() -> checkEither(true, false, "error")).doesNotThrowAnyException();
-        assertThatCode(() -> checkEither(false, true, "error")).doesNotThrowAnyException();
-    }
-
-    @Test
-    void shouldThrowWhenBothBooleansAreSame() {
-        // when / then
-        assertThatThrownBy(() -> checkEither(true, true, "error"))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("error");
-
-        assertThatThrownBy(() -> checkEither(false, false, "error"))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("error");
     }
 }

@@ -34,10 +34,4 @@ public class Checks {
 
         return value;
     }
-
-    public static void checkEither(boolean first, boolean second, String errorMessage) {
-        if (first == second) {
-            throw new IllegalArgumentException(errorMessage);
-        }
-    }
 }
