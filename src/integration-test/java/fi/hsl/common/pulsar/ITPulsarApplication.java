@@ -1,7 +1,6 @@
 package fi.hsl.common.pulsar;
 
 import com.typesafe.config.Config;
-import fi.hsl.common.config.ConfigParser;
 import fi.hsl.common.config.ConfigUtils;
 import fi.hsl.common.health.HealthServer;
 import org.apache.pulsar.client.api.Consumer;
@@ -14,7 +13,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.PulsarContainer;
-import redis.clients.jedis.Jedis;
 
 import java.net.HttpURLConnection;
 import java.net.URI;
@@ -22,11 +20,20 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.Charset;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.function.BooleanSupplier;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 public class ITPulsarApplication {
 
@@ -55,32 +62,9 @@ public class ITPulsarApplication {
     }
 
     @Test
-    public void testRedisContainer() {
-        Jedis jedis = MockContainers.newMockJedisConnection(redis);
-        jedis.set("key", "value");
-        String value = jedis.get("key");
-        assertEquals("value", value);
-    }
-
-    @Test
-    public void testPulsarApplicationRedis() throws Exception {
-        Config config = ConfigParser.createConfig("test-redis-only.conf");
-        assertNotNull(config);
-        PulsarApplication app = PulsarMockApplication.newInstance(config, redis, pulsar);
-        assertNotNull(app);
-        
-        assertNotNull(app.getContext().getJedis());
-        app.getContext().getJedis().set("pulsar-application-jedis", "should work");
-        String value = app.getContext().getJedis().get("pulsar-application-jedis");
-        assertEquals("should work", value);
-    }
-
-
-    @Test
     public void readConfig() {
         PulsarMockApplication.readConfig(CONFIG_FILE);
     }
-
 
     @Test
     public void testPulsar() throws Exception {
@@ -102,20 +86,14 @@ public class ITPulsarApplication {
         Consumer<byte[]> consumer = app.getContext().getConsumer();
         readAndValidateMsg(consumer, new HashSet<>(List.of(payload)));
 
-        Jedis jedis = app.getContext().getJedis();
-        
         assertNotNull(consumer);
         assertTrue(consumer.isConnected());
         assertTrue(producer.isConnected());
-        assertNotNull(jedis);
-        assertTrue(jedis.isConnected());
 
         app.close();
 
         assertFalse(consumer.isConnected());
         assertFalse(producer.isConnected());
-        assertFalse(jedis.isConnected());
-
     }
 
     public static String formatTopicName(String topic) {
@@ -130,13 +108,13 @@ public class ITPulsarApplication {
         o1.put("pulsar.producer.multipleProducers", true);
         String topic1 = formatTopicName("test-1");
         String topic2 = formatTopicName("test-2");
-        o1.put("pulsar.producer.topics", String.join(",",topic1 , topic2));
-        o1.put("pulsar.producer.topicKeys",topic1 + "=test-1," + topic2 + "=test-2");
+        o1.put("pulsar.producer.topics", String.join(",", topic1, topic2));
+        o1.put("pulsar.producer.topicKeys", topic1 + "=test-1," + topic2 + "=test-2");
         Config producer1Config = PulsarMockApplication.readConfigWithOverrides("integration-multiprod-test.conf", o1);
 
         PulsarApplication app = PulsarMockApplication.newInstance(producer1Config, redis, pulsar);
         assertNotNull(app);
-        
+
         assertNotNull(app.getContext().getProducers());
         Producer<byte[]> producer = app.getContext().getProducers().get("test-1");
 
@@ -189,8 +167,7 @@ public class ITPulsarApplication {
 
         Producer<byte[]> producer;
         Consumer<byte[]> consumer;
-        Jedis jedis;
-        try(PulsarApplication app = PulsarMockApplication.newInstance(base, redis, pulsar)) {
+        try (PulsarApplication app = PulsarMockApplication.newInstance(base, redis, pulsar)) {
             logger.info("Pulsar Application created within try-with-resources-block");
             assertNotNull(app);
 
@@ -201,18 +178,12 @@ public class ITPulsarApplication {
             consumer = app.getContext().getConsumer();
             assertNotNull(consumer);
             assertTrue(consumer.isConnected());
-
-            jedis = app.getContext().getJedis();
-            assertNotNull(jedis);
-            assertTrue(jedis.isConnected());
         }
 
         logger.info("Pulsar Application out of scope, all connections should be closed");
 
         assertFalse(consumer.isConnected());
         assertFalse(producer.isConnected());
-        assertFalse(jedis.isConnected());
-
     }
 
     @Test
@@ -241,11 +212,10 @@ public class ITPulsarApplication {
     }
 
     public void testInitFailure(Config config) {
-        try(PulsarApplication app = PulsarMockApplication.newInstance(config, redis, pulsar)) {
+        try (PulsarApplication app = PulsarMockApplication.newInstance(config, redis, pulsar)) {
             logger.info("You should never see this message, init should throw an exception");
             fail();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             logger.debug("Exception as expected");
         }
     }
@@ -261,22 +231,18 @@ public class ITPulsarApplication {
 
         final Producer<byte[]> producer = app.getContext().getSingleProducer();
         final Consumer<byte[]> consumer = app.getContext().getConsumer();
-        final Jedis jedis = app.getContext().getJedis();
         final HealthServer healthServer = app.getContext().getHealthServer();
-        
+
         assertNotNull(consumer);
         assertTrue(consumer.isConnected());
         assertNotNull(producer);
         assertTrue(producer.isConnected());
-        assertNotNull(jedis);
-        assertTrue(jedis.isConnected());
 
         logger.info("Creating health check function");
         final BooleanSupplier healthCheck = () -> {
             boolean status = true;
             status &= producer.isConnected();
             status &= consumer.isConnected();
-            status &= jedis.isConnected();
             return status;
         };
         assertNotNull(healthServer);
@@ -289,17 +255,9 @@ public class ITPulsarApplication {
         assertEquals(HttpURLConnection.HTTP_OK, response.statusCode());
         assertEquals("OK", getContent(response));
 
-        logger.info("Disconnecting Jedis and checking health");
-        jedis.disconnect();
-        assertFalse(jedis.isConnected());
-
         response = makeGetRequest(url);
         assertEquals(HttpURLConnection.HTTP_UNAVAILABLE, response.statusCode());
         assertEquals("FAIL", getContent(response));
-
-        logger.info("Reconnecting Jedis and checking health");
-        jedis.connect();
-        assertTrue(jedis.isConnected());
 
         response = makeGetRequest(url);
         assertEquals(HttpURLConnection.HTTP_OK, response.statusCode());
@@ -330,7 +288,6 @@ public class ITPulsarApplication {
         app.close();
         assertFalse(consumer.isConnected());
         assertFalse(producer.isConnected());
-        assertFalse(jedis.isConnected());
     }
 
     private HttpResponse<String> makeGetRequest(final String url) {

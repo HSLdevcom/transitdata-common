@@ -9,7 +9,6 @@ import org.apache.pulsar.client.api.Producer;
 import org.apache.pulsar.client.api.PulsarClient;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import redis.clients.jedis.Jedis;
 
 import java.util.Map;
 
@@ -21,7 +20,6 @@ public class PulsarApplicationContext {
     private Map<String, Producer<byte[]>> producers;
     private PulsarClient client;
     private PulsarAdmin admin;
-    private Jedis jedis;
     private RedisStore redisStore;
     private HealthServer healthServer;
 
@@ -80,15 +78,6 @@ public class PulsarApplicationContext {
 
     protected void setClient(@NotNull PulsarClient client) {
         this.client = client;
-    }
-
-    @Nullable
-    public Jedis getJedis() {
-        return jedis;
-    }
-
-    protected void setJedis(@Nullable Jedis jedis) {
-        this.jedis = jedis;
     }
 
     @Nullable

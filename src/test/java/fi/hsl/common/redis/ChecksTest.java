@@ -88,7 +88,7 @@ class ChecksTest {
         // when / then
         assertThatThrownBy(() -> checkNotEmpty("param", value))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("param must not be null");
+                .hasMessage("param must not be blank");
     }
 
     @Test

@@ -3,6 +3,7 @@ package fi.hsl.common.redis;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisSentinelPool;
 import redis.clients.jedis.Response;
 import redis.clients.jedis.Transaction;
 import redis.clients.jedis.params.ScanParams;
@@ -12,7 +13,6 @@ import java.time.Duration;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.BDDMockito.any;
@@ -28,12 +28,12 @@ class RedisStoreTest {
 
     @BeforeEach
     void setUp() {
-        var jedisExecutor = mock(JedisExecutor.class);
+        var jedisPool = mock(JedisSentinelPool.class);
         jedis = mock(Jedis.class);
-        redisStore = new RedisStore(jedisExecutor);
+        redisStore = new RedisStore(jedisPool);
 
-        given(jedisExecutor.execute(any()))
-                .willAnswer(invocation -> ((Function<Jedis, ?>) invocation.getArgument(0)).apply(jedis));
+        given(jedisPool.getResource())
+                .willReturn(jedis);
     }
 
     @Test

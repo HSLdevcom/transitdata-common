@@ -25,9 +25,6 @@ public class Checks {
     }
 
     public static String checkNotEmpty(String paramName, String value) {
-        if (value == null) {
-            throw new IllegalArgumentException(paramName + " must not be null");
-        }
         if (isBlank(value)) {
             throw new IllegalArgumentException(paramName + " must not be blank");
         }

@@ -1,6 +1,7 @@
 package fi.hsl.common.redis;
 
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisSentinelPool;
 import redis.clients.jedis.Response;
 import redis.clients.jedis.params.ScanParams;
 
@@ -15,22 +16,22 @@ import java.util.function.Function;
 
 public class RedisStore {
 
-    private final JedisExecutor jedisExecutor;
+    private final JedisSentinelPool pool;
 
-    public RedisStore(JedisExecutor jedisExecutor) {
-        this.jedisExecutor = jedisExecutor;
+    public RedisStore(JedisSentinelPool pool) {
+        this.pool = pool;
     }
 
     public String setValue(String key, String value) {
-        return jedisExecutor.execute(jedis -> jedis.set(key, value));
+        return execute(jedis -> jedis.set(key, value));
     }
 
     public String setExpiringValue(String key, String value, Duration ttl) {
-        return jedisExecutor.execute(jedis -> jedis.setex(key, ttl.toSeconds(), value));
+        return execute(jedis -> jedis.setex(key, ttl.toSeconds(), value));
     }
 
     public String setValues(String key, Map<String, String> values) {
-        return jedisExecutor.execute(jedis -> jedis.hmset(key, values));
+        return execute(jedis -> jedis.hmset(key, values));
     }
 
     public String setExpiringValues(String key, Map<String, String> values, Duration ttl) {
@@ -40,18 +41,18 @@ public class RedisStore {
     }
 
     public Long setExpire(String key, Duration ttl) {
-        return jedisExecutor.execute(jedis -> jedis.expire(key, ttl.toSeconds()));
+        return execute(jedis -> jedis.expire(key, ttl.toSeconds()));
     }
 
     public Optional<String> getValue(String key) {
-        return jedisExecutor.execute(jedis -> {
+        return execute(jedis -> {
             var value = jedis.get(key);
             return value != null && !value.isEmpty() ? Optional.of(value) : Optional.empty();
         });
     }
 
     public Optional<Map<String, String>> getValues(String key) {
-        return jedisExecutor.execute(jedis -> {
+        return execute(jedis -> {
             Map<String, String> values = jedis.hgetAll(key);
             return values != null && !values.isEmpty() ? Optional.of(values) : Optional.empty();
         });
@@ -67,7 +68,7 @@ public class RedisStore {
         scanParams.count(count);
         var keys = new HashSet<String>();
 
-        return jedisExecutor.execute(jedis -> {
+        return execute(jedis -> {
             var cursor = ScanParams.SCAN_POINTER_START;
             do {
                 var scanResult = jedis.scan(cursor, scanParams);
@@ -81,7 +82,7 @@ public class RedisStore {
     }
 
     public Map<String, Optional<Map<String, String>>> getValuesByKeys(List<String> keys) {
-        return jedisExecutor.execute(jedis -> {
+        return execute(jedis -> {
             var transaction = jedis.multi();
             var responses = new HashMap<String, Response<Map<String, String>>>();
             keys.forEach((key) -> responses.put(key, transaction.hgetAll(key)));
@@ -101,7 +102,7 @@ public class RedisStore {
     }
 
     public Map<String, Optional<String>> getValueByKeys(List<String> keys) {
-        return jedisExecutor.execute(jedis -> {
+        return execute(jedis -> {
             var transaction = jedis.multi();
             var responses = new HashMap<String, Response<String>>();
             keys.forEach((key) -> responses.put(key, transaction.get(key)));
@@ -129,6 +130,14 @@ public class RedisStore {
     }
 
     public <T> T execute(Function<Jedis, T> action) {
-        return jedisExecutor.execute(action);
+        try (final var jedis = pool.getResource()) {
+            return action.apply(jedis);
+        }
+    }
+
+    public void close() {
+        if (!pool.isClosed()) {
+            pool.close();
+        }
     }
 }
