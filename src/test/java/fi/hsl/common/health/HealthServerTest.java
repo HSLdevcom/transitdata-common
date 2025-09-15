@@ -54,15 +54,8 @@ public class HealthServerTest {
         CountingWrapper unhealthyCheck = new CountingWrapper(() -> false);
         healthServer.addCheck(unhealthyCheck);
         boolean healthStatus = healthServer.checkHealth();
-        assertFalse(
-            "Health status should be false when one check is unhealthy.",
-            healthStatus
-        );
-        assertEquals(
-            "UnhealthyCheck should have been called once.",
-            1,
-            unhealthyCheck.getCallCount()
-        );
+        assertFalse("Health status should be false when one check is unhealthy.", healthStatus);
+        assertEquals("UnhealthyCheck should have been called once.", 1, unhealthyCheck.getCallCount());
     }
 
     @Test
@@ -72,40 +65,20 @@ public class HealthServerTest {
         healthServer.addCheck(healthyCheck1);
         healthServer.addCheck(healthyCheck2);
         boolean healthStatus = healthServer.checkHealth();
-        assertTrue(
-            "Health status should be true when all checks are healthy.",
-            healthStatus
-        );
-        assertEquals(
-            "HealthyCheck1 should have been called once.",
-            1,
-            healthyCheck1.getCallCount()
-        );
-        assertEquals(
-            "HealthyCheck2 should have been called once.",
-            1,
-            healthyCheck2.getCallCount()
-        );
+        assertTrue("Health status should be true when all checks are healthy.", healthStatus);
+        assertEquals("HealthyCheck1 should have been called once.", 1, healthyCheck1.getCallCount());
+        assertEquals("HealthyCheck2 should have been called once.", 1, healthyCheck2.getCallCount());
     }
 
     @Test
     public void testCheckHealth_CheckThrowsException_ReturnsFalse() {
-        final RuntimeException testException = new RuntimeException(
-            "Simulated check failure"
-        );
+        final RuntimeException testException = new RuntimeException("Simulated check failure");
         CountingWrapper exceptionThrowingCheck = new CountingWrapper(() -> {
             throw testException;
         });
         healthServer.addCheck(exceptionThrowingCheck);
         boolean healthStatus = healthServer.checkHealth();
-        assertFalse(
-            "Health status should be false when a check throws an exception.",
-            healthStatus
-        );
-        assertEquals(
-            "ExceptionThrowingCheck should have been called once.",
-            1,
-            exceptionThrowingCheck.getCallCount()
-        );
+        assertFalse("Health status should be false when a check throws an exception.", healthStatus);
+        assertEquals("ExceptionThrowingCheck should have been called once.", 1, exceptionThrowingCheck.getCallCount());
     }
 }

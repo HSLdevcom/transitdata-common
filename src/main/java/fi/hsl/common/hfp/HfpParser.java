@@ -26,7 +26,7 @@ public class HfpParser {
     private static final Logger log = LoggerFactory.getLogger(HfpParser.class);
 
     static final Pattern topicVersionRegex = Pattern.compile("(^v\\d+|dev)");
-    
+
     private static Set<String> vehiclesWithEmptyTransportMode = new HashSet<>();
 
     // Let's use dsl-json (https://github.com/ngs-doo/dsl-json) for performance.
@@ -36,10 +36,10 @@ public class HfpParser {
 
     //Note! Apparently not thread safe, for per thread reuse use ThreadLocal pattern or create separate instances
     final DslJson<Object> dslJson = new DslJson<>(Settings.withRuntime().allowArrayFormat(true).includeServiceLoader());
-    
+
     private static void foundVehicleWithEmptyTransportMode(String uniqueVehicleId) {
         vehiclesWithEmptyTransportMode.add(uniqueVehicleId);
-        
+
         if (vehiclesWithEmptyTransportMode.size() > 100) {
             log.warn("Vehicles with empty transport mode: " + vehiclesWithEmptyTransportMode);
             vehiclesWithEmptyTransportMode.clear();
@@ -61,7 +61,7 @@ public class HfpParser {
             return dslJson.deserialize(HfpJson.class, data, data.length);
         } catch (IOException ioe) {
             if (ioe instanceof ParsingException) {
-                throw new InvalidHfpPayloadException("Failed to parse HFP JSON", (ParsingException)ioe);
+                throw new InvalidHfpPayloadException("Failed to parse HFP JSON", (ParsingException) ioe);
             } else {
                 throw ioe;
             }
@@ -86,8 +86,7 @@ public class HfpParser {
         try {
             HfpJson json = parseJson(data);
             return Optional.of(parsePayload(json));
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             log.error("Failed to parse Json message {}", new String(data));
             return Optional.empty();
         }
@@ -179,8 +178,7 @@ public class HfpParser {
     public static Optional<Hfp.Topic> safeParseTopic(@NotNull String topic) {
         try {
             return Optional.of(parseTopic(topic));
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             log.error("Failed to parse topic " + topic, e);
             return Optional.empty();
         }
@@ -189,8 +187,7 @@ public class HfpParser {
     public static Optional<Hfp.Topic> safeParseTopic(@NotNull String topic, long receivedAtMs) {
         try {
             return Optional.of(parseTopic(topic, receivedAtMs));
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             log.error("Failed to parse topic " + topic, e);
             return Optional.empty();
         }
@@ -221,16 +218,19 @@ public class HfpParser {
         final String versionStr = parts[index++];
         builder.setTopicVersion(versionStr);
 
-        final Hfp.Topic.JourneyType journeyType = safeValueOf(Hfp.Topic.JourneyType.class, parts[index++]).orElseThrow(() -> new InvalidHfpTopicException("Unknown journey type: " + topic));
+        final Hfp.Topic.JourneyType journeyType = safeValueOf(Hfp.Topic.JourneyType.class, parts[index++])
+                .orElseThrow(() -> new InvalidHfpTopicException("Unknown journey type: " + topic));
         builder.setJourneyType(journeyType);
 
-        final Hfp.Topic.TemporalType temporalType = safeValueOf(Hfp.Topic.TemporalType.class, parts[index++]).orElseThrow(() -> new InvalidHfpTopicException("Unknown temporal type: " + topic));
+        final Hfp.Topic.TemporalType temporalType = safeValueOf(Hfp.Topic.TemporalType.class, parts[index++])
+                .orElseThrow(() -> new InvalidHfpTopicException("Unknown temporal type: " + topic));
         builder.setTemporalType(temporalType);
 
         if (versionStr.equals("v2")) {
             final String eventTypeStr = parts[index++];
             if (eventTypeStr != null && !eventTypeStr.isEmpty()) {
-                final Hfp.Topic.EventType eventType = safeValueOf(Hfp.Topic.EventType.class, eventTypeStr.toUpperCase()).orElseThrow(() -> new InvalidHfpTopicException("Unknown event type: " + topic));
+                final Hfp.Topic.EventType eventType = safeValueOf(Hfp.Topic.EventType.class, eventTypeStr.toUpperCase())
+                        .orElseThrow(() -> new InvalidHfpTopicException("Unknown event type: " + topic));
                 builder.setEventType(eventType);
             }
         }
@@ -238,26 +238,27 @@ public class HfpParser {
         final String strTransportMode = parts[index++];
         boolean transportModeIsEmpty = false;
         if (strTransportMode != null && !strTransportMode.isEmpty()) {
-            final Hfp.Topic.TransportMode transportMode = safeValueOf(Hfp.Topic.TransportMode.class, strTransportMode).orElseThrow(() -> new InvalidHfpTopicException("Unknown transport mode: " + topic));
+            final Hfp.Topic.TransportMode transportMode = safeValueOf(Hfp.Topic.TransportMode.class, strTransportMode)
+                    .orElseThrow(() -> new InvalidHfpTopicException("Unknown transport mode: " + topic));
             builder.setTransportMode(transportMode);
         } else {
             transportModeIsEmpty = true;
         }
-        
+
         final String operatorIdStr = parts[index++];
         try {
             builder.setOperatorId(Integer.parseInt(operatorIdStr));
         } catch (NumberFormatException e) {
             throw new InvalidHfpTopicException("Operator id is not number: " + operatorIdStr);
         }
-        
+
         final String vehicleNumberStr = parts[index++];
         try {
             builder.setVehicleNumber(Integer.parseInt(vehicleNumberStr));
         } catch (NumberFormatException e) {
             throw new InvalidHfpTopicException("Vehicle number is not number: " + vehicleNumberStr);
         }
-        
+
         builder.setUniqueVehicleId(createUniqueVehicleId(builder.getOperatorId(), builder.getVehicleNumber()));
         if (transportModeIsEmpty) {
             foundVehicleWithEmptyTransportMode(builder.getUniqueVehicleId());
@@ -269,16 +270,14 @@ public class HfpParser {
             HfpValidator.validateString(parts[index++]).ifPresent(builder::setStartTime);
             HfpValidator.validateString(parts[index++]).ifPresent(builder::setNextStop);
             safeParseInt(parts[index++]).ifPresent(builder::setGeohashLevel);
-        }
-        else {
+        } else {
             log.debug("could not parse Json's first batch of additional fields for topic {}", topic);
         }
         if (index + 4 <= parts.length) {
             Optional<GeoHash> maybeGeoHash = parseGeoHash(parts, index);
             maybeGeoHash.map(hash -> hash.latitude).ifPresent(builder::setLatitude);
             maybeGeoHash.map(hash -> hash.longitude).ifPresent(builder::setLongitude);
-        }
-        else {
+        } else {
             log.debug("could not parse Json's second batch of additional fields (geohash) for topic {}", topic);
         }
         return builder.build();
@@ -325,15 +324,13 @@ public class HfpParser {
                 geoHash.latitude = Double.parseDouble(latitude.toString());
                 geoHash.longitude = Double.parseDouble(longitude.toString());
                 maybeGeoHash = Optional.of(geoHash);
-            }
-            else {
+            } else {
                 log.debug("Could not parse latitude & longitude from {}", firstLatLong);
             }
         }
 
         return maybeGeoHash;
     }
-
 
     @NotNull
     static String createUniqueVehicleId(int ownerOperatorId, int vehicleNumber) {
@@ -370,8 +367,7 @@ public class HfpParser {
         else {
             try {
                 return Optional.of(Integer.parseInt(n));
-            }
-            catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 log.error("Failed to convert {} to integer", n);
                 return Optional.empty();
             }
@@ -391,8 +387,7 @@ public class HfpParser {
         else {
             try {
                 return Optional.of(Date.valueOf(date));
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 log.error("Failed to convert {} to java.sql.Date", date);
                 return Optional.empty();
             }
@@ -405,8 +400,7 @@ public class HfpParser {
         else {
             try {
                 return Optional.of(LocalTime.parse(time));
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 log.error("Failed to convert {} to LocalTime", time);
                 return Optional.empty();
             }
@@ -433,8 +427,7 @@ public class HfpParser {
             try {
                 OffsetDateTime offsetDt = OffsetDateTime.parse(dt);
                 return Optional.of(new Timestamp(offsetDt.toEpochSecond() * 1000L));
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 log.error("Failed to convert {} to java.sql.Timestamp", dt);
                 return Optional.empty();
             }

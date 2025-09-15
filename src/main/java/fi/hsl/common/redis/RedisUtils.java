@@ -74,12 +74,14 @@ public class RedisUtils {
     }
 
     @NotNull
-    public String setExpiringValues(@NotNull final String key, @NotNull final Map<@NotNull String, @NotNull String> values) {
+    public String setExpiringValues(@NotNull final String key,
+            @NotNull final Map<@NotNull String, @NotNull String> values) {
         return setExpiringValues(key, values, ttlSeconds);
     }
 
     @NotNull
-    public String setExpiringValues(@NotNull final String key, @NotNull final Map<@NotNull String, @NotNull String> values, final int ttlInSeconds) {
+    public String setExpiringValues(@NotNull final String key,
+            @NotNull final Map<@NotNull String, @NotNull String> values, final int ttlInSeconds) {
         String response = setValues(key, values);
         // TODO: what if HMSET succeeds but EXPIRE does not?
         setExpire(key, ttlInSeconds);
@@ -137,7 +139,8 @@ public class RedisUtils {
      * @return ArrayList of matching keys
      */
     @NotNull
-    public List<String> getKeys(@NotNull final String prefix, @NotNull final String pattern, @NotNull final Integer count) {
+    public List<String> getKeys(@NotNull final String prefix, @NotNull final String pattern,
+            @NotNull final Integer count) {
         ScanParams scanParams = new ScanParams();
         scanParams.match(prefix + pattern);
         scanParams.count(count);
@@ -150,7 +153,7 @@ public class RedisUtils {
                 List<String> result = scanResult.getResult();
                 keys.addAll(result);
                 cursor = scanResult.getCursor();
-            } while(!"0".equals(cursor));
+            } while (!"0".equals(cursor));
 
             return new ArrayList<>(keys);
         }
@@ -162,7 +165,8 @@ public class RedisUtils {
      * @return HashMap of keys and their hash values if they exist
      */
     @NotNull
-    public Map<@NotNull String, Optional<Map<@NotNull String, @NotNull String>>> getValuesByKeys(@NotNull final List<@NotNull String> keys) {
+    public Map<@NotNull String, Optional<Map<@NotNull String, @NotNull String>>> getValuesByKeys(
+            @NotNull final List<@NotNull String> keys) {
         synchronized (jedis) {
             final Transaction transaction = jedis.multi();
             final Map<String, Response<Map<String, String>>> responses = new HashMap<>();

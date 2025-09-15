@@ -4,11154 +4,10937 @@
 package fi.hsl.common.hfp.proto;
 
 public final class Hfp {
-  private Hfp() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
-
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface DataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:proto.Data)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return Whether the schemaVersion field is set.
-     */
-    boolean hasSchemaVersion();
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return The schemaVersion.
-     */
-    int getSchemaVersion();
-
-    /**
-     * <code>optional .proto.Topic topic = 2;</code>
-     * @return Whether the topic field is set.
-     */
-    boolean hasTopic();
-    /**
-     * <code>optional .proto.Topic topic = 2;</code>
-     * @return The topic.
-     */
-    fi.hsl.common.hfp.proto.Hfp.Topic getTopic();
-    /**
-     * <code>optional .proto.Topic topic = 2;</code>
-     */
-    fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder getTopicOrBuilder();
-
-    /**
-     * <code>required .proto.Payload payload = 3;</code>
-     * @return Whether the payload field is set.
-     */
-    boolean hasPayload();
-    /**
-     * <code>required .proto.Payload payload = 3;</code>
-     * @return The payload.
-     */
-    fi.hsl.common.hfp.proto.Hfp.Payload getPayload();
-    /**
-     * <code>required .proto.Payload payload = 3;</code>
-     */
-    fi.hsl.common.hfp.proto.Hfp.PayloadOrBuilder getPayloadOrBuilder();
-  }
-  /**
-   * Protobuf type {@code proto.Data}
-   */
-  public static final class Data extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:proto.Data)
-      DataOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Data.newBuilder() to construct.
-    private Data(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
+    private Hfp() {
     }
-    private Data() {
-      schemaVersion_ = 1;
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Data();
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
     }
+    public interface DataOrBuilder
+            extends
+                // @@protoc_insertion_point(interface_extends:proto.Data)
+                com.google.protobuf.MessageOrBuilder {
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Data_descriptor;
-    }
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return Whether the schemaVersion field is set.
+         */
+        boolean hasSchemaVersion();
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return The schemaVersion.
+         */
+        int getSchemaVersion();
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Data_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              fi.hsl.common.hfp.proto.Hfp.Data.class, fi.hsl.common.hfp.proto.Hfp.Data.Builder.class);
-    }
+        /**
+         * <code>optional .proto.Topic topic = 2;</code>
+         * @return Whether the topic field is set.
+         */
+        boolean hasTopic();
+        /**
+         * <code>optional .proto.Topic topic = 2;</code>
+         * @return The topic.
+         */
+        fi.hsl.common.hfp.proto.Hfp.Topic getTopic();
+        /**
+         * <code>optional .proto.Topic topic = 2;</code>
+         */
+        fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder getTopicOrBuilder();
 
-    private int bitField0_;
-    public static final int SCHEMAVERSION_FIELD_NUMBER = 1;
-    private int schemaVersion_ = 1;
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return Whether the schemaVersion field is set.
-     */
-    @java.lang.Override
-    public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return The schemaVersion.
-     */
-    @java.lang.Override
-    public int getSchemaVersion() {
-      return schemaVersion_;
-    }
-
-    public static final int TOPIC_FIELD_NUMBER = 2;
-    private fi.hsl.common.hfp.proto.Hfp.Topic topic_;
-    /**
-     * <code>optional .proto.Topic topic = 2;</code>
-     * @return Whether the topic field is set.
-     */
-    @java.lang.Override
-    public boolean hasTopic() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>optional .proto.Topic topic = 2;</code>
-     * @return The topic.
-     */
-    @java.lang.Override
-    public fi.hsl.common.hfp.proto.Hfp.Topic getTopic() {
-      return topic_ == null ? fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance() : topic_;
-    }
-    /**
-     * <code>optional .proto.Topic topic = 2;</code>
-     */
-    @java.lang.Override
-    public fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder getTopicOrBuilder() {
-      return topic_ == null ? fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance() : topic_;
-    }
-
-    public static final int PAYLOAD_FIELD_NUMBER = 3;
-    private fi.hsl.common.hfp.proto.Hfp.Payload payload_;
-    /**
-     * <code>required .proto.Payload payload = 3;</code>
-     * @return Whether the payload field is set.
-     */
-    @java.lang.Override
-    public boolean hasPayload() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>required .proto.Payload payload = 3;</code>
-     * @return The payload.
-     */
-    @java.lang.Override
-    public fi.hsl.common.hfp.proto.Hfp.Payload getPayload() {
-      return payload_ == null ? fi.hsl.common.hfp.proto.Hfp.Payload.getDefaultInstance() : payload_;
-    }
-    /**
-     * <code>required .proto.Payload payload = 3;</code>
-     */
-    @java.lang.Override
-    public fi.hsl.common.hfp.proto.Hfp.PayloadOrBuilder getPayloadOrBuilder() {
-      return payload_ == null ? fi.hsl.common.hfp.proto.Hfp.Payload.getDefaultInstance() : payload_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      if (!hasSchemaVersion()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasPayload()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (hasTopic()) {
-        if (!getTopic().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      if (!getPayload().isInitialized()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeInt32(1, schemaVersion_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeMessage(2, getTopic());
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeMessage(3, getPayload());
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, schemaVersion_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getTopic());
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getPayload());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof fi.hsl.common.hfp.proto.Hfp.Data)) {
-        return super.equals(obj);
-      }
-      fi.hsl.common.hfp.proto.Hfp.Data other = (fi.hsl.common.hfp.proto.Hfp.Data) obj;
-
-      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
-      if (hasSchemaVersion()) {
-        if (getSchemaVersion()
-            != other.getSchemaVersion()) return false;
-      }
-      if (hasTopic() != other.hasTopic()) return false;
-      if (hasTopic()) {
-        if (!getTopic()
-            .equals(other.getTopic())) return false;
-      }
-      if (hasPayload() != other.hasPayload()) return false;
-      if (hasPayload()) {
-        if (!getPayload()
-            .equals(other.getPayload())) return false;
-      }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasSchemaVersion()) {
-        hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
-        hash = (53 * hash) + getSchemaVersion();
-      }
-      if (hasTopic()) {
-        hash = (37 * hash) + TOPIC_FIELD_NUMBER;
-        hash = (53 * hash) + getTopic().hashCode();
-      }
-      if (hasPayload()) {
-        hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
-        hash = (53 * hash) + getPayload().hashCode();
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Data parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Data parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(fi.hsl.common.hfp.proto.Hfp.Data prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
+        /**
+         * <code>required .proto.Payload payload = 3;</code>
+         * @return Whether the payload field is set.
+         */
+        boolean hasPayload();
+        /**
+         * <code>required .proto.Payload payload = 3;</code>
+         * @return The payload.
+         */
+        fi.hsl.common.hfp.proto.Hfp.Payload getPayload();
+        /**
+         * <code>required .proto.Payload payload = 3;</code>
+         */
+        fi.hsl.common.hfp.proto.Hfp.PayloadOrBuilder getPayloadOrBuilder();
     }
     /**
      * Protobuf type {@code proto.Data}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:proto.Data)
-        fi.hsl.common.hfp.proto.Hfp.DataOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Data_descriptor;
-      }
+    public static final class Data extends com.google.protobuf.GeneratedMessageV3
+            implements
+                // @@protoc_insertion_point(message_implements:proto.Data)
+                DataOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use Data.newBuilder() to construct.
+        private Data(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+        private Data() {
+            schemaVersion_ = 1;
+        }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Data_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                fi.hsl.common.hfp.proto.Hfp.Data.class, fi.hsl.common.hfp.proto.Hfp.Data.Builder.class);
-      }
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new Data();
+        }
 
-      // Construct using fi.hsl.common.hfp.proto.Hfp.Data.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
+        }
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Data_descriptor;
+        }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getTopicFieldBuilder();
-          getPayloadFieldBuilder();
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+            return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Data_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(fi.hsl.common.hfp.proto.Hfp.Data.class,
+                            fi.hsl.common.hfp.proto.Hfp.Data.Builder.class);
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        schemaVersion_ = 1;
-        topic_ = null;
-        if (topicBuilder_ != null) {
-          topicBuilder_.dispose();
-          topicBuilder_ = null;
-        }
-        payload_ = null;
-        if (payloadBuilder_ != null) {
-          payloadBuilder_.dispose();
-          payloadBuilder_ = null;
-        }
-        return this;
-      }
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Data_descriptor;
-      }
+        private int bitField0_;
+        public static final int SCHEMAVERSION_FIELD_NUMBER = 1;
+        private int schemaVersion_ = 1;
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return Whether the schemaVersion field is set.
+         */
+        @java.lang.Override
+        public boolean hasSchemaVersion() {
+            return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return The schemaVersion.
+         */
+        @java.lang.Override
+        public int getSchemaVersion() {
+            return schemaVersion_;
+        }
 
-      @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Data getDefaultInstanceForType() {
-        return fi.hsl.common.hfp.proto.Hfp.Data.getDefaultInstance();
-      }
+        public static final int TOPIC_FIELD_NUMBER = 2;
+        private fi.hsl.common.hfp.proto.Hfp.Topic topic_;
+        /**
+         * <code>optional .proto.Topic topic = 2;</code>
+         * @return Whether the topic field is set.
+         */
+        @java.lang.Override
+        public boolean hasTopic() {
+            return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         * <code>optional .proto.Topic topic = 2;</code>
+         * @return The topic.
+         */
+        @java.lang.Override
+        public fi.hsl.common.hfp.proto.Hfp.Topic getTopic() {
+            return topic_ == null ? fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance() : topic_;
+        }
+        /**
+         * <code>optional .proto.Topic topic = 2;</code>
+         */
+        @java.lang.Override
+        public fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder getTopicOrBuilder() {
+            return topic_ == null ? fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance() : topic_;
+        }
 
-      @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Data build() {
-        fi.hsl.common.hfp.proto.Hfp.Data result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        public static final int PAYLOAD_FIELD_NUMBER = 3;
+        private fi.hsl.common.hfp.proto.Hfp.Payload payload_;
+        /**
+         * <code>required .proto.Payload payload = 3;</code>
+         * @return Whether the payload field is set.
+         */
+        @java.lang.Override
+        public boolean hasPayload() {
+            return ((bitField0_ & 0x00000004) != 0);
         }
-        return result;
-      }
+        /**
+         * <code>required .proto.Payload payload = 3;</code>
+         * @return The payload.
+         */
+        @java.lang.Override
+        public fi.hsl.common.hfp.proto.Hfp.Payload getPayload() {
+            return payload_ == null ? fi.hsl.common.hfp.proto.Hfp.Payload.getDefaultInstance() : payload_;
+        }
+        /**
+         * <code>required .proto.Payload payload = 3;</code>
+         */
+        @java.lang.Override
+        public fi.hsl.common.hfp.proto.Hfp.PayloadOrBuilder getPayloadOrBuilder() {
+            return payload_ == null ? fi.hsl.common.hfp.proto.Hfp.Payload.getDefaultInstance() : payload_;
+        }
 
-      @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Data buildPartial() {
-        fi.hsl.common.hfp.proto.Hfp.Data result = new fi.hsl.common.hfp.proto.Hfp.Data(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
+        private byte memoizedIsInitialized = -1;
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1)
+                return true;
+            if (isInitialized == 0)
+                return false;
 
-      private void buildPartial0(fi.hsl.common.hfp.proto.Hfp.Data result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.schemaVersion_ = schemaVersion_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.topic_ = topicBuilder_ == null
-              ? topic_
-              : topicBuilder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.payload_ = payloadBuilder_ == null
-              ? payload_
-              : payloadBuilder_.build();
-          to_bitField0_ |= 0x00000004;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof fi.hsl.common.hfp.proto.Hfp.Data) {
-          return mergeFrom((fi.hsl.common.hfp.proto.Hfp.Data)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(fi.hsl.common.hfp.proto.Hfp.Data other) {
-        if (other == fi.hsl.common.hfp.proto.Hfp.Data.getDefaultInstance()) return this;
-        if (other.hasSchemaVersion()) {
-          setSchemaVersion(other.getSchemaVersion());
-        }
-        if (other.hasTopic()) {
-          mergeTopic(other.getTopic());
-        }
-        if (other.hasPayload()) {
-          mergePayload(other.getPayload());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        if (!hasSchemaVersion()) {
-          return false;
-        }
-        if (!hasPayload()) {
-          return false;
-        }
-        if (hasTopic()) {
-          if (!getTopic().isInitialized()) {
-            return false;
-          }
-        }
-        if (!getPayload().isInitialized()) {
-          return false;
-        }
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                schemaVersion_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 18: {
-                input.readMessage(
-                    getTopicFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getPayloadFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
+            if (!hasSchemaVersion()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasPayload()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (hasTopic()) {
+                if (!getTopic().isInitialized()) {
+                    memoizedIsInitialized = 0;
+                    return false;
                 }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private int schemaVersion_ = 1;
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @return Whether the schemaVersion field is set.
-       */
-      @java.lang.Override
-      public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @return The schemaVersion.
-       */
-      @java.lang.Override
-      public int getSchemaVersion() {
-        return schemaVersion_;
-      }
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @param value The schemaVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSchemaVersion(int value) {
-        
-        schemaVersion_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSchemaVersion() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        schemaVersion_ = 1;
-        onChanged();
-        return this;
-      }
-
-      private fi.hsl.common.hfp.proto.Hfp.Topic topic_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          fi.hsl.common.hfp.proto.Hfp.Topic, fi.hsl.common.hfp.proto.Hfp.Topic.Builder, fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder> topicBuilder_;
-      /**
-       * <code>optional .proto.Topic topic = 2;</code>
-       * @return Whether the topic field is set.
-       */
-      public boolean hasTopic() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <code>optional .proto.Topic topic = 2;</code>
-       * @return The topic.
-       */
-      public fi.hsl.common.hfp.proto.Hfp.Topic getTopic() {
-        if (topicBuilder_ == null) {
-          return topic_ == null ? fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance() : topic_;
-        } else {
-          return topicBuilder_.getMessage();
+            }
+            if (!getPayload().isInitialized()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            memoizedIsInitialized = 1;
+            return true;
         }
-      }
-      /**
-       * <code>optional .proto.Topic topic = 2;</code>
-       */
-      public Builder setTopic(fi.hsl.common.hfp.proto.Hfp.Topic value) {
-        if (topicBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          topic_ = value;
-        } else {
-          topicBuilder_.setMessage(value);
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (((bitField0_ & 0x00000001) != 0)) {
+                output.writeInt32(1, schemaVersion_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                output.writeMessage(2, getTopic());
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                output.writeMessage(3, getPayload());
+            }
+            getUnknownFields().writeTo(output);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .proto.Topic topic = 2;</code>
-       */
-      public Builder setTopic(
-          fi.hsl.common.hfp.proto.Hfp.Topic.Builder builderForValue) {
-        if (topicBuilder_ == null) {
-          topic_ = builderForValue.build();
-        } else {
-          topicBuilder_.setMessage(builderForValue.build());
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1)
+                return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, schemaVersion_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getTopic());
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getPayload());
+            }
+            size += getUnknownFields().getSerializedSize();
+            memoizedSize = size;
+            return size;
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .proto.Topic topic = 2;</code>
-       */
-      public Builder mergeTopic(fi.hsl.common.hfp.proto.Hfp.Topic value) {
-        if (topicBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            topic_ != null &&
-            topic_ != fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance()) {
-            getTopicBuilder().mergeFrom(value);
-          } else {
-            topic_ = value;
-          }
-        } else {
-          topicBuilder_.mergeFrom(value);
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof fi.hsl.common.hfp.proto.Hfp.Data)) {
+                return super.equals(obj);
+            }
+            fi.hsl.common.hfp.proto.Hfp.Data other = (fi.hsl.common.hfp.proto.Hfp.Data) obj;
+
+            if (hasSchemaVersion() != other.hasSchemaVersion())
+                return false;
+            if (hasSchemaVersion()) {
+                if (getSchemaVersion() != other.getSchemaVersion())
+                    return false;
+            }
+            if (hasTopic() != other.hasTopic())
+                return false;
+            if (hasTopic()) {
+                if (!getTopic().equals(other.getTopic()))
+                    return false;
+            }
+            if (hasPayload() != other.hasPayload())
+                return false;
+            if (hasPayload()) {
+                if (!getPayload().equals(other.getPayload()))
+                    return false;
+            }
+            if (!getUnknownFields().equals(other.getUnknownFields()))
+                return false;
+            return true;
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .proto.Topic topic = 2;</code>
-       */
-      public Builder clearTopic() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        topic_ = null;
-        if (topicBuilder_ != null) {
-          topicBuilder_.dispose();
-          topicBuilder_ = null;
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasSchemaVersion()) {
+                hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
+                hash = (53 * hash) + getSchemaVersion();
+            }
+            if (hasTopic()) {
+                hash = (37 * hash) + TOPIC_FIELD_NUMBER;
+                hash = (53 * hash) + getTopic().hashCode();
+            }
+            if (hasPayload()) {
+                hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
+                hash = (53 * hash) + getPayload().hashCode();
+            }
+            hash = (29 * hash) + getUnknownFields().hashCode();
+            memoizedHashCode = hash;
+            return hash;
         }
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .proto.Topic topic = 2;</code>
-       */
-      public fi.hsl.common.hfp.proto.Hfp.Topic.Builder getTopicBuilder() {
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return getTopicFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .proto.Topic topic = 2;</code>
-       */
-      public fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder getTopicOrBuilder() {
-        if (topicBuilder_ != null) {
-          return topicBuilder_.getMessageOrBuilder();
-        } else {
-          return topic_ == null ?
-              fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance() : topic_;
+
+        public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
         }
-      }
-      /**
-       * <code>optional .proto.Topic topic = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          fi.hsl.common.hfp.proto.Hfp.Topic, fi.hsl.common.hfp.proto.Hfp.Topic.Builder, fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder> 
-          getTopicFieldBuilder() {
-        if (topicBuilder_ == null) {
-          topicBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              fi.hsl.common.hfp.proto.Hfp.Topic, fi.hsl.common.hfp.proto.Hfp.Topic.Builder, fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder>(
-                  getTopic(),
-                  getParentForChildren(),
-                  isClean());
-          topic_ = null;
+        public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
         }
-        return topicBuilder_;
-      }
-
-      private fi.hsl.common.hfp.proto.Hfp.Payload payload_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          fi.hsl.common.hfp.proto.Hfp.Payload, fi.hsl.common.hfp.proto.Hfp.Payload.Builder, fi.hsl.common.hfp.proto.Hfp.PayloadOrBuilder> payloadBuilder_;
-      /**
-       * <code>required .proto.Payload payload = 3;</code>
-       * @return Whether the payload field is set.
-       */
-      public boolean hasPayload() {
-        return ((bitField0_ & 0x00000004) != 0);
-      }
-      /**
-       * <code>required .proto.Payload payload = 3;</code>
-       * @return The payload.
-       */
-      public fi.hsl.common.hfp.proto.Hfp.Payload getPayload() {
-        if (payloadBuilder_ == null) {
-          return payload_ == null ? fi.hsl.common.hfp.proto.Hfp.Payload.getDefaultInstance() : payload_;
-        } else {
-          return payloadBuilder_.getMessage();
+        public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
         }
-      }
-      /**
-       * <code>required .proto.Payload payload = 3;</code>
-       */
-      public Builder setPayload(fi.hsl.common.hfp.proto.Hfp.Payload value) {
-        if (payloadBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          payload_ = value;
-        } else {
-          payloadBuilder_.setMessage(value);
+        public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required .proto.Payload payload = 3;</code>
-       */
-      public Builder setPayload(
-          fi.hsl.common.hfp.proto.Hfp.Payload.Builder builderForValue) {
-        if (payloadBuilder_ == null) {
-          payload_ = builderForValue.build();
-        } else {
-          payloadBuilder_.setMessage(builderForValue.build());
+        public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required .proto.Payload payload = 3;</code>
-       */
-      public Builder mergePayload(fi.hsl.common.hfp.proto.Hfp.Payload value) {
-        if (payloadBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            payload_ != null &&
-            payload_ != fi.hsl.common.hfp.proto.Hfp.Payload.getDefaultInstance()) {
-            getPayloadBuilder().mergeFrom(value);
-          } else {
-            payload_ = value;
-          }
-        } else {
-          payloadBuilder_.mergeFrom(value);
+        public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required .proto.Payload payload = 3;</code>
-       */
-      public Builder clearPayload() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        payload_ = null;
-        if (payloadBuilder_ != null) {
-          payloadBuilder_.dispose();
-          payloadBuilder_ = null;
+        public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
         }
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required .proto.Payload payload = 3;</code>
-       */
-      public fi.hsl.common.hfp.proto.Hfp.Payload.Builder getPayloadBuilder() {
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return getPayloadFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>required .proto.Payload payload = 3;</code>
-       */
-      public fi.hsl.common.hfp.proto.Hfp.PayloadOrBuilder getPayloadOrBuilder() {
-        if (payloadBuilder_ != null) {
-          return payloadBuilder_.getMessageOrBuilder();
-        } else {
-          return payload_ == null ?
-              fi.hsl.common.hfp.proto.Hfp.Payload.getDefaultInstance() : payload_;
+        public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
         }
-      }
-      /**
-       * <code>required .proto.Payload payload = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          fi.hsl.common.hfp.proto.Hfp.Payload, fi.hsl.common.hfp.proto.Hfp.Payload.Builder, fi.hsl.common.hfp.proto.Hfp.PayloadOrBuilder> 
-          getPayloadFieldBuilder() {
-        if (payloadBuilder_ == null) {
-          payloadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              fi.hsl.common.hfp.proto.Hfp.Payload, fi.hsl.common.hfp.proto.Hfp.Payload.Builder, fi.hsl.common.hfp.proto.Hfp.PayloadOrBuilder>(
-                  getPayload(),
-                  getParentForChildren(),
-                  isClean());
-          payload_ = null;
+        public static fi.hsl.common.hfp.proto.Hfp.Data parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
         }
-        return payloadBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:proto.Data)
-    }
-
-    // @@protoc_insertion_point(class_scope:proto.Data)
-    private static final fi.hsl.common.hfp.proto.Hfp.Data DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new fi.hsl.common.hfp.proto.Hfp.Data();
-    }
-
-    public static fi.hsl.common.hfp.proto.Hfp.Data getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<Data>
-        PARSER = new com.google.protobuf.AbstractParser<Data>() {
-      @java.lang.Override
-      public Data parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
+        public static fi.hsl.common.hfp.proto.Hfp.Data parseDelimitedFrom(java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+                    extensionRegistry);
         }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<Data> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Data> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public fi.hsl.common.hfp.proto.Hfp.Data getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface TopicOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:proto.Topic)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return Whether the schemaVersion field is set.
-     */
-    boolean hasSchemaVersion();
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return The schemaVersion.
-     */
-    int getSchemaVersion();
-
-    /**
-     * <pre>
-     * Our server timestamp as Epoch ms
-     * </pre>
-     *
-     * <code>required int64 received_at = 2;</code>
-     * @return Whether the receivedAt field is set.
-     */
-    boolean hasReceivedAt();
-    /**
-     * <pre>
-     * Our server timestamp as Epoch ms
-     * </pre>
-     *
-     * <code>required int64 received_at = 2;</code>
-     * @return The receivedAt.
-     */
-    long getReceivedAt();
-
-    /**
-     * <code>required string topic_prefix = 3;</code>
-     * @return Whether the topicPrefix field is set.
-     */
-    boolean hasTopicPrefix();
-    /**
-     * <code>required string topic_prefix = 3;</code>
-     * @return The topicPrefix.
-     */
-    java.lang.String getTopicPrefix();
-    /**
-     * <code>required string topic_prefix = 3;</code>
-     * @return The bytes for topicPrefix.
-     */
-    com.google.protobuf.ByteString
-        getTopicPrefixBytes();
-
-    /**
-     * <code>required string topic_version = 4;</code>
-     * @return Whether the topicVersion field is set.
-     */
-    boolean hasTopicVersion();
-    /**
-     * <code>required string topic_version = 4;</code>
-     * @return The topicVersion.
-     */
-    java.lang.String getTopicVersion();
-    /**
-     * <code>required string topic_version = 4;</code>
-     * @return The bytes for topicVersion.
-     */
-    com.google.protobuf.ByteString
-        getTopicVersionBytes();
-
-    /**
-     * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
-     * @return Whether the journeyType field is set.
-     */
-    boolean hasJourneyType();
-    /**
-     * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
-     * @return The journeyType.
-     */
-    fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType getJourneyType();
-
-    /**
-     * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
-     * @return Whether the temporalType field is set.
-     */
-    boolean hasTemporalType();
-    /**
-     * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
-     * @return The temporalType.
-     */
-    fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType getTemporalType();
-
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional .proto.Topic.EventType event_type = 7;</code>
-     * @return Whether the eventType field is set.
-     */
-    boolean hasEventType();
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional .proto.Topic.EventType event_type = 7;</code>
-     * @return The eventType.
-     */
-    fi.hsl.common.hfp.proto.Hfp.Topic.EventType getEventType();
-
-    /**
-     * <pre>
-     * Optional because of rare bug in data source systems
-     * </pre>
-     *
-     * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
-     * @return Whether the transportMode field is set.
-     */
-    boolean hasTransportMode();
-    /**
-     * <pre>
-     * Optional because of rare bug in data source systems
-     * </pre>
-     *
-     * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
-     * @return The transportMode.
-     */
-    fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode getTransportMode();
-
-    /**
-     * <code>required int32 operator_id = 9;</code>
-     * @return Whether the operatorId field is set.
-     */
-    boolean hasOperatorId();
-    /**
-     * <code>required int32 operator_id = 9;</code>
-     * @return The operatorId.
-     */
-    int getOperatorId();
-
-    /**
-     * <code>required int32 vehicle_number = 10;</code>
-     * @return Whether the vehicleNumber field is set.
-     */
-    boolean hasVehicleNumber();
-    /**
-     * <code>required int32 vehicle_number = 10;</code>
-     * @return The vehicleNumber.
-     */
-    int getVehicleNumber();
-
-    /**
-     * <code>required string unique_vehicle_id = 11;</code>
-     * @return Whether the uniqueVehicleId field is set.
-     */
-    boolean hasUniqueVehicleId();
-    /**
-     * <code>required string unique_vehicle_id = 11;</code>
-     * @return The uniqueVehicleId.
-     */
-    java.lang.String getUniqueVehicleId();
-    /**
-     * <code>required string unique_vehicle_id = 11;</code>
-     * @return The bytes for uniqueVehicleId.
-     */
-    com.google.protobuf.ByteString
-        getUniqueVehicleIdBytes();
-
-    /**
-     * <code>optional string route_id = 12;</code>
-     * @return Whether the routeId field is set.
-     */
-    boolean hasRouteId();
-    /**
-     * <code>optional string route_id = 12;</code>
-     * @return The routeId.
-     */
-    java.lang.String getRouteId();
-    /**
-     * <code>optional string route_id = 12;</code>
-     * @return The bytes for routeId.
-     */
-    com.google.protobuf.ByteString
-        getRouteIdBytes();
-
-    /**
-     * <code>optional int32 direction_id = 13;</code>
-     * @return Whether the directionId field is set.
-     */
-    boolean hasDirectionId();
-    /**
-     * <code>optional int32 direction_id = 13;</code>
-     * @return The directionId.
-     */
-    int getDirectionId();
-
-    /**
-     * <code>optional string headsign = 14;</code>
-     * @return Whether the headsign field is set.
-     */
-    boolean hasHeadsign();
-    /**
-     * <code>optional string headsign = 14;</code>
-     * @return The headsign.
-     */
-    java.lang.String getHeadsign();
-    /**
-     * <code>optional string headsign = 14;</code>
-     * @return The bytes for headsign.
-     */
-    com.google.protobuf.ByteString
-        getHeadsignBytes();
-
-    /**
-     * <code>optional string start_time = 15;</code>
-     * @return Whether the startTime field is set.
-     */
-    boolean hasStartTime();
-    /**
-     * <code>optional string start_time = 15;</code>
-     * @return The startTime.
-     */
-    java.lang.String getStartTime();
-    /**
-     * <code>optional string start_time = 15;</code>
-     * @return The bytes for startTime.
-     */
-    com.google.protobuf.ByteString
-        getStartTimeBytes();
-
-    /**
-     * <code>optional string next_stop = 16;</code>
-     * @return Whether the nextStop field is set.
-     */
-    boolean hasNextStop();
-    /**
-     * <code>optional string next_stop = 16;</code>
-     * @return The nextStop.
-     */
-    java.lang.String getNextStop();
-    /**
-     * <code>optional string next_stop = 16;</code>
-     * @return The bytes for nextStop.
-     */
-    com.google.protobuf.ByteString
-        getNextStopBytes();
-
-    /**
-     * <code>optional int32 geohash_level = 17;</code>
-     * @return Whether the geohashLevel field is set.
-     */
-    boolean hasGeohashLevel();
-    /**
-     * <code>optional int32 geohash_level = 17;</code>
-     * @return The geohashLevel.
-     */
-    int getGeohashLevel();
-
-    /**
-     * <code>optional double latitude = 18;</code>
-     * @return Whether the latitude field is set.
-     */
-    boolean hasLatitude();
-    /**
-     * <code>optional double latitude = 18;</code>
-     * @return The latitude.
-     */
-    double getLatitude();
-
-    /**
-     * <code>optional double longitude = 19;</code>
-     * @return Whether the longitude field is set.
-     */
-    boolean hasLongitude();
-    /**
-     * <code>optional double longitude = 19;</code>
-     * @return The longitude.
-     */
-    double getLongitude();
-  }
-  /**
-   * Protobuf type {@code proto.Topic}
-   */
-  public static final class Topic extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:proto.Topic)
-      TopicOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Topic.newBuilder() to construct.
-    private Topic(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Topic() {
-      schemaVersion_ = 1;
-      topicPrefix_ = "";
-      topicVersion_ = "";
-      journeyType_ = 0;
-      temporalType_ = 0;
-      eventType_ = 0;
-      transportMode_ = 0;
-      uniqueVehicleId_ = "";
-      routeId_ = "";
-      headsign_ = "";
-      startTime_ = "";
-      nextStop_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Topic();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Topic_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Topic_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              fi.hsl.common.hfp.proto.Hfp.Topic.class, fi.hsl.common.hfp.proto.Hfp.Topic.Builder.class);
-    }
-
-    /**
-     * Protobuf enum {@code proto.Topic.JourneyType}
-     */
-    public enum JourneyType
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>journey = 0;</code>
-       */
-      journey(0),
-      /**
-       * <code>deadrun = 1;</code>
-       */
-      deadrun(1),
-      /**
-       * <code>signoff = 2;</code>
-       */
-      signoff(2),
-      ;
-
-      /**
-       * <code>journey = 0;</code>
-       */
-      public static final int journey_VALUE = 0;
-      /**
-       * <code>deadrun = 1;</code>
-       */
-      public static final int deadrun_VALUE = 1;
-      /**
-       * <code>signoff = 2;</code>
-       */
-      public static final int signoff_VALUE = 2;
-
-
-      public final int getNumber() {
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static JourneyType valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static JourneyType forNumber(int value) {
-        switch (value) {
-          case 0: return journey;
-          case 1: return deadrun;
-          case 2: return signoff;
-          default: return null;
+        public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
         }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<JourneyType>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          JourneyType> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<JourneyType>() {
-              public JourneyType findValueByNumber(int number) {
-                return JourneyType.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return fi.hsl.common.hfp.proto.Hfp.Topic.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final JourneyType[] VALUES = values();
-
-      public static JourneyType valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
+        public static fi.hsl.common.hfp.proto.Hfp.Data parseFrom(com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
         }
-        return VALUES[desc.getIndex()];
-      }
 
-      private final int value;
-
-      private JourneyType(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:proto.Topic.JourneyType)
-    }
-
-    /**
-     * Protobuf enum {@code proto.Topic.TemporalType}
-     */
-    public enum TemporalType
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>ongoing = 0;</code>
-       */
-      ongoing(0),
-      /**
-       * <code>upcoming = 1;</code>
-       */
-      upcoming(1),
-      ;
-
-      /**
-       * <code>ongoing = 0;</code>
-       */
-      public static final int ongoing_VALUE = 0;
-      /**
-       * <code>upcoming = 1;</code>
-       */
-      public static final int upcoming_VALUE = 1;
-
-
-      public final int getNumber() {
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static TemporalType valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static TemporalType forNumber(int value) {
-        switch (value) {
-          case 0: return ongoing;
-          case 1: return upcoming;
-          default: return null;
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
         }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<TemporalType>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          TemporalType> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<TemporalType>() {
-              public TemporalType findValueByNumber(int number) {
-                return TemporalType.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return fi.hsl.common.hfp.proto.Hfp.Topic.getDescriptor().getEnumTypes().get(1);
-      }
-
-      private static final TemporalType[] VALUES = values();
-
-      public static TemporalType valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
         }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private TemporalType(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:proto.Topic.TemporalType)
-    }
-
-    /**
-     * Protobuf enum {@code proto.Topic.EventType}
-     */
-    public enum EventType
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>VP = 0;</code>
-       */
-      VP(0),
-      /**
-       * <code>DUE = 1;</code>
-       */
-      DUE(1),
-      /**
-       * <code>ARR = 2;</code>
-       */
-      ARR(2),
-      /**
-       * <code>ARS = 3;</code>
-       */
-      ARS(3),
-      /**
-       * <code>PDE = 4;</code>
-       */
-      PDE(4),
-      /**
-       * <code>DEP = 5;</code>
-       */
-      DEP(5),
-      /**
-       * <code>PAS = 6;</code>
-       */
-      PAS(6),
-      /**
-       * <code>WAIT = 7;</code>
-       */
-      WAIT(7),
-      /**
-       * <code>DOO = 8;</code>
-       */
-      DOO(8),
-      /**
-       * <code>DOC = 9;</code>
-       */
-      DOC(9),
-      /**
-       * <code>TLR = 10;</code>
-       */
-      TLR(10),
-      /**
-       * <code>TLA = 11;</code>
-       */
-      TLA(11),
-      /**
-       * <code>DA = 12;</code>
-       */
-      DA(12),
-      /**
-       * <code>DOUT = 13;</code>
-       */
-      DOUT(13),
-      /**
-       * <code>BA = 14;</code>
-       */
-      BA(14),
-      /**
-       * <code>BOUT = 15;</code>
-       */
-      BOUT(15),
-      /**
-       * <code>VJA = 16;</code>
-       */
-      VJA(16),
-      /**
-       * <code>VJOUT = 17;</code>
-       */
-      VJOUT(17),
-      ;
-
-      /**
-       * <code>VP = 0;</code>
-       */
-      public static final int VP_VALUE = 0;
-      /**
-       * <code>DUE = 1;</code>
-       */
-      public static final int DUE_VALUE = 1;
-      /**
-       * <code>ARR = 2;</code>
-       */
-      public static final int ARR_VALUE = 2;
-      /**
-       * <code>ARS = 3;</code>
-       */
-      public static final int ARS_VALUE = 3;
-      /**
-       * <code>PDE = 4;</code>
-       */
-      public static final int PDE_VALUE = 4;
-      /**
-       * <code>DEP = 5;</code>
-       */
-      public static final int DEP_VALUE = 5;
-      /**
-       * <code>PAS = 6;</code>
-       */
-      public static final int PAS_VALUE = 6;
-      /**
-       * <code>WAIT = 7;</code>
-       */
-      public static final int WAIT_VALUE = 7;
-      /**
-       * <code>DOO = 8;</code>
-       */
-      public static final int DOO_VALUE = 8;
-      /**
-       * <code>DOC = 9;</code>
-       */
-      public static final int DOC_VALUE = 9;
-      /**
-       * <code>TLR = 10;</code>
-       */
-      public static final int TLR_VALUE = 10;
-      /**
-       * <code>TLA = 11;</code>
-       */
-      public static final int TLA_VALUE = 11;
-      /**
-       * <code>DA = 12;</code>
-       */
-      public static final int DA_VALUE = 12;
-      /**
-       * <code>DOUT = 13;</code>
-       */
-      public static final int DOUT_VALUE = 13;
-      /**
-       * <code>BA = 14;</code>
-       */
-      public static final int BA_VALUE = 14;
-      /**
-       * <code>BOUT = 15;</code>
-       */
-      public static final int BOUT_VALUE = 15;
-      /**
-       * <code>VJA = 16;</code>
-       */
-      public static final int VJA_VALUE = 16;
-      /**
-       * <code>VJOUT = 17;</code>
-       */
-      public static final int VJOUT_VALUE = 17;
-
-
-      public final int getNumber() {
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static EventType valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static EventType forNumber(int value) {
-        switch (value) {
-          case 0: return VP;
-          case 1: return DUE;
-          case 2: return ARR;
-          case 3: return ARS;
-          case 4: return PDE;
-          case 5: return DEP;
-          case 6: return PAS;
-          case 7: return WAIT;
-          case 8: return DOO;
-          case 9: return DOC;
-          case 10: return TLR;
-          case 11: return TLA;
-          case 12: return DA;
-          case 13: return DOUT;
-          case 14: return BA;
-          case 15: return BOUT;
-          case 16: return VJA;
-          case 17: return VJOUT;
-          default: return null;
+        public static Builder newBuilder(fi.hsl.common.hfp.proto.Hfp.Data prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
         }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<EventType>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          EventType> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<EventType>() {
-              public EventType findValueByNumber(int number) {
-                return EventType.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return fi.hsl.common.hfp.proto.Hfp.Topic.getDescriptor().getEnumTypes().get(2);
-      }
-
-      private static final EventType[] VALUES = values();
-
-      public static EventType valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
-        return VALUES[desc.getIndex()];
-      }
 
-      private final int value;
-
-      private EventType(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:proto.Topic.EventType)
-    }
-
-    /**
-     * Protobuf enum {@code proto.Topic.TransportMode}
-     */
-    public enum TransportMode
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>bus = 0;</code>
-       */
-      bus(0),
-      /**
-       * <code>train = 1;</code>
-       */
-      train(1),
-      /**
-       * <code>tram = 2;</code>
-       */
-      tram(2),
-      /**
-       * <code>metro = 3;</code>
-       */
-      metro(3),
-      /**
-       * <code>ferry = 4;</code>
-       */
-      ferry(4),
-      /**
-       * <pre>
-       *Used by U-line buses and other lines with limited real-time information
-       * </pre>
-       *
-       * <code>ubus = 5;</code>
-       */
-      ubus(5),
-      /**
-       * <pre>
-       *Used by robot buses
-       * </pre>
-       *
-       * <code>robot = 6;</code>
-       */
-      robot(6),
-      ;
-
-      /**
-       * <code>bus = 0;</code>
-       */
-      public static final int bus_VALUE = 0;
-      /**
-       * <code>train = 1;</code>
-       */
-      public static final int train_VALUE = 1;
-      /**
-       * <code>tram = 2;</code>
-       */
-      public static final int tram_VALUE = 2;
-      /**
-       * <code>metro = 3;</code>
-       */
-      public static final int metro_VALUE = 3;
-      /**
-       * <code>ferry = 4;</code>
-       */
-      public static final int ferry_VALUE = 4;
-      /**
-       * <pre>
-       *Used by U-line buses and other lines with limited real-time information
-       * </pre>
-       *
-       * <code>ubus = 5;</code>
-       */
-      public static final int ubus_VALUE = 5;
-      /**
-       * <pre>
-       *Used by robot buses
-       * </pre>
-       *
-       * <code>robot = 6;</code>
-       */
-      public static final int robot_VALUE = 6;
-
-
-      public final int getNumber() {
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static TransportMode valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static TransportMode forNumber(int value) {
-        switch (value) {
-          case 0: return bus;
-          case 1: return train;
-          case 2: return tram;
-          case 3: return metro;
-          case 4: return ferry;
-          case 5: return ubus;
-          case 6: return robot;
-          default: return null;
+        @java.lang.Override
+        protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
         }
-      }
+        /**
+         * Protobuf type {@code proto.Data}
+         */
+        public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                    // @@protoc_insertion_point(builder_implements:proto.Data)
+                    fi.hsl.common.hfp.proto.Hfp.DataOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Data_descriptor;
+            }
 
-      public static com.google.protobuf.Internal.EnumLiteMap<TransportMode>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          TransportMode> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<TransportMode>() {
-              public TransportMode findValueByNumber(int number) {
-                return TransportMode.forNumber(number);
-              }
-            };
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+                return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Data_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(fi.hsl.common.hfp.proto.Hfp.Data.class,
+                                fi.hsl.common.hfp.proto.Hfp.Data.Builder.class);
+            }
 
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return fi.hsl.common.hfp.proto.Hfp.Topic.getDescriptor().getEnumTypes().get(3);
-      }
+            // Construct using fi.hsl.common.hfp.proto.Hfp.Data.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
 
-      private static final TransportMode[] VALUES = values();
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+                    getTopicFieldBuilder();
+                    getPayloadFieldBuilder();
+                }
+            }
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                bitField0_ = 0;
+                schemaVersion_ = 1;
+                topic_ = null;
+                if (topicBuilder_ != null) {
+                    topicBuilder_.dispose();
+                    topicBuilder_ = null;
+                }
+                payload_ = null;
+                if (payloadBuilder_ != null) {
+                    payloadBuilder_.dispose();
+                    payloadBuilder_ = null;
+                }
+                return this;
+            }
 
-      public static TransportMode valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Data_descriptor;
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.hfp.proto.Hfp.Data getDefaultInstanceForType() {
+                return fi.hsl.common.hfp.proto.Hfp.Data.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.hfp.proto.Hfp.Data build() {
+                fi.hsl.common.hfp.proto.Hfp.Data result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.hfp.proto.Hfp.Data buildPartial() {
+                fi.hsl.common.hfp.proto.Hfp.Data result = new fi.hsl.common.hfp.proto.Hfp.Data(this);
+                if (bitField0_ != 0) {
+                    buildPartial0(result);
+                }
+                onBuilt();
+                return result;
+            }
+
+            private void buildPartial0(fi.hsl.common.hfp.proto.Hfp.Data result) {
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) != 0)) {
+                    result.schemaVersion_ = schemaVersion_;
+                    to_bitField0_ |= 0x00000001;
+                }
+                if (((from_bitField0_ & 0x00000002) != 0)) {
+                    result.topic_ = topicBuilder_ == null ? topic_ : topicBuilder_.build();
+                    to_bitField0_ |= 0x00000002;
+                }
+                if (((from_bitField0_ & 0x00000004) != 0)) {
+                    result.payload_ = payloadBuilder_ == null ? payload_ : payloadBuilder_.build();
+                    to_bitField0_ |= 0x00000004;
+                }
+                result.bitField0_ |= to_bitField0_;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+            @java.lang.Override
+            public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+            @java.lang.Override
+            public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+            @java.lang.Override
+            public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof fi.hsl.common.hfp.proto.Hfp.Data) {
+                    return mergeFrom((fi.hsl.common.hfp.proto.Hfp.Data) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(fi.hsl.common.hfp.proto.Hfp.Data other) {
+                if (other == fi.hsl.common.hfp.proto.Hfp.Data.getDefaultInstance())
+                    return this;
+                if (other.hasSchemaVersion()) {
+                    setSchemaVersion(other.getSchemaVersion());
+                }
+                if (other.hasTopic()) {
+                    mergeTopic(other.getTopic());
+                }
+                if (other.hasPayload()) {
+                    mergePayload(other.getPayload());
+                }
+                this.mergeUnknownFields(other.getUnknownFields());
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                if (!hasSchemaVersion()) {
+                    return false;
+                }
+                if (!hasPayload()) {
+                    return false;
+                }
+                if (hasTopic()) {
+                    if (!getTopic().isInitialized()) {
+                        return false;
+                    }
+                }
+                if (!getPayload().isInitialized()) {
+                    return false;
+                }
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+                if (extensionRegistry == null) {
+                    throw new java.lang.NullPointerException();
+                }
+                try {
+                    boolean done = false;
+                    while (!done) {
+                        int tag = input.readTag();
+                        switch (tag) {
+                            case 0 :
+                                done = true;
+                                break;
+                            case 8 : {
+                                schemaVersion_ = input.readInt32();
+                                bitField0_ |= 0x00000001;
+                                break;
+                            } // case 8
+                            case 18 : {
+                                input.readMessage(getTopicFieldBuilder().getBuilder(), extensionRegistry);
+                                bitField0_ |= 0x00000002;
+                                break;
+                            } // case 18
+                            case 26 : {
+                                input.readMessage(getPayloadFieldBuilder().getBuilder(), extensionRegistry);
+                                bitField0_ |= 0x00000004;
+                                break;
+                            } // case 26
+                            default : {
+                                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                                    done = true; // was an endgroup tag
+                                }
+                                break;
+                            } // default:
+                        } // switch (tag)
+                    } // while (!done)
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.unwrapIOException();
+                } finally {
+                    onChanged();
+                } // finally
+                return this;
+            }
+            private int bitField0_;
+
+            private int schemaVersion_ = 1;
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @return Whether the schemaVersion field is set.
+             */
+            @java.lang.Override
+            public boolean hasSchemaVersion() {
+                return ((bitField0_ & 0x00000001) != 0);
+            }
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @return The schemaVersion.
+             */
+            @java.lang.Override
+            public int getSchemaVersion() {
+                return schemaVersion_;
+            }
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @param value The schemaVersion to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSchemaVersion(int value) {
+
+                schemaVersion_ = value;
+                bitField0_ |= 0x00000001;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearSchemaVersion() {
+                bitField0_ = (bitField0_ & ~0x00000001);
+                schemaVersion_ = 1;
+                onChanged();
+                return this;
+            }
+
+            private fi.hsl.common.hfp.proto.Hfp.Topic topic_;
+            private com.google.protobuf.SingleFieldBuilderV3<fi.hsl.common.hfp.proto.Hfp.Topic, fi.hsl.common.hfp.proto.Hfp.Topic.Builder, fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder> topicBuilder_;
+            /**
+             * <code>optional .proto.Topic topic = 2;</code>
+             * @return Whether the topic field is set.
+             */
+            public boolean hasTopic() {
+                return ((bitField0_ & 0x00000002) != 0);
+            }
+            /**
+             * <code>optional .proto.Topic topic = 2;</code>
+             * @return The topic.
+             */
+            public fi.hsl.common.hfp.proto.Hfp.Topic getTopic() {
+                if (topicBuilder_ == null) {
+                    return topic_ == null ? fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance() : topic_;
+                } else {
+                    return topicBuilder_.getMessage();
+                }
+            }
+            /**
+             * <code>optional .proto.Topic topic = 2;</code>
+             */
+            public Builder setTopic(fi.hsl.common.hfp.proto.Hfp.Topic value) {
+                if (topicBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    topic_ = value;
+                } else {
+                    topicBuilder_.setMessage(value);
+                }
+                bitField0_ |= 0x00000002;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional .proto.Topic topic = 2;</code>
+             */
+            public Builder setTopic(fi.hsl.common.hfp.proto.Hfp.Topic.Builder builderForValue) {
+                if (topicBuilder_ == null) {
+                    topic_ = builderForValue.build();
+                } else {
+                    topicBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00000002;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional .proto.Topic topic = 2;</code>
+             */
+            public Builder mergeTopic(fi.hsl.common.hfp.proto.Hfp.Topic value) {
+                if (topicBuilder_ == null) {
+                    if (((bitField0_ & 0x00000002) != 0) && topic_ != null
+                            && topic_ != fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance()) {
+                        getTopicBuilder().mergeFrom(value);
+                    } else {
+                        topic_ = value;
+                    }
+                } else {
+                    topicBuilder_.mergeFrom(value);
+                }
+                bitField0_ |= 0x00000002;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional .proto.Topic topic = 2;</code>
+             */
+            public Builder clearTopic() {
+                bitField0_ = (bitField0_ & ~0x00000002);
+                topic_ = null;
+                if (topicBuilder_ != null) {
+                    topicBuilder_.dispose();
+                    topicBuilder_ = null;
+                }
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional .proto.Topic topic = 2;</code>
+             */
+            public fi.hsl.common.hfp.proto.Hfp.Topic.Builder getTopicBuilder() {
+                bitField0_ |= 0x00000002;
+                onChanged();
+                return getTopicFieldBuilder().getBuilder();
+            }
+            /**
+             * <code>optional .proto.Topic topic = 2;</code>
+             */
+            public fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder getTopicOrBuilder() {
+                if (topicBuilder_ != null) {
+                    return topicBuilder_.getMessageOrBuilder();
+                } else {
+                    return topic_ == null ? fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance() : topic_;
+                }
+            }
+            /**
+             * <code>optional .proto.Topic topic = 2;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<fi.hsl.common.hfp.proto.Hfp.Topic, fi.hsl.common.hfp.proto.Hfp.Topic.Builder, fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder> getTopicFieldBuilder() {
+                if (topicBuilder_ == null) {
+                    topicBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<fi.hsl.common.hfp.proto.Hfp.Topic, fi.hsl.common.hfp.proto.Hfp.Topic.Builder, fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder>(
+                            getTopic(), getParentForChildren(), isClean());
+                    topic_ = null;
+                }
+                return topicBuilder_;
+            }
+
+            private fi.hsl.common.hfp.proto.Hfp.Payload payload_;
+            private com.google.protobuf.SingleFieldBuilderV3<fi.hsl.common.hfp.proto.Hfp.Payload, fi.hsl.common.hfp.proto.Hfp.Payload.Builder, fi.hsl.common.hfp.proto.Hfp.PayloadOrBuilder> payloadBuilder_;
+            /**
+             * <code>required .proto.Payload payload = 3;</code>
+             * @return Whether the payload field is set.
+             */
+            public boolean hasPayload() {
+                return ((bitField0_ & 0x00000004) != 0);
+            }
+            /**
+             * <code>required .proto.Payload payload = 3;</code>
+             * @return The payload.
+             */
+            public fi.hsl.common.hfp.proto.Hfp.Payload getPayload() {
+                if (payloadBuilder_ == null) {
+                    return payload_ == null ? fi.hsl.common.hfp.proto.Hfp.Payload.getDefaultInstance() : payload_;
+                } else {
+                    return payloadBuilder_.getMessage();
+                }
+            }
+            /**
+             * <code>required .proto.Payload payload = 3;</code>
+             */
+            public Builder setPayload(fi.hsl.common.hfp.proto.Hfp.Payload value) {
+                if (payloadBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    payload_ = value;
+                } else {
+                    payloadBuilder_.setMessage(value);
+                }
+                bitField0_ |= 0x00000004;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required .proto.Payload payload = 3;</code>
+             */
+            public Builder setPayload(fi.hsl.common.hfp.proto.Hfp.Payload.Builder builderForValue) {
+                if (payloadBuilder_ == null) {
+                    payload_ = builderForValue.build();
+                } else {
+                    payloadBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00000004;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required .proto.Payload payload = 3;</code>
+             */
+            public Builder mergePayload(fi.hsl.common.hfp.proto.Hfp.Payload value) {
+                if (payloadBuilder_ == null) {
+                    if (((bitField0_ & 0x00000004) != 0) && payload_ != null
+                            && payload_ != fi.hsl.common.hfp.proto.Hfp.Payload.getDefaultInstance()) {
+                        getPayloadBuilder().mergeFrom(value);
+                    } else {
+                        payload_ = value;
+                    }
+                } else {
+                    payloadBuilder_.mergeFrom(value);
+                }
+                bitField0_ |= 0x00000004;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required .proto.Payload payload = 3;</code>
+             */
+            public Builder clearPayload() {
+                bitField0_ = (bitField0_ & ~0x00000004);
+                payload_ = null;
+                if (payloadBuilder_ != null) {
+                    payloadBuilder_.dispose();
+                    payloadBuilder_ = null;
+                }
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required .proto.Payload payload = 3;</code>
+             */
+            public fi.hsl.common.hfp.proto.Hfp.Payload.Builder getPayloadBuilder() {
+                bitField0_ |= 0x00000004;
+                onChanged();
+                return getPayloadFieldBuilder().getBuilder();
+            }
+            /**
+             * <code>required .proto.Payload payload = 3;</code>
+             */
+            public fi.hsl.common.hfp.proto.Hfp.PayloadOrBuilder getPayloadOrBuilder() {
+                if (payloadBuilder_ != null) {
+                    return payloadBuilder_.getMessageOrBuilder();
+                } else {
+                    return payload_ == null ? fi.hsl.common.hfp.proto.Hfp.Payload.getDefaultInstance() : payload_;
+                }
+            }
+            /**
+             * <code>required .proto.Payload payload = 3;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<fi.hsl.common.hfp.proto.Hfp.Payload, fi.hsl.common.hfp.proto.Hfp.Payload.Builder, fi.hsl.common.hfp.proto.Hfp.PayloadOrBuilder> getPayloadFieldBuilder() {
+                if (payloadBuilder_ == null) {
+                    payloadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<fi.hsl.common.hfp.proto.Hfp.Payload, fi.hsl.common.hfp.proto.Hfp.Payload.Builder, fi.hsl.common.hfp.proto.Hfp.PayloadOrBuilder>(
+                            getPayload(), getParentForChildren(), isClean());
+                    payload_ = null;
+                }
+                return payloadBuilder_;
+            }
+            @java.lang.Override
+            public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:proto.Data)
         }
-        return VALUES[desc.getIndex()];
-      }
 
-      private final int value;
-
-      private TransportMode(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:proto.Topic.TransportMode)
-    }
-
-    private int bitField0_;
-    public static final int SCHEMAVERSION_FIELD_NUMBER = 1;
-    private int schemaVersion_ = 1;
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return Whether the schemaVersion field is set.
-     */
-    @java.lang.Override
-    public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return The schemaVersion.
-     */
-    @java.lang.Override
-    public int getSchemaVersion() {
-      return schemaVersion_;
-    }
-
-    public static final int RECEIVED_AT_FIELD_NUMBER = 2;
-    private long receivedAt_ = 0L;
-    /**
-     * <pre>
-     * Our server timestamp as Epoch ms
-     * </pre>
-     *
-     * <code>required int64 received_at = 2;</code>
-     * @return Whether the receivedAt field is set.
-     */
-    @java.lang.Override
-    public boolean hasReceivedAt() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     * Our server timestamp as Epoch ms
-     * </pre>
-     *
-     * <code>required int64 received_at = 2;</code>
-     * @return The receivedAt.
-     */
-    @java.lang.Override
-    public long getReceivedAt() {
-      return receivedAt_;
-    }
-
-    public static final int TOPIC_PREFIX_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object topicPrefix_ = "";
-    /**
-     * <code>required string topic_prefix = 3;</code>
-     * @return Whether the topicPrefix field is set.
-     */
-    @java.lang.Override
-    public boolean hasTopicPrefix() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>required string topic_prefix = 3;</code>
-     * @return The topicPrefix.
-     */
-    @java.lang.Override
-    public java.lang.String getTopicPrefix() {
-      java.lang.Object ref = topicPrefix_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          topicPrefix_ = s;
+        // @@protoc_insertion_point(class_scope:proto.Data)
+        private static final fi.hsl.common.hfp.proto.Hfp.Data DEFAULT_INSTANCE;
+        static {
+            DEFAULT_INSTANCE = new fi.hsl.common.hfp.proto.Hfp.Data();
         }
-        return s;
-      }
-    }
-    /**
-     * <code>required string topic_prefix = 3;</code>
-     * @return The bytes for topicPrefix.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTopicPrefixBytes() {
-      java.lang.Object ref = topicPrefix_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        topicPrefix_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
 
-    public static final int TOPIC_VERSION_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object topicVersion_ = "";
-    /**
-     * <code>required string topic_version = 4;</code>
-     * @return Whether the topicVersion field is set.
-     */
-    @java.lang.Override
-    public boolean hasTopicVersion() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <code>required string topic_version = 4;</code>
-     * @return The topicVersion.
-     */
-    @java.lang.Override
-    public java.lang.String getTopicVersion() {
-      java.lang.Object ref = topicVersion_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          topicVersion_ = s;
+        public static fi.hsl.common.hfp.proto.Hfp.Data getDefaultInstance() {
+            return DEFAULT_INSTANCE;
         }
-        return s;
-      }
-    }
-    /**
-     * <code>required string topic_version = 4;</code>
-     * @return The bytes for topicVersion.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTopicVersionBytes() {
-      java.lang.Object ref = topicVersion_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        topicVersion_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
 
-    public static final int JOURNEY_TYPE_FIELD_NUMBER = 5;
-    private int journeyType_ = 0;
-    /**
-     * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
-     * @return Whether the journeyType field is set.
-     */
-    @java.lang.Override public boolean hasJourneyType() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
-     * @return The journeyType.
-     */
-    @java.lang.Override public fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType getJourneyType() {
-      fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType result = fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType.forNumber(journeyType_);
-      return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType.journey : result;
-    }
+        @java.lang.Deprecated
+        public static final com.google.protobuf.Parser<Data> PARSER = new com.google.protobuf.AbstractParser<Data>() {
+            @java.lang.Override
+            public Data parsePartialFrom(com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                    builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                    throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                    throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                            .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+            }
+        };
 
-    public static final int TEMPORAL_TYPE_FIELD_NUMBER = 6;
-    private int temporalType_ = 0;
-    /**
-     * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
-     * @return Whether the temporalType field is set.
-     */
-    @java.lang.Override public boolean hasTemporalType() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-    /**
-     * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
-     * @return The temporalType.
-     */
-    @java.lang.Override public fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType getTemporalType() {
-      fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType result = fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType.forNumber(temporalType_);
-      return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType.ongoing : result;
-    }
-
-    public static final int EVENT_TYPE_FIELD_NUMBER = 7;
-    private int eventType_ = 0;
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional .proto.Topic.EventType event_type = 7;</code>
-     * @return Whether the eventType field is set.
-     */
-    @java.lang.Override public boolean hasEventType() {
-      return ((bitField0_ & 0x00000040) != 0);
-    }
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional .proto.Topic.EventType event_type = 7;</code>
-     * @return The eventType.
-     */
-    @java.lang.Override public fi.hsl.common.hfp.proto.Hfp.Topic.EventType getEventType() {
-      fi.hsl.common.hfp.proto.Hfp.Topic.EventType result = fi.hsl.common.hfp.proto.Hfp.Topic.EventType.forNumber(eventType_);
-      return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.EventType.VP : result;
-    }
-
-    public static final int TRANSPORT_MODE_FIELD_NUMBER = 8;
-    private int transportMode_ = 0;
-    /**
-     * <pre>
-     * Optional because of rare bug in data source systems
-     * </pre>
-     *
-     * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
-     * @return Whether the transportMode field is set.
-     */
-    @java.lang.Override public boolean hasTransportMode() {
-      return ((bitField0_ & 0x00000080) != 0);
-    }
-    /**
-     * <pre>
-     * Optional because of rare bug in data source systems
-     * </pre>
-     *
-     * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
-     * @return The transportMode.
-     */
-    @java.lang.Override public fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode getTransportMode() {
-      fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode result = fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode.forNumber(transportMode_);
-      return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode.bus : result;
-    }
-
-    public static final int OPERATOR_ID_FIELD_NUMBER = 9;
-    private int operatorId_ = 0;
-    /**
-     * <code>required int32 operator_id = 9;</code>
-     * @return Whether the operatorId field is set.
-     */
-    @java.lang.Override
-    public boolean hasOperatorId() {
-      return ((bitField0_ & 0x00000100) != 0);
-    }
-    /**
-     * <code>required int32 operator_id = 9;</code>
-     * @return The operatorId.
-     */
-    @java.lang.Override
-    public int getOperatorId() {
-      return operatorId_;
-    }
-
-    public static final int VEHICLE_NUMBER_FIELD_NUMBER = 10;
-    private int vehicleNumber_ = 0;
-    /**
-     * <code>required int32 vehicle_number = 10;</code>
-     * @return Whether the vehicleNumber field is set.
-     */
-    @java.lang.Override
-    public boolean hasVehicleNumber() {
-      return ((bitField0_ & 0x00000200) != 0);
-    }
-    /**
-     * <code>required int32 vehicle_number = 10;</code>
-     * @return The vehicleNumber.
-     */
-    @java.lang.Override
-    public int getVehicleNumber() {
-      return vehicleNumber_;
-    }
-
-    public static final int UNIQUE_VEHICLE_ID_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object uniqueVehicleId_ = "";
-    /**
-     * <code>required string unique_vehicle_id = 11;</code>
-     * @return Whether the uniqueVehicleId field is set.
-     */
-    @java.lang.Override
-    public boolean hasUniqueVehicleId() {
-      return ((bitField0_ & 0x00000400) != 0);
-    }
-    /**
-     * <code>required string unique_vehicle_id = 11;</code>
-     * @return The uniqueVehicleId.
-     */
-    @java.lang.Override
-    public java.lang.String getUniqueVehicleId() {
-      java.lang.Object ref = uniqueVehicleId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          uniqueVehicleId_ = s;
+        public static com.google.protobuf.Parser<Data> parser() {
+            return PARSER;
         }
-        return s;
-      }
-    }
-    /**
-     * <code>required string unique_vehicle_id = 11;</code>
-     * @return The bytes for uniqueVehicleId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUniqueVehicleIdBytes() {
-      java.lang.Object ref = uniqueVehicleId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        uniqueVehicleId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
 
-    public static final int ROUTE_ID_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object routeId_ = "";
-    /**
-     * <code>optional string route_id = 12;</code>
-     * @return Whether the routeId field is set.
-     */
-    @java.lang.Override
-    public boolean hasRouteId() {
-      return ((bitField0_ & 0x00000800) != 0);
-    }
-    /**
-     * <code>optional string route_id = 12;</code>
-     * @return The routeId.
-     */
-    @java.lang.Override
-    public java.lang.String getRouteId() {
-      java.lang.Object ref = routeId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          routeId_ = s;
+        @java.lang.Override
+        public com.google.protobuf.Parser<Data> getParserForType() {
+            return PARSER;
         }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string route_id = 12;</code>
-     * @return The bytes for routeId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getRouteIdBytes() {
-      java.lang.Object ref = routeId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        routeId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
 
-    public static final int DIRECTION_ID_FIELD_NUMBER = 13;
-    private int directionId_ = 0;
-    /**
-     * <code>optional int32 direction_id = 13;</code>
-     * @return Whether the directionId field is set.
-     */
-    @java.lang.Override
-    public boolean hasDirectionId() {
-      return ((bitField0_ & 0x00001000) != 0);
-    }
-    /**
-     * <code>optional int32 direction_id = 13;</code>
-     * @return The directionId.
-     */
-    @java.lang.Override
-    public int getDirectionId() {
-      return directionId_;
-    }
-
-    public static final int HEADSIGN_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object headsign_ = "";
-    /**
-     * <code>optional string headsign = 14;</code>
-     * @return Whether the headsign field is set.
-     */
-    @java.lang.Override
-    public boolean hasHeadsign() {
-      return ((bitField0_ & 0x00002000) != 0);
-    }
-    /**
-     * <code>optional string headsign = 14;</code>
-     * @return The headsign.
-     */
-    @java.lang.Override
-    public java.lang.String getHeadsign() {
-      java.lang.Object ref = headsign_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          headsign_ = s;
+        @java.lang.Override
+        public fi.hsl.common.hfp.proto.Hfp.Data getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
         }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string headsign = 14;</code>
-     * @return The bytes for headsign.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getHeadsignBytes() {
-      java.lang.Object ref = headsign_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        headsign_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+
     }
 
-    public static final int START_TIME_FIELD_NUMBER = 15;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object startTime_ = "";
-    /**
-     * <code>optional string start_time = 15;</code>
-     * @return Whether the startTime field is set.
-     */
-    @java.lang.Override
-    public boolean hasStartTime() {
-      return ((bitField0_ & 0x00004000) != 0);
-    }
-    /**
-     * <code>optional string start_time = 15;</code>
-     * @return The startTime.
-     */
-    @java.lang.Override
-    public java.lang.String getStartTime() {
-      java.lang.Object ref = startTime_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          startTime_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string start_time = 15;</code>
-     * @return The bytes for startTime.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStartTimeBytes() {
-      java.lang.Object ref = startTime_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        startTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
+    public interface TopicOrBuilder
+            extends
+                // @@protoc_insertion_point(interface_extends:proto.Topic)
+                com.google.protobuf.MessageOrBuilder {
 
-    public static final int NEXT_STOP_FIELD_NUMBER = 16;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object nextStop_ = "";
-    /**
-     * <code>optional string next_stop = 16;</code>
-     * @return Whether the nextStop field is set.
-     */
-    @java.lang.Override
-    public boolean hasNextStop() {
-      return ((bitField0_ & 0x00008000) != 0);
-    }
-    /**
-     * <code>optional string next_stop = 16;</code>
-     * @return The nextStop.
-     */
-    @java.lang.Override
-    public java.lang.String getNextStop() {
-      java.lang.Object ref = nextStop_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          nextStop_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string next_stop = 16;</code>
-     * @return The bytes for nextStop.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNextStopBytes() {
-      java.lang.Object ref = nextStop_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        nextStop_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return Whether the schemaVersion field is set.
+         */
+        boolean hasSchemaVersion();
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return The schemaVersion.
+         */
+        int getSchemaVersion();
 
-    public static final int GEOHASH_LEVEL_FIELD_NUMBER = 17;
-    private int geohashLevel_ = 0;
-    /**
-     * <code>optional int32 geohash_level = 17;</code>
-     * @return Whether the geohashLevel field is set.
-     */
-    @java.lang.Override
-    public boolean hasGeohashLevel() {
-      return ((bitField0_ & 0x00010000) != 0);
-    }
-    /**
-     * <code>optional int32 geohash_level = 17;</code>
-     * @return The geohashLevel.
-     */
-    @java.lang.Override
-    public int getGeohashLevel() {
-      return geohashLevel_;
-    }
+        /**
+         * <pre>
+         * Our server timestamp as Epoch ms
+         * </pre>
+         *
+         * <code>required int64 received_at = 2;</code>
+         * @return Whether the receivedAt field is set.
+         */
+        boolean hasReceivedAt();
+        /**
+         * <pre>
+         * Our server timestamp as Epoch ms
+         * </pre>
+         *
+         * <code>required int64 received_at = 2;</code>
+         * @return The receivedAt.
+         */
+        long getReceivedAt();
 
-    public static final int LATITUDE_FIELD_NUMBER = 18;
-    private double latitude_ = 0D;
-    /**
-     * <code>optional double latitude = 18;</code>
-     * @return Whether the latitude field is set.
-     */
-    @java.lang.Override
-    public boolean hasLatitude() {
-      return ((bitField0_ & 0x00020000) != 0);
-    }
-    /**
-     * <code>optional double latitude = 18;</code>
-     * @return The latitude.
-     */
-    @java.lang.Override
-    public double getLatitude() {
-      return latitude_;
-    }
+        /**
+         * <code>required string topic_prefix = 3;</code>
+         * @return Whether the topicPrefix field is set.
+         */
+        boolean hasTopicPrefix();
+        /**
+         * <code>required string topic_prefix = 3;</code>
+         * @return The topicPrefix.
+         */
+        java.lang.String getTopicPrefix();
+        /**
+         * <code>required string topic_prefix = 3;</code>
+         * @return The bytes for topicPrefix.
+         */
+        com.google.protobuf.ByteString getTopicPrefixBytes();
 
-    public static final int LONGITUDE_FIELD_NUMBER = 19;
-    private double longitude_ = 0D;
-    /**
-     * <code>optional double longitude = 19;</code>
-     * @return Whether the longitude field is set.
-     */
-    @java.lang.Override
-    public boolean hasLongitude() {
-      return ((bitField0_ & 0x00040000) != 0);
-    }
-    /**
-     * <code>optional double longitude = 19;</code>
-     * @return The longitude.
-     */
-    @java.lang.Override
-    public double getLongitude() {
-      return longitude_;
-    }
+        /**
+         * <code>required string topic_version = 4;</code>
+         * @return Whether the topicVersion field is set.
+         */
+        boolean hasTopicVersion();
+        /**
+         * <code>required string topic_version = 4;</code>
+         * @return The topicVersion.
+         */
+        java.lang.String getTopicVersion();
+        /**
+         * <code>required string topic_version = 4;</code>
+         * @return The bytes for topicVersion.
+         */
+        com.google.protobuf.ByteString getTopicVersionBytes();
 
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+        /**
+         * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+         * @return Whether the journeyType field is set.
+         */
+        boolean hasJourneyType();
+        /**
+         * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+         * @return The journeyType.
+         */
+        fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType getJourneyType();
 
-      if (!hasSchemaVersion()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasReceivedAt()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTopicPrefix()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTopicVersion()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasJourneyType()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTemporalType()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasOperatorId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasVehicleNumber()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasUniqueVehicleId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
+        /**
+         * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+         * @return Whether the temporalType field is set.
+         */
+        boolean hasTemporalType();
+        /**
+         * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+         * @return The temporalType.
+         */
+        fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType getTemporalType();
 
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeInt32(1, schemaVersion_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeInt64(2, receivedAt_);
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, topicPrefix_);
-      }
-      if (((bitField0_ & 0x00000008) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, topicVersion_);
-      }
-      if (((bitField0_ & 0x00000010) != 0)) {
-        output.writeEnum(5, journeyType_);
-      }
-      if (((bitField0_ & 0x00000020) != 0)) {
-        output.writeEnum(6, temporalType_);
-      }
-      if (((bitField0_ & 0x00000040) != 0)) {
-        output.writeEnum(7, eventType_);
-      }
-      if (((bitField0_ & 0x00000080) != 0)) {
-        output.writeEnum(8, transportMode_);
-      }
-      if (((bitField0_ & 0x00000100) != 0)) {
-        output.writeInt32(9, operatorId_);
-      }
-      if (((bitField0_ & 0x00000200) != 0)) {
-        output.writeInt32(10, vehicleNumber_);
-      }
-      if (((bitField0_ & 0x00000400) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, uniqueVehicleId_);
-      }
-      if (((bitField0_ & 0x00000800) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, routeId_);
-      }
-      if (((bitField0_ & 0x00001000) != 0)) {
-        output.writeInt32(13, directionId_);
-      }
-      if (((bitField0_ & 0x00002000) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, headsign_);
-      }
-      if (((bitField0_ & 0x00004000) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, startTime_);
-      }
-      if (((bitField0_ & 0x00008000) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, nextStop_);
-      }
-      if (((bitField0_ & 0x00010000) != 0)) {
-        output.writeInt32(17, geohashLevel_);
-      }
-      if (((bitField0_ & 0x00020000) != 0)) {
-        output.writeDouble(18, latitude_);
-      }
-      if (((bitField0_ & 0x00040000) != 0)) {
-        output.writeDouble(19, longitude_);
-      }
-      getUnknownFields().writeTo(output);
-    }
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional .proto.Topic.EventType event_type = 7;</code>
+         * @return Whether the eventType field is set.
+         */
+        boolean hasEventType();
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional .proto.Topic.EventType event_type = 7;</code>
+         * @return The eventType.
+         */
+        fi.hsl.common.hfp.proto.Hfp.Topic.EventType getEventType();
 
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
+        /**
+         * <pre>
+         * Optional because of rare bug in data source systems
+         * </pre>
+         *
+         * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+         * @return Whether the transportMode field is set.
+         */
+        boolean hasTransportMode();
+        /**
+         * <pre>
+         * Optional because of rare bug in data source systems
+         * </pre>
+         *
+         * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+         * @return The transportMode.
+         */
+        fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode getTransportMode();
 
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, schemaVersion_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, receivedAt_);
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, topicPrefix_);
-      }
-      if (((bitField0_ & 0x00000008) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, topicVersion_);
-      }
-      if (((bitField0_ & 0x00000010) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, journeyType_);
-      }
-      if (((bitField0_ & 0x00000020) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, temporalType_);
-      }
-      if (((bitField0_ & 0x00000040) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, eventType_);
-      }
-      if (((bitField0_ & 0x00000080) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(8, transportMode_);
-      }
-      if (((bitField0_ & 0x00000100) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, operatorId_);
-      }
-      if (((bitField0_ & 0x00000200) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, vehicleNumber_);
-      }
-      if (((bitField0_ & 0x00000400) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, uniqueVehicleId_);
-      }
-      if (((bitField0_ & 0x00000800) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, routeId_);
-      }
-      if (((bitField0_ & 0x00001000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, directionId_);
-      }
-      if (((bitField0_ & 0x00002000) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, headsign_);
-      }
-      if (((bitField0_ & 0x00004000) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, startTime_);
-      }
-      if (((bitField0_ & 0x00008000) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, nextStop_);
-      }
-      if (((bitField0_ & 0x00010000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(17, geohashLevel_);
-      }
-      if (((bitField0_ & 0x00020000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(18, latitude_);
-      }
-      if (((bitField0_ & 0x00040000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(19, longitude_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
+        /**
+         * <code>required int32 operator_id = 9;</code>
+         * @return Whether the operatorId field is set.
+         */
+        boolean hasOperatorId();
+        /**
+         * <code>required int32 operator_id = 9;</code>
+         * @return The operatorId.
+         */
+        int getOperatorId();
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof fi.hsl.common.hfp.proto.Hfp.Topic)) {
-        return super.equals(obj);
-      }
-      fi.hsl.common.hfp.proto.Hfp.Topic other = (fi.hsl.common.hfp.proto.Hfp.Topic) obj;
+        /**
+         * <code>required int32 vehicle_number = 10;</code>
+         * @return Whether the vehicleNumber field is set.
+         */
+        boolean hasVehicleNumber();
+        /**
+         * <code>required int32 vehicle_number = 10;</code>
+         * @return The vehicleNumber.
+         */
+        int getVehicleNumber();
 
-      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
-      if (hasSchemaVersion()) {
-        if (getSchemaVersion()
-            != other.getSchemaVersion()) return false;
-      }
-      if (hasReceivedAt() != other.hasReceivedAt()) return false;
-      if (hasReceivedAt()) {
-        if (getReceivedAt()
-            != other.getReceivedAt()) return false;
-      }
-      if (hasTopicPrefix() != other.hasTopicPrefix()) return false;
-      if (hasTopicPrefix()) {
-        if (!getTopicPrefix()
-            .equals(other.getTopicPrefix())) return false;
-      }
-      if (hasTopicVersion() != other.hasTopicVersion()) return false;
-      if (hasTopicVersion()) {
-        if (!getTopicVersion()
-            .equals(other.getTopicVersion())) return false;
-      }
-      if (hasJourneyType() != other.hasJourneyType()) return false;
-      if (hasJourneyType()) {
-        if (journeyType_ != other.journeyType_) return false;
-      }
-      if (hasTemporalType() != other.hasTemporalType()) return false;
-      if (hasTemporalType()) {
-        if (temporalType_ != other.temporalType_) return false;
-      }
-      if (hasEventType() != other.hasEventType()) return false;
-      if (hasEventType()) {
-        if (eventType_ != other.eventType_) return false;
-      }
-      if (hasTransportMode() != other.hasTransportMode()) return false;
-      if (hasTransportMode()) {
-        if (transportMode_ != other.transportMode_) return false;
-      }
-      if (hasOperatorId() != other.hasOperatorId()) return false;
-      if (hasOperatorId()) {
-        if (getOperatorId()
-            != other.getOperatorId()) return false;
-      }
-      if (hasVehicleNumber() != other.hasVehicleNumber()) return false;
-      if (hasVehicleNumber()) {
-        if (getVehicleNumber()
-            != other.getVehicleNumber()) return false;
-      }
-      if (hasUniqueVehicleId() != other.hasUniqueVehicleId()) return false;
-      if (hasUniqueVehicleId()) {
-        if (!getUniqueVehicleId()
-            .equals(other.getUniqueVehicleId())) return false;
-      }
-      if (hasRouteId() != other.hasRouteId()) return false;
-      if (hasRouteId()) {
-        if (!getRouteId()
-            .equals(other.getRouteId())) return false;
-      }
-      if (hasDirectionId() != other.hasDirectionId()) return false;
-      if (hasDirectionId()) {
-        if (getDirectionId()
-            != other.getDirectionId()) return false;
-      }
-      if (hasHeadsign() != other.hasHeadsign()) return false;
-      if (hasHeadsign()) {
-        if (!getHeadsign()
-            .equals(other.getHeadsign())) return false;
-      }
-      if (hasStartTime() != other.hasStartTime()) return false;
-      if (hasStartTime()) {
-        if (!getStartTime()
-            .equals(other.getStartTime())) return false;
-      }
-      if (hasNextStop() != other.hasNextStop()) return false;
-      if (hasNextStop()) {
-        if (!getNextStop()
-            .equals(other.getNextStop())) return false;
-      }
-      if (hasGeohashLevel() != other.hasGeohashLevel()) return false;
-      if (hasGeohashLevel()) {
-        if (getGeohashLevel()
-            != other.getGeohashLevel()) return false;
-      }
-      if (hasLatitude() != other.hasLatitude()) return false;
-      if (hasLatitude()) {
-        if (java.lang.Double.doubleToLongBits(getLatitude())
-            != java.lang.Double.doubleToLongBits(
-                other.getLatitude())) return false;
-      }
-      if (hasLongitude() != other.hasLongitude()) return false;
-      if (hasLongitude()) {
-        if (java.lang.Double.doubleToLongBits(getLongitude())
-            != java.lang.Double.doubleToLongBits(
-                other.getLongitude())) return false;
-      }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
+        /**
+         * <code>required string unique_vehicle_id = 11;</code>
+         * @return Whether the uniqueVehicleId field is set.
+         */
+        boolean hasUniqueVehicleId();
+        /**
+         * <code>required string unique_vehicle_id = 11;</code>
+         * @return The uniqueVehicleId.
+         */
+        java.lang.String getUniqueVehicleId();
+        /**
+         * <code>required string unique_vehicle_id = 11;</code>
+         * @return The bytes for uniqueVehicleId.
+         */
+        com.google.protobuf.ByteString getUniqueVehicleIdBytes();
 
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasSchemaVersion()) {
-        hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
-        hash = (53 * hash) + getSchemaVersion();
-      }
-      if (hasReceivedAt()) {
-        hash = (37 * hash) + RECEIVED_AT_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getReceivedAt());
-      }
-      if (hasTopicPrefix()) {
-        hash = (37 * hash) + TOPIC_PREFIX_FIELD_NUMBER;
-        hash = (53 * hash) + getTopicPrefix().hashCode();
-      }
-      if (hasTopicVersion()) {
-        hash = (37 * hash) + TOPIC_VERSION_FIELD_NUMBER;
-        hash = (53 * hash) + getTopicVersion().hashCode();
-      }
-      if (hasJourneyType()) {
-        hash = (37 * hash) + JOURNEY_TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + journeyType_;
-      }
-      if (hasTemporalType()) {
-        hash = (37 * hash) + TEMPORAL_TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + temporalType_;
-      }
-      if (hasEventType()) {
-        hash = (37 * hash) + EVENT_TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + eventType_;
-      }
-      if (hasTransportMode()) {
-        hash = (37 * hash) + TRANSPORT_MODE_FIELD_NUMBER;
-        hash = (53 * hash) + transportMode_;
-      }
-      if (hasOperatorId()) {
-        hash = (37 * hash) + OPERATOR_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getOperatorId();
-      }
-      if (hasVehicleNumber()) {
-        hash = (37 * hash) + VEHICLE_NUMBER_FIELD_NUMBER;
-        hash = (53 * hash) + getVehicleNumber();
-      }
-      if (hasUniqueVehicleId()) {
-        hash = (37 * hash) + UNIQUE_VEHICLE_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getUniqueVehicleId().hashCode();
-      }
-      if (hasRouteId()) {
-        hash = (37 * hash) + ROUTE_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getRouteId().hashCode();
-      }
-      if (hasDirectionId()) {
-        hash = (37 * hash) + DIRECTION_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getDirectionId();
-      }
-      if (hasHeadsign()) {
-        hash = (37 * hash) + HEADSIGN_FIELD_NUMBER;
-        hash = (53 * hash) + getHeadsign().hashCode();
-      }
-      if (hasStartTime()) {
-        hash = (37 * hash) + START_TIME_FIELD_NUMBER;
-        hash = (53 * hash) + getStartTime().hashCode();
-      }
-      if (hasNextStop()) {
-        hash = (37 * hash) + NEXT_STOP_FIELD_NUMBER;
-        hash = (53 * hash) + getNextStop().hashCode();
-      }
-      if (hasGeohashLevel()) {
-        hash = (37 * hash) + GEOHASH_LEVEL_FIELD_NUMBER;
-        hash = (53 * hash) + getGeohashLevel();
-      }
-      if (hasLatitude()) {
-        hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getLatitude()));
-      }
-      if (hasLongitude()) {
-        hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getLongitude()));
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
+        /**
+         * <code>optional string route_id = 12;</code>
+         * @return Whether the routeId field is set.
+         */
+        boolean hasRouteId();
+        /**
+         * <code>optional string route_id = 12;</code>
+         * @return The routeId.
+         */
+        java.lang.String getRouteId();
+        /**
+         * <code>optional string route_id = 12;</code>
+         * @return The bytes for routeId.
+         */
+        com.google.protobuf.ByteString getRouteIdBytes();
 
-    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Topic parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Topic parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
+        /**
+         * <code>optional int32 direction_id = 13;</code>
+         * @return Whether the directionId field is set.
+         */
+        boolean hasDirectionId();
+        /**
+         * <code>optional int32 direction_id = 13;</code>
+         * @return The directionId.
+         */
+        int getDirectionId();
 
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(fi.hsl.common.hfp.proto.Hfp.Topic prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
+        /**
+         * <code>optional string headsign = 14;</code>
+         * @return Whether the headsign field is set.
+         */
+        boolean hasHeadsign();
+        /**
+         * <code>optional string headsign = 14;</code>
+         * @return The headsign.
+         */
+        java.lang.String getHeadsign();
+        /**
+         * <code>optional string headsign = 14;</code>
+         * @return The bytes for headsign.
+         */
+        com.google.protobuf.ByteString getHeadsignBytes();
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
+        /**
+         * <code>optional string start_time = 15;</code>
+         * @return Whether the startTime field is set.
+         */
+        boolean hasStartTime();
+        /**
+         * <code>optional string start_time = 15;</code>
+         * @return The startTime.
+         */
+        java.lang.String getStartTime();
+        /**
+         * <code>optional string start_time = 15;</code>
+         * @return The bytes for startTime.
+         */
+        com.google.protobuf.ByteString getStartTimeBytes();
+
+        /**
+         * <code>optional string next_stop = 16;</code>
+         * @return Whether the nextStop field is set.
+         */
+        boolean hasNextStop();
+        /**
+         * <code>optional string next_stop = 16;</code>
+         * @return The nextStop.
+         */
+        java.lang.String getNextStop();
+        /**
+         * <code>optional string next_stop = 16;</code>
+         * @return The bytes for nextStop.
+         */
+        com.google.protobuf.ByteString getNextStopBytes();
+
+        /**
+         * <code>optional int32 geohash_level = 17;</code>
+         * @return Whether the geohashLevel field is set.
+         */
+        boolean hasGeohashLevel();
+        /**
+         * <code>optional int32 geohash_level = 17;</code>
+         * @return The geohashLevel.
+         */
+        int getGeohashLevel();
+
+        /**
+         * <code>optional double latitude = 18;</code>
+         * @return Whether the latitude field is set.
+         */
+        boolean hasLatitude();
+        /**
+         * <code>optional double latitude = 18;</code>
+         * @return The latitude.
+         */
+        double getLatitude();
+
+        /**
+         * <code>optional double longitude = 19;</code>
+         * @return Whether the longitude field is set.
+         */
+        boolean hasLongitude();
+        /**
+         * <code>optional double longitude = 19;</code>
+         * @return The longitude.
+         */
+        double getLongitude();
     }
     /**
      * Protobuf type {@code proto.Topic}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:proto.Topic)
-        fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Topic_descriptor;
-      }
+    public static final class Topic extends com.google.protobuf.GeneratedMessageV3
+            implements
+                // @@protoc_insertion_point(message_implements:proto.Topic)
+                TopicOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use Topic.newBuilder() to construct.
+        private Topic(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+        private Topic() {
+            schemaVersion_ = 1;
+            topicPrefix_ = "";
+            topicVersion_ = "";
+            journeyType_ = 0;
+            temporalType_ = 0;
+            eventType_ = 0;
+            transportMode_ = 0;
+            uniqueVehicleId_ = "";
+            routeId_ = "";
+            headsign_ = "";
+            startTime_ = "";
+            nextStop_ = "";
+        }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Topic_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                fi.hsl.common.hfp.proto.Hfp.Topic.class, fi.hsl.common.hfp.proto.Hfp.Topic.Builder.class);
-      }
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new Topic();
+        }
 
-      // Construct using fi.hsl.common.hfp.proto.Hfp.Topic.newBuilder()
-      private Builder() {
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
+        }
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Topic_descriptor;
+        }
 
-      }
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+            return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Topic_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(fi.hsl.common.hfp.proto.Hfp.Topic.class,
+                            fi.hsl.common.hfp.proto.Hfp.Topic.Builder.class);
+        }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
+        /**
+         * Protobuf enum {@code proto.Topic.JourneyType}
+         */
+        public enum JourneyType implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>journey = 0;</code>
+             */
+            journey(0),
+            /**
+             * <code>deadrun = 1;</code>
+             */
+            deadrun(1),
+            /**
+             * <code>signoff = 2;</code>
+             */
+            signoff(2),;
 
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        schemaVersion_ = 1;
-        receivedAt_ = 0L;
-        topicPrefix_ = "";
-        topicVersion_ = "";
-        journeyType_ = 0;
-        temporalType_ = 0;
-        eventType_ = 0;
-        transportMode_ = 0;
-        operatorId_ = 0;
-        vehicleNumber_ = 0;
-        uniqueVehicleId_ = "";
-        routeId_ = "";
-        directionId_ = 0;
-        headsign_ = "";
-        startTime_ = "";
-        nextStop_ = "";
-        geohashLevel_ = 0;
-        latitude_ = 0D;
-        longitude_ = 0D;
-        return this;
-      }
+            /**
+             * <code>journey = 0;</code>
+             */
+            public static final int journey_VALUE = 0;
+            /**
+             * <code>deadrun = 1;</code>
+             */
+            public static final int deadrun_VALUE = 1;
+            /**
+             * <code>signoff = 2;</code>
+             */
+            public static final int signoff_VALUE = 2;
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Topic_descriptor;
-      }
+            public final int getNumber() {
+                return value;
+            }
 
-      @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Topic getDefaultInstanceForType() {
-        return fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance();
-      }
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static JourneyType valueOf(int value) {
+                return forNumber(value);
+            }
 
-      @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Topic build() {
-        fi.hsl.common.hfp.proto.Hfp.Topic result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             */
+            public static JourneyType forNumber(int value) {
+                switch (value) {
+                    case 0 :
+                        return journey;
+                    case 1 :
+                        return deadrun;
+                    case 2 :
+                        return signoff;
+                    default :
+                        return null;
+                }
+            }
 
-      @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Topic buildPartial() {
-        fi.hsl.common.hfp.proto.Hfp.Topic result = new fi.hsl.common.hfp.proto.Hfp.Topic(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
+            public static com.google.protobuf.Internal.EnumLiteMap<JourneyType> internalGetValueMap() {
+                return internalValueMap;
+            }
+            private static final com.google.protobuf.Internal.EnumLiteMap<JourneyType> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<JourneyType>() {
+                public JourneyType findValueByNumber(int number) {
+                    return JourneyType.forNumber(number);
+                }
+            };
 
-      private void buildPartial0(fi.hsl.common.hfp.proto.Hfp.Topic result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.schemaVersion_ = schemaVersion_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.receivedAt_ = receivedAt_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.topicPrefix_ = topicPrefix_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.topicVersion_ = topicVersion_;
-          to_bitField0_ |= 0x00000008;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.journeyType_ = journeyType_;
-          to_bitField0_ |= 0x00000010;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.temporalType_ = temporalType_;
-          to_bitField0_ |= 0x00000020;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.eventType_ = eventType_;
-          to_bitField0_ |= 0x00000040;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.transportMode_ = transportMode_;
-          to_bitField0_ |= 0x00000080;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.operatorId_ = operatorId_;
-          to_bitField0_ |= 0x00000100;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.vehicleNumber_ = vehicleNumber_;
-          to_bitField0_ |= 0x00000200;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.uniqueVehicleId_ = uniqueVehicleId_;
-          to_bitField0_ |= 0x00000400;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.routeId_ = routeId_;
-          to_bitField0_ |= 0x00000800;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.directionId_ = directionId_;
-          to_bitField0_ |= 0x00001000;
-        }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.headsign_ = headsign_;
-          to_bitField0_ |= 0x00002000;
-        }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.startTime_ = startTime_;
-          to_bitField0_ |= 0x00004000;
-        }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.nextStop_ = nextStop_;
-          to_bitField0_ |= 0x00008000;
-        }
-        if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.geohashLevel_ = geohashLevel_;
-          to_bitField0_ |= 0x00010000;
-        }
-        if (((from_bitField0_ & 0x00020000) != 0)) {
-          result.latitude_ = latitude_;
-          to_bitField0_ |= 0x00020000;
-        }
-        if (((from_bitField0_ & 0x00040000) != 0)) {
-          result.longitude_ = longitude_;
-          to_bitField0_ |= 0x00040000;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
+            public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+                return getDescriptor().getValues().get(ordinal());
+            }
+            public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+                return getDescriptor();
+            }
+            public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+                return fi.hsl.common.hfp.proto.Hfp.Topic.getDescriptor().getEnumTypes().get(0);
+            }
 
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof fi.hsl.common.hfp.proto.Hfp.Topic) {
-          return mergeFrom((fi.hsl.common.hfp.proto.Hfp.Topic)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
+            private static final JourneyType[] VALUES = values();
 
-      public Builder mergeFrom(fi.hsl.common.hfp.proto.Hfp.Topic other) {
-        if (other == fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance()) return this;
-        if (other.hasSchemaVersion()) {
-          setSchemaVersion(other.getSchemaVersion());
-        }
-        if (other.hasReceivedAt()) {
-          setReceivedAt(other.getReceivedAt());
-        }
-        if (other.hasTopicPrefix()) {
-          topicPrefix_ = other.topicPrefix_;
-          bitField0_ |= 0x00000004;
-          onChanged();
-        }
-        if (other.hasTopicVersion()) {
-          topicVersion_ = other.topicVersion_;
-          bitField0_ |= 0x00000008;
-          onChanged();
-        }
-        if (other.hasJourneyType()) {
-          setJourneyType(other.getJourneyType());
-        }
-        if (other.hasTemporalType()) {
-          setTemporalType(other.getTemporalType());
-        }
-        if (other.hasEventType()) {
-          setEventType(other.getEventType());
-        }
-        if (other.hasTransportMode()) {
-          setTransportMode(other.getTransportMode());
-        }
-        if (other.hasOperatorId()) {
-          setOperatorId(other.getOperatorId());
-        }
-        if (other.hasVehicleNumber()) {
-          setVehicleNumber(other.getVehicleNumber());
-        }
-        if (other.hasUniqueVehicleId()) {
-          uniqueVehicleId_ = other.uniqueVehicleId_;
-          bitField0_ |= 0x00000400;
-          onChanged();
-        }
-        if (other.hasRouteId()) {
-          routeId_ = other.routeId_;
-          bitField0_ |= 0x00000800;
-          onChanged();
-        }
-        if (other.hasDirectionId()) {
-          setDirectionId(other.getDirectionId());
-        }
-        if (other.hasHeadsign()) {
-          headsign_ = other.headsign_;
-          bitField0_ |= 0x00002000;
-          onChanged();
-        }
-        if (other.hasStartTime()) {
-          startTime_ = other.startTime_;
-          bitField0_ |= 0x00004000;
-          onChanged();
-        }
-        if (other.hasNextStop()) {
-          nextStop_ = other.nextStop_;
-          bitField0_ |= 0x00008000;
-          onChanged();
-        }
-        if (other.hasGeohashLevel()) {
-          setGeohashLevel(other.getGeohashLevel());
-        }
-        if (other.hasLatitude()) {
-          setLatitude(other.getLatitude());
-        }
-        if (other.hasLongitude()) {
-          setLongitude(other.getLongitude());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
+            public static JourneyType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                    throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+                }
+                return VALUES[desc.getIndex()];
+            }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        if (!hasSchemaVersion()) {
-          return false;
-        }
-        if (!hasReceivedAt()) {
-          return false;
-        }
-        if (!hasTopicPrefix()) {
-          return false;
-        }
-        if (!hasTopicVersion()) {
-          return false;
-        }
-        if (!hasJourneyType()) {
-          return false;
-        }
-        if (!hasTemporalType()) {
-          return false;
-        }
-        if (!hasOperatorId()) {
-          return false;
-        }
-        if (!hasVehicleNumber()) {
-          return false;
-        }
-        if (!hasUniqueVehicleId()) {
-          return false;
-        }
-        return true;
-      }
+            private final int value;
 
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
+            private JourneyType(int value) {
+                this.value = value;
+            }
+
+            // @@protoc_insertion_point(enum_scope:proto.Topic.JourneyType)
         }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                schemaVersion_ = input.readInt32();
+
+        /**
+         * Protobuf enum {@code proto.Topic.TemporalType}
+         */
+        public enum TemporalType implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>ongoing = 0;</code>
+             */
+            ongoing(0),
+            /**
+             * <code>upcoming = 1;</code>
+             */
+            upcoming(1),;
+
+            /**
+             * <code>ongoing = 0;</code>
+             */
+            public static final int ongoing_VALUE = 0;
+            /**
+             * <code>upcoming = 1;</code>
+             */
+            public static final int upcoming_VALUE = 1;
+
+            public final int getNumber() {
+                return value;
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static TemporalType valueOf(int value) {
+                return forNumber(value);
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             */
+            public static TemporalType forNumber(int value) {
+                switch (value) {
+                    case 0 :
+                        return ongoing;
+                    case 1 :
+                        return upcoming;
+                    default :
+                        return null;
+                }
+            }
+
+            public static com.google.protobuf.Internal.EnumLiteMap<TemporalType> internalGetValueMap() {
+                return internalValueMap;
+            }
+            private static final com.google.protobuf.Internal.EnumLiteMap<TemporalType> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<TemporalType>() {
+                public TemporalType findValueByNumber(int number) {
+                    return TemporalType.forNumber(number);
+                }
+            };
+
+            public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+                return getDescriptor().getValues().get(ordinal());
+            }
+            public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+                return getDescriptor();
+            }
+            public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+                return fi.hsl.common.hfp.proto.Hfp.Topic.getDescriptor().getEnumTypes().get(1);
+            }
+
+            private static final TemporalType[] VALUES = values();
+
+            public static TemporalType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                    throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+                }
+                return VALUES[desc.getIndex()];
+            }
+
+            private final int value;
+
+            private TemporalType(int value) {
+                this.value = value;
+            }
+
+            // @@protoc_insertion_point(enum_scope:proto.Topic.TemporalType)
+        }
+
+        /**
+         * Protobuf enum {@code proto.Topic.EventType}
+         */
+        public enum EventType implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>VP = 0;</code>
+             */
+            VP(0),
+            /**
+             * <code>DUE = 1;</code>
+             */
+            DUE(1),
+            /**
+             * <code>ARR = 2;</code>
+             */
+            ARR(2),
+            /**
+             * <code>ARS = 3;</code>
+             */
+            ARS(3),
+            /**
+             * <code>PDE = 4;</code>
+             */
+            PDE(4),
+            /**
+             * <code>DEP = 5;</code>
+             */
+            DEP(5),
+            /**
+             * <code>PAS = 6;</code>
+             */
+            PAS(6),
+            /**
+             * <code>WAIT = 7;</code>
+             */
+            WAIT(7),
+            /**
+             * <code>DOO = 8;</code>
+             */
+            DOO(8),
+            /**
+             * <code>DOC = 9;</code>
+             */
+            DOC(9),
+            /**
+             * <code>TLR = 10;</code>
+             */
+            TLR(10),
+            /**
+             * <code>TLA = 11;</code>
+             */
+            TLA(11),
+            /**
+             * <code>DA = 12;</code>
+             */
+            DA(12),
+            /**
+             * <code>DOUT = 13;</code>
+             */
+            DOUT(13),
+            /**
+             * <code>BA = 14;</code>
+             */
+            BA(14),
+            /**
+             * <code>BOUT = 15;</code>
+             */
+            BOUT(15),
+            /**
+             * <code>VJA = 16;</code>
+             */
+            VJA(16),
+            /**
+             * <code>VJOUT = 17;</code>
+             */
+            VJOUT(17),;
+
+            /**
+             * <code>VP = 0;</code>
+             */
+            public static final int VP_VALUE = 0;
+            /**
+             * <code>DUE = 1;</code>
+             */
+            public static final int DUE_VALUE = 1;
+            /**
+             * <code>ARR = 2;</code>
+             */
+            public static final int ARR_VALUE = 2;
+            /**
+             * <code>ARS = 3;</code>
+             */
+            public static final int ARS_VALUE = 3;
+            /**
+             * <code>PDE = 4;</code>
+             */
+            public static final int PDE_VALUE = 4;
+            /**
+             * <code>DEP = 5;</code>
+             */
+            public static final int DEP_VALUE = 5;
+            /**
+             * <code>PAS = 6;</code>
+             */
+            public static final int PAS_VALUE = 6;
+            /**
+             * <code>WAIT = 7;</code>
+             */
+            public static final int WAIT_VALUE = 7;
+            /**
+             * <code>DOO = 8;</code>
+             */
+            public static final int DOO_VALUE = 8;
+            /**
+             * <code>DOC = 9;</code>
+             */
+            public static final int DOC_VALUE = 9;
+            /**
+             * <code>TLR = 10;</code>
+             */
+            public static final int TLR_VALUE = 10;
+            /**
+             * <code>TLA = 11;</code>
+             */
+            public static final int TLA_VALUE = 11;
+            /**
+             * <code>DA = 12;</code>
+             */
+            public static final int DA_VALUE = 12;
+            /**
+             * <code>DOUT = 13;</code>
+             */
+            public static final int DOUT_VALUE = 13;
+            /**
+             * <code>BA = 14;</code>
+             */
+            public static final int BA_VALUE = 14;
+            /**
+             * <code>BOUT = 15;</code>
+             */
+            public static final int BOUT_VALUE = 15;
+            /**
+             * <code>VJA = 16;</code>
+             */
+            public static final int VJA_VALUE = 16;
+            /**
+             * <code>VJOUT = 17;</code>
+             */
+            public static final int VJOUT_VALUE = 17;
+
+            public final int getNumber() {
+                return value;
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static EventType valueOf(int value) {
+                return forNumber(value);
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             */
+            public static EventType forNumber(int value) {
+                switch (value) {
+                    case 0 :
+                        return VP;
+                    case 1 :
+                        return DUE;
+                    case 2 :
+                        return ARR;
+                    case 3 :
+                        return ARS;
+                    case 4 :
+                        return PDE;
+                    case 5 :
+                        return DEP;
+                    case 6 :
+                        return PAS;
+                    case 7 :
+                        return WAIT;
+                    case 8 :
+                        return DOO;
+                    case 9 :
+                        return DOC;
+                    case 10 :
+                        return TLR;
+                    case 11 :
+                        return TLA;
+                    case 12 :
+                        return DA;
+                    case 13 :
+                        return DOUT;
+                    case 14 :
+                        return BA;
+                    case 15 :
+                        return BOUT;
+                    case 16 :
+                        return VJA;
+                    case 17 :
+                        return VJOUT;
+                    default :
+                        return null;
+                }
+            }
+
+            public static com.google.protobuf.Internal.EnumLiteMap<EventType> internalGetValueMap() {
+                return internalValueMap;
+            }
+            private static final com.google.protobuf.Internal.EnumLiteMap<EventType> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<EventType>() {
+                public EventType findValueByNumber(int number) {
+                    return EventType.forNumber(number);
+                }
+            };
+
+            public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+                return getDescriptor().getValues().get(ordinal());
+            }
+            public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+                return getDescriptor();
+            }
+            public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+                return fi.hsl.common.hfp.proto.Hfp.Topic.getDescriptor().getEnumTypes().get(2);
+            }
+
+            private static final EventType[] VALUES = values();
+
+            public static EventType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                    throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+                }
+                return VALUES[desc.getIndex()];
+            }
+
+            private final int value;
+
+            private EventType(int value) {
+                this.value = value;
+            }
+
+            // @@protoc_insertion_point(enum_scope:proto.Topic.EventType)
+        }
+
+        /**
+         * Protobuf enum {@code proto.Topic.TransportMode}
+         */
+        public enum TransportMode implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>bus = 0;</code>
+             */
+            bus(0),
+            /**
+             * <code>train = 1;</code>
+             */
+            train(1),
+            /**
+             * <code>tram = 2;</code>
+             */
+            tram(2),
+            /**
+             * <code>metro = 3;</code>
+             */
+            metro(3),
+            /**
+             * <code>ferry = 4;</code>
+             */
+            ferry(4),
+            /**
+             * <pre>
+             *Used by U-line buses and other lines with limited real-time information
+             * </pre>
+             *
+             * <code>ubus = 5;</code>
+             */
+            ubus(5),
+            /**
+             * <pre>
+             *Used by robot buses
+             * </pre>
+             *
+             * <code>robot = 6;</code>
+             */
+            robot(6),;
+
+            /**
+             * <code>bus = 0;</code>
+             */
+            public static final int bus_VALUE = 0;
+            /**
+             * <code>train = 1;</code>
+             */
+            public static final int train_VALUE = 1;
+            /**
+             * <code>tram = 2;</code>
+             */
+            public static final int tram_VALUE = 2;
+            /**
+             * <code>metro = 3;</code>
+             */
+            public static final int metro_VALUE = 3;
+            /**
+             * <code>ferry = 4;</code>
+             */
+            public static final int ferry_VALUE = 4;
+            /**
+             * <pre>
+             *Used by U-line buses and other lines with limited real-time information
+             * </pre>
+             *
+             * <code>ubus = 5;</code>
+             */
+            public static final int ubus_VALUE = 5;
+            /**
+             * <pre>
+             *Used by robot buses
+             * </pre>
+             *
+             * <code>robot = 6;</code>
+             */
+            public static final int robot_VALUE = 6;
+
+            public final int getNumber() {
+                return value;
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static TransportMode valueOf(int value) {
+                return forNumber(value);
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             */
+            public static TransportMode forNumber(int value) {
+                switch (value) {
+                    case 0 :
+                        return bus;
+                    case 1 :
+                        return train;
+                    case 2 :
+                        return tram;
+                    case 3 :
+                        return metro;
+                    case 4 :
+                        return ferry;
+                    case 5 :
+                        return ubus;
+                    case 6 :
+                        return robot;
+                    default :
+                        return null;
+                }
+            }
+
+            public static com.google.protobuf.Internal.EnumLiteMap<TransportMode> internalGetValueMap() {
+                return internalValueMap;
+            }
+            private static final com.google.protobuf.Internal.EnumLiteMap<TransportMode> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<TransportMode>() {
+                public TransportMode findValueByNumber(int number) {
+                    return TransportMode.forNumber(number);
+                }
+            };
+
+            public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+                return getDescriptor().getValues().get(ordinal());
+            }
+            public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+                return getDescriptor();
+            }
+            public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+                return fi.hsl.common.hfp.proto.Hfp.Topic.getDescriptor().getEnumTypes().get(3);
+            }
+
+            private static final TransportMode[] VALUES = values();
+
+            public static TransportMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                    throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+                }
+                return VALUES[desc.getIndex()];
+            }
+
+            private final int value;
+
+            private TransportMode(int value) {
+                this.value = value;
+            }
+
+            // @@protoc_insertion_point(enum_scope:proto.Topic.TransportMode)
+        }
+
+        private int bitField0_;
+        public static final int SCHEMAVERSION_FIELD_NUMBER = 1;
+        private int schemaVersion_ = 1;
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return Whether the schemaVersion field is set.
+         */
+        @java.lang.Override
+        public boolean hasSchemaVersion() {
+            return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return The schemaVersion.
+         */
+        @java.lang.Override
+        public int getSchemaVersion() {
+            return schemaVersion_;
+        }
+
+        public static final int RECEIVED_AT_FIELD_NUMBER = 2;
+        private long receivedAt_ = 0L;
+        /**
+         * <pre>
+         * Our server timestamp as Epoch ms
+         * </pre>
+         *
+         * <code>required int64 received_at = 2;</code>
+         * @return Whether the receivedAt field is set.
+         */
+        @java.lang.Override
+        public boolean hasReceivedAt() {
+            return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         * <pre>
+         * Our server timestamp as Epoch ms
+         * </pre>
+         *
+         * <code>required int64 received_at = 2;</code>
+         * @return The receivedAt.
+         */
+        @java.lang.Override
+        public long getReceivedAt() {
+            return receivedAt_;
+        }
+
+        public static final int TOPIC_PREFIX_FIELD_NUMBER = 3;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object topicPrefix_ = "";
+        /**
+         * <code>required string topic_prefix = 3;</code>
+         * @return Whether the topicPrefix field is set.
+         */
+        @java.lang.Override
+        public boolean hasTopicPrefix() {
+            return ((bitField0_ & 0x00000004) != 0);
+        }
+        /**
+         * <code>required string topic_prefix = 3;</code>
+         * @return The topicPrefix.
+         */
+        @java.lang.Override
+        public java.lang.String getTopicPrefix() {
+            java.lang.Object ref = topicPrefix_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    topicPrefix_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>required string topic_prefix = 3;</code>
+         * @return The bytes for topicPrefix.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getTopicPrefixBytes() {
+            java.lang.Object ref = topicPrefix_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                topicPrefix_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int TOPIC_VERSION_FIELD_NUMBER = 4;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object topicVersion_ = "";
+        /**
+         * <code>required string topic_version = 4;</code>
+         * @return Whether the topicVersion field is set.
+         */
+        @java.lang.Override
+        public boolean hasTopicVersion() {
+            return ((bitField0_ & 0x00000008) != 0);
+        }
+        /**
+         * <code>required string topic_version = 4;</code>
+         * @return The topicVersion.
+         */
+        @java.lang.Override
+        public java.lang.String getTopicVersion() {
+            java.lang.Object ref = topicVersion_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    topicVersion_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>required string topic_version = 4;</code>
+         * @return The bytes for topicVersion.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getTopicVersionBytes() {
+            java.lang.Object ref = topicVersion_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                topicVersion_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int JOURNEY_TYPE_FIELD_NUMBER = 5;
+        private int journeyType_ = 0;
+        /**
+         * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+         * @return Whether the journeyType field is set.
+         */
+        @java.lang.Override
+        public boolean hasJourneyType() {
+            return ((bitField0_ & 0x00000010) != 0);
+        }
+        /**
+         * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+         * @return The journeyType.
+         */
+        @java.lang.Override
+        public fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType getJourneyType() {
+            fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType result = fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType
+                    .forNumber(journeyType_);
+            return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType.journey : result;
+        }
+
+        public static final int TEMPORAL_TYPE_FIELD_NUMBER = 6;
+        private int temporalType_ = 0;
+        /**
+         * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+         * @return Whether the temporalType field is set.
+         */
+        @java.lang.Override
+        public boolean hasTemporalType() {
+            return ((bitField0_ & 0x00000020) != 0);
+        }
+        /**
+         * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+         * @return The temporalType.
+         */
+        @java.lang.Override
+        public fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType getTemporalType() {
+            fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType result = fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType
+                    .forNumber(temporalType_);
+            return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType.ongoing : result;
+        }
+
+        public static final int EVENT_TYPE_FIELD_NUMBER = 7;
+        private int eventType_ = 0;
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional .proto.Topic.EventType event_type = 7;</code>
+         * @return Whether the eventType field is set.
+         */
+        @java.lang.Override
+        public boolean hasEventType() {
+            return ((bitField0_ & 0x00000040) != 0);
+        }
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional .proto.Topic.EventType event_type = 7;</code>
+         * @return The eventType.
+         */
+        @java.lang.Override
+        public fi.hsl.common.hfp.proto.Hfp.Topic.EventType getEventType() {
+            fi.hsl.common.hfp.proto.Hfp.Topic.EventType result = fi.hsl.common.hfp.proto.Hfp.Topic.EventType
+                    .forNumber(eventType_);
+            return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.EventType.VP : result;
+        }
+
+        public static final int TRANSPORT_MODE_FIELD_NUMBER = 8;
+        private int transportMode_ = 0;
+        /**
+         * <pre>
+         * Optional because of rare bug in data source systems
+         * </pre>
+         *
+         * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+         * @return Whether the transportMode field is set.
+         */
+        @java.lang.Override
+        public boolean hasTransportMode() {
+            return ((bitField0_ & 0x00000080) != 0);
+        }
+        /**
+         * <pre>
+         * Optional because of rare bug in data source systems
+         * </pre>
+         *
+         * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+         * @return The transportMode.
+         */
+        @java.lang.Override
+        public fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode getTransportMode() {
+            fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode result = fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode
+                    .forNumber(transportMode_);
+            return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode.bus : result;
+        }
+
+        public static final int OPERATOR_ID_FIELD_NUMBER = 9;
+        private int operatorId_ = 0;
+        /**
+         * <code>required int32 operator_id = 9;</code>
+         * @return Whether the operatorId field is set.
+         */
+        @java.lang.Override
+        public boolean hasOperatorId() {
+            return ((bitField0_ & 0x00000100) != 0);
+        }
+        /**
+         * <code>required int32 operator_id = 9;</code>
+         * @return The operatorId.
+         */
+        @java.lang.Override
+        public int getOperatorId() {
+            return operatorId_;
+        }
+
+        public static final int VEHICLE_NUMBER_FIELD_NUMBER = 10;
+        private int vehicleNumber_ = 0;
+        /**
+         * <code>required int32 vehicle_number = 10;</code>
+         * @return Whether the vehicleNumber field is set.
+         */
+        @java.lang.Override
+        public boolean hasVehicleNumber() {
+            return ((bitField0_ & 0x00000200) != 0);
+        }
+        /**
+         * <code>required int32 vehicle_number = 10;</code>
+         * @return The vehicleNumber.
+         */
+        @java.lang.Override
+        public int getVehicleNumber() {
+            return vehicleNumber_;
+        }
+
+        public static final int UNIQUE_VEHICLE_ID_FIELD_NUMBER = 11;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object uniqueVehicleId_ = "";
+        /**
+         * <code>required string unique_vehicle_id = 11;</code>
+         * @return Whether the uniqueVehicleId field is set.
+         */
+        @java.lang.Override
+        public boolean hasUniqueVehicleId() {
+            return ((bitField0_ & 0x00000400) != 0);
+        }
+        /**
+         * <code>required string unique_vehicle_id = 11;</code>
+         * @return The uniqueVehicleId.
+         */
+        @java.lang.Override
+        public java.lang.String getUniqueVehicleId() {
+            java.lang.Object ref = uniqueVehicleId_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    uniqueVehicleId_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>required string unique_vehicle_id = 11;</code>
+         * @return The bytes for uniqueVehicleId.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getUniqueVehicleIdBytes() {
+            java.lang.Object ref = uniqueVehicleId_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                uniqueVehicleId_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int ROUTE_ID_FIELD_NUMBER = 12;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object routeId_ = "";
+        /**
+         * <code>optional string route_id = 12;</code>
+         * @return Whether the routeId field is set.
+         */
+        @java.lang.Override
+        public boolean hasRouteId() {
+            return ((bitField0_ & 0x00000800) != 0);
+        }
+        /**
+         * <code>optional string route_id = 12;</code>
+         * @return The routeId.
+         */
+        @java.lang.Override
+        public java.lang.String getRouteId() {
+            java.lang.Object ref = routeId_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    routeId_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>optional string route_id = 12;</code>
+         * @return The bytes for routeId.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getRouteIdBytes() {
+            java.lang.Object ref = routeId_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                routeId_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int DIRECTION_ID_FIELD_NUMBER = 13;
+        private int directionId_ = 0;
+        /**
+         * <code>optional int32 direction_id = 13;</code>
+         * @return Whether the directionId field is set.
+         */
+        @java.lang.Override
+        public boolean hasDirectionId() {
+            return ((bitField0_ & 0x00001000) != 0);
+        }
+        /**
+         * <code>optional int32 direction_id = 13;</code>
+         * @return The directionId.
+         */
+        @java.lang.Override
+        public int getDirectionId() {
+            return directionId_;
+        }
+
+        public static final int HEADSIGN_FIELD_NUMBER = 14;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object headsign_ = "";
+        /**
+         * <code>optional string headsign = 14;</code>
+         * @return Whether the headsign field is set.
+         */
+        @java.lang.Override
+        public boolean hasHeadsign() {
+            return ((bitField0_ & 0x00002000) != 0);
+        }
+        /**
+         * <code>optional string headsign = 14;</code>
+         * @return The headsign.
+         */
+        @java.lang.Override
+        public java.lang.String getHeadsign() {
+            java.lang.Object ref = headsign_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    headsign_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>optional string headsign = 14;</code>
+         * @return The bytes for headsign.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getHeadsignBytes() {
+            java.lang.Object ref = headsign_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                headsign_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int START_TIME_FIELD_NUMBER = 15;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object startTime_ = "";
+        /**
+         * <code>optional string start_time = 15;</code>
+         * @return Whether the startTime field is set.
+         */
+        @java.lang.Override
+        public boolean hasStartTime() {
+            return ((bitField0_ & 0x00004000) != 0);
+        }
+        /**
+         * <code>optional string start_time = 15;</code>
+         * @return The startTime.
+         */
+        @java.lang.Override
+        public java.lang.String getStartTime() {
+            java.lang.Object ref = startTime_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    startTime_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>optional string start_time = 15;</code>
+         * @return The bytes for startTime.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getStartTimeBytes() {
+            java.lang.Object ref = startTime_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                startTime_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int NEXT_STOP_FIELD_NUMBER = 16;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object nextStop_ = "";
+        /**
+         * <code>optional string next_stop = 16;</code>
+         * @return Whether the nextStop field is set.
+         */
+        @java.lang.Override
+        public boolean hasNextStop() {
+            return ((bitField0_ & 0x00008000) != 0);
+        }
+        /**
+         * <code>optional string next_stop = 16;</code>
+         * @return The nextStop.
+         */
+        @java.lang.Override
+        public java.lang.String getNextStop() {
+            java.lang.Object ref = nextStop_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    nextStop_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>optional string next_stop = 16;</code>
+         * @return The bytes for nextStop.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getNextStopBytes() {
+            java.lang.Object ref = nextStop_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                nextStop_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int GEOHASH_LEVEL_FIELD_NUMBER = 17;
+        private int geohashLevel_ = 0;
+        /**
+         * <code>optional int32 geohash_level = 17;</code>
+         * @return Whether the geohashLevel field is set.
+         */
+        @java.lang.Override
+        public boolean hasGeohashLevel() {
+            return ((bitField0_ & 0x00010000) != 0);
+        }
+        /**
+         * <code>optional int32 geohash_level = 17;</code>
+         * @return The geohashLevel.
+         */
+        @java.lang.Override
+        public int getGeohashLevel() {
+            return geohashLevel_;
+        }
+
+        public static final int LATITUDE_FIELD_NUMBER = 18;
+        private double latitude_ = 0D;
+        /**
+         * <code>optional double latitude = 18;</code>
+         * @return Whether the latitude field is set.
+         */
+        @java.lang.Override
+        public boolean hasLatitude() {
+            return ((bitField0_ & 0x00020000) != 0);
+        }
+        /**
+         * <code>optional double latitude = 18;</code>
+         * @return The latitude.
+         */
+        @java.lang.Override
+        public double getLatitude() {
+            return latitude_;
+        }
+
+        public static final int LONGITUDE_FIELD_NUMBER = 19;
+        private double longitude_ = 0D;
+        /**
+         * <code>optional double longitude = 19;</code>
+         * @return Whether the longitude field is set.
+         */
+        @java.lang.Override
+        public boolean hasLongitude() {
+            return ((bitField0_ & 0x00040000) != 0);
+        }
+        /**
+         * <code>optional double longitude = 19;</code>
+         * @return The longitude.
+         */
+        @java.lang.Override
+        public double getLongitude() {
+            return longitude_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1)
+                return true;
+            if (isInitialized == 0)
+                return false;
+
+            if (!hasSchemaVersion()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasReceivedAt()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasTopicPrefix()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasTopicVersion()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasJourneyType()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasTemporalType()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasOperatorId()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasVehicleNumber()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasUniqueVehicleId()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (((bitField0_ & 0x00000001) != 0)) {
+                output.writeInt32(1, schemaVersion_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                output.writeInt64(2, receivedAt_);
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 3, topicPrefix_);
+            }
+            if (((bitField0_ & 0x00000008) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 4, topicVersion_);
+            }
+            if (((bitField0_ & 0x00000010) != 0)) {
+                output.writeEnum(5, journeyType_);
+            }
+            if (((bitField0_ & 0x00000020) != 0)) {
+                output.writeEnum(6, temporalType_);
+            }
+            if (((bitField0_ & 0x00000040) != 0)) {
+                output.writeEnum(7, eventType_);
+            }
+            if (((bitField0_ & 0x00000080) != 0)) {
+                output.writeEnum(8, transportMode_);
+            }
+            if (((bitField0_ & 0x00000100) != 0)) {
+                output.writeInt32(9, operatorId_);
+            }
+            if (((bitField0_ & 0x00000200) != 0)) {
+                output.writeInt32(10, vehicleNumber_);
+            }
+            if (((bitField0_ & 0x00000400) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 11, uniqueVehicleId_);
+            }
+            if (((bitField0_ & 0x00000800) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 12, routeId_);
+            }
+            if (((bitField0_ & 0x00001000) != 0)) {
+                output.writeInt32(13, directionId_);
+            }
+            if (((bitField0_ & 0x00002000) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 14, headsign_);
+            }
+            if (((bitField0_ & 0x00004000) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 15, startTime_);
+            }
+            if (((bitField0_ & 0x00008000) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 16, nextStop_);
+            }
+            if (((bitField0_ & 0x00010000) != 0)) {
+                output.writeInt32(17, geohashLevel_);
+            }
+            if (((bitField0_ & 0x00020000) != 0)) {
+                output.writeDouble(18, latitude_);
+            }
+            if (((bitField0_ & 0x00040000) != 0)) {
+                output.writeDouble(19, longitude_);
+            }
+            getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1)
+                return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, schemaVersion_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, receivedAt_);
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, topicPrefix_);
+            }
+            if (((bitField0_ & 0x00000008) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, topicVersion_);
+            }
+            if (((bitField0_ & 0x00000010) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, journeyType_);
+            }
+            if (((bitField0_ & 0x00000020) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, temporalType_);
+            }
+            if (((bitField0_ & 0x00000040) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, eventType_);
+            }
+            if (((bitField0_ & 0x00000080) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, transportMode_);
+            }
+            if (((bitField0_ & 0x00000100) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(9, operatorId_);
+            }
+            if (((bitField0_ & 0x00000200) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(10, vehicleNumber_);
+            }
+            if (((bitField0_ & 0x00000400) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, uniqueVehicleId_);
+            }
+            if (((bitField0_ & 0x00000800) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, routeId_);
+            }
+            if (((bitField0_ & 0x00001000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(13, directionId_);
+            }
+            if (((bitField0_ & 0x00002000) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, headsign_);
+            }
+            if (((bitField0_ & 0x00004000) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, startTime_);
+            }
+            if (((bitField0_ & 0x00008000) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, nextStop_);
+            }
+            if (((bitField0_ & 0x00010000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(17, geohashLevel_);
+            }
+            if (((bitField0_ & 0x00020000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeDoubleSize(18, latitude_);
+            }
+            if (((bitField0_ & 0x00040000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeDoubleSize(19, longitude_);
+            }
+            size += getUnknownFields().getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof fi.hsl.common.hfp.proto.Hfp.Topic)) {
+                return super.equals(obj);
+            }
+            fi.hsl.common.hfp.proto.Hfp.Topic other = (fi.hsl.common.hfp.proto.Hfp.Topic) obj;
+
+            if (hasSchemaVersion() != other.hasSchemaVersion())
+                return false;
+            if (hasSchemaVersion()) {
+                if (getSchemaVersion() != other.getSchemaVersion())
+                    return false;
+            }
+            if (hasReceivedAt() != other.hasReceivedAt())
+                return false;
+            if (hasReceivedAt()) {
+                if (getReceivedAt() != other.getReceivedAt())
+                    return false;
+            }
+            if (hasTopicPrefix() != other.hasTopicPrefix())
+                return false;
+            if (hasTopicPrefix()) {
+                if (!getTopicPrefix().equals(other.getTopicPrefix()))
+                    return false;
+            }
+            if (hasTopicVersion() != other.hasTopicVersion())
+                return false;
+            if (hasTopicVersion()) {
+                if (!getTopicVersion().equals(other.getTopicVersion()))
+                    return false;
+            }
+            if (hasJourneyType() != other.hasJourneyType())
+                return false;
+            if (hasJourneyType()) {
+                if (journeyType_ != other.journeyType_)
+                    return false;
+            }
+            if (hasTemporalType() != other.hasTemporalType())
+                return false;
+            if (hasTemporalType()) {
+                if (temporalType_ != other.temporalType_)
+                    return false;
+            }
+            if (hasEventType() != other.hasEventType())
+                return false;
+            if (hasEventType()) {
+                if (eventType_ != other.eventType_)
+                    return false;
+            }
+            if (hasTransportMode() != other.hasTransportMode())
+                return false;
+            if (hasTransportMode()) {
+                if (transportMode_ != other.transportMode_)
+                    return false;
+            }
+            if (hasOperatorId() != other.hasOperatorId())
+                return false;
+            if (hasOperatorId()) {
+                if (getOperatorId() != other.getOperatorId())
+                    return false;
+            }
+            if (hasVehicleNumber() != other.hasVehicleNumber())
+                return false;
+            if (hasVehicleNumber()) {
+                if (getVehicleNumber() != other.getVehicleNumber())
+                    return false;
+            }
+            if (hasUniqueVehicleId() != other.hasUniqueVehicleId())
+                return false;
+            if (hasUniqueVehicleId()) {
+                if (!getUniqueVehicleId().equals(other.getUniqueVehicleId()))
+                    return false;
+            }
+            if (hasRouteId() != other.hasRouteId())
+                return false;
+            if (hasRouteId()) {
+                if (!getRouteId().equals(other.getRouteId()))
+                    return false;
+            }
+            if (hasDirectionId() != other.hasDirectionId())
+                return false;
+            if (hasDirectionId()) {
+                if (getDirectionId() != other.getDirectionId())
+                    return false;
+            }
+            if (hasHeadsign() != other.hasHeadsign())
+                return false;
+            if (hasHeadsign()) {
+                if (!getHeadsign().equals(other.getHeadsign()))
+                    return false;
+            }
+            if (hasStartTime() != other.hasStartTime())
+                return false;
+            if (hasStartTime()) {
+                if (!getStartTime().equals(other.getStartTime()))
+                    return false;
+            }
+            if (hasNextStop() != other.hasNextStop())
+                return false;
+            if (hasNextStop()) {
+                if (!getNextStop().equals(other.getNextStop()))
+                    return false;
+            }
+            if (hasGeohashLevel() != other.hasGeohashLevel())
+                return false;
+            if (hasGeohashLevel()) {
+                if (getGeohashLevel() != other.getGeohashLevel())
+                    return false;
+            }
+            if (hasLatitude() != other.hasLatitude())
+                return false;
+            if (hasLatitude()) {
+                if (java.lang.Double.doubleToLongBits(getLatitude()) != java.lang.Double
+                        .doubleToLongBits(other.getLatitude()))
+                    return false;
+            }
+            if (hasLongitude() != other.hasLongitude())
+                return false;
+            if (hasLongitude()) {
+                if (java.lang.Double.doubleToLongBits(getLongitude()) != java.lang.Double
+                        .doubleToLongBits(other.getLongitude()))
+                    return false;
+            }
+            if (!getUnknownFields().equals(other.getUnknownFields()))
+                return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasSchemaVersion()) {
+                hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
+                hash = (53 * hash) + getSchemaVersion();
+            }
+            if (hasReceivedAt()) {
+                hash = (37 * hash) + RECEIVED_AT_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getReceivedAt());
+            }
+            if (hasTopicPrefix()) {
+                hash = (37 * hash) + TOPIC_PREFIX_FIELD_NUMBER;
+                hash = (53 * hash) + getTopicPrefix().hashCode();
+            }
+            if (hasTopicVersion()) {
+                hash = (37 * hash) + TOPIC_VERSION_FIELD_NUMBER;
+                hash = (53 * hash) + getTopicVersion().hashCode();
+            }
+            if (hasJourneyType()) {
+                hash = (37 * hash) + JOURNEY_TYPE_FIELD_NUMBER;
+                hash = (53 * hash) + journeyType_;
+            }
+            if (hasTemporalType()) {
+                hash = (37 * hash) + TEMPORAL_TYPE_FIELD_NUMBER;
+                hash = (53 * hash) + temporalType_;
+            }
+            if (hasEventType()) {
+                hash = (37 * hash) + EVENT_TYPE_FIELD_NUMBER;
+                hash = (53 * hash) + eventType_;
+            }
+            if (hasTransportMode()) {
+                hash = (37 * hash) + TRANSPORT_MODE_FIELD_NUMBER;
+                hash = (53 * hash) + transportMode_;
+            }
+            if (hasOperatorId()) {
+                hash = (37 * hash) + OPERATOR_ID_FIELD_NUMBER;
+                hash = (53 * hash) + getOperatorId();
+            }
+            if (hasVehicleNumber()) {
+                hash = (37 * hash) + VEHICLE_NUMBER_FIELD_NUMBER;
+                hash = (53 * hash) + getVehicleNumber();
+            }
+            if (hasUniqueVehicleId()) {
+                hash = (37 * hash) + UNIQUE_VEHICLE_ID_FIELD_NUMBER;
+                hash = (53 * hash) + getUniqueVehicleId().hashCode();
+            }
+            if (hasRouteId()) {
+                hash = (37 * hash) + ROUTE_ID_FIELD_NUMBER;
+                hash = (53 * hash) + getRouteId().hashCode();
+            }
+            if (hasDirectionId()) {
+                hash = (37 * hash) + DIRECTION_ID_FIELD_NUMBER;
+                hash = (53 * hash) + getDirectionId();
+            }
+            if (hasHeadsign()) {
+                hash = (37 * hash) + HEADSIGN_FIELD_NUMBER;
+                hash = (53 * hash) + getHeadsign().hashCode();
+            }
+            if (hasStartTime()) {
+                hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+                hash = (53 * hash) + getStartTime().hashCode();
+            }
+            if (hasNextStop()) {
+                hash = (37 * hash) + NEXT_STOP_FIELD_NUMBER;
+                hash = (53 * hash) + getNextStop().hashCode();
+            }
+            if (hasGeohashLevel()) {
+                hash = (37 * hash) + GEOHASH_LEVEL_FIELD_NUMBER;
+                hash = (53 * hash) + getGeohashLevel();
+            }
+            if (hasLatitude()) {
+                hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
+                hash = (53 * hash)
+                        + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getLatitude()));
+            }
+            if (hasLongitude()) {
+                hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
+                hash = (53 * hash)
+                        + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getLongitude()));
+            }
+            hash = (29 * hash) + getUnknownFields().hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Topic parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Topic parseDelimitedFrom(java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+                    extensionRegistry);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Topic parseFrom(com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+        public static Builder newBuilder(fi.hsl.common.hfp.proto.Hfp.Topic prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         * Protobuf type {@code proto.Topic}
+         */
+        public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                    // @@protoc_insertion_point(builder_implements:proto.Topic)
+                    fi.hsl.common.hfp.proto.Hfp.TopicOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Topic_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+                return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Topic_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(fi.hsl.common.hfp.proto.Hfp.Topic.class,
+                                fi.hsl.common.hfp.proto.Hfp.Topic.Builder.class);
+            }
+
+            // Construct using fi.hsl.common.hfp.proto.Hfp.Topic.newBuilder()
+            private Builder() {
+
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+
+            }
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                bitField0_ = 0;
+                schemaVersion_ = 1;
+                receivedAt_ = 0L;
+                topicPrefix_ = "";
+                topicVersion_ = "";
+                journeyType_ = 0;
+                temporalType_ = 0;
+                eventType_ = 0;
+                transportMode_ = 0;
+                operatorId_ = 0;
+                vehicleNumber_ = 0;
+                uniqueVehicleId_ = "";
+                routeId_ = "";
+                directionId_ = 0;
+                headsign_ = "";
+                startTime_ = "";
+                nextStop_ = "";
+                geohashLevel_ = 0;
+                latitude_ = 0D;
+                longitude_ = 0D;
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Topic_descriptor;
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.hfp.proto.Hfp.Topic getDefaultInstanceForType() {
+                return fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.hfp.proto.Hfp.Topic build() {
+                fi.hsl.common.hfp.proto.Hfp.Topic result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.hfp.proto.Hfp.Topic buildPartial() {
+                fi.hsl.common.hfp.proto.Hfp.Topic result = new fi.hsl.common.hfp.proto.Hfp.Topic(this);
+                if (bitField0_ != 0) {
+                    buildPartial0(result);
+                }
+                onBuilt();
+                return result;
+            }
+
+            private void buildPartial0(fi.hsl.common.hfp.proto.Hfp.Topic result) {
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) != 0)) {
+                    result.schemaVersion_ = schemaVersion_;
+                    to_bitField0_ |= 0x00000001;
+                }
+                if (((from_bitField0_ & 0x00000002) != 0)) {
+                    result.receivedAt_ = receivedAt_;
+                    to_bitField0_ |= 0x00000002;
+                }
+                if (((from_bitField0_ & 0x00000004) != 0)) {
+                    result.topicPrefix_ = topicPrefix_;
+                    to_bitField0_ |= 0x00000004;
+                }
+                if (((from_bitField0_ & 0x00000008) != 0)) {
+                    result.topicVersion_ = topicVersion_;
+                    to_bitField0_ |= 0x00000008;
+                }
+                if (((from_bitField0_ & 0x00000010) != 0)) {
+                    result.journeyType_ = journeyType_;
+                    to_bitField0_ |= 0x00000010;
+                }
+                if (((from_bitField0_ & 0x00000020) != 0)) {
+                    result.temporalType_ = temporalType_;
+                    to_bitField0_ |= 0x00000020;
+                }
+                if (((from_bitField0_ & 0x00000040) != 0)) {
+                    result.eventType_ = eventType_;
+                    to_bitField0_ |= 0x00000040;
+                }
+                if (((from_bitField0_ & 0x00000080) != 0)) {
+                    result.transportMode_ = transportMode_;
+                    to_bitField0_ |= 0x00000080;
+                }
+                if (((from_bitField0_ & 0x00000100) != 0)) {
+                    result.operatorId_ = operatorId_;
+                    to_bitField0_ |= 0x00000100;
+                }
+                if (((from_bitField0_ & 0x00000200) != 0)) {
+                    result.vehicleNumber_ = vehicleNumber_;
+                    to_bitField0_ |= 0x00000200;
+                }
+                if (((from_bitField0_ & 0x00000400) != 0)) {
+                    result.uniqueVehicleId_ = uniqueVehicleId_;
+                    to_bitField0_ |= 0x00000400;
+                }
+                if (((from_bitField0_ & 0x00000800) != 0)) {
+                    result.routeId_ = routeId_;
+                    to_bitField0_ |= 0x00000800;
+                }
+                if (((from_bitField0_ & 0x00001000) != 0)) {
+                    result.directionId_ = directionId_;
+                    to_bitField0_ |= 0x00001000;
+                }
+                if (((from_bitField0_ & 0x00002000) != 0)) {
+                    result.headsign_ = headsign_;
+                    to_bitField0_ |= 0x00002000;
+                }
+                if (((from_bitField0_ & 0x00004000) != 0)) {
+                    result.startTime_ = startTime_;
+                    to_bitField0_ |= 0x00004000;
+                }
+                if (((from_bitField0_ & 0x00008000) != 0)) {
+                    result.nextStop_ = nextStop_;
+                    to_bitField0_ |= 0x00008000;
+                }
+                if (((from_bitField0_ & 0x00010000) != 0)) {
+                    result.geohashLevel_ = geohashLevel_;
+                    to_bitField0_ |= 0x00010000;
+                }
+                if (((from_bitField0_ & 0x00020000) != 0)) {
+                    result.latitude_ = latitude_;
+                    to_bitField0_ |= 0x00020000;
+                }
+                if (((from_bitField0_ & 0x00040000) != 0)) {
+                    result.longitude_ = longitude_;
+                    to_bitField0_ |= 0x00040000;
+                }
+                result.bitField0_ |= to_bitField0_;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+            @java.lang.Override
+            public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+            @java.lang.Override
+            public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+            @java.lang.Override
+            public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof fi.hsl.common.hfp.proto.Hfp.Topic) {
+                    return mergeFrom((fi.hsl.common.hfp.proto.Hfp.Topic) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(fi.hsl.common.hfp.proto.Hfp.Topic other) {
+                if (other == fi.hsl.common.hfp.proto.Hfp.Topic.getDefaultInstance())
+                    return this;
+                if (other.hasSchemaVersion()) {
+                    setSchemaVersion(other.getSchemaVersion());
+                }
+                if (other.hasReceivedAt()) {
+                    setReceivedAt(other.getReceivedAt());
+                }
+                if (other.hasTopicPrefix()) {
+                    topicPrefix_ = other.topicPrefix_;
+                    bitField0_ |= 0x00000004;
+                    onChanged();
+                }
+                if (other.hasTopicVersion()) {
+                    topicVersion_ = other.topicVersion_;
+                    bitField0_ |= 0x00000008;
+                    onChanged();
+                }
+                if (other.hasJourneyType()) {
+                    setJourneyType(other.getJourneyType());
+                }
+                if (other.hasTemporalType()) {
+                    setTemporalType(other.getTemporalType());
+                }
+                if (other.hasEventType()) {
+                    setEventType(other.getEventType());
+                }
+                if (other.hasTransportMode()) {
+                    setTransportMode(other.getTransportMode());
+                }
+                if (other.hasOperatorId()) {
+                    setOperatorId(other.getOperatorId());
+                }
+                if (other.hasVehicleNumber()) {
+                    setVehicleNumber(other.getVehicleNumber());
+                }
+                if (other.hasUniqueVehicleId()) {
+                    uniqueVehicleId_ = other.uniqueVehicleId_;
+                    bitField0_ |= 0x00000400;
+                    onChanged();
+                }
+                if (other.hasRouteId()) {
+                    routeId_ = other.routeId_;
+                    bitField0_ |= 0x00000800;
+                    onChanged();
+                }
+                if (other.hasDirectionId()) {
+                    setDirectionId(other.getDirectionId());
+                }
+                if (other.hasHeadsign()) {
+                    headsign_ = other.headsign_;
+                    bitField0_ |= 0x00002000;
+                    onChanged();
+                }
+                if (other.hasStartTime()) {
+                    startTime_ = other.startTime_;
+                    bitField0_ |= 0x00004000;
+                    onChanged();
+                }
+                if (other.hasNextStop()) {
+                    nextStop_ = other.nextStop_;
+                    bitField0_ |= 0x00008000;
+                    onChanged();
+                }
+                if (other.hasGeohashLevel()) {
+                    setGeohashLevel(other.getGeohashLevel());
+                }
+                if (other.hasLatitude()) {
+                    setLatitude(other.getLatitude());
+                }
+                if (other.hasLongitude()) {
+                    setLongitude(other.getLongitude());
+                }
+                this.mergeUnknownFields(other.getUnknownFields());
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                if (!hasSchemaVersion()) {
+                    return false;
+                }
+                if (!hasReceivedAt()) {
+                    return false;
+                }
+                if (!hasTopicPrefix()) {
+                    return false;
+                }
+                if (!hasTopicVersion()) {
+                    return false;
+                }
+                if (!hasJourneyType()) {
+                    return false;
+                }
+                if (!hasTemporalType()) {
+                    return false;
+                }
+                if (!hasOperatorId()) {
+                    return false;
+                }
+                if (!hasVehicleNumber()) {
+                    return false;
+                }
+                if (!hasUniqueVehicleId()) {
+                    return false;
+                }
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+                if (extensionRegistry == null) {
+                    throw new java.lang.NullPointerException();
+                }
+                try {
+                    boolean done = false;
+                    while (!done) {
+                        int tag = input.readTag();
+                        switch (tag) {
+                            case 0 :
+                                done = true;
+                                break;
+                            case 8 : {
+                                schemaVersion_ = input.readInt32();
+                                bitField0_ |= 0x00000001;
+                                break;
+                            } // case 8
+                            case 16 : {
+                                receivedAt_ = input.readInt64();
+                                bitField0_ |= 0x00000002;
+                                break;
+                            } // case 16
+                            case 26 : {
+                                topicPrefix_ = input.readBytes();
+                                bitField0_ |= 0x00000004;
+                                break;
+                            } // case 26
+                            case 34 : {
+                                topicVersion_ = input.readBytes();
+                                bitField0_ |= 0x00000008;
+                                break;
+                            } // case 34
+                            case 40 : {
+                                int tmpRaw = input.readEnum();
+                                fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType tmpValue = fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType
+                                        .forNumber(tmpRaw);
+                                if (tmpValue == null) {
+                                    mergeUnknownVarintField(5, tmpRaw);
+                                } else {
+                                    journeyType_ = tmpRaw;
+                                    bitField0_ |= 0x00000010;
+                                }
+                                break;
+                            } // case 40
+                            case 48 : {
+                                int tmpRaw = input.readEnum();
+                                fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType tmpValue = fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType
+                                        .forNumber(tmpRaw);
+                                if (tmpValue == null) {
+                                    mergeUnknownVarintField(6, tmpRaw);
+                                } else {
+                                    temporalType_ = tmpRaw;
+                                    bitField0_ |= 0x00000020;
+                                }
+                                break;
+                            } // case 48
+                            case 56 : {
+                                int tmpRaw = input.readEnum();
+                                fi.hsl.common.hfp.proto.Hfp.Topic.EventType tmpValue = fi.hsl.common.hfp.proto.Hfp.Topic.EventType
+                                        .forNumber(tmpRaw);
+                                if (tmpValue == null) {
+                                    mergeUnknownVarintField(7, tmpRaw);
+                                } else {
+                                    eventType_ = tmpRaw;
+                                    bitField0_ |= 0x00000040;
+                                }
+                                break;
+                            } // case 56
+                            case 64 : {
+                                int tmpRaw = input.readEnum();
+                                fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode tmpValue = fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode
+                                        .forNumber(tmpRaw);
+                                if (tmpValue == null) {
+                                    mergeUnknownVarintField(8, tmpRaw);
+                                } else {
+                                    transportMode_ = tmpRaw;
+                                    bitField0_ |= 0x00000080;
+                                }
+                                break;
+                            } // case 64
+                            case 72 : {
+                                operatorId_ = input.readInt32();
+                                bitField0_ |= 0x00000100;
+                                break;
+                            } // case 72
+                            case 80 : {
+                                vehicleNumber_ = input.readInt32();
+                                bitField0_ |= 0x00000200;
+                                break;
+                            } // case 80
+                            case 90 : {
+                                uniqueVehicleId_ = input.readBytes();
+                                bitField0_ |= 0x00000400;
+                                break;
+                            } // case 90
+                            case 98 : {
+                                routeId_ = input.readBytes();
+                                bitField0_ |= 0x00000800;
+                                break;
+                            } // case 98
+                            case 104 : {
+                                directionId_ = input.readInt32();
+                                bitField0_ |= 0x00001000;
+                                break;
+                            } // case 104
+                            case 114 : {
+                                headsign_ = input.readBytes();
+                                bitField0_ |= 0x00002000;
+                                break;
+                            } // case 114
+                            case 122 : {
+                                startTime_ = input.readBytes();
+                                bitField0_ |= 0x00004000;
+                                break;
+                            } // case 122
+                            case 130 : {
+                                nextStop_ = input.readBytes();
+                                bitField0_ |= 0x00008000;
+                                break;
+                            } // case 130
+                            case 136 : {
+                                geohashLevel_ = input.readInt32();
+                                bitField0_ |= 0x00010000;
+                                break;
+                            } // case 136
+                            case 145 : {
+                                latitude_ = input.readDouble();
+                                bitField0_ |= 0x00020000;
+                                break;
+                            } // case 145
+                            case 153 : {
+                                longitude_ = input.readDouble();
+                                bitField0_ |= 0x00040000;
+                                break;
+                            } // case 153
+                            default : {
+                                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                                    done = true; // was an endgroup tag
+                                }
+                                break;
+                            } // default:
+                        } // switch (tag)
+                    } // while (!done)
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.unwrapIOException();
+                } finally {
+                    onChanged();
+                } // finally
+                return this;
+            }
+            private int bitField0_;
+
+            private int schemaVersion_ = 1;
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @return Whether the schemaVersion field is set.
+             */
+            @java.lang.Override
+            public boolean hasSchemaVersion() {
+                return ((bitField0_ & 0x00000001) != 0);
+            }
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @return The schemaVersion.
+             */
+            @java.lang.Override
+            public int getSchemaVersion() {
+                return schemaVersion_;
+            }
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @param value The schemaVersion to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSchemaVersion(int value) {
+
+                schemaVersion_ = value;
                 bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                receivedAt_ = input.readInt64();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearSchemaVersion() {
+                bitField0_ = (bitField0_ & ~0x00000001);
+                schemaVersion_ = 1;
+                onChanged();
+                return this;
+            }
+
+            private long receivedAt_;
+            /**
+             * <pre>
+             * Our server timestamp as Epoch ms
+             * </pre>
+             *
+             * <code>required int64 received_at = 2;</code>
+             * @return Whether the receivedAt field is set.
+             */
+            @java.lang.Override
+            public boolean hasReceivedAt() {
+                return ((bitField0_ & 0x00000002) != 0);
+            }
+            /**
+             * <pre>
+             * Our server timestamp as Epoch ms
+             * </pre>
+             *
+             * <code>required int64 received_at = 2;</code>
+             * @return The receivedAt.
+             */
+            @java.lang.Override
+            public long getReceivedAt() {
+                return receivedAt_;
+            }
+            /**
+             * <pre>
+             * Our server timestamp as Epoch ms
+             * </pre>
+             *
+             * <code>required int64 received_at = 2;</code>
+             * @param value The receivedAt to set.
+             * @return This builder for chaining.
+             */
+            public Builder setReceivedAt(long value) {
+
+                receivedAt_ = value;
                 bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 26: {
-                topicPrefix_ = input.readBytes();
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * Our server timestamp as Epoch ms
+             * </pre>
+             *
+             * <code>required int64 received_at = 2;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearReceivedAt() {
+                bitField0_ = (bitField0_ & ~0x00000002);
+                receivedAt_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object topicPrefix_ = "";
+            /**
+             * <code>required string topic_prefix = 3;</code>
+             * @return Whether the topicPrefix field is set.
+             */
+            public boolean hasTopicPrefix() {
+                return ((bitField0_ & 0x00000004) != 0);
+            }
+            /**
+             * <code>required string topic_prefix = 3;</code>
+             * @return The topicPrefix.
+             */
+            public java.lang.String getTopicPrefix() {
+                java.lang.Object ref = topicPrefix_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        topicPrefix_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>required string topic_prefix = 3;</code>
+             * @return The bytes for topicPrefix.
+             */
+            public com.google.protobuf.ByteString getTopicPrefixBytes() {
+                java.lang.Object ref = topicPrefix_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    topicPrefix_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>required string topic_prefix = 3;</code>
+             * @param value The topicPrefix to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTopicPrefix(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                topicPrefix_ = value;
                 bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 34: {
-                topicVersion_ = input.readBytes();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required string topic_prefix = 3;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTopicPrefix() {
+                topicPrefix_ = getDefaultInstance().getTopicPrefix();
+                bitField0_ = (bitField0_ & ~0x00000004);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required string topic_prefix = 3;</code>
+             * @param value The bytes for topicPrefix to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTopicPrefixBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                topicPrefix_ = value;
+                bitField0_ |= 0x00000004;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object topicVersion_ = "";
+            /**
+             * <code>required string topic_version = 4;</code>
+             * @return Whether the topicVersion field is set.
+             */
+            public boolean hasTopicVersion() {
+                return ((bitField0_ & 0x00000008) != 0);
+            }
+            /**
+             * <code>required string topic_version = 4;</code>
+             * @return The topicVersion.
+             */
+            public java.lang.String getTopicVersion() {
+                java.lang.Object ref = topicVersion_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        topicVersion_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>required string topic_version = 4;</code>
+             * @return The bytes for topicVersion.
+             */
+            public com.google.protobuf.ByteString getTopicVersionBytes() {
+                java.lang.Object ref = topicVersion_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    topicVersion_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>required string topic_version = 4;</code>
+             * @param value The topicVersion to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTopicVersion(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                topicVersion_ = value;
                 bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-              case 40: {
-                int tmpRaw = input.readEnum();
-                fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType tmpValue =
-                    fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(5, tmpRaw);
-                } else {
-                  journeyType_ = tmpRaw;
-                  bitField0_ |= 0x00000010;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required string topic_version = 4;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTopicVersion() {
+                topicVersion_ = getDefaultInstance().getTopicVersion();
+                bitField0_ = (bitField0_ & ~0x00000008);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required string topic_version = 4;</code>
+             * @param value The bytes for topicVersion to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTopicVersionBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
                 }
-                break;
-              } // case 40
-              case 48: {
-                int tmpRaw = input.readEnum();
-                fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType tmpValue =
-                    fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(6, tmpRaw);
-                } else {
-                  temporalType_ = tmpRaw;
-                  bitField0_ |= 0x00000020;
+                topicVersion_ = value;
+                bitField0_ |= 0x00000008;
+                onChanged();
+                return this;
+            }
+
+            private int journeyType_ = 0;
+            /**
+             * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+             * @return Whether the journeyType field is set.
+             */
+            @java.lang.Override
+            public boolean hasJourneyType() {
+                return ((bitField0_ & 0x00000010) != 0);
+            }
+            /**
+             * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+             * @return The journeyType.
+             */
+            @java.lang.Override
+            public fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType getJourneyType() {
+                fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType result = fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType
+                        .forNumber(journeyType_);
+                return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType.journey : result;
+            }
+            /**
+             * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+             * @param value The journeyType to set.
+             * @return This builder for chaining.
+             */
+            public Builder setJourneyType(fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType value) {
+                if (value == null) {
+                    throw new NullPointerException();
                 }
-                break;
-              } // case 48
-              case 56: {
-                int tmpRaw = input.readEnum();
-                fi.hsl.common.hfp.proto.Hfp.Topic.EventType tmpValue =
-                    fi.hsl.common.hfp.proto.Hfp.Topic.EventType.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(7, tmpRaw);
-                } else {
-                  eventType_ = tmpRaw;
-                  bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000010;
+                journeyType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearJourneyType() {
+                bitField0_ = (bitField0_ & ~0x00000010);
+                journeyType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int temporalType_ = 0;
+            /**
+             * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+             * @return Whether the temporalType field is set.
+             */
+            @java.lang.Override
+            public boolean hasTemporalType() {
+                return ((bitField0_ & 0x00000020) != 0);
+            }
+            /**
+             * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+             * @return The temporalType.
+             */
+            @java.lang.Override
+            public fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType getTemporalType() {
+                fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType result = fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType
+                        .forNumber(temporalType_);
+                return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType.ongoing : result;
+            }
+            /**
+             * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+             * @param value The temporalType to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTemporalType(fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType value) {
+                if (value == null) {
+                    throw new NullPointerException();
                 }
-                break;
-              } // case 56
-              case 64: {
-                int tmpRaw = input.readEnum();
-                fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode tmpValue =
-                    fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(8, tmpRaw);
-                } else {
-                  transportMode_ = tmpRaw;
-                  bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000020;
+                temporalType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTemporalType() {
+                bitField0_ = (bitField0_ & ~0x00000020);
+                temporalType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int eventType_ = 0;
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional .proto.Topic.EventType event_type = 7;</code>
+             * @return Whether the eventType field is set.
+             */
+            @java.lang.Override
+            public boolean hasEventType() {
+                return ((bitField0_ & 0x00000040) != 0);
+            }
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional .proto.Topic.EventType event_type = 7;</code>
+             * @return The eventType.
+             */
+            @java.lang.Override
+            public fi.hsl.common.hfp.proto.Hfp.Topic.EventType getEventType() {
+                fi.hsl.common.hfp.proto.Hfp.Topic.EventType result = fi.hsl.common.hfp.proto.Hfp.Topic.EventType
+                        .forNumber(eventType_);
+                return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.EventType.VP : result;
+            }
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional .proto.Topic.EventType event_type = 7;</code>
+             * @param value The eventType to set.
+             * @return This builder for chaining.
+             */
+            public Builder setEventType(fi.hsl.common.hfp.proto.Hfp.Topic.EventType value) {
+                if (value == null) {
+                    throw new NullPointerException();
                 }
-                break;
-              } // case 64
-              case 72: {
-                operatorId_ = input.readInt32();
+                bitField0_ |= 0x00000040;
+                eventType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional .proto.Topic.EventType event_type = 7;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearEventType() {
+                bitField0_ = (bitField0_ & ~0x00000040);
+                eventType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int transportMode_ = 0;
+            /**
+             * <pre>
+             * Optional because of rare bug in data source systems
+             * </pre>
+             *
+             * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+             * @return Whether the transportMode field is set.
+             */
+            @java.lang.Override
+            public boolean hasTransportMode() {
+                return ((bitField0_ & 0x00000080) != 0);
+            }
+            /**
+             * <pre>
+             * Optional because of rare bug in data source systems
+             * </pre>
+             *
+             * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+             * @return The transportMode.
+             */
+            @java.lang.Override
+            public fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode getTransportMode() {
+                fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode result = fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode
+                        .forNumber(transportMode_);
+                return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode.bus : result;
+            }
+            /**
+             * <pre>
+             * Optional because of rare bug in data source systems
+             * </pre>
+             *
+             * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+             * @param value The transportMode to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTransportMode(fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000080;
+                transportMode_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * Optional because of rare bug in data source systems
+             * </pre>
+             *
+             * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTransportMode() {
+                bitField0_ = (bitField0_ & ~0x00000080);
+                transportMode_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int operatorId_;
+            /**
+             * <code>required int32 operator_id = 9;</code>
+             * @return Whether the operatorId field is set.
+             */
+            @java.lang.Override
+            public boolean hasOperatorId() {
+                return ((bitField0_ & 0x00000100) != 0);
+            }
+            /**
+             * <code>required int32 operator_id = 9;</code>
+             * @return The operatorId.
+             */
+            @java.lang.Override
+            public int getOperatorId() {
+                return operatorId_;
+            }
+            /**
+             * <code>required int32 operator_id = 9;</code>
+             * @param value The operatorId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setOperatorId(int value) {
+
+                operatorId_ = value;
                 bitField0_ |= 0x00000100;
-                break;
-              } // case 72
-              case 80: {
-                vehicleNumber_ = input.readInt32();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required int32 operator_id = 9;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearOperatorId() {
+                bitField0_ = (bitField0_ & ~0x00000100);
+                operatorId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int vehicleNumber_;
+            /**
+             * <code>required int32 vehicle_number = 10;</code>
+             * @return Whether the vehicleNumber field is set.
+             */
+            @java.lang.Override
+            public boolean hasVehicleNumber() {
+                return ((bitField0_ & 0x00000200) != 0);
+            }
+            /**
+             * <code>required int32 vehicle_number = 10;</code>
+             * @return The vehicleNumber.
+             */
+            @java.lang.Override
+            public int getVehicleNumber() {
+                return vehicleNumber_;
+            }
+            /**
+             * <code>required int32 vehicle_number = 10;</code>
+             * @param value The vehicleNumber to set.
+             * @return This builder for chaining.
+             */
+            public Builder setVehicleNumber(int value) {
+
+                vehicleNumber_ = value;
                 bitField0_ |= 0x00000200;
-                break;
-              } // case 80
-              case 90: {
-                uniqueVehicleId_ = input.readBytes();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 90
-              case 98: {
-                routeId_ = input.readBytes();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 98
-              case 104: {
-                directionId_ = input.readInt32();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 104
-              case 114: {
-                headsign_ = input.readBytes();
-                bitField0_ |= 0x00002000;
-                break;
-              } // case 114
-              case 122: {
-                startTime_ = input.readBytes();
-                bitField0_ |= 0x00004000;
-                break;
-              } // case 122
-              case 130: {
-                nextStop_ = input.readBytes();
-                bitField0_ |= 0x00008000;
-                break;
-              } // case 130
-              case 136: {
-                geohashLevel_ = input.readInt32();
-                bitField0_ |= 0x00010000;
-                break;
-              } // case 136
-              case 145: {
-                latitude_ = input.readDouble();
-                bitField0_ |= 0x00020000;
-                break;
-              } // case 145
-              case 153: {
-                longitude_ = input.readDouble();
-                bitField0_ |= 0x00040000;
-                break;
-              } // case 153
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required int32 vehicle_number = 10;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearVehicleNumber() {
+                bitField0_ = (bitField0_ & ~0x00000200);
+                vehicleNumber_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object uniqueVehicleId_ = "";
+            /**
+             * <code>required string unique_vehicle_id = 11;</code>
+             * @return Whether the uniqueVehicleId field is set.
+             */
+            public boolean hasUniqueVehicleId() {
+                return ((bitField0_ & 0x00000400) != 0);
+            }
+            /**
+             * <code>required string unique_vehicle_id = 11;</code>
+             * @return The uniqueVehicleId.
+             */
+            public java.lang.String getUniqueVehicleId() {
+                java.lang.Object ref = uniqueVehicleId_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        uniqueVehicleId_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
                 }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
+            }
+            /**
+             * <code>required string unique_vehicle_id = 11;</code>
+             * @return The bytes for uniqueVehicleId.
+             */
+            public com.google.protobuf.ByteString getUniqueVehicleIdBytes() {
+                java.lang.Object ref = uniqueVehicleId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    uniqueVehicleId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>required string unique_vehicle_id = 11;</code>
+             * @param value The uniqueVehicleId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setUniqueVehicleId(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                uniqueVehicleId_ = value;
+                bitField0_ |= 0x00000400;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required string unique_vehicle_id = 11;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearUniqueVehicleId() {
+                uniqueVehicleId_ = getDefaultInstance().getUniqueVehicleId();
+                bitField0_ = (bitField0_ & ~0x00000400);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required string unique_vehicle_id = 11;</code>
+             * @param value The bytes for uniqueVehicleId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setUniqueVehicleIdBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                uniqueVehicleId_ = value;
+                bitField0_ |= 0x00000400;
+                onChanged();
+                return this;
+            }
 
-      private int schemaVersion_ = 1;
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @return Whether the schemaVersion field is set.
-       */
-      @java.lang.Override
-      public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @return The schemaVersion.
-       */
-      @java.lang.Override
-      public int getSchemaVersion() {
-        return schemaVersion_;
-      }
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @param value The schemaVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSchemaVersion(int value) {
-        
-        schemaVersion_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSchemaVersion() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        schemaVersion_ = 1;
-        onChanged();
-        return this;
-      }
+            private java.lang.Object routeId_ = "";
+            /**
+             * <code>optional string route_id = 12;</code>
+             * @return Whether the routeId field is set.
+             */
+            public boolean hasRouteId() {
+                return ((bitField0_ & 0x00000800) != 0);
+            }
+            /**
+             * <code>optional string route_id = 12;</code>
+             * @return The routeId.
+             */
+            public java.lang.String getRouteId() {
+                java.lang.Object ref = routeId_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        routeId_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string route_id = 12;</code>
+             * @return The bytes for routeId.
+             */
+            public com.google.protobuf.ByteString getRouteIdBytes() {
+                java.lang.Object ref = routeId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    routeId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string route_id = 12;</code>
+             * @param value The routeId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setRouteId(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                routeId_ = value;
+                bitField0_ |= 0x00000800;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string route_id = 12;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearRouteId() {
+                routeId_ = getDefaultInstance().getRouteId();
+                bitField0_ = (bitField0_ & ~0x00000800);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string route_id = 12;</code>
+             * @param value The bytes for routeId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setRouteIdBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                routeId_ = value;
+                bitField0_ |= 0x00000800;
+                onChanged();
+                return this;
+            }
 
-      private long receivedAt_ ;
-      /**
-       * <pre>
-       * Our server timestamp as Epoch ms
-       * </pre>
-       *
-       * <code>required int64 received_at = 2;</code>
-       * @return Whether the receivedAt field is set.
-       */
-      @java.lang.Override
-      public boolean hasReceivedAt() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <pre>
-       * Our server timestamp as Epoch ms
-       * </pre>
-       *
-       * <code>required int64 received_at = 2;</code>
-       * @return The receivedAt.
-       */
-      @java.lang.Override
-      public long getReceivedAt() {
-        return receivedAt_;
-      }
-      /**
-       * <pre>
-       * Our server timestamp as Epoch ms
-       * </pre>
-       *
-       * <code>required int64 received_at = 2;</code>
-       * @param value The receivedAt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReceivedAt(long value) {
-        
-        receivedAt_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Our server timestamp as Epoch ms
-       * </pre>
-       *
-       * <code>required int64 received_at = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearReceivedAt() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        receivedAt_ = 0L;
-        onChanged();
-        return this;
-      }
+            private int directionId_;
+            /**
+             * <code>optional int32 direction_id = 13;</code>
+             * @return Whether the directionId field is set.
+             */
+            @java.lang.Override
+            public boolean hasDirectionId() {
+                return ((bitField0_ & 0x00001000) != 0);
+            }
+            /**
+             * <code>optional int32 direction_id = 13;</code>
+             * @return The directionId.
+             */
+            @java.lang.Override
+            public int getDirectionId() {
+                return directionId_;
+            }
+            /**
+             * <code>optional int32 direction_id = 13;</code>
+             * @param value The directionId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDirectionId(int value) {
 
-      private java.lang.Object topicPrefix_ = "";
-      /**
-       * <code>required string topic_prefix = 3;</code>
-       * @return Whether the topicPrefix field is set.
-       */
-      public boolean hasTopicPrefix() {
-        return ((bitField0_ & 0x00000004) != 0);
-      }
-      /**
-       * <code>required string topic_prefix = 3;</code>
-       * @return The topicPrefix.
-       */
-      public java.lang.String getTopicPrefix() {
-        java.lang.Object ref = topicPrefix_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            topicPrefix_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+                directionId_ = value;
+                bitField0_ |= 0x00001000;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int32 direction_id = 13;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearDirectionId() {
+                bitField0_ = (bitField0_ & ~0x00001000);
+                directionId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object headsign_ = "";
+            /**
+             * <code>optional string headsign = 14;</code>
+             * @return Whether the headsign field is set.
+             */
+            public boolean hasHeadsign() {
+                return ((bitField0_ & 0x00002000) != 0);
+            }
+            /**
+             * <code>optional string headsign = 14;</code>
+             * @return The headsign.
+             */
+            public java.lang.String getHeadsign() {
+                java.lang.Object ref = headsign_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        headsign_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string headsign = 14;</code>
+             * @return The bytes for headsign.
+             */
+            public com.google.protobuf.ByteString getHeadsignBytes() {
+                java.lang.Object ref = headsign_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    headsign_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string headsign = 14;</code>
+             * @param value The headsign to set.
+             * @return This builder for chaining.
+             */
+            public Builder setHeadsign(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                headsign_ = value;
+                bitField0_ |= 0x00002000;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string headsign = 14;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearHeadsign() {
+                headsign_ = getDefaultInstance().getHeadsign();
+                bitField0_ = (bitField0_ & ~0x00002000);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string headsign = 14;</code>
+             * @param value The bytes for headsign to set.
+             * @return This builder for chaining.
+             */
+            public Builder setHeadsignBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                headsign_ = value;
+                bitField0_ |= 0x00002000;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object startTime_ = "";
+            /**
+             * <code>optional string start_time = 15;</code>
+             * @return Whether the startTime field is set.
+             */
+            public boolean hasStartTime() {
+                return ((bitField0_ & 0x00004000) != 0);
+            }
+            /**
+             * <code>optional string start_time = 15;</code>
+             * @return The startTime.
+             */
+            public java.lang.String getStartTime() {
+                java.lang.Object ref = startTime_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        startTime_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string start_time = 15;</code>
+             * @return The bytes for startTime.
+             */
+            public com.google.protobuf.ByteString getStartTimeBytes() {
+                java.lang.Object ref = startTime_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    startTime_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string start_time = 15;</code>
+             * @param value The startTime to set.
+             * @return This builder for chaining.
+             */
+            public Builder setStartTime(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                startTime_ = value;
+                bitField0_ |= 0x00004000;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string start_time = 15;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearStartTime() {
+                startTime_ = getDefaultInstance().getStartTime();
+                bitField0_ = (bitField0_ & ~0x00004000);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string start_time = 15;</code>
+             * @param value The bytes for startTime to set.
+             * @return This builder for chaining.
+             */
+            public Builder setStartTimeBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                startTime_ = value;
+                bitField0_ |= 0x00004000;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object nextStop_ = "";
+            /**
+             * <code>optional string next_stop = 16;</code>
+             * @return Whether the nextStop field is set.
+             */
+            public boolean hasNextStop() {
+                return ((bitField0_ & 0x00008000) != 0);
+            }
+            /**
+             * <code>optional string next_stop = 16;</code>
+             * @return The nextStop.
+             */
+            public java.lang.String getNextStop() {
+                java.lang.Object ref = nextStop_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        nextStop_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string next_stop = 16;</code>
+             * @return The bytes for nextStop.
+             */
+            public com.google.protobuf.ByteString getNextStopBytes() {
+                java.lang.Object ref = nextStop_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    nextStop_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string next_stop = 16;</code>
+             * @param value The nextStop to set.
+             * @return This builder for chaining.
+             */
+            public Builder setNextStop(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                nextStop_ = value;
+                bitField0_ |= 0x00008000;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string next_stop = 16;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearNextStop() {
+                nextStop_ = getDefaultInstance().getNextStop();
+                bitField0_ = (bitField0_ & ~0x00008000);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string next_stop = 16;</code>
+             * @param value The bytes for nextStop to set.
+             * @return This builder for chaining.
+             */
+            public Builder setNextStopBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                nextStop_ = value;
+                bitField0_ |= 0x00008000;
+                onChanged();
+                return this;
+            }
+
+            private int geohashLevel_;
+            /**
+             * <code>optional int32 geohash_level = 17;</code>
+             * @return Whether the geohashLevel field is set.
+             */
+            @java.lang.Override
+            public boolean hasGeohashLevel() {
+                return ((bitField0_ & 0x00010000) != 0);
+            }
+            /**
+             * <code>optional int32 geohash_level = 17;</code>
+             * @return The geohashLevel.
+             */
+            @java.lang.Override
+            public int getGeohashLevel() {
+                return geohashLevel_;
+            }
+            /**
+             * <code>optional int32 geohash_level = 17;</code>
+             * @param value The geohashLevel to set.
+             * @return This builder for chaining.
+             */
+            public Builder setGeohashLevel(int value) {
+
+                geohashLevel_ = value;
+                bitField0_ |= 0x00010000;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int32 geohash_level = 17;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearGeohashLevel() {
+                bitField0_ = (bitField0_ & ~0x00010000);
+                geohashLevel_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private double latitude_;
+            /**
+             * <code>optional double latitude = 18;</code>
+             * @return Whether the latitude field is set.
+             */
+            @java.lang.Override
+            public boolean hasLatitude() {
+                return ((bitField0_ & 0x00020000) != 0);
+            }
+            /**
+             * <code>optional double latitude = 18;</code>
+             * @return The latitude.
+             */
+            @java.lang.Override
+            public double getLatitude() {
+                return latitude_;
+            }
+            /**
+             * <code>optional double latitude = 18;</code>
+             * @param value The latitude to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLatitude(double value) {
+
+                latitude_ = value;
+                bitField0_ |= 0x00020000;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional double latitude = 18;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearLatitude() {
+                bitField0_ = (bitField0_ & ~0x00020000);
+                latitude_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            private double longitude_;
+            /**
+             * <code>optional double longitude = 19;</code>
+             * @return Whether the longitude field is set.
+             */
+            @java.lang.Override
+            public boolean hasLongitude() {
+                return ((bitField0_ & 0x00040000) != 0);
+            }
+            /**
+             * <code>optional double longitude = 19;</code>
+             * @return The longitude.
+             */
+            @java.lang.Override
+            public double getLongitude() {
+                return longitude_;
+            }
+            /**
+             * <code>optional double longitude = 19;</code>
+             * @param value The longitude to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLongitude(double value) {
+
+                longitude_ = value;
+                bitField0_ |= 0x00040000;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional double longitude = 19;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearLongitude() {
+                bitField0_ = (bitField0_ & ~0x00040000);
+                longitude_ = 0D;
+                onChanged();
+                return this;
+            }
+            @java.lang.Override
+            public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:proto.Topic)
         }
-      }
-      /**
-       * <code>required string topic_prefix = 3;</code>
-       * @return The bytes for topicPrefix.
-       */
-      public com.google.protobuf.ByteString
-          getTopicPrefixBytes() {
-        java.lang.Object ref = topicPrefix_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          topicPrefix_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        // @@protoc_insertion_point(class_scope:proto.Topic)
+        private static final fi.hsl.common.hfp.proto.Hfp.Topic DEFAULT_INSTANCE;
+        static {
+            DEFAULT_INSTANCE = new fi.hsl.common.hfp.proto.Hfp.Topic();
         }
-      }
-      /**
-       * <code>required string topic_prefix = 3;</code>
-       * @param value The topicPrefix to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTopicPrefix(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        topicPrefix_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string topic_prefix = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTopicPrefix() {
-        topicPrefix_ = getDefaultInstance().getTopicPrefix();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string topic_prefix = 3;</code>
-       * @param value The bytes for topicPrefix to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTopicPrefixBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        topicPrefix_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
 
-      private java.lang.Object topicVersion_ = "";
-      /**
-       * <code>required string topic_version = 4;</code>
-       * @return Whether the topicVersion field is set.
-       */
-      public boolean hasTopicVersion() {
-        return ((bitField0_ & 0x00000008) != 0);
-      }
-      /**
-       * <code>required string topic_version = 4;</code>
-       * @return The topicVersion.
-       */
-      public java.lang.String getTopicVersion() {
-        java.lang.Object ref = topicVersion_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            topicVersion_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        public static fi.hsl.common.hfp.proto.Hfp.Topic getDefaultInstance() {
+            return DEFAULT_INSTANCE;
         }
-      }
-      /**
-       * <code>required string topic_version = 4;</code>
-       * @return The bytes for topicVersion.
-       */
-      public com.google.protobuf.ByteString
-          getTopicVersionBytes() {
-        java.lang.Object ref = topicVersion_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          topicVersion_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        @java.lang.Deprecated
+        public static final com.google.protobuf.Parser<Topic> PARSER = new com.google.protobuf.AbstractParser<Topic>() {
+            @java.lang.Override
+            public Topic parsePartialFrom(com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                    builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                    throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                    throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                            .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+            }
+        };
+
+        public static com.google.protobuf.Parser<Topic> parser() {
+            return PARSER;
         }
-      }
-      /**
-       * <code>required string topic_version = 4;</code>
-       * @param value The topicVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTopicVersion(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        topicVersion_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string topic_version = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTopicVersion() {
-        topicVersion_ = getDefaultInstance().getTopicVersion();
-        bitField0_ = (bitField0_ & ~0x00000008);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string topic_version = 4;</code>
-       * @param value The bytes for topicVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTopicVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        topicVersion_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
 
-      private int journeyType_ = 0;
-      /**
-       * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
-       * @return Whether the journeyType field is set.
-       */
-      @java.lang.Override public boolean hasJourneyType() {
-        return ((bitField0_ & 0x00000010) != 0);
-      }
-      /**
-       * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
-       * @return The journeyType.
-       */
-      @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType getJourneyType() {
-        fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType result = fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType.forNumber(journeyType_);
-        return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType.journey : result;
-      }
-      /**
-       * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
-       * @param value The journeyType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJourneyType(fi.hsl.common.hfp.proto.Hfp.Topic.JourneyType value) {
-        if (value == null) {
-          throw new NullPointerException();
+        @java.lang.Override
+        public com.google.protobuf.Parser<Topic> getParserForType() {
+            return PARSER;
         }
-        bitField0_ |= 0x00000010;
-        journeyType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJourneyType() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        journeyType_ = 0;
-        onChanged();
-        return this;
-      }
 
-      private int temporalType_ = 0;
-      /**
-       * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
-       * @return Whether the temporalType field is set.
-       */
-      @java.lang.Override public boolean hasTemporalType() {
-        return ((bitField0_ & 0x00000020) != 0);
-      }
-      /**
-       * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
-       * @return The temporalType.
-       */
-      @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType getTemporalType() {
-        fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType result = fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType.forNumber(temporalType_);
-        return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType.ongoing : result;
-      }
-      /**
-       * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
-       * @param value The temporalType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTemporalType(fi.hsl.common.hfp.proto.Hfp.Topic.TemporalType value) {
-        if (value == null) {
-          throw new NullPointerException();
+        @java.lang.Override
+        public fi.hsl.common.hfp.proto.Hfp.Topic getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
         }
-        bitField0_ |= 0x00000020;
-        temporalType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTemporalType() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        temporalType_ = 0;
-        onChanged();
-        return this;
-      }
 
-      private int eventType_ = 0;
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional .proto.Topic.EventType event_type = 7;</code>
-       * @return Whether the eventType field is set.
-       */
-      @java.lang.Override public boolean hasEventType() {
-        return ((bitField0_ & 0x00000040) != 0);
-      }
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional .proto.Topic.EventType event_type = 7;</code>
-       * @return The eventType.
-       */
-      @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Topic.EventType getEventType() {
-        fi.hsl.common.hfp.proto.Hfp.Topic.EventType result = fi.hsl.common.hfp.proto.Hfp.Topic.EventType.forNumber(eventType_);
-        return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.EventType.VP : result;
-      }
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional .proto.Topic.EventType event_type = 7;</code>
-       * @param value The eventType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEventType(fi.hsl.common.hfp.proto.Hfp.Topic.EventType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000040;
-        eventType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional .proto.Topic.EventType event_type = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEventType() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        eventType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int transportMode_ = 0;
-      /**
-       * <pre>
-       * Optional because of rare bug in data source systems
-       * </pre>
-       *
-       * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
-       * @return Whether the transportMode field is set.
-       */
-      @java.lang.Override public boolean hasTransportMode() {
-        return ((bitField0_ & 0x00000080) != 0);
-      }
-      /**
-       * <pre>
-       * Optional because of rare bug in data source systems
-       * </pre>
-       *
-       * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
-       * @return The transportMode.
-       */
-      @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode getTransportMode() {
-        fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode result = fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode.forNumber(transportMode_);
-        return result == null ? fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode.bus : result;
-      }
-      /**
-       * <pre>
-       * Optional because of rare bug in data source systems
-       * </pre>
-       *
-       * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
-       * @param value The transportMode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTransportMode(fi.hsl.common.hfp.proto.Hfp.Topic.TransportMode value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000080;
-        transportMode_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional because of rare bug in data source systems
-       * </pre>
-       *
-       * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTransportMode() {
-        bitField0_ = (bitField0_ & ~0x00000080);
-        transportMode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int operatorId_ ;
-      /**
-       * <code>required int32 operator_id = 9;</code>
-       * @return Whether the operatorId field is set.
-       */
-      @java.lang.Override
-      public boolean hasOperatorId() {
-        return ((bitField0_ & 0x00000100) != 0);
-      }
-      /**
-       * <code>required int32 operator_id = 9;</code>
-       * @return The operatorId.
-       */
-      @java.lang.Override
-      public int getOperatorId() {
-        return operatorId_;
-      }
-      /**
-       * <code>required int32 operator_id = 9;</code>
-       * @param value The operatorId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOperatorId(int value) {
-        
-        operatorId_ = value;
-        bitField0_ |= 0x00000100;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int32 operator_id = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOperatorId() {
-        bitField0_ = (bitField0_ & ~0x00000100);
-        operatorId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int vehicleNumber_ ;
-      /**
-       * <code>required int32 vehicle_number = 10;</code>
-       * @return Whether the vehicleNumber field is set.
-       */
-      @java.lang.Override
-      public boolean hasVehicleNumber() {
-        return ((bitField0_ & 0x00000200) != 0);
-      }
-      /**
-       * <code>required int32 vehicle_number = 10;</code>
-       * @return The vehicleNumber.
-       */
-      @java.lang.Override
-      public int getVehicleNumber() {
-        return vehicleNumber_;
-      }
-      /**
-       * <code>required int32 vehicle_number = 10;</code>
-       * @param value The vehicleNumber to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVehicleNumber(int value) {
-        
-        vehicleNumber_ = value;
-        bitField0_ |= 0x00000200;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int32 vehicle_number = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVehicleNumber() {
-        bitField0_ = (bitField0_ & ~0x00000200);
-        vehicleNumber_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object uniqueVehicleId_ = "";
-      /**
-       * <code>required string unique_vehicle_id = 11;</code>
-       * @return Whether the uniqueVehicleId field is set.
-       */
-      public boolean hasUniqueVehicleId() {
-        return ((bitField0_ & 0x00000400) != 0);
-      }
-      /**
-       * <code>required string unique_vehicle_id = 11;</code>
-       * @return The uniqueVehicleId.
-       */
-      public java.lang.String getUniqueVehicleId() {
-        java.lang.Object ref = uniqueVehicleId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            uniqueVehicleId_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>required string unique_vehicle_id = 11;</code>
-       * @return The bytes for uniqueVehicleId.
-       */
-      public com.google.protobuf.ByteString
-          getUniqueVehicleIdBytes() {
-        java.lang.Object ref = uniqueVehicleId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          uniqueVehicleId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string unique_vehicle_id = 11;</code>
-       * @param value The uniqueVehicleId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUniqueVehicleId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        uniqueVehicleId_ = value;
-        bitField0_ |= 0x00000400;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string unique_vehicle_id = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUniqueVehicleId() {
-        uniqueVehicleId_ = getDefaultInstance().getUniqueVehicleId();
-        bitField0_ = (bitField0_ & ~0x00000400);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string unique_vehicle_id = 11;</code>
-       * @param value The bytes for uniqueVehicleId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUniqueVehicleIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        uniqueVehicleId_ = value;
-        bitField0_ |= 0x00000400;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object routeId_ = "";
-      /**
-       * <code>optional string route_id = 12;</code>
-       * @return Whether the routeId field is set.
-       */
-      public boolean hasRouteId() {
-        return ((bitField0_ & 0x00000800) != 0);
-      }
-      /**
-       * <code>optional string route_id = 12;</code>
-       * @return The routeId.
-       */
-      public java.lang.String getRouteId() {
-        java.lang.Object ref = routeId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            routeId_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string route_id = 12;</code>
-       * @return The bytes for routeId.
-       */
-      public com.google.protobuf.ByteString
-          getRouteIdBytes() {
-        java.lang.Object ref = routeId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          routeId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string route_id = 12;</code>
-       * @param value The routeId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRouteId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        routeId_ = value;
-        bitField0_ |= 0x00000800;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string route_id = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRouteId() {
-        routeId_ = getDefaultInstance().getRouteId();
-        bitField0_ = (bitField0_ & ~0x00000800);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string route_id = 12;</code>
-       * @param value The bytes for routeId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRouteIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        routeId_ = value;
-        bitField0_ |= 0x00000800;
-        onChanged();
-        return this;
-      }
-
-      private int directionId_ ;
-      /**
-       * <code>optional int32 direction_id = 13;</code>
-       * @return Whether the directionId field is set.
-       */
-      @java.lang.Override
-      public boolean hasDirectionId() {
-        return ((bitField0_ & 0x00001000) != 0);
-      }
-      /**
-       * <code>optional int32 direction_id = 13;</code>
-       * @return The directionId.
-       */
-      @java.lang.Override
-      public int getDirectionId() {
-        return directionId_;
-      }
-      /**
-       * <code>optional int32 direction_id = 13;</code>
-       * @param value The directionId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDirectionId(int value) {
-        
-        directionId_ = value;
-        bitField0_ |= 0x00001000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 direction_id = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDirectionId() {
-        bitField0_ = (bitField0_ & ~0x00001000);
-        directionId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object headsign_ = "";
-      /**
-       * <code>optional string headsign = 14;</code>
-       * @return Whether the headsign field is set.
-       */
-      public boolean hasHeadsign() {
-        return ((bitField0_ & 0x00002000) != 0);
-      }
-      /**
-       * <code>optional string headsign = 14;</code>
-       * @return The headsign.
-       */
-      public java.lang.String getHeadsign() {
-        java.lang.Object ref = headsign_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            headsign_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string headsign = 14;</code>
-       * @return The bytes for headsign.
-       */
-      public com.google.protobuf.ByteString
-          getHeadsignBytes() {
-        java.lang.Object ref = headsign_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          headsign_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string headsign = 14;</code>
-       * @param value The headsign to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHeadsign(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        headsign_ = value;
-        bitField0_ |= 0x00002000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string headsign = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHeadsign() {
-        headsign_ = getDefaultInstance().getHeadsign();
-        bitField0_ = (bitField0_ & ~0x00002000);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string headsign = 14;</code>
-       * @param value The bytes for headsign to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHeadsignBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        headsign_ = value;
-        bitField0_ |= 0x00002000;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object startTime_ = "";
-      /**
-       * <code>optional string start_time = 15;</code>
-       * @return Whether the startTime field is set.
-       */
-      public boolean hasStartTime() {
-        return ((bitField0_ & 0x00004000) != 0);
-      }
-      /**
-       * <code>optional string start_time = 15;</code>
-       * @return The startTime.
-       */
-      public java.lang.String getStartTime() {
-        java.lang.Object ref = startTime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            startTime_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string start_time = 15;</code>
-       * @return The bytes for startTime.
-       */
-      public com.google.protobuf.ByteString
-          getStartTimeBytes() {
-        java.lang.Object ref = startTime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          startTime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string start_time = 15;</code>
-       * @param value The startTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStartTime(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        startTime_ = value;
-        bitField0_ |= 0x00004000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string start_time = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStartTime() {
-        startTime_ = getDefaultInstance().getStartTime();
-        bitField0_ = (bitField0_ & ~0x00004000);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string start_time = 15;</code>
-       * @param value The bytes for startTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStartTimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        startTime_ = value;
-        bitField0_ |= 0x00004000;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object nextStop_ = "";
-      /**
-       * <code>optional string next_stop = 16;</code>
-       * @return Whether the nextStop field is set.
-       */
-      public boolean hasNextStop() {
-        return ((bitField0_ & 0x00008000) != 0);
-      }
-      /**
-       * <code>optional string next_stop = 16;</code>
-       * @return The nextStop.
-       */
-      public java.lang.String getNextStop() {
-        java.lang.Object ref = nextStop_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            nextStop_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string next_stop = 16;</code>
-       * @return The bytes for nextStop.
-       */
-      public com.google.protobuf.ByteString
-          getNextStopBytes() {
-        java.lang.Object ref = nextStop_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          nextStop_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string next_stop = 16;</code>
-       * @param value The nextStop to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNextStop(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        nextStop_ = value;
-        bitField0_ |= 0x00008000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string next_stop = 16;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNextStop() {
-        nextStop_ = getDefaultInstance().getNextStop();
-        bitField0_ = (bitField0_ & ~0x00008000);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string next_stop = 16;</code>
-       * @param value The bytes for nextStop to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNextStopBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        nextStop_ = value;
-        bitField0_ |= 0x00008000;
-        onChanged();
-        return this;
-      }
-
-      private int geohashLevel_ ;
-      /**
-       * <code>optional int32 geohash_level = 17;</code>
-       * @return Whether the geohashLevel field is set.
-       */
-      @java.lang.Override
-      public boolean hasGeohashLevel() {
-        return ((bitField0_ & 0x00010000) != 0);
-      }
-      /**
-       * <code>optional int32 geohash_level = 17;</code>
-       * @return The geohashLevel.
-       */
-      @java.lang.Override
-      public int getGeohashLevel() {
-        return geohashLevel_;
-      }
-      /**
-       * <code>optional int32 geohash_level = 17;</code>
-       * @param value The geohashLevel to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGeohashLevel(int value) {
-        
-        geohashLevel_ = value;
-        bitField0_ |= 0x00010000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 geohash_level = 17;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGeohashLevel() {
-        bitField0_ = (bitField0_ & ~0x00010000);
-        geohashLevel_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private double latitude_ ;
-      /**
-       * <code>optional double latitude = 18;</code>
-       * @return Whether the latitude field is set.
-       */
-      @java.lang.Override
-      public boolean hasLatitude() {
-        return ((bitField0_ & 0x00020000) != 0);
-      }
-      /**
-       * <code>optional double latitude = 18;</code>
-       * @return The latitude.
-       */
-      @java.lang.Override
-      public double getLatitude() {
-        return latitude_;
-      }
-      /**
-       * <code>optional double latitude = 18;</code>
-       * @param value The latitude to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLatitude(double value) {
-        
-        latitude_ = value;
-        bitField0_ |= 0x00020000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional double latitude = 18;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLatitude() {
-        bitField0_ = (bitField0_ & ~0x00020000);
-        latitude_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double longitude_ ;
-      /**
-       * <code>optional double longitude = 19;</code>
-       * @return Whether the longitude field is set.
-       */
-      @java.lang.Override
-      public boolean hasLongitude() {
-        return ((bitField0_ & 0x00040000) != 0);
-      }
-      /**
-       * <code>optional double longitude = 19;</code>
-       * @return The longitude.
-       */
-      @java.lang.Override
-      public double getLongitude() {
-        return longitude_;
-      }
-      /**
-       * <code>optional double longitude = 19;</code>
-       * @param value The longitude to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLongitude(double value) {
-        
-        longitude_ = value;
-        bitField0_ |= 0x00040000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional double longitude = 19;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLongitude() {
-        bitField0_ = (bitField0_ & ~0x00040000);
-        longitude_ = 0D;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:proto.Topic)
-    }
-
-    // @@protoc_insertion_point(class_scope:proto.Topic)
-    private static final fi.hsl.common.hfp.proto.Hfp.Topic DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new fi.hsl.common.hfp.proto.Hfp.Topic();
-    }
-
-    public static fi.hsl.common.hfp.proto.Hfp.Topic getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<Topic>
-        PARSER = new com.google.protobuf.AbstractParser<Topic>() {
-      @java.lang.Override
-      public Topic parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<Topic> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Topic> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public fi.hsl.common.hfp.proto.Hfp.Topic getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface PayloadOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:proto.Payload)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return Whether the schemaVersion field is set.
-     */
-    boolean hasSchemaVersion();
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return The schemaVersion.
-     */
-    int getSchemaVersion();
-
-    /**
-     * <code>optional string desi = 2;</code>
-     * @return Whether the desi field is set.
-     */
-    boolean hasDesi();
-    /**
-     * <code>optional string desi = 2;</code>
-     * @return The desi.
-     */
-    java.lang.String getDesi();
-    /**
-     * <code>optional string desi = 2;</code>
-     * @return The bytes for desi.
-     */
-    com.google.protobuf.ByteString
-        getDesiBytes();
-
-    /**
-     * <code>optional string dir = 3;</code>
-     * @return Whether the dir field is set.
-     */
-    boolean hasDir();
-    /**
-     * <code>optional string dir = 3;</code>
-     * @return The dir.
-     */
-    java.lang.String getDir();
-    /**
-     * <code>optional string dir = 3;</code>
-     * @return The bytes for dir.
-     */
-    com.google.protobuf.ByteString
-        getDirBytes();
-
-    /**
-     * <code>optional int32 oper = 4;</code>
-     * @return Whether the oper field is set.
-     */
-    boolean hasOper();
-    /**
-     * <code>optional int32 oper = 4;</code>
-     * @return The oper.
-     */
-    int getOper();
-
-    /**
-     * <code>optional int32 veh = 5;</code>
-     * @return Whether the veh field is set.
-     */
-    boolean hasVeh();
-    /**
-     * <code>optional int32 veh = 5;</code>
-     * @return The veh.
-     */
-    int getVeh();
-
-    /**
-     * <code>required string tst = 6;</code>
-     * @return Whether the tst field is set.
-     */
-    boolean hasTst();
-    /**
-     * <code>required string tst = 6;</code>
-     * @return The tst.
-     */
-    java.lang.String getTst();
-    /**
-     * <code>required string tst = 6;</code>
-     * @return The bytes for tst.
-     */
-    com.google.protobuf.ByteString
-        getTstBytes();
-
-    /**
-     * <code>required int64 tsi = 7;</code>
-     * @return Whether the tsi field is set.
-     */
-    boolean hasTsi();
-    /**
-     * <code>required int64 tsi = 7;</code>
-     * @return The tsi.
-     */
-    long getTsi();
-
-    /**
-     * <code>optional double spd = 8;</code>
-     * @return Whether the spd field is set.
-     */
-    boolean hasSpd();
-    /**
-     * <code>optional double spd = 8;</code>
-     * @return The spd.
-     */
-    double getSpd();
-
-    /**
-     * <code>optional int32 hdg = 9;</code>
-     * @return Whether the hdg field is set.
-     */
-    boolean hasHdg();
-    /**
-     * <code>optional int32 hdg = 9;</code>
-     * @return The hdg.
-     */
-    int getHdg();
-
-    /**
-     * <code>optional double lat = 10;</code>
-     * @return Whether the lat field is set.
-     */
-    boolean hasLat();
-    /**
-     * <code>optional double lat = 10;</code>
-     * @return The lat.
-     */
-    double getLat();
-
-    /**
-     * <code>optional double long = 11;</code>
-     * @return Whether the long field is set.
-     */
-    boolean hasLong();
-    /**
-     * <code>optional double long = 11;</code>
-     * @return The long.
-     */
-    double getLong();
-
-    /**
-     * <code>optional double acc = 12;</code>
-     * @return Whether the acc field is set.
-     */
-    boolean hasAcc();
-    /**
-     * <code>optional double acc = 12;</code>
-     * @return The acc.
-     */
-    double getAcc();
-
-    /**
-     * <code>optional uint32 dl = 13;</code>
-     * @return Whether the dl field is set.
-     */
-    boolean hasDl();
-    /**
-     * <code>optional uint32 dl = 13;</code>
-     * @return The dl.
-     */
-    int getDl();
-
-    /**
-     * <code>optional double odo = 14;</code>
-     * @return Whether the odo field is set.
-     */
-    boolean hasOdo();
-    /**
-     * <code>optional double odo = 14;</code>
-     * @return The odo.
-     */
-    double getOdo();
-
-    /**
-     * <code>optional uint32 drst = 15;</code>
-     * @return Whether the drst field is set.
-     */
-    boolean hasDrst();
-    /**
-     * <code>optional uint32 drst = 15;</code>
-     * @return The drst.
-     */
-    int getDrst();
-
-    /**
-     * <code>optional string oday = 16;</code>
-     * @return Whether the oday field is set.
-     */
-    boolean hasOday();
-    /**
-     * <code>optional string oday = 16;</code>
-     * @return The oday.
-     */
-    java.lang.String getOday();
-    /**
-     * <code>optional string oday = 16;</code>
-     * @return The bytes for oday.
-     */
-    com.google.protobuf.ByteString
-        getOdayBytes();
-
-    /**
-     * <code>optional int32 jrn = 17;</code>
-     * @return Whether the jrn field is set.
-     */
-    boolean hasJrn();
-    /**
-     * <code>optional int32 jrn = 17;</code>
-     * @return The jrn.
-     */
-    int getJrn();
-
-    /**
-     * <code>optional int32 line = 18;</code>
-     * @return Whether the line field is set.
-     */
-    boolean hasLine();
-    /**
-     * <code>optional int32 line = 18;</code>
-     * @return The line.
-     */
-    int getLine();
-
-    /**
-     * <code>optional string start = 19;</code>
-     * @return Whether the start field is set.
-     */
-    boolean hasStart();
-    /**
-     * <code>optional string start = 19;</code>
-     * @return The start.
-     */
-    java.lang.String getStart();
-    /**
-     * <code>optional string start = 19;</code>
-     * @return The bytes for start.
-     */
-    com.google.protobuf.ByteString
-        getStartBytes();
-
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
-     * @return Whether the loc field is set.
-     */
-    boolean hasLoc();
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
-     * @return The loc.
-     */
-    fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod getLoc();
-
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional int32 stop = 21;</code>
-     * @return Whether the stop field is set.
-     */
-    boolean hasStop();
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional int32 stop = 21;</code>
-     * @return The stop.
-     */
-    int getStop();
-
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional string route = 22;</code>
-     * @return Whether the route field is set.
-     */
-    boolean hasRoute();
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional string route = 22;</code>
-     * @return The route.
-     */
-    java.lang.String getRoute();
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional string route = 22;</code>
-     * @return The bytes for route.
-     */
-    com.google.protobuf.ByteString
-        getRouteBytes();
-
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional int32 occu = 23;</code>
-     * @return Whether the occu field is set.
-     */
-    boolean hasOccu();
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional int32 occu = 23;</code>
-     * @return The occu.
-     */
-    int getOccu();
-
-    /**
-     * <code>optional int32 seq = 24;</code>
-     * @return Whether the seq field is set.
-     */
-    boolean hasSeq();
-    /**
-     * <code>optional int32 seq = 24;</code>
-     * @return The seq.
-     */
-    int getSeq();
-
-    /**
-     * <code>optional string ttarr = 25;</code>
-     * @return Whether the ttarr field is set.
-     */
-    boolean hasTtarr();
-    /**
-     * <code>optional string ttarr = 25;</code>
-     * @return The ttarr.
-     */
-    java.lang.String getTtarr();
-    /**
-     * <code>optional string ttarr = 25;</code>
-     * @return The bytes for ttarr.
-     */
-    com.google.protobuf.ByteString
-        getTtarrBytes();
-
-    /**
-     * <code>optional string ttdep = 26;</code>
-     * @return Whether the ttdep field is set.
-     */
-    boolean hasTtdep();
-    /**
-     * <code>optional string ttdep = 26;</code>
-     * @return The ttdep.
-     */
-    java.lang.String getTtdep();
-    /**
-     * <code>optional string ttdep = 26;</code>
-     * @return The bytes for ttdep.
-     */
-    com.google.protobuf.ByteString
-        getTtdepBytes();
-
-    /**
-     * <code>optional int32 dr_type = 27;</code>
-     * @return Whether the drType field is set.
-     */
-    boolean hasDrType();
-    /**
-     * <code>optional int32 dr_type = 27;</code>
-     * @return The drType.
-     */
-    int getDrType();
-
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_requestid = 28;</code>
-     * @return Whether the tlpRequestid field is set.
-     */
-    boolean hasTlpRequestid();
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_requestid = 28;</code>
-     * @return The tlpRequestid.
-     */
-    int getTlpRequestid();
-
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
-     * @return Whether the tlpRequesttype field is set.
-     */
-    boolean hasTlpRequesttype();
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
-     * @return The tlpRequesttype.
-     */
-    fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType getTlpRequesttype();
-
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
-     * @return Whether the tlpPrioritylevel field is set.
-     */
-    boolean hasTlpPrioritylevel();
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
-     * @return The tlpPrioritylevel.
-     */
-    fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel getTlpPrioritylevel();
-
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
-     * @return Whether the tlpReason field is set.
-     */
-    boolean hasTlpReason();
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
-     * @return The tlpReason.
-     */
-    fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason getTlpReason();
-
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_att_seq = 32;</code>
-     * @return Whether the tlpAttSeq field is set.
-     */
-    boolean hasTlpAttSeq();
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_att_seq = 32;</code>
-     * @return The tlpAttSeq.
-     */
-    int getTlpAttSeq();
-
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
-     * @return Whether the tlpDecision field is set.
-     */
-    boolean hasTlpDecision();
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
-     * @return The tlpDecision.
-     */
-    fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision getTlpDecision();
-
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 sid = 34;</code>
-     * @return Whether the sid field is set.
-     */
-    boolean hasSid();
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 sid = 34;</code>
-     * @return The sid.
-     */
-    int getSid();
-
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 signal_groupid = 35;</code>
-     * @return Whether the signalGroupid field is set.
-     */
-    boolean hasSignalGroupid();
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 signal_groupid = 35;</code>
-     * @return The signalGroupid.
-     */
-    int getSignalGroupid();
-
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_signalgroupnbr = 36;</code>
-     * @return Whether the tlpSignalgroupnbr field is set.
-     */
-    boolean hasTlpSignalgroupnbr();
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_signalgroupnbr = 36;</code>
-     * @return The tlpSignalgroupnbr.
-     */
-    int getTlpSignalgroupnbr();
-
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_line_configid = 38;</code>
-     * @return Whether the tlpLineConfigid field is set.
-     */
-    boolean hasTlpLineConfigid();
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_line_configid = 38;</code>
-     * @return The tlpLineConfigid.
-     */
-    int getTlpLineConfigid();
-
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_point_configid = 39;</code>
-     * @return Whether the tlpPointConfigid field is set.
-     */
-    boolean hasTlpPointConfigid();
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_point_configid = 39;</code>
-     * @return The tlpPointConfigid.
-     */
-    int getTlpPointConfigid();
-
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_frequency = 40;</code>
-     * @return Whether the tlpFrequency field is set.
-     */
-    boolean hasTlpFrequency();
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_frequency = 40;</code>
-     * @return The tlpFrequency.
-     */
-    int getTlpFrequency();
-
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional string tlp_protocol = 41;</code>
-     * @return Whether the tlpProtocol field is set.
-     */
-    boolean hasTlpProtocol();
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional string tlp_protocol = 41;</code>
-     * @return The tlpProtocol.
-     */
-    java.lang.String getTlpProtocol();
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional string tlp_protocol = 41;</code>
-     * @return The bytes for tlpProtocol.
-     */
-    com.google.protobuf.ByteString
-        getTlpProtocolBytes();
-
-    /**
-     * <code>optional string label = 42;</code>
-     * @return Whether the label field is set.
-     */
-    boolean hasLabel();
-    /**
-     * <code>optional string label = 42;</code>
-     * @return The label.
-     */
-    java.lang.String getLabel();
-    /**
-     * <code>optional string label = 42;</code>
-     * @return The bytes for label.
-     */
-    com.google.protobuf.ByteString
-        getLabelBytes();
-  }
-  /**
-   * Protobuf type {@code proto.Payload}
-   */
-  public static final class Payload extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:proto.Payload)
-      PayloadOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Payload.newBuilder() to construct.
-    private Payload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Payload() {
-      schemaVersion_ = 1;
-      desi_ = "";
-      dir_ = "";
-      tst_ = "";
-      oday_ = "";
-      start_ = "";
-      loc_ = 0;
-      route_ = "";
-      ttarr_ = "";
-      ttdep_ = "";
-      tlpRequesttype_ = 0;
-      tlpPrioritylevel_ = 0;
-      tlpReason_ = 0;
-      tlpDecision_ = 0;
-      tlpProtocol_ = "";
-      label_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Payload();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Payload_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Payload_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              fi.hsl.common.hfp.proto.Hfp.Payload.class, fi.hsl.common.hfp.proto.Hfp.Payload.Builder.class);
-    }
-
-    /**
-     * Protobuf enum {@code proto.Payload.LocationQualityMethod}
-     */
-    public enum LocationQualityMethod
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>GPS = 0;</code>
-       */
-      GPS(0),
-      /**
-       * <code>ODO = 1;</code>
-       */
-      ODO(1),
-      /**
-       * <code>MAN = 2;</code>
-       */
-      MAN(2),
-      /**
-       * <code>NA = 3;</code>
-       */
-      NA(3),
-      /**
-       * <code>DR = 4;</code>
-       */
-      DR(4),
-      ;
-
-      /**
-       * <code>GPS = 0;</code>
-       */
-      public static final int GPS_VALUE = 0;
-      /**
-       * <code>ODO = 1;</code>
-       */
-      public static final int ODO_VALUE = 1;
-      /**
-       * <code>MAN = 2;</code>
-       */
-      public static final int MAN_VALUE = 2;
-      /**
-       * <code>NA = 3;</code>
-       */
-      public static final int NA_VALUE = 3;
-      /**
-       * <code>DR = 4;</code>
-       */
-      public static final int DR_VALUE = 4;
-
-
-      public final int getNumber() {
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static LocationQualityMethod valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static LocationQualityMethod forNumber(int value) {
-        switch (value) {
-          case 0: return GPS;
-          case 1: return ODO;
-          case 2: return MAN;
-          case 3: return NA;
-          case 4: return DR;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<LocationQualityMethod>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          LocationQualityMethod> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<LocationQualityMethod>() {
-              public LocationQualityMethod findValueByNumber(int number) {
-                return LocationQualityMethod.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return fi.hsl.common.hfp.proto.Hfp.Payload.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final LocationQualityMethod[] VALUES = values();
-
-      public static LocationQualityMethod valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private LocationQualityMethod(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:proto.Payload.LocationQualityMethod)
-    }
-
-    /**
-     * Protobuf enum {@code proto.Payload.TlpRequestType}
-     */
-    public enum TlpRequestType
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>NORMAL = 0;</code>
-       */
-      NORMAL(0),
-      /**
-       * <code>DOOR_CLOSE = 1;</code>
-       */
-      DOOR_CLOSE(1),
-      /**
-       * <code>DOOR_OPEN = 2;</code>
-       */
-      DOOR_OPEN(2),
-      /**
-       * <code>ADVANCE = 3;</code>
-       */
-      ADVANCE(3),
-      ;
-
-      /**
-       * <code>NORMAL = 0;</code>
-       */
-      public static final int NORMAL_VALUE = 0;
-      /**
-       * <code>DOOR_CLOSE = 1;</code>
-       */
-      public static final int DOOR_CLOSE_VALUE = 1;
-      /**
-       * <code>DOOR_OPEN = 2;</code>
-       */
-      public static final int DOOR_OPEN_VALUE = 2;
-      /**
-       * <code>ADVANCE = 3;</code>
-       */
-      public static final int ADVANCE_VALUE = 3;
-
-
-      public final int getNumber() {
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static TlpRequestType valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static TlpRequestType forNumber(int value) {
-        switch (value) {
-          case 0: return NORMAL;
-          case 1: return DOOR_CLOSE;
-          case 2: return DOOR_OPEN;
-          case 3: return ADVANCE;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<TlpRequestType>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          TlpRequestType> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<TlpRequestType>() {
-              public TlpRequestType findValueByNumber(int number) {
-                return TlpRequestType.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return fi.hsl.common.hfp.proto.Hfp.Payload.getDescriptor().getEnumTypes().get(1);
-      }
-
-      private static final TlpRequestType[] VALUES = values();
-
-      public static TlpRequestType valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private TlpRequestType(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:proto.Payload.TlpRequestType)
-    }
-
-    /**
-     * Protobuf enum {@code proto.Payload.TlpPriorityLevel}
-     */
-    public enum TlpPriorityLevel
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>normal = 0;</code>
-       */
-      normal(0),
-      /**
-       * <code>high = 1;</code>
-       */
-      high(1),
-      /**
-       * <code>norequest = 2;</code>
-       */
-      norequest(2),
-      ;
-
-      /**
-       * <code>normal = 0;</code>
-       */
-      public static final int normal_VALUE = 0;
-      /**
-       * <code>high = 1;</code>
-       */
-      public static final int high_VALUE = 1;
-      /**
-       * <code>norequest = 2;</code>
-       */
-      public static final int norequest_VALUE = 2;
-
-
-      public final int getNumber() {
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static TlpPriorityLevel valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static TlpPriorityLevel forNumber(int value) {
-        switch (value) {
-          case 0: return normal;
-          case 1: return high;
-          case 2: return norequest;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<TlpPriorityLevel>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          TlpPriorityLevel> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<TlpPriorityLevel>() {
-              public TlpPriorityLevel findValueByNumber(int number) {
-                return TlpPriorityLevel.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return fi.hsl.common.hfp.proto.Hfp.Payload.getDescriptor().getEnumTypes().get(2);
-      }
-
-      private static final TlpPriorityLevel[] VALUES = values();
-
-      public static TlpPriorityLevel valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private TlpPriorityLevel(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:proto.Payload.TlpPriorityLevel)
-    }
-
-    /**
-     * Protobuf enum {@code proto.Payload.TlpReason}
-     */
-    public enum TlpReason
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>GLOBAL = 0;</code>
-       */
-      GLOBAL(0),
-      /**
-       * <code>AHEAD = 1;</code>
-       */
-      AHEAD(1),
-      /**
-       * <code>LINE = 2;</code>
-       */
-      LINE(2),
-      /**
-       * <code>PRIOEXEP = 3;</code>
-       */
-      PRIOEXEP(3),
-      ;
-
-      /**
-       * <code>GLOBAL = 0;</code>
-       */
-      public static final int GLOBAL_VALUE = 0;
-      /**
-       * <code>AHEAD = 1;</code>
-       */
-      public static final int AHEAD_VALUE = 1;
-      /**
-       * <code>LINE = 2;</code>
-       */
-      public static final int LINE_VALUE = 2;
-      /**
-       * <code>PRIOEXEP = 3;</code>
-       */
-      public static final int PRIOEXEP_VALUE = 3;
-
-
-      public final int getNumber() {
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static TlpReason valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static TlpReason forNumber(int value) {
-        switch (value) {
-          case 0: return GLOBAL;
-          case 1: return AHEAD;
-          case 2: return LINE;
-          case 3: return PRIOEXEP;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<TlpReason>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          TlpReason> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<TlpReason>() {
-              public TlpReason findValueByNumber(int number) {
-                return TlpReason.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return fi.hsl.common.hfp.proto.Hfp.Payload.getDescriptor().getEnumTypes().get(3);
-      }
-
-      private static final TlpReason[] VALUES = values();
-
-      public static TlpReason valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private TlpReason(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:proto.Payload.TlpReason)
-    }
-
-    /**
-     * Protobuf enum {@code proto.Payload.TlpDecision}
-     */
-    public enum TlpDecision
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>ACK = 0;</code>
-       */
-      ACK(0),
-      /**
-       * <code>NAK = 1;</code>
-       */
-      NAK(1),
-      ;
-
-      /**
-       * <code>ACK = 0;</code>
-       */
-      public static final int ACK_VALUE = 0;
-      /**
-       * <code>NAK = 1;</code>
-       */
-      public static final int NAK_VALUE = 1;
-
-
-      public final int getNumber() {
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static TlpDecision valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static TlpDecision forNumber(int value) {
-        switch (value) {
-          case 0: return ACK;
-          case 1: return NAK;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<TlpDecision>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          TlpDecision> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<TlpDecision>() {
-              public TlpDecision findValueByNumber(int number) {
-                return TlpDecision.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return fi.hsl.common.hfp.proto.Hfp.Payload.getDescriptor().getEnumTypes().get(4);
-      }
-
-      private static final TlpDecision[] VALUES = values();
-
-      public static TlpDecision valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private TlpDecision(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:proto.Payload.TlpDecision)
-    }
-
-    private int bitField0_;
-    private int bitField1_;
-    public static final int SCHEMAVERSION_FIELD_NUMBER = 1;
-    private int schemaVersion_ = 1;
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return Whether the schemaVersion field is set.
-     */
-    @java.lang.Override
-    public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return The schemaVersion.
-     */
-    @java.lang.Override
-    public int getSchemaVersion() {
-      return schemaVersion_;
-    }
-
-    public static final int DESI_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object desi_ = "";
-    /**
-     * <code>optional string desi = 2;</code>
-     * @return Whether the desi field is set.
-     */
-    @java.lang.Override
-    public boolean hasDesi() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>optional string desi = 2;</code>
-     * @return The desi.
-     */
-    @java.lang.Override
-    public java.lang.String getDesi() {
-      java.lang.Object ref = desi_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          desi_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string desi = 2;</code>
-     * @return The bytes for desi.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDesiBytes() {
-      java.lang.Object ref = desi_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        desi_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DIR_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object dir_ = "";
-    /**
-     * <code>optional string dir = 3;</code>
-     * @return Whether the dir field is set.
-     */
-    @java.lang.Override
-    public boolean hasDir() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>optional string dir = 3;</code>
-     * @return The dir.
-     */
-    @java.lang.Override
-    public java.lang.String getDir() {
-      java.lang.Object ref = dir_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          dir_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string dir = 3;</code>
-     * @return The bytes for dir.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDirBytes() {
-      java.lang.Object ref = dir_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        dir_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int OPER_FIELD_NUMBER = 4;
-    private int oper_ = 0;
-    /**
-     * <code>optional int32 oper = 4;</code>
-     * @return Whether the oper field is set.
-     */
-    @java.lang.Override
-    public boolean hasOper() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <code>optional int32 oper = 4;</code>
-     * @return The oper.
-     */
-    @java.lang.Override
-    public int getOper() {
-      return oper_;
-    }
-
-    public static final int VEH_FIELD_NUMBER = 5;
-    private int veh_ = 0;
-    /**
-     * <code>optional int32 veh = 5;</code>
-     * @return Whether the veh field is set.
-     */
-    @java.lang.Override
-    public boolean hasVeh() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     * <code>optional int32 veh = 5;</code>
-     * @return The veh.
-     */
-    @java.lang.Override
-    public int getVeh() {
-      return veh_;
-    }
-
-    public static final int TST_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object tst_ = "";
-    /**
-     * <code>required string tst = 6;</code>
-     * @return Whether the tst field is set.
-     */
-    @java.lang.Override
-    public boolean hasTst() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-    /**
-     * <code>required string tst = 6;</code>
-     * @return The tst.
-     */
-    @java.lang.Override
-    public java.lang.String getTst() {
-      java.lang.Object ref = tst_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          tst_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string tst = 6;</code>
-     * @return The bytes for tst.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTstBytes() {
-      java.lang.Object ref = tst_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tst_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TSI_FIELD_NUMBER = 7;
-    private long tsi_ = 0L;
-    /**
-     * <code>required int64 tsi = 7;</code>
-     * @return Whether the tsi field is set.
-     */
-    @java.lang.Override
-    public boolean hasTsi() {
-      return ((bitField0_ & 0x00000040) != 0);
-    }
-    /**
-     * <code>required int64 tsi = 7;</code>
-     * @return The tsi.
-     */
-    @java.lang.Override
-    public long getTsi() {
-      return tsi_;
-    }
-
-    public static final int SPD_FIELD_NUMBER = 8;
-    private double spd_ = 0D;
-    /**
-     * <code>optional double spd = 8;</code>
-     * @return Whether the spd field is set.
-     */
-    @java.lang.Override
-    public boolean hasSpd() {
-      return ((bitField0_ & 0x00000080) != 0);
-    }
-    /**
-     * <code>optional double spd = 8;</code>
-     * @return The spd.
-     */
-    @java.lang.Override
-    public double getSpd() {
-      return spd_;
-    }
-
-    public static final int HDG_FIELD_NUMBER = 9;
-    private int hdg_ = 0;
-    /**
-     * <code>optional int32 hdg = 9;</code>
-     * @return Whether the hdg field is set.
-     */
-    @java.lang.Override
-    public boolean hasHdg() {
-      return ((bitField0_ & 0x00000100) != 0);
-    }
-    /**
-     * <code>optional int32 hdg = 9;</code>
-     * @return The hdg.
-     */
-    @java.lang.Override
-    public int getHdg() {
-      return hdg_;
-    }
-
-    public static final int LAT_FIELD_NUMBER = 10;
-    private double lat_ = 0D;
-    /**
-     * <code>optional double lat = 10;</code>
-     * @return Whether the lat field is set.
-     */
-    @java.lang.Override
-    public boolean hasLat() {
-      return ((bitField0_ & 0x00000200) != 0);
-    }
-    /**
-     * <code>optional double lat = 10;</code>
-     * @return The lat.
-     */
-    @java.lang.Override
-    public double getLat() {
-      return lat_;
-    }
-
-    public static final int LONG_FIELD_NUMBER = 11;
-    private double long_ = 0D;
-    /**
-     * <code>optional double long = 11;</code>
-     * @return Whether the long field is set.
-     */
-    @java.lang.Override
-    public boolean hasLong() {
-      return ((bitField0_ & 0x00000400) != 0);
-    }
-    /**
-     * <code>optional double long = 11;</code>
-     * @return The long.
-     */
-    @java.lang.Override
-    public double getLong() {
-      return long_;
-    }
-
-    public static final int ACC_FIELD_NUMBER = 12;
-    private double acc_ = 0D;
-    /**
-     * <code>optional double acc = 12;</code>
-     * @return Whether the acc field is set.
-     */
-    @java.lang.Override
-    public boolean hasAcc() {
-      return ((bitField0_ & 0x00000800) != 0);
-    }
-    /**
-     * <code>optional double acc = 12;</code>
-     * @return The acc.
-     */
-    @java.lang.Override
-    public double getAcc() {
-      return acc_;
-    }
-
-    public static final int DL_FIELD_NUMBER = 13;
-    private int dl_ = 0;
-    /**
-     * <code>optional uint32 dl = 13;</code>
-     * @return Whether the dl field is set.
-     */
-    @java.lang.Override
-    public boolean hasDl() {
-      return ((bitField0_ & 0x00001000) != 0);
-    }
-    /**
-     * <code>optional uint32 dl = 13;</code>
-     * @return The dl.
-     */
-    @java.lang.Override
-    public int getDl() {
-      return dl_;
-    }
-
-    public static final int ODO_FIELD_NUMBER = 14;
-    private double odo_ = 0D;
-    /**
-     * <code>optional double odo = 14;</code>
-     * @return Whether the odo field is set.
-     */
-    @java.lang.Override
-    public boolean hasOdo() {
-      return ((bitField0_ & 0x00002000) != 0);
-    }
-    /**
-     * <code>optional double odo = 14;</code>
-     * @return The odo.
-     */
-    @java.lang.Override
-    public double getOdo() {
-      return odo_;
-    }
-
-    public static final int DRST_FIELD_NUMBER = 15;
-    private int drst_ = 0;
-    /**
-     * <code>optional uint32 drst = 15;</code>
-     * @return Whether the drst field is set.
-     */
-    @java.lang.Override
-    public boolean hasDrst() {
-      return ((bitField0_ & 0x00004000) != 0);
-    }
-    /**
-     * <code>optional uint32 drst = 15;</code>
-     * @return The drst.
-     */
-    @java.lang.Override
-    public int getDrst() {
-      return drst_;
-    }
-
-    public static final int ODAY_FIELD_NUMBER = 16;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object oday_ = "";
-    /**
-     * <code>optional string oday = 16;</code>
-     * @return Whether the oday field is set.
-     */
-    @java.lang.Override
-    public boolean hasOday() {
-      return ((bitField0_ & 0x00008000) != 0);
-    }
-    /**
-     * <code>optional string oday = 16;</code>
-     * @return The oday.
-     */
-    @java.lang.Override
-    public java.lang.String getOday() {
-      java.lang.Object ref = oday_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          oday_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string oday = 16;</code>
-     * @return The bytes for oday.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getOdayBytes() {
-      java.lang.Object ref = oday_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        oday_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int JRN_FIELD_NUMBER = 17;
-    private int jrn_ = 0;
-    /**
-     * <code>optional int32 jrn = 17;</code>
-     * @return Whether the jrn field is set.
-     */
-    @java.lang.Override
-    public boolean hasJrn() {
-      return ((bitField0_ & 0x00010000) != 0);
-    }
-    /**
-     * <code>optional int32 jrn = 17;</code>
-     * @return The jrn.
-     */
-    @java.lang.Override
-    public int getJrn() {
-      return jrn_;
-    }
-
-    public static final int LINE_FIELD_NUMBER = 18;
-    private int line_ = 0;
-    /**
-     * <code>optional int32 line = 18;</code>
-     * @return Whether the line field is set.
-     */
-    @java.lang.Override
-    public boolean hasLine() {
-      return ((bitField0_ & 0x00020000) != 0);
-    }
-    /**
-     * <code>optional int32 line = 18;</code>
-     * @return The line.
-     */
-    @java.lang.Override
-    public int getLine() {
-      return line_;
-    }
-
-    public static final int START_FIELD_NUMBER = 19;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object start_ = "";
-    /**
-     * <code>optional string start = 19;</code>
-     * @return Whether the start field is set.
-     */
-    @java.lang.Override
-    public boolean hasStart() {
-      return ((bitField0_ & 0x00040000) != 0);
-    }
-    /**
-     * <code>optional string start = 19;</code>
-     * @return The start.
-     */
-    @java.lang.Override
-    public java.lang.String getStart() {
-      java.lang.Object ref = start_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          start_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string start = 19;</code>
-     * @return The bytes for start.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStartBytes() {
-      java.lang.Object ref = start_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        start_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int LOC_FIELD_NUMBER = 20;
-    private int loc_ = 0;
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
-     * @return Whether the loc field is set.
-     */
-    @java.lang.Override public boolean hasLoc() {
-      return ((bitField0_ & 0x00080000) != 0);
-    }
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
-     * @return The loc.
-     */
-    @java.lang.Override public fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod getLoc() {
-      fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod result = fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod.forNumber(loc_);
-      return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod.GPS : result;
-    }
-
-    public static final int STOP_FIELD_NUMBER = 21;
-    private int stop_ = 0;
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional int32 stop = 21;</code>
-     * @return Whether the stop field is set.
-     */
-    @java.lang.Override
-    public boolean hasStop() {
-      return ((bitField0_ & 0x00100000) != 0);
-    }
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional int32 stop = 21;</code>
-     * @return The stop.
-     */
-    @java.lang.Override
-    public int getStop() {
-      return stop_;
-    }
-
-    public static final int ROUTE_FIELD_NUMBER = 22;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object route_ = "";
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional string route = 22;</code>
-     * @return Whether the route field is set.
-     */
-    @java.lang.Override
-    public boolean hasRoute() {
-      return ((bitField0_ & 0x00200000) != 0);
-    }
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional string route = 22;</code>
-     * @return The route.
-     */
-    @java.lang.Override
-    public java.lang.String getRoute() {
-      java.lang.Object ref = route_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          route_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional string route = 22;</code>
-     * @return The bytes for route.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getRouteBytes() {
-      java.lang.Object ref = route_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        route_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int OCCU_FIELD_NUMBER = 23;
-    private int occu_ = 0;
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional int32 occu = 23;</code>
-     * @return Whether the occu field is set.
-     */
-    @java.lang.Override
-    public boolean hasOccu() {
-      return ((bitField0_ & 0x00400000) != 0);
-    }
-    /**
-     * <pre>
-     * v2
-     * </pre>
-     *
-     * <code>optional int32 occu = 23;</code>
-     * @return The occu.
-     */
-    @java.lang.Override
-    public int getOccu() {
-      return occu_;
-    }
-
-    public static final int SEQ_FIELD_NUMBER = 24;
-    private int seq_ = 0;
-    /**
-     * <code>optional int32 seq = 24;</code>
-     * @return Whether the seq field is set.
-     */
-    @java.lang.Override
-    public boolean hasSeq() {
-      return ((bitField0_ & 0x00800000) != 0);
-    }
-    /**
-     * <code>optional int32 seq = 24;</code>
-     * @return The seq.
-     */
-    @java.lang.Override
-    public int getSeq() {
-      return seq_;
-    }
-
-    public static final int TTARR_FIELD_NUMBER = 25;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object ttarr_ = "";
-    /**
-     * <code>optional string ttarr = 25;</code>
-     * @return Whether the ttarr field is set.
-     */
-    @java.lang.Override
-    public boolean hasTtarr() {
-      return ((bitField0_ & 0x01000000) != 0);
-    }
-    /**
-     * <code>optional string ttarr = 25;</code>
-     * @return The ttarr.
-     */
-    @java.lang.Override
-    public java.lang.String getTtarr() {
-      java.lang.Object ref = ttarr_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          ttarr_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string ttarr = 25;</code>
-     * @return The bytes for ttarr.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTtarrBytes() {
-      java.lang.Object ref = ttarr_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ttarr_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TTDEP_FIELD_NUMBER = 26;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object ttdep_ = "";
-    /**
-     * <code>optional string ttdep = 26;</code>
-     * @return Whether the ttdep field is set.
-     */
-    @java.lang.Override
-    public boolean hasTtdep() {
-      return ((bitField0_ & 0x02000000) != 0);
-    }
-    /**
-     * <code>optional string ttdep = 26;</code>
-     * @return The ttdep.
-     */
-    @java.lang.Override
-    public java.lang.String getTtdep() {
-      java.lang.Object ref = ttdep_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          ttdep_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string ttdep = 26;</code>
-     * @return The bytes for ttdep.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTtdepBytes() {
-      java.lang.Object ref = ttdep_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ttdep_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DR_TYPE_FIELD_NUMBER = 27;
-    private int drType_ = 0;
-    /**
-     * <code>optional int32 dr_type = 27;</code>
-     * @return Whether the drType field is set.
-     */
-    @java.lang.Override
-    public boolean hasDrType() {
-      return ((bitField0_ & 0x04000000) != 0);
-    }
-    /**
-     * <code>optional int32 dr_type = 27;</code>
-     * @return The drType.
-     */
-    @java.lang.Override
-    public int getDrType() {
-      return drType_;
-    }
-
-    public static final int TLP_REQUESTID_FIELD_NUMBER = 28;
-    private int tlpRequestid_ = 0;
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_requestid = 28;</code>
-     * @return Whether the tlpRequestid field is set.
-     */
-    @java.lang.Override
-    public boolean hasTlpRequestid() {
-      return ((bitField0_ & 0x08000000) != 0);
-    }
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_requestid = 28;</code>
-     * @return The tlpRequestid.
-     */
-    @java.lang.Override
-    public int getTlpRequestid() {
-      return tlpRequestid_;
-    }
-
-    public static final int TLP_REQUESTTYPE_FIELD_NUMBER = 29;
-    private int tlpRequesttype_ = 0;
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
-     * @return Whether the tlpRequesttype field is set.
-     */
-    @java.lang.Override public boolean hasTlpRequesttype() {
-      return ((bitField0_ & 0x10000000) != 0);
-    }
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
-     * @return The tlpRequesttype.
-     */
-    @java.lang.Override public fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType getTlpRequesttype() {
-      fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType.forNumber(tlpRequesttype_);
-      return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType.NORMAL : result;
-    }
-
-    public static final int TLP_PRIORITYLEVEL_FIELD_NUMBER = 30;
-    private int tlpPrioritylevel_ = 0;
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
-     * @return Whether the tlpPrioritylevel field is set.
-     */
-    @java.lang.Override public boolean hasTlpPrioritylevel() {
-      return ((bitField0_ & 0x20000000) != 0);
-    }
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
-     * @return The tlpPrioritylevel.
-     */
-    @java.lang.Override public fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel getTlpPrioritylevel() {
-      fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel.forNumber(tlpPrioritylevel_);
-      return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel.normal : result;
-    }
-
-    public static final int TLP_REASON_FIELD_NUMBER = 31;
-    private int tlpReason_ = 0;
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
-     * @return Whether the tlpReason field is set.
-     */
-    @java.lang.Override public boolean hasTlpReason() {
-      return ((bitField0_ & 0x40000000) != 0);
-    }
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
-     * @return The tlpReason.
-     */
-    @java.lang.Override public fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason getTlpReason() {
-      fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason.forNumber(tlpReason_);
-      return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason.GLOBAL : result;
-    }
-
-    public static final int TLP_ATT_SEQ_FIELD_NUMBER = 32;
-    private int tlpAttSeq_ = 0;
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_att_seq = 32;</code>
-     * @return Whether the tlpAttSeq field is set.
-     */
-    @java.lang.Override
-    public boolean hasTlpAttSeq() {
-      return ((bitField0_ & 0x80000000) != 0);
-    }
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_att_seq = 32;</code>
-     * @return The tlpAttSeq.
-     */
-    @java.lang.Override
-    public int getTlpAttSeq() {
-      return tlpAttSeq_;
-    }
-
-    public static final int TLP_DECISION_FIELD_NUMBER = 33;
-    private int tlpDecision_ = 0;
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
-     * @return Whether the tlpDecision field is set.
-     */
-    @java.lang.Override public boolean hasTlpDecision() {
-      return ((bitField1_ & 0x00000001) != 0);
-    }
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
-     * @return The tlpDecision.
-     */
-    @java.lang.Override public fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision getTlpDecision() {
-      fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision.forNumber(tlpDecision_);
-      return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision.ACK : result;
-    }
-
-    public static final int SID_FIELD_NUMBER = 34;
-    private int sid_ = 0;
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 sid = 34;</code>
-     * @return Whether the sid field is set.
-     */
-    @java.lang.Override
-    public boolean hasSid() {
-      return ((bitField1_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 sid = 34;</code>
-     * @return The sid.
-     */
-    @java.lang.Override
-    public int getSid() {
-      return sid_;
-    }
-
-    public static final int SIGNAL_GROUPID_FIELD_NUMBER = 35;
-    private int signalGroupid_ = 0;
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 signal_groupid = 35;</code>
-     * @return Whether the signalGroupid field is set.
-     */
-    @java.lang.Override
-    public boolean hasSignalGroupid() {
-      return ((bitField1_ & 0x00000004) != 0);
-    }
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 signal_groupid = 35;</code>
-     * @return The signalGroupid.
-     */
-    @java.lang.Override
-    public int getSignalGroupid() {
-      return signalGroupid_;
-    }
-
-    public static final int TLP_SIGNALGROUPNBR_FIELD_NUMBER = 36;
-    private int tlpSignalgroupnbr_ = 0;
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_signalgroupnbr = 36;</code>
-     * @return Whether the tlpSignalgroupnbr field is set.
-     */
-    @java.lang.Override
-    public boolean hasTlpSignalgroupnbr() {
-      return ((bitField1_ & 0x00000008) != 0);
-    }
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_signalgroupnbr = 36;</code>
-     * @return The tlpSignalgroupnbr.
-     */
-    @java.lang.Override
-    public int getTlpSignalgroupnbr() {
-      return tlpSignalgroupnbr_;
-    }
-
-    public static final int TLP_LINE_CONFIGID_FIELD_NUMBER = 38;
-    private int tlpLineConfigid_ = 0;
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_line_configid = 38;</code>
-     * @return Whether the tlpLineConfigid field is set.
-     */
-    @java.lang.Override
-    public boolean hasTlpLineConfigid() {
-      return ((bitField1_ & 0x00000010) != 0);
-    }
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_line_configid = 38;</code>
-     * @return The tlpLineConfigid.
-     */
-    @java.lang.Override
-    public int getTlpLineConfigid() {
-      return tlpLineConfigid_;
-    }
-
-    public static final int TLP_POINT_CONFIGID_FIELD_NUMBER = 39;
-    private int tlpPointConfigid_ = 0;
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_point_configid = 39;</code>
-     * @return Whether the tlpPointConfigid field is set.
-     */
-    @java.lang.Override
-    public boolean hasTlpPointConfigid() {
-      return ((bitField1_ & 0x00000020) != 0);
-    }
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_point_configid = 39;</code>
-     * @return The tlpPointConfigid.
-     */
-    @java.lang.Override
-    public int getTlpPointConfigid() {
-      return tlpPointConfigid_;
-    }
-
-    public static final int TLP_FREQUENCY_FIELD_NUMBER = 40;
-    private int tlpFrequency_ = 0;
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_frequency = 40;</code>
-     * @return Whether the tlpFrequency field is set.
-     */
-    @java.lang.Override
-    public boolean hasTlpFrequency() {
-      return ((bitField1_ & 0x00000040) != 0);
-    }
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional int32 tlp_frequency = 40;</code>
-     * @return The tlpFrequency.
-     */
-    @java.lang.Override
-    public int getTlpFrequency() {
-      return tlpFrequency_;
-    }
-
-    public static final int TLP_PROTOCOL_FIELD_NUMBER = 41;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object tlpProtocol_ = "";
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional string tlp_protocol = 41;</code>
-     * @return Whether the tlpProtocol field is set.
-     */
-    @java.lang.Override
-    public boolean hasTlpProtocol() {
-      return ((bitField1_ & 0x00000080) != 0);
-    }
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional string tlp_protocol = 41;</code>
-     * @return The tlpProtocol.
-     */
-    @java.lang.Override
-    public java.lang.String getTlpProtocol() {
-      java.lang.Object ref = tlpProtocol_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          tlpProtocol_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * tlr
-     * </pre>
-     *
-     * <code>optional string tlp_protocol = 41;</code>
-     * @return The bytes for tlpProtocol.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTlpProtocolBytes() {
-      java.lang.Object ref = tlpProtocol_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tlpProtocol_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int LABEL_FIELD_NUMBER = 42;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object label_ = "";
-    /**
-     * <code>optional string label = 42;</code>
-     * @return Whether the label field is set.
-     */
-    @java.lang.Override
-    public boolean hasLabel() {
-      return ((bitField1_ & 0x00000100) != 0);
-    }
-    /**
-     * <code>optional string label = 42;</code>
-     * @return The label.
-     */
-    @java.lang.Override
-    public java.lang.String getLabel() {
-      java.lang.Object ref = label_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          label_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string label = 42;</code>
-     * @return The bytes for label.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getLabelBytes() {
-      java.lang.Object ref = label_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        label_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      if (!hasSchemaVersion()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTst()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTsi()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeInt32(1, schemaVersion_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, desi_);
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, dir_);
-      }
-      if (((bitField0_ & 0x00000008) != 0)) {
-        output.writeInt32(4, oper_);
-      }
-      if (((bitField0_ & 0x00000010) != 0)) {
-        output.writeInt32(5, veh_);
-      }
-      if (((bitField0_ & 0x00000020) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, tst_);
-      }
-      if (((bitField0_ & 0x00000040) != 0)) {
-        output.writeInt64(7, tsi_);
-      }
-      if (((bitField0_ & 0x00000080) != 0)) {
-        output.writeDouble(8, spd_);
-      }
-      if (((bitField0_ & 0x00000100) != 0)) {
-        output.writeInt32(9, hdg_);
-      }
-      if (((bitField0_ & 0x00000200) != 0)) {
-        output.writeDouble(10, lat_);
-      }
-      if (((bitField0_ & 0x00000400) != 0)) {
-        output.writeDouble(11, long_);
-      }
-      if (((bitField0_ & 0x00000800) != 0)) {
-        output.writeDouble(12, acc_);
-      }
-      if (((bitField0_ & 0x00001000) != 0)) {
-        output.writeUInt32(13, dl_);
-      }
-      if (((bitField0_ & 0x00002000) != 0)) {
-        output.writeDouble(14, odo_);
-      }
-      if (((bitField0_ & 0x00004000) != 0)) {
-        output.writeUInt32(15, drst_);
-      }
-      if (((bitField0_ & 0x00008000) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, oday_);
-      }
-      if (((bitField0_ & 0x00010000) != 0)) {
-        output.writeInt32(17, jrn_);
-      }
-      if (((bitField0_ & 0x00020000) != 0)) {
-        output.writeInt32(18, line_);
-      }
-      if (((bitField0_ & 0x00040000) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 19, start_);
-      }
-      if (((bitField0_ & 0x00080000) != 0)) {
-        output.writeEnum(20, loc_);
-      }
-      if (((bitField0_ & 0x00100000) != 0)) {
-        output.writeInt32(21, stop_);
-      }
-      if (((bitField0_ & 0x00200000) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 22, route_);
-      }
-      if (((bitField0_ & 0x00400000) != 0)) {
-        output.writeInt32(23, occu_);
-      }
-      if (((bitField0_ & 0x00800000) != 0)) {
-        output.writeInt32(24, seq_);
-      }
-      if (((bitField0_ & 0x01000000) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 25, ttarr_);
-      }
-      if (((bitField0_ & 0x02000000) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 26, ttdep_);
-      }
-      if (((bitField0_ & 0x04000000) != 0)) {
-        output.writeInt32(27, drType_);
-      }
-      if (((bitField0_ & 0x08000000) != 0)) {
-        output.writeInt32(28, tlpRequestid_);
-      }
-      if (((bitField0_ & 0x10000000) != 0)) {
-        output.writeEnum(29, tlpRequesttype_);
-      }
-      if (((bitField0_ & 0x20000000) != 0)) {
-        output.writeEnum(30, tlpPrioritylevel_);
-      }
-      if (((bitField0_ & 0x40000000) != 0)) {
-        output.writeEnum(31, tlpReason_);
-      }
-      if (((bitField0_ & 0x80000000) != 0)) {
-        output.writeInt32(32, tlpAttSeq_);
-      }
-      if (((bitField1_ & 0x00000001) != 0)) {
-        output.writeEnum(33, tlpDecision_);
-      }
-      if (((bitField1_ & 0x00000002) != 0)) {
-        output.writeInt32(34, sid_);
-      }
-      if (((bitField1_ & 0x00000004) != 0)) {
-        output.writeInt32(35, signalGroupid_);
-      }
-      if (((bitField1_ & 0x00000008) != 0)) {
-        output.writeInt32(36, tlpSignalgroupnbr_);
-      }
-      if (((bitField1_ & 0x00000010) != 0)) {
-        output.writeInt32(38, tlpLineConfigid_);
-      }
-      if (((bitField1_ & 0x00000020) != 0)) {
-        output.writeInt32(39, tlpPointConfigid_);
-      }
-      if (((bitField1_ & 0x00000040) != 0)) {
-        output.writeInt32(40, tlpFrequency_);
-      }
-      if (((bitField1_ & 0x00000080) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 41, tlpProtocol_);
-      }
-      if (((bitField1_ & 0x00000100) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 42, label_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, schemaVersion_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, desi_);
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, dir_);
-      }
-      if (((bitField0_ & 0x00000008) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, oper_);
-      }
-      if (((bitField0_ & 0x00000010) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, veh_);
-      }
-      if (((bitField0_ & 0x00000020) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, tst_);
-      }
-      if (((bitField0_ & 0x00000040) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(7, tsi_);
-      }
-      if (((bitField0_ & 0x00000080) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(8, spd_);
-      }
-      if (((bitField0_ & 0x00000100) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, hdg_);
-      }
-      if (((bitField0_ & 0x00000200) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(10, lat_);
-      }
-      if (((bitField0_ & 0x00000400) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(11, long_);
-      }
-      if (((bitField0_ & 0x00000800) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(12, acc_);
-      }
-      if (((bitField0_ & 0x00001000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, dl_);
-      }
-      if (((bitField0_ & 0x00002000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(14, odo_);
-      }
-      if (((bitField0_ & 0x00004000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, drst_);
-      }
-      if (((bitField0_ & 0x00008000) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, oday_);
-      }
-      if (((bitField0_ & 0x00010000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(17, jrn_);
-      }
-      if (((bitField0_ & 0x00020000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(18, line_);
-      }
-      if (((bitField0_ & 0x00040000) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, start_);
-      }
-      if (((bitField0_ & 0x00080000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(20, loc_);
-      }
-      if (((bitField0_ & 0x00100000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(21, stop_);
-      }
-      if (((bitField0_ & 0x00200000) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, route_);
-      }
-      if (((bitField0_ & 0x00400000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(23, occu_);
-      }
-      if (((bitField0_ & 0x00800000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(24, seq_);
-      }
-      if (((bitField0_ & 0x01000000) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, ttarr_);
-      }
-      if (((bitField0_ & 0x02000000) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, ttdep_);
-      }
-      if (((bitField0_ & 0x04000000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(27, drType_);
-      }
-      if (((bitField0_ & 0x08000000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(28, tlpRequestid_);
-      }
-      if (((bitField0_ & 0x10000000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(29, tlpRequesttype_);
-      }
-      if (((bitField0_ & 0x20000000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(30, tlpPrioritylevel_);
-      }
-      if (((bitField0_ & 0x40000000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(31, tlpReason_);
-      }
-      if (((bitField0_ & 0x80000000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(32, tlpAttSeq_);
-      }
-      if (((bitField1_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(33, tlpDecision_);
-      }
-      if (((bitField1_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(34, sid_);
-      }
-      if (((bitField1_ & 0x00000004) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(35, signalGroupid_);
-      }
-      if (((bitField1_ & 0x00000008) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(36, tlpSignalgroupnbr_);
-      }
-      if (((bitField1_ & 0x00000010) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(38, tlpLineConfigid_);
-      }
-      if (((bitField1_ & 0x00000020) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(39, tlpPointConfigid_);
-      }
-      if (((bitField1_ & 0x00000040) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(40, tlpFrequency_);
-      }
-      if (((bitField1_ & 0x00000080) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(41, tlpProtocol_);
-      }
-      if (((bitField1_ & 0x00000100) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(42, label_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof fi.hsl.common.hfp.proto.Hfp.Payload)) {
-        return super.equals(obj);
-      }
-      fi.hsl.common.hfp.proto.Hfp.Payload other = (fi.hsl.common.hfp.proto.Hfp.Payload) obj;
-
-      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
-      if (hasSchemaVersion()) {
-        if (getSchemaVersion()
-            != other.getSchemaVersion()) return false;
-      }
-      if (hasDesi() != other.hasDesi()) return false;
-      if (hasDesi()) {
-        if (!getDesi()
-            .equals(other.getDesi())) return false;
-      }
-      if (hasDir() != other.hasDir()) return false;
-      if (hasDir()) {
-        if (!getDir()
-            .equals(other.getDir())) return false;
-      }
-      if (hasOper() != other.hasOper()) return false;
-      if (hasOper()) {
-        if (getOper()
-            != other.getOper()) return false;
-      }
-      if (hasVeh() != other.hasVeh()) return false;
-      if (hasVeh()) {
-        if (getVeh()
-            != other.getVeh()) return false;
-      }
-      if (hasTst() != other.hasTst()) return false;
-      if (hasTst()) {
-        if (!getTst()
-            .equals(other.getTst())) return false;
-      }
-      if (hasTsi() != other.hasTsi()) return false;
-      if (hasTsi()) {
-        if (getTsi()
-            != other.getTsi()) return false;
-      }
-      if (hasSpd() != other.hasSpd()) return false;
-      if (hasSpd()) {
-        if (java.lang.Double.doubleToLongBits(getSpd())
-            != java.lang.Double.doubleToLongBits(
-                other.getSpd())) return false;
-      }
-      if (hasHdg() != other.hasHdg()) return false;
-      if (hasHdg()) {
-        if (getHdg()
-            != other.getHdg()) return false;
-      }
-      if (hasLat() != other.hasLat()) return false;
-      if (hasLat()) {
-        if (java.lang.Double.doubleToLongBits(getLat())
-            != java.lang.Double.doubleToLongBits(
-                other.getLat())) return false;
-      }
-      if (hasLong() != other.hasLong()) return false;
-      if (hasLong()) {
-        if (java.lang.Double.doubleToLongBits(getLong())
-            != java.lang.Double.doubleToLongBits(
-                other.getLong())) return false;
-      }
-      if (hasAcc() != other.hasAcc()) return false;
-      if (hasAcc()) {
-        if (java.lang.Double.doubleToLongBits(getAcc())
-            != java.lang.Double.doubleToLongBits(
-                other.getAcc())) return false;
-      }
-      if (hasDl() != other.hasDl()) return false;
-      if (hasDl()) {
-        if (getDl()
-            != other.getDl()) return false;
-      }
-      if (hasOdo() != other.hasOdo()) return false;
-      if (hasOdo()) {
-        if (java.lang.Double.doubleToLongBits(getOdo())
-            != java.lang.Double.doubleToLongBits(
-                other.getOdo())) return false;
-      }
-      if (hasDrst() != other.hasDrst()) return false;
-      if (hasDrst()) {
-        if (getDrst()
-            != other.getDrst()) return false;
-      }
-      if (hasOday() != other.hasOday()) return false;
-      if (hasOday()) {
-        if (!getOday()
-            .equals(other.getOday())) return false;
-      }
-      if (hasJrn() != other.hasJrn()) return false;
-      if (hasJrn()) {
-        if (getJrn()
-            != other.getJrn()) return false;
-      }
-      if (hasLine() != other.hasLine()) return false;
-      if (hasLine()) {
-        if (getLine()
-            != other.getLine()) return false;
-      }
-      if (hasStart() != other.hasStart()) return false;
-      if (hasStart()) {
-        if (!getStart()
-            .equals(other.getStart())) return false;
-      }
-      if (hasLoc() != other.hasLoc()) return false;
-      if (hasLoc()) {
-        if (loc_ != other.loc_) return false;
-      }
-      if (hasStop() != other.hasStop()) return false;
-      if (hasStop()) {
-        if (getStop()
-            != other.getStop()) return false;
-      }
-      if (hasRoute() != other.hasRoute()) return false;
-      if (hasRoute()) {
-        if (!getRoute()
-            .equals(other.getRoute())) return false;
-      }
-      if (hasOccu() != other.hasOccu()) return false;
-      if (hasOccu()) {
-        if (getOccu()
-            != other.getOccu()) return false;
-      }
-      if (hasSeq() != other.hasSeq()) return false;
-      if (hasSeq()) {
-        if (getSeq()
-            != other.getSeq()) return false;
-      }
-      if (hasTtarr() != other.hasTtarr()) return false;
-      if (hasTtarr()) {
-        if (!getTtarr()
-            .equals(other.getTtarr())) return false;
-      }
-      if (hasTtdep() != other.hasTtdep()) return false;
-      if (hasTtdep()) {
-        if (!getTtdep()
-            .equals(other.getTtdep())) return false;
-      }
-      if (hasDrType() != other.hasDrType()) return false;
-      if (hasDrType()) {
-        if (getDrType()
-            != other.getDrType()) return false;
-      }
-      if (hasTlpRequestid() != other.hasTlpRequestid()) return false;
-      if (hasTlpRequestid()) {
-        if (getTlpRequestid()
-            != other.getTlpRequestid()) return false;
-      }
-      if (hasTlpRequesttype() != other.hasTlpRequesttype()) return false;
-      if (hasTlpRequesttype()) {
-        if (tlpRequesttype_ != other.tlpRequesttype_) return false;
-      }
-      if (hasTlpPrioritylevel() != other.hasTlpPrioritylevel()) return false;
-      if (hasTlpPrioritylevel()) {
-        if (tlpPrioritylevel_ != other.tlpPrioritylevel_) return false;
-      }
-      if (hasTlpReason() != other.hasTlpReason()) return false;
-      if (hasTlpReason()) {
-        if (tlpReason_ != other.tlpReason_) return false;
-      }
-      if (hasTlpAttSeq() != other.hasTlpAttSeq()) return false;
-      if (hasTlpAttSeq()) {
-        if (getTlpAttSeq()
-            != other.getTlpAttSeq()) return false;
-      }
-      if (hasTlpDecision() != other.hasTlpDecision()) return false;
-      if (hasTlpDecision()) {
-        if (tlpDecision_ != other.tlpDecision_) return false;
-      }
-      if (hasSid() != other.hasSid()) return false;
-      if (hasSid()) {
-        if (getSid()
-            != other.getSid()) return false;
-      }
-      if (hasSignalGroupid() != other.hasSignalGroupid()) return false;
-      if (hasSignalGroupid()) {
-        if (getSignalGroupid()
-            != other.getSignalGroupid()) return false;
-      }
-      if (hasTlpSignalgroupnbr() != other.hasTlpSignalgroupnbr()) return false;
-      if (hasTlpSignalgroupnbr()) {
-        if (getTlpSignalgroupnbr()
-            != other.getTlpSignalgroupnbr()) return false;
-      }
-      if (hasTlpLineConfigid() != other.hasTlpLineConfigid()) return false;
-      if (hasTlpLineConfigid()) {
-        if (getTlpLineConfigid()
-            != other.getTlpLineConfigid()) return false;
-      }
-      if (hasTlpPointConfigid() != other.hasTlpPointConfigid()) return false;
-      if (hasTlpPointConfigid()) {
-        if (getTlpPointConfigid()
-            != other.getTlpPointConfigid()) return false;
-      }
-      if (hasTlpFrequency() != other.hasTlpFrequency()) return false;
-      if (hasTlpFrequency()) {
-        if (getTlpFrequency()
-            != other.getTlpFrequency()) return false;
-      }
-      if (hasTlpProtocol() != other.hasTlpProtocol()) return false;
-      if (hasTlpProtocol()) {
-        if (!getTlpProtocol()
-            .equals(other.getTlpProtocol())) return false;
-      }
-      if (hasLabel() != other.hasLabel()) return false;
-      if (hasLabel()) {
-        if (!getLabel()
-            .equals(other.getLabel())) return false;
-      }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasSchemaVersion()) {
-        hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
-        hash = (53 * hash) + getSchemaVersion();
-      }
-      if (hasDesi()) {
-        hash = (37 * hash) + DESI_FIELD_NUMBER;
-        hash = (53 * hash) + getDesi().hashCode();
-      }
-      if (hasDir()) {
-        hash = (37 * hash) + DIR_FIELD_NUMBER;
-        hash = (53 * hash) + getDir().hashCode();
-      }
-      if (hasOper()) {
-        hash = (37 * hash) + OPER_FIELD_NUMBER;
-        hash = (53 * hash) + getOper();
-      }
-      if (hasVeh()) {
-        hash = (37 * hash) + VEH_FIELD_NUMBER;
-        hash = (53 * hash) + getVeh();
-      }
-      if (hasTst()) {
-        hash = (37 * hash) + TST_FIELD_NUMBER;
-        hash = (53 * hash) + getTst().hashCode();
-      }
-      if (hasTsi()) {
-        hash = (37 * hash) + TSI_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getTsi());
-      }
-      if (hasSpd()) {
-        hash = (37 * hash) + SPD_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getSpd()));
-      }
-      if (hasHdg()) {
-        hash = (37 * hash) + HDG_FIELD_NUMBER;
-        hash = (53 * hash) + getHdg();
-      }
-      if (hasLat()) {
-        hash = (37 * hash) + LAT_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getLat()));
-      }
-      if (hasLong()) {
-        hash = (37 * hash) + LONG_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getLong()));
-      }
-      if (hasAcc()) {
-        hash = (37 * hash) + ACC_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getAcc()));
-      }
-      if (hasDl()) {
-        hash = (37 * hash) + DL_FIELD_NUMBER;
-        hash = (53 * hash) + getDl();
-      }
-      if (hasOdo()) {
-        hash = (37 * hash) + ODO_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getOdo()));
-      }
-      if (hasDrst()) {
-        hash = (37 * hash) + DRST_FIELD_NUMBER;
-        hash = (53 * hash) + getDrst();
-      }
-      if (hasOday()) {
-        hash = (37 * hash) + ODAY_FIELD_NUMBER;
-        hash = (53 * hash) + getOday().hashCode();
-      }
-      if (hasJrn()) {
-        hash = (37 * hash) + JRN_FIELD_NUMBER;
-        hash = (53 * hash) + getJrn();
-      }
-      if (hasLine()) {
-        hash = (37 * hash) + LINE_FIELD_NUMBER;
-        hash = (53 * hash) + getLine();
-      }
-      if (hasStart()) {
-        hash = (37 * hash) + START_FIELD_NUMBER;
-        hash = (53 * hash) + getStart().hashCode();
-      }
-      if (hasLoc()) {
-        hash = (37 * hash) + LOC_FIELD_NUMBER;
-        hash = (53 * hash) + loc_;
-      }
-      if (hasStop()) {
-        hash = (37 * hash) + STOP_FIELD_NUMBER;
-        hash = (53 * hash) + getStop();
-      }
-      if (hasRoute()) {
-        hash = (37 * hash) + ROUTE_FIELD_NUMBER;
-        hash = (53 * hash) + getRoute().hashCode();
-      }
-      if (hasOccu()) {
-        hash = (37 * hash) + OCCU_FIELD_NUMBER;
-        hash = (53 * hash) + getOccu();
-      }
-      if (hasSeq()) {
-        hash = (37 * hash) + SEQ_FIELD_NUMBER;
-        hash = (53 * hash) + getSeq();
-      }
-      if (hasTtarr()) {
-        hash = (37 * hash) + TTARR_FIELD_NUMBER;
-        hash = (53 * hash) + getTtarr().hashCode();
-      }
-      if (hasTtdep()) {
-        hash = (37 * hash) + TTDEP_FIELD_NUMBER;
-        hash = (53 * hash) + getTtdep().hashCode();
-      }
-      if (hasDrType()) {
-        hash = (37 * hash) + DR_TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + getDrType();
-      }
-      if (hasTlpRequestid()) {
-        hash = (37 * hash) + TLP_REQUESTID_FIELD_NUMBER;
-        hash = (53 * hash) + getTlpRequestid();
-      }
-      if (hasTlpRequesttype()) {
-        hash = (37 * hash) + TLP_REQUESTTYPE_FIELD_NUMBER;
-        hash = (53 * hash) + tlpRequesttype_;
-      }
-      if (hasTlpPrioritylevel()) {
-        hash = (37 * hash) + TLP_PRIORITYLEVEL_FIELD_NUMBER;
-        hash = (53 * hash) + tlpPrioritylevel_;
-      }
-      if (hasTlpReason()) {
-        hash = (37 * hash) + TLP_REASON_FIELD_NUMBER;
-        hash = (53 * hash) + tlpReason_;
-      }
-      if (hasTlpAttSeq()) {
-        hash = (37 * hash) + TLP_ATT_SEQ_FIELD_NUMBER;
-        hash = (53 * hash) + getTlpAttSeq();
-      }
-      if (hasTlpDecision()) {
-        hash = (37 * hash) + TLP_DECISION_FIELD_NUMBER;
-        hash = (53 * hash) + tlpDecision_;
-      }
-      if (hasSid()) {
-        hash = (37 * hash) + SID_FIELD_NUMBER;
-        hash = (53 * hash) + getSid();
-      }
-      if (hasSignalGroupid()) {
-        hash = (37 * hash) + SIGNAL_GROUPID_FIELD_NUMBER;
-        hash = (53 * hash) + getSignalGroupid();
-      }
-      if (hasTlpSignalgroupnbr()) {
-        hash = (37 * hash) + TLP_SIGNALGROUPNBR_FIELD_NUMBER;
-        hash = (53 * hash) + getTlpSignalgroupnbr();
-      }
-      if (hasTlpLineConfigid()) {
-        hash = (37 * hash) + TLP_LINE_CONFIGID_FIELD_NUMBER;
-        hash = (53 * hash) + getTlpLineConfigid();
-      }
-      if (hasTlpPointConfigid()) {
-        hash = (37 * hash) + TLP_POINT_CONFIGID_FIELD_NUMBER;
-        hash = (53 * hash) + getTlpPointConfigid();
-      }
-      if (hasTlpFrequency()) {
-        hash = (37 * hash) + TLP_FREQUENCY_FIELD_NUMBER;
-        hash = (53 * hash) + getTlpFrequency();
-      }
-      if (hasTlpProtocol()) {
-        hash = (37 * hash) + TLP_PROTOCOL_FIELD_NUMBER;
-        hash = (53 * hash) + getTlpProtocol().hashCode();
-      }
-      if (hasLabel()) {
-        hash = (37 * hash) + LABEL_FIELD_NUMBER;
-        hash = (53 * hash) + getLabel().hashCode();
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Payload parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Payload parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(fi.hsl.common.hfp.proto.Hfp.Payload prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
+    public interface PayloadOrBuilder
+            extends
+                // @@protoc_insertion_point(interface_extends:proto.Payload)
+                com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return Whether the schemaVersion field is set.
+         */
+        boolean hasSchemaVersion();
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return The schemaVersion.
+         */
+        int getSchemaVersion();
+
+        /**
+         * <code>optional string desi = 2;</code>
+         * @return Whether the desi field is set.
+         */
+        boolean hasDesi();
+        /**
+         * <code>optional string desi = 2;</code>
+         * @return The desi.
+         */
+        java.lang.String getDesi();
+        /**
+         * <code>optional string desi = 2;</code>
+         * @return The bytes for desi.
+         */
+        com.google.protobuf.ByteString getDesiBytes();
+
+        /**
+         * <code>optional string dir = 3;</code>
+         * @return Whether the dir field is set.
+         */
+        boolean hasDir();
+        /**
+         * <code>optional string dir = 3;</code>
+         * @return The dir.
+         */
+        java.lang.String getDir();
+        /**
+         * <code>optional string dir = 3;</code>
+         * @return The bytes for dir.
+         */
+        com.google.protobuf.ByteString getDirBytes();
+
+        /**
+         * <code>optional int32 oper = 4;</code>
+         * @return Whether the oper field is set.
+         */
+        boolean hasOper();
+        /**
+         * <code>optional int32 oper = 4;</code>
+         * @return The oper.
+         */
+        int getOper();
+
+        /**
+         * <code>optional int32 veh = 5;</code>
+         * @return Whether the veh field is set.
+         */
+        boolean hasVeh();
+        /**
+         * <code>optional int32 veh = 5;</code>
+         * @return The veh.
+         */
+        int getVeh();
+
+        /**
+         * <code>required string tst = 6;</code>
+         * @return Whether the tst field is set.
+         */
+        boolean hasTst();
+        /**
+         * <code>required string tst = 6;</code>
+         * @return The tst.
+         */
+        java.lang.String getTst();
+        /**
+         * <code>required string tst = 6;</code>
+         * @return The bytes for tst.
+         */
+        com.google.protobuf.ByteString getTstBytes();
+
+        /**
+         * <code>required int64 tsi = 7;</code>
+         * @return Whether the tsi field is set.
+         */
+        boolean hasTsi();
+        /**
+         * <code>required int64 tsi = 7;</code>
+         * @return The tsi.
+         */
+        long getTsi();
+
+        /**
+         * <code>optional double spd = 8;</code>
+         * @return Whether the spd field is set.
+         */
+        boolean hasSpd();
+        /**
+         * <code>optional double spd = 8;</code>
+         * @return The spd.
+         */
+        double getSpd();
+
+        /**
+         * <code>optional int32 hdg = 9;</code>
+         * @return Whether the hdg field is set.
+         */
+        boolean hasHdg();
+        /**
+         * <code>optional int32 hdg = 9;</code>
+         * @return The hdg.
+         */
+        int getHdg();
+
+        /**
+         * <code>optional double lat = 10;</code>
+         * @return Whether the lat field is set.
+         */
+        boolean hasLat();
+        /**
+         * <code>optional double lat = 10;</code>
+         * @return The lat.
+         */
+        double getLat();
+
+        /**
+         * <code>optional double long = 11;</code>
+         * @return Whether the long field is set.
+         */
+        boolean hasLong();
+        /**
+         * <code>optional double long = 11;</code>
+         * @return The long.
+         */
+        double getLong();
+
+        /**
+         * <code>optional double acc = 12;</code>
+         * @return Whether the acc field is set.
+         */
+        boolean hasAcc();
+        /**
+         * <code>optional double acc = 12;</code>
+         * @return The acc.
+         */
+        double getAcc();
+
+        /**
+         * <code>optional uint32 dl = 13;</code>
+         * @return Whether the dl field is set.
+         */
+        boolean hasDl();
+        /**
+         * <code>optional uint32 dl = 13;</code>
+         * @return The dl.
+         */
+        int getDl();
+
+        /**
+         * <code>optional double odo = 14;</code>
+         * @return Whether the odo field is set.
+         */
+        boolean hasOdo();
+        /**
+         * <code>optional double odo = 14;</code>
+         * @return The odo.
+         */
+        double getOdo();
+
+        /**
+         * <code>optional uint32 drst = 15;</code>
+         * @return Whether the drst field is set.
+         */
+        boolean hasDrst();
+        /**
+         * <code>optional uint32 drst = 15;</code>
+         * @return The drst.
+         */
+        int getDrst();
+
+        /**
+         * <code>optional string oday = 16;</code>
+         * @return Whether the oday field is set.
+         */
+        boolean hasOday();
+        /**
+         * <code>optional string oday = 16;</code>
+         * @return The oday.
+         */
+        java.lang.String getOday();
+        /**
+         * <code>optional string oday = 16;</code>
+         * @return The bytes for oday.
+         */
+        com.google.protobuf.ByteString getOdayBytes();
+
+        /**
+         * <code>optional int32 jrn = 17;</code>
+         * @return Whether the jrn field is set.
+         */
+        boolean hasJrn();
+        /**
+         * <code>optional int32 jrn = 17;</code>
+         * @return The jrn.
+         */
+        int getJrn();
+
+        /**
+         * <code>optional int32 line = 18;</code>
+         * @return Whether the line field is set.
+         */
+        boolean hasLine();
+        /**
+         * <code>optional int32 line = 18;</code>
+         * @return The line.
+         */
+        int getLine();
+
+        /**
+         * <code>optional string start = 19;</code>
+         * @return Whether the start field is set.
+         */
+        boolean hasStart();
+        /**
+         * <code>optional string start = 19;</code>
+         * @return The start.
+         */
+        java.lang.String getStart();
+        /**
+         * <code>optional string start = 19;</code>
+         * @return The bytes for start.
+         */
+        com.google.protobuf.ByteString getStartBytes();
+
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
+         * @return Whether the loc field is set.
+         */
+        boolean hasLoc();
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
+         * @return The loc.
+         */
+        fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod getLoc();
+
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional int32 stop = 21;</code>
+         * @return Whether the stop field is set.
+         */
+        boolean hasStop();
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional int32 stop = 21;</code>
+         * @return The stop.
+         */
+        int getStop();
+
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional string route = 22;</code>
+         * @return Whether the route field is set.
+         */
+        boolean hasRoute();
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional string route = 22;</code>
+         * @return The route.
+         */
+        java.lang.String getRoute();
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional string route = 22;</code>
+         * @return The bytes for route.
+         */
+        com.google.protobuf.ByteString getRouteBytes();
+
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional int32 occu = 23;</code>
+         * @return Whether the occu field is set.
+         */
+        boolean hasOccu();
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional int32 occu = 23;</code>
+         * @return The occu.
+         */
+        int getOccu();
+
+        /**
+         * <code>optional int32 seq = 24;</code>
+         * @return Whether the seq field is set.
+         */
+        boolean hasSeq();
+        /**
+         * <code>optional int32 seq = 24;</code>
+         * @return The seq.
+         */
+        int getSeq();
+
+        /**
+         * <code>optional string ttarr = 25;</code>
+         * @return Whether the ttarr field is set.
+         */
+        boolean hasTtarr();
+        /**
+         * <code>optional string ttarr = 25;</code>
+         * @return The ttarr.
+         */
+        java.lang.String getTtarr();
+        /**
+         * <code>optional string ttarr = 25;</code>
+         * @return The bytes for ttarr.
+         */
+        com.google.protobuf.ByteString getTtarrBytes();
+
+        /**
+         * <code>optional string ttdep = 26;</code>
+         * @return Whether the ttdep field is set.
+         */
+        boolean hasTtdep();
+        /**
+         * <code>optional string ttdep = 26;</code>
+         * @return The ttdep.
+         */
+        java.lang.String getTtdep();
+        /**
+         * <code>optional string ttdep = 26;</code>
+         * @return The bytes for ttdep.
+         */
+        com.google.protobuf.ByteString getTtdepBytes();
+
+        /**
+         * <code>optional int32 dr_type = 27;</code>
+         * @return Whether the drType field is set.
+         */
+        boolean hasDrType();
+        /**
+         * <code>optional int32 dr_type = 27;</code>
+         * @return The drType.
+         */
+        int getDrType();
+
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_requestid = 28;</code>
+         * @return Whether the tlpRequestid field is set.
+         */
+        boolean hasTlpRequestid();
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_requestid = 28;</code>
+         * @return The tlpRequestid.
+         */
+        int getTlpRequestid();
+
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+         * @return Whether the tlpRequesttype field is set.
+         */
+        boolean hasTlpRequesttype();
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+         * @return The tlpRequesttype.
+         */
+        fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType getTlpRequesttype();
+
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+         * @return Whether the tlpPrioritylevel field is set.
+         */
+        boolean hasTlpPrioritylevel();
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+         * @return The tlpPrioritylevel.
+         */
+        fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel getTlpPrioritylevel();
+
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+         * @return Whether the tlpReason field is set.
+         */
+        boolean hasTlpReason();
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+         * @return The tlpReason.
+         */
+        fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason getTlpReason();
+
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_att_seq = 32;</code>
+         * @return Whether the tlpAttSeq field is set.
+         */
+        boolean hasTlpAttSeq();
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_att_seq = 32;</code>
+         * @return The tlpAttSeq.
+         */
+        int getTlpAttSeq();
+
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+         * @return Whether the tlpDecision field is set.
+         */
+        boolean hasTlpDecision();
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+         * @return The tlpDecision.
+         */
+        fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision getTlpDecision();
+
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 sid = 34;</code>
+         * @return Whether the sid field is set.
+         */
+        boolean hasSid();
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 sid = 34;</code>
+         * @return The sid.
+         */
+        int getSid();
+
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 signal_groupid = 35;</code>
+         * @return Whether the signalGroupid field is set.
+         */
+        boolean hasSignalGroupid();
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 signal_groupid = 35;</code>
+         * @return The signalGroupid.
+         */
+        int getSignalGroupid();
+
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+         * @return Whether the tlpSignalgroupnbr field is set.
+         */
+        boolean hasTlpSignalgroupnbr();
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+         * @return The tlpSignalgroupnbr.
+         */
+        int getTlpSignalgroupnbr();
+
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_line_configid = 38;</code>
+         * @return Whether the tlpLineConfigid field is set.
+         */
+        boolean hasTlpLineConfigid();
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_line_configid = 38;</code>
+         * @return The tlpLineConfigid.
+         */
+        int getTlpLineConfigid();
+
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_point_configid = 39;</code>
+         * @return Whether the tlpPointConfigid field is set.
+         */
+        boolean hasTlpPointConfigid();
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_point_configid = 39;</code>
+         * @return The tlpPointConfigid.
+         */
+        int getTlpPointConfigid();
+
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_frequency = 40;</code>
+         * @return Whether the tlpFrequency field is set.
+         */
+        boolean hasTlpFrequency();
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_frequency = 40;</code>
+         * @return The tlpFrequency.
+         */
+        int getTlpFrequency();
+
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional string tlp_protocol = 41;</code>
+         * @return Whether the tlpProtocol field is set.
+         */
+        boolean hasTlpProtocol();
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional string tlp_protocol = 41;</code>
+         * @return The tlpProtocol.
+         */
+        java.lang.String getTlpProtocol();
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional string tlp_protocol = 41;</code>
+         * @return The bytes for tlpProtocol.
+         */
+        com.google.protobuf.ByteString getTlpProtocolBytes();
+
+        /**
+         * <code>optional string label = 42;</code>
+         * @return Whether the label field is set.
+         */
+        boolean hasLabel();
+        /**
+         * <code>optional string label = 42;</code>
+         * @return The label.
+         */
+        java.lang.String getLabel();
+        /**
+         * <code>optional string label = 42;</code>
+         * @return The bytes for label.
+         */
+        com.google.protobuf.ByteString getLabelBytes();
     }
     /**
      * Protobuf type {@code proto.Payload}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:proto.Payload)
-        fi.hsl.common.hfp.proto.Hfp.PayloadOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Payload_descriptor;
-      }
+    public static final class Payload extends com.google.protobuf.GeneratedMessageV3
+            implements
+                // @@protoc_insertion_point(message_implements:proto.Payload)
+                PayloadOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use Payload.newBuilder() to construct.
+        private Payload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+        private Payload() {
+            schemaVersion_ = 1;
+            desi_ = "";
+            dir_ = "";
+            tst_ = "";
+            oday_ = "";
+            start_ = "";
+            loc_ = 0;
+            route_ = "";
+            ttarr_ = "";
+            ttdep_ = "";
+            tlpRequesttype_ = 0;
+            tlpPrioritylevel_ = 0;
+            tlpReason_ = 0;
+            tlpDecision_ = 0;
+            tlpProtocol_ = "";
+            label_ = "";
+        }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Payload_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                fi.hsl.common.hfp.proto.Hfp.Payload.class, fi.hsl.common.hfp.proto.Hfp.Payload.Builder.class);
-      }
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new Payload();
+        }
 
-      // Construct using fi.hsl.common.hfp.proto.Hfp.Payload.newBuilder()
-      private Builder() {
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
+        }
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Payload_descriptor;
+        }
 
-      }
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+            return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Payload_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(fi.hsl.common.hfp.proto.Hfp.Payload.class,
+                            fi.hsl.common.hfp.proto.Hfp.Payload.Builder.class);
+        }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
+        /**
+         * Protobuf enum {@code proto.Payload.LocationQualityMethod}
+         */
+        public enum LocationQualityMethod implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>GPS = 0;</code>
+             */
+            GPS(0),
+            /**
+             * <code>ODO = 1;</code>
+             */
+            ODO(1),
+            /**
+             * <code>MAN = 2;</code>
+             */
+            MAN(2),
+            /**
+             * <code>NA = 3;</code>
+             */
+            NA(3),
+            /**
+             * <code>DR = 4;</code>
+             */
+            DR(4),;
 
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        bitField1_ = 0;
-        schemaVersion_ = 1;
-        desi_ = "";
-        dir_ = "";
-        oper_ = 0;
-        veh_ = 0;
-        tst_ = "";
-        tsi_ = 0L;
-        spd_ = 0D;
-        hdg_ = 0;
-        lat_ = 0D;
-        long_ = 0D;
-        acc_ = 0D;
-        dl_ = 0;
-        odo_ = 0D;
-        drst_ = 0;
-        oday_ = "";
-        jrn_ = 0;
-        line_ = 0;
-        start_ = "";
-        loc_ = 0;
-        stop_ = 0;
-        route_ = "";
-        occu_ = 0;
-        seq_ = 0;
-        ttarr_ = "";
-        ttdep_ = "";
-        drType_ = 0;
-        tlpRequestid_ = 0;
-        tlpRequesttype_ = 0;
-        tlpPrioritylevel_ = 0;
-        tlpReason_ = 0;
-        tlpAttSeq_ = 0;
-        tlpDecision_ = 0;
-        sid_ = 0;
-        signalGroupid_ = 0;
-        tlpSignalgroupnbr_ = 0;
-        tlpLineConfigid_ = 0;
-        tlpPointConfigid_ = 0;
-        tlpFrequency_ = 0;
-        tlpProtocol_ = "";
-        label_ = "";
-        return this;
-      }
+            /**
+             * <code>GPS = 0;</code>
+             */
+            public static final int GPS_VALUE = 0;
+            /**
+             * <code>ODO = 1;</code>
+             */
+            public static final int ODO_VALUE = 1;
+            /**
+             * <code>MAN = 2;</code>
+             */
+            public static final int MAN_VALUE = 2;
+            /**
+             * <code>NA = 3;</code>
+             */
+            public static final int NA_VALUE = 3;
+            /**
+             * <code>DR = 4;</code>
+             */
+            public static final int DR_VALUE = 4;
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Payload_descriptor;
-      }
+            public final int getNumber() {
+                return value;
+            }
 
-      @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Payload getDefaultInstanceForType() {
-        return fi.hsl.common.hfp.proto.Hfp.Payload.getDefaultInstance();
-      }
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static LocationQualityMethod valueOf(int value) {
+                return forNumber(value);
+            }
 
-      @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Payload build() {
-        fi.hsl.common.hfp.proto.Hfp.Payload result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             */
+            public static LocationQualityMethod forNumber(int value) {
+                switch (value) {
+                    case 0 :
+                        return GPS;
+                    case 1 :
+                        return ODO;
+                    case 2 :
+                        return MAN;
+                    case 3 :
+                        return NA;
+                    case 4 :
+                        return DR;
+                    default :
+                        return null;
+                }
+            }
 
-      @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Payload buildPartial() {
-        fi.hsl.common.hfp.proto.Hfp.Payload result = new fi.hsl.common.hfp.proto.Hfp.Payload(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        if (bitField1_ != 0) { buildPartial1(result); }
-        onBuilt();
-        return result;
-      }
+            public static com.google.protobuf.Internal.EnumLiteMap<LocationQualityMethod> internalGetValueMap() {
+                return internalValueMap;
+            }
+            private static final com.google.protobuf.Internal.EnumLiteMap<LocationQualityMethod> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<LocationQualityMethod>() {
+                public LocationQualityMethod findValueByNumber(int number) {
+                    return LocationQualityMethod.forNumber(number);
+                }
+            };
 
-      private void buildPartial0(fi.hsl.common.hfp.proto.Hfp.Payload result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.schemaVersion_ = schemaVersion_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.desi_ = desi_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.dir_ = dir_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.oper_ = oper_;
-          to_bitField0_ |= 0x00000008;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.veh_ = veh_;
-          to_bitField0_ |= 0x00000010;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.tst_ = tst_;
-          to_bitField0_ |= 0x00000020;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.tsi_ = tsi_;
-          to_bitField0_ |= 0x00000040;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.spd_ = spd_;
-          to_bitField0_ |= 0x00000080;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.hdg_ = hdg_;
-          to_bitField0_ |= 0x00000100;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.lat_ = lat_;
-          to_bitField0_ |= 0x00000200;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.long_ = long_;
-          to_bitField0_ |= 0x00000400;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.acc_ = acc_;
-          to_bitField0_ |= 0x00000800;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.dl_ = dl_;
-          to_bitField0_ |= 0x00001000;
-        }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.odo_ = odo_;
-          to_bitField0_ |= 0x00002000;
-        }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.drst_ = drst_;
-          to_bitField0_ |= 0x00004000;
-        }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.oday_ = oday_;
-          to_bitField0_ |= 0x00008000;
-        }
-        if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.jrn_ = jrn_;
-          to_bitField0_ |= 0x00010000;
-        }
-        if (((from_bitField0_ & 0x00020000) != 0)) {
-          result.line_ = line_;
-          to_bitField0_ |= 0x00020000;
-        }
-        if (((from_bitField0_ & 0x00040000) != 0)) {
-          result.start_ = start_;
-          to_bitField0_ |= 0x00040000;
-        }
-        if (((from_bitField0_ & 0x00080000) != 0)) {
-          result.loc_ = loc_;
-          to_bitField0_ |= 0x00080000;
-        }
-        if (((from_bitField0_ & 0x00100000) != 0)) {
-          result.stop_ = stop_;
-          to_bitField0_ |= 0x00100000;
-        }
-        if (((from_bitField0_ & 0x00200000) != 0)) {
-          result.route_ = route_;
-          to_bitField0_ |= 0x00200000;
-        }
-        if (((from_bitField0_ & 0x00400000) != 0)) {
-          result.occu_ = occu_;
-          to_bitField0_ |= 0x00400000;
-        }
-        if (((from_bitField0_ & 0x00800000) != 0)) {
-          result.seq_ = seq_;
-          to_bitField0_ |= 0x00800000;
-        }
-        if (((from_bitField0_ & 0x01000000) != 0)) {
-          result.ttarr_ = ttarr_;
-          to_bitField0_ |= 0x01000000;
-        }
-        if (((from_bitField0_ & 0x02000000) != 0)) {
-          result.ttdep_ = ttdep_;
-          to_bitField0_ |= 0x02000000;
-        }
-        if (((from_bitField0_ & 0x04000000) != 0)) {
-          result.drType_ = drType_;
-          to_bitField0_ |= 0x04000000;
-        }
-        if (((from_bitField0_ & 0x08000000) != 0)) {
-          result.tlpRequestid_ = tlpRequestid_;
-          to_bitField0_ |= 0x08000000;
-        }
-        if (((from_bitField0_ & 0x10000000) != 0)) {
-          result.tlpRequesttype_ = tlpRequesttype_;
-          to_bitField0_ |= 0x10000000;
-        }
-        if (((from_bitField0_ & 0x20000000) != 0)) {
-          result.tlpPrioritylevel_ = tlpPrioritylevel_;
-          to_bitField0_ |= 0x20000000;
-        }
-        if (((from_bitField0_ & 0x40000000) != 0)) {
-          result.tlpReason_ = tlpReason_;
-          to_bitField0_ |= 0x40000000;
-        }
-        if (((from_bitField0_ & 0x80000000) != 0)) {
-          result.tlpAttSeq_ = tlpAttSeq_;
-          to_bitField0_ |= 0x80000000;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
+            public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+                return getDescriptor().getValues().get(ordinal());
+            }
+            public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+                return getDescriptor();
+            }
+            public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+                return fi.hsl.common.hfp.proto.Hfp.Payload.getDescriptor().getEnumTypes().get(0);
+            }
 
-      private void buildPartial1(fi.hsl.common.hfp.proto.Hfp.Payload result) {
-        int from_bitField1_ = bitField1_;
-        int to_bitField1_ = 0;
-        if (((from_bitField1_ & 0x00000001) != 0)) {
-          result.tlpDecision_ = tlpDecision_;
-          to_bitField1_ |= 0x00000001;
-        }
-        if (((from_bitField1_ & 0x00000002) != 0)) {
-          result.sid_ = sid_;
-          to_bitField1_ |= 0x00000002;
-        }
-        if (((from_bitField1_ & 0x00000004) != 0)) {
-          result.signalGroupid_ = signalGroupid_;
-          to_bitField1_ |= 0x00000004;
-        }
-        if (((from_bitField1_ & 0x00000008) != 0)) {
-          result.tlpSignalgroupnbr_ = tlpSignalgroupnbr_;
-          to_bitField1_ |= 0x00000008;
-        }
-        if (((from_bitField1_ & 0x00000010) != 0)) {
-          result.tlpLineConfigid_ = tlpLineConfigid_;
-          to_bitField1_ |= 0x00000010;
-        }
-        if (((from_bitField1_ & 0x00000020) != 0)) {
-          result.tlpPointConfigid_ = tlpPointConfigid_;
-          to_bitField1_ |= 0x00000020;
-        }
-        if (((from_bitField1_ & 0x00000040) != 0)) {
-          result.tlpFrequency_ = tlpFrequency_;
-          to_bitField1_ |= 0x00000040;
-        }
-        if (((from_bitField1_ & 0x00000080) != 0)) {
-          result.tlpProtocol_ = tlpProtocol_;
-          to_bitField1_ |= 0x00000080;
-        }
-        if (((from_bitField1_ & 0x00000100) != 0)) {
-          result.label_ = label_;
-          to_bitField1_ |= 0x00000100;
-        }
-        result.bitField1_ |= to_bitField1_;
-      }
+            private static final LocationQualityMethod[] VALUES = values();
 
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof fi.hsl.common.hfp.proto.Hfp.Payload) {
-          return mergeFrom((fi.hsl.common.hfp.proto.Hfp.Payload)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
+            public static LocationQualityMethod valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                    throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+                }
+                return VALUES[desc.getIndex()];
+            }
 
-      public Builder mergeFrom(fi.hsl.common.hfp.proto.Hfp.Payload other) {
-        if (other == fi.hsl.common.hfp.proto.Hfp.Payload.getDefaultInstance()) return this;
-        if (other.hasSchemaVersion()) {
-          setSchemaVersion(other.getSchemaVersion());
-        }
-        if (other.hasDesi()) {
-          desi_ = other.desi_;
-          bitField0_ |= 0x00000002;
-          onChanged();
-        }
-        if (other.hasDir()) {
-          dir_ = other.dir_;
-          bitField0_ |= 0x00000004;
-          onChanged();
-        }
-        if (other.hasOper()) {
-          setOper(other.getOper());
-        }
-        if (other.hasVeh()) {
-          setVeh(other.getVeh());
-        }
-        if (other.hasTst()) {
-          tst_ = other.tst_;
-          bitField0_ |= 0x00000020;
-          onChanged();
-        }
-        if (other.hasTsi()) {
-          setTsi(other.getTsi());
-        }
-        if (other.hasSpd()) {
-          setSpd(other.getSpd());
-        }
-        if (other.hasHdg()) {
-          setHdg(other.getHdg());
-        }
-        if (other.hasLat()) {
-          setLat(other.getLat());
-        }
-        if (other.hasLong()) {
-          setLong(other.getLong());
-        }
-        if (other.hasAcc()) {
-          setAcc(other.getAcc());
-        }
-        if (other.hasDl()) {
-          setDl(other.getDl());
-        }
-        if (other.hasOdo()) {
-          setOdo(other.getOdo());
-        }
-        if (other.hasDrst()) {
-          setDrst(other.getDrst());
-        }
-        if (other.hasOday()) {
-          oday_ = other.oday_;
-          bitField0_ |= 0x00008000;
-          onChanged();
-        }
-        if (other.hasJrn()) {
-          setJrn(other.getJrn());
-        }
-        if (other.hasLine()) {
-          setLine(other.getLine());
-        }
-        if (other.hasStart()) {
-          start_ = other.start_;
-          bitField0_ |= 0x00040000;
-          onChanged();
-        }
-        if (other.hasLoc()) {
-          setLoc(other.getLoc());
-        }
-        if (other.hasStop()) {
-          setStop(other.getStop());
-        }
-        if (other.hasRoute()) {
-          route_ = other.route_;
-          bitField0_ |= 0x00200000;
-          onChanged();
-        }
-        if (other.hasOccu()) {
-          setOccu(other.getOccu());
-        }
-        if (other.hasSeq()) {
-          setSeq(other.getSeq());
-        }
-        if (other.hasTtarr()) {
-          ttarr_ = other.ttarr_;
-          bitField0_ |= 0x01000000;
-          onChanged();
-        }
-        if (other.hasTtdep()) {
-          ttdep_ = other.ttdep_;
-          bitField0_ |= 0x02000000;
-          onChanged();
-        }
-        if (other.hasDrType()) {
-          setDrType(other.getDrType());
-        }
-        if (other.hasTlpRequestid()) {
-          setTlpRequestid(other.getTlpRequestid());
-        }
-        if (other.hasTlpRequesttype()) {
-          setTlpRequesttype(other.getTlpRequesttype());
-        }
-        if (other.hasTlpPrioritylevel()) {
-          setTlpPrioritylevel(other.getTlpPrioritylevel());
-        }
-        if (other.hasTlpReason()) {
-          setTlpReason(other.getTlpReason());
-        }
-        if (other.hasTlpAttSeq()) {
-          setTlpAttSeq(other.getTlpAttSeq());
-        }
-        if (other.hasTlpDecision()) {
-          setTlpDecision(other.getTlpDecision());
-        }
-        if (other.hasSid()) {
-          setSid(other.getSid());
-        }
-        if (other.hasSignalGroupid()) {
-          setSignalGroupid(other.getSignalGroupid());
-        }
-        if (other.hasTlpSignalgroupnbr()) {
-          setTlpSignalgroupnbr(other.getTlpSignalgroupnbr());
-        }
-        if (other.hasTlpLineConfigid()) {
-          setTlpLineConfigid(other.getTlpLineConfigid());
-        }
-        if (other.hasTlpPointConfigid()) {
-          setTlpPointConfigid(other.getTlpPointConfigid());
-        }
-        if (other.hasTlpFrequency()) {
-          setTlpFrequency(other.getTlpFrequency());
-        }
-        if (other.hasTlpProtocol()) {
-          tlpProtocol_ = other.tlpProtocol_;
-          bitField1_ |= 0x00000080;
-          onChanged();
-        }
-        if (other.hasLabel()) {
-          label_ = other.label_;
-          bitField1_ |= 0x00000100;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
+            private final int value;
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        if (!hasSchemaVersion()) {
-          return false;
-        }
-        if (!hasTst()) {
-          return false;
-        }
-        if (!hasTsi()) {
-          return false;
-        }
-        return true;
-      }
+            private LocationQualityMethod(int value) {
+                this.value = value;
+            }
 
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
+            // @@protoc_insertion_point(enum_scope:proto.Payload.LocationQualityMethod)
         }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                schemaVersion_ = input.readInt32();
+
+        /**
+         * Protobuf enum {@code proto.Payload.TlpRequestType}
+         */
+        public enum TlpRequestType implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>NORMAL = 0;</code>
+             */
+            NORMAL(0),
+            /**
+             * <code>DOOR_CLOSE = 1;</code>
+             */
+            DOOR_CLOSE(1),
+            /**
+             * <code>DOOR_OPEN = 2;</code>
+             */
+            DOOR_OPEN(2),
+            /**
+             * <code>ADVANCE = 3;</code>
+             */
+            ADVANCE(3),;
+
+            /**
+             * <code>NORMAL = 0;</code>
+             */
+            public static final int NORMAL_VALUE = 0;
+            /**
+             * <code>DOOR_CLOSE = 1;</code>
+             */
+            public static final int DOOR_CLOSE_VALUE = 1;
+            /**
+             * <code>DOOR_OPEN = 2;</code>
+             */
+            public static final int DOOR_OPEN_VALUE = 2;
+            /**
+             * <code>ADVANCE = 3;</code>
+             */
+            public static final int ADVANCE_VALUE = 3;
+
+            public final int getNumber() {
+                return value;
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static TlpRequestType valueOf(int value) {
+                return forNumber(value);
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             */
+            public static TlpRequestType forNumber(int value) {
+                switch (value) {
+                    case 0 :
+                        return NORMAL;
+                    case 1 :
+                        return DOOR_CLOSE;
+                    case 2 :
+                        return DOOR_OPEN;
+                    case 3 :
+                        return ADVANCE;
+                    default :
+                        return null;
+                }
+            }
+
+            public static com.google.protobuf.Internal.EnumLiteMap<TlpRequestType> internalGetValueMap() {
+                return internalValueMap;
+            }
+            private static final com.google.protobuf.Internal.EnumLiteMap<TlpRequestType> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<TlpRequestType>() {
+                public TlpRequestType findValueByNumber(int number) {
+                    return TlpRequestType.forNumber(number);
+                }
+            };
+
+            public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+                return getDescriptor().getValues().get(ordinal());
+            }
+            public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+                return getDescriptor();
+            }
+            public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+                return fi.hsl.common.hfp.proto.Hfp.Payload.getDescriptor().getEnumTypes().get(1);
+            }
+
+            private static final TlpRequestType[] VALUES = values();
+
+            public static TlpRequestType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                    throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+                }
+                return VALUES[desc.getIndex()];
+            }
+
+            private final int value;
+
+            private TlpRequestType(int value) {
+                this.value = value;
+            }
+
+            // @@protoc_insertion_point(enum_scope:proto.Payload.TlpRequestType)
+        }
+
+        /**
+         * Protobuf enum {@code proto.Payload.TlpPriorityLevel}
+         */
+        public enum TlpPriorityLevel implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>normal = 0;</code>
+             */
+            normal(0),
+            /**
+             * <code>high = 1;</code>
+             */
+            high(1),
+            /**
+             * <code>norequest = 2;</code>
+             */
+            norequest(2),;
+
+            /**
+             * <code>normal = 0;</code>
+             */
+            public static final int normal_VALUE = 0;
+            /**
+             * <code>high = 1;</code>
+             */
+            public static final int high_VALUE = 1;
+            /**
+             * <code>norequest = 2;</code>
+             */
+            public static final int norequest_VALUE = 2;
+
+            public final int getNumber() {
+                return value;
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static TlpPriorityLevel valueOf(int value) {
+                return forNumber(value);
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             */
+            public static TlpPriorityLevel forNumber(int value) {
+                switch (value) {
+                    case 0 :
+                        return normal;
+                    case 1 :
+                        return high;
+                    case 2 :
+                        return norequest;
+                    default :
+                        return null;
+                }
+            }
+
+            public static com.google.protobuf.Internal.EnumLiteMap<TlpPriorityLevel> internalGetValueMap() {
+                return internalValueMap;
+            }
+            private static final com.google.protobuf.Internal.EnumLiteMap<TlpPriorityLevel> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<TlpPriorityLevel>() {
+                public TlpPriorityLevel findValueByNumber(int number) {
+                    return TlpPriorityLevel.forNumber(number);
+                }
+            };
+
+            public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+                return getDescriptor().getValues().get(ordinal());
+            }
+            public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+                return getDescriptor();
+            }
+            public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+                return fi.hsl.common.hfp.proto.Hfp.Payload.getDescriptor().getEnumTypes().get(2);
+            }
+
+            private static final TlpPriorityLevel[] VALUES = values();
+
+            public static TlpPriorityLevel valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                    throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+                }
+                return VALUES[desc.getIndex()];
+            }
+
+            private final int value;
+
+            private TlpPriorityLevel(int value) {
+                this.value = value;
+            }
+
+            // @@protoc_insertion_point(enum_scope:proto.Payload.TlpPriorityLevel)
+        }
+
+        /**
+         * Protobuf enum {@code proto.Payload.TlpReason}
+         */
+        public enum TlpReason implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>GLOBAL = 0;</code>
+             */
+            GLOBAL(0),
+            /**
+             * <code>AHEAD = 1;</code>
+             */
+            AHEAD(1),
+            /**
+             * <code>LINE = 2;</code>
+             */
+            LINE(2),
+            /**
+             * <code>PRIOEXEP = 3;</code>
+             */
+            PRIOEXEP(3),;
+
+            /**
+             * <code>GLOBAL = 0;</code>
+             */
+            public static final int GLOBAL_VALUE = 0;
+            /**
+             * <code>AHEAD = 1;</code>
+             */
+            public static final int AHEAD_VALUE = 1;
+            /**
+             * <code>LINE = 2;</code>
+             */
+            public static final int LINE_VALUE = 2;
+            /**
+             * <code>PRIOEXEP = 3;</code>
+             */
+            public static final int PRIOEXEP_VALUE = 3;
+
+            public final int getNumber() {
+                return value;
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static TlpReason valueOf(int value) {
+                return forNumber(value);
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             */
+            public static TlpReason forNumber(int value) {
+                switch (value) {
+                    case 0 :
+                        return GLOBAL;
+                    case 1 :
+                        return AHEAD;
+                    case 2 :
+                        return LINE;
+                    case 3 :
+                        return PRIOEXEP;
+                    default :
+                        return null;
+                }
+            }
+
+            public static com.google.protobuf.Internal.EnumLiteMap<TlpReason> internalGetValueMap() {
+                return internalValueMap;
+            }
+            private static final com.google.protobuf.Internal.EnumLiteMap<TlpReason> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<TlpReason>() {
+                public TlpReason findValueByNumber(int number) {
+                    return TlpReason.forNumber(number);
+                }
+            };
+
+            public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+                return getDescriptor().getValues().get(ordinal());
+            }
+            public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+                return getDescriptor();
+            }
+            public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+                return fi.hsl.common.hfp.proto.Hfp.Payload.getDescriptor().getEnumTypes().get(3);
+            }
+
+            private static final TlpReason[] VALUES = values();
+
+            public static TlpReason valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                    throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+                }
+                return VALUES[desc.getIndex()];
+            }
+
+            private final int value;
+
+            private TlpReason(int value) {
+                this.value = value;
+            }
+
+            // @@protoc_insertion_point(enum_scope:proto.Payload.TlpReason)
+        }
+
+        /**
+         * Protobuf enum {@code proto.Payload.TlpDecision}
+         */
+        public enum TlpDecision implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>ACK = 0;</code>
+             */
+            ACK(0),
+            /**
+             * <code>NAK = 1;</code>
+             */
+            NAK(1),;
+
+            /**
+             * <code>ACK = 0;</code>
+             */
+            public static final int ACK_VALUE = 0;
+            /**
+             * <code>NAK = 1;</code>
+             */
+            public static final int NAK_VALUE = 1;
+
+            public final int getNumber() {
+                return value;
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static TlpDecision valueOf(int value) {
+                return forNumber(value);
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             */
+            public static TlpDecision forNumber(int value) {
+                switch (value) {
+                    case 0 :
+                        return ACK;
+                    case 1 :
+                        return NAK;
+                    default :
+                        return null;
+                }
+            }
+
+            public static com.google.protobuf.Internal.EnumLiteMap<TlpDecision> internalGetValueMap() {
+                return internalValueMap;
+            }
+            private static final com.google.protobuf.Internal.EnumLiteMap<TlpDecision> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<TlpDecision>() {
+                public TlpDecision findValueByNumber(int number) {
+                    return TlpDecision.forNumber(number);
+                }
+            };
+
+            public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+                return getDescriptor().getValues().get(ordinal());
+            }
+            public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+                return getDescriptor();
+            }
+            public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+                return fi.hsl.common.hfp.proto.Hfp.Payload.getDescriptor().getEnumTypes().get(4);
+            }
+
+            private static final TlpDecision[] VALUES = values();
+
+            public static TlpDecision valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                    throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+                }
+                return VALUES[desc.getIndex()];
+            }
+
+            private final int value;
+
+            private TlpDecision(int value) {
+                this.value = value;
+            }
+
+            // @@protoc_insertion_point(enum_scope:proto.Payload.TlpDecision)
+        }
+
+        private int bitField0_;
+        private int bitField1_;
+        public static final int SCHEMAVERSION_FIELD_NUMBER = 1;
+        private int schemaVersion_ = 1;
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return Whether the schemaVersion field is set.
+         */
+        @java.lang.Override
+        public boolean hasSchemaVersion() {
+            return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return The schemaVersion.
+         */
+        @java.lang.Override
+        public int getSchemaVersion() {
+            return schemaVersion_;
+        }
+
+        public static final int DESI_FIELD_NUMBER = 2;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object desi_ = "";
+        /**
+         * <code>optional string desi = 2;</code>
+         * @return Whether the desi field is set.
+         */
+        @java.lang.Override
+        public boolean hasDesi() {
+            return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         * <code>optional string desi = 2;</code>
+         * @return The desi.
+         */
+        @java.lang.Override
+        public java.lang.String getDesi() {
+            java.lang.Object ref = desi_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    desi_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>optional string desi = 2;</code>
+         * @return The bytes for desi.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getDesiBytes() {
+            java.lang.Object ref = desi_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                desi_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int DIR_FIELD_NUMBER = 3;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object dir_ = "";
+        /**
+         * <code>optional string dir = 3;</code>
+         * @return Whether the dir field is set.
+         */
+        @java.lang.Override
+        public boolean hasDir() {
+            return ((bitField0_ & 0x00000004) != 0);
+        }
+        /**
+         * <code>optional string dir = 3;</code>
+         * @return The dir.
+         */
+        @java.lang.Override
+        public java.lang.String getDir() {
+            java.lang.Object ref = dir_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    dir_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>optional string dir = 3;</code>
+         * @return The bytes for dir.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getDirBytes() {
+            java.lang.Object ref = dir_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                dir_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int OPER_FIELD_NUMBER = 4;
+        private int oper_ = 0;
+        /**
+         * <code>optional int32 oper = 4;</code>
+         * @return Whether the oper field is set.
+         */
+        @java.lang.Override
+        public boolean hasOper() {
+            return ((bitField0_ & 0x00000008) != 0);
+        }
+        /**
+         * <code>optional int32 oper = 4;</code>
+         * @return The oper.
+         */
+        @java.lang.Override
+        public int getOper() {
+            return oper_;
+        }
+
+        public static final int VEH_FIELD_NUMBER = 5;
+        private int veh_ = 0;
+        /**
+         * <code>optional int32 veh = 5;</code>
+         * @return Whether the veh field is set.
+         */
+        @java.lang.Override
+        public boolean hasVeh() {
+            return ((bitField0_ & 0x00000010) != 0);
+        }
+        /**
+         * <code>optional int32 veh = 5;</code>
+         * @return The veh.
+         */
+        @java.lang.Override
+        public int getVeh() {
+            return veh_;
+        }
+
+        public static final int TST_FIELD_NUMBER = 6;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object tst_ = "";
+        /**
+         * <code>required string tst = 6;</code>
+         * @return Whether the tst field is set.
+         */
+        @java.lang.Override
+        public boolean hasTst() {
+            return ((bitField0_ & 0x00000020) != 0);
+        }
+        /**
+         * <code>required string tst = 6;</code>
+         * @return The tst.
+         */
+        @java.lang.Override
+        public java.lang.String getTst() {
+            java.lang.Object ref = tst_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    tst_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>required string tst = 6;</code>
+         * @return The bytes for tst.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getTstBytes() {
+            java.lang.Object ref = tst_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                tst_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int TSI_FIELD_NUMBER = 7;
+        private long tsi_ = 0L;
+        /**
+         * <code>required int64 tsi = 7;</code>
+         * @return Whether the tsi field is set.
+         */
+        @java.lang.Override
+        public boolean hasTsi() {
+            return ((bitField0_ & 0x00000040) != 0);
+        }
+        /**
+         * <code>required int64 tsi = 7;</code>
+         * @return The tsi.
+         */
+        @java.lang.Override
+        public long getTsi() {
+            return tsi_;
+        }
+
+        public static final int SPD_FIELD_NUMBER = 8;
+        private double spd_ = 0D;
+        /**
+         * <code>optional double spd = 8;</code>
+         * @return Whether the spd field is set.
+         */
+        @java.lang.Override
+        public boolean hasSpd() {
+            return ((bitField0_ & 0x00000080) != 0);
+        }
+        /**
+         * <code>optional double spd = 8;</code>
+         * @return The spd.
+         */
+        @java.lang.Override
+        public double getSpd() {
+            return spd_;
+        }
+
+        public static final int HDG_FIELD_NUMBER = 9;
+        private int hdg_ = 0;
+        /**
+         * <code>optional int32 hdg = 9;</code>
+         * @return Whether the hdg field is set.
+         */
+        @java.lang.Override
+        public boolean hasHdg() {
+            return ((bitField0_ & 0x00000100) != 0);
+        }
+        /**
+         * <code>optional int32 hdg = 9;</code>
+         * @return The hdg.
+         */
+        @java.lang.Override
+        public int getHdg() {
+            return hdg_;
+        }
+
+        public static final int LAT_FIELD_NUMBER = 10;
+        private double lat_ = 0D;
+        /**
+         * <code>optional double lat = 10;</code>
+         * @return Whether the lat field is set.
+         */
+        @java.lang.Override
+        public boolean hasLat() {
+            return ((bitField0_ & 0x00000200) != 0);
+        }
+        /**
+         * <code>optional double lat = 10;</code>
+         * @return The lat.
+         */
+        @java.lang.Override
+        public double getLat() {
+            return lat_;
+        }
+
+        public static final int LONG_FIELD_NUMBER = 11;
+        private double long_ = 0D;
+        /**
+         * <code>optional double long = 11;</code>
+         * @return Whether the long field is set.
+         */
+        @java.lang.Override
+        public boolean hasLong() {
+            return ((bitField0_ & 0x00000400) != 0);
+        }
+        /**
+         * <code>optional double long = 11;</code>
+         * @return The long.
+         */
+        @java.lang.Override
+        public double getLong() {
+            return long_;
+        }
+
+        public static final int ACC_FIELD_NUMBER = 12;
+        private double acc_ = 0D;
+        /**
+         * <code>optional double acc = 12;</code>
+         * @return Whether the acc field is set.
+         */
+        @java.lang.Override
+        public boolean hasAcc() {
+            return ((bitField0_ & 0x00000800) != 0);
+        }
+        /**
+         * <code>optional double acc = 12;</code>
+         * @return The acc.
+         */
+        @java.lang.Override
+        public double getAcc() {
+            return acc_;
+        }
+
+        public static final int DL_FIELD_NUMBER = 13;
+        private int dl_ = 0;
+        /**
+         * <code>optional uint32 dl = 13;</code>
+         * @return Whether the dl field is set.
+         */
+        @java.lang.Override
+        public boolean hasDl() {
+            return ((bitField0_ & 0x00001000) != 0);
+        }
+        /**
+         * <code>optional uint32 dl = 13;</code>
+         * @return The dl.
+         */
+        @java.lang.Override
+        public int getDl() {
+            return dl_;
+        }
+
+        public static final int ODO_FIELD_NUMBER = 14;
+        private double odo_ = 0D;
+        /**
+         * <code>optional double odo = 14;</code>
+         * @return Whether the odo field is set.
+         */
+        @java.lang.Override
+        public boolean hasOdo() {
+            return ((bitField0_ & 0x00002000) != 0);
+        }
+        /**
+         * <code>optional double odo = 14;</code>
+         * @return The odo.
+         */
+        @java.lang.Override
+        public double getOdo() {
+            return odo_;
+        }
+
+        public static final int DRST_FIELD_NUMBER = 15;
+        private int drst_ = 0;
+        /**
+         * <code>optional uint32 drst = 15;</code>
+         * @return Whether the drst field is set.
+         */
+        @java.lang.Override
+        public boolean hasDrst() {
+            return ((bitField0_ & 0x00004000) != 0);
+        }
+        /**
+         * <code>optional uint32 drst = 15;</code>
+         * @return The drst.
+         */
+        @java.lang.Override
+        public int getDrst() {
+            return drst_;
+        }
+
+        public static final int ODAY_FIELD_NUMBER = 16;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object oday_ = "";
+        /**
+         * <code>optional string oday = 16;</code>
+         * @return Whether the oday field is set.
+         */
+        @java.lang.Override
+        public boolean hasOday() {
+            return ((bitField0_ & 0x00008000) != 0);
+        }
+        /**
+         * <code>optional string oday = 16;</code>
+         * @return The oday.
+         */
+        @java.lang.Override
+        public java.lang.String getOday() {
+            java.lang.Object ref = oday_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    oday_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>optional string oday = 16;</code>
+         * @return The bytes for oday.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getOdayBytes() {
+            java.lang.Object ref = oday_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                oday_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int JRN_FIELD_NUMBER = 17;
+        private int jrn_ = 0;
+        /**
+         * <code>optional int32 jrn = 17;</code>
+         * @return Whether the jrn field is set.
+         */
+        @java.lang.Override
+        public boolean hasJrn() {
+            return ((bitField0_ & 0x00010000) != 0);
+        }
+        /**
+         * <code>optional int32 jrn = 17;</code>
+         * @return The jrn.
+         */
+        @java.lang.Override
+        public int getJrn() {
+            return jrn_;
+        }
+
+        public static final int LINE_FIELD_NUMBER = 18;
+        private int line_ = 0;
+        /**
+         * <code>optional int32 line = 18;</code>
+         * @return Whether the line field is set.
+         */
+        @java.lang.Override
+        public boolean hasLine() {
+            return ((bitField0_ & 0x00020000) != 0);
+        }
+        /**
+         * <code>optional int32 line = 18;</code>
+         * @return The line.
+         */
+        @java.lang.Override
+        public int getLine() {
+            return line_;
+        }
+
+        public static final int START_FIELD_NUMBER = 19;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object start_ = "";
+        /**
+         * <code>optional string start = 19;</code>
+         * @return Whether the start field is set.
+         */
+        @java.lang.Override
+        public boolean hasStart() {
+            return ((bitField0_ & 0x00040000) != 0);
+        }
+        /**
+         * <code>optional string start = 19;</code>
+         * @return The start.
+         */
+        @java.lang.Override
+        public java.lang.String getStart() {
+            java.lang.Object ref = start_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    start_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>optional string start = 19;</code>
+         * @return The bytes for start.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getStartBytes() {
+            java.lang.Object ref = start_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                start_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int LOC_FIELD_NUMBER = 20;
+        private int loc_ = 0;
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
+         * @return Whether the loc field is set.
+         */
+        @java.lang.Override
+        public boolean hasLoc() {
+            return ((bitField0_ & 0x00080000) != 0);
+        }
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
+         * @return The loc.
+         */
+        @java.lang.Override
+        public fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod getLoc() {
+            fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod result = fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod
+                    .forNumber(loc_);
+            return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod.GPS : result;
+        }
+
+        public static final int STOP_FIELD_NUMBER = 21;
+        private int stop_ = 0;
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional int32 stop = 21;</code>
+         * @return Whether the stop field is set.
+         */
+        @java.lang.Override
+        public boolean hasStop() {
+            return ((bitField0_ & 0x00100000) != 0);
+        }
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional int32 stop = 21;</code>
+         * @return The stop.
+         */
+        @java.lang.Override
+        public int getStop() {
+            return stop_;
+        }
+
+        public static final int ROUTE_FIELD_NUMBER = 22;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object route_ = "";
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional string route = 22;</code>
+         * @return Whether the route field is set.
+         */
+        @java.lang.Override
+        public boolean hasRoute() {
+            return ((bitField0_ & 0x00200000) != 0);
+        }
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional string route = 22;</code>
+         * @return The route.
+         */
+        @java.lang.Override
+        public java.lang.String getRoute() {
+            java.lang.Object ref = route_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    route_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional string route = 22;</code>
+         * @return The bytes for route.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getRouteBytes() {
+            java.lang.Object ref = route_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                route_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int OCCU_FIELD_NUMBER = 23;
+        private int occu_ = 0;
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional int32 occu = 23;</code>
+         * @return Whether the occu field is set.
+         */
+        @java.lang.Override
+        public boolean hasOccu() {
+            return ((bitField0_ & 0x00400000) != 0);
+        }
+        /**
+         * <pre>
+         * v2
+         * </pre>
+         *
+         * <code>optional int32 occu = 23;</code>
+         * @return The occu.
+         */
+        @java.lang.Override
+        public int getOccu() {
+            return occu_;
+        }
+
+        public static final int SEQ_FIELD_NUMBER = 24;
+        private int seq_ = 0;
+        /**
+         * <code>optional int32 seq = 24;</code>
+         * @return Whether the seq field is set.
+         */
+        @java.lang.Override
+        public boolean hasSeq() {
+            return ((bitField0_ & 0x00800000) != 0);
+        }
+        /**
+         * <code>optional int32 seq = 24;</code>
+         * @return The seq.
+         */
+        @java.lang.Override
+        public int getSeq() {
+            return seq_;
+        }
+
+        public static final int TTARR_FIELD_NUMBER = 25;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object ttarr_ = "";
+        /**
+         * <code>optional string ttarr = 25;</code>
+         * @return Whether the ttarr field is set.
+         */
+        @java.lang.Override
+        public boolean hasTtarr() {
+            return ((bitField0_ & 0x01000000) != 0);
+        }
+        /**
+         * <code>optional string ttarr = 25;</code>
+         * @return The ttarr.
+         */
+        @java.lang.Override
+        public java.lang.String getTtarr() {
+            java.lang.Object ref = ttarr_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    ttarr_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>optional string ttarr = 25;</code>
+         * @return The bytes for ttarr.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getTtarrBytes() {
+            java.lang.Object ref = ttarr_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                ttarr_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int TTDEP_FIELD_NUMBER = 26;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object ttdep_ = "";
+        /**
+         * <code>optional string ttdep = 26;</code>
+         * @return Whether the ttdep field is set.
+         */
+        @java.lang.Override
+        public boolean hasTtdep() {
+            return ((bitField0_ & 0x02000000) != 0);
+        }
+        /**
+         * <code>optional string ttdep = 26;</code>
+         * @return The ttdep.
+         */
+        @java.lang.Override
+        public java.lang.String getTtdep() {
+            java.lang.Object ref = ttdep_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    ttdep_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>optional string ttdep = 26;</code>
+         * @return The bytes for ttdep.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getTtdepBytes() {
+            java.lang.Object ref = ttdep_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                ttdep_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int DR_TYPE_FIELD_NUMBER = 27;
+        private int drType_ = 0;
+        /**
+         * <code>optional int32 dr_type = 27;</code>
+         * @return Whether the drType field is set.
+         */
+        @java.lang.Override
+        public boolean hasDrType() {
+            return ((bitField0_ & 0x04000000) != 0);
+        }
+        /**
+         * <code>optional int32 dr_type = 27;</code>
+         * @return The drType.
+         */
+        @java.lang.Override
+        public int getDrType() {
+            return drType_;
+        }
+
+        public static final int TLP_REQUESTID_FIELD_NUMBER = 28;
+        private int tlpRequestid_ = 0;
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_requestid = 28;</code>
+         * @return Whether the tlpRequestid field is set.
+         */
+        @java.lang.Override
+        public boolean hasTlpRequestid() {
+            return ((bitField0_ & 0x08000000) != 0);
+        }
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_requestid = 28;</code>
+         * @return The tlpRequestid.
+         */
+        @java.lang.Override
+        public int getTlpRequestid() {
+            return tlpRequestid_;
+        }
+
+        public static final int TLP_REQUESTTYPE_FIELD_NUMBER = 29;
+        private int tlpRequesttype_ = 0;
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+         * @return Whether the tlpRequesttype field is set.
+         */
+        @java.lang.Override
+        public boolean hasTlpRequesttype() {
+            return ((bitField0_ & 0x10000000) != 0);
+        }
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+         * @return The tlpRequesttype.
+         */
+        @java.lang.Override
+        public fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType getTlpRequesttype() {
+            fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType
+                    .forNumber(tlpRequesttype_);
+            return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType.NORMAL : result;
+        }
+
+        public static final int TLP_PRIORITYLEVEL_FIELD_NUMBER = 30;
+        private int tlpPrioritylevel_ = 0;
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+         * @return Whether the tlpPrioritylevel field is set.
+         */
+        @java.lang.Override
+        public boolean hasTlpPrioritylevel() {
+            return ((bitField0_ & 0x20000000) != 0);
+        }
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+         * @return The tlpPrioritylevel.
+         */
+        @java.lang.Override
+        public fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel getTlpPrioritylevel() {
+            fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel
+                    .forNumber(tlpPrioritylevel_);
+            return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel.normal : result;
+        }
+
+        public static final int TLP_REASON_FIELD_NUMBER = 31;
+        private int tlpReason_ = 0;
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+         * @return Whether the tlpReason field is set.
+         */
+        @java.lang.Override
+        public boolean hasTlpReason() {
+            return ((bitField0_ & 0x40000000) != 0);
+        }
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+         * @return The tlpReason.
+         */
+        @java.lang.Override
+        public fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason getTlpReason() {
+            fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason
+                    .forNumber(tlpReason_);
+            return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason.GLOBAL : result;
+        }
+
+        public static final int TLP_ATT_SEQ_FIELD_NUMBER = 32;
+        private int tlpAttSeq_ = 0;
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_att_seq = 32;</code>
+         * @return Whether the tlpAttSeq field is set.
+         */
+        @java.lang.Override
+        public boolean hasTlpAttSeq() {
+            return ((bitField0_ & 0x80000000) != 0);
+        }
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_att_seq = 32;</code>
+         * @return The tlpAttSeq.
+         */
+        @java.lang.Override
+        public int getTlpAttSeq() {
+            return tlpAttSeq_;
+        }
+
+        public static final int TLP_DECISION_FIELD_NUMBER = 33;
+        private int tlpDecision_ = 0;
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+         * @return Whether the tlpDecision field is set.
+         */
+        @java.lang.Override
+        public boolean hasTlpDecision() {
+            return ((bitField1_ & 0x00000001) != 0);
+        }
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+         * @return The tlpDecision.
+         */
+        @java.lang.Override
+        public fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision getTlpDecision() {
+            fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision
+                    .forNumber(tlpDecision_);
+            return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision.ACK : result;
+        }
+
+        public static final int SID_FIELD_NUMBER = 34;
+        private int sid_ = 0;
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 sid = 34;</code>
+         * @return Whether the sid field is set.
+         */
+        @java.lang.Override
+        public boolean hasSid() {
+            return ((bitField1_ & 0x00000002) != 0);
+        }
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 sid = 34;</code>
+         * @return The sid.
+         */
+        @java.lang.Override
+        public int getSid() {
+            return sid_;
+        }
+
+        public static final int SIGNAL_GROUPID_FIELD_NUMBER = 35;
+        private int signalGroupid_ = 0;
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 signal_groupid = 35;</code>
+         * @return Whether the signalGroupid field is set.
+         */
+        @java.lang.Override
+        public boolean hasSignalGroupid() {
+            return ((bitField1_ & 0x00000004) != 0);
+        }
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 signal_groupid = 35;</code>
+         * @return The signalGroupid.
+         */
+        @java.lang.Override
+        public int getSignalGroupid() {
+            return signalGroupid_;
+        }
+
+        public static final int TLP_SIGNALGROUPNBR_FIELD_NUMBER = 36;
+        private int tlpSignalgroupnbr_ = 0;
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+         * @return Whether the tlpSignalgroupnbr field is set.
+         */
+        @java.lang.Override
+        public boolean hasTlpSignalgroupnbr() {
+            return ((bitField1_ & 0x00000008) != 0);
+        }
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+         * @return The tlpSignalgroupnbr.
+         */
+        @java.lang.Override
+        public int getTlpSignalgroupnbr() {
+            return tlpSignalgroupnbr_;
+        }
+
+        public static final int TLP_LINE_CONFIGID_FIELD_NUMBER = 38;
+        private int tlpLineConfigid_ = 0;
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_line_configid = 38;</code>
+         * @return Whether the tlpLineConfigid field is set.
+         */
+        @java.lang.Override
+        public boolean hasTlpLineConfigid() {
+            return ((bitField1_ & 0x00000010) != 0);
+        }
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_line_configid = 38;</code>
+         * @return The tlpLineConfigid.
+         */
+        @java.lang.Override
+        public int getTlpLineConfigid() {
+            return tlpLineConfigid_;
+        }
+
+        public static final int TLP_POINT_CONFIGID_FIELD_NUMBER = 39;
+        private int tlpPointConfigid_ = 0;
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_point_configid = 39;</code>
+         * @return Whether the tlpPointConfigid field is set.
+         */
+        @java.lang.Override
+        public boolean hasTlpPointConfigid() {
+            return ((bitField1_ & 0x00000020) != 0);
+        }
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_point_configid = 39;</code>
+         * @return The tlpPointConfigid.
+         */
+        @java.lang.Override
+        public int getTlpPointConfigid() {
+            return tlpPointConfigid_;
+        }
+
+        public static final int TLP_FREQUENCY_FIELD_NUMBER = 40;
+        private int tlpFrequency_ = 0;
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_frequency = 40;</code>
+         * @return Whether the tlpFrequency field is set.
+         */
+        @java.lang.Override
+        public boolean hasTlpFrequency() {
+            return ((bitField1_ & 0x00000040) != 0);
+        }
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional int32 tlp_frequency = 40;</code>
+         * @return The tlpFrequency.
+         */
+        @java.lang.Override
+        public int getTlpFrequency() {
+            return tlpFrequency_;
+        }
+
+        public static final int TLP_PROTOCOL_FIELD_NUMBER = 41;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object tlpProtocol_ = "";
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional string tlp_protocol = 41;</code>
+         * @return Whether the tlpProtocol field is set.
+         */
+        @java.lang.Override
+        public boolean hasTlpProtocol() {
+            return ((bitField1_ & 0x00000080) != 0);
+        }
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional string tlp_protocol = 41;</code>
+         * @return The tlpProtocol.
+         */
+        @java.lang.Override
+        public java.lang.String getTlpProtocol() {
+            java.lang.Object ref = tlpProtocol_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    tlpProtocol_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <pre>
+         * tlr
+         * </pre>
+         *
+         * <code>optional string tlp_protocol = 41;</code>
+         * @return The bytes for tlpProtocol.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getTlpProtocolBytes() {
+            java.lang.Object ref = tlpProtocol_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                tlpProtocol_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int LABEL_FIELD_NUMBER = 42;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object label_ = "";
+        /**
+         * <code>optional string label = 42;</code>
+         * @return Whether the label field is set.
+         */
+        @java.lang.Override
+        public boolean hasLabel() {
+            return ((bitField1_ & 0x00000100) != 0);
+        }
+        /**
+         * <code>optional string label = 42;</code>
+         * @return The label.
+         */
+        @java.lang.Override
+        public java.lang.String getLabel() {
+            java.lang.Object ref = label_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    label_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>optional string label = 42;</code>
+         * @return The bytes for label.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getLabelBytes() {
+            java.lang.Object ref = label_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                label_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        private byte memoizedIsInitialized = -1;
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1)
+                return true;
+            if (isInitialized == 0)
+                return false;
+
+            if (!hasSchemaVersion()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasTst()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasTsi()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (((bitField0_ & 0x00000001) != 0)) {
+                output.writeInt32(1, schemaVersion_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, desi_);
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 3, dir_);
+            }
+            if (((bitField0_ & 0x00000008) != 0)) {
+                output.writeInt32(4, oper_);
+            }
+            if (((bitField0_ & 0x00000010) != 0)) {
+                output.writeInt32(5, veh_);
+            }
+            if (((bitField0_ & 0x00000020) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 6, tst_);
+            }
+            if (((bitField0_ & 0x00000040) != 0)) {
+                output.writeInt64(7, tsi_);
+            }
+            if (((bitField0_ & 0x00000080) != 0)) {
+                output.writeDouble(8, spd_);
+            }
+            if (((bitField0_ & 0x00000100) != 0)) {
+                output.writeInt32(9, hdg_);
+            }
+            if (((bitField0_ & 0x00000200) != 0)) {
+                output.writeDouble(10, lat_);
+            }
+            if (((bitField0_ & 0x00000400) != 0)) {
+                output.writeDouble(11, long_);
+            }
+            if (((bitField0_ & 0x00000800) != 0)) {
+                output.writeDouble(12, acc_);
+            }
+            if (((bitField0_ & 0x00001000) != 0)) {
+                output.writeUInt32(13, dl_);
+            }
+            if (((bitField0_ & 0x00002000) != 0)) {
+                output.writeDouble(14, odo_);
+            }
+            if (((bitField0_ & 0x00004000) != 0)) {
+                output.writeUInt32(15, drst_);
+            }
+            if (((bitField0_ & 0x00008000) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 16, oday_);
+            }
+            if (((bitField0_ & 0x00010000) != 0)) {
+                output.writeInt32(17, jrn_);
+            }
+            if (((bitField0_ & 0x00020000) != 0)) {
+                output.writeInt32(18, line_);
+            }
+            if (((bitField0_ & 0x00040000) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 19, start_);
+            }
+            if (((bitField0_ & 0x00080000) != 0)) {
+                output.writeEnum(20, loc_);
+            }
+            if (((bitField0_ & 0x00100000) != 0)) {
+                output.writeInt32(21, stop_);
+            }
+            if (((bitField0_ & 0x00200000) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 22, route_);
+            }
+            if (((bitField0_ & 0x00400000) != 0)) {
+                output.writeInt32(23, occu_);
+            }
+            if (((bitField0_ & 0x00800000) != 0)) {
+                output.writeInt32(24, seq_);
+            }
+            if (((bitField0_ & 0x01000000) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 25, ttarr_);
+            }
+            if (((bitField0_ & 0x02000000) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 26, ttdep_);
+            }
+            if (((bitField0_ & 0x04000000) != 0)) {
+                output.writeInt32(27, drType_);
+            }
+            if (((bitField0_ & 0x08000000) != 0)) {
+                output.writeInt32(28, tlpRequestid_);
+            }
+            if (((bitField0_ & 0x10000000) != 0)) {
+                output.writeEnum(29, tlpRequesttype_);
+            }
+            if (((bitField0_ & 0x20000000) != 0)) {
+                output.writeEnum(30, tlpPrioritylevel_);
+            }
+            if (((bitField0_ & 0x40000000) != 0)) {
+                output.writeEnum(31, tlpReason_);
+            }
+            if (((bitField0_ & 0x80000000) != 0)) {
+                output.writeInt32(32, tlpAttSeq_);
+            }
+            if (((bitField1_ & 0x00000001) != 0)) {
+                output.writeEnum(33, tlpDecision_);
+            }
+            if (((bitField1_ & 0x00000002) != 0)) {
+                output.writeInt32(34, sid_);
+            }
+            if (((bitField1_ & 0x00000004) != 0)) {
+                output.writeInt32(35, signalGroupid_);
+            }
+            if (((bitField1_ & 0x00000008) != 0)) {
+                output.writeInt32(36, tlpSignalgroupnbr_);
+            }
+            if (((bitField1_ & 0x00000010) != 0)) {
+                output.writeInt32(38, tlpLineConfigid_);
+            }
+            if (((bitField1_ & 0x00000020) != 0)) {
+                output.writeInt32(39, tlpPointConfigid_);
+            }
+            if (((bitField1_ & 0x00000040) != 0)) {
+                output.writeInt32(40, tlpFrequency_);
+            }
+            if (((bitField1_ & 0x00000080) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 41, tlpProtocol_);
+            }
+            if (((bitField1_ & 0x00000100) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 42, label_);
+            }
+            getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1)
+                return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, schemaVersion_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, desi_);
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, dir_);
+            }
+            if (((bitField0_ & 0x00000008) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, oper_);
+            }
+            if (((bitField0_ & 0x00000010) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, veh_);
+            }
+            if (((bitField0_ & 0x00000020) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, tst_);
+            }
+            if (((bitField0_ & 0x00000040) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt64Size(7, tsi_);
+            }
+            if (((bitField0_ & 0x00000080) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeDoubleSize(8, spd_);
+            }
+            if (((bitField0_ & 0x00000100) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(9, hdg_);
+            }
+            if (((bitField0_ & 0x00000200) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeDoubleSize(10, lat_);
+            }
+            if (((bitField0_ & 0x00000400) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeDoubleSize(11, long_);
+            }
+            if (((bitField0_ & 0x00000800) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeDoubleSize(12, acc_);
+            }
+            if (((bitField0_ & 0x00001000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(13, dl_);
+            }
+            if (((bitField0_ & 0x00002000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeDoubleSize(14, odo_);
+            }
+            if (((bitField0_ & 0x00004000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(15, drst_);
+            }
+            if (((bitField0_ & 0x00008000) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, oday_);
+            }
+            if (((bitField0_ & 0x00010000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(17, jrn_);
+            }
+            if (((bitField0_ & 0x00020000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(18, line_);
+            }
+            if (((bitField0_ & 0x00040000) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, start_);
+            }
+            if (((bitField0_ & 0x00080000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(20, loc_);
+            }
+            if (((bitField0_ & 0x00100000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(21, stop_);
+            }
+            if (((bitField0_ & 0x00200000) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, route_);
+            }
+            if (((bitField0_ & 0x00400000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(23, occu_);
+            }
+            if (((bitField0_ & 0x00800000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(24, seq_);
+            }
+            if (((bitField0_ & 0x01000000) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, ttarr_);
+            }
+            if (((bitField0_ & 0x02000000) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, ttdep_);
+            }
+            if (((bitField0_ & 0x04000000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(27, drType_);
+            }
+            if (((bitField0_ & 0x08000000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(28, tlpRequestid_);
+            }
+            if (((bitField0_ & 0x10000000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(29, tlpRequesttype_);
+            }
+            if (((bitField0_ & 0x20000000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(30, tlpPrioritylevel_);
+            }
+            if (((bitField0_ & 0x40000000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(31, tlpReason_);
+            }
+            if (((bitField0_ & 0x80000000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(32, tlpAttSeq_);
+            }
+            if (((bitField1_ & 0x00000001) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(33, tlpDecision_);
+            }
+            if (((bitField1_ & 0x00000002) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(34, sid_);
+            }
+            if (((bitField1_ & 0x00000004) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(35, signalGroupid_);
+            }
+            if (((bitField1_ & 0x00000008) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(36, tlpSignalgroupnbr_);
+            }
+            if (((bitField1_ & 0x00000010) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(38, tlpLineConfigid_);
+            }
+            if (((bitField1_ & 0x00000020) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(39, tlpPointConfigid_);
+            }
+            if (((bitField1_ & 0x00000040) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(40, tlpFrequency_);
+            }
+            if (((bitField1_ & 0x00000080) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(41, tlpProtocol_);
+            }
+            if (((bitField1_ & 0x00000100) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(42, label_);
+            }
+            size += getUnknownFields().getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof fi.hsl.common.hfp.proto.Hfp.Payload)) {
+                return super.equals(obj);
+            }
+            fi.hsl.common.hfp.proto.Hfp.Payload other = (fi.hsl.common.hfp.proto.Hfp.Payload) obj;
+
+            if (hasSchemaVersion() != other.hasSchemaVersion())
+                return false;
+            if (hasSchemaVersion()) {
+                if (getSchemaVersion() != other.getSchemaVersion())
+                    return false;
+            }
+            if (hasDesi() != other.hasDesi())
+                return false;
+            if (hasDesi()) {
+                if (!getDesi().equals(other.getDesi()))
+                    return false;
+            }
+            if (hasDir() != other.hasDir())
+                return false;
+            if (hasDir()) {
+                if (!getDir().equals(other.getDir()))
+                    return false;
+            }
+            if (hasOper() != other.hasOper())
+                return false;
+            if (hasOper()) {
+                if (getOper() != other.getOper())
+                    return false;
+            }
+            if (hasVeh() != other.hasVeh())
+                return false;
+            if (hasVeh()) {
+                if (getVeh() != other.getVeh())
+                    return false;
+            }
+            if (hasTst() != other.hasTst())
+                return false;
+            if (hasTst()) {
+                if (!getTst().equals(other.getTst()))
+                    return false;
+            }
+            if (hasTsi() != other.hasTsi())
+                return false;
+            if (hasTsi()) {
+                if (getTsi() != other.getTsi())
+                    return false;
+            }
+            if (hasSpd() != other.hasSpd())
+                return false;
+            if (hasSpd()) {
+                if (java.lang.Double.doubleToLongBits(getSpd()) != java.lang.Double.doubleToLongBits(other.getSpd()))
+                    return false;
+            }
+            if (hasHdg() != other.hasHdg())
+                return false;
+            if (hasHdg()) {
+                if (getHdg() != other.getHdg())
+                    return false;
+            }
+            if (hasLat() != other.hasLat())
+                return false;
+            if (hasLat()) {
+                if (java.lang.Double.doubleToLongBits(getLat()) != java.lang.Double.doubleToLongBits(other.getLat()))
+                    return false;
+            }
+            if (hasLong() != other.hasLong())
+                return false;
+            if (hasLong()) {
+                if (java.lang.Double.doubleToLongBits(getLong()) != java.lang.Double.doubleToLongBits(other.getLong()))
+                    return false;
+            }
+            if (hasAcc() != other.hasAcc())
+                return false;
+            if (hasAcc()) {
+                if (java.lang.Double.doubleToLongBits(getAcc()) != java.lang.Double.doubleToLongBits(other.getAcc()))
+                    return false;
+            }
+            if (hasDl() != other.hasDl())
+                return false;
+            if (hasDl()) {
+                if (getDl() != other.getDl())
+                    return false;
+            }
+            if (hasOdo() != other.hasOdo())
+                return false;
+            if (hasOdo()) {
+                if (java.lang.Double.doubleToLongBits(getOdo()) != java.lang.Double.doubleToLongBits(other.getOdo()))
+                    return false;
+            }
+            if (hasDrst() != other.hasDrst())
+                return false;
+            if (hasDrst()) {
+                if (getDrst() != other.getDrst())
+                    return false;
+            }
+            if (hasOday() != other.hasOday())
+                return false;
+            if (hasOday()) {
+                if (!getOday().equals(other.getOday()))
+                    return false;
+            }
+            if (hasJrn() != other.hasJrn())
+                return false;
+            if (hasJrn()) {
+                if (getJrn() != other.getJrn())
+                    return false;
+            }
+            if (hasLine() != other.hasLine())
+                return false;
+            if (hasLine()) {
+                if (getLine() != other.getLine())
+                    return false;
+            }
+            if (hasStart() != other.hasStart())
+                return false;
+            if (hasStart()) {
+                if (!getStart().equals(other.getStart()))
+                    return false;
+            }
+            if (hasLoc() != other.hasLoc())
+                return false;
+            if (hasLoc()) {
+                if (loc_ != other.loc_)
+                    return false;
+            }
+            if (hasStop() != other.hasStop())
+                return false;
+            if (hasStop()) {
+                if (getStop() != other.getStop())
+                    return false;
+            }
+            if (hasRoute() != other.hasRoute())
+                return false;
+            if (hasRoute()) {
+                if (!getRoute().equals(other.getRoute()))
+                    return false;
+            }
+            if (hasOccu() != other.hasOccu())
+                return false;
+            if (hasOccu()) {
+                if (getOccu() != other.getOccu())
+                    return false;
+            }
+            if (hasSeq() != other.hasSeq())
+                return false;
+            if (hasSeq()) {
+                if (getSeq() != other.getSeq())
+                    return false;
+            }
+            if (hasTtarr() != other.hasTtarr())
+                return false;
+            if (hasTtarr()) {
+                if (!getTtarr().equals(other.getTtarr()))
+                    return false;
+            }
+            if (hasTtdep() != other.hasTtdep())
+                return false;
+            if (hasTtdep()) {
+                if (!getTtdep().equals(other.getTtdep()))
+                    return false;
+            }
+            if (hasDrType() != other.hasDrType())
+                return false;
+            if (hasDrType()) {
+                if (getDrType() != other.getDrType())
+                    return false;
+            }
+            if (hasTlpRequestid() != other.hasTlpRequestid())
+                return false;
+            if (hasTlpRequestid()) {
+                if (getTlpRequestid() != other.getTlpRequestid())
+                    return false;
+            }
+            if (hasTlpRequesttype() != other.hasTlpRequesttype())
+                return false;
+            if (hasTlpRequesttype()) {
+                if (tlpRequesttype_ != other.tlpRequesttype_)
+                    return false;
+            }
+            if (hasTlpPrioritylevel() != other.hasTlpPrioritylevel())
+                return false;
+            if (hasTlpPrioritylevel()) {
+                if (tlpPrioritylevel_ != other.tlpPrioritylevel_)
+                    return false;
+            }
+            if (hasTlpReason() != other.hasTlpReason())
+                return false;
+            if (hasTlpReason()) {
+                if (tlpReason_ != other.tlpReason_)
+                    return false;
+            }
+            if (hasTlpAttSeq() != other.hasTlpAttSeq())
+                return false;
+            if (hasTlpAttSeq()) {
+                if (getTlpAttSeq() != other.getTlpAttSeq())
+                    return false;
+            }
+            if (hasTlpDecision() != other.hasTlpDecision())
+                return false;
+            if (hasTlpDecision()) {
+                if (tlpDecision_ != other.tlpDecision_)
+                    return false;
+            }
+            if (hasSid() != other.hasSid())
+                return false;
+            if (hasSid()) {
+                if (getSid() != other.getSid())
+                    return false;
+            }
+            if (hasSignalGroupid() != other.hasSignalGroupid())
+                return false;
+            if (hasSignalGroupid()) {
+                if (getSignalGroupid() != other.getSignalGroupid())
+                    return false;
+            }
+            if (hasTlpSignalgroupnbr() != other.hasTlpSignalgroupnbr())
+                return false;
+            if (hasTlpSignalgroupnbr()) {
+                if (getTlpSignalgroupnbr() != other.getTlpSignalgroupnbr())
+                    return false;
+            }
+            if (hasTlpLineConfigid() != other.hasTlpLineConfigid())
+                return false;
+            if (hasTlpLineConfigid()) {
+                if (getTlpLineConfigid() != other.getTlpLineConfigid())
+                    return false;
+            }
+            if (hasTlpPointConfigid() != other.hasTlpPointConfigid())
+                return false;
+            if (hasTlpPointConfigid()) {
+                if (getTlpPointConfigid() != other.getTlpPointConfigid())
+                    return false;
+            }
+            if (hasTlpFrequency() != other.hasTlpFrequency())
+                return false;
+            if (hasTlpFrequency()) {
+                if (getTlpFrequency() != other.getTlpFrequency())
+                    return false;
+            }
+            if (hasTlpProtocol() != other.hasTlpProtocol())
+                return false;
+            if (hasTlpProtocol()) {
+                if (!getTlpProtocol().equals(other.getTlpProtocol()))
+                    return false;
+            }
+            if (hasLabel() != other.hasLabel())
+                return false;
+            if (hasLabel()) {
+                if (!getLabel().equals(other.getLabel()))
+                    return false;
+            }
+            if (!getUnknownFields().equals(other.getUnknownFields()))
+                return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasSchemaVersion()) {
+                hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
+                hash = (53 * hash) + getSchemaVersion();
+            }
+            if (hasDesi()) {
+                hash = (37 * hash) + DESI_FIELD_NUMBER;
+                hash = (53 * hash) + getDesi().hashCode();
+            }
+            if (hasDir()) {
+                hash = (37 * hash) + DIR_FIELD_NUMBER;
+                hash = (53 * hash) + getDir().hashCode();
+            }
+            if (hasOper()) {
+                hash = (37 * hash) + OPER_FIELD_NUMBER;
+                hash = (53 * hash) + getOper();
+            }
+            if (hasVeh()) {
+                hash = (37 * hash) + VEH_FIELD_NUMBER;
+                hash = (53 * hash) + getVeh();
+            }
+            if (hasTst()) {
+                hash = (37 * hash) + TST_FIELD_NUMBER;
+                hash = (53 * hash) + getTst().hashCode();
+            }
+            if (hasTsi()) {
+                hash = (37 * hash) + TSI_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTsi());
+            }
+            if (hasSpd()) {
+                hash = (37 * hash) + SPD_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getSpd()));
+            }
+            if (hasHdg()) {
+                hash = (37 * hash) + HDG_FIELD_NUMBER;
+                hash = (53 * hash) + getHdg();
+            }
+            if (hasLat()) {
+                hash = (37 * hash) + LAT_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getLat()));
+            }
+            if (hasLong()) {
+                hash = (37 * hash) + LONG_FIELD_NUMBER;
+                hash = (53 * hash)
+                        + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getLong()));
+            }
+            if (hasAcc()) {
+                hash = (37 * hash) + ACC_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getAcc()));
+            }
+            if (hasDl()) {
+                hash = (37 * hash) + DL_FIELD_NUMBER;
+                hash = (53 * hash) + getDl();
+            }
+            if (hasOdo()) {
+                hash = (37 * hash) + ODO_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getOdo()));
+            }
+            if (hasDrst()) {
+                hash = (37 * hash) + DRST_FIELD_NUMBER;
+                hash = (53 * hash) + getDrst();
+            }
+            if (hasOday()) {
+                hash = (37 * hash) + ODAY_FIELD_NUMBER;
+                hash = (53 * hash) + getOday().hashCode();
+            }
+            if (hasJrn()) {
+                hash = (37 * hash) + JRN_FIELD_NUMBER;
+                hash = (53 * hash) + getJrn();
+            }
+            if (hasLine()) {
+                hash = (37 * hash) + LINE_FIELD_NUMBER;
+                hash = (53 * hash) + getLine();
+            }
+            if (hasStart()) {
+                hash = (37 * hash) + START_FIELD_NUMBER;
+                hash = (53 * hash) + getStart().hashCode();
+            }
+            if (hasLoc()) {
+                hash = (37 * hash) + LOC_FIELD_NUMBER;
+                hash = (53 * hash) + loc_;
+            }
+            if (hasStop()) {
+                hash = (37 * hash) + STOP_FIELD_NUMBER;
+                hash = (53 * hash) + getStop();
+            }
+            if (hasRoute()) {
+                hash = (37 * hash) + ROUTE_FIELD_NUMBER;
+                hash = (53 * hash) + getRoute().hashCode();
+            }
+            if (hasOccu()) {
+                hash = (37 * hash) + OCCU_FIELD_NUMBER;
+                hash = (53 * hash) + getOccu();
+            }
+            if (hasSeq()) {
+                hash = (37 * hash) + SEQ_FIELD_NUMBER;
+                hash = (53 * hash) + getSeq();
+            }
+            if (hasTtarr()) {
+                hash = (37 * hash) + TTARR_FIELD_NUMBER;
+                hash = (53 * hash) + getTtarr().hashCode();
+            }
+            if (hasTtdep()) {
+                hash = (37 * hash) + TTDEP_FIELD_NUMBER;
+                hash = (53 * hash) + getTtdep().hashCode();
+            }
+            if (hasDrType()) {
+                hash = (37 * hash) + DR_TYPE_FIELD_NUMBER;
+                hash = (53 * hash) + getDrType();
+            }
+            if (hasTlpRequestid()) {
+                hash = (37 * hash) + TLP_REQUESTID_FIELD_NUMBER;
+                hash = (53 * hash) + getTlpRequestid();
+            }
+            if (hasTlpRequesttype()) {
+                hash = (37 * hash) + TLP_REQUESTTYPE_FIELD_NUMBER;
+                hash = (53 * hash) + tlpRequesttype_;
+            }
+            if (hasTlpPrioritylevel()) {
+                hash = (37 * hash) + TLP_PRIORITYLEVEL_FIELD_NUMBER;
+                hash = (53 * hash) + tlpPrioritylevel_;
+            }
+            if (hasTlpReason()) {
+                hash = (37 * hash) + TLP_REASON_FIELD_NUMBER;
+                hash = (53 * hash) + tlpReason_;
+            }
+            if (hasTlpAttSeq()) {
+                hash = (37 * hash) + TLP_ATT_SEQ_FIELD_NUMBER;
+                hash = (53 * hash) + getTlpAttSeq();
+            }
+            if (hasTlpDecision()) {
+                hash = (37 * hash) + TLP_DECISION_FIELD_NUMBER;
+                hash = (53 * hash) + tlpDecision_;
+            }
+            if (hasSid()) {
+                hash = (37 * hash) + SID_FIELD_NUMBER;
+                hash = (53 * hash) + getSid();
+            }
+            if (hasSignalGroupid()) {
+                hash = (37 * hash) + SIGNAL_GROUPID_FIELD_NUMBER;
+                hash = (53 * hash) + getSignalGroupid();
+            }
+            if (hasTlpSignalgroupnbr()) {
+                hash = (37 * hash) + TLP_SIGNALGROUPNBR_FIELD_NUMBER;
+                hash = (53 * hash) + getTlpSignalgroupnbr();
+            }
+            if (hasTlpLineConfigid()) {
+                hash = (37 * hash) + TLP_LINE_CONFIGID_FIELD_NUMBER;
+                hash = (53 * hash) + getTlpLineConfigid();
+            }
+            if (hasTlpPointConfigid()) {
+                hash = (37 * hash) + TLP_POINT_CONFIGID_FIELD_NUMBER;
+                hash = (53 * hash) + getTlpPointConfigid();
+            }
+            if (hasTlpFrequency()) {
+                hash = (37 * hash) + TLP_FREQUENCY_FIELD_NUMBER;
+                hash = (53 * hash) + getTlpFrequency();
+            }
+            if (hasTlpProtocol()) {
+                hash = (37 * hash) + TLP_PROTOCOL_FIELD_NUMBER;
+                hash = (53 * hash) + getTlpProtocol().hashCode();
+            }
+            if (hasLabel()) {
+                hash = (37 * hash) + LABEL_FIELD_NUMBER;
+                hash = (53 * hash) + getLabel().hashCode();
+            }
+            hash = (29 * hash) + getUnknownFields().hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Payload parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Payload parseDelimitedFrom(java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+                    extensionRegistry);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.hfp.proto.Hfp.Payload parseFrom(com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+        public static Builder newBuilder(fi.hsl.common.hfp.proto.Hfp.Payload prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         * Protobuf type {@code proto.Payload}
+         */
+        public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                    // @@protoc_insertion_point(builder_implements:proto.Payload)
+                    fi.hsl.common.hfp.proto.Hfp.PayloadOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Payload_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+                return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Payload_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(fi.hsl.common.hfp.proto.Hfp.Payload.class,
+                                fi.hsl.common.hfp.proto.Hfp.Payload.Builder.class);
+            }
+
+            // Construct using fi.hsl.common.hfp.proto.Hfp.Payload.newBuilder()
+            private Builder() {
+
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+
+            }
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                bitField0_ = 0;
+                bitField1_ = 0;
+                schemaVersion_ = 1;
+                desi_ = "";
+                dir_ = "";
+                oper_ = 0;
+                veh_ = 0;
+                tst_ = "";
+                tsi_ = 0L;
+                spd_ = 0D;
+                hdg_ = 0;
+                lat_ = 0D;
+                long_ = 0D;
+                acc_ = 0D;
+                dl_ = 0;
+                odo_ = 0D;
+                drst_ = 0;
+                oday_ = "";
+                jrn_ = 0;
+                line_ = 0;
+                start_ = "";
+                loc_ = 0;
+                stop_ = 0;
+                route_ = "";
+                occu_ = 0;
+                seq_ = 0;
+                ttarr_ = "";
+                ttdep_ = "";
+                drType_ = 0;
+                tlpRequestid_ = 0;
+                tlpRequesttype_ = 0;
+                tlpPrioritylevel_ = 0;
+                tlpReason_ = 0;
+                tlpAttSeq_ = 0;
+                tlpDecision_ = 0;
+                sid_ = 0;
+                signalGroupid_ = 0;
+                tlpSignalgroupnbr_ = 0;
+                tlpLineConfigid_ = 0;
+                tlpPointConfigid_ = 0;
+                tlpFrequency_ = 0;
+                tlpProtocol_ = "";
+                label_ = "";
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return fi.hsl.common.hfp.proto.Hfp.internal_static_proto_Payload_descriptor;
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.hfp.proto.Hfp.Payload getDefaultInstanceForType() {
+                return fi.hsl.common.hfp.proto.Hfp.Payload.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.hfp.proto.Hfp.Payload build() {
+                fi.hsl.common.hfp.proto.Hfp.Payload result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.hfp.proto.Hfp.Payload buildPartial() {
+                fi.hsl.common.hfp.proto.Hfp.Payload result = new fi.hsl.common.hfp.proto.Hfp.Payload(this);
+                if (bitField0_ != 0) {
+                    buildPartial0(result);
+                }
+                if (bitField1_ != 0) {
+                    buildPartial1(result);
+                }
+                onBuilt();
+                return result;
+            }
+
+            private void buildPartial0(fi.hsl.common.hfp.proto.Hfp.Payload result) {
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) != 0)) {
+                    result.schemaVersion_ = schemaVersion_;
+                    to_bitField0_ |= 0x00000001;
+                }
+                if (((from_bitField0_ & 0x00000002) != 0)) {
+                    result.desi_ = desi_;
+                    to_bitField0_ |= 0x00000002;
+                }
+                if (((from_bitField0_ & 0x00000004) != 0)) {
+                    result.dir_ = dir_;
+                    to_bitField0_ |= 0x00000004;
+                }
+                if (((from_bitField0_ & 0x00000008) != 0)) {
+                    result.oper_ = oper_;
+                    to_bitField0_ |= 0x00000008;
+                }
+                if (((from_bitField0_ & 0x00000010) != 0)) {
+                    result.veh_ = veh_;
+                    to_bitField0_ |= 0x00000010;
+                }
+                if (((from_bitField0_ & 0x00000020) != 0)) {
+                    result.tst_ = tst_;
+                    to_bitField0_ |= 0x00000020;
+                }
+                if (((from_bitField0_ & 0x00000040) != 0)) {
+                    result.tsi_ = tsi_;
+                    to_bitField0_ |= 0x00000040;
+                }
+                if (((from_bitField0_ & 0x00000080) != 0)) {
+                    result.spd_ = spd_;
+                    to_bitField0_ |= 0x00000080;
+                }
+                if (((from_bitField0_ & 0x00000100) != 0)) {
+                    result.hdg_ = hdg_;
+                    to_bitField0_ |= 0x00000100;
+                }
+                if (((from_bitField0_ & 0x00000200) != 0)) {
+                    result.lat_ = lat_;
+                    to_bitField0_ |= 0x00000200;
+                }
+                if (((from_bitField0_ & 0x00000400) != 0)) {
+                    result.long_ = long_;
+                    to_bitField0_ |= 0x00000400;
+                }
+                if (((from_bitField0_ & 0x00000800) != 0)) {
+                    result.acc_ = acc_;
+                    to_bitField0_ |= 0x00000800;
+                }
+                if (((from_bitField0_ & 0x00001000) != 0)) {
+                    result.dl_ = dl_;
+                    to_bitField0_ |= 0x00001000;
+                }
+                if (((from_bitField0_ & 0x00002000) != 0)) {
+                    result.odo_ = odo_;
+                    to_bitField0_ |= 0x00002000;
+                }
+                if (((from_bitField0_ & 0x00004000) != 0)) {
+                    result.drst_ = drst_;
+                    to_bitField0_ |= 0x00004000;
+                }
+                if (((from_bitField0_ & 0x00008000) != 0)) {
+                    result.oday_ = oday_;
+                    to_bitField0_ |= 0x00008000;
+                }
+                if (((from_bitField0_ & 0x00010000) != 0)) {
+                    result.jrn_ = jrn_;
+                    to_bitField0_ |= 0x00010000;
+                }
+                if (((from_bitField0_ & 0x00020000) != 0)) {
+                    result.line_ = line_;
+                    to_bitField0_ |= 0x00020000;
+                }
+                if (((from_bitField0_ & 0x00040000) != 0)) {
+                    result.start_ = start_;
+                    to_bitField0_ |= 0x00040000;
+                }
+                if (((from_bitField0_ & 0x00080000) != 0)) {
+                    result.loc_ = loc_;
+                    to_bitField0_ |= 0x00080000;
+                }
+                if (((from_bitField0_ & 0x00100000) != 0)) {
+                    result.stop_ = stop_;
+                    to_bitField0_ |= 0x00100000;
+                }
+                if (((from_bitField0_ & 0x00200000) != 0)) {
+                    result.route_ = route_;
+                    to_bitField0_ |= 0x00200000;
+                }
+                if (((from_bitField0_ & 0x00400000) != 0)) {
+                    result.occu_ = occu_;
+                    to_bitField0_ |= 0x00400000;
+                }
+                if (((from_bitField0_ & 0x00800000) != 0)) {
+                    result.seq_ = seq_;
+                    to_bitField0_ |= 0x00800000;
+                }
+                if (((from_bitField0_ & 0x01000000) != 0)) {
+                    result.ttarr_ = ttarr_;
+                    to_bitField0_ |= 0x01000000;
+                }
+                if (((from_bitField0_ & 0x02000000) != 0)) {
+                    result.ttdep_ = ttdep_;
+                    to_bitField0_ |= 0x02000000;
+                }
+                if (((from_bitField0_ & 0x04000000) != 0)) {
+                    result.drType_ = drType_;
+                    to_bitField0_ |= 0x04000000;
+                }
+                if (((from_bitField0_ & 0x08000000) != 0)) {
+                    result.tlpRequestid_ = tlpRequestid_;
+                    to_bitField0_ |= 0x08000000;
+                }
+                if (((from_bitField0_ & 0x10000000) != 0)) {
+                    result.tlpRequesttype_ = tlpRequesttype_;
+                    to_bitField0_ |= 0x10000000;
+                }
+                if (((from_bitField0_ & 0x20000000) != 0)) {
+                    result.tlpPrioritylevel_ = tlpPrioritylevel_;
+                    to_bitField0_ |= 0x20000000;
+                }
+                if (((from_bitField0_ & 0x40000000) != 0)) {
+                    result.tlpReason_ = tlpReason_;
+                    to_bitField0_ |= 0x40000000;
+                }
+                if (((from_bitField0_ & 0x80000000) != 0)) {
+                    result.tlpAttSeq_ = tlpAttSeq_;
+                    to_bitField0_ |= 0x80000000;
+                }
+                result.bitField0_ |= to_bitField0_;
+            }
+
+            private void buildPartial1(fi.hsl.common.hfp.proto.Hfp.Payload result) {
+                int from_bitField1_ = bitField1_;
+                int to_bitField1_ = 0;
+                if (((from_bitField1_ & 0x00000001) != 0)) {
+                    result.tlpDecision_ = tlpDecision_;
+                    to_bitField1_ |= 0x00000001;
+                }
+                if (((from_bitField1_ & 0x00000002) != 0)) {
+                    result.sid_ = sid_;
+                    to_bitField1_ |= 0x00000002;
+                }
+                if (((from_bitField1_ & 0x00000004) != 0)) {
+                    result.signalGroupid_ = signalGroupid_;
+                    to_bitField1_ |= 0x00000004;
+                }
+                if (((from_bitField1_ & 0x00000008) != 0)) {
+                    result.tlpSignalgroupnbr_ = tlpSignalgroupnbr_;
+                    to_bitField1_ |= 0x00000008;
+                }
+                if (((from_bitField1_ & 0x00000010) != 0)) {
+                    result.tlpLineConfigid_ = tlpLineConfigid_;
+                    to_bitField1_ |= 0x00000010;
+                }
+                if (((from_bitField1_ & 0x00000020) != 0)) {
+                    result.tlpPointConfigid_ = tlpPointConfigid_;
+                    to_bitField1_ |= 0x00000020;
+                }
+                if (((from_bitField1_ & 0x00000040) != 0)) {
+                    result.tlpFrequency_ = tlpFrequency_;
+                    to_bitField1_ |= 0x00000040;
+                }
+                if (((from_bitField1_ & 0x00000080) != 0)) {
+                    result.tlpProtocol_ = tlpProtocol_;
+                    to_bitField1_ |= 0x00000080;
+                }
+                if (((from_bitField1_ & 0x00000100) != 0)) {
+                    result.label_ = label_;
+                    to_bitField1_ |= 0x00000100;
+                }
+                result.bitField1_ |= to_bitField1_;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+            @java.lang.Override
+            public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+            @java.lang.Override
+            public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+            @java.lang.Override
+            public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof fi.hsl.common.hfp.proto.Hfp.Payload) {
+                    return mergeFrom((fi.hsl.common.hfp.proto.Hfp.Payload) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(fi.hsl.common.hfp.proto.Hfp.Payload other) {
+                if (other == fi.hsl.common.hfp.proto.Hfp.Payload.getDefaultInstance())
+                    return this;
+                if (other.hasSchemaVersion()) {
+                    setSchemaVersion(other.getSchemaVersion());
+                }
+                if (other.hasDesi()) {
+                    desi_ = other.desi_;
+                    bitField0_ |= 0x00000002;
+                    onChanged();
+                }
+                if (other.hasDir()) {
+                    dir_ = other.dir_;
+                    bitField0_ |= 0x00000004;
+                    onChanged();
+                }
+                if (other.hasOper()) {
+                    setOper(other.getOper());
+                }
+                if (other.hasVeh()) {
+                    setVeh(other.getVeh());
+                }
+                if (other.hasTst()) {
+                    tst_ = other.tst_;
+                    bitField0_ |= 0x00000020;
+                    onChanged();
+                }
+                if (other.hasTsi()) {
+                    setTsi(other.getTsi());
+                }
+                if (other.hasSpd()) {
+                    setSpd(other.getSpd());
+                }
+                if (other.hasHdg()) {
+                    setHdg(other.getHdg());
+                }
+                if (other.hasLat()) {
+                    setLat(other.getLat());
+                }
+                if (other.hasLong()) {
+                    setLong(other.getLong());
+                }
+                if (other.hasAcc()) {
+                    setAcc(other.getAcc());
+                }
+                if (other.hasDl()) {
+                    setDl(other.getDl());
+                }
+                if (other.hasOdo()) {
+                    setOdo(other.getOdo());
+                }
+                if (other.hasDrst()) {
+                    setDrst(other.getDrst());
+                }
+                if (other.hasOday()) {
+                    oday_ = other.oday_;
+                    bitField0_ |= 0x00008000;
+                    onChanged();
+                }
+                if (other.hasJrn()) {
+                    setJrn(other.getJrn());
+                }
+                if (other.hasLine()) {
+                    setLine(other.getLine());
+                }
+                if (other.hasStart()) {
+                    start_ = other.start_;
+                    bitField0_ |= 0x00040000;
+                    onChanged();
+                }
+                if (other.hasLoc()) {
+                    setLoc(other.getLoc());
+                }
+                if (other.hasStop()) {
+                    setStop(other.getStop());
+                }
+                if (other.hasRoute()) {
+                    route_ = other.route_;
+                    bitField0_ |= 0x00200000;
+                    onChanged();
+                }
+                if (other.hasOccu()) {
+                    setOccu(other.getOccu());
+                }
+                if (other.hasSeq()) {
+                    setSeq(other.getSeq());
+                }
+                if (other.hasTtarr()) {
+                    ttarr_ = other.ttarr_;
+                    bitField0_ |= 0x01000000;
+                    onChanged();
+                }
+                if (other.hasTtdep()) {
+                    ttdep_ = other.ttdep_;
+                    bitField0_ |= 0x02000000;
+                    onChanged();
+                }
+                if (other.hasDrType()) {
+                    setDrType(other.getDrType());
+                }
+                if (other.hasTlpRequestid()) {
+                    setTlpRequestid(other.getTlpRequestid());
+                }
+                if (other.hasTlpRequesttype()) {
+                    setTlpRequesttype(other.getTlpRequesttype());
+                }
+                if (other.hasTlpPrioritylevel()) {
+                    setTlpPrioritylevel(other.getTlpPrioritylevel());
+                }
+                if (other.hasTlpReason()) {
+                    setTlpReason(other.getTlpReason());
+                }
+                if (other.hasTlpAttSeq()) {
+                    setTlpAttSeq(other.getTlpAttSeq());
+                }
+                if (other.hasTlpDecision()) {
+                    setTlpDecision(other.getTlpDecision());
+                }
+                if (other.hasSid()) {
+                    setSid(other.getSid());
+                }
+                if (other.hasSignalGroupid()) {
+                    setSignalGroupid(other.getSignalGroupid());
+                }
+                if (other.hasTlpSignalgroupnbr()) {
+                    setTlpSignalgroupnbr(other.getTlpSignalgroupnbr());
+                }
+                if (other.hasTlpLineConfigid()) {
+                    setTlpLineConfigid(other.getTlpLineConfigid());
+                }
+                if (other.hasTlpPointConfigid()) {
+                    setTlpPointConfigid(other.getTlpPointConfigid());
+                }
+                if (other.hasTlpFrequency()) {
+                    setTlpFrequency(other.getTlpFrequency());
+                }
+                if (other.hasTlpProtocol()) {
+                    tlpProtocol_ = other.tlpProtocol_;
+                    bitField1_ |= 0x00000080;
+                    onChanged();
+                }
+                if (other.hasLabel()) {
+                    label_ = other.label_;
+                    bitField1_ |= 0x00000100;
+                    onChanged();
+                }
+                this.mergeUnknownFields(other.getUnknownFields());
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                if (!hasSchemaVersion()) {
+                    return false;
+                }
+                if (!hasTst()) {
+                    return false;
+                }
+                if (!hasTsi()) {
+                    return false;
+                }
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+                if (extensionRegistry == null) {
+                    throw new java.lang.NullPointerException();
+                }
+                try {
+                    boolean done = false;
+                    while (!done) {
+                        int tag = input.readTag();
+                        switch (tag) {
+                            case 0 :
+                                done = true;
+                                break;
+                            case 8 : {
+                                schemaVersion_ = input.readInt32();
+                                bitField0_ |= 0x00000001;
+                                break;
+                            } // case 8
+                            case 18 : {
+                                desi_ = input.readBytes();
+                                bitField0_ |= 0x00000002;
+                                break;
+                            } // case 18
+                            case 26 : {
+                                dir_ = input.readBytes();
+                                bitField0_ |= 0x00000004;
+                                break;
+                            } // case 26
+                            case 32 : {
+                                oper_ = input.readInt32();
+                                bitField0_ |= 0x00000008;
+                                break;
+                            } // case 32
+                            case 40 : {
+                                veh_ = input.readInt32();
+                                bitField0_ |= 0x00000010;
+                                break;
+                            } // case 40
+                            case 50 : {
+                                tst_ = input.readBytes();
+                                bitField0_ |= 0x00000020;
+                                break;
+                            } // case 50
+                            case 56 : {
+                                tsi_ = input.readInt64();
+                                bitField0_ |= 0x00000040;
+                                break;
+                            } // case 56
+                            case 65 : {
+                                spd_ = input.readDouble();
+                                bitField0_ |= 0x00000080;
+                                break;
+                            } // case 65
+                            case 72 : {
+                                hdg_ = input.readInt32();
+                                bitField0_ |= 0x00000100;
+                                break;
+                            } // case 72
+                            case 81 : {
+                                lat_ = input.readDouble();
+                                bitField0_ |= 0x00000200;
+                                break;
+                            } // case 81
+                            case 89 : {
+                                long_ = input.readDouble();
+                                bitField0_ |= 0x00000400;
+                                break;
+                            } // case 89
+                            case 97 : {
+                                acc_ = input.readDouble();
+                                bitField0_ |= 0x00000800;
+                                break;
+                            } // case 97
+                            case 104 : {
+                                dl_ = input.readUInt32();
+                                bitField0_ |= 0x00001000;
+                                break;
+                            } // case 104
+                            case 113 : {
+                                odo_ = input.readDouble();
+                                bitField0_ |= 0x00002000;
+                                break;
+                            } // case 113
+                            case 120 : {
+                                drst_ = input.readUInt32();
+                                bitField0_ |= 0x00004000;
+                                break;
+                            } // case 120
+                            case 130 : {
+                                oday_ = input.readBytes();
+                                bitField0_ |= 0x00008000;
+                                break;
+                            } // case 130
+                            case 136 : {
+                                jrn_ = input.readInt32();
+                                bitField0_ |= 0x00010000;
+                                break;
+                            } // case 136
+                            case 144 : {
+                                line_ = input.readInt32();
+                                bitField0_ |= 0x00020000;
+                                break;
+                            } // case 144
+                            case 154 : {
+                                start_ = input.readBytes();
+                                bitField0_ |= 0x00040000;
+                                break;
+                            } // case 154
+                            case 160 : {
+                                int tmpRaw = input.readEnum();
+                                fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod tmpValue = fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod
+                                        .forNumber(tmpRaw);
+                                if (tmpValue == null) {
+                                    mergeUnknownVarintField(20, tmpRaw);
+                                } else {
+                                    loc_ = tmpRaw;
+                                    bitField0_ |= 0x00080000;
+                                }
+                                break;
+                            } // case 160
+                            case 168 : {
+                                stop_ = input.readInt32();
+                                bitField0_ |= 0x00100000;
+                                break;
+                            } // case 168
+                            case 178 : {
+                                route_ = input.readBytes();
+                                bitField0_ |= 0x00200000;
+                                break;
+                            } // case 178
+                            case 184 : {
+                                occu_ = input.readInt32();
+                                bitField0_ |= 0x00400000;
+                                break;
+                            } // case 184
+                            case 192 : {
+                                seq_ = input.readInt32();
+                                bitField0_ |= 0x00800000;
+                                break;
+                            } // case 192
+                            case 202 : {
+                                ttarr_ = input.readBytes();
+                                bitField0_ |= 0x01000000;
+                                break;
+                            } // case 202
+                            case 210 : {
+                                ttdep_ = input.readBytes();
+                                bitField0_ |= 0x02000000;
+                                break;
+                            } // case 210
+                            case 216 : {
+                                drType_ = input.readInt32();
+                                bitField0_ |= 0x04000000;
+                                break;
+                            } // case 216
+                            case 224 : {
+                                tlpRequestid_ = input.readInt32();
+                                bitField0_ |= 0x08000000;
+                                break;
+                            } // case 224
+                            case 232 : {
+                                int tmpRaw = input.readEnum();
+                                fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType tmpValue = fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType
+                                        .forNumber(tmpRaw);
+                                if (tmpValue == null) {
+                                    mergeUnknownVarintField(29, tmpRaw);
+                                } else {
+                                    tlpRequesttype_ = tmpRaw;
+                                    bitField0_ |= 0x10000000;
+                                }
+                                break;
+                            } // case 232
+                            case 240 : {
+                                int tmpRaw = input.readEnum();
+                                fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel tmpValue = fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel
+                                        .forNumber(tmpRaw);
+                                if (tmpValue == null) {
+                                    mergeUnknownVarintField(30, tmpRaw);
+                                } else {
+                                    tlpPrioritylevel_ = tmpRaw;
+                                    bitField0_ |= 0x20000000;
+                                }
+                                break;
+                            } // case 240
+                            case 248 : {
+                                int tmpRaw = input.readEnum();
+                                fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason tmpValue = fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason
+                                        .forNumber(tmpRaw);
+                                if (tmpValue == null) {
+                                    mergeUnknownVarintField(31, tmpRaw);
+                                } else {
+                                    tlpReason_ = tmpRaw;
+                                    bitField0_ |= 0x40000000;
+                                }
+                                break;
+                            } // case 248
+                            case 256 : {
+                                tlpAttSeq_ = input.readInt32();
+                                bitField0_ |= 0x80000000;
+                                break;
+                            } // case 256
+                            case 264 : {
+                                int tmpRaw = input.readEnum();
+                                fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision tmpValue = fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision
+                                        .forNumber(tmpRaw);
+                                if (tmpValue == null) {
+                                    mergeUnknownVarintField(33, tmpRaw);
+                                } else {
+                                    tlpDecision_ = tmpRaw;
+                                    bitField1_ |= 0x00000001;
+                                }
+                                break;
+                            } // case 264
+                            case 272 : {
+                                sid_ = input.readInt32();
+                                bitField1_ |= 0x00000002;
+                                break;
+                            } // case 272
+                            case 280 : {
+                                signalGroupid_ = input.readInt32();
+                                bitField1_ |= 0x00000004;
+                                break;
+                            } // case 280
+                            case 288 : {
+                                tlpSignalgroupnbr_ = input.readInt32();
+                                bitField1_ |= 0x00000008;
+                                break;
+                            } // case 288
+                            case 304 : {
+                                tlpLineConfigid_ = input.readInt32();
+                                bitField1_ |= 0x00000010;
+                                break;
+                            } // case 304
+                            case 312 : {
+                                tlpPointConfigid_ = input.readInt32();
+                                bitField1_ |= 0x00000020;
+                                break;
+                            } // case 312
+                            case 320 : {
+                                tlpFrequency_ = input.readInt32();
+                                bitField1_ |= 0x00000040;
+                                break;
+                            } // case 320
+                            case 330 : {
+                                tlpProtocol_ = input.readBytes();
+                                bitField1_ |= 0x00000080;
+                                break;
+                            } // case 330
+                            case 338 : {
+                                label_ = input.readBytes();
+                                bitField1_ |= 0x00000100;
+                                break;
+                            } // case 338
+                            default : {
+                                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                                    done = true; // was an endgroup tag
+                                }
+                                break;
+                            } // default:
+                        } // switch (tag)
+                    } // while (!done)
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.unwrapIOException();
+                } finally {
+                    onChanged();
+                } // finally
+                return this;
+            }
+            private int bitField0_;
+            private int bitField1_;
+
+            private int schemaVersion_ = 1;
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @return Whether the schemaVersion field is set.
+             */
+            @java.lang.Override
+            public boolean hasSchemaVersion() {
+                return ((bitField0_ & 0x00000001) != 0);
+            }
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @return The schemaVersion.
+             */
+            @java.lang.Override
+            public int getSchemaVersion() {
+                return schemaVersion_;
+            }
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @param value The schemaVersion to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSchemaVersion(int value) {
+
+                schemaVersion_ = value;
                 bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 18: {
-                desi_ = input.readBytes();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearSchemaVersion() {
+                bitField0_ = (bitField0_ & ~0x00000001);
+                schemaVersion_ = 1;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object desi_ = "";
+            /**
+             * <code>optional string desi = 2;</code>
+             * @return Whether the desi field is set.
+             */
+            public boolean hasDesi() {
+                return ((bitField0_ & 0x00000002) != 0);
+            }
+            /**
+             * <code>optional string desi = 2;</code>
+             * @return The desi.
+             */
+            public java.lang.String getDesi() {
+                java.lang.Object ref = desi_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        desi_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string desi = 2;</code>
+             * @return The bytes for desi.
+             */
+            public com.google.protobuf.ByteString getDesiBytes() {
+                java.lang.Object ref = desi_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    desi_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string desi = 2;</code>
+             * @param value The desi to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDesi(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                desi_ = value;
                 bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                dir_ = input.readBytes();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string desi = 2;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearDesi() {
+                desi_ = getDefaultInstance().getDesi();
+                bitField0_ = (bitField0_ & ~0x00000002);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string desi = 2;</code>
+             * @param value The bytes for desi to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDesiBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                desi_ = value;
+                bitField0_ |= 0x00000002;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object dir_ = "";
+            /**
+             * <code>optional string dir = 3;</code>
+             * @return Whether the dir field is set.
+             */
+            public boolean hasDir() {
+                return ((bitField0_ & 0x00000004) != 0);
+            }
+            /**
+             * <code>optional string dir = 3;</code>
+             * @return The dir.
+             */
+            public java.lang.String getDir() {
+                java.lang.Object ref = dir_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        dir_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string dir = 3;</code>
+             * @return The bytes for dir.
+             */
+            public com.google.protobuf.ByteString getDirBytes() {
+                java.lang.Object ref = dir_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    dir_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string dir = 3;</code>
+             * @param value The dir to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDir(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                dir_ = value;
                 bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 32: {
-                oper_ = input.readInt32();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string dir = 3;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearDir() {
+                dir_ = getDefaultInstance().getDir();
+                bitField0_ = (bitField0_ & ~0x00000004);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string dir = 3;</code>
+             * @param value The bytes for dir to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDirBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                dir_ = value;
+                bitField0_ |= 0x00000004;
+                onChanged();
+                return this;
+            }
+
+            private int oper_;
+            /**
+             * <code>optional int32 oper = 4;</code>
+             * @return Whether the oper field is set.
+             */
+            @java.lang.Override
+            public boolean hasOper() {
+                return ((bitField0_ & 0x00000008) != 0);
+            }
+            /**
+             * <code>optional int32 oper = 4;</code>
+             * @return The oper.
+             */
+            @java.lang.Override
+            public int getOper() {
+                return oper_;
+            }
+            /**
+             * <code>optional int32 oper = 4;</code>
+             * @param value The oper to set.
+             * @return This builder for chaining.
+             */
+            public Builder setOper(int value) {
+
+                oper_ = value;
                 bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 40: {
-                veh_ = input.readInt32();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int32 oper = 4;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearOper() {
+                bitField0_ = (bitField0_ & ~0x00000008);
+                oper_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int veh_;
+            /**
+             * <code>optional int32 veh = 5;</code>
+             * @return Whether the veh field is set.
+             */
+            @java.lang.Override
+            public boolean hasVeh() {
+                return ((bitField0_ & 0x00000010) != 0);
+            }
+            /**
+             * <code>optional int32 veh = 5;</code>
+             * @return The veh.
+             */
+            @java.lang.Override
+            public int getVeh() {
+                return veh_;
+            }
+            /**
+             * <code>optional int32 veh = 5;</code>
+             * @param value The veh to set.
+             * @return This builder for chaining.
+             */
+            public Builder setVeh(int value) {
+
+                veh_ = value;
                 bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              case 50: {
-                tst_ = input.readBytes();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int32 veh = 5;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearVeh() {
+                bitField0_ = (bitField0_ & ~0x00000010);
+                veh_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object tst_ = "";
+            /**
+             * <code>required string tst = 6;</code>
+             * @return Whether the tst field is set.
+             */
+            public boolean hasTst() {
+                return ((bitField0_ & 0x00000020) != 0);
+            }
+            /**
+             * <code>required string tst = 6;</code>
+             * @return The tst.
+             */
+            public java.lang.String getTst() {
+                java.lang.Object ref = tst_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        tst_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>required string tst = 6;</code>
+             * @return The bytes for tst.
+             */
+            public com.google.protobuf.ByteString getTstBytes() {
+                java.lang.Object ref = tst_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    tst_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>required string tst = 6;</code>
+             * @param value The tst to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTst(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                tst_ = value;
                 bitField0_ |= 0x00000020;
-                break;
-              } // case 50
-              case 56: {
-                tsi_ = input.readInt64();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required string tst = 6;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTst() {
+                tst_ = getDefaultInstance().getTst();
+                bitField0_ = (bitField0_ & ~0x00000020);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required string tst = 6;</code>
+             * @param value The bytes for tst to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTstBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                tst_ = value;
+                bitField0_ |= 0x00000020;
+                onChanged();
+                return this;
+            }
+
+            private long tsi_;
+            /**
+             * <code>required int64 tsi = 7;</code>
+             * @return Whether the tsi field is set.
+             */
+            @java.lang.Override
+            public boolean hasTsi() {
+                return ((bitField0_ & 0x00000040) != 0);
+            }
+            /**
+             * <code>required int64 tsi = 7;</code>
+             * @return The tsi.
+             */
+            @java.lang.Override
+            public long getTsi() {
+                return tsi_;
+            }
+            /**
+             * <code>required int64 tsi = 7;</code>
+             * @param value The tsi to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTsi(long value) {
+
+                tsi_ = value;
                 bitField0_ |= 0x00000040;
-                break;
-              } // case 56
-              case 65: {
-                spd_ = input.readDouble();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required int64 tsi = 7;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTsi() {
+                bitField0_ = (bitField0_ & ~0x00000040);
+                tsi_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private double spd_;
+            /**
+             * <code>optional double spd = 8;</code>
+             * @return Whether the spd field is set.
+             */
+            @java.lang.Override
+            public boolean hasSpd() {
+                return ((bitField0_ & 0x00000080) != 0);
+            }
+            /**
+             * <code>optional double spd = 8;</code>
+             * @return The spd.
+             */
+            @java.lang.Override
+            public double getSpd() {
+                return spd_;
+            }
+            /**
+             * <code>optional double spd = 8;</code>
+             * @param value The spd to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSpd(double value) {
+
+                spd_ = value;
                 bitField0_ |= 0x00000080;
-                break;
-              } // case 65
-              case 72: {
-                hdg_ = input.readInt32();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional double spd = 8;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearSpd() {
+                bitField0_ = (bitField0_ & ~0x00000080);
+                spd_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            private int hdg_;
+            /**
+             * <code>optional int32 hdg = 9;</code>
+             * @return Whether the hdg field is set.
+             */
+            @java.lang.Override
+            public boolean hasHdg() {
+                return ((bitField0_ & 0x00000100) != 0);
+            }
+            /**
+             * <code>optional int32 hdg = 9;</code>
+             * @return The hdg.
+             */
+            @java.lang.Override
+            public int getHdg() {
+                return hdg_;
+            }
+            /**
+             * <code>optional int32 hdg = 9;</code>
+             * @param value The hdg to set.
+             * @return This builder for chaining.
+             */
+            public Builder setHdg(int value) {
+
+                hdg_ = value;
                 bitField0_ |= 0x00000100;
-                break;
-              } // case 72
-              case 81: {
-                lat_ = input.readDouble();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int32 hdg = 9;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearHdg() {
+                bitField0_ = (bitField0_ & ~0x00000100);
+                hdg_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private double lat_;
+            /**
+             * <code>optional double lat = 10;</code>
+             * @return Whether the lat field is set.
+             */
+            @java.lang.Override
+            public boolean hasLat() {
+                return ((bitField0_ & 0x00000200) != 0);
+            }
+            /**
+             * <code>optional double lat = 10;</code>
+             * @return The lat.
+             */
+            @java.lang.Override
+            public double getLat() {
+                return lat_;
+            }
+            /**
+             * <code>optional double lat = 10;</code>
+             * @param value The lat to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLat(double value) {
+
+                lat_ = value;
                 bitField0_ |= 0x00000200;
-                break;
-              } // case 81
-              case 89: {
-                long_ = input.readDouble();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional double lat = 10;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearLat() {
+                bitField0_ = (bitField0_ & ~0x00000200);
+                lat_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            private double long_;
+            /**
+             * <code>optional double long = 11;</code>
+             * @return Whether the long field is set.
+             */
+            @java.lang.Override
+            public boolean hasLong() {
+                return ((bitField0_ & 0x00000400) != 0);
+            }
+            /**
+             * <code>optional double long = 11;</code>
+             * @return The long.
+             */
+            @java.lang.Override
+            public double getLong() {
+                return long_;
+            }
+            /**
+             * <code>optional double long = 11;</code>
+             * @param value The long to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLong(double value) {
+
+                long_ = value;
                 bitField0_ |= 0x00000400;
-                break;
-              } // case 89
-              case 97: {
-                acc_ = input.readDouble();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional double long = 11;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearLong() {
+                bitField0_ = (bitField0_ & ~0x00000400);
+                long_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            private double acc_;
+            /**
+             * <code>optional double acc = 12;</code>
+             * @return Whether the acc field is set.
+             */
+            @java.lang.Override
+            public boolean hasAcc() {
+                return ((bitField0_ & 0x00000800) != 0);
+            }
+            /**
+             * <code>optional double acc = 12;</code>
+             * @return The acc.
+             */
+            @java.lang.Override
+            public double getAcc() {
+                return acc_;
+            }
+            /**
+             * <code>optional double acc = 12;</code>
+             * @param value The acc to set.
+             * @return This builder for chaining.
+             */
+            public Builder setAcc(double value) {
+
+                acc_ = value;
                 bitField0_ |= 0x00000800;
-                break;
-              } // case 97
-              case 104: {
-                dl_ = input.readUInt32();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional double acc = 12;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearAcc() {
+                bitField0_ = (bitField0_ & ~0x00000800);
+                acc_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            private int dl_;
+            /**
+             * <code>optional uint32 dl = 13;</code>
+             * @return Whether the dl field is set.
+             */
+            @java.lang.Override
+            public boolean hasDl() {
+                return ((bitField0_ & 0x00001000) != 0);
+            }
+            /**
+             * <code>optional uint32 dl = 13;</code>
+             * @return The dl.
+             */
+            @java.lang.Override
+            public int getDl() {
+                return dl_;
+            }
+            /**
+             * <code>optional uint32 dl = 13;</code>
+             * @param value The dl to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDl(int value) {
+
+                dl_ = value;
                 bitField0_ |= 0x00001000;
-                break;
-              } // case 104
-              case 113: {
-                odo_ = input.readDouble();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional uint32 dl = 13;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearDl() {
+                bitField0_ = (bitField0_ & ~0x00001000);
+                dl_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private double odo_;
+            /**
+             * <code>optional double odo = 14;</code>
+             * @return Whether the odo field is set.
+             */
+            @java.lang.Override
+            public boolean hasOdo() {
+                return ((bitField0_ & 0x00002000) != 0);
+            }
+            /**
+             * <code>optional double odo = 14;</code>
+             * @return The odo.
+             */
+            @java.lang.Override
+            public double getOdo() {
+                return odo_;
+            }
+            /**
+             * <code>optional double odo = 14;</code>
+             * @param value The odo to set.
+             * @return This builder for chaining.
+             */
+            public Builder setOdo(double value) {
+
+                odo_ = value;
                 bitField0_ |= 0x00002000;
-                break;
-              } // case 113
-              case 120: {
-                drst_ = input.readUInt32();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional double odo = 14;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearOdo() {
+                bitField0_ = (bitField0_ & ~0x00002000);
+                odo_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            private int drst_;
+            /**
+             * <code>optional uint32 drst = 15;</code>
+             * @return Whether the drst field is set.
+             */
+            @java.lang.Override
+            public boolean hasDrst() {
+                return ((bitField0_ & 0x00004000) != 0);
+            }
+            /**
+             * <code>optional uint32 drst = 15;</code>
+             * @return The drst.
+             */
+            @java.lang.Override
+            public int getDrst() {
+                return drst_;
+            }
+            /**
+             * <code>optional uint32 drst = 15;</code>
+             * @param value The drst to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDrst(int value) {
+
+                drst_ = value;
                 bitField0_ |= 0x00004000;
-                break;
-              } // case 120
-              case 130: {
-                oday_ = input.readBytes();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional uint32 drst = 15;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearDrst() {
+                bitField0_ = (bitField0_ & ~0x00004000);
+                drst_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object oday_ = "";
+            /**
+             * <code>optional string oday = 16;</code>
+             * @return Whether the oday field is set.
+             */
+            public boolean hasOday() {
+                return ((bitField0_ & 0x00008000) != 0);
+            }
+            /**
+             * <code>optional string oday = 16;</code>
+             * @return The oday.
+             */
+            public java.lang.String getOday() {
+                java.lang.Object ref = oday_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        oday_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string oday = 16;</code>
+             * @return The bytes for oday.
+             */
+            public com.google.protobuf.ByteString getOdayBytes() {
+                java.lang.Object ref = oday_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    oday_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string oday = 16;</code>
+             * @param value The oday to set.
+             * @return This builder for chaining.
+             */
+            public Builder setOday(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                oday_ = value;
                 bitField0_ |= 0x00008000;
-                break;
-              } // case 130
-              case 136: {
-                jrn_ = input.readInt32();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string oday = 16;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearOday() {
+                oday_ = getDefaultInstance().getOday();
+                bitField0_ = (bitField0_ & ~0x00008000);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string oday = 16;</code>
+             * @param value The bytes for oday to set.
+             * @return This builder for chaining.
+             */
+            public Builder setOdayBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                oday_ = value;
+                bitField0_ |= 0x00008000;
+                onChanged();
+                return this;
+            }
+
+            private int jrn_;
+            /**
+             * <code>optional int32 jrn = 17;</code>
+             * @return Whether the jrn field is set.
+             */
+            @java.lang.Override
+            public boolean hasJrn() {
+                return ((bitField0_ & 0x00010000) != 0);
+            }
+            /**
+             * <code>optional int32 jrn = 17;</code>
+             * @return The jrn.
+             */
+            @java.lang.Override
+            public int getJrn() {
+                return jrn_;
+            }
+            /**
+             * <code>optional int32 jrn = 17;</code>
+             * @param value The jrn to set.
+             * @return This builder for chaining.
+             */
+            public Builder setJrn(int value) {
+
+                jrn_ = value;
                 bitField0_ |= 0x00010000;
-                break;
-              } // case 136
-              case 144: {
-                line_ = input.readInt32();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int32 jrn = 17;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearJrn() {
+                bitField0_ = (bitField0_ & ~0x00010000);
+                jrn_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int line_;
+            /**
+             * <code>optional int32 line = 18;</code>
+             * @return Whether the line field is set.
+             */
+            @java.lang.Override
+            public boolean hasLine() {
+                return ((bitField0_ & 0x00020000) != 0);
+            }
+            /**
+             * <code>optional int32 line = 18;</code>
+             * @return The line.
+             */
+            @java.lang.Override
+            public int getLine() {
+                return line_;
+            }
+            /**
+             * <code>optional int32 line = 18;</code>
+             * @param value The line to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLine(int value) {
+
+                line_ = value;
                 bitField0_ |= 0x00020000;
-                break;
-              } // case 144
-              case 154: {
-                start_ = input.readBytes();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int32 line = 18;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearLine() {
+                bitField0_ = (bitField0_ & ~0x00020000);
+                line_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object start_ = "";
+            /**
+             * <code>optional string start = 19;</code>
+             * @return Whether the start field is set.
+             */
+            public boolean hasStart() {
+                return ((bitField0_ & 0x00040000) != 0);
+            }
+            /**
+             * <code>optional string start = 19;</code>
+             * @return The start.
+             */
+            public java.lang.String getStart() {
+                java.lang.Object ref = start_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        start_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string start = 19;</code>
+             * @return The bytes for start.
+             */
+            public com.google.protobuf.ByteString getStartBytes() {
+                java.lang.Object ref = start_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    start_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string start = 19;</code>
+             * @param value The start to set.
+             * @return This builder for chaining.
+             */
+            public Builder setStart(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                start_ = value;
                 bitField0_ |= 0x00040000;
-                break;
-              } // case 154
-              case 160: {
-                int tmpRaw = input.readEnum();
-                fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod tmpValue =
-                    fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(20, tmpRaw);
-                } else {
-                  loc_ = tmpRaw;
-                  bitField0_ |= 0x00080000;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string start = 19;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearStart() {
+                start_ = getDefaultInstance().getStart();
+                bitField0_ = (bitField0_ & ~0x00040000);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string start = 19;</code>
+             * @param value The bytes for start to set.
+             * @return This builder for chaining.
+             */
+            public Builder setStartBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
                 }
-                break;
-              } // case 160
-              case 168: {
-                stop_ = input.readInt32();
+                start_ = value;
+                bitField0_ |= 0x00040000;
+                onChanged();
+                return this;
+            }
+
+            private int loc_ = 0;
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
+             * @return Whether the loc field is set.
+             */
+            @java.lang.Override
+            public boolean hasLoc() {
+                return ((bitField0_ & 0x00080000) != 0);
+            }
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
+             * @return The loc.
+             */
+            @java.lang.Override
+            public fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod getLoc() {
+                fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod result = fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod
+                        .forNumber(loc_);
+                return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod.GPS : result;
+            }
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
+             * @param value The loc to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLoc(fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00080000;
+                loc_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearLoc() {
+                bitField0_ = (bitField0_ & ~0x00080000);
+                loc_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int stop_;
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional int32 stop = 21;</code>
+             * @return Whether the stop field is set.
+             */
+            @java.lang.Override
+            public boolean hasStop() {
+                return ((bitField0_ & 0x00100000) != 0);
+            }
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional int32 stop = 21;</code>
+             * @return The stop.
+             */
+            @java.lang.Override
+            public int getStop() {
+                return stop_;
+            }
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional int32 stop = 21;</code>
+             * @param value The stop to set.
+             * @return This builder for chaining.
+             */
+            public Builder setStop(int value) {
+
+                stop_ = value;
                 bitField0_ |= 0x00100000;
-                break;
-              } // case 168
-              case 178: {
-                route_ = input.readBytes();
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional int32 stop = 21;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearStop() {
+                bitField0_ = (bitField0_ & ~0x00100000);
+                stop_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object route_ = "";
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional string route = 22;</code>
+             * @return Whether the route field is set.
+             */
+            public boolean hasRoute() {
+                return ((bitField0_ & 0x00200000) != 0);
+            }
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional string route = 22;</code>
+             * @return The route.
+             */
+            public java.lang.String getRoute() {
+                java.lang.Object ref = route_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        route_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional string route = 22;</code>
+             * @return The bytes for route.
+             */
+            public com.google.protobuf.ByteString getRouteBytes() {
+                java.lang.Object ref = route_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    route_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional string route = 22;</code>
+             * @param value The route to set.
+             * @return This builder for chaining.
+             */
+            public Builder setRoute(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                route_ = value;
                 bitField0_ |= 0x00200000;
-                break;
-              } // case 178
-              case 184: {
-                occu_ = input.readInt32();
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional string route = 22;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearRoute() {
+                route_ = getDefaultInstance().getRoute();
+                bitField0_ = (bitField0_ & ~0x00200000);
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional string route = 22;</code>
+             * @param value The bytes for route to set.
+             * @return This builder for chaining.
+             */
+            public Builder setRouteBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                route_ = value;
+                bitField0_ |= 0x00200000;
+                onChanged();
+                return this;
+            }
+
+            private int occu_;
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional int32 occu = 23;</code>
+             * @return Whether the occu field is set.
+             */
+            @java.lang.Override
+            public boolean hasOccu() {
+                return ((bitField0_ & 0x00400000) != 0);
+            }
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional int32 occu = 23;</code>
+             * @return The occu.
+             */
+            @java.lang.Override
+            public int getOccu() {
+                return occu_;
+            }
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional int32 occu = 23;</code>
+             * @param value The occu to set.
+             * @return This builder for chaining.
+             */
+            public Builder setOccu(int value) {
+
+                occu_ = value;
                 bitField0_ |= 0x00400000;
-                break;
-              } // case 184
-              case 192: {
-                seq_ = input.readInt32();
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * v2
+             * </pre>
+             *
+             * <code>optional int32 occu = 23;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearOccu() {
+                bitField0_ = (bitField0_ & ~0x00400000);
+                occu_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int seq_;
+            /**
+             * <code>optional int32 seq = 24;</code>
+             * @return Whether the seq field is set.
+             */
+            @java.lang.Override
+            public boolean hasSeq() {
+                return ((bitField0_ & 0x00800000) != 0);
+            }
+            /**
+             * <code>optional int32 seq = 24;</code>
+             * @return The seq.
+             */
+            @java.lang.Override
+            public int getSeq() {
+                return seq_;
+            }
+            /**
+             * <code>optional int32 seq = 24;</code>
+             * @param value The seq to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSeq(int value) {
+
+                seq_ = value;
                 bitField0_ |= 0x00800000;
-                break;
-              } // case 192
-              case 202: {
-                ttarr_ = input.readBytes();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int32 seq = 24;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearSeq() {
+                bitField0_ = (bitField0_ & ~0x00800000);
+                seq_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object ttarr_ = "";
+            /**
+             * <code>optional string ttarr = 25;</code>
+             * @return Whether the ttarr field is set.
+             */
+            public boolean hasTtarr() {
+                return ((bitField0_ & 0x01000000) != 0);
+            }
+            /**
+             * <code>optional string ttarr = 25;</code>
+             * @return The ttarr.
+             */
+            public java.lang.String getTtarr() {
+                java.lang.Object ref = ttarr_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        ttarr_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string ttarr = 25;</code>
+             * @return The bytes for ttarr.
+             */
+            public com.google.protobuf.ByteString getTtarrBytes() {
+                java.lang.Object ref = ttarr_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    ttarr_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string ttarr = 25;</code>
+             * @param value The ttarr to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTtarr(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                ttarr_ = value;
                 bitField0_ |= 0x01000000;
-                break;
-              } // case 202
-              case 210: {
-                ttdep_ = input.readBytes();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string ttarr = 25;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTtarr() {
+                ttarr_ = getDefaultInstance().getTtarr();
+                bitField0_ = (bitField0_ & ~0x01000000);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string ttarr = 25;</code>
+             * @param value The bytes for ttarr to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTtarrBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                ttarr_ = value;
+                bitField0_ |= 0x01000000;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object ttdep_ = "";
+            /**
+             * <code>optional string ttdep = 26;</code>
+             * @return Whether the ttdep field is set.
+             */
+            public boolean hasTtdep() {
+                return ((bitField0_ & 0x02000000) != 0);
+            }
+            /**
+             * <code>optional string ttdep = 26;</code>
+             * @return The ttdep.
+             */
+            public java.lang.String getTtdep() {
+                java.lang.Object ref = ttdep_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        ttdep_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string ttdep = 26;</code>
+             * @return The bytes for ttdep.
+             */
+            public com.google.protobuf.ByteString getTtdepBytes() {
+                java.lang.Object ref = ttdep_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    ttdep_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string ttdep = 26;</code>
+             * @param value The ttdep to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTtdep(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                ttdep_ = value;
                 bitField0_ |= 0x02000000;
-                break;
-              } // case 210
-              case 216: {
-                drType_ = input.readInt32();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string ttdep = 26;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTtdep() {
+                ttdep_ = getDefaultInstance().getTtdep();
+                bitField0_ = (bitField0_ & ~0x02000000);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string ttdep = 26;</code>
+             * @param value The bytes for ttdep to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTtdepBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                ttdep_ = value;
+                bitField0_ |= 0x02000000;
+                onChanged();
+                return this;
+            }
+
+            private int drType_;
+            /**
+             * <code>optional int32 dr_type = 27;</code>
+             * @return Whether the drType field is set.
+             */
+            @java.lang.Override
+            public boolean hasDrType() {
+                return ((bitField0_ & 0x04000000) != 0);
+            }
+            /**
+             * <code>optional int32 dr_type = 27;</code>
+             * @return The drType.
+             */
+            @java.lang.Override
+            public int getDrType() {
+                return drType_;
+            }
+            /**
+             * <code>optional int32 dr_type = 27;</code>
+             * @param value The drType to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDrType(int value) {
+
+                drType_ = value;
                 bitField0_ |= 0x04000000;
-                break;
-              } // case 216
-              case 224: {
-                tlpRequestid_ = input.readInt32();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int32 dr_type = 27;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearDrType() {
+                bitField0_ = (bitField0_ & ~0x04000000);
+                drType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int tlpRequestid_;
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_requestid = 28;</code>
+             * @return Whether the tlpRequestid field is set.
+             */
+            @java.lang.Override
+            public boolean hasTlpRequestid() {
+                return ((bitField0_ & 0x08000000) != 0);
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_requestid = 28;</code>
+             * @return The tlpRequestid.
+             */
+            @java.lang.Override
+            public int getTlpRequestid() {
+                return tlpRequestid_;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_requestid = 28;</code>
+             * @param value The tlpRequestid to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTlpRequestid(int value) {
+
+                tlpRequestid_ = value;
                 bitField0_ |= 0x08000000;
-                break;
-              } // case 224
-              case 232: {
-                int tmpRaw = input.readEnum();
-                fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType tmpValue =
-                    fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(29, tmpRaw);
-                } else {
-                  tlpRequesttype_ = tmpRaw;
-                  bitField0_ |= 0x10000000;
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_requestid = 28;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTlpRequestid() {
+                bitField0_ = (bitField0_ & ~0x08000000);
+                tlpRequestid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int tlpRequesttype_ = 0;
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+             * @return Whether the tlpRequesttype field is set.
+             */
+            @java.lang.Override
+            public boolean hasTlpRequesttype() {
+                return ((bitField0_ & 0x10000000) != 0);
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+             * @return The tlpRequesttype.
+             */
+            @java.lang.Override
+            public fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType getTlpRequesttype() {
+                fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType
+                        .forNumber(tlpRequesttype_);
+                return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType.NORMAL : result;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+             * @param value The tlpRequesttype to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTlpRequesttype(fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType value) {
+                if (value == null) {
+                    throw new NullPointerException();
                 }
-                break;
-              } // case 232
-              case 240: {
-                int tmpRaw = input.readEnum();
-                fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel tmpValue =
-                    fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(30, tmpRaw);
-                } else {
-                  tlpPrioritylevel_ = tmpRaw;
-                  bitField0_ |= 0x20000000;
+                bitField0_ |= 0x10000000;
+                tlpRequesttype_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTlpRequesttype() {
+                bitField0_ = (bitField0_ & ~0x10000000);
+                tlpRequesttype_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int tlpPrioritylevel_ = 0;
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+             * @return Whether the tlpPrioritylevel field is set.
+             */
+            @java.lang.Override
+            public boolean hasTlpPrioritylevel() {
+                return ((bitField0_ & 0x20000000) != 0);
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+             * @return The tlpPrioritylevel.
+             */
+            @java.lang.Override
+            public fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel getTlpPrioritylevel() {
+                fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel
+                        .forNumber(tlpPrioritylevel_);
+                return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel.normal : result;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+             * @param value The tlpPrioritylevel to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTlpPrioritylevel(fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel value) {
+                if (value == null) {
+                    throw new NullPointerException();
                 }
-                break;
-              } // case 240
-              case 248: {
-                int tmpRaw = input.readEnum();
-                fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason tmpValue =
-                    fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(31, tmpRaw);
-                } else {
-                  tlpReason_ = tmpRaw;
-                  bitField0_ |= 0x40000000;
+                bitField0_ |= 0x20000000;
+                tlpPrioritylevel_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTlpPrioritylevel() {
+                bitField0_ = (bitField0_ & ~0x20000000);
+                tlpPrioritylevel_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int tlpReason_ = 0;
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+             * @return Whether the tlpReason field is set.
+             */
+            @java.lang.Override
+            public boolean hasTlpReason() {
+                return ((bitField0_ & 0x40000000) != 0);
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+             * @return The tlpReason.
+             */
+            @java.lang.Override
+            public fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason getTlpReason() {
+                fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason
+                        .forNumber(tlpReason_);
+                return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason.GLOBAL : result;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+             * @param value The tlpReason to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTlpReason(fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason value) {
+                if (value == null) {
+                    throw new NullPointerException();
                 }
-                break;
-              } // case 248
-              case 256: {
-                tlpAttSeq_ = input.readInt32();
+                bitField0_ |= 0x40000000;
+                tlpReason_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTlpReason() {
+                bitField0_ = (bitField0_ & ~0x40000000);
+                tlpReason_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int tlpAttSeq_;
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_att_seq = 32;</code>
+             * @return Whether the tlpAttSeq field is set.
+             */
+            @java.lang.Override
+            public boolean hasTlpAttSeq() {
+                return ((bitField0_ & 0x80000000) != 0);
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_att_seq = 32;</code>
+             * @return The tlpAttSeq.
+             */
+            @java.lang.Override
+            public int getTlpAttSeq() {
+                return tlpAttSeq_;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_att_seq = 32;</code>
+             * @param value The tlpAttSeq to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTlpAttSeq(int value) {
+
+                tlpAttSeq_ = value;
                 bitField0_ |= 0x80000000;
-                break;
-              } // case 256
-              case 264: {
-                int tmpRaw = input.readEnum();
-                fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision tmpValue =
-                    fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(33, tmpRaw);
-                } else {
-                  tlpDecision_ = tmpRaw;
-                  bitField1_ |= 0x00000001;
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_att_seq = 32;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTlpAttSeq() {
+                bitField0_ = (bitField0_ & ~0x80000000);
+                tlpAttSeq_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int tlpDecision_ = 0;
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+             * @return Whether the tlpDecision field is set.
+             */
+            @java.lang.Override
+            public boolean hasTlpDecision() {
+                return ((bitField1_ & 0x00000001) != 0);
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+             * @return The tlpDecision.
+             */
+            @java.lang.Override
+            public fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision getTlpDecision() {
+                fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision
+                        .forNumber(tlpDecision_);
+                return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision.ACK : result;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+             * @param value The tlpDecision to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTlpDecision(fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision value) {
+                if (value == null) {
+                    throw new NullPointerException();
                 }
-                break;
-              } // case 264
-              case 272: {
-                sid_ = input.readInt32();
+                bitField1_ |= 0x00000001;
+                tlpDecision_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTlpDecision() {
+                bitField1_ = (bitField1_ & ~0x00000001);
+                tlpDecision_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int sid_;
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 sid = 34;</code>
+             * @return Whether the sid field is set.
+             */
+            @java.lang.Override
+            public boolean hasSid() {
+                return ((bitField1_ & 0x00000002) != 0);
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 sid = 34;</code>
+             * @return The sid.
+             */
+            @java.lang.Override
+            public int getSid() {
+                return sid_;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 sid = 34;</code>
+             * @param value The sid to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSid(int value) {
+
+                sid_ = value;
                 bitField1_ |= 0x00000002;
-                break;
-              } // case 272
-              case 280: {
-                signalGroupid_ = input.readInt32();
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 sid = 34;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearSid() {
+                bitField1_ = (bitField1_ & ~0x00000002);
+                sid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int signalGroupid_;
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 signal_groupid = 35;</code>
+             * @return Whether the signalGroupid field is set.
+             */
+            @java.lang.Override
+            public boolean hasSignalGroupid() {
+                return ((bitField1_ & 0x00000004) != 0);
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 signal_groupid = 35;</code>
+             * @return The signalGroupid.
+             */
+            @java.lang.Override
+            public int getSignalGroupid() {
+                return signalGroupid_;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 signal_groupid = 35;</code>
+             * @param value The signalGroupid to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSignalGroupid(int value) {
+
+                signalGroupid_ = value;
                 bitField1_ |= 0x00000004;
-                break;
-              } // case 280
-              case 288: {
-                tlpSignalgroupnbr_ = input.readInt32();
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 signal_groupid = 35;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearSignalGroupid() {
+                bitField1_ = (bitField1_ & ~0x00000004);
+                signalGroupid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int tlpSignalgroupnbr_;
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+             * @return Whether the tlpSignalgroupnbr field is set.
+             */
+            @java.lang.Override
+            public boolean hasTlpSignalgroupnbr() {
+                return ((bitField1_ & 0x00000008) != 0);
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+             * @return The tlpSignalgroupnbr.
+             */
+            @java.lang.Override
+            public int getTlpSignalgroupnbr() {
+                return tlpSignalgroupnbr_;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+             * @param value The tlpSignalgroupnbr to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTlpSignalgroupnbr(int value) {
+
+                tlpSignalgroupnbr_ = value;
                 bitField1_ |= 0x00000008;
-                break;
-              } // case 288
-              case 304: {
-                tlpLineConfigid_ = input.readInt32();
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_signalgroupnbr = 36;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTlpSignalgroupnbr() {
+                bitField1_ = (bitField1_ & ~0x00000008);
+                tlpSignalgroupnbr_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int tlpLineConfigid_;
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_line_configid = 38;</code>
+             * @return Whether the tlpLineConfigid field is set.
+             */
+            @java.lang.Override
+            public boolean hasTlpLineConfigid() {
+                return ((bitField1_ & 0x00000010) != 0);
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_line_configid = 38;</code>
+             * @return The tlpLineConfigid.
+             */
+            @java.lang.Override
+            public int getTlpLineConfigid() {
+                return tlpLineConfigid_;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_line_configid = 38;</code>
+             * @param value The tlpLineConfigid to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTlpLineConfigid(int value) {
+
+                tlpLineConfigid_ = value;
                 bitField1_ |= 0x00000010;
-                break;
-              } // case 304
-              case 312: {
-                tlpPointConfigid_ = input.readInt32();
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_line_configid = 38;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTlpLineConfigid() {
+                bitField1_ = (bitField1_ & ~0x00000010);
+                tlpLineConfigid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int tlpPointConfigid_;
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_point_configid = 39;</code>
+             * @return Whether the tlpPointConfigid field is set.
+             */
+            @java.lang.Override
+            public boolean hasTlpPointConfigid() {
+                return ((bitField1_ & 0x00000020) != 0);
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_point_configid = 39;</code>
+             * @return The tlpPointConfigid.
+             */
+            @java.lang.Override
+            public int getTlpPointConfigid() {
+                return tlpPointConfigid_;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_point_configid = 39;</code>
+             * @param value The tlpPointConfigid to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTlpPointConfigid(int value) {
+
+                tlpPointConfigid_ = value;
                 bitField1_ |= 0x00000020;
-                break;
-              } // case 312
-              case 320: {
-                tlpFrequency_ = input.readInt32();
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_point_configid = 39;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTlpPointConfigid() {
+                bitField1_ = (bitField1_ & ~0x00000020);
+                tlpPointConfigid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int tlpFrequency_;
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_frequency = 40;</code>
+             * @return Whether the tlpFrequency field is set.
+             */
+            @java.lang.Override
+            public boolean hasTlpFrequency() {
+                return ((bitField1_ & 0x00000040) != 0);
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_frequency = 40;</code>
+             * @return The tlpFrequency.
+             */
+            @java.lang.Override
+            public int getTlpFrequency() {
+                return tlpFrequency_;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_frequency = 40;</code>
+             * @param value The tlpFrequency to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTlpFrequency(int value) {
+
+                tlpFrequency_ = value;
                 bitField1_ |= 0x00000040;
-                break;
-              } // case 320
-              case 330: {
-                tlpProtocol_ = input.readBytes();
-                bitField1_ |= 0x00000080;
-                break;
-              } // case 330
-              case 338: {
-                label_ = input.readBytes();
-                bitField1_ |= 0x00000100;
-                break;
-              } // case 338
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional int32 tlp_frequency = 40;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTlpFrequency() {
+                bitField1_ = (bitField1_ & ~0x00000040);
+                tlpFrequency_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object tlpProtocol_ = "";
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional string tlp_protocol = 41;</code>
+             * @return Whether the tlpProtocol field is set.
+             */
+            public boolean hasTlpProtocol() {
+                return ((bitField1_ & 0x00000080) != 0);
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional string tlp_protocol = 41;</code>
+             * @return The tlpProtocol.
+             */
+            public java.lang.String getTlpProtocol() {
+                java.lang.Object ref = tlpProtocol_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        tlpProtocol_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
                 }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-      private int bitField1_;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional string tlp_protocol = 41;</code>
+             * @return The bytes for tlpProtocol.
+             */
+            public com.google.protobuf.ByteString getTlpProtocolBytes() {
+                java.lang.Object ref = tlpProtocol_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    tlpProtocol_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional string tlp_protocol = 41;</code>
+             * @param value The tlpProtocol to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTlpProtocol(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                tlpProtocol_ = value;
+                bitField1_ |= 0x00000080;
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional string tlp_protocol = 41;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTlpProtocol() {
+                tlpProtocol_ = getDefaultInstance().getTlpProtocol();
+                bitField1_ = (bitField1_ & ~0x00000080);
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * tlr
+             * </pre>
+             *
+             * <code>optional string tlp_protocol = 41;</code>
+             * @param value The bytes for tlpProtocol to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTlpProtocolBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                tlpProtocol_ = value;
+                bitField1_ |= 0x00000080;
+                onChanged();
+                return this;
+            }
 
-      private int schemaVersion_ = 1;
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @return Whether the schemaVersion field is set.
-       */
-      @java.lang.Override
-      public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @return The schemaVersion.
-       */
-      @java.lang.Override
-      public int getSchemaVersion() {
-        return schemaVersion_;
-      }
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @param value The schemaVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSchemaVersion(int value) {
-        
-        schemaVersion_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSchemaVersion() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        schemaVersion_ = 1;
-        onChanged();
-        return this;
-      }
+            private java.lang.Object label_ = "";
+            /**
+             * <code>optional string label = 42;</code>
+             * @return Whether the label field is set.
+             */
+            public boolean hasLabel() {
+                return ((bitField1_ & 0x00000100) != 0);
+            }
+            /**
+             * <code>optional string label = 42;</code>
+             * @return The label.
+             */
+            public java.lang.String getLabel() {
+                java.lang.Object ref = label_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        label_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string label = 42;</code>
+             * @return The bytes for label.
+             */
+            public com.google.protobuf.ByteString getLabelBytes() {
+                java.lang.Object ref = label_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    label_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string label = 42;</code>
+             * @param value The label to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLabel(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                label_ = value;
+                bitField1_ |= 0x00000100;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string label = 42;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearLabel() {
+                label_ = getDefaultInstance().getLabel();
+                bitField1_ = (bitField1_ & ~0x00000100);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string label = 42;</code>
+             * @param value The bytes for label to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLabelBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                label_ = value;
+                bitField1_ |= 0x00000100;
+                onChanged();
+                return this;
+            }
+            @java.lang.Override
+            public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
 
-      private java.lang.Object desi_ = "";
-      /**
-       * <code>optional string desi = 2;</code>
-       * @return Whether the desi field is set.
-       */
-      public boolean hasDesi() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <code>optional string desi = 2;</code>
-       * @return The desi.
-       */
-      public java.lang.String getDesi() {
-        java.lang.Object ref = desi_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            desi_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+            @java.lang.Override
+            public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:proto.Payload)
         }
-      }
-      /**
-       * <code>optional string desi = 2;</code>
-       * @return The bytes for desi.
-       */
-      public com.google.protobuf.ByteString
-          getDesiBytes() {
-        java.lang.Object ref = desi_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          desi_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        // @@protoc_insertion_point(class_scope:proto.Payload)
+        private static final fi.hsl.common.hfp.proto.Hfp.Payload DEFAULT_INSTANCE;
+        static {
+            DEFAULT_INSTANCE = new fi.hsl.common.hfp.proto.Hfp.Payload();
         }
-      }
-      /**
-       * <code>optional string desi = 2;</code>
-       * @param value The desi to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDesi(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        desi_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string desi = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDesi() {
-        desi_ = getDefaultInstance().getDesi();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string desi = 2;</code>
-       * @param value The bytes for desi to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDesiBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        desi_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
 
-      private java.lang.Object dir_ = "";
-      /**
-       * <code>optional string dir = 3;</code>
-       * @return Whether the dir field is set.
-       */
-      public boolean hasDir() {
-        return ((bitField0_ & 0x00000004) != 0);
-      }
-      /**
-       * <code>optional string dir = 3;</code>
-       * @return The dir.
-       */
-      public java.lang.String getDir() {
-        java.lang.Object ref = dir_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            dir_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        public static fi.hsl.common.hfp.proto.Hfp.Payload getDefaultInstance() {
+            return DEFAULT_INSTANCE;
         }
-      }
-      /**
-       * <code>optional string dir = 3;</code>
-       * @return The bytes for dir.
-       */
-      public com.google.protobuf.ByteString
-          getDirBytes() {
-        java.lang.Object ref = dir_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          dir_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        @java.lang.Deprecated
+        public static final com.google.protobuf.Parser<Payload> PARSER = new com.google.protobuf.AbstractParser<Payload>() {
+            @java.lang.Override
+            public Payload parsePartialFrom(com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                    builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                    throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                    throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                            .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+            }
+        };
+
+        public static com.google.protobuf.Parser<Payload> parser() {
+            return PARSER;
         }
-      }
-      /**
-       * <code>optional string dir = 3;</code>
-       * @param value The dir to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDir(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        dir_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string dir = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDir() {
-        dir_ = getDefaultInstance().getDir();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string dir = 3;</code>
-       * @param value The bytes for dir to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDirBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        dir_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
 
-      private int oper_ ;
-      /**
-       * <code>optional int32 oper = 4;</code>
-       * @return Whether the oper field is set.
-       */
-      @java.lang.Override
-      public boolean hasOper() {
-        return ((bitField0_ & 0x00000008) != 0);
-      }
-      /**
-       * <code>optional int32 oper = 4;</code>
-       * @return The oper.
-       */
-      @java.lang.Override
-      public int getOper() {
-        return oper_;
-      }
-      /**
-       * <code>optional int32 oper = 4;</code>
-       * @param value The oper to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOper(int value) {
-        
-        oper_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 oper = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOper() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        oper_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int veh_ ;
-      /**
-       * <code>optional int32 veh = 5;</code>
-       * @return Whether the veh field is set.
-       */
-      @java.lang.Override
-      public boolean hasVeh() {
-        return ((bitField0_ & 0x00000010) != 0);
-      }
-      /**
-       * <code>optional int32 veh = 5;</code>
-       * @return The veh.
-       */
-      @java.lang.Override
-      public int getVeh() {
-        return veh_;
-      }
-      /**
-       * <code>optional int32 veh = 5;</code>
-       * @param value The veh to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVeh(int value) {
-        
-        veh_ = value;
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 veh = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVeh() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        veh_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object tst_ = "";
-      /**
-       * <code>required string tst = 6;</code>
-       * @return Whether the tst field is set.
-       */
-      public boolean hasTst() {
-        return ((bitField0_ & 0x00000020) != 0);
-      }
-      /**
-       * <code>required string tst = 6;</code>
-       * @return The tst.
-       */
-      public java.lang.String getTst() {
-        java.lang.Object ref = tst_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            tst_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        @java.lang.Override
+        public com.google.protobuf.Parser<Payload> getParserForType() {
+            return PARSER;
         }
-      }
-      /**
-       * <code>required string tst = 6;</code>
-       * @return The bytes for tst.
-       */
-      public com.google.protobuf.ByteString
-          getTstBytes() {
-        java.lang.Object ref = tst_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tst_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        @java.lang.Override
+        public fi.hsl.common.hfp.proto.Hfp.Payload getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
         }
-      }
-      /**
-       * <code>required string tst = 6;</code>
-       * @param value The tst to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTst(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        tst_ = value;
-        bitField0_ |= 0x00000020;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string tst = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTst() {
-        tst_ = getDefaultInstance().getTst();
-        bitField0_ = (bitField0_ & ~0x00000020);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string tst = 6;</code>
-       * @param value The bytes for tst to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTstBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        tst_ = value;
-        bitField0_ |= 0x00000020;
-        onChanged();
-        return this;
-      }
 
-      private long tsi_ ;
-      /**
-       * <code>required int64 tsi = 7;</code>
-       * @return Whether the tsi field is set.
-       */
-      @java.lang.Override
-      public boolean hasTsi() {
-        return ((bitField0_ & 0x00000040) != 0);
-      }
-      /**
-       * <code>required int64 tsi = 7;</code>
-       * @return The tsi.
-       */
-      @java.lang.Override
-      public long getTsi() {
-        return tsi_;
-      }
-      /**
-       * <code>required int64 tsi = 7;</code>
-       * @param value The tsi to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTsi(long value) {
-        
-        tsi_ = value;
-        bitField0_ |= 0x00000040;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 tsi = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTsi() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        tsi_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private double spd_ ;
-      /**
-       * <code>optional double spd = 8;</code>
-       * @return Whether the spd field is set.
-       */
-      @java.lang.Override
-      public boolean hasSpd() {
-        return ((bitField0_ & 0x00000080) != 0);
-      }
-      /**
-       * <code>optional double spd = 8;</code>
-       * @return The spd.
-       */
-      @java.lang.Override
-      public double getSpd() {
-        return spd_;
-      }
-      /**
-       * <code>optional double spd = 8;</code>
-       * @param value The spd to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpd(double value) {
-        
-        spd_ = value;
-        bitField0_ |= 0x00000080;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional double spd = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSpd() {
-        bitField0_ = (bitField0_ & ~0x00000080);
-        spd_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private int hdg_ ;
-      /**
-       * <code>optional int32 hdg = 9;</code>
-       * @return Whether the hdg field is set.
-       */
-      @java.lang.Override
-      public boolean hasHdg() {
-        return ((bitField0_ & 0x00000100) != 0);
-      }
-      /**
-       * <code>optional int32 hdg = 9;</code>
-       * @return The hdg.
-       */
-      @java.lang.Override
-      public int getHdg() {
-        return hdg_;
-      }
-      /**
-       * <code>optional int32 hdg = 9;</code>
-       * @param value The hdg to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHdg(int value) {
-        
-        hdg_ = value;
-        bitField0_ |= 0x00000100;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 hdg = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHdg() {
-        bitField0_ = (bitField0_ & ~0x00000100);
-        hdg_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private double lat_ ;
-      /**
-       * <code>optional double lat = 10;</code>
-       * @return Whether the lat field is set.
-       */
-      @java.lang.Override
-      public boolean hasLat() {
-        return ((bitField0_ & 0x00000200) != 0);
-      }
-      /**
-       * <code>optional double lat = 10;</code>
-       * @return The lat.
-       */
-      @java.lang.Override
-      public double getLat() {
-        return lat_;
-      }
-      /**
-       * <code>optional double lat = 10;</code>
-       * @param value The lat to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLat(double value) {
-        
-        lat_ = value;
-        bitField0_ |= 0x00000200;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional double lat = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLat() {
-        bitField0_ = (bitField0_ & ~0x00000200);
-        lat_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double long_ ;
-      /**
-       * <code>optional double long = 11;</code>
-       * @return Whether the long field is set.
-       */
-      @java.lang.Override
-      public boolean hasLong() {
-        return ((bitField0_ & 0x00000400) != 0);
-      }
-      /**
-       * <code>optional double long = 11;</code>
-       * @return The long.
-       */
-      @java.lang.Override
-      public double getLong() {
-        return long_;
-      }
-      /**
-       * <code>optional double long = 11;</code>
-       * @param value The long to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLong(double value) {
-        
-        long_ = value;
-        bitField0_ |= 0x00000400;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional double long = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLong() {
-        bitField0_ = (bitField0_ & ~0x00000400);
-        long_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double acc_ ;
-      /**
-       * <code>optional double acc = 12;</code>
-       * @return Whether the acc field is set.
-       */
-      @java.lang.Override
-      public boolean hasAcc() {
-        return ((bitField0_ & 0x00000800) != 0);
-      }
-      /**
-       * <code>optional double acc = 12;</code>
-       * @return The acc.
-       */
-      @java.lang.Override
-      public double getAcc() {
-        return acc_;
-      }
-      /**
-       * <code>optional double acc = 12;</code>
-       * @param value The acc to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAcc(double value) {
-        
-        acc_ = value;
-        bitField0_ |= 0x00000800;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional double acc = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAcc() {
-        bitField0_ = (bitField0_ & ~0x00000800);
-        acc_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private int dl_ ;
-      /**
-       * <code>optional uint32 dl = 13;</code>
-       * @return Whether the dl field is set.
-       */
-      @java.lang.Override
-      public boolean hasDl() {
-        return ((bitField0_ & 0x00001000) != 0);
-      }
-      /**
-       * <code>optional uint32 dl = 13;</code>
-       * @return The dl.
-       */
-      @java.lang.Override
-      public int getDl() {
-        return dl_;
-      }
-      /**
-       * <code>optional uint32 dl = 13;</code>
-       * @param value The dl to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDl(int value) {
-        
-        dl_ = value;
-        bitField0_ |= 0x00001000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional uint32 dl = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDl() {
-        bitField0_ = (bitField0_ & ~0x00001000);
-        dl_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private double odo_ ;
-      /**
-       * <code>optional double odo = 14;</code>
-       * @return Whether the odo field is set.
-       */
-      @java.lang.Override
-      public boolean hasOdo() {
-        return ((bitField0_ & 0x00002000) != 0);
-      }
-      /**
-       * <code>optional double odo = 14;</code>
-       * @return The odo.
-       */
-      @java.lang.Override
-      public double getOdo() {
-        return odo_;
-      }
-      /**
-       * <code>optional double odo = 14;</code>
-       * @param value The odo to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOdo(double value) {
-        
-        odo_ = value;
-        bitField0_ |= 0x00002000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional double odo = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOdo() {
-        bitField0_ = (bitField0_ & ~0x00002000);
-        odo_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private int drst_ ;
-      /**
-       * <code>optional uint32 drst = 15;</code>
-       * @return Whether the drst field is set.
-       */
-      @java.lang.Override
-      public boolean hasDrst() {
-        return ((bitField0_ & 0x00004000) != 0);
-      }
-      /**
-       * <code>optional uint32 drst = 15;</code>
-       * @return The drst.
-       */
-      @java.lang.Override
-      public int getDrst() {
-        return drst_;
-      }
-      /**
-       * <code>optional uint32 drst = 15;</code>
-       * @param value The drst to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDrst(int value) {
-        
-        drst_ = value;
-        bitField0_ |= 0x00004000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional uint32 drst = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDrst() {
-        bitField0_ = (bitField0_ & ~0x00004000);
-        drst_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object oday_ = "";
-      /**
-       * <code>optional string oday = 16;</code>
-       * @return Whether the oday field is set.
-       */
-      public boolean hasOday() {
-        return ((bitField0_ & 0x00008000) != 0);
-      }
-      /**
-       * <code>optional string oday = 16;</code>
-       * @return The oday.
-       */
-      public java.lang.String getOday() {
-        java.lang.Object ref = oday_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            oday_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string oday = 16;</code>
-       * @return The bytes for oday.
-       */
-      public com.google.protobuf.ByteString
-          getOdayBytes() {
-        java.lang.Object ref = oday_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          oday_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string oday = 16;</code>
-       * @param value The oday to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOday(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        oday_ = value;
-        bitField0_ |= 0x00008000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string oday = 16;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOday() {
-        oday_ = getDefaultInstance().getOday();
-        bitField0_ = (bitField0_ & ~0x00008000);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string oday = 16;</code>
-       * @param value The bytes for oday to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOdayBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        oday_ = value;
-        bitField0_ |= 0x00008000;
-        onChanged();
-        return this;
-      }
-
-      private int jrn_ ;
-      /**
-       * <code>optional int32 jrn = 17;</code>
-       * @return Whether the jrn field is set.
-       */
-      @java.lang.Override
-      public boolean hasJrn() {
-        return ((bitField0_ & 0x00010000) != 0);
-      }
-      /**
-       * <code>optional int32 jrn = 17;</code>
-       * @return The jrn.
-       */
-      @java.lang.Override
-      public int getJrn() {
-        return jrn_;
-      }
-      /**
-       * <code>optional int32 jrn = 17;</code>
-       * @param value The jrn to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJrn(int value) {
-        
-        jrn_ = value;
-        bitField0_ |= 0x00010000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 jrn = 17;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJrn() {
-        bitField0_ = (bitField0_ & ~0x00010000);
-        jrn_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int line_ ;
-      /**
-       * <code>optional int32 line = 18;</code>
-       * @return Whether the line field is set.
-       */
-      @java.lang.Override
-      public boolean hasLine() {
-        return ((bitField0_ & 0x00020000) != 0);
-      }
-      /**
-       * <code>optional int32 line = 18;</code>
-       * @return The line.
-       */
-      @java.lang.Override
-      public int getLine() {
-        return line_;
-      }
-      /**
-       * <code>optional int32 line = 18;</code>
-       * @param value The line to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLine(int value) {
-        
-        line_ = value;
-        bitField0_ |= 0x00020000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 line = 18;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLine() {
-        bitField0_ = (bitField0_ & ~0x00020000);
-        line_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object start_ = "";
-      /**
-       * <code>optional string start = 19;</code>
-       * @return Whether the start field is set.
-       */
-      public boolean hasStart() {
-        return ((bitField0_ & 0x00040000) != 0);
-      }
-      /**
-       * <code>optional string start = 19;</code>
-       * @return The start.
-       */
-      public java.lang.String getStart() {
-        java.lang.Object ref = start_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            start_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string start = 19;</code>
-       * @return The bytes for start.
-       */
-      public com.google.protobuf.ByteString
-          getStartBytes() {
-        java.lang.Object ref = start_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          start_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string start = 19;</code>
-       * @param value The start to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStart(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        start_ = value;
-        bitField0_ |= 0x00040000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string start = 19;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStart() {
-        start_ = getDefaultInstance().getStart();
-        bitField0_ = (bitField0_ & ~0x00040000);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string start = 19;</code>
-       * @param value The bytes for start to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStartBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        start_ = value;
-        bitField0_ |= 0x00040000;
-        onChanged();
-        return this;
-      }
-
-      private int loc_ = 0;
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
-       * @return Whether the loc field is set.
-       */
-      @java.lang.Override public boolean hasLoc() {
-        return ((bitField0_ & 0x00080000) != 0);
-      }
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
-       * @return The loc.
-       */
-      @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod getLoc() {
-        fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod result = fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod.forNumber(loc_);
-        return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod.GPS : result;
-      }
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
-       * @param value The loc to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLoc(fi.hsl.common.hfp.proto.Hfp.Payload.LocationQualityMethod value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00080000;
-        loc_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional .proto.Payload.LocationQualityMethod loc = 20;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLoc() {
-        bitField0_ = (bitField0_ & ~0x00080000);
-        loc_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int stop_ ;
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional int32 stop = 21;</code>
-       * @return Whether the stop field is set.
-       */
-      @java.lang.Override
-      public boolean hasStop() {
-        return ((bitField0_ & 0x00100000) != 0);
-      }
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional int32 stop = 21;</code>
-       * @return The stop.
-       */
-      @java.lang.Override
-      public int getStop() {
-        return stop_;
-      }
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional int32 stop = 21;</code>
-       * @param value The stop to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStop(int value) {
-        
-        stop_ = value;
-        bitField0_ |= 0x00100000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional int32 stop = 21;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStop() {
-        bitField0_ = (bitField0_ & ~0x00100000);
-        stop_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object route_ = "";
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional string route = 22;</code>
-       * @return Whether the route field is set.
-       */
-      public boolean hasRoute() {
-        return ((bitField0_ & 0x00200000) != 0);
-      }
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional string route = 22;</code>
-       * @return The route.
-       */
-      public java.lang.String getRoute() {
-        java.lang.Object ref = route_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            route_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional string route = 22;</code>
-       * @return The bytes for route.
-       */
-      public com.google.protobuf.ByteString
-          getRouteBytes() {
-        java.lang.Object ref = route_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          route_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional string route = 22;</code>
-       * @param value The route to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRoute(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        route_ = value;
-        bitField0_ |= 0x00200000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional string route = 22;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRoute() {
-        route_ = getDefaultInstance().getRoute();
-        bitField0_ = (bitField0_ & ~0x00200000);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional string route = 22;</code>
-       * @param value The bytes for route to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRouteBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        route_ = value;
-        bitField0_ |= 0x00200000;
-        onChanged();
-        return this;
-      }
-
-      private int occu_ ;
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional int32 occu = 23;</code>
-       * @return Whether the occu field is set.
-       */
-      @java.lang.Override
-      public boolean hasOccu() {
-        return ((bitField0_ & 0x00400000) != 0);
-      }
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional int32 occu = 23;</code>
-       * @return The occu.
-       */
-      @java.lang.Override
-      public int getOccu() {
-        return occu_;
-      }
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional int32 occu = 23;</code>
-       * @param value The occu to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOccu(int value) {
-        
-        occu_ = value;
-        bitField0_ |= 0x00400000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * v2
-       * </pre>
-       *
-       * <code>optional int32 occu = 23;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOccu() {
-        bitField0_ = (bitField0_ & ~0x00400000);
-        occu_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int seq_ ;
-      /**
-       * <code>optional int32 seq = 24;</code>
-       * @return Whether the seq field is set.
-       */
-      @java.lang.Override
-      public boolean hasSeq() {
-        return ((bitField0_ & 0x00800000) != 0);
-      }
-      /**
-       * <code>optional int32 seq = 24;</code>
-       * @return The seq.
-       */
-      @java.lang.Override
-      public int getSeq() {
-        return seq_;
-      }
-      /**
-       * <code>optional int32 seq = 24;</code>
-       * @param value The seq to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSeq(int value) {
-        
-        seq_ = value;
-        bitField0_ |= 0x00800000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 seq = 24;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSeq() {
-        bitField0_ = (bitField0_ & ~0x00800000);
-        seq_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object ttarr_ = "";
-      /**
-       * <code>optional string ttarr = 25;</code>
-       * @return Whether the ttarr field is set.
-       */
-      public boolean hasTtarr() {
-        return ((bitField0_ & 0x01000000) != 0);
-      }
-      /**
-       * <code>optional string ttarr = 25;</code>
-       * @return The ttarr.
-       */
-      public java.lang.String getTtarr() {
-        java.lang.Object ref = ttarr_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            ttarr_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string ttarr = 25;</code>
-       * @return The bytes for ttarr.
-       */
-      public com.google.protobuf.ByteString
-          getTtarrBytes() {
-        java.lang.Object ref = ttarr_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          ttarr_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string ttarr = 25;</code>
-       * @param value The ttarr to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTtarr(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ttarr_ = value;
-        bitField0_ |= 0x01000000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string ttarr = 25;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTtarr() {
-        ttarr_ = getDefaultInstance().getTtarr();
-        bitField0_ = (bitField0_ & ~0x01000000);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string ttarr = 25;</code>
-       * @param value The bytes for ttarr to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTtarrBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        ttarr_ = value;
-        bitField0_ |= 0x01000000;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object ttdep_ = "";
-      /**
-       * <code>optional string ttdep = 26;</code>
-       * @return Whether the ttdep field is set.
-       */
-      public boolean hasTtdep() {
-        return ((bitField0_ & 0x02000000) != 0);
-      }
-      /**
-       * <code>optional string ttdep = 26;</code>
-       * @return The ttdep.
-       */
-      public java.lang.String getTtdep() {
-        java.lang.Object ref = ttdep_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            ttdep_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string ttdep = 26;</code>
-       * @return The bytes for ttdep.
-       */
-      public com.google.protobuf.ByteString
-          getTtdepBytes() {
-        java.lang.Object ref = ttdep_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          ttdep_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string ttdep = 26;</code>
-       * @param value The ttdep to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTtdep(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ttdep_ = value;
-        bitField0_ |= 0x02000000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string ttdep = 26;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTtdep() {
-        ttdep_ = getDefaultInstance().getTtdep();
-        bitField0_ = (bitField0_ & ~0x02000000);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string ttdep = 26;</code>
-       * @param value The bytes for ttdep to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTtdepBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        ttdep_ = value;
-        bitField0_ |= 0x02000000;
-        onChanged();
-        return this;
-      }
-
-      private int drType_ ;
-      /**
-       * <code>optional int32 dr_type = 27;</code>
-       * @return Whether the drType field is set.
-       */
-      @java.lang.Override
-      public boolean hasDrType() {
-        return ((bitField0_ & 0x04000000) != 0);
-      }
-      /**
-       * <code>optional int32 dr_type = 27;</code>
-       * @return The drType.
-       */
-      @java.lang.Override
-      public int getDrType() {
-        return drType_;
-      }
-      /**
-       * <code>optional int32 dr_type = 27;</code>
-       * @param value The drType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDrType(int value) {
-        
-        drType_ = value;
-        bitField0_ |= 0x04000000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 dr_type = 27;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDrType() {
-        bitField0_ = (bitField0_ & ~0x04000000);
-        drType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int tlpRequestid_ ;
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_requestid = 28;</code>
-       * @return Whether the tlpRequestid field is set.
-       */
-      @java.lang.Override
-      public boolean hasTlpRequestid() {
-        return ((bitField0_ & 0x08000000) != 0);
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_requestid = 28;</code>
-       * @return The tlpRequestid.
-       */
-      @java.lang.Override
-      public int getTlpRequestid() {
-        return tlpRequestid_;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_requestid = 28;</code>
-       * @param value The tlpRequestid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTlpRequestid(int value) {
-        
-        tlpRequestid_ = value;
-        bitField0_ |= 0x08000000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_requestid = 28;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTlpRequestid() {
-        bitField0_ = (bitField0_ & ~0x08000000);
-        tlpRequestid_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int tlpRequesttype_ = 0;
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
-       * @return Whether the tlpRequesttype field is set.
-       */
-      @java.lang.Override public boolean hasTlpRequesttype() {
-        return ((bitField0_ & 0x10000000) != 0);
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
-       * @return The tlpRequesttype.
-       */
-      @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType getTlpRequesttype() {
-        fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType.forNumber(tlpRequesttype_);
-        return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType.NORMAL : result;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
-       * @param value The tlpRequesttype to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTlpRequesttype(fi.hsl.common.hfp.proto.Hfp.Payload.TlpRequestType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x10000000;
-        tlpRequesttype_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional .proto.Payload.TlpRequestType tlp_requesttype = 29;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTlpRequesttype() {
-        bitField0_ = (bitField0_ & ~0x10000000);
-        tlpRequesttype_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int tlpPrioritylevel_ = 0;
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
-       * @return Whether the tlpPrioritylevel field is set.
-       */
-      @java.lang.Override public boolean hasTlpPrioritylevel() {
-        return ((bitField0_ & 0x20000000) != 0);
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
-       * @return The tlpPrioritylevel.
-       */
-      @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel getTlpPrioritylevel() {
-        fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel.forNumber(tlpPrioritylevel_);
-        return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel.normal : result;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
-       * @param value The tlpPrioritylevel to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTlpPrioritylevel(fi.hsl.common.hfp.proto.Hfp.Payload.TlpPriorityLevel value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x20000000;
-        tlpPrioritylevel_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional .proto.Payload.TlpPriorityLevel tlp_prioritylevel = 30;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTlpPrioritylevel() {
-        bitField0_ = (bitField0_ & ~0x20000000);
-        tlpPrioritylevel_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int tlpReason_ = 0;
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
-       * @return Whether the tlpReason field is set.
-       */
-      @java.lang.Override public boolean hasTlpReason() {
-        return ((bitField0_ & 0x40000000) != 0);
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
-       * @return The tlpReason.
-       */
-      @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason getTlpReason() {
-        fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason.forNumber(tlpReason_);
-        return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason.GLOBAL : result;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
-       * @param value The tlpReason to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTlpReason(fi.hsl.common.hfp.proto.Hfp.Payload.TlpReason value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x40000000;
-        tlpReason_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional .proto.Payload.TlpReason tlp_reason = 31;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTlpReason() {
-        bitField0_ = (bitField0_ & ~0x40000000);
-        tlpReason_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int tlpAttSeq_ ;
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_att_seq = 32;</code>
-       * @return Whether the tlpAttSeq field is set.
-       */
-      @java.lang.Override
-      public boolean hasTlpAttSeq() {
-        return ((bitField0_ & 0x80000000) != 0);
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_att_seq = 32;</code>
-       * @return The tlpAttSeq.
-       */
-      @java.lang.Override
-      public int getTlpAttSeq() {
-        return tlpAttSeq_;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_att_seq = 32;</code>
-       * @param value The tlpAttSeq to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTlpAttSeq(int value) {
-        
-        tlpAttSeq_ = value;
-        bitField0_ |= 0x80000000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_att_seq = 32;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTlpAttSeq() {
-        bitField0_ = (bitField0_ & ~0x80000000);
-        tlpAttSeq_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int tlpDecision_ = 0;
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
-       * @return Whether the tlpDecision field is set.
-       */
-      @java.lang.Override public boolean hasTlpDecision() {
-        return ((bitField1_ & 0x00000001) != 0);
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
-       * @return The tlpDecision.
-       */
-      @java.lang.Override
-      public fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision getTlpDecision() {
-        fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision result = fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision.forNumber(tlpDecision_);
-        return result == null ? fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision.ACK : result;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
-       * @param value The tlpDecision to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTlpDecision(fi.hsl.common.hfp.proto.Hfp.Payload.TlpDecision value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField1_ |= 0x00000001;
-        tlpDecision_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional .proto.Payload.TlpDecision tlp_decision = 33;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTlpDecision() {
-        bitField1_ = (bitField1_ & ~0x00000001);
-        tlpDecision_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int sid_ ;
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 sid = 34;</code>
-       * @return Whether the sid field is set.
-       */
-      @java.lang.Override
-      public boolean hasSid() {
-        return ((bitField1_ & 0x00000002) != 0);
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 sid = 34;</code>
-       * @return The sid.
-       */
-      @java.lang.Override
-      public int getSid() {
-        return sid_;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 sid = 34;</code>
-       * @param value The sid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSid(int value) {
-        
-        sid_ = value;
-        bitField1_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 sid = 34;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSid() {
-        bitField1_ = (bitField1_ & ~0x00000002);
-        sid_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int signalGroupid_ ;
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 signal_groupid = 35;</code>
-       * @return Whether the signalGroupid field is set.
-       */
-      @java.lang.Override
-      public boolean hasSignalGroupid() {
-        return ((bitField1_ & 0x00000004) != 0);
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 signal_groupid = 35;</code>
-       * @return The signalGroupid.
-       */
-      @java.lang.Override
-      public int getSignalGroupid() {
-        return signalGroupid_;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 signal_groupid = 35;</code>
-       * @param value The signalGroupid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSignalGroupid(int value) {
-        
-        signalGroupid_ = value;
-        bitField1_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 signal_groupid = 35;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSignalGroupid() {
-        bitField1_ = (bitField1_ & ~0x00000004);
-        signalGroupid_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int tlpSignalgroupnbr_ ;
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_signalgroupnbr = 36;</code>
-       * @return Whether the tlpSignalgroupnbr field is set.
-       */
-      @java.lang.Override
-      public boolean hasTlpSignalgroupnbr() {
-        return ((bitField1_ & 0x00000008) != 0);
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_signalgroupnbr = 36;</code>
-       * @return The tlpSignalgroupnbr.
-       */
-      @java.lang.Override
-      public int getTlpSignalgroupnbr() {
-        return tlpSignalgroupnbr_;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_signalgroupnbr = 36;</code>
-       * @param value The tlpSignalgroupnbr to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTlpSignalgroupnbr(int value) {
-        
-        tlpSignalgroupnbr_ = value;
-        bitField1_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_signalgroupnbr = 36;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTlpSignalgroupnbr() {
-        bitField1_ = (bitField1_ & ~0x00000008);
-        tlpSignalgroupnbr_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int tlpLineConfigid_ ;
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_line_configid = 38;</code>
-       * @return Whether the tlpLineConfigid field is set.
-       */
-      @java.lang.Override
-      public boolean hasTlpLineConfigid() {
-        return ((bitField1_ & 0x00000010) != 0);
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_line_configid = 38;</code>
-       * @return The tlpLineConfigid.
-       */
-      @java.lang.Override
-      public int getTlpLineConfigid() {
-        return tlpLineConfigid_;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_line_configid = 38;</code>
-       * @param value The tlpLineConfigid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTlpLineConfigid(int value) {
-        
-        tlpLineConfigid_ = value;
-        bitField1_ |= 0x00000010;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_line_configid = 38;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTlpLineConfigid() {
-        bitField1_ = (bitField1_ & ~0x00000010);
-        tlpLineConfigid_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int tlpPointConfigid_ ;
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_point_configid = 39;</code>
-       * @return Whether the tlpPointConfigid field is set.
-       */
-      @java.lang.Override
-      public boolean hasTlpPointConfigid() {
-        return ((bitField1_ & 0x00000020) != 0);
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_point_configid = 39;</code>
-       * @return The tlpPointConfigid.
-       */
-      @java.lang.Override
-      public int getTlpPointConfigid() {
-        return tlpPointConfigid_;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_point_configid = 39;</code>
-       * @param value The tlpPointConfigid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTlpPointConfigid(int value) {
-        
-        tlpPointConfigid_ = value;
-        bitField1_ |= 0x00000020;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_point_configid = 39;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTlpPointConfigid() {
-        bitField1_ = (bitField1_ & ~0x00000020);
-        tlpPointConfigid_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int tlpFrequency_ ;
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_frequency = 40;</code>
-       * @return Whether the tlpFrequency field is set.
-       */
-      @java.lang.Override
-      public boolean hasTlpFrequency() {
-        return ((bitField1_ & 0x00000040) != 0);
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_frequency = 40;</code>
-       * @return The tlpFrequency.
-       */
-      @java.lang.Override
-      public int getTlpFrequency() {
-        return tlpFrequency_;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_frequency = 40;</code>
-       * @param value The tlpFrequency to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTlpFrequency(int value) {
-        
-        tlpFrequency_ = value;
-        bitField1_ |= 0x00000040;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional int32 tlp_frequency = 40;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTlpFrequency() {
-        bitField1_ = (bitField1_ & ~0x00000040);
-        tlpFrequency_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object tlpProtocol_ = "";
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional string tlp_protocol = 41;</code>
-       * @return Whether the tlpProtocol field is set.
-       */
-      public boolean hasTlpProtocol() {
-        return ((bitField1_ & 0x00000080) != 0);
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional string tlp_protocol = 41;</code>
-       * @return The tlpProtocol.
-       */
-      public java.lang.String getTlpProtocol() {
-        java.lang.Object ref = tlpProtocol_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            tlpProtocol_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional string tlp_protocol = 41;</code>
-       * @return The bytes for tlpProtocol.
-       */
-      public com.google.protobuf.ByteString
-          getTlpProtocolBytes() {
-        java.lang.Object ref = tlpProtocol_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tlpProtocol_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional string tlp_protocol = 41;</code>
-       * @param value The tlpProtocol to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTlpProtocol(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        tlpProtocol_ = value;
-        bitField1_ |= 0x00000080;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional string tlp_protocol = 41;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTlpProtocol() {
-        tlpProtocol_ = getDefaultInstance().getTlpProtocol();
-        bitField1_ = (bitField1_ & ~0x00000080);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * tlr
-       * </pre>
-       *
-       * <code>optional string tlp_protocol = 41;</code>
-       * @param value The bytes for tlpProtocol to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTlpProtocolBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        tlpProtocol_ = value;
-        bitField1_ |= 0x00000080;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object label_ = "";
-      /**
-       * <code>optional string label = 42;</code>
-       * @return Whether the label field is set.
-       */
-      public boolean hasLabel() {
-        return ((bitField1_ & 0x00000100) != 0);
-      }
-      /**
-       * <code>optional string label = 42;</code>
-       * @return The label.
-       */
-      public java.lang.String getLabel() {
-        java.lang.Object ref = label_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            label_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string label = 42;</code>
-       * @return The bytes for label.
-       */
-      public com.google.protobuf.ByteString
-          getLabelBytes() {
-        java.lang.Object ref = label_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          label_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string label = 42;</code>
-       * @param value The label to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLabel(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        label_ = value;
-        bitField1_ |= 0x00000100;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string label = 42;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLabel() {
-        label_ = getDefaultInstance().getLabel();
-        bitField1_ = (bitField1_ & ~0x00000100);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string label = 42;</code>
-       * @param value The bytes for label to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLabelBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        label_ = value;
-        bitField1_ |= 0x00000100;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:proto.Payload)
     }
 
-    // @@protoc_insertion_point(class_scope:proto.Payload)
-    private static final fi.hsl.common.hfp.proto.Hfp.Payload DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Descriptors.Descriptor internal_static_proto_Data_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_proto_Data_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor internal_static_proto_Topic_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_proto_Topic_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor internal_static_proto_Payload_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_proto_Payload_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
     static {
-      DEFAULT_INSTANCE = new fi.hsl.common.hfp.proto.Hfp.Payload();
+        java.lang.String[] descriptorData = {"\n\thfp.proto\022\005proto\"^\n\004Data\022\030\n\rSchemaVers"
+                + "ion\030\001 \002(\005:\0011\022\033\n\005topic\030\002 \001(\0132\014.proto.Topi"
+                + "c\022\037\n\007payload\030\003 \002(\0132\016.proto.Payload\"\367\006\n\005T"
+                + "opic\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\023\n\013receiv"
+                + "ed_at\030\002 \002(\003\022\024\n\014topic_prefix\030\003 \002(\t\022\025\n\rtop"
+                + "ic_version\030\004 \002(\t\022.\n\014journey_type\030\005 \002(\0162\030"
+                + ".proto.Topic.JourneyType\0220\n\rtemporal_typ"
+                + "e\030\006 \002(\0162\031.proto.Topic.TemporalType\022*\n\nev"
+                + "ent_type\030\007 \001(\0162\026.proto.Topic.EventType\0222"
+                + "\n\016transport_mode\030\010 \001(\0162\032.proto.Topic.Tra"
+                + "nsportMode\022\023\n\013operator_id\030\t \002(\005\022\026\n\016vehic"
+                + "le_number\030\n \002(\005\022\031\n\021unique_vehicle_id\030\013 \002"
+                + "(\t\022\020\n\010route_id\030\014 \001(\t\022\024\n\014direction_id\030\r \001"
+                + "(\005\022\020\n\010headsign\030\016 \001(\t\022\022\n\nstart_time\030\017 \001(\t"
+                + "\022\021\n\tnext_stop\030\020 \001(\t\022\025\n\rgeohash_level\030\021 \001"
+                + "(\005\022\020\n\010latitude\030\022 \001(\001\022\021\n\tlongitude\030\023 \001(\001\""
+                + "4\n\013JourneyType\022\013\n\007journey\020\000\022\013\n\007deadrun\020\001"
+                + "\022\013\n\007signoff\020\002\")\n\014TemporalType\022\013\n\007ongoing"
+                + "\020\000\022\014\n\010upcoming\020\001\"\257\001\n\tEventType\022\006\n\002VP\020\000\022\007"
+                + "\n\003DUE\020\001\022\007\n\003ARR\020\002\022\007\n\003ARS\020\003\022\007\n\003PDE\020\004\022\007\n\003DE"
+                + "P\020\005\022\007\n\003PAS\020\006\022\010\n\004WAIT\020\007\022\007\n\003DOO\020\010\022\007\n\003DOC\020\t"
+                + "\022\007\n\003TLR\020\n\022\007\n\003TLA\020\013\022\006\n\002DA\020\014\022\010\n\004DOUT\020\r\022\006\n\002"
+                + "BA\020\016\022\010\n\004BOUT\020\017\022\007\n\003VJA\020\020\022\t\n\005VJOUT\020\021\"X\n\rTr"
+                + "ansportMode\022\007\n\003bus\020\000\022\t\n\005train\020\001\022\010\n\004tram\020"
+                + "\002\022\t\n\005metro\020\003\022\t\n\005ferry\020\004\022\010\n\004ubus\020\005\022\t\n\005rob"
+                + "ot\020\006\"\206\t\n\007Payload\022\030\n\rSchemaVersion\030\001 \002(\005:"
+                + "\0011\022\014\n\004desi\030\002 \001(\t\022\013\n\003dir\030\003 \001(\t\022\014\n\004oper\030\004 "
+                + "\001(\005\022\013\n\003veh\030\005 \001(\005\022\013\n\003tst\030\006 \002(\t\022\013\n\003tsi\030\007 \002"
+                + "(\003\022\013\n\003spd\030\010 \001(\001\022\013\n\003hdg\030\t \001(\005\022\013\n\003lat\030\n \001("
+                + "\001\022\014\n\004long\030\013 \001(\001\022\013\n\003acc\030\014 \001(\001\022\n\n\002dl\030\r \001(\r"
+                + "\022\013\n\003odo\030\016 \001(\001\022\014\n\004drst\030\017 \001(\r\022\014\n\004oday\030\020 \001("
+                + "\t\022\013\n\003jrn\030\021 \001(\005\022\014\n\004line\030\022 \001(\005\022\r\n\005start\030\023 "
+                + "\001(\t\0221\n\003loc\030\024 \001(\0162$.proto.Payload.Locatio"
+                + "nQualityMethod\022\014\n\004stop\030\025 \001(\005\022\r\n\005route\030\026 "
+                + "\001(\t\022\014\n\004occu\030\027 \001(\005\022\013\n\003seq\030\030 \001(\005\022\r\n\005ttarr\030"
+                + "\031 \001(\t\022\r\n\005ttdep\030\032 \001(\t\022\017\n\007dr_type\030\033 \001(\005\022\025\n"
+                + "\rtlp_requestid\030\034 \001(\005\0226\n\017tlp_requesttype\030"
+                + "\035 \001(\0162\035.proto.Payload.TlpRequestType\022:\n\021"
+                + "tlp_prioritylevel\030\036 \001(\0162\037.proto.Payload."
+                + "TlpPriorityLevel\022,\n\ntlp_reason\030\037 \001(\0162\030.p"
+                + "roto.Payload.TlpReason\022\023\n\013tlp_att_seq\030  "
+                + "\001(\005\0220\n\014tlp_decision\030! \001(\0162\032.proto.Payloa"
+                + "d.TlpDecision\022\013\n\003sid\030\" \001(\005\022\026\n\016signal_gro"
+                + "upid\030# \001(\005\022\032\n\022tlp_signalgroupnbr\030$ \001(\005\022\031"
+                + "\n\021tlp_line_configid\030& \001(\005\022\032\n\022tlp_point_c"
+                + "onfigid\030\' \001(\005\022\025\n\rtlp_frequency\030( \001(\005\022\024\n\014"
+                + "tlp_protocol\030) \001(\t\022\r\n\005label\030* \001(\t\"B\n\025Loc"
+                + "ationQualityMethod\022\007\n\003GPS\020\000\022\007\n\003ODO\020\001\022\007\n\003"
+                + "MAN\020\002\022\006\n\002NA\020\003\022\006\n\002DR\020\004\"H\n\016TlpRequestType\022"
+                + "\n\n\006NORMAL\020\000\022\016\n\nDOOR_CLOSE\020\001\022\r\n\tDOOR_OPEN"
+                + "\020\002\022\013\n\007ADVANCE\020\003\"7\n\020TlpPriorityLevel\022\n\n\006n"
+                + "ormal\020\000\022\010\n\004high\020\001\022\r\n\tnorequest\020\002\":\n\tTlpR"
+                + "eason\022\n\n\006GLOBAL\020\000\022\t\n\005AHEAD\020\001\022\010\n\004LINE\020\002\022\014"
+                + "\n\010PRIOEXEP\020\003\"\037\n\013TlpDecision\022\007\n\003ACK\020\000\022\007\n\003"
+                + "NAK\020\001B\036\n\027fi.hsl.common.hfp.protoB\003Hfp"};
+        descriptor = com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(descriptorData,
+                new com.google.protobuf.Descriptors.FileDescriptor[]{});
+        internal_static_proto_Data_descriptor = getDescriptor().getMessageTypes().get(0);
+        internal_static_proto_Data_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_proto_Data_descriptor, new java.lang.String[]{"SchemaVersion", "Topic", "Payload",});
+        internal_static_proto_Topic_descriptor = getDescriptor().getMessageTypes().get(1);
+        internal_static_proto_Topic_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_proto_Topic_descriptor,
+                new java.lang.String[]{"SchemaVersion", "ReceivedAt", "TopicPrefix", "TopicVersion", "JourneyType",
+                        "TemporalType", "EventType", "TransportMode", "OperatorId", "VehicleNumber", "UniqueVehicleId",
+                        "RouteId", "DirectionId", "Headsign", "StartTime", "NextStop", "GeohashLevel", "Latitude",
+                        "Longitude",});
+        internal_static_proto_Payload_descriptor = getDescriptor().getMessageTypes().get(2);
+        internal_static_proto_Payload_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_proto_Payload_descriptor,
+                new java.lang.String[]{"SchemaVersion", "Desi", "Dir", "Oper", "Veh", "Tst", "Tsi", "Spd", "Hdg", "Lat",
+                        "Long", "Acc", "Dl", "Odo", "Drst", "Oday", "Jrn", "Line", "Start", "Loc", "Stop", "Route",
+                        "Occu", "Seq", "Ttarr", "Ttdep", "DrType", "TlpRequestid", "TlpRequesttype", "TlpPrioritylevel",
+                        "TlpReason", "TlpAttSeq", "TlpDecision", "Sid", "SignalGroupid", "TlpSignalgroupnbr",
+                        "TlpLineConfigid", "TlpPointConfigid", "TlpFrequency", "TlpProtocol", "Label",});
     }
 
-    public static fi.hsl.common.hfp.proto.Hfp.Payload getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<Payload>
-        PARSER = new com.google.protobuf.AbstractParser<Payload>() {
-      @java.lang.Override
-      public Payload parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<Payload> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Payload> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public fi.hsl.common.hfp.proto.Hfp.Payload getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_proto_Data_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_proto_Data_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_proto_Topic_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_proto_Topic_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_proto_Payload_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_proto_Payload_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\thfp.proto\022\005proto\"^\n\004Data\022\030\n\rSchemaVers" +
-      "ion\030\001 \002(\005:\0011\022\033\n\005topic\030\002 \001(\0132\014.proto.Topi" +
-      "c\022\037\n\007payload\030\003 \002(\0132\016.proto.Payload\"\367\006\n\005T" +
-      "opic\022\030\n\rSchemaVersion\030\001 \002(\005:\0011\022\023\n\013receiv" +
-      "ed_at\030\002 \002(\003\022\024\n\014topic_prefix\030\003 \002(\t\022\025\n\rtop" +
-      "ic_version\030\004 \002(\t\022.\n\014journey_type\030\005 \002(\0162\030" +
-      ".proto.Topic.JourneyType\0220\n\rtemporal_typ" +
-      "e\030\006 \002(\0162\031.proto.Topic.TemporalType\022*\n\nev" +
-      "ent_type\030\007 \001(\0162\026.proto.Topic.EventType\0222" +
-      "\n\016transport_mode\030\010 \001(\0162\032.proto.Topic.Tra" +
-      "nsportMode\022\023\n\013operator_id\030\t \002(\005\022\026\n\016vehic" +
-      "le_number\030\n \002(\005\022\031\n\021unique_vehicle_id\030\013 \002" +
-      "(\t\022\020\n\010route_id\030\014 \001(\t\022\024\n\014direction_id\030\r \001" +
-      "(\005\022\020\n\010headsign\030\016 \001(\t\022\022\n\nstart_time\030\017 \001(\t" +
-      "\022\021\n\tnext_stop\030\020 \001(\t\022\025\n\rgeohash_level\030\021 \001" +
-      "(\005\022\020\n\010latitude\030\022 \001(\001\022\021\n\tlongitude\030\023 \001(\001\"" +
-      "4\n\013JourneyType\022\013\n\007journey\020\000\022\013\n\007deadrun\020\001" +
-      "\022\013\n\007signoff\020\002\")\n\014TemporalType\022\013\n\007ongoing" +
-      "\020\000\022\014\n\010upcoming\020\001\"\257\001\n\tEventType\022\006\n\002VP\020\000\022\007" +
-      "\n\003DUE\020\001\022\007\n\003ARR\020\002\022\007\n\003ARS\020\003\022\007\n\003PDE\020\004\022\007\n\003DE" +
-      "P\020\005\022\007\n\003PAS\020\006\022\010\n\004WAIT\020\007\022\007\n\003DOO\020\010\022\007\n\003DOC\020\t" +
-      "\022\007\n\003TLR\020\n\022\007\n\003TLA\020\013\022\006\n\002DA\020\014\022\010\n\004DOUT\020\r\022\006\n\002" +
-      "BA\020\016\022\010\n\004BOUT\020\017\022\007\n\003VJA\020\020\022\t\n\005VJOUT\020\021\"X\n\rTr" +
-      "ansportMode\022\007\n\003bus\020\000\022\t\n\005train\020\001\022\010\n\004tram\020" +
-      "\002\022\t\n\005metro\020\003\022\t\n\005ferry\020\004\022\010\n\004ubus\020\005\022\t\n\005rob" +
-      "ot\020\006\"\206\t\n\007Payload\022\030\n\rSchemaVersion\030\001 \002(\005:" +
-      "\0011\022\014\n\004desi\030\002 \001(\t\022\013\n\003dir\030\003 \001(\t\022\014\n\004oper\030\004 " +
-      "\001(\005\022\013\n\003veh\030\005 \001(\005\022\013\n\003tst\030\006 \002(\t\022\013\n\003tsi\030\007 \002" +
-      "(\003\022\013\n\003spd\030\010 \001(\001\022\013\n\003hdg\030\t \001(\005\022\013\n\003lat\030\n \001(" +
-      "\001\022\014\n\004long\030\013 \001(\001\022\013\n\003acc\030\014 \001(\001\022\n\n\002dl\030\r \001(\r" +
-      "\022\013\n\003odo\030\016 \001(\001\022\014\n\004drst\030\017 \001(\r\022\014\n\004oday\030\020 \001(" +
-      "\t\022\013\n\003jrn\030\021 \001(\005\022\014\n\004line\030\022 \001(\005\022\r\n\005start\030\023 " +
-      "\001(\t\0221\n\003loc\030\024 \001(\0162$.proto.Payload.Locatio" +
-      "nQualityMethod\022\014\n\004stop\030\025 \001(\005\022\r\n\005route\030\026 " +
-      "\001(\t\022\014\n\004occu\030\027 \001(\005\022\013\n\003seq\030\030 \001(\005\022\r\n\005ttarr\030" +
-      "\031 \001(\t\022\r\n\005ttdep\030\032 \001(\t\022\017\n\007dr_type\030\033 \001(\005\022\025\n" +
-      "\rtlp_requestid\030\034 \001(\005\0226\n\017tlp_requesttype\030" +
-      "\035 \001(\0162\035.proto.Payload.TlpRequestType\022:\n\021" +
-      "tlp_prioritylevel\030\036 \001(\0162\037.proto.Payload." +
-      "TlpPriorityLevel\022,\n\ntlp_reason\030\037 \001(\0162\030.p" +
-      "roto.Payload.TlpReason\022\023\n\013tlp_att_seq\030  " +
-      "\001(\005\0220\n\014tlp_decision\030! \001(\0162\032.proto.Payloa" +
-      "d.TlpDecision\022\013\n\003sid\030\" \001(\005\022\026\n\016signal_gro" +
-      "upid\030# \001(\005\022\032\n\022tlp_signalgroupnbr\030$ \001(\005\022\031" +
-      "\n\021tlp_line_configid\030& \001(\005\022\032\n\022tlp_point_c" +
-      "onfigid\030\' \001(\005\022\025\n\rtlp_frequency\030( \001(\005\022\024\n\014" +
-      "tlp_protocol\030) \001(\t\022\r\n\005label\030* \001(\t\"B\n\025Loc" +
-      "ationQualityMethod\022\007\n\003GPS\020\000\022\007\n\003ODO\020\001\022\007\n\003" +
-      "MAN\020\002\022\006\n\002NA\020\003\022\006\n\002DR\020\004\"H\n\016TlpRequestType\022" +
-      "\n\n\006NORMAL\020\000\022\016\n\nDOOR_CLOSE\020\001\022\r\n\tDOOR_OPEN" +
-      "\020\002\022\013\n\007ADVANCE\020\003\"7\n\020TlpPriorityLevel\022\n\n\006n" +
-      "ormal\020\000\022\010\n\004high\020\001\022\r\n\tnorequest\020\002\":\n\tTlpR" +
-      "eason\022\n\n\006GLOBAL\020\000\022\t\n\005AHEAD\020\001\022\010\n\004LINE\020\002\022\014" +
-      "\n\010PRIOEXEP\020\003\"\037\n\013TlpDecision\022\007\n\003ACK\020\000\022\007\n\003" +
-      "NAK\020\001B\036\n\027fi.hsl.common.hfp.protoB\003Hfp"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_proto_Data_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_proto_Data_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_proto_Data_descriptor,
-        new java.lang.String[] { "SchemaVersion", "Topic", "Payload", });
-    internal_static_proto_Topic_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_proto_Topic_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_proto_Topic_descriptor,
-        new java.lang.String[] { "SchemaVersion", "ReceivedAt", "TopicPrefix", "TopicVersion", "JourneyType", "TemporalType", "EventType", "TransportMode", "OperatorId", "VehicleNumber", "UniqueVehicleId", "RouteId", "DirectionId", "Headsign", "StartTime", "NextStop", "GeohashLevel", "Latitude", "Longitude", });
-    internal_static_proto_Payload_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_proto_Payload_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_proto_Payload_descriptor,
-        new java.lang.String[] { "SchemaVersion", "Desi", "Dir", "Oper", "Veh", "Tst", "Tsi", "Spd", "Hdg", "Lat", "Long", "Acc", "Dl", "Odo", "Drst", "Oday", "Jrn", "Line", "Start", "Loc", "Stop", "Route", "Occu", "Seq", "Ttarr", "Ttdep", "DrType", "TlpRequestid", "TlpRequesttype", "TlpPrioritylevel", "TlpReason", "TlpAttSeq", "TlpDecision", "Sid", "SignalGroupid", "TlpSignalgroupnbr", "TlpLineConfigid", "TlpPointConfigid", "TlpFrequency", "TlpProtocol", "Label", });
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }

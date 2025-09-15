@@ -4,9164 +4,8858 @@
 package fi.hsl.common.passengercount.proto;
 
 public final class PassengerCount {
-  private PassengerCount() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
-
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface DataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:proto.Data)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return Whether the schemaVersion field is set.
-     */
-    boolean hasSchemaVersion();
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return The schemaVersion.
-     */
-    int getSchemaVersion();
-
-    /**
-     * <code>optional .proto.Topic topic = 2;</code>
-     * @return Whether the topic field is set.
-     */
-    boolean hasTopic();
-    /**
-     * <code>optional .proto.Topic topic = 2;</code>
-     * @return The topic.
-     */
-    fi.hsl.common.passengercount.proto.PassengerCount.Topic getTopic();
-    /**
-     * <code>optional .proto.Topic topic = 2;</code>
-     */
-    fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder getTopicOrBuilder();
-
-    /**
-     * <code>required .proto.Payload payload = 3;</code>
-     * @return Whether the payload field is set.
-     */
-    boolean hasPayload();
-    /**
-     * <code>required .proto.Payload payload = 3;</code>
-     * @return The payload.
-     */
-    fi.hsl.common.passengercount.proto.PassengerCount.Payload getPayload();
-    /**
-     * <code>required .proto.Payload payload = 3;</code>
-     */
-    fi.hsl.common.passengercount.proto.PassengerCount.PayloadOrBuilder getPayloadOrBuilder();
-
-    /**
-     * <code>optional int64 received_at = 4;</code>
-     * @return Whether the receivedAt field is set.
-     */
-    boolean hasReceivedAt();
-    /**
-     * <code>optional int64 received_at = 4;</code>
-     * @return The receivedAt.
-     */
-    long getReceivedAt();
-  }
-  /**
-   * Protobuf type {@code proto.Data}
-   */
-  public static final class Data extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:proto.Data)
-      DataOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Data.newBuilder() to construct.
-    private Data(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
+    private PassengerCount() {
     }
-    private Data() {
-      schemaVersion_ = 1;
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Data();
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
     }
+    public interface DataOrBuilder
+            extends
+                // @@protoc_insertion_point(interface_extends:proto.Data)
+                com.google.protobuf.MessageOrBuilder {
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Data_descriptor;
-    }
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return Whether the schemaVersion field is set.
+         */
+        boolean hasSchemaVersion();
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return The schemaVersion.
+         */
+        int getSchemaVersion();
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Data_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              fi.hsl.common.passengercount.proto.PassengerCount.Data.class, fi.hsl.common.passengercount.proto.PassengerCount.Data.Builder.class);
-    }
+        /**
+         * <code>optional .proto.Topic topic = 2;</code>
+         * @return Whether the topic field is set.
+         */
+        boolean hasTopic();
+        /**
+         * <code>optional .proto.Topic topic = 2;</code>
+         * @return The topic.
+         */
+        fi.hsl.common.passengercount.proto.PassengerCount.Topic getTopic();
+        /**
+         * <code>optional .proto.Topic topic = 2;</code>
+         */
+        fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder getTopicOrBuilder();
 
-    private int bitField0_;
-    public static final int SCHEMAVERSION_FIELD_NUMBER = 1;
-    private int schemaVersion_ = 1;
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return Whether the schemaVersion field is set.
-     */
-    @java.lang.Override
-    public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return The schemaVersion.
-     */
-    @java.lang.Override
-    public int getSchemaVersion() {
-      return schemaVersion_;
-    }
+        /**
+         * <code>required .proto.Payload payload = 3;</code>
+         * @return Whether the payload field is set.
+         */
+        boolean hasPayload();
+        /**
+         * <code>required .proto.Payload payload = 3;</code>
+         * @return The payload.
+         */
+        fi.hsl.common.passengercount.proto.PassengerCount.Payload getPayload();
+        /**
+         * <code>required .proto.Payload payload = 3;</code>
+         */
+        fi.hsl.common.passengercount.proto.PassengerCount.PayloadOrBuilder getPayloadOrBuilder();
 
-    public static final int TOPIC_FIELD_NUMBER = 2;
-    private fi.hsl.common.passengercount.proto.PassengerCount.Topic topic_;
-    /**
-     * <code>optional .proto.Topic topic = 2;</code>
-     * @return Whether the topic field is set.
-     */
-    @java.lang.Override
-    public boolean hasTopic() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>optional .proto.Topic topic = 2;</code>
-     * @return The topic.
-     */
-    @java.lang.Override
-    public fi.hsl.common.passengercount.proto.PassengerCount.Topic getTopic() {
-      return topic_ == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDefaultInstance() : topic_;
-    }
-    /**
-     * <code>optional .proto.Topic topic = 2;</code>
-     */
-    @java.lang.Override
-    public fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder getTopicOrBuilder() {
-      return topic_ == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDefaultInstance() : topic_;
-    }
-
-    public static final int PAYLOAD_FIELD_NUMBER = 3;
-    private fi.hsl.common.passengercount.proto.PassengerCount.Payload payload_;
-    /**
-     * <code>required .proto.Payload payload = 3;</code>
-     * @return Whether the payload field is set.
-     */
-    @java.lang.Override
-    public boolean hasPayload() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>required .proto.Payload payload = 3;</code>
-     * @return The payload.
-     */
-    @java.lang.Override
-    public fi.hsl.common.passengercount.proto.PassengerCount.Payload getPayload() {
-      return payload_ == null ? fi.hsl.common.passengercount.proto.PassengerCount.Payload.getDefaultInstance() : payload_;
-    }
-    /**
-     * <code>required .proto.Payload payload = 3;</code>
-     */
-    @java.lang.Override
-    public fi.hsl.common.passengercount.proto.PassengerCount.PayloadOrBuilder getPayloadOrBuilder() {
-      return payload_ == null ? fi.hsl.common.passengercount.proto.PassengerCount.Payload.getDefaultInstance() : payload_;
-    }
-
-    public static final int RECEIVED_AT_FIELD_NUMBER = 4;
-    private long receivedAt_ = 0L;
-    /**
-     * <code>optional int64 received_at = 4;</code>
-     * @return Whether the receivedAt field is set.
-     */
-    @java.lang.Override
-    public boolean hasReceivedAt() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <code>optional int64 received_at = 4;</code>
-     * @return The receivedAt.
-     */
-    @java.lang.Override
-    public long getReceivedAt() {
-      return receivedAt_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      if (!hasSchemaVersion()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasPayload()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (hasTopic()) {
-        if (!getTopic().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeInt32(1, schemaVersion_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeMessage(2, getTopic());
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeMessage(3, getPayload());
-      }
-      if (((bitField0_ & 0x00000008) != 0)) {
-        output.writeInt64(4, receivedAt_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, schemaVersion_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getTopic());
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getPayload());
-      }
-      if (((bitField0_ & 0x00000008) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, receivedAt_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof fi.hsl.common.passengercount.proto.PassengerCount.Data)) {
-        return super.equals(obj);
-      }
-      fi.hsl.common.passengercount.proto.PassengerCount.Data other = (fi.hsl.common.passengercount.proto.PassengerCount.Data) obj;
-
-      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
-      if (hasSchemaVersion()) {
-        if (getSchemaVersion()
-            != other.getSchemaVersion()) return false;
-      }
-      if (hasTopic() != other.hasTopic()) return false;
-      if (hasTopic()) {
-        if (!getTopic()
-            .equals(other.getTopic())) return false;
-      }
-      if (hasPayload() != other.hasPayload()) return false;
-      if (hasPayload()) {
-        if (!getPayload()
-            .equals(other.getPayload())) return false;
-      }
-      if (hasReceivedAt() != other.hasReceivedAt()) return false;
-      if (hasReceivedAt()) {
-        if (getReceivedAt()
-            != other.getReceivedAt()) return false;
-      }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasSchemaVersion()) {
-        hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
-        hash = (53 * hash) + getSchemaVersion();
-      }
-      if (hasTopic()) {
-        hash = (37 * hash) + TOPIC_FIELD_NUMBER;
-        hash = (53 * hash) + getTopic().hashCode();
-      }
-      if (hasPayload()) {
-        hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
-        hash = (53 * hash) + getPayload().hashCode();
-      }
-      if (hasReceivedAt()) {
-        hash = (37 * hash) + RECEIVED_AT_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getReceivedAt());
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(fi.hsl.common.passengercount.proto.PassengerCount.Data prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
+        /**
+         * <code>optional int64 received_at = 4;</code>
+         * @return Whether the receivedAt field is set.
+         */
+        boolean hasReceivedAt();
+        /**
+         * <code>optional int64 received_at = 4;</code>
+         * @return The receivedAt.
+         */
+        long getReceivedAt();
     }
     /**
      * Protobuf type {@code proto.Data}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:proto.Data)
-        fi.hsl.common.passengercount.proto.PassengerCount.DataOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Data_descriptor;
-      }
+    public static final class Data extends com.google.protobuf.GeneratedMessageV3
+            implements
+                // @@protoc_insertion_point(message_implements:proto.Data)
+                DataOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use Data.newBuilder() to construct.
+        private Data(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+        private Data() {
+            schemaVersion_ = 1;
+        }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Data_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                fi.hsl.common.passengercount.proto.PassengerCount.Data.class, fi.hsl.common.passengercount.proto.PassengerCount.Data.Builder.class);
-      }
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new Data();
+        }
 
-      // Construct using fi.hsl.common.passengercount.proto.PassengerCount.Data.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
+        }
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Data_descriptor;
+        }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getTopicFieldBuilder();
-          getPayloadFieldBuilder();
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+            return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Data_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(fi.hsl.common.passengercount.proto.PassengerCount.Data.class,
+                            fi.hsl.common.passengercount.proto.PassengerCount.Data.Builder.class);
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        schemaVersion_ = 1;
-        topic_ = null;
-        if (topicBuilder_ != null) {
-          topicBuilder_.dispose();
-          topicBuilder_ = null;
-        }
-        payload_ = null;
-        if (payloadBuilder_ != null) {
-          payloadBuilder_.dispose();
-          payloadBuilder_ = null;
-        }
-        receivedAt_ = 0L;
-        return this;
-      }
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Data_descriptor;
-      }
+        private int bitField0_;
+        public static final int SCHEMAVERSION_FIELD_NUMBER = 1;
+        private int schemaVersion_ = 1;
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return Whether the schemaVersion field is set.
+         */
+        @java.lang.Override
+        public boolean hasSchemaVersion() {
+            return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return The schemaVersion.
+         */
+        @java.lang.Override
+        public int getSchemaVersion() {
+            return schemaVersion_;
+        }
 
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.Data getDefaultInstanceForType() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.Data.getDefaultInstance();
-      }
+        public static final int TOPIC_FIELD_NUMBER = 2;
+        private fi.hsl.common.passengercount.proto.PassengerCount.Topic topic_;
+        /**
+         * <code>optional .proto.Topic topic = 2;</code>
+         * @return Whether the topic field is set.
+         */
+        @java.lang.Override
+        public boolean hasTopic() {
+            return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         * <code>optional .proto.Topic topic = 2;</code>
+         * @return The topic.
+         */
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.Topic getTopic() {
+            return topic_ == null
+                    ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDefaultInstance()
+                    : topic_;
+        }
+        /**
+         * <code>optional .proto.Topic topic = 2;</code>
+         */
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder getTopicOrBuilder() {
+            return topic_ == null
+                    ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDefaultInstance()
+                    : topic_;
+        }
 
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.Data build() {
-        fi.hsl.common.passengercount.proto.PassengerCount.Data result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        public static final int PAYLOAD_FIELD_NUMBER = 3;
+        private fi.hsl.common.passengercount.proto.PassengerCount.Payload payload_;
+        /**
+         * <code>required .proto.Payload payload = 3;</code>
+         * @return Whether the payload field is set.
+         */
+        @java.lang.Override
+        public boolean hasPayload() {
+            return ((bitField0_ & 0x00000004) != 0);
         }
-        return result;
-      }
+        /**
+         * <code>required .proto.Payload payload = 3;</code>
+         * @return The payload.
+         */
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.Payload getPayload() {
+            return payload_ == null
+                    ? fi.hsl.common.passengercount.proto.PassengerCount.Payload.getDefaultInstance()
+                    : payload_;
+        }
+        /**
+         * <code>required .proto.Payload payload = 3;</code>
+         */
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.PayloadOrBuilder getPayloadOrBuilder() {
+            return payload_ == null
+                    ? fi.hsl.common.passengercount.proto.PassengerCount.Payload.getDefaultInstance()
+                    : payload_;
+        }
 
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.Data buildPartial() {
-        fi.hsl.common.passengercount.proto.PassengerCount.Data result = new fi.hsl.common.passengercount.proto.PassengerCount.Data(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
+        public static final int RECEIVED_AT_FIELD_NUMBER = 4;
+        private long receivedAt_ = 0L;
+        /**
+         * <code>optional int64 received_at = 4;</code>
+         * @return Whether the receivedAt field is set.
+         */
+        @java.lang.Override
+        public boolean hasReceivedAt() {
+            return ((bitField0_ & 0x00000008) != 0);
+        }
+        /**
+         * <code>optional int64 received_at = 4;</code>
+         * @return The receivedAt.
+         */
+        @java.lang.Override
+        public long getReceivedAt() {
+            return receivedAt_;
+        }
 
-      private void buildPartial0(fi.hsl.common.passengercount.proto.PassengerCount.Data result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.schemaVersion_ = schemaVersion_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.topic_ = topicBuilder_ == null
-              ? topic_
-              : topicBuilder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.payload_ = payloadBuilder_ == null
-              ? payload_
-              : payloadBuilder_.build();
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.receivedAt_ = receivedAt_;
-          to_bitField0_ |= 0x00000008;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
+        private byte memoizedIsInitialized = -1;
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1)
+                return true;
+            if (isInitialized == 0)
+                return false;
 
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof fi.hsl.common.passengercount.proto.PassengerCount.Data) {
-          return mergeFrom((fi.hsl.common.passengercount.proto.PassengerCount.Data)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(fi.hsl.common.passengercount.proto.PassengerCount.Data other) {
-        if (other == fi.hsl.common.passengercount.proto.PassengerCount.Data.getDefaultInstance()) return this;
-        if (other.hasSchemaVersion()) {
-          setSchemaVersion(other.getSchemaVersion());
-        }
-        if (other.hasTopic()) {
-          mergeTopic(other.getTopic());
-        }
-        if (other.hasPayload()) {
-          mergePayload(other.getPayload());
-        }
-        if (other.hasReceivedAt()) {
-          setReceivedAt(other.getReceivedAt());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        if (!hasSchemaVersion()) {
-          return false;
-        }
-        if (!hasPayload()) {
-          return false;
-        }
-        if (hasTopic()) {
-          if (!getTopic().isInitialized()) {
-            return false;
-          }
-        }
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                schemaVersion_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 18: {
-                input.readMessage(
-                    getTopicFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getPayloadFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 32: {
-                receivedAt_ = input.readInt64();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
+            if (!hasSchemaVersion()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasPayload()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (hasTopic()) {
+                if (!getTopic().isInitialized()) {
+                    memoizedIsInitialized = 0;
+                    return false;
                 }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private int schemaVersion_ = 1;
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @return Whether the schemaVersion field is set.
-       */
-      @java.lang.Override
-      public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @return The schemaVersion.
-       */
-      @java.lang.Override
-      public int getSchemaVersion() {
-        return schemaVersion_;
-      }
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @param value The schemaVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSchemaVersion(int value) {
-        
-        schemaVersion_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSchemaVersion() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        schemaVersion_ = 1;
-        onChanged();
-        return this;
-      }
-
-      private fi.hsl.common.passengercount.proto.PassengerCount.Topic topic_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          fi.hsl.common.passengercount.proto.PassengerCount.Topic, fi.hsl.common.passengercount.proto.PassengerCount.Topic.Builder, fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder> topicBuilder_;
-      /**
-       * <code>optional .proto.Topic topic = 2;</code>
-       * @return Whether the topic field is set.
-       */
-      public boolean hasTopic() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <code>optional .proto.Topic topic = 2;</code>
-       * @return The topic.
-       */
-      public fi.hsl.common.passengercount.proto.PassengerCount.Topic getTopic() {
-        if (topicBuilder_ == null) {
-          return topic_ == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDefaultInstance() : topic_;
-        } else {
-          return topicBuilder_.getMessage();
+            }
+            memoizedIsInitialized = 1;
+            return true;
         }
-      }
-      /**
-       * <code>optional .proto.Topic topic = 2;</code>
-       */
-      public Builder setTopic(fi.hsl.common.passengercount.proto.PassengerCount.Topic value) {
-        if (topicBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          topic_ = value;
-        } else {
-          topicBuilder_.setMessage(value);
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (((bitField0_ & 0x00000001) != 0)) {
+                output.writeInt32(1, schemaVersion_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                output.writeMessage(2, getTopic());
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                output.writeMessage(3, getPayload());
+            }
+            if (((bitField0_ & 0x00000008) != 0)) {
+                output.writeInt64(4, receivedAt_);
+            }
+            getUnknownFields().writeTo(output);
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .proto.Topic topic = 2;</code>
-       */
-      public Builder setTopic(
-          fi.hsl.common.passengercount.proto.PassengerCount.Topic.Builder builderForValue) {
-        if (topicBuilder_ == null) {
-          topic_ = builderForValue.build();
-        } else {
-          topicBuilder_.setMessage(builderForValue.build());
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1)
+                return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, schemaVersion_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getTopic());
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getPayload());
+            }
+            if (((bitField0_ & 0x00000008) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, receivedAt_);
+            }
+            size += getUnknownFields().getSerializedSize();
+            memoizedSize = size;
+            return size;
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .proto.Topic topic = 2;</code>
-       */
-      public Builder mergeTopic(fi.hsl.common.passengercount.proto.PassengerCount.Topic value) {
-        if (topicBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            topic_ != null &&
-            topic_ != fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDefaultInstance()) {
-            getTopicBuilder().mergeFrom(value);
-          } else {
-            topic_ = value;
-          }
-        } else {
-          topicBuilder_.mergeFrom(value);
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof fi.hsl.common.passengercount.proto.PassengerCount.Data)) {
+                return super.equals(obj);
+            }
+            fi.hsl.common.passengercount.proto.PassengerCount.Data other = (fi.hsl.common.passengercount.proto.PassengerCount.Data) obj;
+
+            if (hasSchemaVersion() != other.hasSchemaVersion())
+                return false;
+            if (hasSchemaVersion()) {
+                if (getSchemaVersion() != other.getSchemaVersion())
+                    return false;
+            }
+            if (hasTopic() != other.hasTopic())
+                return false;
+            if (hasTopic()) {
+                if (!getTopic().equals(other.getTopic()))
+                    return false;
+            }
+            if (hasPayload() != other.hasPayload())
+                return false;
+            if (hasPayload()) {
+                if (!getPayload().equals(other.getPayload()))
+                    return false;
+            }
+            if (hasReceivedAt() != other.hasReceivedAt())
+                return false;
+            if (hasReceivedAt()) {
+                if (getReceivedAt() != other.getReceivedAt())
+                    return false;
+            }
+            if (!getUnknownFields().equals(other.getUnknownFields()))
+                return false;
+            return true;
         }
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .proto.Topic topic = 2;</code>
-       */
-      public Builder clearTopic() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        topic_ = null;
-        if (topicBuilder_ != null) {
-          topicBuilder_.dispose();
-          topicBuilder_ = null;
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasSchemaVersion()) {
+                hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
+                hash = (53 * hash) + getSchemaVersion();
+            }
+            if (hasTopic()) {
+                hash = (37 * hash) + TOPIC_FIELD_NUMBER;
+                hash = (53 * hash) + getTopic().hashCode();
+            }
+            if (hasPayload()) {
+                hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
+                hash = (53 * hash) + getPayload().hashCode();
+            }
+            if (hasReceivedAt()) {
+                hash = (37 * hash) + RECEIVED_AT_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getReceivedAt());
+            }
+            hash = (29 * hash) + getUnknownFields().hashCode();
+            memoizedHashCode = hash;
+            return hash;
         }
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .proto.Topic topic = 2;</code>
-       */
-      public fi.hsl.common.passengercount.proto.PassengerCount.Topic.Builder getTopicBuilder() {
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return getTopicFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .proto.Topic topic = 2;</code>
-       */
-      public fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder getTopicOrBuilder() {
-        if (topicBuilder_ != null) {
-          return topicBuilder_.getMessageOrBuilder();
-        } else {
-          return topic_ == null ?
-              fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDefaultInstance() : topic_;
+
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
         }
-      }
-      /**
-       * <code>optional .proto.Topic topic = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          fi.hsl.common.passengercount.proto.PassengerCount.Topic, fi.hsl.common.passengercount.proto.PassengerCount.Topic.Builder, fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder> 
-          getTopicFieldBuilder() {
-        if (topicBuilder_ == null) {
-          topicBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              fi.hsl.common.passengercount.proto.PassengerCount.Topic, fi.hsl.common.passengercount.proto.PassengerCount.Topic.Builder, fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder>(
-                  getTopic(),
-                  getParentForChildren(),
-                  isClean());
-          topic_ = null;
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
         }
-        return topicBuilder_;
-      }
-
-      private fi.hsl.common.passengercount.proto.PassengerCount.Payload payload_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          fi.hsl.common.passengercount.proto.PassengerCount.Payload, fi.hsl.common.passengercount.proto.PassengerCount.Payload.Builder, fi.hsl.common.passengercount.proto.PassengerCount.PayloadOrBuilder> payloadBuilder_;
-      /**
-       * <code>required .proto.Payload payload = 3;</code>
-       * @return Whether the payload field is set.
-       */
-      public boolean hasPayload() {
-        return ((bitField0_ & 0x00000004) != 0);
-      }
-      /**
-       * <code>required .proto.Payload payload = 3;</code>
-       * @return The payload.
-       */
-      public fi.hsl.common.passengercount.proto.PassengerCount.Payload getPayload() {
-        if (payloadBuilder_ == null) {
-          return payload_ == null ? fi.hsl.common.passengercount.proto.PassengerCount.Payload.getDefaultInstance() : payload_;
-        } else {
-          return payloadBuilder_.getMessage();
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(
+                com.google.protobuf.ByteString data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
         }
-      }
-      /**
-       * <code>required .proto.Payload payload = 3;</code>
-       */
-      public Builder setPayload(fi.hsl.common.passengercount.proto.PassengerCount.Payload value) {
-        if (payloadBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          payload_ = value;
-        } else {
-          payloadBuilder_.setMessage(value);
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(
+                com.google.protobuf.ByteString data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required .proto.Payload payload = 3;</code>
-       */
-      public Builder setPayload(
-          fi.hsl.common.passengercount.proto.PassengerCount.Payload.Builder builderForValue) {
-        if (payloadBuilder_ == null) {
-          payload_ = builderForValue.build();
-        } else {
-          payloadBuilder_.setMessage(builderForValue.build());
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required .proto.Payload payload = 3;</code>
-       */
-      public Builder mergePayload(fi.hsl.common.passengercount.proto.PassengerCount.Payload value) {
-        if (payloadBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            payload_ != null &&
-            payload_ != fi.hsl.common.passengercount.proto.PassengerCount.Payload.getDefaultInstance()) {
-            getPayloadBuilder().mergeFrom(value);
-          } else {
-            payload_ = value;
-          }
-        } else {
-          payloadBuilder_.mergeFrom(value);
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
         }
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required .proto.Payload payload = 3;</code>
-       */
-      public Builder clearPayload() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        payload_ = null;
-        if (payloadBuilder_ != null) {
-          payloadBuilder_.dispose();
-          payloadBuilder_ = null;
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
         }
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required .proto.Payload payload = 3;</code>
-       */
-      public fi.hsl.common.passengercount.proto.PassengerCount.Payload.Builder getPayloadBuilder() {
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return getPayloadFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>required .proto.Payload payload = 3;</code>
-       */
-      public fi.hsl.common.passengercount.proto.PassengerCount.PayloadOrBuilder getPayloadOrBuilder() {
-        if (payloadBuilder_ != null) {
-          return payloadBuilder_.getMessageOrBuilder();
-        } else {
-          return payload_ == null ?
-              fi.hsl.common.passengercount.proto.PassengerCount.Payload.getDefaultInstance() : payload_;
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
         }
-      }
-      /**
-       * <code>required .proto.Payload payload = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          fi.hsl.common.passengercount.proto.PassengerCount.Payload, fi.hsl.common.passengercount.proto.PassengerCount.Payload.Builder, fi.hsl.common.passengercount.proto.PassengerCount.PayloadOrBuilder> 
-          getPayloadFieldBuilder() {
-        if (payloadBuilder_ == null) {
-          payloadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              fi.hsl.common.passengercount.proto.PassengerCount.Payload, fi.hsl.common.passengercount.proto.PassengerCount.Payload.Builder, fi.hsl.common.passengercount.proto.PassengerCount.PayloadOrBuilder>(
-                  getPayload(),
-                  getParentForChildren(),
-                  isClean());
-          payload_ = null;
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseDelimitedFrom(
+                java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
         }
-        return payloadBuilder_;
-      }
-
-      private long receivedAt_ ;
-      /**
-       * <code>optional int64 received_at = 4;</code>
-       * @return Whether the receivedAt field is set.
-       */
-      @java.lang.Override
-      public boolean hasReceivedAt() {
-        return ((bitField0_ & 0x00000008) != 0);
-      }
-      /**
-       * <code>optional int64 received_at = 4;</code>
-       * @return The receivedAt.
-       */
-      @java.lang.Override
-      public long getReceivedAt() {
-        return receivedAt_;
-      }
-      /**
-       * <code>optional int64 received_at = 4;</code>
-       * @param value The receivedAt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReceivedAt(long value) {
-        
-        receivedAt_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 received_at = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearReceivedAt() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        receivedAt_ = 0L;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:proto.Data)
-    }
-
-    // @@protoc_insertion_point(class_scope:proto.Data)
-    private static final fi.hsl.common.passengercount.proto.PassengerCount.Data DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new fi.hsl.common.passengercount.proto.PassengerCount.Data();
-    }
-
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Data getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<Data>
-        PARSER = new com.google.protobuf.AbstractParser<Data>() {
-      @java.lang.Override
-      public Data parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseDelimitedFrom(
+                java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+                    extensionRegistry);
         }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<Data> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Data> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public fi.hsl.common.passengercount.proto.PassengerCount.Data getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface TopicOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:proto.Topic)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return Whether the schemaVersion field is set.
-     */
-    boolean hasSchemaVersion();
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return The schemaVersion.
-     */
-    int getSchemaVersion();
-
-    /**
-     * <pre>
-     * Our server timestamp as Epoch ms
-     * </pre>
-     *
-     * <code>required int64 received_at = 2;</code>
-     * @return Whether the receivedAt field is set.
-     */
-    boolean hasReceivedAt();
-    /**
-     * <pre>
-     * Our server timestamp as Epoch ms
-     * </pre>
-     *
-     * <code>required int64 received_at = 2;</code>
-     * @return The receivedAt.
-     */
-    long getReceivedAt();
-
-    /**
-     * <code>required string topic_prefix = 3;</code>
-     * @return Whether the topicPrefix field is set.
-     */
-    boolean hasTopicPrefix();
-    /**
-     * <code>required string topic_prefix = 3;</code>
-     * @return The topicPrefix.
-     */
-    java.lang.String getTopicPrefix();
-    /**
-     * <code>required string topic_prefix = 3;</code>
-     * @return The bytes for topicPrefix.
-     */
-    com.google.protobuf.ByteString
-        getTopicPrefixBytes();
-
-    /**
-     * <code>required string topic_version = 4;</code>
-     * @return Whether the topicVersion field is set.
-     */
-    boolean hasTopicVersion();
-    /**
-     * <code>required string topic_version = 4;</code>
-     * @return The topicVersion.
-     */
-    java.lang.String getTopicVersion();
-    /**
-     * <code>required string topic_version = 4;</code>
-     * @return The bytes for topicVersion.
-     */
-    com.google.protobuf.ByteString
-        getTopicVersionBytes();
-
-    /**
-     * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
-     * @return Whether the journeyType field is set.
-     */
-    boolean hasJourneyType();
-    /**
-     * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
-     * @return The journeyType.
-     */
-    fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType getJourneyType();
-
-    /**
-     * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
-     * @return Whether the temporalType field is set.
-     */
-    boolean hasTemporalType();
-    /**
-     * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
-     * @return The temporalType.
-     */
-    fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType getTemporalType();
-
-    /**
-     * <code>required .proto.Topic.EventType event_type = 7;</code>
-     * @return Whether the eventType field is set.
-     */
-    boolean hasEventType();
-    /**
-     * <code>required .proto.Topic.EventType event_type = 7;</code>
-     * @return The eventType.
-     */
-    fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType getEventType();
-
-    /**
-     * <pre>
-     * Optional because of rare bug in data source systems
-     * </pre>
-     *
-     * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
-     * @return Whether the transportMode field is set.
-     */
-    boolean hasTransportMode();
-    /**
-     * <pre>
-     * Optional because of rare bug in data source systems
-     * </pre>
-     *
-     * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
-     * @return The transportMode.
-     */
-    fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode getTransportMode();
-
-    /**
-     * <code>required int32 operator_id = 9;</code>
-     * @return Whether the operatorId field is set.
-     */
-    boolean hasOperatorId();
-    /**
-     * <code>required int32 operator_id = 9;</code>
-     * @return The operatorId.
-     */
-    int getOperatorId();
-
-    /**
-     * <code>required int32 vehicle_number = 10;</code>
-     * @return Whether the vehicleNumber field is set.
-     */
-    boolean hasVehicleNumber();
-    /**
-     * <code>required int32 vehicle_number = 10;</code>
-     * @return The vehicleNumber.
-     */
-    int getVehicleNumber();
-  }
-  /**
-   * Protobuf type {@code proto.Topic}
-   */
-  public static final class Topic extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:proto.Topic)
-      TopicOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Topic.newBuilder() to construct.
-    private Topic(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Topic() {
-      schemaVersion_ = 1;
-      topicPrefix_ = "";
-      topicVersion_ = "";
-      journeyType_ = 0;
-      temporalType_ = 0;
-      eventType_ = 0;
-      transportMode_ = 0;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Topic();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Topic_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Topic_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              fi.hsl.common.passengercount.proto.PassengerCount.Topic.class, fi.hsl.common.passengercount.proto.PassengerCount.Topic.Builder.class);
-    }
-
-    /**
-     * Protobuf enum {@code proto.Topic.JourneyType}
-     */
-    public enum JourneyType
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>journey = 0;</code>
-       */
-      journey(0),
-      /**
-       * <pre>
-       * Probably never used but included just in case
-       * </pre>
-       *
-       * <code>deadrun = 1;</code>
-       */
-      deadrun(1),
-      /**
-       * <pre>
-       * Probably never used but included just in case
-       * </pre>
-       *
-       * <code>signoff = 2;</code>
-       */
-      signoff(2),
-      ;
-
-      /**
-       * <code>journey = 0;</code>
-       */
-      public static final int journey_VALUE = 0;
-      /**
-       * <pre>
-       * Probably never used but included just in case
-       * </pre>
-       *
-       * <code>deadrun = 1;</code>
-       */
-      public static final int deadrun_VALUE = 1;
-      /**
-       * <pre>
-       * Probably never used but included just in case
-       * </pre>
-       *
-       * <code>signoff = 2;</code>
-       */
-      public static final int signoff_VALUE = 2;
-
-
-      public final int getNumber() {
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static JourneyType valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static JourneyType forNumber(int value) {
-        switch (value) {
-          case 0: return journey;
-          case 1: return deadrun;
-          case 2: return signoff;
-          default: return null;
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(
+                com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
         }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<JourneyType>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          JourneyType> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<JourneyType>() {
-              public JourneyType findValueByNumber(int number) {
-                return JourneyType.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final JourneyType[] VALUES = values();
-
-      public static JourneyType valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Data parseFrom(
+                com.google.protobuf.CodedInputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
         }
-        return VALUES[desc.getIndex()];
-      }
 
-      private final int value;
-
-      private JourneyType(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:proto.Topic.JourneyType)
-    }
-
-    /**
-     * Protobuf enum {@code proto.Topic.TemporalType}
-     */
-    public enum TemporalType
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>ongoing = 0;</code>
-       */
-      ongoing(0),
-      /**
-       * <pre>
-       * Probably never used but included just in case
-       * </pre>
-       *
-       * <code>upcoming = 1;</code>
-       */
-      upcoming(1),
-      ;
-
-      /**
-       * <code>ongoing = 0;</code>
-       */
-      public static final int ongoing_VALUE = 0;
-      /**
-       * <pre>
-       * Probably never used but included just in case
-       * </pre>
-       *
-       * <code>upcoming = 1;</code>
-       */
-      public static final int upcoming_VALUE = 1;
-
-
-      public final int getNumber() {
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static TemporalType valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static TemporalType forNumber(int value) {
-        switch (value) {
-          case 0: return ongoing;
-          case 1: return upcoming;
-          default: return null;
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
         }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<TemporalType>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          TemporalType> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<TemporalType>() {
-              public TemporalType findValueByNumber(int number) {
-                return TemporalType.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDescriptor().getEnumTypes().get(1);
-      }
-
-      private static final TemporalType[] VALUES = values();
-
-      public static TemporalType valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
         }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private TemporalType(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:proto.Topic.TemporalType)
-    }
-
-    /**
-     * Protobuf enum {@code proto.Topic.TransportMode}
-     */
-    public enum TransportMode
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>bus = 0;</code>
-       */
-      bus(0),
-      /**
-       * <code>train = 1;</code>
-       */
-      train(1),
-      /**
-       * <code>tram = 2;</code>
-       */
-      tram(2),
-      /**
-       * <code>metro = 3;</code>
-       */
-      metro(3),
-      /**
-       * <code>ferry = 4;</code>
-       */
-      ferry(4),
-      /**
-       * <pre>
-       *Used by U-line buses and other lines with limited real-time information
-       * </pre>
-       *
-       * <code>ubus = 5;</code>
-       */
-      ubus(5),
-      /**
-       * <pre>
-       *Used by robot buses
-       * </pre>
-       *
-       * <code>robot = 6;</code>
-       */
-      robot(6),
-      ;
-
-      /**
-       * <code>bus = 0;</code>
-       */
-      public static final int bus_VALUE = 0;
-      /**
-       * <code>train = 1;</code>
-       */
-      public static final int train_VALUE = 1;
-      /**
-       * <code>tram = 2;</code>
-       */
-      public static final int tram_VALUE = 2;
-      /**
-       * <code>metro = 3;</code>
-       */
-      public static final int metro_VALUE = 3;
-      /**
-       * <code>ferry = 4;</code>
-       */
-      public static final int ferry_VALUE = 4;
-      /**
-       * <pre>
-       *Used by U-line buses and other lines with limited real-time information
-       * </pre>
-       *
-       * <code>ubus = 5;</code>
-       */
-      public static final int ubus_VALUE = 5;
-      /**
-       * <pre>
-       *Used by robot buses
-       * </pre>
-       *
-       * <code>robot = 6;</code>
-       */
-      public static final int robot_VALUE = 6;
-
-
-      public final int getNumber() {
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static TransportMode valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static TransportMode forNumber(int value) {
-        switch (value) {
-          case 0: return bus;
-          case 1: return train;
-          case 2: return tram;
-          case 3: return metro;
-          case 4: return ferry;
-          case 5: return ubus;
-          case 6: return robot;
-          default: return null;
+        public static Builder newBuilder(fi.hsl.common.passengercount.proto.PassengerCount.Data prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
         }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<TransportMode>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          TransportMode> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<TransportMode>() {
-              public TransportMode findValueByNumber(int number) {
-                return TransportMode.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDescriptor().getEnumTypes().get(2);
-      }
-
-      private static final TransportMode[] VALUES = values();
-
-      public static TransportMode valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
-        return VALUES[desc.getIndex()];
-      }
 
-      private final int value;
-
-      private TransportMode(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:proto.Topic.TransportMode)
-    }
-
-    /**
-     * Protobuf enum {@code proto.Topic.EventType}
-     */
-    public enum EventType
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>apc = 0;</code>
-       */
-      apc(0),
-      ;
-
-      /**
-       * <code>apc = 0;</code>
-       */
-      public static final int apc_VALUE = 0;
-
-
-      public final int getNumber() {
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static EventType valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static EventType forNumber(int value) {
-        switch (value) {
-          case 0: return apc;
-          default: return null;
+        @java.lang.Override
+        protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
         }
-      }
+        /**
+         * Protobuf type {@code proto.Data}
+         */
+        public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                    // @@protoc_insertion_point(builder_implements:proto.Data)
+                    fi.hsl.common.passengercount.proto.PassengerCount.DataOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Data_descriptor;
+            }
 
-      public static com.google.protobuf.Internal.EnumLiteMap<EventType>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          EventType> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<EventType>() {
-              public EventType findValueByNumber(int number) {
-                return EventType.forNumber(number);
-              }
-            };
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Data_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(fi.hsl.common.passengercount.proto.PassengerCount.Data.class,
+                                fi.hsl.common.passengercount.proto.PassengerCount.Data.Builder.class);
+            }
 
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDescriptor().getEnumTypes().get(3);
-      }
+            // Construct using fi.hsl.common.passengercount.proto.PassengerCount.Data.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
 
-      private static final EventType[] VALUES = values();
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+                    getTopicFieldBuilder();
+                    getPayloadFieldBuilder();
+                }
+            }
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                bitField0_ = 0;
+                schemaVersion_ = 1;
+                topic_ = null;
+                if (topicBuilder_ != null) {
+                    topicBuilder_.dispose();
+                    topicBuilder_ = null;
+                }
+                payload_ = null;
+                if (payloadBuilder_ != null) {
+                    payloadBuilder_.dispose();
+                    payloadBuilder_ = null;
+                }
+                receivedAt_ = 0L;
+                return this;
+            }
 
-      public static EventType valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Data_descriptor;
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.Data getDefaultInstanceForType() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.Data.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.Data build() {
+                fi.hsl.common.passengercount.proto.PassengerCount.Data result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.Data buildPartial() {
+                fi.hsl.common.passengercount.proto.PassengerCount.Data result = new fi.hsl.common.passengercount.proto.PassengerCount.Data(
+                        this);
+                if (bitField0_ != 0) {
+                    buildPartial0(result);
+                }
+                onBuilt();
+                return result;
+            }
+
+            private void buildPartial0(fi.hsl.common.passengercount.proto.PassengerCount.Data result) {
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) != 0)) {
+                    result.schemaVersion_ = schemaVersion_;
+                    to_bitField0_ |= 0x00000001;
+                }
+                if (((from_bitField0_ & 0x00000002) != 0)) {
+                    result.topic_ = topicBuilder_ == null ? topic_ : topicBuilder_.build();
+                    to_bitField0_ |= 0x00000002;
+                }
+                if (((from_bitField0_ & 0x00000004) != 0)) {
+                    result.payload_ = payloadBuilder_ == null ? payload_ : payloadBuilder_.build();
+                    to_bitField0_ |= 0x00000004;
+                }
+                if (((from_bitField0_ & 0x00000008) != 0)) {
+                    result.receivedAt_ = receivedAt_;
+                    to_bitField0_ |= 0x00000008;
+                }
+                result.bitField0_ |= to_bitField0_;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+            @java.lang.Override
+            public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+            @java.lang.Override
+            public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+            @java.lang.Override
+            public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof fi.hsl.common.passengercount.proto.PassengerCount.Data) {
+                    return mergeFrom((fi.hsl.common.passengercount.proto.PassengerCount.Data) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(fi.hsl.common.passengercount.proto.PassengerCount.Data other) {
+                if (other == fi.hsl.common.passengercount.proto.PassengerCount.Data.getDefaultInstance())
+                    return this;
+                if (other.hasSchemaVersion()) {
+                    setSchemaVersion(other.getSchemaVersion());
+                }
+                if (other.hasTopic()) {
+                    mergeTopic(other.getTopic());
+                }
+                if (other.hasPayload()) {
+                    mergePayload(other.getPayload());
+                }
+                if (other.hasReceivedAt()) {
+                    setReceivedAt(other.getReceivedAt());
+                }
+                this.mergeUnknownFields(other.getUnknownFields());
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                if (!hasSchemaVersion()) {
+                    return false;
+                }
+                if (!hasPayload()) {
+                    return false;
+                }
+                if (hasTopic()) {
+                    if (!getTopic().isInitialized()) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+                if (extensionRegistry == null) {
+                    throw new java.lang.NullPointerException();
+                }
+                try {
+                    boolean done = false;
+                    while (!done) {
+                        int tag = input.readTag();
+                        switch (tag) {
+                            case 0 :
+                                done = true;
+                                break;
+                            case 8 : {
+                                schemaVersion_ = input.readInt32();
+                                bitField0_ |= 0x00000001;
+                                break;
+                            } // case 8
+                            case 18 : {
+                                input.readMessage(getTopicFieldBuilder().getBuilder(), extensionRegistry);
+                                bitField0_ |= 0x00000002;
+                                break;
+                            } // case 18
+                            case 26 : {
+                                input.readMessage(getPayloadFieldBuilder().getBuilder(), extensionRegistry);
+                                bitField0_ |= 0x00000004;
+                                break;
+                            } // case 26
+                            case 32 : {
+                                receivedAt_ = input.readInt64();
+                                bitField0_ |= 0x00000008;
+                                break;
+                            } // case 32
+                            default : {
+                                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                                    done = true; // was an endgroup tag
+                                }
+                                break;
+                            } // default:
+                        } // switch (tag)
+                    } // while (!done)
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.unwrapIOException();
+                } finally {
+                    onChanged();
+                } // finally
+                return this;
+            }
+            private int bitField0_;
+
+            private int schemaVersion_ = 1;
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @return Whether the schemaVersion field is set.
+             */
+            @java.lang.Override
+            public boolean hasSchemaVersion() {
+                return ((bitField0_ & 0x00000001) != 0);
+            }
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @return The schemaVersion.
+             */
+            @java.lang.Override
+            public int getSchemaVersion() {
+                return schemaVersion_;
+            }
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @param value The schemaVersion to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSchemaVersion(int value) {
+
+                schemaVersion_ = value;
+                bitField0_ |= 0x00000001;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearSchemaVersion() {
+                bitField0_ = (bitField0_ & ~0x00000001);
+                schemaVersion_ = 1;
+                onChanged();
+                return this;
+            }
+
+            private fi.hsl.common.passengercount.proto.PassengerCount.Topic topic_;
+            private com.google.protobuf.SingleFieldBuilderV3<fi.hsl.common.passengercount.proto.PassengerCount.Topic, fi.hsl.common.passengercount.proto.PassengerCount.Topic.Builder, fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder> topicBuilder_;
+            /**
+             * <code>optional .proto.Topic topic = 2;</code>
+             * @return Whether the topic field is set.
+             */
+            public boolean hasTopic() {
+                return ((bitField0_ & 0x00000002) != 0);
+            }
+            /**
+             * <code>optional .proto.Topic topic = 2;</code>
+             * @return The topic.
+             */
+            public fi.hsl.common.passengercount.proto.PassengerCount.Topic getTopic() {
+                if (topicBuilder_ == null) {
+                    return topic_ == null
+                            ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDefaultInstance()
+                            : topic_;
+                } else {
+                    return topicBuilder_.getMessage();
+                }
+            }
+            /**
+             * <code>optional .proto.Topic topic = 2;</code>
+             */
+            public Builder setTopic(fi.hsl.common.passengercount.proto.PassengerCount.Topic value) {
+                if (topicBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    topic_ = value;
+                } else {
+                    topicBuilder_.setMessage(value);
+                }
+                bitField0_ |= 0x00000002;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional .proto.Topic topic = 2;</code>
+             */
+            public Builder setTopic(fi.hsl.common.passengercount.proto.PassengerCount.Topic.Builder builderForValue) {
+                if (topicBuilder_ == null) {
+                    topic_ = builderForValue.build();
+                } else {
+                    topicBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00000002;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional .proto.Topic topic = 2;</code>
+             */
+            public Builder mergeTopic(fi.hsl.common.passengercount.proto.PassengerCount.Topic value) {
+                if (topicBuilder_ == null) {
+                    if (((bitField0_ & 0x00000002) != 0) && topic_ != null
+                            && topic_ != fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDefaultInstance()) {
+                        getTopicBuilder().mergeFrom(value);
+                    } else {
+                        topic_ = value;
+                    }
+                } else {
+                    topicBuilder_.mergeFrom(value);
+                }
+                bitField0_ |= 0x00000002;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional .proto.Topic topic = 2;</code>
+             */
+            public Builder clearTopic() {
+                bitField0_ = (bitField0_ & ~0x00000002);
+                topic_ = null;
+                if (topicBuilder_ != null) {
+                    topicBuilder_.dispose();
+                    topicBuilder_ = null;
+                }
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional .proto.Topic topic = 2;</code>
+             */
+            public fi.hsl.common.passengercount.proto.PassengerCount.Topic.Builder getTopicBuilder() {
+                bitField0_ |= 0x00000002;
+                onChanged();
+                return getTopicFieldBuilder().getBuilder();
+            }
+            /**
+             * <code>optional .proto.Topic topic = 2;</code>
+             */
+            public fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder getTopicOrBuilder() {
+                if (topicBuilder_ != null) {
+                    return topicBuilder_.getMessageOrBuilder();
+                } else {
+                    return topic_ == null
+                            ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDefaultInstance()
+                            : topic_;
+                }
+            }
+            /**
+             * <code>optional .proto.Topic topic = 2;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<fi.hsl.common.passengercount.proto.PassengerCount.Topic, fi.hsl.common.passengercount.proto.PassengerCount.Topic.Builder, fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder> getTopicFieldBuilder() {
+                if (topicBuilder_ == null) {
+                    topicBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<fi.hsl.common.passengercount.proto.PassengerCount.Topic, fi.hsl.common.passengercount.proto.PassengerCount.Topic.Builder, fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder>(
+                            getTopic(), getParentForChildren(), isClean());
+                    topic_ = null;
+                }
+                return topicBuilder_;
+            }
+
+            private fi.hsl.common.passengercount.proto.PassengerCount.Payload payload_;
+            private com.google.protobuf.SingleFieldBuilderV3<fi.hsl.common.passengercount.proto.PassengerCount.Payload, fi.hsl.common.passengercount.proto.PassengerCount.Payload.Builder, fi.hsl.common.passengercount.proto.PassengerCount.PayloadOrBuilder> payloadBuilder_;
+            /**
+             * <code>required .proto.Payload payload = 3;</code>
+             * @return Whether the payload field is set.
+             */
+            public boolean hasPayload() {
+                return ((bitField0_ & 0x00000004) != 0);
+            }
+            /**
+             * <code>required .proto.Payload payload = 3;</code>
+             * @return The payload.
+             */
+            public fi.hsl.common.passengercount.proto.PassengerCount.Payload getPayload() {
+                if (payloadBuilder_ == null) {
+                    return payload_ == null
+                            ? fi.hsl.common.passengercount.proto.PassengerCount.Payload.getDefaultInstance()
+                            : payload_;
+                } else {
+                    return payloadBuilder_.getMessage();
+                }
+            }
+            /**
+             * <code>required .proto.Payload payload = 3;</code>
+             */
+            public Builder setPayload(fi.hsl.common.passengercount.proto.PassengerCount.Payload value) {
+                if (payloadBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    payload_ = value;
+                } else {
+                    payloadBuilder_.setMessage(value);
+                }
+                bitField0_ |= 0x00000004;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required .proto.Payload payload = 3;</code>
+             */
+            public Builder setPayload(
+                    fi.hsl.common.passengercount.proto.PassengerCount.Payload.Builder builderForValue) {
+                if (payloadBuilder_ == null) {
+                    payload_ = builderForValue.build();
+                } else {
+                    payloadBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00000004;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required .proto.Payload payload = 3;</code>
+             */
+            public Builder mergePayload(fi.hsl.common.passengercount.proto.PassengerCount.Payload value) {
+                if (payloadBuilder_ == null) {
+                    if (((bitField0_ & 0x00000004) != 0) && payload_ != null
+                            && payload_ != fi.hsl.common.passengercount.proto.PassengerCount.Payload
+                                    .getDefaultInstance()) {
+                        getPayloadBuilder().mergeFrom(value);
+                    } else {
+                        payload_ = value;
+                    }
+                } else {
+                    payloadBuilder_.mergeFrom(value);
+                }
+                bitField0_ |= 0x00000004;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required .proto.Payload payload = 3;</code>
+             */
+            public Builder clearPayload() {
+                bitField0_ = (bitField0_ & ~0x00000004);
+                payload_ = null;
+                if (payloadBuilder_ != null) {
+                    payloadBuilder_.dispose();
+                    payloadBuilder_ = null;
+                }
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required .proto.Payload payload = 3;</code>
+             */
+            public fi.hsl.common.passengercount.proto.PassengerCount.Payload.Builder getPayloadBuilder() {
+                bitField0_ |= 0x00000004;
+                onChanged();
+                return getPayloadFieldBuilder().getBuilder();
+            }
+            /**
+             * <code>required .proto.Payload payload = 3;</code>
+             */
+            public fi.hsl.common.passengercount.proto.PassengerCount.PayloadOrBuilder getPayloadOrBuilder() {
+                if (payloadBuilder_ != null) {
+                    return payloadBuilder_.getMessageOrBuilder();
+                } else {
+                    return payload_ == null
+                            ? fi.hsl.common.passengercount.proto.PassengerCount.Payload.getDefaultInstance()
+                            : payload_;
+                }
+            }
+            /**
+             * <code>required .proto.Payload payload = 3;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<fi.hsl.common.passengercount.proto.PassengerCount.Payload, fi.hsl.common.passengercount.proto.PassengerCount.Payload.Builder, fi.hsl.common.passengercount.proto.PassengerCount.PayloadOrBuilder> getPayloadFieldBuilder() {
+                if (payloadBuilder_ == null) {
+                    payloadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<fi.hsl.common.passengercount.proto.PassengerCount.Payload, fi.hsl.common.passengercount.proto.PassengerCount.Payload.Builder, fi.hsl.common.passengercount.proto.PassengerCount.PayloadOrBuilder>(
+                            getPayload(), getParentForChildren(), isClean());
+                    payload_ = null;
+                }
+                return payloadBuilder_;
+            }
+
+            private long receivedAt_;
+            /**
+             * <code>optional int64 received_at = 4;</code>
+             * @return Whether the receivedAt field is set.
+             */
+            @java.lang.Override
+            public boolean hasReceivedAt() {
+                return ((bitField0_ & 0x00000008) != 0);
+            }
+            /**
+             * <code>optional int64 received_at = 4;</code>
+             * @return The receivedAt.
+             */
+            @java.lang.Override
+            public long getReceivedAt() {
+                return receivedAt_;
+            }
+            /**
+             * <code>optional int64 received_at = 4;</code>
+             * @param value The receivedAt to set.
+             * @return This builder for chaining.
+             */
+            public Builder setReceivedAt(long value) {
+
+                receivedAt_ = value;
+                bitField0_ |= 0x00000008;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int64 received_at = 4;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearReceivedAt() {
+                bitField0_ = (bitField0_ & ~0x00000008);
+                receivedAt_ = 0L;
+                onChanged();
+                return this;
+            }
+            @java.lang.Override
+            public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:proto.Data)
         }
-        return VALUES[desc.getIndex()];
-      }
 
-      private final int value;
-
-      private EventType(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:proto.Topic.EventType)
-    }
-
-    private int bitField0_;
-    public static final int SCHEMAVERSION_FIELD_NUMBER = 1;
-    private int schemaVersion_ = 1;
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return Whether the schemaVersion field is set.
-     */
-    @java.lang.Override
-    public boolean hasSchemaVersion() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-     * @return The schemaVersion.
-     */
-    @java.lang.Override
-    public int getSchemaVersion() {
-      return schemaVersion_;
-    }
-
-    public static final int RECEIVED_AT_FIELD_NUMBER = 2;
-    private long receivedAt_ = 0L;
-    /**
-     * <pre>
-     * Our server timestamp as Epoch ms
-     * </pre>
-     *
-     * <code>required int64 received_at = 2;</code>
-     * @return Whether the receivedAt field is set.
-     */
-    @java.lang.Override
-    public boolean hasReceivedAt() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     * Our server timestamp as Epoch ms
-     * </pre>
-     *
-     * <code>required int64 received_at = 2;</code>
-     * @return The receivedAt.
-     */
-    @java.lang.Override
-    public long getReceivedAt() {
-      return receivedAt_;
-    }
-
-    public static final int TOPIC_PREFIX_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object topicPrefix_ = "";
-    /**
-     * <code>required string topic_prefix = 3;</code>
-     * @return Whether the topicPrefix field is set.
-     */
-    @java.lang.Override
-    public boolean hasTopicPrefix() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>required string topic_prefix = 3;</code>
-     * @return The topicPrefix.
-     */
-    @java.lang.Override
-    public java.lang.String getTopicPrefix() {
-      java.lang.Object ref = topicPrefix_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          topicPrefix_ = s;
+        // @@protoc_insertion_point(class_scope:proto.Data)
+        private static final fi.hsl.common.passengercount.proto.PassengerCount.Data DEFAULT_INSTANCE;
+        static {
+            DEFAULT_INSTANCE = new fi.hsl.common.passengercount.proto.PassengerCount.Data();
         }
-        return s;
-      }
-    }
-    /**
-     * <code>required string topic_prefix = 3;</code>
-     * @return The bytes for topicPrefix.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTopicPrefixBytes() {
-      java.lang.Object ref = topicPrefix_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        topicPrefix_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
 
-    public static final int TOPIC_VERSION_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object topicVersion_ = "";
-    /**
-     * <code>required string topic_version = 4;</code>
-     * @return Whether the topicVersion field is set.
-     */
-    @java.lang.Override
-    public boolean hasTopicVersion() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <code>required string topic_version = 4;</code>
-     * @return The topicVersion.
-     */
-    @java.lang.Override
-    public java.lang.String getTopicVersion() {
-      java.lang.Object ref = topicVersion_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          topicVersion_ = s;
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Data getDefaultInstance() {
+            return DEFAULT_INSTANCE;
         }
-        return s;
-      }
-    }
-    /**
-     * <code>required string topic_version = 4;</code>
-     * @return The bytes for topicVersion.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTopicVersionBytes() {
-      java.lang.Object ref = topicVersion_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        topicVersion_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+
+        @java.lang.Deprecated
+        public static final com.google.protobuf.Parser<Data> PARSER = new com.google.protobuf.AbstractParser<Data>() {
+            @java.lang.Override
+            public Data parsePartialFrom(com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                    builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                    throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                    throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                            .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+            }
+        };
+
+        public static com.google.protobuf.Parser<Data> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Data> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.Data getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    public static final int JOURNEY_TYPE_FIELD_NUMBER = 5;
-    private int journeyType_ = 0;
-    /**
-     * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
-     * @return Whether the journeyType field is set.
-     */
-    @java.lang.Override public boolean hasJourneyType() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
-     * @return The journeyType.
-     */
-    @java.lang.Override public fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType getJourneyType() {
-      fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType result = fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType.forNumber(journeyType_);
-      return result == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType.journey : result;
-    }
+    public interface TopicOrBuilder
+            extends
+                // @@protoc_insertion_point(interface_extends:proto.Topic)
+                com.google.protobuf.MessageOrBuilder {
 
-    public static final int TEMPORAL_TYPE_FIELD_NUMBER = 6;
-    private int temporalType_ = 0;
-    /**
-     * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
-     * @return Whether the temporalType field is set.
-     */
-    @java.lang.Override public boolean hasTemporalType() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-    /**
-     * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
-     * @return The temporalType.
-     */
-    @java.lang.Override public fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType getTemporalType() {
-      fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType result = fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType.forNumber(temporalType_);
-      return result == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType.ongoing : result;
-    }
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return Whether the schemaVersion field is set.
+         */
+        boolean hasSchemaVersion();
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return The schemaVersion.
+         */
+        int getSchemaVersion();
 
-    public static final int EVENT_TYPE_FIELD_NUMBER = 7;
-    private int eventType_ = 0;
-    /**
-     * <code>required .proto.Topic.EventType event_type = 7;</code>
-     * @return Whether the eventType field is set.
-     */
-    @java.lang.Override public boolean hasEventType() {
-      return ((bitField0_ & 0x00000040) != 0);
-    }
-    /**
-     * <code>required .proto.Topic.EventType event_type = 7;</code>
-     * @return The eventType.
-     */
-    @java.lang.Override public fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType getEventType() {
-      fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType result = fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType.forNumber(eventType_);
-      return result == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType.apc : result;
-    }
+        /**
+         * <pre>
+         * Our server timestamp as Epoch ms
+         * </pre>
+         *
+         * <code>required int64 received_at = 2;</code>
+         * @return Whether the receivedAt field is set.
+         */
+        boolean hasReceivedAt();
+        /**
+         * <pre>
+         * Our server timestamp as Epoch ms
+         * </pre>
+         *
+         * <code>required int64 received_at = 2;</code>
+         * @return The receivedAt.
+         */
+        long getReceivedAt();
 
-    public static final int TRANSPORT_MODE_FIELD_NUMBER = 8;
-    private int transportMode_ = 0;
-    /**
-     * <pre>
-     * Optional because of rare bug in data source systems
-     * </pre>
-     *
-     * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
-     * @return Whether the transportMode field is set.
-     */
-    @java.lang.Override public boolean hasTransportMode() {
-      return ((bitField0_ & 0x00000080) != 0);
-    }
-    /**
-     * <pre>
-     * Optional because of rare bug in data source systems
-     * </pre>
-     *
-     * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
-     * @return The transportMode.
-     */
-    @java.lang.Override public fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode getTransportMode() {
-      fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode result = fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode.forNumber(transportMode_);
-      return result == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode.bus : result;
-    }
+        /**
+         * <code>required string topic_prefix = 3;</code>
+         * @return Whether the topicPrefix field is set.
+         */
+        boolean hasTopicPrefix();
+        /**
+         * <code>required string topic_prefix = 3;</code>
+         * @return The topicPrefix.
+         */
+        java.lang.String getTopicPrefix();
+        /**
+         * <code>required string topic_prefix = 3;</code>
+         * @return The bytes for topicPrefix.
+         */
+        com.google.protobuf.ByteString getTopicPrefixBytes();
 
-    public static final int OPERATOR_ID_FIELD_NUMBER = 9;
-    private int operatorId_ = 0;
-    /**
-     * <code>required int32 operator_id = 9;</code>
-     * @return Whether the operatorId field is set.
-     */
-    @java.lang.Override
-    public boolean hasOperatorId() {
-      return ((bitField0_ & 0x00000100) != 0);
-    }
-    /**
-     * <code>required int32 operator_id = 9;</code>
-     * @return The operatorId.
-     */
-    @java.lang.Override
-    public int getOperatorId() {
-      return operatorId_;
-    }
+        /**
+         * <code>required string topic_version = 4;</code>
+         * @return Whether the topicVersion field is set.
+         */
+        boolean hasTopicVersion();
+        /**
+         * <code>required string topic_version = 4;</code>
+         * @return The topicVersion.
+         */
+        java.lang.String getTopicVersion();
+        /**
+         * <code>required string topic_version = 4;</code>
+         * @return The bytes for topicVersion.
+         */
+        com.google.protobuf.ByteString getTopicVersionBytes();
 
-    public static final int VEHICLE_NUMBER_FIELD_NUMBER = 10;
-    private int vehicleNumber_ = 0;
-    /**
-     * <code>required int32 vehicle_number = 10;</code>
-     * @return Whether the vehicleNumber field is set.
-     */
-    @java.lang.Override
-    public boolean hasVehicleNumber() {
-      return ((bitField0_ & 0x00000200) != 0);
-    }
-    /**
-     * <code>required int32 vehicle_number = 10;</code>
-     * @return The vehicleNumber.
-     */
-    @java.lang.Override
-    public int getVehicleNumber() {
-      return vehicleNumber_;
-    }
+        /**
+         * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+         * @return Whether the journeyType field is set.
+         */
+        boolean hasJourneyType();
+        /**
+         * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+         * @return The journeyType.
+         */
+        fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType getJourneyType();
 
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+        /**
+         * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+         * @return Whether the temporalType field is set.
+         */
+        boolean hasTemporalType();
+        /**
+         * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+         * @return The temporalType.
+         */
+        fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType getTemporalType();
 
-      if (!hasSchemaVersion()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasReceivedAt()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTopicPrefix()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTopicVersion()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasJourneyType()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTemporalType()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasEventType()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasOperatorId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasVehicleNumber()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
+        /**
+         * <code>required .proto.Topic.EventType event_type = 7;</code>
+         * @return Whether the eventType field is set.
+         */
+        boolean hasEventType();
+        /**
+         * <code>required .proto.Topic.EventType event_type = 7;</code>
+         * @return The eventType.
+         */
+        fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType getEventType();
 
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeInt32(1, schemaVersion_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeInt64(2, receivedAt_);
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, topicPrefix_);
-      }
-      if (((bitField0_ & 0x00000008) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, topicVersion_);
-      }
-      if (((bitField0_ & 0x00000010) != 0)) {
-        output.writeEnum(5, journeyType_);
-      }
-      if (((bitField0_ & 0x00000020) != 0)) {
-        output.writeEnum(6, temporalType_);
-      }
-      if (((bitField0_ & 0x00000040) != 0)) {
-        output.writeEnum(7, eventType_);
-      }
-      if (((bitField0_ & 0x00000080) != 0)) {
-        output.writeEnum(8, transportMode_);
-      }
-      if (((bitField0_ & 0x00000100) != 0)) {
-        output.writeInt32(9, operatorId_);
-      }
-      if (((bitField0_ & 0x00000200) != 0)) {
-        output.writeInt32(10, vehicleNumber_);
-      }
-      getUnknownFields().writeTo(output);
-    }
+        /**
+         * <pre>
+         * Optional because of rare bug in data source systems
+         * </pre>
+         *
+         * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+         * @return Whether the transportMode field is set.
+         */
+        boolean hasTransportMode();
+        /**
+         * <pre>
+         * Optional because of rare bug in data source systems
+         * </pre>
+         *
+         * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+         * @return The transportMode.
+         */
+        fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode getTransportMode();
 
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
+        /**
+         * <code>required int32 operator_id = 9;</code>
+         * @return Whether the operatorId field is set.
+         */
+        boolean hasOperatorId();
+        /**
+         * <code>required int32 operator_id = 9;</code>
+         * @return The operatorId.
+         */
+        int getOperatorId();
 
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, schemaVersion_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, receivedAt_);
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, topicPrefix_);
-      }
-      if (((bitField0_ & 0x00000008) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, topicVersion_);
-      }
-      if (((bitField0_ & 0x00000010) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, journeyType_);
-      }
-      if (((bitField0_ & 0x00000020) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, temporalType_);
-      }
-      if (((bitField0_ & 0x00000040) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, eventType_);
-      }
-      if (((bitField0_ & 0x00000080) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(8, transportMode_);
-      }
-      if (((bitField0_ & 0x00000100) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, operatorId_);
-      }
-      if (((bitField0_ & 0x00000200) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, vehicleNumber_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof fi.hsl.common.passengercount.proto.PassengerCount.Topic)) {
-        return super.equals(obj);
-      }
-      fi.hsl.common.passengercount.proto.PassengerCount.Topic other = (fi.hsl.common.passengercount.proto.PassengerCount.Topic) obj;
-
-      if (hasSchemaVersion() != other.hasSchemaVersion()) return false;
-      if (hasSchemaVersion()) {
-        if (getSchemaVersion()
-            != other.getSchemaVersion()) return false;
-      }
-      if (hasReceivedAt() != other.hasReceivedAt()) return false;
-      if (hasReceivedAt()) {
-        if (getReceivedAt()
-            != other.getReceivedAt()) return false;
-      }
-      if (hasTopicPrefix() != other.hasTopicPrefix()) return false;
-      if (hasTopicPrefix()) {
-        if (!getTopicPrefix()
-            .equals(other.getTopicPrefix())) return false;
-      }
-      if (hasTopicVersion() != other.hasTopicVersion()) return false;
-      if (hasTopicVersion()) {
-        if (!getTopicVersion()
-            .equals(other.getTopicVersion())) return false;
-      }
-      if (hasJourneyType() != other.hasJourneyType()) return false;
-      if (hasJourneyType()) {
-        if (journeyType_ != other.journeyType_) return false;
-      }
-      if (hasTemporalType() != other.hasTemporalType()) return false;
-      if (hasTemporalType()) {
-        if (temporalType_ != other.temporalType_) return false;
-      }
-      if (hasEventType() != other.hasEventType()) return false;
-      if (hasEventType()) {
-        if (eventType_ != other.eventType_) return false;
-      }
-      if (hasTransportMode() != other.hasTransportMode()) return false;
-      if (hasTransportMode()) {
-        if (transportMode_ != other.transportMode_) return false;
-      }
-      if (hasOperatorId() != other.hasOperatorId()) return false;
-      if (hasOperatorId()) {
-        if (getOperatorId()
-            != other.getOperatorId()) return false;
-      }
-      if (hasVehicleNumber() != other.hasVehicleNumber()) return false;
-      if (hasVehicleNumber()) {
-        if (getVehicleNumber()
-            != other.getVehicleNumber()) return false;
-      }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasSchemaVersion()) {
-        hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
-        hash = (53 * hash) + getSchemaVersion();
-      }
-      if (hasReceivedAt()) {
-        hash = (37 * hash) + RECEIVED_AT_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getReceivedAt());
-      }
-      if (hasTopicPrefix()) {
-        hash = (37 * hash) + TOPIC_PREFIX_FIELD_NUMBER;
-        hash = (53 * hash) + getTopicPrefix().hashCode();
-      }
-      if (hasTopicVersion()) {
-        hash = (37 * hash) + TOPIC_VERSION_FIELD_NUMBER;
-        hash = (53 * hash) + getTopicVersion().hashCode();
-      }
-      if (hasJourneyType()) {
-        hash = (37 * hash) + JOURNEY_TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + journeyType_;
-      }
-      if (hasTemporalType()) {
-        hash = (37 * hash) + TEMPORAL_TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + temporalType_;
-      }
-      if (hasEventType()) {
-        hash = (37 * hash) + EVENT_TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + eventType_;
-      }
-      if (hasTransportMode()) {
-        hash = (37 * hash) + TRANSPORT_MODE_FIELD_NUMBER;
-        hash = (53 * hash) + transportMode_;
-      }
-      if (hasOperatorId()) {
-        hash = (37 * hash) + OPERATOR_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getOperatorId();
-      }
-      if (hasVehicleNumber()) {
-        hash = (37 * hash) + VEHICLE_NUMBER_FIELD_NUMBER;
-        hash = (53 * hash) + getVehicleNumber();
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(fi.hsl.common.passengercount.proto.PassengerCount.Topic prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
+        /**
+         * <code>required int32 vehicle_number = 10;</code>
+         * @return Whether the vehicleNumber field is set.
+         */
+        boolean hasVehicleNumber();
+        /**
+         * <code>required int32 vehicle_number = 10;</code>
+         * @return The vehicleNumber.
+         */
+        int getVehicleNumber();
     }
     /**
      * Protobuf type {@code proto.Topic}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:proto.Topic)
-        fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Topic_descriptor;
-      }
+    public static final class Topic extends com.google.protobuf.GeneratedMessageV3
+            implements
+                // @@protoc_insertion_point(message_implements:proto.Topic)
+                TopicOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use Topic.newBuilder() to construct.
+        private Topic(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+        private Topic() {
+            schemaVersion_ = 1;
+            topicPrefix_ = "";
+            topicVersion_ = "";
+            journeyType_ = 0;
+            temporalType_ = 0;
+            eventType_ = 0;
+            transportMode_ = 0;
+        }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Topic_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                fi.hsl.common.passengercount.proto.PassengerCount.Topic.class, fi.hsl.common.passengercount.proto.PassengerCount.Topic.Builder.class);
-      }
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new Topic();
+        }
 
-      // Construct using fi.hsl.common.passengercount.proto.PassengerCount.Topic.newBuilder()
-      private Builder() {
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
+        }
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Topic_descriptor;
+        }
 
-      }
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+            return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Topic_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(fi.hsl.common.passengercount.proto.PassengerCount.Topic.class,
+                            fi.hsl.common.passengercount.proto.PassengerCount.Topic.Builder.class);
+        }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
+        /**
+         * Protobuf enum {@code proto.Topic.JourneyType}
+         */
+        public enum JourneyType implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>journey = 0;</code>
+             */
+            journey(0),
+            /**
+             * <pre>
+             * Probably never used but included just in case
+             * </pre>
+             *
+             * <code>deadrun = 1;</code>
+             */
+            deadrun(1),
+            /**
+             * <pre>
+             * Probably never used but included just in case
+             * </pre>
+             *
+             * <code>signoff = 2;</code>
+             */
+            signoff(2),;
 
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        schemaVersion_ = 1;
-        receivedAt_ = 0L;
-        topicPrefix_ = "";
-        topicVersion_ = "";
-        journeyType_ = 0;
-        temporalType_ = 0;
-        eventType_ = 0;
-        transportMode_ = 0;
-        operatorId_ = 0;
-        vehicleNumber_ = 0;
-        return this;
-      }
+            /**
+             * <code>journey = 0;</code>
+             */
+            public static final int journey_VALUE = 0;
+            /**
+             * <pre>
+             * Probably never used but included just in case
+             * </pre>
+             *
+             * <code>deadrun = 1;</code>
+             */
+            public static final int deadrun_VALUE = 1;
+            /**
+             * <pre>
+             * Probably never used but included just in case
+             * </pre>
+             *
+             * <code>signoff = 2;</code>
+             */
+            public static final int signoff_VALUE = 2;
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Topic_descriptor;
-      }
+            public final int getNumber() {
+                return value;
+            }
 
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.Topic getDefaultInstanceForType() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDefaultInstance();
-      }
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static JourneyType valueOf(int value) {
+                return forNumber(value);
+            }
 
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.Topic build() {
-        fi.hsl.common.passengercount.proto.PassengerCount.Topic result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             */
+            public static JourneyType forNumber(int value) {
+                switch (value) {
+                    case 0 :
+                        return journey;
+                    case 1 :
+                        return deadrun;
+                    case 2 :
+                        return signoff;
+                    default :
+                        return null;
+                }
+            }
 
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.Topic buildPartial() {
-        fi.hsl.common.passengercount.proto.PassengerCount.Topic result = new fi.hsl.common.passengercount.proto.PassengerCount.Topic(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
+            public static com.google.protobuf.Internal.EnumLiteMap<JourneyType> internalGetValueMap() {
+                return internalValueMap;
+            }
+            private static final com.google.protobuf.Internal.EnumLiteMap<JourneyType> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<JourneyType>() {
+                public JourneyType findValueByNumber(int number) {
+                    return JourneyType.forNumber(number);
+                }
+            };
 
-      private void buildPartial0(fi.hsl.common.passengercount.proto.PassengerCount.Topic result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.schemaVersion_ = schemaVersion_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.receivedAt_ = receivedAt_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.topicPrefix_ = topicPrefix_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.topicVersion_ = topicVersion_;
-          to_bitField0_ |= 0x00000008;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.journeyType_ = journeyType_;
-          to_bitField0_ |= 0x00000010;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.temporalType_ = temporalType_;
-          to_bitField0_ |= 0x00000020;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.eventType_ = eventType_;
-          to_bitField0_ |= 0x00000040;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.transportMode_ = transportMode_;
-          to_bitField0_ |= 0x00000080;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.operatorId_ = operatorId_;
-          to_bitField0_ |= 0x00000100;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.vehicleNumber_ = vehicleNumber_;
-          to_bitField0_ |= 0x00000200;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
+            public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+                return getDescriptor().getValues().get(ordinal());
+            }
+            public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+                return getDescriptor();
+            }
+            public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDescriptor().getEnumTypes().get(0);
+            }
 
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof fi.hsl.common.passengercount.proto.PassengerCount.Topic) {
-          return mergeFrom((fi.hsl.common.passengercount.proto.PassengerCount.Topic)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
+            private static final JourneyType[] VALUES = values();
 
-      public Builder mergeFrom(fi.hsl.common.passengercount.proto.PassengerCount.Topic other) {
-        if (other == fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDefaultInstance()) return this;
-        if (other.hasSchemaVersion()) {
-          setSchemaVersion(other.getSchemaVersion());
-        }
-        if (other.hasReceivedAt()) {
-          setReceivedAt(other.getReceivedAt());
-        }
-        if (other.hasTopicPrefix()) {
-          topicPrefix_ = other.topicPrefix_;
-          bitField0_ |= 0x00000004;
-          onChanged();
-        }
-        if (other.hasTopicVersion()) {
-          topicVersion_ = other.topicVersion_;
-          bitField0_ |= 0x00000008;
-          onChanged();
-        }
-        if (other.hasJourneyType()) {
-          setJourneyType(other.getJourneyType());
-        }
-        if (other.hasTemporalType()) {
-          setTemporalType(other.getTemporalType());
-        }
-        if (other.hasEventType()) {
-          setEventType(other.getEventType());
-        }
-        if (other.hasTransportMode()) {
-          setTransportMode(other.getTransportMode());
-        }
-        if (other.hasOperatorId()) {
-          setOperatorId(other.getOperatorId());
-        }
-        if (other.hasVehicleNumber()) {
-          setVehicleNumber(other.getVehicleNumber());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
+            public static JourneyType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                    throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+                }
+                return VALUES[desc.getIndex()];
+            }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        if (!hasSchemaVersion()) {
-          return false;
-        }
-        if (!hasReceivedAt()) {
-          return false;
-        }
-        if (!hasTopicPrefix()) {
-          return false;
-        }
-        if (!hasTopicVersion()) {
-          return false;
-        }
-        if (!hasJourneyType()) {
-          return false;
-        }
-        if (!hasTemporalType()) {
-          return false;
-        }
-        if (!hasEventType()) {
-          return false;
-        }
-        if (!hasOperatorId()) {
-          return false;
-        }
-        if (!hasVehicleNumber()) {
-          return false;
-        }
-        return true;
-      }
+            private final int value;
 
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
+            private JourneyType(int value) {
+                this.value = value;
+            }
+
+            // @@protoc_insertion_point(enum_scope:proto.Topic.JourneyType)
         }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                schemaVersion_ = input.readInt32();
+
+        /**
+         * Protobuf enum {@code proto.Topic.TemporalType}
+         */
+        public enum TemporalType implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>ongoing = 0;</code>
+             */
+            ongoing(0),
+            /**
+             * <pre>
+             * Probably never used but included just in case
+             * </pre>
+             *
+             * <code>upcoming = 1;</code>
+             */
+            upcoming(1),;
+
+            /**
+             * <code>ongoing = 0;</code>
+             */
+            public static final int ongoing_VALUE = 0;
+            /**
+             * <pre>
+             * Probably never used but included just in case
+             * </pre>
+             *
+             * <code>upcoming = 1;</code>
+             */
+            public static final int upcoming_VALUE = 1;
+
+            public final int getNumber() {
+                return value;
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static TemporalType valueOf(int value) {
+                return forNumber(value);
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             */
+            public static TemporalType forNumber(int value) {
+                switch (value) {
+                    case 0 :
+                        return ongoing;
+                    case 1 :
+                        return upcoming;
+                    default :
+                        return null;
+                }
+            }
+
+            public static com.google.protobuf.Internal.EnumLiteMap<TemporalType> internalGetValueMap() {
+                return internalValueMap;
+            }
+            private static final com.google.protobuf.Internal.EnumLiteMap<TemporalType> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<TemporalType>() {
+                public TemporalType findValueByNumber(int number) {
+                    return TemporalType.forNumber(number);
+                }
+            };
+
+            public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+                return getDescriptor().getValues().get(ordinal());
+            }
+            public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+                return getDescriptor();
+            }
+            public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDescriptor().getEnumTypes().get(1);
+            }
+
+            private static final TemporalType[] VALUES = values();
+
+            public static TemporalType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                    throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+                }
+                return VALUES[desc.getIndex()];
+            }
+
+            private final int value;
+
+            private TemporalType(int value) {
+                this.value = value;
+            }
+
+            // @@protoc_insertion_point(enum_scope:proto.Topic.TemporalType)
+        }
+
+        /**
+         * Protobuf enum {@code proto.Topic.TransportMode}
+         */
+        public enum TransportMode implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>bus = 0;</code>
+             */
+            bus(0),
+            /**
+             * <code>train = 1;</code>
+             */
+            train(1),
+            /**
+             * <code>tram = 2;</code>
+             */
+            tram(2),
+            /**
+             * <code>metro = 3;</code>
+             */
+            metro(3),
+            /**
+             * <code>ferry = 4;</code>
+             */
+            ferry(4),
+            /**
+             * <pre>
+             *Used by U-line buses and other lines with limited real-time information
+             * </pre>
+             *
+             * <code>ubus = 5;</code>
+             */
+            ubus(5),
+            /**
+             * <pre>
+             *Used by robot buses
+             * </pre>
+             *
+             * <code>robot = 6;</code>
+             */
+            robot(6),;
+
+            /**
+             * <code>bus = 0;</code>
+             */
+            public static final int bus_VALUE = 0;
+            /**
+             * <code>train = 1;</code>
+             */
+            public static final int train_VALUE = 1;
+            /**
+             * <code>tram = 2;</code>
+             */
+            public static final int tram_VALUE = 2;
+            /**
+             * <code>metro = 3;</code>
+             */
+            public static final int metro_VALUE = 3;
+            /**
+             * <code>ferry = 4;</code>
+             */
+            public static final int ferry_VALUE = 4;
+            /**
+             * <pre>
+             *Used by U-line buses and other lines with limited real-time information
+             * </pre>
+             *
+             * <code>ubus = 5;</code>
+             */
+            public static final int ubus_VALUE = 5;
+            /**
+             * <pre>
+             *Used by robot buses
+             * </pre>
+             *
+             * <code>robot = 6;</code>
+             */
+            public static final int robot_VALUE = 6;
+
+            public final int getNumber() {
+                return value;
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static TransportMode valueOf(int value) {
+                return forNumber(value);
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             */
+            public static TransportMode forNumber(int value) {
+                switch (value) {
+                    case 0 :
+                        return bus;
+                    case 1 :
+                        return train;
+                    case 2 :
+                        return tram;
+                    case 3 :
+                        return metro;
+                    case 4 :
+                        return ferry;
+                    case 5 :
+                        return ubus;
+                    case 6 :
+                        return robot;
+                    default :
+                        return null;
+                }
+            }
+
+            public static com.google.protobuf.Internal.EnumLiteMap<TransportMode> internalGetValueMap() {
+                return internalValueMap;
+            }
+            private static final com.google.protobuf.Internal.EnumLiteMap<TransportMode> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<TransportMode>() {
+                public TransportMode findValueByNumber(int number) {
+                    return TransportMode.forNumber(number);
+                }
+            };
+
+            public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+                return getDescriptor().getValues().get(ordinal());
+            }
+            public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+                return getDescriptor();
+            }
+            public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDescriptor().getEnumTypes().get(2);
+            }
+
+            private static final TransportMode[] VALUES = values();
+
+            public static TransportMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                    throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+                }
+                return VALUES[desc.getIndex()];
+            }
+
+            private final int value;
+
+            private TransportMode(int value) {
+                this.value = value;
+            }
+
+            // @@protoc_insertion_point(enum_scope:proto.Topic.TransportMode)
+        }
+
+        /**
+         * Protobuf enum {@code proto.Topic.EventType}
+         */
+        public enum EventType implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>apc = 0;</code>
+             */
+            apc(0),;
+
+            /**
+             * <code>apc = 0;</code>
+             */
+            public static final int apc_VALUE = 0;
+
+            public final int getNumber() {
+                return value;
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static EventType valueOf(int value) {
+                return forNumber(value);
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             */
+            public static EventType forNumber(int value) {
+                switch (value) {
+                    case 0 :
+                        return apc;
+                    default :
+                        return null;
+                }
+            }
+
+            public static com.google.protobuf.Internal.EnumLiteMap<EventType> internalGetValueMap() {
+                return internalValueMap;
+            }
+            private static final com.google.protobuf.Internal.EnumLiteMap<EventType> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<EventType>() {
+                public EventType findValueByNumber(int number) {
+                    return EventType.forNumber(number);
+                }
+            };
+
+            public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+                return getDescriptor().getValues().get(ordinal());
+            }
+            public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+                return getDescriptor();
+            }
+            public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDescriptor().getEnumTypes().get(3);
+            }
+
+            private static final EventType[] VALUES = values();
+
+            public static EventType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                    throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+                }
+                return VALUES[desc.getIndex()];
+            }
+
+            private final int value;
+
+            private EventType(int value) {
+                this.value = value;
+            }
+
+            // @@protoc_insertion_point(enum_scope:proto.Topic.EventType)
+        }
+
+        private int bitField0_;
+        public static final int SCHEMAVERSION_FIELD_NUMBER = 1;
+        private int schemaVersion_ = 1;
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return Whether the schemaVersion field is set.
+         */
+        @java.lang.Override
+        public boolean hasSchemaVersion() {
+            return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+         * @return The schemaVersion.
+         */
+        @java.lang.Override
+        public int getSchemaVersion() {
+            return schemaVersion_;
+        }
+
+        public static final int RECEIVED_AT_FIELD_NUMBER = 2;
+        private long receivedAt_ = 0L;
+        /**
+         * <pre>
+         * Our server timestamp as Epoch ms
+         * </pre>
+         *
+         * <code>required int64 received_at = 2;</code>
+         * @return Whether the receivedAt field is set.
+         */
+        @java.lang.Override
+        public boolean hasReceivedAt() {
+            return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         * <pre>
+         * Our server timestamp as Epoch ms
+         * </pre>
+         *
+         * <code>required int64 received_at = 2;</code>
+         * @return The receivedAt.
+         */
+        @java.lang.Override
+        public long getReceivedAt() {
+            return receivedAt_;
+        }
+
+        public static final int TOPIC_PREFIX_FIELD_NUMBER = 3;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object topicPrefix_ = "";
+        /**
+         * <code>required string topic_prefix = 3;</code>
+         * @return Whether the topicPrefix field is set.
+         */
+        @java.lang.Override
+        public boolean hasTopicPrefix() {
+            return ((bitField0_ & 0x00000004) != 0);
+        }
+        /**
+         * <code>required string topic_prefix = 3;</code>
+         * @return The topicPrefix.
+         */
+        @java.lang.Override
+        public java.lang.String getTopicPrefix() {
+            java.lang.Object ref = topicPrefix_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    topicPrefix_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>required string topic_prefix = 3;</code>
+         * @return The bytes for topicPrefix.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getTopicPrefixBytes() {
+            java.lang.Object ref = topicPrefix_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                topicPrefix_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int TOPIC_VERSION_FIELD_NUMBER = 4;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object topicVersion_ = "";
+        /**
+         * <code>required string topic_version = 4;</code>
+         * @return Whether the topicVersion field is set.
+         */
+        @java.lang.Override
+        public boolean hasTopicVersion() {
+            return ((bitField0_ & 0x00000008) != 0);
+        }
+        /**
+         * <code>required string topic_version = 4;</code>
+         * @return The topicVersion.
+         */
+        @java.lang.Override
+        public java.lang.String getTopicVersion() {
+            java.lang.Object ref = topicVersion_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    topicVersion_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>required string topic_version = 4;</code>
+         * @return The bytes for topicVersion.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getTopicVersionBytes() {
+            java.lang.Object ref = topicVersion_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                topicVersion_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int JOURNEY_TYPE_FIELD_NUMBER = 5;
+        private int journeyType_ = 0;
+        /**
+         * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+         * @return Whether the journeyType field is set.
+         */
+        @java.lang.Override
+        public boolean hasJourneyType() {
+            return ((bitField0_ & 0x00000010) != 0);
+        }
+        /**
+         * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+         * @return The journeyType.
+         */
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType getJourneyType() {
+            fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType result = fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType
+                    .forNumber(journeyType_);
+            return result == null
+                    ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType.journey
+                    : result;
+        }
+
+        public static final int TEMPORAL_TYPE_FIELD_NUMBER = 6;
+        private int temporalType_ = 0;
+        /**
+         * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+         * @return Whether the temporalType field is set.
+         */
+        @java.lang.Override
+        public boolean hasTemporalType() {
+            return ((bitField0_ & 0x00000020) != 0);
+        }
+        /**
+         * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+         * @return The temporalType.
+         */
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType getTemporalType() {
+            fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType result = fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType
+                    .forNumber(temporalType_);
+            return result == null
+                    ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType.ongoing
+                    : result;
+        }
+
+        public static final int EVENT_TYPE_FIELD_NUMBER = 7;
+        private int eventType_ = 0;
+        /**
+         * <code>required .proto.Topic.EventType event_type = 7;</code>
+         * @return Whether the eventType field is set.
+         */
+        @java.lang.Override
+        public boolean hasEventType() {
+            return ((bitField0_ & 0x00000040) != 0);
+        }
+        /**
+         * <code>required .proto.Topic.EventType event_type = 7;</code>
+         * @return The eventType.
+         */
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType getEventType() {
+            fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType result = fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType
+                    .forNumber(eventType_);
+            return result == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType.apc : result;
+        }
+
+        public static final int TRANSPORT_MODE_FIELD_NUMBER = 8;
+        private int transportMode_ = 0;
+        /**
+         * <pre>
+         * Optional because of rare bug in data source systems
+         * </pre>
+         *
+         * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+         * @return Whether the transportMode field is set.
+         */
+        @java.lang.Override
+        public boolean hasTransportMode() {
+            return ((bitField0_ & 0x00000080) != 0);
+        }
+        /**
+         * <pre>
+         * Optional because of rare bug in data source systems
+         * </pre>
+         *
+         * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+         * @return The transportMode.
+         */
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode getTransportMode() {
+            fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode result = fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode
+                    .forNumber(transportMode_);
+            return result == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode.bus : result;
+        }
+
+        public static final int OPERATOR_ID_FIELD_NUMBER = 9;
+        private int operatorId_ = 0;
+        /**
+         * <code>required int32 operator_id = 9;</code>
+         * @return Whether the operatorId field is set.
+         */
+        @java.lang.Override
+        public boolean hasOperatorId() {
+            return ((bitField0_ & 0x00000100) != 0);
+        }
+        /**
+         * <code>required int32 operator_id = 9;</code>
+         * @return The operatorId.
+         */
+        @java.lang.Override
+        public int getOperatorId() {
+            return operatorId_;
+        }
+
+        public static final int VEHICLE_NUMBER_FIELD_NUMBER = 10;
+        private int vehicleNumber_ = 0;
+        /**
+         * <code>required int32 vehicle_number = 10;</code>
+         * @return Whether the vehicleNumber field is set.
+         */
+        @java.lang.Override
+        public boolean hasVehicleNumber() {
+            return ((bitField0_ & 0x00000200) != 0);
+        }
+        /**
+         * <code>required int32 vehicle_number = 10;</code>
+         * @return The vehicleNumber.
+         */
+        @java.lang.Override
+        public int getVehicleNumber() {
+            return vehicleNumber_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1)
+                return true;
+            if (isInitialized == 0)
+                return false;
+
+            if (!hasSchemaVersion()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasReceivedAt()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasTopicPrefix()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasTopicVersion()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasJourneyType()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasTemporalType()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasEventType()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasOperatorId()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasVehicleNumber()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (((bitField0_ & 0x00000001) != 0)) {
+                output.writeInt32(1, schemaVersion_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                output.writeInt64(2, receivedAt_);
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 3, topicPrefix_);
+            }
+            if (((bitField0_ & 0x00000008) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 4, topicVersion_);
+            }
+            if (((bitField0_ & 0x00000010) != 0)) {
+                output.writeEnum(5, journeyType_);
+            }
+            if (((bitField0_ & 0x00000020) != 0)) {
+                output.writeEnum(6, temporalType_);
+            }
+            if (((bitField0_ & 0x00000040) != 0)) {
+                output.writeEnum(7, eventType_);
+            }
+            if (((bitField0_ & 0x00000080) != 0)) {
+                output.writeEnum(8, transportMode_);
+            }
+            if (((bitField0_ & 0x00000100) != 0)) {
+                output.writeInt32(9, operatorId_);
+            }
+            if (((bitField0_ & 0x00000200) != 0)) {
+                output.writeInt32(10, vehicleNumber_);
+            }
+            getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1)
+                return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, schemaVersion_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, receivedAt_);
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, topicPrefix_);
+            }
+            if (((bitField0_ & 0x00000008) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, topicVersion_);
+            }
+            if (((bitField0_ & 0x00000010) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, journeyType_);
+            }
+            if (((bitField0_ & 0x00000020) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, temporalType_);
+            }
+            if (((bitField0_ & 0x00000040) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, eventType_);
+            }
+            if (((bitField0_ & 0x00000080) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, transportMode_);
+            }
+            if (((bitField0_ & 0x00000100) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(9, operatorId_);
+            }
+            if (((bitField0_ & 0x00000200) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(10, vehicleNumber_);
+            }
+            size += getUnknownFields().getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof fi.hsl.common.passengercount.proto.PassengerCount.Topic)) {
+                return super.equals(obj);
+            }
+            fi.hsl.common.passengercount.proto.PassengerCount.Topic other = (fi.hsl.common.passengercount.proto.PassengerCount.Topic) obj;
+
+            if (hasSchemaVersion() != other.hasSchemaVersion())
+                return false;
+            if (hasSchemaVersion()) {
+                if (getSchemaVersion() != other.getSchemaVersion())
+                    return false;
+            }
+            if (hasReceivedAt() != other.hasReceivedAt())
+                return false;
+            if (hasReceivedAt()) {
+                if (getReceivedAt() != other.getReceivedAt())
+                    return false;
+            }
+            if (hasTopicPrefix() != other.hasTopicPrefix())
+                return false;
+            if (hasTopicPrefix()) {
+                if (!getTopicPrefix().equals(other.getTopicPrefix()))
+                    return false;
+            }
+            if (hasTopicVersion() != other.hasTopicVersion())
+                return false;
+            if (hasTopicVersion()) {
+                if (!getTopicVersion().equals(other.getTopicVersion()))
+                    return false;
+            }
+            if (hasJourneyType() != other.hasJourneyType())
+                return false;
+            if (hasJourneyType()) {
+                if (journeyType_ != other.journeyType_)
+                    return false;
+            }
+            if (hasTemporalType() != other.hasTemporalType())
+                return false;
+            if (hasTemporalType()) {
+                if (temporalType_ != other.temporalType_)
+                    return false;
+            }
+            if (hasEventType() != other.hasEventType())
+                return false;
+            if (hasEventType()) {
+                if (eventType_ != other.eventType_)
+                    return false;
+            }
+            if (hasTransportMode() != other.hasTransportMode())
+                return false;
+            if (hasTransportMode()) {
+                if (transportMode_ != other.transportMode_)
+                    return false;
+            }
+            if (hasOperatorId() != other.hasOperatorId())
+                return false;
+            if (hasOperatorId()) {
+                if (getOperatorId() != other.getOperatorId())
+                    return false;
+            }
+            if (hasVehicleNumber() != other.hasVehicleNumber())
+                return false;
+            if (hasVehicleNumber()) {
+                if (getVehicleNumber() != other.getVehicleNumber())
+                    return false;
+            }
+            if (!getUnknownFields().equals(other.getUnknownFields()))
+                return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasSchemaVersion()) {
+                hash = (37 * hash) + SCHEMAVERSION_FIELD_NUMBER;
+                hash = (53 * hash) + getSchemaVersion();
+            }
+            if (hasReceivedAt()) {
+                hash = (37 * hash) + RECEIVED_AT_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getReceivedAt());
+            }
+            if (hasTopicPrefix()) {
+                hash = (37 * hash) + TOPIC_PREFIX_FIELD_NUMBER;
+                hash = (53 * hash) + getTopicPrefix().hashCode();
+            }
+            if (hasTopicVersion()) {
+                hash = (37 * hash) + TOPIC_VERSION_FIELD_NUMBER;
+                hash = (53 * hash) + getTopicVersion().hashCode();
+            }
+            if (hasJourneyType()) {
+                hash = (37 * hash) + JOURNEY_TYPE_FIELD_NUMBER;
+                hash = (53 * hash) + journeyType_;
+            }
+            if (hasTemporalType()) {
+                hash = (37 * hash) + TEMPORAL_TYPE_FIELD_NUMBER;
+                hash = (53 * hash) + temporalType_;
+            }
+            if (hasEventType()) {
+                hash = (37 * hash) + EVENT_TYPE_FIELD_NUMBER;
+                hash = (53 * hash) + eventType_;
+            }
+            if (hasTransportMode()) {
+                hash = (37 * hash) + TRANSPORT_MODE_FIELD_NUMBER;
+                hash = (53 * hash) + transportMode_;
+            }
+            if (hasOperatorId()) {
+                hash = (37 * hash) + OPERATOR_ID_FIELD_NUMBER;
+                hash = (53 * hash) + getOperatorId();
+            }
+            if (hasVehicleNumber()) {
+                hash = (37 * hash) + VEHICLE_NUMBER_FIELD_NUMBER;
+                hash = (53 * hash) + getVehicleNumber();
+            }
+            hash = (29 * hash) + getUnknownFields().hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(
+                com.google.protobuf.ByteString data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(
+                com.google.protobuf.ByteString data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseDelimitedFrom(
+                java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseDelimitedFrom(
+                java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+                    extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(
+                com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Topic parseFrom(
+                com.google.protobuf.CodedInputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+        public static Builder newBuilder(fi.hsl.common.passengercount.proto.PassengerCount.Topic prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         * Protobuf type {@code proto.Topic}
+         */
+        public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                    // @@protoc_insertion_point(builder_implements:proto.Topic)
+                    fi.hsl.common.passengercount.proto.PassengerCount.TopicOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Topic_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Topic_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(fi.hsl.common.passengercount.proto.PassengerCount.Topic.class,
+                                fi.hsl.common.passengercount.proto.PassengerCount.Topic.Builder.class);
+            }
+
+            // Construct using fi.hsl.common.passengercount.proto.PassengerCount.Topic.newBuilder()
+            private Builder() {
+
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+
+            }
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                bitField0_ = 0;
+                schemaVersion_ = 1;
+                receivedAt_ = 0L;
+                topicPrefix_ = "";
+                topicVersion_ = "";
+                journeyType_ = 0;
+                temporalType_ = 0;
+                eventType_ = 0;
+                transportMode_ = 0;
+                operatorId_ = 0;
+                vehicleNumber_ = 0;
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Topic_descriptor;
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.Topic getDefaultInstanceForType() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.Topic build() {
+                fi.hsl.common.passengercount.proto.PassengerCount.Topic result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.Topic buildPartial() {
+                fi.hsl.common.passengercount.proto.PassengerCount.Topic result = new fi.hsl.common.passengercount.proto.PassengerCount.Topic(
+                        this);
+                if (bitField0_ != 0) {
+                    buildPartial0(result);
+                }
+                onBuilt();
+                return result;
+            }
+
+            private void buildPartial0(fi.hsl.common.passengercount.proto.PassengerCount.Topic result) {
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) != 0)) {
+                    result.schemaVersion_ = schemaVersion_;
+                    to_bitField0_ |= 0x00000001;
+                }
+                if (((from_bitField0_ & 0x00000002) != 0)) {
+                    result.receivedAt_ = receivedAt_;
+                    to_bitField0_ |= 0x00000002;
+                }
+                if (((from_bitField0_ & 0x00000004) != 0)) {
+                    result.topicPrefix_ = topicPrefix_;
+                    to_bitField0_ |= 0x00000004;
+                }
+                if (((from_bitField0_ & 0x00000008) != 0)) {
+                    result.topicVersion_ = topicVersion_;
+                    to_bitField0_ |= 0x00000008;
+                }
+                if (((from_bitField0_ & 0x00000010) != 0)) {
+                    result.journeyType_ = journeyType_;
+                    to_bitField0_ |= 0x00000010;
+                }
+                if (((from_bitField0_ & 0x00000020) != 0)) {
+                    result.temporalType_ = temporalType_;
+                    to_bitField0_ |= 0x00000020;
+                }
+                if (((from_bitField0_ & 0x00000040) != 0)) {
+                    result.eventType_ = eventType_;
+                    to_bitField0_ |= 0x00000040;
+                }
+                if (((from_bitField0_ & 0x00000080) != 0)) {
+                    result.transportMode_ = transportMode_;
+                    to_bitField0_ |= 0x00000080;
+                }
+                if (((from_bitField0_ & 0x00000100) != 0)) {
+                    result.operatorId_ = operatorId_;
+                    to_bitField0_ |= 0x00000100;
+                }
+                if (((from_bitField0_ & 0x00000200) != 0)) {
+                    result.vehicleNumber_ = vehicleNumber_;
+                    to_bitField0_ |= 0x00000200;
+                }
+                result.bitField0_ |= to_bitField0_;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+            @java.lang.Override
+            public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+            @java.lang.Override
+            public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+            @java.lang.Override
+            public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof fi.hsl.common.passengercount.proto.PassengerCount.Topic) {
+                    return mergeFrom((fi.hsl.common.passengercount.proto.PassengerCount.Topic) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(fi.hsl.common.passengercount.proto.PassengerCount.Topic other) {
+                if (other == fi.hsl.common.passengercount.proto.PassengerCount.Topic.getDefaultInstance())
+                    return this;
+                if (other.hasSchemaVersion()) {
+                    setSchemaVersion(other.getSchemaVersion());
+                }
+                if (other.hasReceivedAt()) {
+                    setReceivedAt(other.getReceivedAt());
+                }
+                if (other.hasTopicPrefix()) {
+                    topicPrefix_ = other.topicPrefix_;
+                    bitField0_ |= 0x00000004;
+                    onChanged();
+                }
+                if (other.hasTopicVersion()) {
+                    topicVersion_ = other.topicVersion_;
+                    bitField0_ |= 0x00000008;
+                    onChanged();
+                }
+                if (other.hasJourneyType()) {
+                    setJourneyType(other.getJourneyType());
+                }
+                if (other.hasTemporalType()) {
+                    setTemporalType(other.getTemporalType());
+                }
+                if (other.hasEventType()) {
+                    setEventType(other.getEventType());
+                }
+                if (other.hasTransportMode()) {
+                    setTransportMode(other.getTransportMode());
+                }
+                if (other.hasOperatorId()) {
+                    setOperatorId(other.getOperatorId());
+                }
+                if (other.hasVehicleNumber()) {
+                    setVehicleNumber(other.getVehicleNumber());
+                }
+                this.mergeUnknownFields(other.getUnknownFields());
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                if (!hasSchemaVersion()) {
+                    return false;
+                }
+                if (!hasReceivedAt()) {
+                    return false;
+                }
+                if (!hasTopicPrefix()) {
+                    return false;
+                }
+                if (!hasTopicVersion()) {
+                    return false;
+                }
+                if (!hasJourneyType()) {
+                    return false;
+                }
+                if (!hasTemporalType()) {
+                    return false;
+                }
+                if (!hasEventType()) {
+                    return false;
+                }
+                if (!hasOperatorId()) {
+                    return false;
+                }
+                if (!hasVehicleNumber()) {
+                    return false;
+                }
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+                if (extensionRegistry == null) {
+                    throw new java.lang.NullPointerException();
+                }
+                try {
+                    boolean done = false;
+                    while (!done) {
+                        int tag = input.readTag();
+                        switch (tag) {
+                            case 0 :
+                                done = true;
+                                break;
+                            case 8 : {
+                                schemaVersion_ = input.readInt32();
+                                bitField0_ |= 0x00000001;
+                                break;
+                            } // case 8
+                            case 16 : {
+                                receivedAt_ = input.readInt64();
+                                bitField0_ |= 0x00000002;
+                                break;
+                            } // case 16
+                            case 26 : {
+                                topicPrefix_ = input.readBytes();
+                                bitField0_ |= 0x00000004;
+                                break;
+                            } // case 26
+                            case 34 : {
+                                topicVersion_ = input.readBytes();
+                                bitField0_ |= 0x00000008;
+                                break;
+                            } // case 34
+                            case 40 : {
+                                int tmpRaw = input.readEnum();
+                                fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType tmpValue = fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType
+                                        .forNumber(tmpRaw);
+                                if (tmpValue == null) {
+                                    mergeUnknownVarintField(5, tmpRaw);
+                                } else {
+                                    journeyType_ = tmpRaw;
+                                    bitField0_ |= 0x00000010;
+                                }
+                                break;
+                            } // case 40
+                            case 48 : {
+                                int tmpRaw = input.readEnum();
+                                fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType tmpValue = fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType
+                                        .forNumber(tmpRaw);
+                                if (tmpValue == null) {
+                                    mergeUnknownVarintField(6, tmpRaw);
+                                } else {
+                                    temporalType_ = tmpRaw;
+                                    bitField0_ |= 0x00000020;
+                                }
+                                break;
+                            } // case 48
+                            case 56 : {
+                                int tmpRaw = input.readEnum();
+                                fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType tmpValue = fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType
+                                        .forNumber(tmpRaw);
+                                if (tmpValue == null) {
+                                    mergeUnknownVarintField(7, tmpRaw);
+                                } else {
+                                    eventType_ = tmpRaw;
+                                    bitField0_ |= 0x00000040;
+                                }
+                                break;
+                            } // case 56
+                            case 64 : {
+                                int tmpRaw = input.readEnum();
+                                fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode tmpValue = fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode
+                                        .forNumber(tmpRaw);
+                                if (tmpValue == null) {
+                                    mergeUnknownVarintField(8, tmpRaw);
+                                } else {
+                                    transportMode_ = tmpRaw;
+                                    bitField0_ |= 0x00000080;
+                                }
+                                break;
+                            } // case 64
+                            case 72 : {
+                                operatorId_ = input.readInt32();
+                                bitField0_ |= 0x00000100;
+                                break;
+                            } // case 72
+                            case 80 : {
+                                vehicleNumber_ = input.readInt32();
+                                bitField0_ |= 0x00000200;
+                                break;
+                            } // case 80
+                            default : {
+                                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                                    done = true; // was an endgroup tag
+                                }
+                                break;
+                            } // default:
+                        } // switch (tag)
+                    } // while (!done)
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.unwrapIOException();
+                } finally {
+                    onChanged();
+                } // finally
+                return this;
+            }
+            private int bitField0_;
+
+            private int schemaVersion_ = 1;
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @return Whether the schemaVersion field is set.
+             */
+            @java.lang.Override
+            public boolean hasSchemaVersion() {
+                return ((bitField0_ & 0x00000001) != 0);
+            }
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @return The schemaVersion.
+             */
+            @java.lang.Override
+            public int getSchemaVersion() {
+                return schemaVersion_;
+            }
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @param value The schemaVersion to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSchemaVersion(int value) {
+
+                schemaVersion_ = value;
                 bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 16: {
-                receivedAt_ = input.readInt64();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required int32 SchemaVersion = 1 [default = 1];</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearSchemaVersion() {
+                bitField0_ = (bitField0_ & ~0x00000001);
+                schemaVersion_ = 1;
+                onChanged();
+                return this;
+            }
+
+            private long receivedAt_;
+            /**
+             * <pre>
+             * Our server timestamp as Epoch ms
+             * </pre>
+             *
+             * <code>required int64 received_at = 2;</code>
+             * @return Whether the receivedAt field is set.
+             */
+            @java.lang.Override
+            public boolean hasReceivedAt() {
+                return ((bitField0_ & 0x00000002) != 0);
+            }
+            /**
+             * <pre>
+             * Our server timestamp as Epoch ms
+             * </pre>
+             *
+             * <code>required int64 received_at = 2;</code>
+             * @return The receivedAt.
+             */
+            @java.lang.Override
+            public long getReceivedAt() {
+                return receivedAt_;
+            }
+            /**
+             * <pre>
+             * Our server timestamp as Epoch ms
+             * </pre>
+             *
+             * <code>required int64 received_at = 2;</code>
+             * @param value The receivedAt to set.
+             * @return This builder for chaining.
+             */
+            public Builder setReceivedAt(long value) {
+
+                receivedAt_ = value;
                 bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 26: {
-                topicPrefix_ = input.readBytes();
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * Our server timestamp as Epoch ms
+             * </pre>
+             *
+             * <code>required int64 received_at = 2;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearReceivedAt() {
+                bitField0_ = (bitField0_ & ~0x00000002);
+                receivedAt_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object topicPrefix_ = "";
+            /**
+             * <code>required string topic_prefix = 3;</code>
+             * @return Whether the topicPrefix field is set.
+             */
+            public boolean hasTopicPrefix() {
+                return ((bitField0_ & 0x00000004) != 0);
+            }
+            /**
+             * <code>required string topic_prefix = 3;</code>
+             * @return The topicPrefix.
+             */
+            public java.lang.String getTopicPrefix() {
+                java.lang.Object ref = topicPrefix_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        topicPrefix_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>required string topic_prefix = 3;</code>
+             * @return The bytes for topicPrefix.
+             */
+            public com.google.protobuf.ByteString getTopicPrefixBytes() {
+                java.lang.Object ref = topicPrefix_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    topicPrefix_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>required string topic_prefix = 3;</code>
+             * @param value The topicPrefix to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTopicPrefix(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                topicPrefix_ = value;
                 bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 34: {
-                topicVersion_ = input.readBytes();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required string topic_prefix = 3;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTopicPrefix() {
+                topicPrefix_ = getDefaultInstance().getTopicPrefix();
+                bitField0_ = (bitField0_ & ~0x00000004);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required string topic_prefix = 3;</code>
+             * @param value The bytes for topicPrefix to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTopicPrefixBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                topicPrefix_ = value;
+                bitField0_ |= 0x00000004;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object topicVersion_ = "";
+            /**
+             * <code>required string topic_version = 4;</code>
+             * @return Whether the topicVersion field is set.
+             */
+            public boolean hasTopicVersion() {
+                return ((bitField0_ & 0x00000008) != 0);
+            }
+            /**
+             * <code>required string topic_version = 4;</code>
+             * @return The topicVersion.
+             */
+            public java.lang.String getTopicVersion() {
+                java.lang.Object ref = topicVersion_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        topicVersion_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>required string topic_version = 4;</code>
+             * @return The bytes for topicVersion.
+             */
+            public com.google.protobuf.ByteString getTopicVersionBytes() {
+                java.lang.Object ref = topicVersion_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    topicVersion_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>required string topic_version = 4;</code>
+             * @param value The topicVersion to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTopicVersion(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                topicVersion_ = value;
                 bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-              case 40: {
-                int tmpRaw = input.readEnum();
-                fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType tmpValue =
-                    fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(5, tmpRaw);
-                } else {
-                  journeyType_ = tmpRaw;
-                  bitField0_ |= 0x00000010;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required string topic_version = 4;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTopicVersion() {
+                topicVersion_ = getDefaultInstance().getTopicVersion();
+                bitField0_ = (bitField0_ & ~0x00000008);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required string topic_version = 4;</code>
+             * @param value The bytes for topicVersion to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTopicVersionBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
                 }
-                break;
-              } // case 40
-              case 48: {
-                int tmpRaw = input.readEnum();
-                fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType tmpValue =
-                    fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(6, tmpRaw);
-                } else {
-                  temporalType_ = tmpRaw;
-                  bitField0_ |= 0x00000020;
+                topicVersion_ = value;
+                bitField0_ |= 0x00000008;
+                onChanged();
+                return this;
+            }
+
+            private int journeyType_ = 0;
+            /**
+             * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+             * @return Whether the journeyType field is set.
+             */
+            @java.lang.Override
+            public boolean hasJourneyType() {
+                return ((bitField0_ & 0x00000010) != 0);
+            }
+            /**
+             * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+             * @return The journeyType.
+             */
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType getJourneyType() {
+                fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType result = fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType
+                        .forNumber(journeyType_);
+                return result == null
+                        ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType.journey
+                        : result;
+            }
+            /**
+             * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+             * @param value The journeyType to set.
+             * @return This builder for chaining.
+             */
+            public Builder setJourneyType(fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType value) {
+                if (value == null) {
+                    throw new NullPointerException();
                 }
-                break;
-              } // case 48
-              case 56: {
-                int tmpRaw = input.readEnum();
-                fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType tmpValue =
-                    fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(7, tmpRaw);
-                } else {
-                  eventType_ = tmpRaw;
-                  bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000010;
+                journeyType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearJourneyType() {
+                bitField0_ = (bitField0_ & ~0x00000010);
+                journeyType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int temporalType_ = 0;
+            /**
+             * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+             * @return Whether the temporalType field is set.
+             */
+            @java.lang.Override
+            public boolean hasTemporalType() {
+                return ((bitField0_ & 0x00000020) != 0);
+            }
+            /**
+             * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+             * @return The temporalType.
+             */
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType getTemporalType() {
+                fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType result = fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType
+                        .forNumber(temporalType_);
+                return result == null
+                        ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType.ongoing
+                        : result;
+            }
+            /**
+             * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+             * @param value The temporalType to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTemporalType(fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType value) {
+                if (value == null) {
+                    throw new NullPointerException();
                 }
-                break;
-              } // case 56
-              case 64: {
-                int tmpRaw = input.readEnum();
-                fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode tmpValue =
-                    fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode.forNumber(tmpRaw);
-                if (tmpValue == null) {
-                  mergeUnknownVarintField(8, tmpRaw);
-                } else {
-                  transportMode_ = tmpRaw;
-                  bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000020;
+                temporalType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTemporalType() {
+                bitField0_ = (bitField0_ & ~0x00000020);
+                temporalType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int eventType_ = 0;
+            /**
+             * <code>required .proto.Topic.EventType event_type = 7;</code>
+             * @return Whether the eventType field is set.
+             */
+            @java.lang.Override
+            public boolean hasEventType() {
+                return ((bitField0_ & 0x00000040) != 0);
+            }
+            /**
+             * <code>required .proto.Topic.EventType event_type = 7;</code>
+             * @return The eventType.
+             */
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType getEventType() {
+                fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType result = fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType
+                        .forNumber(eventType_);
+                return result == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType.apc : result;
+            }
+            /**
+             * <code>required .proto.Topic.EventType event_type = 7;</code>
+             * @param value The eventType to set.
+             * @return This builder for chaining.
+             */
+            public Builder setEventType(fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType value) {
+                if (value == null) {
+                    throw new NullPointerException();
                 }
-                break;
-              } // case 64
-              case 72: {
-                operatorId_ = input.readInt32();
+                bitField0_ |= 0x00000040;
+                eventType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required .proto.Topic.EventType event_type = 7;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearEventType() {
+                bitField0_ = (bitField0_ & ~0x00000040);
+                eventType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int transportMode_ = 0;
+            /**
+             * <pre>
+             * Optional because of rare bug in data source systems
+             * </pre>
+             *
+             * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+             * @return Whether the transportMode field is set.
+             */
+            @java.lang.Override
+            public boolean hasTransportMode() {
+                return ((bitField0_ & 0x00000080) != 0);
+            }
+            /**
+             * <pre>
+             * Optional because of rare bug in data source systems
+             * </pre>
+             *
+             * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+             * @return The transportMode.
+             */
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode getTransportMode() {
+                fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode result = fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode
+                        .forNumber(transportMode_);
+                return result == null
+                        ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode.bus
+                        : result;
+            }
+            /**
+             * <pre>
+             * Optional because of rare bug in data source systems
+             * </pre>
+             *
+             * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+             * @param value The transportMode to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTransportMode(
+                    fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000080;
+                transportMode_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             * Optional because of rare bug in data source systems
+             * </pre>
+             *
+             * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTransportMode() {
+                bitField0_ = (bitField0_ & ~0x00000080);
+                transportMode_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int operatorId_;
+            /**
+             * <code>required int32 operator_id = 9;</code>
+             * @return Whether the operatorId field is set.
+             */
+            @java.lang.Override
+            public boolean hasOperatorId() {
+                return ((bitField0_ & 0x00000100) != 0);
+            }
+            /**
+             * <code>required int32 operator_id = 9;</code>
+             * @return The operatorId.
+             */
+            @java.lang.Override
+            public int getOperatorId() {
+                return operatorId_;
+            }
+            /**
+             * <code>required int32 operator_id = 9;</code>
+             * @param value The operatorId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setOperatorId(int value) {
+
+                operatorId_ = value;
                 bitField0_ |= 0x00000100;
-                break;
-              } // case 72
-              case 80: {
-                vehicleNumber_ = input.readInt32();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required int32 operator_id = 9;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearOperatorId() {
+                bitField0_ = (bitField0_ & ~0x00000100);
+                operatorId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int vehicleNumber_;
+            /**
+             * <code>required int32 vehicle_number = 10;</code>
+             * @return Whether the vehicleNumber field is set.
+             */
+            @java.lang.Override
+            public boolean hasVehicleNumber() {
+                return ((bitField0_ & 0x00000200) != 0);
+            }
+            /**
+             * <code>required int32 vehicle_number = 10;</code>
+             * @return The vehicleNumber.
+             */
+            @java.lang.Override
+            public int getVehicleNumber() {
+                return vehicleNumber_;
+            }
+            /**
+             * <code>required int32 vehicle_number = 10;</code>
+             * @param value The vehicleNumber to set.
+             * @return This builder for chaining.
+             */
+            public Builder setVehicleNumber(int value) {
+
+                vehicleNumber_ = value;
                 bitField0_ |= 0x00000200;
-                break;
-              } // case 80
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>required int32 vehicle_number = 10;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearVehicleNumber() {
+                bitField0_ = (bitField0_ & ~0x00000200);
+                vehicleNumber_ = 0;
+                onChanged();
+                return this;
+            }
+            @java.lang.Override
+            public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:proto.Topic)
+        }
+
+        // @@protoc_insertion_point(class_scope:proto.Topic)
+        private static final fi.hsl.common.passengercount.proto.PassengerCount.Topic DEFAULT_INSTANCE;
+        static {
+            DEFAULT_INSTANCE = new fi.hsl.common.passengercount.proto.PassengerCount.Topic();
+        }
+
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Topic getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        @java.lang.Deprecated
+        public static final com.google.protobuf.Parser<Topic> PARSER = new com.google.protobuf.AbstractParser<Topic>() {
+            @java.lang.Override
+            public Topic parsePartialFrom(com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                    builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                    throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                    throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                            .setUnfinishedMessage(builder.buildPartial());
                 }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
+                return builder.buildPartial();
+            }
+        };
 
-      private int schemaVersion_ = 1;
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @return Whether the schemaVersion field is set.
-       */
-      @java.lang.Override
-      public boolean hasSchemaVersion() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @return The schemaVersion.
-       */
-      @java.lang.Override
-      public int getSchemaVersion() {
-        return schemaVersion_;
-      }
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @param value The schemaVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSchemaVersion(int value) {
-        
-        schemaVersion_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int32 SchemaVersion = 1 [default = 1];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSchemaVersion() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        schemaVersion_ = 1;
-        onChanged();
-        return this;
-      }
-
-      private long receivedAt_ ;
-      /**
-       * <pre>
-       * Our server timestamp as Epoch ms
-       * </pre>
-       *
-       * <code>required int64 received_at = 2;</code>
-       * @return Whether the receivedAt field is set.
-       */
-      @java.lang.Override
-      public boolean hasReceivedAt() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <pre>
-       * Our server timestamp as Epoch ms
-       * </pre>
-       *
-       * <code>required int64 received_at = 2;</code>
-       * @return The receivedAt.
-       */
-      @java.lang.Override
-      public long getReceivedAt() {
-        return receivedAt_;
-      }
-      /**
-       * <pre>
-       * Our server timestamp as Epoch ms
-       * </pre>
-       *
-       * <code>required int64 received_at = 2;</code>
-       * @param value The receivedAt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReceivedAt(long value) {
-        
-        receivedAt_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Our server timestamp as Epoch ms
-       * </pre>
-       *
-       * <code>required int64 received_at = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearReceivedAt() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        receivedAt_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object topicPrefix_ = "";
-      /**
-       * <code>required string topic_prefix = 3;</code>
-       * @return Whether the topicPrefix field is set.
-       */
-      public boolean hasTopicPrefix() {
-        return ((bitField0_ & 0x00000004) != 0);
-      }
-      /**
-       * <code>required string topic_prefix = 3;</code>
-       * @return The topicPrefix.
-       */
-      public java.lang.String getTopicPrefix() {
-        java.lang.Object ref = topicPrefix_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            topicPrefix_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        public static com.google.protobuf.Parser<Topic> parser() {
+            return PARSER;
         }
-      }
-      /**
-       * <code>required string topic_prefix = 3;</code>
-       * @return The bytes for topicPrefix.
-       */
-      public com.google.protobuf.ByteString
-          getTopicPrefixBytes() {
-        java.lang.Object ref = topicPrefix_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          topicPrefix_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Topic> getParserForType() {
+            return PARSER;
         }
-      }
-      /**
-       * <code>required string topic_prefix = 3;</code>
-       * @param value The topicPrefix to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTopicPrefix(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        topicPrefix_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string topic_prefix = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTopicPrefix() {
-        topicPrefix_ = getDefaultInstance().getTopicPrefix();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string topic_prefix = 3;</code>
-       * @param value The bytes for topicPrefix to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTopicPrefixBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        topicPrefix_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
 
-      private java.lang.Object topicVersion_ = "";
-      /**
-       * <code>required string topic_version = 4;</code>
-       * @return Whether the topicVersion field is set.
-       */
-      public boolean hasTopicVersion() {
-        return ((bitField0_ & 0x00000008) != 0);
-      }
-      /**
-       * <code>required string topic_version = 4;</code>
-       * @return The topicVersion.
-       */
-      public java.lang.String getTopicVersion() {
-        java.lang.Object ref = topicVersion_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            topicVersion_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.Topic getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
         }
-      }
-      /**
-       * <code>required string topic_version = 4;</code>
-       * @return The bytes for topicVersion.
-       */
-      public com.google.protobuf.ByteString
-          getTopicVersionBytes() {
-        java.lang.Object ref = topicVersion_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          topicVersion_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string topic_version = 4;</code>
-       * @param value The topicVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTopicVersion(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        topicVersion_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string topic_version = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTopicVersion() {
-        topicVersion_ = getDefaultInstance().getTopicVersion();
-        bitField0_ = (bitField0_ & ~0x00000008);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string topic_version = 4;</code>
-       * @param value The bytes for topicVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTopicVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        topicVersion_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
 
-      private int journeyType_ = 0;
-      /**
-       * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
-       * @return Whether the journeyType field is set.
-       */
-      @java.lang.Override public boolean hasJourneyType() {
-        return ((bitField0_ & 0x00000010) != 0);
-      }
-      /**
-       * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
-       * @return The journeyType.
-       */
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType getJourneyType() {
-        fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType result = fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType.forNumber(journeyType_);
-        return result == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType.journey : result;
-      }
-      /**
-       * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
-       * @param value The journeyType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJourneyType(fi.hsl.common.passengercount.proto.PassengerCount.Topic.JourneyType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000010;
-        journeyType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required .proto.Topic.JourneyType journey_type = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJourneyType() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        journeyType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int temporalType_ = 0;
-      /**
-       * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
-       * @return Whether the temporalType field is set.
-       */
-      @java.lang.Override public boolean hasTemporalType() {
-        return ((bitField0_ & 0x00000020) != 0);
-      }
-      /**
-       * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
-       * @return The temporalType.
-       */
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType getTemporalType() {
-        fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType result = fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType.forNumber(temporalType_);
-        return result == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType.ongoing : result;
-      }
-      /**
-       * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
-       * @param value The temporalType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTemporalType(fi.hsl.common.passengercount.proto.PassengerCount.Topic.TemporalType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000020;
-        temporalType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required .proto.Topic.TemporalType temporal_type = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTemporalType() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        temporalType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int eventType_ = 0;
-      /**
-       * <code>required .proto.Topic.EventType event_type = 7;</code>
-       * @return Whether the eventType field is set.
-       */
-      @java.lang.Override public boolean hasEventType() {
-        return ((bitField0_ & 0x00000040) != 0);
-      }
-      /**
-       * <code>required .proto.Topic.EventType event_type = 7;</code>
-       * @return The eventType.
-       */
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType getEventType() {
-        fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType result = fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType.forNumber(eventType_);
-        return result == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType.apc : result;
-      }
-      /**
-       * <code>required .proto.Topic.EventType event_type = 7;</code>
-       * @param value The eventType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEventType(fi.hsl.common.passengercount.proto.PassengerCount.Topic.EventType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000040;
-        eventType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required .proto.Topic.EventType event_type = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEventType() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        eventType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int transportMode_ = 0;
-      /**
-       * <pre>
-       * Optional because of rare bug in data source systems
-       * </pre>
-       *
-       * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
-       * @return Whether the transportMode field is set.
-       */
-      @java.lang.Override public boolean hasTransportMode() {
-        return ((bitField0_ & 0x00000080) != 0);
-      }
-      /**
-       * <pre>
-       * Optional because of rare bug in data source systems
-       * </pre>
-       *
-       * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
-       * @return The transportMode.
-       */
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode getTransportMode() {
-        fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode result = fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode.forNumber(transportMode_);
-        return result == null ? fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode.bus : result;
-      }
-      /**
-       * <pre>
-       * Optional because of rare bug in data source systems
-       * </pre>
-       *
-       * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
-       * @param value The transportMode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTransportMode(fi.hsl.common.passengercount.proto.PassengerCount.Topic.TransportMode value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000080;
-        transportMode_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional because of rare bug in data source systems
-       * </pre>
-       *
-       * <code>optional .proto.Topic.TransportMode transport_mode = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTransportMode() {
-        bitField0_ = (bitField0_ & ~0x00000080);
-        transportMode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int operatorId_ ;
-      /**
-       * <code>required int32 operator_id = 9;</code>
-       * @return Whether the operatorId field is set.
-       */
-      @java.lang.Override
-      public boolean hasOperatorId() {
-        return ((bitField0_ & 0x00000100) != 0);
-      }
-      /**
-       * <code>required int32 operator_id = 9;</code>
-       * @return The operatorId.
-       */
-      @java.lang.Override
-      public int getOperatorId() {
-        return operatorId_;
-      }
-      /**
-       * <code>required int32 operator_id = 9;</code>
-       * @param value The operatorId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOperatorId(int value) {
-        
-        operatorId_ = value;
-        bitField0_ |= 0x00000100;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int32 operator_id = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOperatorId() {
-        bitField0_ = (bitField0_ & ~0x00000100);
-        operatorId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int vehicleNumber_ ;
-      /**
-       * <code>required int32 vehicle_number = 10;</code>
-       * @return Whether the vehicleNumber field is set.
-       */
-      @java.lang.Override
-      public boolean hasVehicleNumber() {
-        return ((bitField0_ & 0x00000200) != 0);
-      }
-      /**
-       * <code>required int32 vehicle_number = 10;</code>
-       * @return The vehicleNumber.
-       */
-      @java.lang.Override
-      public int getVehicleNumber() {
-        return vehicleNumber_;
-      }
-      /**
-       * <code>required int32 vehicle_number = 10;</code>
-       * @param value The vehicleNumber to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVehicleNumber(int value) {
-        
-        vehicleNumber_ = value;
-        bitField0_ |= 0x00000200;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int32 vehicle_number = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVehicleNumber() {
-        bitField0_ = (bitField0_ & ~0x00000200);
-        vehicleNumber_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:proto.Topic)
-    }
-
-    // @@protoc_insertion_point(class_scope:proto.Topic)
-    private static final fi.hsl.common.passengercount.proto.PassengerCount.Topic DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new fi.hsl.common.passengercount.proto.PassengerCount.Topic();
-    }
-
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Topic getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<Topic>
-        PARSER = new com.google.protobuf.AbstractParser<Topic>() {
-      @java.lang.Override
-      public Topic parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<Topic> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Topic> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public fi.hsl.common.passengercount.proto.PassengerCount.Topic getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface PayloadOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:proto.Payload)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional string desi = 1;</code>
-     * @return Whether the desi field is set.
-     */
-    boolean hasDesi();
-    /**
-     * <code>optional string desi = 1;</code>
-     * @return The desi.
-     */
-    java.lang.String getDesi();
-    /**
-     * <code>optional string desi = 1;</code>
-     * @return The bytes for desi.
-     */
-    com.google.protobuf.ByteString
-        getDesiBytes();
-
-    /**
-     * <code>optional string dir = 2;</code>
-     * @return Whether the dir field is set.
-     */
-    boolean hasDir();
-    /**
-     * <code>optional string dir = 2;</code>
-     * @return The dir.
-     */
-    java.lang.String getDir();
-    /**
-     * <code>optional string dir = 2;</code>
-     * @return The bytes for dir.
-     */
-    com.google.protobuf.ByteString
-        getDirBytes();
-
-    /**
-     * <code>optional int32 oper = 3;</code>
-     * @return Whether the oper field is set.
-     */
-    boolean hasOper();
-    /**
-     * <code>optional int32 oper = 3;</code>
-     * @return The oper.
-     */
-    int getOper();
-
-    /**
-     * <code>optional int32 veh = 4;</code>
-     * @return Whether the veh field is set.
-     */
-    boolean hasVeh();
-    /**
-     * <code>optional int32 veh = 4;</code>
-     * @return The veh.
-     */
-    int getVeh();
-
-    /**
-     * <code>optional int64 tst = 5;</code>
-     * @return Whether the tst field is set.
-     */
-    boolean hasTst();
-    /**
-     * <code>optional int64 tst = 5;</code>
-     * @return The tst.
-     */
-    long getTst();
-
-    /**
-     * <code>optional int64 tsi = 6;</code>
-     * @return Whether the tsi field is set.
-     */
-    boolean hasTsi();
-    /**
-     * <code>optional int64 tsi = 6;</code>
-     * @return The tsi.
-     */
-    long getTsi();
-
-    /**
-     * <code>optional double lat = 7;</code>
-     * @return Whether the lat field is set.
-     */
-    boolean hasLat();
-    /**
-     * <code>optional double lat = 7;</code>
-     * @return The lat.
-     */
-    double getLat();
-
-    /**
-     * <code>optional double long = 8;</code>
-     * @return Whether the long field is set.
-     */
-    boolean hasLong();
-    /**
-     * <code>optional double long = 8;</code>
-     * @return The long.
-     */
-    double getLong();
-
-    /**
-     * <code>optional double odo = 9;</code>
-     * @return Whether the odo field is set.
-     */
-    boolean hasOdo();
-    /**
-     * <code>optional double odo = 9;</code>
-     * @return The odo.
-     */
-    double getOdo();
-
-    /**
-     * <code>optional string oday = 10;</code>
-     * @return Whether the oday field is set.
-     */
-    boolean hasOday();
-    /**
-     * <code>optional string oday = 10;</code>
-     * @return The oday.
-     */
-    java.lang.String getOday();
-    /**
-     * <code>optional string oday = 10;</code>
-     * @return The bytes for oday.
-     */
-    com.google.protobuf.ByteString
-        getOdayBytes();
-
-    /**
-     * <code>optional int32 jrn = 11;</code>
-     * @return Whether the jrn field is set.
-     */
-    boolean hasJrn();
-    /**
-     * <code>optional int32 jrn = 11;</code>
-     * @return The jrn.
-     */
-    int getJrn();
-
-    /**
-     * <code>optional int32 line = 12;</code>
-     * @return Whether the line field is set.
-     */
-    boolean hasLine();
-    /**
-     * <code>optional int32 line = 12;</code>
-     * @return The line.
-     */
-    int getLine();
-
-    /**
-     * <code>optional string start = 13;</code>
-     * @return Whether the start field is set.
-     */
-    boolean hasStart();
-    /**
-     * <code>optional string start = 13;</code>
-     * @return The start.
-     */
-    java.lang.String getStart();
-    /**
-     * <code>optional string start = 13;</code>
-     * @return The bytes for start.
-     */
-    com.google.protobuf.ByteString
-        getStartBytes();
-
-    /**
-     * <code>optional string loc = 14;</code>
-     * @return Whether the loc field is set.
-     */
-    boolean hasLoc();
-    /**
-     * <code>optional string loc = 14;</code>
-     * @return The loc.
-     */
-    java.lang.String getLoc();
-    /**
-     * <code>optional string loc = 14;</code>
-     * @return The bytes for loc.
-     */
-    com.google.protobuf.ByteString
-        getLocBytes();
-
-    /**
-     * <code>optional int32 stop = 15;</code>
-     * @return Whether the stop field is set.
-     */
-    boolean hasStop();
-    /**
-     * <code>optional int32 stop = 15;</code>
-     * @return The stop.
-     */
-    int getStop();
-
-    /**
-     * <code>optional string route = 16;</code>
-     * @return Whether the route field is set.
-     */
-    boolean hasRoute();
-    /**
-     * <code>optional string route = 16;</code>
-     * @return The route.
-     */
-    java.lang.String getRoute();
-    /**
-     * <code>optional string route = 16;</code>
-     * @return The bytes for route.
-     */
-    com.google.protobuf.ByteString
-        getRouteBytes();
-
-    /**
-     * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
-     * @return Whether the vehicleCounts field is set.
-     */
-    boolean hasVehicleCounts();
-    /**
-     * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
-     * @return The vehicleCounts.
-     */
-    fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts getVehicleCounts();
-    /**
-     * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
-     */
-    fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder getVehicleCountsOrBuilder();
-  }
-  /**
-   * Protobuf type {@code proto.Payload}
-   */
-  public static final class Payload extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:proto.Payload)
-      PayloadOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Payload.newBuilder() to construct.
-    private Payload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Payload() {
-      desi_ = "";
-      dir_ = "";
-      oday_ = "";
-      start_ = "";
-      loc_ = "";
-      route_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Payload();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Payload_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Payload_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              fi.hsl.common.passengercount.proto.PassengerCount.Payload.class, fi.hsl.common.passengercount.proto.PassengerCount.Payload.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int DESI_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object desi_ = "";
-    /**
-     * <code>optional string desi = 1;</code>
-     * @return Whether the desi field is set.
-     */
-    @java.lang.Override
-    public boolean hasDesi() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>optional string desi = 1;</code>
-     * @return The desi.
-     */
-    @java.lang.Override
-    public java.lang.String getDesi() {
-      java.lang.Object ref = desi_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          desi_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string desi = 1;</code>
-     * @return The bytes for desi.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDesiBytes() {
-      java.lang.Object ref = desi_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        desi_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DIR_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object dir_ = "";
-    /**
-     * <code>optional string dir = 2;</code>
-     * @return Whether the dir field is set.
-     */
-    @java.lang.Override
-    public boolean hasDir() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>optional string dir = 2;</code>
-     * @return The dir.
-     */
-    @java.lang.Override
-    public java.lang.String getDir() {
-      java.lang.Object ref = dir_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          dir_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string dir = 2;</code>
-     * @return The bytes for dir.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDirBytes() {
-      java.lang.Object ref = dir_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        dir_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int OPER_FIELD_NUMBER = 3;
-    private int oper_ = 0;
-    /**
-     * <code>optional int32 oper = 3;</code>
-     * @return Whether the oper field is set.
-     */
-    @java.lang.Override
-    public boolean hasOper() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>optional int32 oper = 3;</code>
-     * @return The oper.
-     */
-    @java.lang.Override
-    public int getOper() {
-      return oper_;
-    }
-
-    public static final int VEH_FIELD_NUMBER = 4;
-    private int veh_ = 0;
-    /**
-     * <code>optional int32 veh = 4;</code>
-     * @return Whether the veh field is set.
-     */
-    @java.lang.Override
-    public boolean hasVeh() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <code>optional int32 veh = 4;</code>
-     * @return The veh.
-     */
-    @java.lang.Override
-    public int getVeh() {
-      return veh_;
-    }
-
-    public static final int TST_FIELD_NUMBER = 5;
-    private long tst_ = 0L;
-    /**
-     * <code>optional int64 tst = 5;</code>
-     * @return Whether the tst field is set.
-     */
-    @java.lang.Override
-    public boolean hasTst() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     * <code>optional int64 tst = 5;</code>
-     * @return The tst.
-     */
-    @java.lang.Override
-    public long getTst() {
-      return tst_;
-    }
-
-    public static final int TSI_FIELD_NUMBER = 6;
-    private long tsi_ = 0L;
-    /**
-     * <code>optional int64 tsi = 6;</code>
-     * @return Whether the tsi field is set.
-     */
-    @java.lang.Override
-    public boolean hasTsi() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-    /**
-     * <code>optional int64 tsi = 6;</code>
-     * @return The tsi.
-     */
-    @java.lang.Override
-    public long getTsi() {
-      return tsi_;
-    }
-
-    public static final int LAT_FIELD_NUMBER = 7;
-    private double lat_ = 0D;
-    /**
-     * <code>optional double lat = 7;</code>
-     * @return Whether the lat field is set.
-     */
-    @java.lang.Override
-    public boolean hasLat() {
-      return ((bitField0_ & 0x00000040) != 0);
-    }
-    /**
-     * <code>optional double lat = 7;</code>
-     * @return The lat.
-     */
-    @java.lang.Override
-    public double getLat() {
-      return lat_;
-    }
-
-    public static final int LONG_FIELD_NUMBER = 8;
-    private double long_ = 0D;
-    /**
-     * <code>optional double long = 8;</code>
-     * @return Whether the long field is set.
-     */
-    @java.lang.Override
-    public boolean hasLong() {
-      return ((bitField0_ & 0x00000080) != 0);
-    }
-    /**
-     * <code>optional double long = 8;</code>
-     * @return The long.
-     */
-    @java.lang.Override
-    public double getLong() {
-      return long_;
-    }
-
-    public static final int ODO_FIELD_NUMBER = 9;
-    private double odo_ = 0D;
-    /**
-     * <code>optional double odo = 9;</code>
-     * @return Whether the odo field is set.
-     */
-    @java.lang.Override
-    public boolean hasOdo() {
-      return ((bitField0_ & 0x00000100) != 0);
-    }
-    /**
-     * <code>optional double odo = 9;</code>
-     * @return The odo.
-     */
-    @java.lang.Override
-    public double getOdo() {
-      return odo_;
-    }
-
-    public static final int ODAY_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object oday_ = "";
-    /**
-     * <code>optional string oday = 10;</code>
-     * @return Whether the oday field is set.
-     */
-    @java.lang.Override
-    public boolean hasOday() {
-      return ((bitField0_ & 0x00000200) != 0);
-    }
-    /**
-     * <code>optional string oday = 10;</code>
-     * @return The oday.
-     */
-    @java.lang.Override
-    public java.lang.String getOday() {
-      java.lang.Object ref = oday_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          oday_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string oday = 10;</code>
-     * @return The bytes for oday.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getOdayBytes() {
-      java.lang.Object ref = oday_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        oday_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int JRN_FIELD_NUMBER = 11;
-    private int jrn_ = 0;
-    /**
-     * <code>optional int32 jrn = 11;</code>
-     * @return Whether the jrn field is set.
-     */
-    @java.lang.Override
-    public boolean hasJrn() {
-      return ((bitField0_ & 0x00000400) != 0);
-    }
-    /**
-     * <code>optional int32 jrn = 11;</code>
-     * @return The jrn.
-     */
-    @java.lang.Override
-    public int getJrn() {
-      return jrn_;
-    }
-
-    public static final int LINE_FIELD_NUMBER = 12;
-    private int line_ = 0;
-    /**
-     * <code>optional int32 line = 12;</code>
-     * @return Whether the line field is set.
-     */
-    @java.lang.Override
-    public boolean hasLine() {
-      return ((bitField0_ & 0x00000800) != 0);
-    }
-    /**
-     * <code>optional int32 line = 12;</code>
-     * @return The line.
-     */
-    @java.lang.Override
-    public int getLine() {
-      return line_;
-    }
-
-    public static final int START_FIELD_NUMBER = 13;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object start_ = "";
-    /**
-     * <code>optional string start = 13;</code>
-     * @return Whether the start field is set.
-     */
-    @java.lang.Override
-    public boolean hasStart() {
-      return ((bitField0_ & 0x00001000) != 0);
-    }
-    /**
-     * <code>optional string start = 13;</code>
-     * @return The start.
-     */
-    @java.lang.Override
-    public java.lang.String getStart() {
-      java.lang.Object ref = start_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          start_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string start = 13;</code>
-     * @return The bytes for start.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStartBytes() {
-      java.lang.Object ref = start_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        start_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int LOC_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object loc_ = "";
-    /**
-     * <code>optional string loc = 14;</code>
-     * @return Whether the loc field is set.
-     */
-    @java.lang.Override
-    public boolean hasLoc() {
-      return ((bitField0_ & 0x00002000) != 0);
-    }
-    /**
-     * <code>optional string loc = 14;</code>
-     * @return The loc.
-     */
-    @java.lang.Override
-    public java.lang.String getLoc() {
-      java.lang.Object ref = loc_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          loc_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string loc = 14;</code>
-     * @return The bytes for loc.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getLocBytes() {
-      java.lang.Object ref = loc_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        loc_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int STOP_FIELD_NUMBER = 15;
-    private int stop_ = 0;
-    /**
-     * <code>optional int32 stop = 15;</code>
-     * @return Whether the stop field is set.
-     */
-    @java.lang.Override
-    public boolean hasStop() {
-      return ((bitField0_ & 0x00004000) != 0);
-    }
-    /**
-     * <code>optional int32 stop = 15;</code>
-     * @return The stop.
-     */
-    @java.lang.Override
-    public int getStop() {
-      return stop_;
-    }
-
-    public static final int ROUTE_FIELD_NUMBER = 16;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object route_ = "";
-    /**
-     * <code>optional string route = 16;</code>
-     * @return Whether the route field is set.
-     */
-    @java.lang.Override
-    public boolean hasRoute() {
-      return ((bitField0_ & 0x00008000) != 0);
-    }
-    /**
-     * <code>optional string route = 16;</code>
-     * @return The route.
-     */
-    @java.lang.Override
-    public java.lang.String getRoute() {
-      java.lang.Object ref = route_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          route_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string route = 16;</code>
-     * @return The bytes for route.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getRouteBytes() {
-      java.lang.Object ref = route_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        route_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int VEHICLECOUNTS_FIELD_NUMBER = 17;
-    private fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts vehicleCounts_;
-    /**
-     * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
-     * @return Whether the vehicleCounts field is set.
-     */
-    @java.lang.Override
-    public boolean hasVehicleCounts() {
-      return ((bitField0_ & 0x00010000) != 0);
-    }
-    /**
-     * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
-     * @return The vehicleCounts.
-     */
-    @java.lang.Override
-    public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts getVehicleCounts() {
-      return vehicleCounts_ == null ? fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.getDefaultInstance() : vehicleCounts_;
-    }
-    /**
-     * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
-     */
-    @java.lang.Override
-    public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder getVehicleCountsOrBuilder() {
-      return vehicleCounts_ == null ? fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.getDefaultInstance() : vehicleCounts_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, desi_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, dir_);
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeInt32(3, oper_);
-      }
-      if (((bitField0_ & 0x00000008) != 0)) {
-        output.writeInt32(4, veh_);
-      }
-      if (((bitField0_ & 0x00000010) != 0)) {
-        output.writeInt64(5, tst_);
-      }
-      if (((bitField0_ & 0x00000020) != 0)) {
-        output.writeInt64(6, tsi_);
-      }
-      if (((bitField0_ & 0x00000040) != 0)) {
-        output.writeDouble(7, lat_);
-      }
-      if (((bitField0_ & 0x00000080) != 0)) {
-        output.writeDouble(8, long_);
-      }
-      if (((bitField0_ & 0x00000100) != 0)) {
-        output.writeDouble(9, odo_);
-      }
-      if (((bitField0_ & 0x00000200) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, oday_);
-      }
-      if (((bitField0_ & 0x00000400) != 0)) {
-        output.writeInt32(11, jrn_);
-      }
-      if (((bitField0_ & 0x00000800) != 0)) {
-        output.writeInt32(12, line_);
-      }
-      if (((bitField0_ & 0x00001000) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, start_);
-      }
-      if (((bitField0_ & 0x00002000) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, loc_);
-      }
-      if (((bitField0_ & 0x00004000) != 0)) {
-        output.writeInt32(15, stop_);
-      }
-      if (((bitField0_ & 0x00008000) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, route_);
-      }
-      if (((bitField0_ & 0x00010000) != 0)) {
-        output.writeMessage(17, getVehicleCounts());
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, desi_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, dir_);
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, oper_);
-      }
-      if (((bitField0_ & 0x00000008) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, veh_);
-      }
-      if (((bitField0_ & 0x00000010) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, tst_);
-      }
-      if (((bitField0_ & 0x00000020) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, tsi_);
-      }
-      if (((bitField0_ & 0x00000040) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(7, lat_);
-      }
-      if (((bitField0_ & 0x00000080) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(8, long_);
-      }
-      if (((bitField0_ & 0x00000100) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(9, odo_);
-      }
-      if (((bitField0_ & 0x00000200) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, oday_);
-      }
-      if (((bitField0_ & 0x00000400) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, jrn_);
-      }
-      if (((bitField0_ & 0x00000800) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, line_);
-      }
-      if (((bitField0_ & 0x00001000) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, start_);
-      }
-      if (((bitField0_ & 0x00002000) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, loc_);
-      }
-      if (((bitField0_ & 0x00004000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, stop_);
-      }
-      if (((bitField0_ & 0x00008000) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, route_);
-      }
-      if (((bitField0_ & 0x00010000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(17, getVehicleCounts());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof fi.hsl.common.passengercount.proto.PassengerCount.Payload)) {
-        return super.equals(obj);
-      }
-      fi.hsl.common.passengercount.proto.PassengerCount.Payload other = (fi.hsl.common.passengercount.proto.PassengerCount.Payload) obj;
-
-      if (hasDesi() != other.hasDesi()) return false;
-      if (hasDesi()) {
-        if (!getDesi()
-            .equals(other.getDesi())) return false;
-      }
-      if (hasDir() != other.hasDir()) return false;
-      if (hasDir()) {
-        if (!getDir()
-            .equals(other.getDir())) return false;
-      }
-      if (hasOper() != other.hasOper()) return false;
-      if (hasOper()) {
-        if (getOper()
-            != other.getOper()) return false;
-      }
-      if (hasVeh() != other.hasVeh()) return false;
-      if (hasVeh()) {
-        if (getVeh()
-            != other.getVeh()) return false;
-      }
-      if (hasTst() != other.hasTst()) return false;
-      if (hasTst()) {
-        if (getTst()
-            != other.getTst()) return false;
-      }
-      if (hasTsi() != other.hasTsi()) return false;
-      if (hasTsi()) {
-        if (getTsi()
-            != other.getTsi()) return false;
-      }
-      if (hasLat() != other.hasLat()) return false;
-      if (hasLat()) {
-        if (java.lang.Double.doubleToLongBits(getLat())
-            != java.lang.Double.doubleToLongBits(
-                other.getLat())) return false;
-      }
-      if (hasLong() != other.hasLong()) return false;
-      if (hasLong()) {
-        if (java.lang.Double.doubleToLongBits(getLong())
-            != java.lang.Double.doubleToLongBits(
-                other.getLong())) return false;
-      }
-      if (hasOdo() != other.hasOdo()) return false;
-      if (hasOdo()) {
-        if (java.lang.Double.doubleToLongBits(getOdo())
-            != java.lang.Double.doubleToLongBits(
-                other.getOdo())) return false;
-      }
-      if (hasOday() != other.hasOday()) return false;
-      if (hasOday()) {
-        if (!getOday()
-            .equals(other.getOday())) return false;
-      }
-      if (hasJrn() != other.hasJrn()) return false;
-      if (hasJrn()) {
-        if (getJrn()
-            != other.getJrn()) return false;
-      }
-      if (hasLine() != other.hasLine()) return false;
-      if (hasLine()) {
-        if (getLine()
-            != other.getLine()) return false;
-      }
-      if (hasStart() != other.hasStart()) return false;
-      if (hasStart()) {
-        if (!getStart()
-            .equals(other.getStart())) return false;
-      }
-      if (hasLoc() != other.hasLoc()) return false;
-      if (hasLoc()) {
-        if (!getLoc()
-            .equals(other.getLoc())) return false;
-      }
-      if (hasStop() != other.hasStop()) return false;
-      if (hasStop()) {
-        if (getStop()
-            != other.getStop()) return false;
-      }
-      if (hasRoute() != other.hasRoute()) return false;
-      if (hasRoute()) {
-        if (!getRoute()
-            .equals(other.getRoute())) return false;
-      }
-      if (hasVehicleCounts() != other.hasVehicleCounts()) return false;
-      if (hasVehicleCounts()) {
-        if (!getVehicleCounts()
-            .equals(other.getVehicleCounts())) return false;
-      }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasDesi()) {
-        hash = (37 * hash) + DESI_FIELD_NUMBER;
-        hash = (53 * hash) + getDesi().hashCode();
-      }
-      if (hasDir()) {
-        hash = (37 * hash) + DIR_FIELD_NUMBER;
-        hash = (53 * hash) + getDir().hashCode();
-      }
-      if (hasOper()) {
-        hash = (37 * hash) + OPER_FIELD_NUMBER;
-        hash = (53 * hash) + getOper();
-      }
-      if (hasVeh()) {
-        hash = (37 * hash) + VEH_FIELD_NUMBER;
-        hash = (53 * hash) + getVeh();
-      }
-      if (hasTst()) {
-        hash = (37 * hash) + TST_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getTst());
-      }
-      if (hasTsi()) {
-        hash = (37 * hash) + TSI_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getTsi());
-      }
-      if (hasLat()) {
-        hash = (37 * hash) + LAT_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getLat()));
-      }
-      if (hasLong()) {
-        hash = (37 * hash) + LONG_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getLong()));
-      }
-      if (hasOdo()) {
-        hash = (37 * hash) + ODO_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getOdo()));
-      }
-      if (hasOday()) {
-        hash = (37 * hash) + ODAY_FIELD_NUMBER;
-        hash = (53 * hash) + getOday().hashCode();
-      }
-      if (hasJrn()) {
-        hash = (37 * hash) + JRN_FIELD_NUMBER;
-        hash = (53 * hash) + getJrn();
-      }
-      if (hasLine()) {
-        hash = (37 * hash) + LINE_FIELD_NUMBER;
-        hash = (53 * hash) + getLine();
-      }
-      if (hasStart()) {
-        hash = (37 * hash) + START_FIELD_NUMBER;
-        hash = (53 * hash) + getStart().hashCode();
-      }
-      if (hasLoc()) {
-        hash = (37 * hash) + LOC_FIELD_NUMBER;
-        hash = (53 * hash) + getLoc().hashCode();
-      }
-      if (hasStop()) {
-        hash = (37 * hash) + STOP_FIELD_NUMBER;
-        hash = (53 * hash) + getStop();
-      }
-      if (hasRoute()) {
-        hash = (37 * hash) + ROUTE_FIELD_NUMBER;
-        hash = (53 * hash) + getRoute().hashCode();
-      }
-      if (hasVehicleCounts()) {
-        hash = (37 * hash) + VEHICLECOUNTS_FIELD_NUMBER;
-        hash = (53 * hash) + getVehicleCounts().hashCode();
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(fi.hsl.common.passengercount.proto.PassengerCount.Payload prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
+    public interface PayloadOrBuilder
+            extends
+                // @@protoc_insertion_point(interface_extends:proto.Payload)
+                com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>optional string desi = 1;</code>
+         * @return Whether the desi field is set.
+         */
+        boolean hasDesi();
+        /**
+         * <code>optional string desi = 1;</code>
+         * @return The desi.
+         */
+        java.lang.String getDesi();
+        /**
+         * <code>optional string desi = 1;</code>
+         * @return The bytes for desi.
+         */
+        com.google.protobuf.ByteString getDesiBytes();
+
+        /**
+         * <code>optional string dir = 2;</code>
+         * @return Whether the dir field is set.
+         */
+        boolean hasDir();
+        /**
+         * <code>optional string dir = 2;</code>
+         * @return The dir.
+         */
+        java.lang.String getDir();
+        /**
+         * <code>optional string dir = 2;</code>
+         * @return The bytes for dir.
+         */
+        com.google.protobuf.ByteString getDirBytes();
+
+        /**
+         * <code>optional int32 oper = 3;</code>
+         * @return Whether the oper field is set.
+         */
+        boolean hasOper();
+        /**
+         * <code>optional int32 oper = 3;</code>
+         * @return The oper.
+         */
+        int getOper();
+
+        /**
+         * <code>optional int32 veh = 4;</code>
+         * @return Whether the veh field is set.
+         */
+        boolean hasVeh();
+        /**
+         * <code>optional int32 veh = 4;</code>
+         * @return The veh.
+         */
+        int getVeh();
+
+        /**
+         * <code>optional int64 tst = 5;</code>
+         * @return Whether the tst field is set.
+         */
+        boolean hasTst();
+        /**
+         * <code>optional int64 tst = 5;</code>
+         * @return The tst.
+         */
+        long getTst();
+
+        /**
+         * <code>optional int64 tsi = 6;</code>
+         * @return Whether the tsi field is set.
+         */
+        boolean hasTsi();
+        /**
+         * <code>optional int64 tsi = 6;</code>
+         * @return The tsi.
+         */
+        long getTsi();
+
+        /**
+         * <code>optional double lat = 7;</code>
+         * @return Whether the lat field is set.
+         */
+        boolean hasLat();
+        /**
+         * <code>optional double lat = 7;</code>
+         * @return The lat.
+         */
+        double getLat();
+
+        /**
+         * <code>optional double long = 8;</code>
+         * @return Whether the long field is set.
+         */
+        boolean hasLong();
+        /**
+         * <code>optional double long = 8;</code>
+         * @return The long.
+         */
+        double getLong();
+
+        /**
+         * <code>optional double odo = 9;</code>
+         * @return Whether the odo field is set.
+         */
+        boolean hasOdo();
+        /**
+         * <code>optional double odo = 9;</code>
+         * @return The odo.
+         */
+        double getOdo();
+
+        /**
+         * <code>optional string oday = 10;</code>
+         * @return Whether the oday field is set.
+         */
+        boolean hasOday();
+        /**
+         * <code>optional string oday = 10;</code>
+         * @return The oday.
+         */
+        java.lang.String getOday();
+        /**
+         * <code>optional string oday = 10;</code>
+         * @return The bytes for oday.
+         */
+        com.google.protobuf.ByteString getOdayBytes();
+
+        /**
+         * <code>optional int32 jrn = 11;</code>
+         * @return Whether the jrn field is set.
+         */
+        boolean hasJrn();
+        /**
+         * <code>optional int32 jrn = 11;</code>
+         * @return The jrn.
+         */
+        int getJrn();
+
+        /**
+         * <code>optional int32 line = 12;</code>
+         * @return Whether the line field is set.
+         */
+        boolean hasLine();
+        /**
+         * <code>optional int32 line = 12;</code>
+         * @return The line.
+         */
+        int getLine();
+
+        /**
+         * <code>optional string start = 13;</code>
+         * @return Whether the start field is set.
+         */
+        boolean hasStart();
+        /**
+         * <code>optional string start = 13;</code>
+         * @return The start.
+         */
+        java.lang.String getStart();
+        /**
+         * <code>optional string start = 13;</code>
+         * @return The bytes for start.
+         */
+        com.google.protobuf.ByteString getStartBytes();
+
+        /**
+         * <code>optional string loc = 14;</code>
+         * @return Whether the loc field is set.
+         */
+        boolean hasLoc();
+        /**
+         * <code>optional string loc = 14;</code>
+         * @return The loc.
+         */
+        java.lang.String getLoc();
+        /**
+         * <code>optional string loc = 14;</code>
+         * @return The bytes for loc.
+         */
+        com.google.protobuf.ByteString getLocBytes();
+
+        /**
+         * <code>optional int32 stop = 15;</code>
+         * @return Whether the stop field is set.
+         */
+        boolean hasStop();
+        /**
+         * <code>optional int32 stop = 15;</code>
+         * @return The stop.
+         */
+        int getStop();
+
+        /**
+         * <code>optional string route = 16;</code>
+         * @return Whether the route field is set.
+         */
+        boolean hasRoute();
+        /**
+         * <code>optional string route = 16;</code>
+         * @return The route.
+         */
+        java.lang.String getRoute();
+        /**
+         * <code>optional string route = 16;</code>
+         * @return The bytes for route.
+         */
+        com.google.protobuf.ByteString getRouteBytes();
+
+        /**
+         * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+         * @return Whether the vehicleCounts field is set.
+         */
+        boolean hasVehicleCounts();
+        /**
+         * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+         * @return The vehicleCounts.
+         */
+        fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts getVehicleCounts();
+        /**
+         * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+         */
+        fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder getVehicleCountsOrBuilder();
     }
     /**
      * Protobuf type {@code proto.Payload}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:proto.Payload)
-        fi.hsl.common.passengercount.proto.PassengerCount.PayloadOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Payload_descriptor;
-      }
+    public static final class Payload extends com.google.protobuf.GeneratedMessageV3
+            implements
+                // @@protoc_insertion_point(message_implements:proto.Payload)
+                PayloadOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use Payload.newBuilder() to construct.
+        private Payload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+        private Payload() {
+            desi_ = "";
+            dir_ = "";
+            oday_ = "";
+            start_ = "";
+            loc_ = "";
+            route_ = "";
+        }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Payload_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                fi.hsl.common.passengercount.proto.PassengerCount.Payload.class, fi.hsl.common.passengercount.proto.PassengerCount.Payload.Builder.class);
-      }
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new Payload();
+        }
 
-      // Construct using fi.hsl.common.passengercount.proto.PassengerCount.Payload.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
+        }
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Payload_descriptor;
+        }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getVehicleCountsFieldBuilder();
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+            return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Payload_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(fi.hsl.common.passengercount.proto.PassengerCount.Payload.class,
+                            fi.hsl.common.passengercount.proto.PassengerCount.Payload.Builder.class);
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        desi_ = "";
-        dir_ = "";
-        oper_ = 0;
-        veh_ = 0;
-        tst_ = 0L;
-        tsi_ = 0L;
-        lat_ = 0D;
-        long_ = 0D;
-        odo_ = 0D;
-        oday_ = "";
-        jrn_ = 0;
-        line_ = 0;
-        start_ = "";
-        loc_ = "";
-        stop_ = 0;
-        route_ = "";
-        vehicleCounts_ = null;
-        if (vehicleCountsBuilder_ != null) {
-          vehicleCountsBuilder_.dispose();
-          vehicleCountsBuilder_ = null;
-        }
-        return this;
-      }
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Payload_descriptor;
-      }
-
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.Payload getDefaultInstanceForType() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.Payload.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.Payload build() {
-        fi.hsl.common.passengercount.proto.PassengerCount.Payload result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private int bitField0_;
+        public static final int DESI_FIELD_NUMBER = 1;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object desi_ = "";
+        /**
+         * <code>optional string desi = 1;</code>
+         * @return Whether the desi field is set.
+         */
+        @java.lang.Override
+        public boolean hasDesi() {
+            return ((bitField0_ & 0x00000001) != 0);
         }
-        return result;
-      }
-
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.Payload buildPartial() {
-        fi.hsl.common.passengercount.proto.PassengerCount.Payload result = new fi.hsl.common.passengercount.proto.PassengerCount.Payload(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartial0(fi.hsl.common.passengercount.proto.PassengerCount.Payload result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.desi_ = desi_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.dir_ = dir_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.oper_ = oper_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.veh_ = veh_;
-          to_bitField0_ |= 0x00000008;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.tst_ = tst_;
-          to_bitField0_ |= 0x00000010;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.tsi_ = tsi_;
-          to_bitField0_ |= 0x00000020;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.lat_ = lat_;
-          to_bitField0_ |= 0x00000040;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.long_ = long_;
-          to_bitField0_ |= 0x00000080;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.odo_ = odo_;
-          to_bitField0_ |= 0x00000100;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.oday_ = oday_;
-          to_bitField0_ |= 0x00000200;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.jrn_ = jrn_;
-          to_bitField0_ |= 0x00000400;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.line_ = line_;
-          to_bitField0_ |= 0x00000800;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.start_ = start_;
-          to_bitField0_ |= 0x00001000;
-        }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.loc_ = loc_;
-          to_bitField0_ |= 0x00002000;
-        }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.stop_ = stop_;
-          to_bitField0_ |= 0x00004000;
-        }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.route_ = route_;
-          to_bitField0_ |= 0x00008000;
-        }
-        if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.vehicleCounts_ = vehicleCountsBuilder_ == null
-              ? vehicleCounts_
-              : vehicleCountsBuilder_.build();
-          to_bitField0_ |= 0x00010000;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof fi.hsl.common.passengercount.proto.PassengerCount.Payload) {
-          return mergeFrom((fi.hsl.common.passengercount.proto.PassengerCount.Payload)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(fi.hsl.common.passengercount.proto.PassengerCount.Payload other) {
-        if (other == fi.hsl.common.passengercount.proto.PassengerCount.Payload.getDefaultInstance()) return this;
-        if (other.hasDesi()) {
-          desi_ = other.desi_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        if (other.hasDir()) {
-          dir_ = other.dir_;
-          bitField0_ |= 0x00000002;
-          onChanged();
-        }
-        if (other.hasOper()) {
-          setOper(other.getOper());
-        }
-        if (other.hasVeh()) {
-          setVeh(other.getVeh());
-        }
-        if (other.hasTst()) {
-          setTst(other.getTst());
-        }
-        if (other.hasTsi()) {
-          setTsi(other.getTsi());
-        }
-        if (other.hasLat()) {
-          setLat(other.getLat());
-        }
-        if (other.hasLong()) {
-          setLong(other.getLong());
-        }
-        if (other.hasOdo()) {
-          setOdo(other.getOdo());
-        }
-        if (other.hasOday()) {
-          oday_ = other.oday_;
-          bitField0_ |= 0x00000200;
-          onChanged();
-        }
-        if (other.hasJrn()) {
-          setJrn(other.getJrn());
-        }
-        if (other.hasLine()) {
-          setLine(other.getLine());
-        }
-        if (other.hasStart()) {
-          start_ = other.start_;
-          bitField0_ |= 0x00001000;
-          onChanged();
-        }
-        if (other.hasLoc()) {
-          loc_ = other.loc_;
-          bitField0_ |= 0x00002000;
-          onChanged();
-        }
-        if (other.hasStop()) {
-          setStop(other.getStop());
-        }
-        if (other.hasRoute()) {
-          route_ = other.route_;
-          bitField0_ |= 0x00008000;
-          onChanged();
-        }
-        if (other.hasVehicleCounts()) {
-          mergeVehicleCounts(other.getVehicleCounts());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                desi_ = input.readBytes();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                dir_ = input.readBytes();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 24: {
-                oper_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 32: {
-                veh_ = input.readInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 40: {
-                tst_ = input.readInt64();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              case 48: {
-                tsi_ = input.readInt64();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 48
-              case 57: {
-                lat_ = input.readDouble();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 57
-              case 65: {
-                long_ = input.readDouble();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 65
-              case 73: {
-                odo_ = input.readDouble();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 73
-              case 82: {
-                oday_ = input.readBytes();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 82
-              case 88: {
-                jrn_ = input.readInt32();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 88
-              case 96: {
-                line_ = input.readInt32();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 96
-              case 106: {
-                start_ = input.readBytes();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 106
-              case 114: {
-                loc_ = input.readBytes();
-                bitField0_ |= 0x00002000;
-                break;
-              } // case 114
-              case 120: {
-                stop_ = input.readInt32();
-                bitField0_ |= 0x00004000;
-                break;
-              } // case 120
-              case 130: {
-                route_ = input.readBytes();
-                bitField0_ |= 0x00008000;
-                break;
-              } // case 130
-              case 138: {
-                input.readMessage(
-                    getVehicleCountsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00010000;
-                break;
-              } // case 138
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
+        /**
+         * <code>optional string desi = 1;</code>
+         * @return The desi.
+         */
+        @java.lang.Override
+        public java.lang.String getDesi() {
+            java.lang.Object ref = desi_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    desi_ = s;
                 }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object desi_ = "";
-      /**
-       * <code>optional string desi = 1;</code>
-       * @return Whether the desi field is set.
-       */
-      public boolean hasDesi() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>optional string desi = 1;</code>
-       * @return The desi.
-       */
-      public java.lang.String getDesi() {
-        java.lang.Object ref = desi_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            desi_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+                return s;
+            }
         }
-      }
-      /**
-       * <code>optional string desi = 1;</code>
-       * @return The bytes for desi.
-       */
-      public com.google.protobuf.ByteString
-          getDesiBytes() {
-        java.lang.Object ref = desi_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          desi_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+        /**
+         * <code>optional string desi = 1;</code>
+         * @return The bytes for desi.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getDesiBytes() {
+            java.lang.Object ref = desi_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                desi_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
         }
-      }
-      /**
-       * <code>optional string desi = 1;</code>
-       * @param value The desi to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDesi(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        desi_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string desi = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDesi() {
-        desi_ = getDefaultInstance().getDesi();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string desi = 1;</code>
-       * @param value The bytes for desi to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDesiBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        desi_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
 
-      private java.lang.Object dir_ = "";
-      /**
-       * <code>optional string dir = 2;</code>
-       * @return Whether the dir field is set.
-       */
-      public boolean hasDir() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <code>optional string dir = 2;</code>
-       * @return The dir.
-       */
-      public java.lang.String getDir() {
-        java.lang.Object ref = dir_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            dir_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        public static final int DIR_FIELD_NUMBER = 2;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object dir_ = "";
+        /**
+         * <code>optional string dir = 2;</code>
+         * @return Whether the dir field is set.
+         */
+        @java.lang.Override
+        public boolean hasDir() {
+            return ((bitField0_ & 0x00000002) != 0);
         }
-      }
-      /**
-       * <code>optional string dir = 2;</code>
-       * @return The bytes for dir.
-       */
-      public com.google.protobuf.ByteString
-          getDirBytes() {
-        java.lang.Object ref = dir_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          dir_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+        /**
+         * <code>optional string dir = 2;</code>
+         * @return The dir.
+         */
+        @java.lang.Override
+        public java.lang.String getDir() {
+            java.lang.Object ref = dir_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    dir_ = s;
+                }
+                return s;
+            }
         }
-      }
-      /**
-       * <code>optional string dir = 2;</code>
-       * @param value The dir to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDir(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        dir_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string dir = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDir() {
-        dir_ = getDefaultInstance().getDir();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string dir = 2;</code>
-       * @param value The bytes for dir to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDirBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        dir_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-
-      private int oper_ ;
-      /**
-       * <code>optional int32 oper = 3;</code>
-       * @return Whether the oper field is set.
-       */
-      @java.lang.Override
-      public boolean hasOper() {
-        return ((bitField0_ & 0x00000004) != 0);
-      }
-      /**
-       * <code>optional int32 oper = 3;</code>
-       * @return The oper.
-       */
-      @java.lang.Override
-      public int getOper() {
-        return oper_;
-      }
-      /**
-       * <code>optional int32 oper = 3;</code>
-       * @param value The oper to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOper(int value) {
-        
-        oper_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 oper = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOper() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        oper_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int veh_ ;
-      /**
-       * <code>optional int32 veh = 4;</code>
-       * @return Whether the veh field is set.
-       */
-      @java.lang.Override
-      public boolean hasVeh() {
-        return ((bitField0_ & 0x00000008) != 0);
-      }
-      /**
-       * <code>optional int32 veh = 4;</code>
-       * @return The veh.
-       */
-      @java.lang.Override
-      public int getVeh() {
-        return veh_;
-      }
-      /**
-       * <code>optional int32 veh = 4;</code>
-       * @param value The veh to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVeh(int value) {
-        
-        veh_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 veh = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVeh() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        veh_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long tst_ ;
-      /**
-       * <code>optional int64 tst = 5;</code>
-       * @return Whether the tst field is set.
-       */
-      @java.lang.Override
-      public boolean hasTst() {
-        return ((bitField0_ & 0x00000010) != 0);
-      }
-      /**
-       * <code>optional int64 tst = 5;</code>
-       * @return The tst.
-       */
-      @java.lang.Override
-      public long getTst() {
-        return tst_;
-      }
-      /**
-       * <code>optional int64 tst = 5;</code>
-       * @param value The tst to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTst(long value) {
-        
-        tst_ = value;
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 tst = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTst() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        tst_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long tsi_ ;
-      /**
-       * <code>optional int64 tsi = 6;</code>
-       * @return Whether the tsi field is set.
-       */
-      @java.lang.Override
-      public boolean hasTsi() {
-        return ((bitField0_ & 0x00000020) != 0);
-      }
-      /**
-       * <code>optional int64 tsi = 6;</code>
-       * @return The tsi.
-       */
-      @java.lang.Override
-      public long getTsi() {
-        return tsi_;
-      }
-      /**
-       * <code>optional int64 tsi = 6;</code>
-       * @param value The tsi to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTsi(long value) {
-        
-        tsi_ = value;
-        bitField0_ |= 0x00000020;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 tsi = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTsi() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        tsi_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private double lat_ ;
-      /**
-       * <code>optional double lat = 7;</code>
-       * @return Whether the lat field is set.
-       */
-      @java.lang.Override
-      public boolean hasLat() {
-        return ((bitField0_ & 0x00000040) != 0);
-      }
-      /**
-       * <code>optional double lat = 7;</code>
-       * @return The lat.
-       */
-      @java.lang.Override
-      public double getLat() {
-        return lat_;
-      }
-      /**
-       * <code>optional double lat = 7;</code>
-       * @param value The lat to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLat(double value) {
-        
-        lat_ = value;
-        bitField0_ |= 0x00000040;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional double lat = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLat() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        lat_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double long_ ;
-      /**
-       * <code>optional double long = 8;</code>
-       * @return Whether the long field is set.
-       */
-      @java.lang.Override
-      public boolean hasLong() {
-        return ((bitField0_ & 0x00000080) != 0);
-      }
-      /**
-       * <code>optional double long = 8;</code>
-       * @return The long.
-       */
-      @java.lang.Override
-      public double getLong() {
-        return long_;
-      }
-      /**
-       * <code>optional double long = 8;</code>
-       * @param value The long to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLong(double value) {
-        
-        long_ = value;
-        bitField0_ |= 0x00000080;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional double long = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLong() {
-        bitField0_ = (bitField0_ & ~0x00000080);
-        long_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double odo_ ;
-      /**
-       * <code>optional double odo = 9;</code>
-       * @return Whether the odo field is set.
-       */
-      @java.lang.Override
-      public boolean hasOdo() {
-        return ((bitField0_ & 0x00000100) != 0);
-      }
-      /**
-       * <code>optional double odo = 9;</code>
-       * @return The odo.
-       */
-      @java.lang.Override
-      public double getOdo() {
-        return odo_;
-      }
-      /**
-       * <code>optional double odo = 9;</code>
-       * @param value The odo to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOdo(double value) {
-        
-        odo_ = value;
-        bitField0_ |= 0x00000100;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional double odo = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOdo() {
-        bitField0_ = (bitField0_ & ~0x00000100);
-        odo_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object oday_ = "";
-      /**
-       * <code>optional string oday = 10;</code>
-       * @return Whether the oday field is set.
-       */
-      public boolean hasOday() {
-        return ((bitField0_ & 0x00000200) != 0);
-      }
-      /**
-       * <code>optional string oday = 10;</code>
-       * @return The oday.
-       */
-      public java.lang.String getOday() {
-        java.lang.Object ref = oday_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            oday_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        /**
+         * <code>optional string dir = 2;</code>
+         * @return The bytes for dir.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getDirBytes() {
+            java.lang.Object ref = dir_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                dir_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
         }
-      }
-      /**
-       * <code>optional string oday = 10;</code>
-       * @return The bytes for oday.
-       */
-      public com.google.protobuf.ByteString
-          getOdayBytes() {
-        java.lang.Object ref = oday_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          oday_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        public static final int OPER_FIELD_NUMBER = 3;
+        private int oper_ = 0;
+        /**
+         * <code>optional int32 oper = 3;</code>
+         * @return Whether the oper field is set.
+         */
+        @java.lang.Override
+        public boolean hasOper() {
+            return ((bitField0_ & 0x00000004) != 0);
         }
-      }
-      /**
-       * <code>optional string oday = 10;</code>
-       * @param value The oday to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOday(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        oday_ = value;
-        bitField0_ |= 0x00000200;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string oday = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOday() {
-        oday_ = getDefaultInstance().getOday();
-        bitField0_ = (bitField0_ & ~0x00000200);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string oday = 10;</code>
-       * @param value The bytes for oday to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOdayBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        oday_ = value;
-        bitField0_ |= 0x00000200;
-        onChanged();
-        return this;
-      }
-
-      private int jrn_ ;
-      /**
-       * <code>optional int32 jrn = 11;</code>
-       * @return Whether the jrn field is set.
-       */
-      @java.lang.Override
-      public boolean hasJrn() {
-        return ((bitField0_ & 0x00000400) != 0);
-      }
-      /**
-       * <code>optional int32 jrn = 11;</code>
-       * @return The jrn.
-       */
-      @java.lang.Override
-      public int getJrn() {
-        return jrn_;
-      }
-      /**
-       * <code>optional int32 jrn = 11;</code>
-       * @param value The jrn to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJrn(int value) {
-        
-        jrn_ = value;
-        bitField0_ |= 0x00000400;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 jrn = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJrn() {
-        bitField0_ = (bitField0_ & ~0x00000400);
-        jrn_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int line_ ;
-      /**
-       * <code>optional int32 line = 12;</code>
-       * @return Whether the line field is set.
-       */
-      @java.lang.Override
-      public boolean hasLine() {
-        return ((bitField0_ & 0x00000800) != 0);
-      }
-      /**
-       * <code>optional int32 line = 12;</code>
-       * @return The line.
-       */
-      @java.lang.Override
-      public int getLine() {
-        return line_;
-      }
-      /**
-       * <code>optional int32 line = 12;</code>
-       * @param value The line to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLine(int value) {
-        
-        line_ = value;
-        bitField0_ |= 0x00000800;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 line = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLine() {
-        bitField0_ = (bitField0_ & ~0x00000800);
-        line_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object start_ = "";
-      /**
-       * <code>optional string start = 13;</code>
-       * @return Whether the start field is set.
-       */
-      public boolean hasStart() {
-        return ((bitField0_ & 0x00001000) != 0);
-      }
-      /**
-       * <code>optional string start = 13;</code>
-       * @return The start.
-       */
-      public java.lang.String getStart() {
-        java.lang.Object ref = start_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            start_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        /**
+         * <code>optional int32 oper = 3;</code>
+         * @return The oper.
+         */
+        @java.lang.Override
+        public int getOper() {
+            return oper_;
         }
-      }
-      /**
-       * <code>optional string start = 13;</code>
-       * @return The bytes for start.
-       */
-      public com.google.protobuf.ByteString
-          getStartBytes() {
-        java.lang.Object ref = start_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          start_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        public static final int VEH_FIELD_NUMBER = 4;
+        private int veh_ = 0;
+        /**
+         * <code>optional int32 veh = 4;</code>
+         * @return Whether the veh field is set.
+         */
+        @java.lang.Override
+        public boolean hasVeh() {
+            return ((bitField0_ & 0x00000008) != 0);
         }
-      }
-      /**
-       * <code>optional string start = 13;</code>
-       * @param value The start to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStart(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        start_ = value;
-        bitField0_ |= 0x00001000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string start = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStart() {
-        start_ = getDefaultInstance().getStart();
-        bitField0_ = (bitField0_ & ~0x00001000);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string start = 13;</code>
-       * @param value The bytes for start to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStartBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        start_ = value;
-        bitField0_ |= 0x00001000;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object loc_ = "";
-      /**
-       * <code>optional string loc = 14;</code>
-       * @return Whether the loc field is set.
-       */
-      public boolean hasLoc() {
-        return ((bitField0_ & 0x00002000) != 0);
-      }
-      /**
-       * <code>optional string loc = 14;</code>
-       * @return The loc.
-       */
-      public java.lang.String getLoc() {
-        java.lang.Object ref = loc_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            loc_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        /**
+         * <code>optional int32 veh = 4;</code>
+         * @return The veh.
+         */
+        @java.lang.Override
+        public int getVeh() {
+            return veh_;
         }
-      }
-      /**
-       * <code>optional string loc = 14;</code>
-       * @return The bytes for loc.
-       */
-      public com.google.protobuf.ByteString
-          getLocBytes() {
-        java.lang.Object ref = loc_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          loc_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        public static final int TST_FIELD_NUMBER = 5;
+        private long tst_ = 0L;
+        /**
+         * <code>optional int64 tst = 5;</code>
+         * @return Whether the tst field is set.
+         */
+        @java.lang.Override
+        public boolean hasTst() {
+            return ((bitField0_ & 0x00000010) != 0);
         }
-      }
-      /**
-       * <code>optional string loc = 14;</code>
-       * @param value The loc to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLoc(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        loc_ = value;
-        bitField0_ |= 0x00002000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string loc = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLoc() {
-        loc_ = getDefaultInstance().getLoc();
-        bitField0_ = (bitField0_ & ~0x00002000);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string loc = 14;</code>
-       * @param value The bytes for loc to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLocBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        loc_ = value;
-        bitField0_ |= 0x00002000;
-        onChanged();
-        return this;
-      }
-
-      private int stop_ ;
-      /**
-       * <code>optional int32 stop = 15;</code>
-       * @return Whether the stop field is set.
-       */
-      @java.lang.Override
-      public boolean hasStop() {
-        return ((bitField0_ & 0x00004000) != 0);
-      }
-      /**
-       * <code>optional int32 stop = 15;</code>
-       * @return The stop.
-       */
-      @java.lang.Override
-      public int getStop() {
-        return stop_;
-      }
-      /**
-       * <code>optional int32 stop = 15;</code>
-       * @param value The stop to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStop(int value) {
-        
-        stop_ = value;
-        bitField0_ |= 0x00004000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 stop = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStop() {
-        bitField0_ = (bitField0_ & ~0x00004000);
-        stop_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object route_ = "";
-      /**
-       * <code>optional string route = 16;</code>
-       * @return Whether the route field is set.
-       */
-      public boolean hasRoute() {
-        return ((bitField0_ & 0x00008000) != 0);
-      }
-      /**
-       * <code>optional string route = 16;</code>
-       * @return The route.
-       */
-      public java.lang.String getRoute() {
-        java.lang.Object ref = route_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            route_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        /**
+         * <code>optional int64 tst = 5;</code>
+         * @return The tst.
+         */
+        @java.lang.Override
+        public long getTst() {
+            return tst_;
         }
-      }
-      /**
-       * <code>optional string route = 16;</code>
-       * @return The bytes for route.
-       */
-      public com.google.protobuf.ByteString
-          getRouteBytes() {
-        java.lang.Object ref = route_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          route_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        public static final int TSI_FIELD_NUMBER = 6;
+        private long tsi_ = 0L;
+        /**
+         * <code>optional int64 tsi = 6;</code>
+         * @return Whether the tsi field is set.
+         */
+        @java.lang.Override
+        public boolean hasTsi() {
+            return ((bitField0_ & 0x00000020) != 0);
         }
-      }
-      /**
-       * <code>optional string route = 16;</code>
-       * @param value The route to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRoute(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        route_ = value;
-        bitField0_ |= 0x00008000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string route = 16;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRoute() {
-        route_ = getDefaultInstance().getRoute();
-        bitField0_ = (bitField0_ & ~0x00008000);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string route = 16;</code>
-       * @param value The bytes for route to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRouteBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        route_ = value;
-        bitField0_ |= 0x00008000;
-        onChanged();
-        return this;
-      }
-
-      private fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts vehicleCounts_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts, fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder, fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder> vehicleCountsBuilder_;
-      /**
-       * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
-       * @return Whether the vehicleCounts field is set.
-       */
-      public boolean hasVehicleCounts() {
-        return ((bitField0_ & 0x00010000) != 0);
-      }
-      /**
-       * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
-       * @return The vehicleCounts.
-       */
-      public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts getVehicleCounts() {
-        if (vehicleCountsBuilder_ == null) {
-          return vehicleCounts_ == null ? fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.getDefaultInstance() : vehicleCounts_;
-        } else {
-          return vehicleCountsBuilder_.getMessage();
+        /**
+         * <code>optional int64 tsi = 6;</code>
+         * @return The tsi.
+         */
+        @java.lang.Override
+        public long getTsi() {
+            return tsi_;
         }
-      }
-      /**
-       * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
-       */
-      public Builder setVehicleCounts(fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts value) {
-        if (vehicleCountsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          vehicleCounts_ = value;
-        } else {
-          vehicleCountsBuilder_.setMessage(value);
+
+        public static final int LAT_FIELD_NUMBER = 7;
+        private double lat_ = 0D;
+        /**
+         * <code>optional double lat = 7;</code>
+         * @return Whether the lat field is set.
+         */
+        @java.lang.Override
+        public boolean hasLat() {
+            return ((bitField0_ & 0x00000040) != 0);
         }
-        bitField0_ |= 0x00010000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
-       */
-      public Builder setVehicleCounts(
-          fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder builderForValue) {
-        if (vehicleCountsBuilder_ == null) {
-          vehicleCounts_ = builderForValue.build();
-        } else {
-          vehicleCountsBuilder_.setMessage(builderForValue.build());
+        /**
+         * <code>optional double lat = 7;</code>
+         * @return The lat.
+         */
+        @java.lang.Override
+        public double getLat() {
+            return lat_;
         }
-        bitField0_ |= 0x00010000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
-       */
-      public Builder mergeVehicleCounts(fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts value) {
-        if (vehicleCountsBuilder_ == null) {
-          if (((bitField0_ & 0x00010000) != 0) &&
-            vehicleCounts_ != null &&
-            vehicleCounts_ != fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.getDefaultInstance()) {
-            getVehicleCountsBuilder().mergeFrom(value);
-          } else {
-            vehicleCounts_ = value;
-          }
-        } else {
-          vehicleCountsBuilder_.mergeFrom(value);
+
+        public static final int LONG_FIELD_NUMBER = 8;
+        private double long_ = 0D;
+        /**
+         * <code>optional double long = 8;</code>
+         * @return Whether the long field is set.
+         */
+        @java.lang.Override
+        public boolean hasLong() {
+            return ((bitField0_ & 0x00000080) != 0);
         }
-        bitField0_ |= 0x00010000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
-       */
-      public Builder clearVehicleCounts() {
-        bitField0_ = (bitField0_ & ~0x00010000);
-        vehicleCounts_ = null;
-        if (vehicleCountsBuilder_ != null) {
-          vehicleCountsBuilder_.dispose();
-          vehicleCountsBuilder_ = null;
+        /**
+         * <code>optional double long = 8;</code>
+         * @return The long.
+         */
+        @java.lang.Override
+        public double getLong() {
+            return long_;
         }
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
-       */
-      public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder getVehicleCountsBuilder() {
-        bitField0_ |= 0x00010000;
-        onChanged();
-        return getVehicleCountsFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
-       */
-      public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder getVehicleCountsOrBuilder() {
-        if (vehicleCountsBuilder_ != null) {
-          return vehicleCountsBuilder_.getMessageOrBuilder();
-        } else {
-          return vehicleCounts_ == null ?
-              fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.getDefaultInstance() : vehicleCounts_;
+
+        public static final int ODO_FIELD_NUMBER = 9;
+        private double odo_ = 0D;
+        /**
+         * <code>optional double odo = 9;</code>
+         * @return Whether the odo field is set.
+         */
+        @java.lang.Override
+        public boolean hasOdo() {
+            return ((bitField0_ & 0x00000100) != 0);
         }
-      }
-      /**
-       * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts, fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder, fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder> 
-          getVehicleCountsFieldBuilder() {
-        if (vehicleCountsBuilder_ == null) {
-          vehicleCountsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts, fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder, fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder>(
-                  getVehicleCounts(),
-                  getParentForChildren(),
-                  isClean());
-          vehicleCounts_ = null;
+        /**
+         * <code>optional double odo = 9;</code>
+         * @return The odo.
+         */
+        @java.lang.Override
+        public double getOdo() {
+            return odo_;
         }
-        return vehicleCountsBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:proto.Payload)
-    }
-
-    // @@protoc_insertion_point(class_scope:proto.Payload)
-    private static final fi.hsl.common.passengercount.proto.PassengerCount.Payload DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new fi.hsl.common.passengercount.proto.PassengerCount.Payload();
-    }
-
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Payload getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<Payload>
-        PARSER = new com.google.protobuf.AbstractParser<Payload>() {
-      @java.lang.Override
-      public Payload parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
+        public static final int ODAY_FIELD_NUMBER = 10;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object oday_ = "";
+        /**
+         * <code>optional string oday = 10;</code>
+         * @return Whether the oday field is set.
+         */
+        @java.lang.Override
+        public boolean hasOday() {
+            return ((bitField0_ & 0x00000200) != 0);
         }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<Payload> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Payload> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public fi.hsl.common.passengercount.proto.PassengerCount.Payload getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface VehicleCountsOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:proto.VehicleCounts)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional string countQuality = 1;</code>
-     * @return Whether the countQuality field is set.
-     */
-    boolean hasCountQuality();
-    /**
-     * <code>optional string countQuality = 1;</code>
-     * @return The countQuality.
-     */
-    java.lang.String getCountQuality();
-    /**
-     * <code>optional string countQuality = 1;</code>
-     * @return The bytes for countQuality.
-     */
-    com.google.protobuf.ByteString
-        getCountQualityBytes();
-
-    /**
-     * <code>optional int32 vehicleLoad = 2;</code>
-     * @return Whether the vehicleLoad field is set.
-     */
-    boolean hasVehicleLoad();
-    /**
-     * <code>optional int32 vehicleLoad = 2;</code>
-     * @return The vehicleLoad.
-     */
-    int getVehicleLoad();
-
-    /**
-     * <code>optional double vehicleLoadRatio = 3;</code>
-     * @return Whether the vehicleLoadRatio field is set.
-     */
-    boolean hasVehicleLoadRatio();
-    /**
-     * <code>optional double vehicleLoadRatio = 3;</code>
-     * @return The vehicleLoadRatio.
-     */
-    double getVehicleLoadRatio();
-
-    /**
-     * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-     */
-    java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount> 
-        getDoorCountsList();
-    /**
-     * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-     */
-    fi.hsl.common.passengercount.proto.PassengerCount.DoorCount getDoorCounts(int index);
-    /**
-     * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-     */
-    int getDoorCountsCount();
-    /**
-     * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-     */
-    java.util.List<? extends fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder> 
-        getDoorCountsOrBuilderList();
-    /**
-     * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-     */
-    fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder getDoorCountsOrBuilder(
-        int index);
-
-    /**
-     * <code>optional string extensions = 5;</code>
-     * @return Whether the extensions field is set.
-     */
-    boolean hasExtensions();
-    /**
-     * <code>optional string extensions = 5;</code>
-     * @return The extensions.
-     */
-    java.lang.String getExtensions();
-    /**
-     * <code>optional string extensions = 5;</code>
-     * @return The bytes for extensions.
-     */
-    com.google.protobuf.ByteString
-        getExtensionsBytes();
-  }
-  /**
-   * Protobuf type {@code proto.VehicleCounts}
-   */
-  public static final class VehicleCounts extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:proto.VehicleCounts)
-      VehicleCountsOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use VehicleCounts.newBuilder() to construct.
-    private VehicleCounts(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private VehicleCounts() {
-      countQuality_ = "";
-      doorCounts_ = java.util.Collections.emptyList();
-      extensions_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new VehicleCounts();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_VehicleCounts_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_VehicleCounts_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.class, fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int COUNTQUALITY_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object countQuality_ = "";
-    /**
-     * <code>optional string countQuality = 1;</code>
-     * @return Whether the countQuality field is set.
-     */
-    @java.lang.Override
-    public boolean hasCountQuality() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>optional string countQuality = 1;</code>
-     * @return The countQuality.
-     */
-    @java.lang.Override
-    public java.lang.String getCountQuality() {
-      java.lang.Object ref = countQuality_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          countQuality_ = s;
+        /**
+         * <code>optional string oday = 10;</code>
+         * @return The oday.
+         */
+        @java.lang.Override
+        public java.lang.String getOday() {
+            java.lang.Object ref = oday_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    oday_ = s;
+                }
+                return s;
+            }
         }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string countQuality = 1;</code>
-     * @return The bytes for countQuality.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCountQualityBytes() {
-      java.lang.Object ref = countQuality_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        countQuality_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int VEHICLELOAD_FIELD_NUMBER = 2;
-    private int vehicleLoad_ = 0;
-    /**
-     * <code>optional int32 vehicleLoad = 2;</code>
-     * @return Whether the vehicleLoad field is set.
-     */
-    @java.lang.Override
-    public boolean hasVehicleLoad() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>optional int32 vehicleLoad = 2;</code>
-     * @return The vehicleLoad.
-     */
-    @java.lang.Override
-    public int getVehicleLoad() {
-      return vehicleLoad_;
-    }
-
-    public static final int VEHICLELOADRATIO_FIELD_NUMBER = 3;
-    private double vehicleLoadRatio_ = 0D;
-    /**
-     * <code>optional double vehicleLoadRatio = 3;</code>
-     * @return Whether the vehicleLoadRatio field is set.
-     */
-    @java.lang.Override
-    public boolean hasVehicleLoadRatio() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>optional double vehicleLoadRatio = 3;</code>
-     * @return The vehicleLoadRatio.
-     */
-    @java.lang.Override
-    public double getVehicleLoadRatio() {
-      return vehicleLoadRatio_;
-    }
-
-    public static final int DOORCOUNTS_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
-    private java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount> doorCounts_;
-    /**
-     * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount> getDoorCountsList() {
-      return doorCounts_;
-    }
-    /**
-     * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder> 
-        getDoorCountsOrBuilderList() {
-      return doorCounts_;
-    }
-    /**
-     * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-     */
-    @java.lang.Override
-    public int getDoorCountsCount() {
-      return doorCounts_.size();
-    }
-    /**
-     * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-     */
-    @java.lang.Override
-    public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount getDoorCounts(int index) {
-      return doorCounts_.get(index);
-    }
-    /**
-     * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-     */
-    @java.lang.Override
-    public fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder getDoorCountsOrBuilder(
-        int index) {
-      return doorCounts_.get(index);
-    }
-
-    public static final int EXTENSIONS_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object extensions_ = "";
-    /**
-     * <code>optional string extensions = 5;</code>
-     * @return Whether the extensions field is set.
-     */
-    @java.lang.Override
-    public boolean hasExtensions() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <code>optional string extensions = 5;</code>
-     * @return The extensions.
-     */
-    @java.lang.Override
-    public java.lang.String getExtensions() {
-      java.lang.Object ref = extensions_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          extensions_ = s;
+        /**
+         * <code>optional string oday = 10;</code>
+         * @return The bytes for oday.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getOdayBytes() {
+            java.lang.Object ref = oday_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                oday_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
         }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string extensions = 5;</code>
-     * @return The bytes for extensions.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getExtensionsBytes() {
-      java.lang.Object ref = extensions_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        extensions_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+
+        public static final int JRN_FIELD_NUMBER = 11;
+        private int jrn_ = 0;
+        /**
+         * <code>optional int32 jrn = 11;</code>
+         * @return Whether the jrn field is set.
+         */
+        @java.lang.Override
+        public boolean hasJrn() {
+            return ((bitField0_ & 0x00000400) != 0);
+        }
+        /**
+         * <code>optional int32 jrn = 11;</code>
+         * @return The jrn.
+         */
+        @java.lang.Override
+        public int getJrn() {
+            return jrn_;
+        }
+
+        public static final int LINE_FIELD_NUMBER = 12;
+        private int line_ = 0;
+        /**
+         * <code>optional int32 line = 12;</code>
+         * @return Whether the line field is set.
+         */
+        @java.lang.Override
+        public boolean hasLine() {
+            return ((bitField0_ & 0x00000800) != 0);
+        }
+        /**
+         * <code>optional int32 line = 12;</code>
+         * @return The line.
+         */
+        @java.lang.Override
+        public int getLine() {
+            return line_;
+        }
+
+        public static final int START_FIELD_NUMBER = 13;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object start_ = "";
+        /**
+         * <code>optional string start = 13;</code>
+         * @return Whether the start field is set.
+         */
+        @java.lang.Override
+        public boolean hasStart() {
+            return ((bitField0_ & 0x00001000) != 0);
+        }
+        /**
+         * <code>optional string start = 13;</code>
+         * @return The start.
+         */
+        @java.lang.Override
+        public java.lang.String getStart() {
+            java.lang.Object ref = start_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    start_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>optional string start = 13;</code>
+         * @return The bytes for start.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getStartBytes() {
+            java.lang.Object ref = start_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                start_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int LOC_FIELD_NUMBER = 14;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object loc_ = "";
+        /**
+         * <code>optional string loc = 14;</code>
+         * @return Whether the loc field is set.
+         */
+        @java.lang.Override
+        public boolean hasLoc() {
+            return ((bitField0_ & 0x00002000) != 0);
+        }
+        /**
+         * <code>optional string loc = 14;</code>
+         * @return The loc.
+         */
+        @java.lang.Override
+        public java.lang.String getLoc() {
+            java.lang.Object ref = loc_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    loc_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>optional string loc = 14;</code>
+         * @return The bytes for loc.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getLocBytes() {
+            java.lang.Object ref = loc_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                loc_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int STOP_FIELD_NUMBER = 15;
+        private int stop_ = 0;
+        /**
+         * <code>optional int32 stop = 15;</code>
+         * @return Whether the stop field is set.
+         */
+        @java.lang.Override
+        public boolean hasStop() {
+            return ((bitField0_ & 0x00004000) != 0);
+        }
+        /**
+         * <code>optional int32 stop = 15;</code>
+         * @return The stop.
+         */
+        @java.lang.Override
+        public int getStop() {
+            return stop_;
+        }
+
+        public static final int ROUTE_FIELD_NUMBER = 16;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object route_ = "";
+        /**
+         * <code>optional string route = 16;</code>
+         * @return Whether the route field is set.
+         */
+        @java.lang.Override
+        public boolean hasRoute() {
+            return ((bitField0_ & 0x00008000) != 0);
+        }
+        /**
+         * <code>optional string route = 16;</code>
+         * @return The route.
+         */
+        @java.lang.Override
+        public java.lang.String getRoute() {
+            java.lang.Object ref = route_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    route_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>optional string route = 16;</code>
+         * @return The bytes for route.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getRouteBytes() {
+            java.lang.Object ref = route_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                route_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int VEHICLECOUNTS_FIELD_NUMBER = 17;
+        private fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts vehicleCounts_;
+        /**
+         * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+         * @return Whether the vehicleCounts field is set.
+         */
+        @java.lang.Override
+        public boolean hasVehicleCounts() {
+            return ((bitField0_ & 0x00010000) != 0);
+        }
+        /**
+         * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+         * @return The vehicleCounts.
+         */
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts getVehicleCounts() {
+            return vehicleCounts_ == null
+                    ? fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.getDefaultInstance()
+                    : vehicleCounts_;
+        }
+        /**
+         * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+         */
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder getVehicleCountsOrBuilder() {
+            return vehicleCounts_ == null
+                    ? fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.getDefaultInstance()
+                    : vehicleCounts_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1)
+                return true;
+            if (isInitialized == 0)
+                return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (((bitField0_ & 0x00000001) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, desi_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, dir_);
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                output.writeInt32(3, oper_);
+            }
+            if (((bitField0_ & 0x00000008) != 0)) {
+                output.writeInt32(4, veh_);
+            }
+            if (((bitField0_ & 0x00000010) != 0)) {
+                output.writeInt64(5, tst_);
+            }
+            if (((bitField0_ & 0x00000020) != 0)) {
+                output.writeInt64(6, tsi_);
+            }
+            if (((bitField0_ & 0x00000040) != 0)) {
+                output.writeDouble(7, lat_);
+            }
+            if (((bitField0_ & 0x00000080) != 0)) {
+                output.writeDouble(8, long_);
+            }
+            if (((bitField0_ & 0x00000100) != 0)) {
+                output.writeDouble(9, odo_);
+            }
+            if (((bitField0_ & 0x00000200) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 10, oday_);
+            }
+            if (((bitField0_ & 0x00000400) != 0)) {
+                output.writeInt32(11, jrn_);
+            }
+            if (((bitField0_ & 0x00000800) != 0)) {
+                output.writeInt32(12, line_);
+            }
+            if (((bitField0_ & 0x00001000) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 13, start_);
+            }
+            if (((bitField0_ & 0x00002000) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 14, loc_);
+            }
+            if (((bitField0_ & 0x00004000) != 0)) {
+                output.writeInt32(15, stop_);
+            }
+            if (((bitField0_ & 0x00008000) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 16, route_);
+            }
+            if (((bitField0_ & 0x00010000) != 0)) {
+                output.writeMessage(17, getVehicleCounts());
+            }
+            getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1)
+                return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, desi_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, dir_);
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, oper_);
+            }
+            if (((bitField0_ & 0x00000008) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, veh_);
+            }
+            if (((bitField0_ & 0x00000010) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt64Size(5, tst_);
+            }
+            if (((bitField0_ & 0x00000020) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, tsi_);
+            }
+            if (((bitField0_ & 0x00000040) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeDoubleSize(7, lat_);
+            }
+            if (((bitField0_ & 0x00000080) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeDoubleSize(8, long_);
+            }
+            if (((bitField0_ & 0x00000100) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeDoubleSize(9, odo_);
+            }
+            if (((bitField0_ & 0x00000200) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, oday_);
+            }
+            if (((bitField0_ & 0x00000400) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(11, jrn_);
+            }
+            if (((bitField0_ & 0x00000800) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(12, line_);
+            }
+            if (((bitField0_ & 0x00001000) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, start_);
+            }
+            if (((bitField0_ & 0x00002000) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, loc_);
+            }
+            if (((bitField0_ & 0x00004000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(15, stop_);
+            }
+            if (((bitField0_ & 0x00008000) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, route_);
+            }
+            if (((bitField0_ & 0x00010000) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getVehicleCounts());
+            }
+            size += getUnknownFields().getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof fi.hsl.common.passengercount.proto.PassengerCount.Payload)) {
+                return super.equals(obj);
+            }
+            fi.hsl.common.passengercount.proto.PassengerCount.Payload other = (fi.hsl.common.passengercount.proto.PassengerCount.Payload) obj;
+
+            if (hasDesi() != other.hasDesi())
+                return false;
+            if (hasDesi()) {
+                if (!getDesi().equals(other.getDesi()))
+                    return false;
+            }
+            if (hasDir() != other.hasDir())
+                return false;
+            if (hasDir()) {
+                if (!getDir().equals(other.getDir()))
+                    return false;
+            }
+            if (hasOper() != other.hasOper())
+                return false;
+            if (hasOper()) {
+                if (getOper() != other.getOper())
+                    return false;
+            }
+            if (hasVeh() != other.hasVeh())
+                return false;
+            if (hasVeh()) {
+                if (getVeh() != other.getVeh())
+                    return false;
+            }
+            if (hasTst() != other.hasTst())
+                return false;
+            if (hasTst()) {
+                if (getTst() != other.getTst())
+                    return false;
+            }
+            if (hasTsi() != other.hasTsi())
+                return false;
+            if (hasTsi()) {
+                if (getTsi() != other.getTsi())
+                    return false;
+            }
+            if (hasLat() != other.hasLat())
+                return false;
+            if (hasLat()) {
+                if (java.lang.Double.doubleToLongBits(getLat()) != java.lang.Double.doubleToLongBits(other.getLat()))
+                    return false;
+            }
+            if (hasLong() != other.hasLong())
+                return false;
+            if (hasLong()) {
+                if (java.lang.Double.doubleToLongBits(getLong()) != java.lang.Double.doubleToLongBits(other.getLong()))
+                    return false;
+            }
+            if (hasOdo() != other.hasOdo())
+                return false;
+            if (hasOdo()) {
+                if (java.lang.Double.doubleToLongBits(getOdo()) != java.lang.Double.doubleToLongBits(other.getOdo()))
+                    return false;
+            }
+            if (hasOday() != other.hasOday())
+                return false;
+            if (hasOday()) {
+                if (!getOday().equals(other.getOday()))
+                    return false;
+            }
+            if (hasJrn() != other.hasJrn())
+                return false;
+            if (hasJrn()) {
+                if (getJrn() != other.getJrn())
+                    return false;
+            }
+            if (hasLine() != other.hasLine())
+                return false;
+            if (hasLine()) {
+                if (getLine() != other.getLine())
+                    return false;
+            }
+            if (hasStart() != other.hasStart())
+                return false;
+            if (hasStart()) {
+                if (!getStart().equals(other.getStart()))
+                    return false;
+            }
+            if (hasLoc() != other.hasLoc())
+                return false;
+            if (hasLoc()) {
+                if (!getLoc().equals(other.getLoc()))
+                    return false;
+            }
+            if (hasStop() != other.hasStop())
+                return false;
+            if (hasStop()) {
+                if (getStop() != other.getStop())
+                    return false;
+            }
+            if (hasRoute() != other.hasRoute())
+                return false;
+            if (hasRoute()) {
+                if (!getRoute().equals(other.getRoute()))
+                    return false;
+            }
+            if (hasVehicleCounts() != other.hasVehicleCounts())
+                return false;
+            if (hasVehicleCounts()) {
+                if (!getVehicleCounts().equals(other.getVehicleCounts()))
+                    return false;
+            }
+            if (!getUnknownFields().equals(other.getUnknownFields()))
+                return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasDesi()) {
+                hash = (37 * hash) + DESI_FIELD_NUMBER;
+                hash = (53 * hash) + getDesi().hashCode();
+            }
+            if (hasDir()) {
+                hash = (37 * hash) + DIR_FIELD_NUMBER;
+                hash = (53 * hash) + getDir().hashCode();
+            }
+            if (hasOper()) {
+                hash = (37 * hash) + OPER_FIELD_NUMBER;
+                hash = (53 * hash) + getOper();
+            }
+            if (hasVeh()) {
+                hash = (37 * hash) + VEH_FIELD_NUMBER;
+                hash = (53 * hash) + getVeh();
+            }
+            if (hasTst()) {
+                hash = (37 * hash) + TST_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTst());
+            }
+            if (hasTsi()) {
+                hash = (37 * hash) + TSI_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTsi());
+            }
+            if (hasLat()) {
+                hash = (37 * hash) + LAT_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getLat()));
+            }
+            if (hasLong()) {
+                hash = (37 * hash) + LONG_FIELD_NUMBER;
+                hash = (53 * hash)
+                        + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getLong()));
+            }
+            if (hasOdo()) {
+                hash = (37 * hash) + ODO_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getOdo()));
+            }
+            if (hasOday()) {
+                hash = (37 * hash) + ODAY_FIELD_NUMBER;
+                hash = (53 * hash) + getOday().hashCode();
+            }
+            if (hasJrn()) {
+                hash = (37 * hash) + JRN_FIELD_NUMBER;
+                hash = (53 * hash) + getJrn();
+            }
+            if (hasLine()) {
+                hash = (37 * hash) + LINE_FIELD_NUMBER;
+                hash = (53 * hash) + getLine();
+            }
+            if (hasStart()) {
+                hash = (37 * hash) + START_FIELD_NUMBER;
+                hash = (53 * hash) + getStart().hashCode();
+            }
+            if (hasLoc()) {
+                hash = (37 * hash) + LOC_FIELD_NUMBER;
+                hash = (53 * hash) + getLoc().hashCode();
+            }
+            if (hasStop()) {
+                hash = (37 * hash) + STOP_FIELD_NUMBER;
+                hash = (53 * hash) + getStop();
+            }
+            if (hasRoute()) {
+                hash = (37 * hash) + ROUTE_FIELD_NUMBER;
+                hash = (53 * hash) + getRoute().hashCode();
+            }
+            if (hasVehicleCounts()) {
+                hash = (37 * hash) + VEHICLECOUNTS_FIELD_NUMBER;
+                hash = (53 * hash) + getVehicleCounts().hashCode();
+            }
+            hash = (29 * hash) + getUnknownFields().hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(
+                com.google.protobuf.ByteString data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(
+                com.google.protobuf.ByteString data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseDelimitedFrom(
+                java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseDelimitedFrom(
+                java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+                    extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(
+                com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Payload parseFrom(
+                com.google.protobuf.CodedInputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+        public static Builder newBuilder(fi.hsl.common.passengercount.proto.PassengerCount.Payload prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         * Protobuf type {@code proto.Payload}
+         */
+        public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                    // @@protoc_insertion_point(builder_implements:proto.Payload)
+                    fi.hsl.common.passengercount.proto.PassengerCount.PayloadOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Payload_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Payload_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                fi.hsl.common.passengercount.proto.PassengerCount.Payload.class,
+                                fi.hsl.common.passengercount.proto.PassengerCount.Payload.Builder.class);
+            }
+
+            // Construct using fi.hsl.common.passengercount.proto.PassengerCount.Payload.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+                    getVehicleCountsFieldBuilder();
+                }
+            }
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                bitField0_ = 0;
+                desi_ = "";
+                dir_ = "";
+                oper_ = 0;
+                veh_ = 0;
+                tst_ = 0L;
+                tsi_ = 0L;
+                lat_ = 0D;
+                long_ = 0D;
+                odo_ = 0D;
+                oday_ = "";
+                jrn_ = 0;
+                line_ = 0;
+                start_ = "";
+                loc_ = "";
+                stop_ = 0;
+                route_ = "";
+                vehicleCounts_ = null;
+                if (vehicleCountsBuilder_ != null) {
+                    vehicleCountsBuilder_.dispose();
+                    vehicleCountsBuilder_ = null;
+                }
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Payload_descriptor;
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.Payload getDefaultInstanceForType() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.Payload.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.Payload build() {
+                fi.hsl.common.passengercount.proto.PassengerCount.Payload result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.Payload buildPartial() {
+                fi.hsl.common.passengercount.proto.PassengerCount.Payload result = new fi.hsl.common.passengercount.proto.PassengerCount.Payload(
+                        this);
+                if (bitField0_ != 0) {
+                    buildPartial0(result);
+                }
+                onBuilt();
+                return result;
+            }
+
+            private void buildPartial0(fi.hsl.common.passengercount.proto.PassengerCount.Payload result) {
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) != 0)) {
+                    result.desi_ = desi_;
+                    to_bitField0_ |= 0x00000001;
+                }
+                if (((from_bitField0_ & 0x00000002) != 0)) {
+                    result.dir_ = dir_;
+                    to_bitField0_ |= 0x00000002;
+                }
+                if (((from_bitField0_ & 0x00000004) != 0)) {
+                    result.oper_ = oper_;
+                    to_bitField0_ |= 0x00000004;
+                }
+                if (((from_bitField0_ & 0x00000008) != 0)) {
+                    result.veh_ = veh_;
+                    to_bitField0_ |= 0x00000008;
+                }
+                if (((from_bitField0_ & 0x00000010) != 0)) {
+                    result.tst_ = tst_;
+                    to_bitField0_ |= 0x00000010;
+                }
+                if (((from_bitField0_ & 0x00000020) != 0)) {
+                    result.tsi_ = tsi_;
+                    to_bitField0_ |= 0x00000020;
+                }
+                if (((from_bitField0_ & 0x00000040) != 0)) {
+                    result.lat_ = lat_;
+                    to_bitField0_ |= 0x00000040;
+                }
+                if (((from_bitField0_ & 0x00000080) != 0)) {
+                    result.long_ = long_;
+                    to_bitField0_ |= 0x00000080;
+                }
+                if (((from_bitField0_ & 0x00000100) != 0)) {
+                    result.odo_ = odo_;
+                    to_bitField0_ |= 0x00000100;
+                }
+                if (((from_bitField0_ & 0x00000200) != 0)) {
+                    result.oday_ = oday_;
+                    to_bitField0_ |= 0x00000200;
+                }
+                if (((from_bitField0_ & 0x00000400) != 0)) {
+                    result.jrn_ = jrn_;
+                    to_bitField0_ |= 0x00000400;
+                }
+                if (((from_bitField0_ & 0x00000800) != 0)) {
+                    result.line_ = line_;
+                    to_bitField0_ |= 0x00000800;
+                }
+                if (((from_bitField0_ & 0x00001000) != 0)) {
+                    result.start_ = start_;
+                    to_bitField0_ |= 0x00001000;
+                }
+                if (((from_bitField0_ & 0x00002000) != 0)) {
+                    result.loc_ = loc_;
+                    to_bitField0_ |= 0x00002000;
+                }
+                if (((from_bitField0_ & 0x00004000) != 0)) {
+                    result.stop_ = stop_;
+                    to_bitField0_ |= 0x00004000;
+                }
+                if (((from_bitField0_ & 0x00008000) != 0)) {
+                    result.route_ = route_;
+                    to_bitField0_ |= 0x00008000;
+                }
+                if (((from_bitField0_ & 0x00010000) != 0)) {
+                    result.vehicleCounts_ = vehicleCountsBuilder_ == null
+                            ? vehicleCounts_
+                            : vehicleCountsBuilder_.build();
+                    to_bitField0_ |= 0x00010000;
+                }
+                result.bitField0_ |= to_bitField0_;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+            @java.lang.Override
+            public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+            @java.lang.Override
+            public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+            @java.lang.Override
+            public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof fi.hsl.common.passengercount.proto.PassengerCount.Payload) {
+                    return mergeFrom((fi.hsl.common.passengercount.proto.PassengerCount.Payload) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(fi.hsl.common.passengercount.proto.PassengerCount.Payload other) {
+                if (other == fi.hsl.common.passengercount.proto.PassengerCount.Payload.getDefaultInstance())
+                    return this;
+                if (other.hasDesi()) {
+                    desi_ = other.desi_;
+                    bitField0_ |= 0x00000001;
+                    onChanged();
+                }
+                if (other.hasDir()) {
+                    dir_ = other.dir_;
+                    bitField0_ |= 0x00000002;
+                    onChanged();
+                }
+                if (other.hasOper()) {
+                    setOper(other.getOper());
+                }
+                if (other.hasVeh()) {
+                    setVeh(other.getVeh());
+                }
+                if (other.hasTst()) {
+                    setTst(other.getTst());
+                }
+                if (other.hasTsi()) {
+                    setTsi(other.getTsi());
+                }
+                if (other.hasLat()) {
+                    setLat(other.getLat());
+                }
+                if (other.hasLong()) {
+                    setLong(other.getLong());
+                }
+                if (other.hasOdo()) {
+                    setOdo(other.getOdo());
+                }
+                if (other.hasOday()) {
+                    oday_ = other.oday_;
+                    bitField0_ |= 0x00000200;
+                    onChanged();
+                }
+                if (other.hasJrn()) {
+                    setJrn(other.getJrn());
+                }
+                if (other.hasLine()) {
+                    setLine(other.getLine());
+                }
+                if (other.hasStart()) {
+                    start_ = other.start_;
+                    bitField0_ |= 0x00001000;
+                    onChanged();
+                }
+                if (other.hasLoc()) {
+                    loc_ = other.loc_;
+                    bitField0_ |= 0x00002000;
+                    onChanged();
+                }
+                if (other.hasStop()) {
+                    setStop(other.getStop());
+                }
+                if (other.hasRoute()) {
+                    route_ = other.route_;
+                    bitField0_ |= 0x00008000;
+                    onChanged();
+                }
+                if (other.hasVehicleCounts()) {
+                    mergeVehicleCounts(other.getVehicleCounts());
+                }
+                this.mergeUnknownFields(other.getUnknownFields());
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+                if (extensionRegistry == null) {
+                    throw new java.lang.NullPointerException();
+                }
+                try {
+                    boolean done = false;
+                    while (!done) {
+                        int tag = input.readTag();
+                        switch (tag) {
+                            case 0 :
+                                done = true;
+                                break;
+                            case 10 : {
+                                desi_ = input.readBytes();
+                                bitField0_ |= 0x00000001;
+                                break;
+                            } // case 10
+                            case 18 : {
+                                dir_ = input.readBytes();
+                                bitField0_ |= 0x00000002;
+                                break;
+                            } // case 18
+                            case 24 : {
+                                oper_ = input.readInt32();
+                                bitField0_ |= 0x00000004;
+                                break;
+                            } // case 24
+                            case 32 : {
+                                veh_ = input.readInt32();
+                                bitField0_ |= 0x00000008;
+                                break;
+                            } // case 32
+                            case 40 : {
+                                tst_ = input.readInt64();
+                                bitField0_ |= 0x00000010;
+                                break;
+                            } // case 40
+                            case 48 : {
+                                tsi_ = input.readInt64();
+                                bitField0_ |= 0x00000020;
+                                break;
+                            } // case 48
+                            case 57 : {
+                                lat_ = input.readDouble();
+                                bitField0_ |= 0x00000040;
+                                break;
+                            } // case 57
+                            case 65 : {
+                                long_ = input.readDouble();
+                                bitField0_ |= 0x00000080;
+                                break;
+                            } // case 65
+                            case 73 : {
+                                odo_ = input.readDouble();
+                                bitField0_ |= 0x00000100;
+                                break;
+                            } // case 73
+                            case 82 : {
+                                oday_ = input.readBytes();
+                                bitField0_ |= 0x00000200;
+                                break;
+                            } // case 82
+                            case 88 : {
+                                jrn_ = input.readInt32();
+                                bitField0_ |= 0x00000400;
+                                break;
+                            } // case 88
+                            case 96 : {
+                                line_ = input.readInt32();
+                                bitField0_ |= 0x00000800;
+                                break;
+                            } // case 96
+                            case 106 : {
+                                start_ = input.readBytes();
+                                bitField0_ |= 0x00001000;
+                                break;
+                            } // case 106
+                            case 114 : {
+                                loc_ = input.readBytes();
+                                bitField0_ |= 0x00002000;
+                                break;
+                            } // case 114
+                            case 120 : {
+                                stop_ = input.readInt32();
+                                bitField0_ |= 0x00004000;
+                                break;
+                            } // case 120
+                            case 130 : {
+                                route_ = input.readBytes();
+                                bitField0_ |= 0x00008000;
+                                break;
+                            } // case 130
+                            case 138 : {
+                                input.readMessage(getVehicleCountsFieldBuilder().getBuilder(), extensionRegistry);
+                                bitField0_ |= 0x00010000;
+                                break;
+                            } // case 138
+                            default : {
+                                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                                    done = true; // was an endgroup tag
+                                }
+                                break;
+                            } // default:
+                        } // switch (tag)
+                    } // while (!done)
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.unwrapIOException();
+                } finally {
+                    onChanged();
+                } // finally
+                return this;
+            }
+            private int bitField0_;
+
+            private java.lang.Object desi_ = "";
+            /**
+             * <code>optional string desi = 1;</code>
+             * @return Whether the desi field is set.
+             */
+            public boolean hasDesi() {
+                return ((bitField0_ & 0x00000001) != 0);
+            }
+            /**
+             * <code>optional string desi = 1;</code>
+             * @return The desi.
+             */
+            public java.lang.String getDesi() {
+                java.lang.Object ref = desi_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        desi_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string desi = 1;</code>
+             * @return The bytes for desi.
+             */
+            public com.google.protobuf.ByteString getDesiBytes() {
+                java.lang.Object ref = desi_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    desi_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string desi = 1;</code>
+             * @param value The desi to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDesi(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                desi_ = value;
+                bitField0_ |= 0x00000001;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string desi = 1;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearDesi() {
+                desi_ = getDefaultInstance().getDesi();
+                bitField0_ = (bitField0_ & ~0x00000001);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string desi = 1;</code>
+             * @param value The bytes for desi to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDesiBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                desi_ = value;
+                bitField0_ |= 0x00000001;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object dir_ = "";
+            /**
+             * <code>optional string dir = 2;</code>
+             * @return Whether the dir field is set.
+             */
+            public boolean hasDir() {
+                return ((bitField0_ & 0x00000002) != 0);
+            }
+            /**
+             * <code>optional string dir = 2;</code>
+             * @return The dir.
+             */
+            public java.lang.String getDir() {
+                java.lang.Object ref = dir_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        dir_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string dir = 2;</code>
+             * @return The bytes for dir.
+             */
+            public com.google.protobuf.ByteString getDirBytes() {
+                java.lang.Object ref = dir_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    dir_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string dir = 2;</code>
+             * @param value The dir to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDir(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                dir_ = value;
+                bitField0_ |= 0x00000002;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string dir = 2;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearDir() {
+                dir_ = getDefaultInstance().getDir();
+                bitField0_ = (bitField0_ & ~0x00000002);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string dir = 2;</code>
+             * @param value The bytes for dir to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDirBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                dir_ = value;
+                bitField0_ |= 0x00000002;
+                onChanged();
+                return this;
+            }
+
+            private int oper_;
+            /**
+             * <code>optional int32 oper = 3;</code>
+             * @return Whether the oper field is set.
+             */
+            @java.lang.Override
+            public boolean hasOper() {
+                return ((bitField0_ & 0x00000004) != 0);
+            }
+            /**
+             * <code>optional int32 oper = 3;</code>
+             * @return The oper.
+             */
+            @java.lang.Override
+            public int getOper() {
+                return oper_;
+            }
+            /**
+             * <code>optional int32 oper = 3;</code>
+             * @param value The oper to set.
+             * @return This builder for chaining.
+             */
+            public Builder setOper(int value) {
+
+                oper_ = value;
+                bitField0_ |= 0x00000004;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int32 oper = 3;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearOper() {
+                bitField0_ = (bitField0_ & ~0x00000004);
+                oper_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int veh_;
+            /**
+             * <code>optional int32 veh = 4;</code>
+             * @return Whether the veh field is set.
+             */
+            @java.lang.Override
+            public boolean hasVeh() {
+                return ((bitField0_ & 0x00000008) != 0);
+            }
+            /**
+             * <code>optional int32 veh = 4;</code>
+             * @return The veh.
+             */
+            @java.lang.Override
+            public int getVeh() {
+                return veh_;
+            }
+            /**
+             * <code>optional int32 veh = 4;</code>
+             * @param value The veh to set.
+             * @return This builder for chaining.
+             */
+            public Builder setVeh(int value) {
+
+                veh_ = value;
+                bitField0_ |= 0x00000008;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int32 veh = 4;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearVeh() {
+                bitField0_ = (bitField0_ & ~0x00000008);
+                veh_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private long tst_;
+            /**
+             * <code>optional int64 tst = 5;</code>
+             * @return Whether the tst field is set.
+             */
+            @java.lang.Override
+            public boolean hasTst() {
+                return ((bitField0_ & 0x00000010) != 0);
+            }
+            /**
+             * <code>optional int64 tst = 5;</code>
+             * @return The tst.
+             */
+            @java.lang.Override
+            public long getTst() {
+                return tst_;
+            }
+            /**
+             * <code>optional int64 tst = 5;</code>
+             * @param value The tst to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTst(long value) {
+
+                tst_ = value;
+                bitField0_ |= 0x00000010;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int64 tst = 5;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTst() {
+                bitField0_ = (bitField0_ & ~0x00000010);
+                tst_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private long tsi_;
+            /**
+             * <code>optional int64 tsi = 6;</code>
+             * @return Whether the tsi field is set.
+             */
+            @java.lang.Override
+            public boolean hasTsi() {
+                return ((bitField0_ & 0x00000020) != 0);
+            }
+            /**
+             * <code>optional int64 tsi = 6;</code>
+             * @return The tsi.
+             */
+            @java.lang.Override
+            public long getTsi() {
+                return tsi_;
+            }
+            /**
+             * <code>optional int64 tsi = 6;</code>
+             * @param value The tsi to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTsi(long value) {
+
+                tsi_ = value;
+                bitField0_ |= 0x00000020;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int64 tsi = 6;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearTsi() {
+                bitField0_ = (bitField0_ & ~0x00000020);
+                tsi_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private double lat_;
+            /**
+             * <code>optional double lat = 7;</code>
+             * @return Whether the lat field is set.
+             */
+            @java.lang.Override
+            public boolean hasLat() {
+                return ((bitField0_ & 0x00000040) != 0);
+            }
+            /**
+             * <code>optional double lat = 7;</code>
+             * @return The lat.
+             */
+            @java.lang.Override
+            public double getLat() {
+                return lat_;
+            }
+            /**
+             * <code>optional double lat = 7;</code>
+             * @param value The lat to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLat(double value) {
+
+                lat_ = value;
+                bitField0_ |= 0x00000040;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional double lat = 7;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearLat() {
+                bitField0_ = (bitField0_ & ~0x00000040);
+                lat_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            private double long_;
+            /**
+             * <code>optional double long = 8;</code>
+             * @return Whether the long field is set.
+             */
+            @java.lang.Override
+            public boolean hasLong() {
+                return ((bitField0_ & 0x00000080) != 0);
+            }
+            /**
+             * <code>optional double long = 8;</code>
+             * @return The long.
+             */
+            @java.lang.Override
+            public double getLong() {
+                return long_;
+            }
+            /**
+             * <code>optional double long = 8;</code>
+             * @param value The long to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLong(double value) {
+
+                long_ = value;
+                bitField0_ |= 0x00000080;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional double long = 8;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearLong() {
+                bitField0_ = (bitField0_ & ~0x00000080);
+                long_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            private double odo_;
+            /**
+             * <code>optional double odo = 9;</code>
+             * @return Whether the odo field is set.
+             */
+            @java.lang.Override
+            public boolean hasOdo() {
+                return ((bitField0_ & 0x00000100) != 0);
+            }
+            /**
+             * <code>optional double odo = 9;</code>
+             * @return The odo.
+             */
+            @java.lang.Override
+            public double getOdo() {
+                return odo_;
+            }
+            /**
+             * <code>optional double odo = 9;</code>
+             * @param value The odo to set.
+             * @return This builder for chaining.
+             */
+            public Builder setOdo(double value) {
+
+                odo_ = value;
+                bitField0_ |= 0x00000100;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional double odo = 9;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearOdo() {
+                bitField0_ = (bitField0_ & ~0x00000100);
+                odo_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object oday_ = "";
+            /**
+             * <code>optional string oday = 10;</code>
+             * @return Whether the oday field is set.
+             */
+            public boolean hasOday() {
+                return ((bitField0_ & 0x00000200) != 0);
+            }
+            /**
+             * <code>optional string oday = 10;</code>
+             * @return The oday.
+             */
+            public java.lang.String getOday() {
+                java.lang.Object ref = oday_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        oday_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string oday = 10;</code>
+             * @return The bytes for oday.
+             */
+            public com.google.protobuf.ByteString getOdayBytes() {
+                java.lang.Object ref = oday_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    oday_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string oday = 10;</code>
+             * @param value The oday to set.
+             * @return This builder for chaining.
+             */
+            public Builder setOday(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                oday_ = value;
+                bitField0_ |= 0x00000200;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string oday = 10;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearOday() {
+                oday_ = getDefaultInstance().getOday();
+                bitField0_ = (bitField0_ & ~0x00000200);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string oday = 10;</code>
+             * @param value The bytes for oday to set.
+             * @return This builder for chaining.
+             */
+            public Builder setOdayBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                oday_ = value;
+                bitField0_ |= 0x00000200;
+                onChanged();
+                return this;
+            }
+
+            private int jrn_;
+            /**
+             * <code>optional int32 jrn = 11;</code>
+             * @return Whether the jrn field is set.
+             */
+            @java.lang.Override
+            public boolean hasJrn() {
+                return ((bitField0_ & 0x00000400) != 0);
+            }
+            /**
+             * <code>optional int32 jrn = 11;</code>
+             * @return The jrn.
+             */
+            @java.lang.Override
+            public int getJrn() {
+                return jrn_;
+            }
+            /**
+             * <code>optional int32 jrn = 11;</code>
+             * @param value The jrn to set.
+             * @return This builder for chaining.
+             */
+            public Builder setJrn(int value) {
+
+                jrn_ = value;
+                bitField0_ |= 0x00000400;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int32 jrn = 11;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearJrn() {
+                bitField0_ = (bitField0_ & ~0x00000400);
+                jrn_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int line_;
+            /**
+             * <code>optional int32 line = 12;</code>
+             * @return Whether the line field is set.
+             */
+            @java.lang.Override
+            public boolean hasLine() {
+                return ((bitField0_ & 0x00000800) != 0);
+            }
+            /**
+             * <code>optional int32 line = 12;</code>
+             * @return The line.
+             */
+            @java.lang.Override
+            public int getLine() {
+                return line_;
+            }
+            /**
+             * <code>optional int32 line = 12;</code>
+             * @param value The line to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLine(int value) {
+
+                line_ = value;
+                bitField0_ |= 0x00000800;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int32 line = 12;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearLine() {
+                bitField0_ = (bitField0_ & ~0x00000800);
+                line_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object start_ = "";
+            /**
+             * <code>optional string start = 13;</code>
+             * @return Whether the start field is set.
+             */
+            public boolean hasStart() {
+                return ((bitField0_ & 0x00001000) != 0);
+            }
+            /**
+             * <code>optional string start = 13;</code>
+             * @return The start.
+             */
+            public java.lang.String getStart() {
+                java.lang.Object ref = start_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        start_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string start = 13;</code>
+             * @return The bytes for start.
+             */
+            public com.google.protobuf.ByteString getStartBytes() {
+                java.lang.Object ref = start_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    start_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string start = 13;</code>
+             * @param value The start to set.
+             * @return This builder for chaining.
+             */
+            public Builder setStart(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                start_ = value;
+                bitField0_ |= 0x00001000;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string start = 13;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearStart() {
+                start_ = getDefaultInstance().getStart();
+                bitField0_ = (bitField0_ & ~0x00001000);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string start = 13;</code>
+             * @param value The bytes for start to set.
+             * @return This builder for chaining.
+             */
+            public Builder setStartBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                start_ = value;
+                bitField0_ |= 0x00001000;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object loc_ = "";
+            /**
+             * <code>optional string loc = 14;</code>
+             * @return Whether the loc field is set.
+             */
+            public boolean hasLoc() {
+                return ((bitField0_ & 0x00002000) != 0);
+            }
+            /**
+             * <code>optional string loc = 14;</code>
+             * @return The loc.
+             */
+            public java.lang.String getLoc() {
+                java.lang.Object ref = loc_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        loc_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string loc = 14;</code>
+             * @return The bytes for loc.
+             */
+            public com.google.protobuf.ByteString getLocBytes() {
+                java.lang.Object ref = loc_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    loc_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string loc = 14;</code>
+             * @param value The loc to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLoc(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                loc_ = value;
+                bitField0_ |= 0x00002000;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string loc = 14;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearLoc() {
+                loc_ = getDefaultInstance().getLoc();
+                bitField0_ = (bitField0_ & ~0x00002000);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string loc = 14;</code>
+             * @param value The bytes for loc to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLocBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                loc_ = value;
+                bitField0_ |= 0x00002000;
+                onChanged();
+                return this;
+            }
+
+            private int stop_;
+            /**
+             * <code>optional int32 stop = 15;</code>
+             * @return Whether the stop field is set.
+             */
+            @java.lang.Override
+            public boolean hasStop() {
+                return ((bitField0_ & 0x00004000) != 0);
+            }
+            /**
+             * <code>optional int32 stop = 15;</code>
+             * @return The stop.
+             */
+            @java.lang.Override
+            public int getStop() {
+                return stop_;
+            }
+            /**
+             * <code>optional int32 stop = 15;</code>
+             * @param value The stop to set.
+             * @return This builder for chaining.
+             */
+            public Builder setStop(int value) {
+
+                stop_ = value;
+                bitField0_ |= 0x00004000;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int32 stop = 15;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearStop() {
+                bitField0_ = (bitField0_ & ~0x00004000);
+                stop_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object route_ = "";
+            /**
+             * <code>optional string route = 16;</code>
+             * @return Whether the route field is set.
+             */
+            public boolean hasRoute() {
+                return ((bitField0_ & 0x00008000) != 0);
+            }
+            /**
+             * <code>optional string route = 16;</code>
+             * @return The route.
+             */
+            public java.lang.String getRoute() {
+                java.lang.Object ref = route_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        route_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string route = 16;</code>
+             * @return The bytes for route.
+             */
+            public com.google.protobuf.ByteString getRouteBytes() {
+                java.lang.Object ref = route_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    route_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string route = 16;</code>
+             * @param value The route to set.
+             * @return This builder for chaining.
+             */
+            public Builder setRoute(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                route_ = value;
+                bitField0_ |= 0x00008000;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string route = 16;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearRoute() {
+                route_ = getDefaultInstance().getRoute();
+                bitField0_ = (bitField0_ & ~0x00008000);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string route = 16;</code>
+             * @param value The bytes for route to set.
+             * @return This builder for chaining.
+             */
+            public Builder setRouteBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                route_ = value;
+                bitField0_ |= 0x00008000;
+                onChanged();
+                return this;
+            }
+
+            private fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts vehicleCounts_;
+            private com.google.protobuf.SingleFieldBuilderV3<fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts, fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder, fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder> vehicleCountsBuilder_;
+            /**
+             * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+             * @return Whether the vehicleCounts field is set.
+             */
+            public boolean hasVehicleCounts() {
+                return ((bitField0_ & 0x00010000) != 0);
+            }
+            /**
+             * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+             * @return The vehicleCounts.
+             */
+            public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts getVehicleCounts() {
+                if (vehicleCountsBuilder_ == null) {
+                    return vehicleCounts_ == null
+                            ? fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.getDefaultInstance()
+                            : vehicleCounts_;
+                } else {
+                    return vehicleCountsBuilder_.getMessage();
+                }
+            }
+            /**
+             * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+             */
+            public Builder setVehicleCounts(fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts value) {
+                if (vehicleCountsBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    vehicleCounts_ = value;
+                } else {
+                    vehicleCountsBuilder_.setMessage(value);
+                }
+                bitField0_ |= 0x00010000;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+             */
+            public Builder setVehicleCounts(
+                    fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder builderForValue) {
+                if (vehicleCountsBuilder_ == null) {
+                    vehicleCounts_ = builderForValue.build();
+                } else {
+                    vehicleCountsBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00010000;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+             */
+            public Builder mergeVehicleCounts(fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts value) {
+                if (vehicleCountsBuilder_ == null) {
+                    if (((bitField0_ & 0x00010000) != 0) && vehicleCounts_ != null
+                            && vehicleCounts_ != fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts
+                                    .getDefaultInstance()) {
+                        getVehicleCountsBuilder().mergeFrom(value);
+                    } else {
+                        vehicleCounts_ = value;
+                    }
+                } else {
+                    vehicleCountsBuilder_.mergeFrom(value);
+                }
+                bitField0_ |= 0x00010000;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+             */
+            public Builder clearVehicleCounts() {
+                bitField0_ = (bitField0_ & ~0x00010000);
+                vehicleCounts_ = null;
+                if (vehicleCountsBuilder_ != null) {
+                    vehicleCountsBuilder_.dispose();
+                    vehicleCountsBuilder_ = null;
+                }
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+             */
+            public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder getVehicleCountsBuilder() {
+                bitField0_ |= 0x00010000;
+                onChanged();
+                return getVehicleCountsFieldBuilder().getBuilder();
+            }
+            /**
+             * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+             */
+            public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder getVehicleCountsOrBuilder() {
+                if (vehicleCountsBuilder_ != null) {
+                    return vehicleCountsBuilder_.getMessageOrBuilder();
+                } else {
+                    return vehicleCounts_ == null
+                            ? fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.getDefaultInstance()
+                            : vehicleCounts_;
+                }
+            }
+            /**
+             * <code>optional .proto.VehicleCounts vehicleCounts = 17;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts, fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder, fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder> getVehicleCountsFieldBuilder() {
+                if (vehicleCountsBuilder_ == null) {
+                    vehicleCountsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts, fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder, fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder>(
+                            getVehicleCounts(), getParentForChildren(), isClean());
+                    vehicleCounts_ = null;
+                }
+                return vehicleCountsBuilder_;
+            }
+            @java.lang.Override
+            public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:proto.Payload)
+        }
+
+        // @@protoc_insertion_point(class_scope:proto.Payload)
+        private static final fi.hsl.common.passengercount.proto.PassengerCount.Payload DEFAULT_INSTANCE;
+        static {
+            DEFAULT_INSTANCE = new fi.hsl.common.passengercount.proto.PassengerCount.Payload();
+        }
+
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Payload getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        @java.lang.Deprecated
+        public static final com.google.protobuf.Parser<Payload> PARSER = new com.google.protobuf.AbstractParser<Payload>() {
+            @java.lang.Override
+            public Payload parsePartialFrom(com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                    builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                    throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                    throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                            .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+            }
+        };
+
+        public static com.google.protobuf.Parser<Payload> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Payload> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.Payload getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+    public interface VehicleCountsOrBuilder
+            extends
+                // @@protoc_insertion_point(interface_extends:proto.VehicleCounts)
+                com.google.protobuf.MessageOrBuilder {
 
-      memoizedIsInitialized = 1;
-      return true;
-    }
+        /**
+         * <code>optional string countQuality = 1;</code>
+         * @return Whether the countQuality field is set.
+         */
+        boolean hasCountQuality();
+        /**
+         * <code>optional string countQuality = 1;</code>
+         * @return The countQuality.
+         */
+        java.lang.String getCountQuality();
+        /**
+         * <code>optional string countQuality = 1;</code>
+         * @return The bytes for countQuality.
+         */
+        com.google.protobuf.ByteString getCountQualityBytes();
 
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, countQuality_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeInt32(2, vehicleLoad_);
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeDouble(3, vehicleLoadRatio_);
-      }
-      for (int i = 0; i < doorCounts_.size(); i++) {
-        output.writeMessage(4, doorCounts_.get(i));
-      }
-      if (((bitField0_ & 0x00000008) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, extensions_);
-      }
-      getUnknownFields().writeTo(output);
-    }
+        /**
+         * <code>optional int32 vehicleLoad = 2;</code>
+         * @return Whether the vehicleLoad field is set.
+         */
+        boolean hasVehicleLoad();
+        /**
+         * <code>optional int32 vehicleLoad = 2;</code>
+         * @return The vehicleLoad.
+         */
+        int getVehicleLoad();
 
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
+        /**
+         * <code>optional double vehicleLoadRatio = 3;</code>
+         * @return Whether the vehicleLoadRatio field is set.
+         */
+        boolean hasVehicleLoadRatio();
+        /**
+         * <code>optional double vehicleLoadRatio = 3;</code>
+         * @return The vehicleLoadRatio.
+         */
+        double getVehicleLoadRatio();
 
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, countQuality_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, vehicleLoad_);
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(3, vehicleLoadRatio_);
-      }
-      for (int i = 0; i < doorCounts_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, doorCounts_.get(i));
-      }
-      if (((bitField0_ & 0x00000008) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, extensions_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
+        /**
+         * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+         */
+        java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount> getDoorCountsList();
+        /**
+         * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+         */
+        fi.hsl.common.passengercount.proto.PassengerCount.DoorCount getDoorCounts(int index);
+        /**
+         * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+         */
+        int getDoorCountsCount();
+        /**
+         * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+         */
+        java.util.List<? extends fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder> getDoorCountsOrBuilderList();
+        /**
+         * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+         */
+        fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder getDoorCountsOrBuilder(int index);
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts)) {
-        return super.equals(obj);
-      }
-      fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts other = (fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts) obj;
-
-      if (hasCountQuality() != other.hasCountQuality()) return false;
-      if (hasCountQuality()) {
-        if (!getCountQuality()
-            .equals(other.getCountQuality())) return false;
-      }
-      if (hasVehicleLoad() != other.hasVehicleLoad()) return false;
-      if (hasVehicleLoad()) {
-        if (getVehicleLoad()
-            != other.getVehicleLoad()) return false;
-      }
-      if (hasVehicleLoadRatio() != other.hasVehicleLoadRatio()) return false;
-      if (hasVehicleLoadRatio()) {
-        if (java.lang.Double.doubleToLongBits(getVehicleLoadRatio())
-            != java.lang.Double.doubleToLongBits(
-                other.getVehicleLoadRatio())) return false;
-      }
-      if (!getDoorCountsList()
-          .equals(other.getDoorCountsList())) return false;
-      if (hasExtensions() != other.hasExtensions()) return false;
-      if (hasExtensions()) {
-        if (!getExtensions()
-            .equals(other.getExtensions())) return false;
-      }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasCountQuality()) {
-        hash = (37 * hash) + COUNTQUALITY_FIELD_NUMBER;
-        hash = (53 * hash) + getCountQuality().hashCode();
-      }
-      if (hasVehicleLoad()) {
-        hash = (37 * hash) + VEHICLELOAD_FIELD_NUMBER;
-        hash = (53 * hash) + getVehicleLoad();
-      }
-      if (hasVehicleLoadRatio()) {
-        hash = (37 * hash) + VEHICLELOADRATIO_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getVehicleLoadRatio()));
-      }
-      if (getDoorCountsCount() > 0) {
-        hash = (37 * hash) + DOORCOUNTS_FIELD_NUMBER;
-        hash = (53 * hash) + getDoorCountsList().hashCode();
-      }
-      if (hasExtensions()) {
-        hash = (37 * hash) + EXTENSIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getExtensions().hashCode();
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
+        /**
+         * <code>optional string extensions = 5;</code>
+         * @return Whether the extensions field is set.
+         */
+        boolean hasExtensions();
+        /**
+         * <code>optional string extensions = 5;</code>
+         * @return The extensions.
+         */
+        java.lang.String getExtensions();
+        /**
+         * <code>optional string extensions = 5;</code>
+         * @return The bytes for extensions.
+         */
+        com.google.protobuf.ByteString getExtensionsBytes();
     }
     /**
      * Protobuf type {@code proto.VehicleCounts}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:proto.VehicleCounts)
-        fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_VehicleCounts_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_VehicleCounts_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.class, fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder.class);
-      }
-
-      // Construct using fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.newBuilder()
-      private Builder() {
-
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        countQuality_ = "";
-        vehicleLoad_ = 0;
-        vehicleLoadRatio_ = 0D;
-        if (doorCountsBuilder_ == null) {
-          doorCounts_ = java.util.Collections.emptyList();
-        } else {
-          doorCounts_ = null;
-          doorCountsBuilder_.clear();
+    public static final class VehicleCounts extends com.google.protobuf.GeneratedMessageV3
+            implements
+                // @@protoc_insertion_point(message_implements:proto.VehicleCounts)
+                VehicleCountsOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use VehicleCounts.newBuilder() to construct.
+        private VehicleCounts(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
-        extensions_ = "";
-        return this;
-      }
+        private VehicleCounts() {
+            countQuality_ = "";
+            doorCounts_ = java.util.Collections.emptyList();
+            extensions_ = "";
+        }
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_VehicleCounts_descriptor;
-      }
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new VehicleCounts();
+        }
 
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts getDefaultInstanceForType() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.getDefaultInstance();
-      }
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
+        }
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_VehicleCounts_descriptor;
+        }
 
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts build() {
-        fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+            return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_VehicleCounts_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.class,
+                            fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder.class);
         }
-        return result;
-      }
 
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts buildPartial() {
-        fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts result = new fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts result) {
-        if (doorCountsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
-            doorCounts_ = java.util.Collections.unmodifiableList(doorCounts_);
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
-          result.doorCounts_ = doorCounts_;
-        } else {
-          result.doorCounts_ = doorCountsBuilder_.build();
+        private int bitField0_;
+        public static final int COUNTQUALITY_FIELD_NUMBER = 1;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object countQuality_ = "";
+        /**
+         * <code>optional string countQuality = 1;</code>
+         * @return Whether the countQuality field is set.
+         */
+        @java.lang.Override
+        public boolean hasCountQuality() {
+            return ((bitField0_ & 0x00000001) != 0);
         }
-      }
-
-      private void buildPartial0(fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.countQuality_ = countQuality_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.vehicleLoad_ = vehicleLoad_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.vehicleLoadRatio_ = vehicleLoadRatio_;
-          to_bitField0_ |= 0x00000004;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.extensions_ = extensions_;
-          to_bitField0_ |= 0x00000008;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts) {
-          return mergeFrom((fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts other) {
-        if (other == fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.getDefaultInstance()) return this;
-        if (other.hasCountQuality()) {
-          countQuality_ = other.countQuality_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        if (other.hasVehicleLoad()) {
-          setVehicleLoad(other.getVehicleLoad());
-        }
-        if (other.hasVehicleLoadRatio()) {
-          setVehicleLoadRatio(other.getVehicleLoadRatio());
-        }
-        if (doorCountsBuilder_ == null) {
-          if (!other.doorCounts_.isEmpty()) {
-            if (doorCounts_.isEmpty()) {
-              doorCounts_ = other.doorCounts_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+        /**
+         * <code>optional string countQuality = 1;</code>
+         * @return The countQuality.
+         */
+        @java.lang.Override
+        public java.lang.String getCountQuality() {
+            java.lang.Object ref = countQuality_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
-              ensureDoorCountsIsMutable();
-              doorCounts_.addAll(other.doorCounts_);
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    countQuality_ = s;
+                }
+                return s;
             }
-            onChanged();
-          }
-        } else {
-          if (!other.doorCounts_.isEmpty()) {
-            if (doorCountsBuilder_.isEmpty()) {
-              doorCountsBuilder_.dispose();
-              doorCountsBuilder_ = null;
-              doorCounts_ = other.doorCounts_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-              doorCountsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getDoorCountsFieldBuilder() : null;
+        }
+        /**
+         * <code>optional string countQuality = 1;</code>
+         * @return The bytes for countQuality.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getCountQualityBytes() {
+            java.lang.Object ref = countQuality_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                countQuality_ = b;
+                return b;
             } else {
-              doorCountsBuilder_.addAllMessages(other.doorCounts_);
+                return (com.google.protobuf.ByteString) ref;
             }
-          }
         }
-        if (other.hasExtensions()) {
-          extensions_ = other.extensions_;
-          bitField0_ |= 0x00000010;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
+        public static final int VEHICLELOAD_FIELD_NUMBER = 2;
+        private int vehicleLoad_ = 0;
+        /**
+         * <code>optional int32 vehicleLoad = 2;</code>
+         * @return Whether the vehicleLoad field is set.
+         */
+        @java.lang.Override
+        public boolean hasVehicleLoad() {
+            return ((bitField0_ & 0x00000002) != 0);
         }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                countQuality_ = input.readBytes();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 16: {
-                vehicleLoad_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 25: {
-                vehicleLoadRatio_ = input.readDouble();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 25
-              case 34: {
-                fi.hsl.common.passengercount.proto.PassengerCount.DoorCount m =
-                    input.readMessage(
-                        fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.PARSER,
-                        extensionRegistry);
+        /**
+         * <code>optional int32 vehicleLoad = 2;</code>
+         * @return The vehicleLoad.
+         */
+        @java.lang.Override
+        public int getVehicleLoad() {
+            return vehicleLoad_;
+        }
+
+        public static final int VEHICLELOADRATIO_FIELD_NUMBER = 3;
+        private double vehicleLoadRatio_ = 0D;
+        /**
+         * <code>optional double vehicleLoadRatio = 3;</code>
+         * @return Whether the vehicleLoadRatio field is set.
+         */
+        @java.lang.Override
+        public boolean hasVehicleLoadRatio() {
+            return ((bitField0_ & 0x00000004) != 0);
+        }
+        /**
+         * <code>optional double vehicleLoadRatio = 3;</code>
+         * @return The vehicleLoadRatio.
+         */
+        @java.lang.Override
+        public double getVehicleLoadRatio() {
+            return vehicleLoadRatio_;
+        }
+
+        public static final int DOORCOUNTS_FIELD_NUMBER = 4;
+        @SuppressWarnings("serial")
+        private java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount> doorCounts_;
+        /**
+         * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+         */
+        @java.lang.Override
+        public java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount> getDoorCountsList() {
+            return doorCounts_;
+        }
+        /**
+         * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+         */
+        @java.lang.Override
+        public java.util.List<? extends fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder> getDoorCountsOrBuilderList() {
+            return doorCounts_;
+        }
+        /**
+         * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+         */
+        @java.lang.Override
+        public int getDoorCountsCount() {
+            return doorCounts_.size();
+        }
+        /**
+         * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+         */
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount getDoorCounts(int index) {
+            return doorCounts_.get(index);
+        }
+        /**
+         * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+         */
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder getDoorCountsOrBuilder(int index) {
+            return doorCounts_.get(index);
+        }
+
+        public static final int EXTENSIONS_FIELD_NUMBER = 5;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object extensions_ = "";
+        /**
+         * <code>optional string extensions = 5;</code>
+         * @return Whether the extensions field is set.
+         */
+        @java.lang.Override
+        public boolean hasExtensions() {
+            return ((bitField0_ & 0x00000008) != 0);
+        }
+        /**
+         * <code>optional string extensions = 5;</code>
+         * @return The extensions.
+         */
+        @java.lang.Override
+        public java.lang.String getExtensions() {
+            java.lang.Object ref = extensions_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    extensions_ = s;
+                }
+                return s;
+            }
+        }
+        /**
+         * <code>optional string extensions = 5;</code>
+         * @return The bytes for extensions.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getExtensionsBytes() {
+            java.lang.Object ref = extensions_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                extensions_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        private byte memoizedIsInitialized = -1;
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1)
+                return true;
+            if (isInitialized == 0)
+                return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (((bitField0_ & 0x00000001) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, countQuality_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                output.writeInt32(2, vehicleLoad_);
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                output.writeDouble(3, vehicleLoadRatio_);
+            }
+            for (int i = 0; i < doorCounts_.size(); i++) {
+                output.writeMessage(4, doorCounts_.get(i));
+            }
+            if (((bitField0_ & 0x00000008) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 5, extensions_);
+            }
+            getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1)
+                return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, countQuality_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, vehicleLoad_);
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, vehicleLoadRatio_);
+            }
+            for (int i = 0; i < doorCounts_.size(); i++) {
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, doorCounts_.get(i));
+            }
+            if (((bitField0_ & 0x00000008) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, extensions_);
+            }
+            size += getUnknownFields().getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts)) {
+                return super.equals(obj);
+            }
+            fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts other = (fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts) obj;
+
+            if (hasCountQuality() != other.hasCountQuality())
+                return false;
+            if (hasCountQuality()) {
+                if (!getCountQuality().equals(other.getCountQuality()))
+                    return false;
+            }
+            if (hasVehicleLoad() != other.hasVehicleLoad())
+                return false;
+            if (hasVehicleLoad()) {
+                if (getVehicleLoad() != other.getVehicleLoad())
+                    return false;
+            }
+            if (hasVehicleLoadRatio() != other.hasVehicleLoadRatio())
+                return false;
+            if (hasVehicleLoadRatio()) {
+                if (java.lang.Double.doubleToLongBits(getVehicleLoadRatio()) != java.lang.Double
+                        .doubleToLongBits(other.getVehicleLoadRatio()))
+                    return false;
+            }
+            if (!getDoorCountsList().equals(other.getDoorCountsList()))
+                return false;
+            if (hasExtensions() != other.hasExtensions())
+                return false;
+            if (hasExtensions()) {
+                if (!getExtensions().equals(other.getExtensions()))
+                    return false;
+            }
+            if (!getUnknownFields().equals(other.getUnknownFields()))
+                return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasCountQuality()) {
+                hash = (37 * hash) + COUNTQUALITY_FIELD_NUMBER;
+                hash = (53 * hash) + getCountQuality().hashCode();
+            }
+            if (hasVehicleLoad()) {
+                hash = (37 * hash) + VEHICLELOAD_FIELD_NUMBER;
+                hash = (53 * hash) + getVehicleLoad();
+            }
+            if (hasVehicleLoadRatio()) {
+                hash = (37 * hash) + VEHICLELOADRATIO_FIELD_NUMBER;
+                hash = (53 * hash) + com.google.protobuf.Internal
+                        .hashLong(java.lang.Double.doubleToLongBits(getVehicleLoadRatio()));
+            }
+            if (getDoorCountsCount() > 0) {
+                hash = (37 * hash) + DOORCOUNTS_FIELD_NUMBER;
+                hash = (53 * hash) + getDoorCountsList().hashCode();
+            }
+            if (hasExtensions()) {
+                hash = (37 * hash) + EXTENSIONS_FIELD_NUMBER;
+                hash = (53 * hash) + getExtensions().hashCode();
+            }
+            hash = (29 * hash) + getUnknownFields().hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(
+                java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(
+                java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(
+                com.google.protobuf.ByteString data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(
+                com.google.protobuf.ByteString data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(
+                java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(
+                java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseDelimitedFrom(
+                java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseDelimitedFrom(
+                java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+                    extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(
+                com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts parseFrom(
+                com.google.protobuf.CodedInputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+        public static Builder newBuilder(fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         * Protobuf type {@code proto.VehicleCounts}
+         */
+        public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                    // @@protoc_insertion_point(builder_implements:proto.VehicleCounts)
+                    fi.hsl.common.passengercount.proto.PassengerCount.VehicleCountsOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_VehicleCounts_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_VehicleCounts_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.class,
+                                fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.Builder.class);
+            }
+
+            // Construct using fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.newBuilder()
+            private Builder() {
+
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+
+            }
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                bitField0_ = 0;
+                countQuality_ = "";
+                vehicleLoad_ = 0;
+                vehicleLoadRatio_ = 0D;
                 if (doorCountsBuilder_ == null) {
-                  ensureDoorCountsIsMutable();
-                  doorCounts_.add(m);
+                    doorCounts_ = java.util.Collections.emptyList();
                 } else {
-                  doorCountsBuilder_.addMessage(m);
+                    doorCounts_ = null;
+                    doorCountsBuilder_.clear();
                 }
-                break;
-              } // case 34
-              case 42: {
-                extensions_ = input.readBytes();
+                bitField0_ = (bitField0_ & ~0x00000008);
+                extensions_ = "";
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_VehicleCounts_descriptor;
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts getDefaultInstanceForType() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts build() {
+                fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts buildPartial() {
+                fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts result = new fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts(
+                        this);
+                buildPartialRepeatedFields(result);
+                if (bitField0_ != 0) {
+                    buildPartial0(result);
+                }
+                onBuilt();
+                return result;
+            }
+
+            private void buildPartialRepeatedFields(
+                    fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts result) {
+                if (doorCountsBuilder_ == null) {
+                    if (((bitField0_ & 0x00000008) != 0)) {
+                        doorCounts_ = java.util.Collections.unmodifiableList(doorCounts_);
+                        bitField0_ = (bitField0_ & ~0x00000008);
+                    }
+                    result.doorCounts_ = doorCounts_;
+                } else {
+                    result.doorCounts_ = doorCountsBuilder_.build();
+                }
+            }
+
+            private void buildPartial0(fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts result) {
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) != 0)) {
+                    result.countQuality_ = countQuality_;
+                    to_bitField0_ |= 0x00000001;
+                }
+                if (((from_bitField0_ & 0x00000002) != 0)) {
+                    result.vehicleLoad_ = vehicleLoad_;
+                    to_bitField0_ |= 0x00000002;
+                }
+                if (((from_bitField0_ & 0x00000004) != 0)) {
+                    result.vehicleLoadRatio_ = vehicleLoadRatio_;
+                    to_bitField0_ |= 0x00000004;
+                }
+                if (((from_bitField0_ & 0x00000010) != 0)) {
+                    result.extensions_ = extensions_;
+                    to_bitField0_ |= 0x00000008;
+                }
+                result.bitField0_ |= to_bitField0_;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+            @java.lang.Override
+            public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+            @java.lang.Override
+            public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+            @java.lang.Override
+            public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts) {
+                    return mergeFrom((fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts other) {
+                if (other == fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts.getDefaultInstance())
+                    return this;
+                if (other.hasCountQuality()) {
+                    countQuality_ = other.countQuality_;
+                    bitField0_ |= 0x00000001;
+                    onChanged();
+                }
+                if (other.hasVehicleLoad()) {
+                    setVehicleLoad(other.getVehicleLoad());
+                }
+                if (other.hasVehicleLoadRatio()) {
+                    setVehicleLoadRatio(other.getVehicleLoadRatio());
+                }
+                if (doorCountsBuilder_ == null) {
+                    if (!other.doorCounts_.isEmpty()) {
+                        if (doorCounts_.isEmpty()) {
+                            doorCounts_ = other.doorCounts_;
+                            bitField0_ = (bitField0_ & ~0x00000008);
+                        } else {
+                            ensureDoorCountsIsMutable();
+                            doorCounts_.addAll(other.doorCounts_);
+                        }
+                        onChanged();
+                    }
+                } else {
+                    if (!other.doorCounts_.isEmpty()) {
+                        if (doorCountsBuilder_.isEmpty()) {
+                            doorCountsBuilder_.dispose();
+                            doorCountsBuilder_ = null;
+                            doorCounts_ = other.doorCounts_;
+                            bitField0_ = (bitField0_ & ~0x00000008);
+                            doorCountsBuilder_ = com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                                    ? getDoorCountsFieldBuilder()
+                                    : null;
+                        } else {
+                            doorCountsBuilder_.addAllMessages(other.doorCounts_);
+                        }
+                    }
+                }
+                if (other.hasExtensions()) {
+                    extensions_ = other.extensions_;
+                    bitField0_ |= 0x00000010;
+                    onChanged();
+                }
+                this.mergeUnknownFields(other.getUnknownFields());
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+                if (extensionRegistry == null) {
+                    throw new java.lang.NullPointerException();
+                }
+                try {
+                    boolean done = false;
+                    while (!done) {
+                        int tag = input.readTag();
+                        switch (tag) {
+                            case 0 :
+                                done = true;
+                                break;
+                            case 10 : {
+                                countQuality_ = input.readBytes();
+                                bitField0_ |= 0x00000001;
+                                break;
+                            } // case 10
+                            case 16 : {
+                                vehicleLoad_ = input.readInt32();
+                                bitField0_ |= 0x00000002;
+                                break;
+                            } // case 16
+                            case 25 : {
+                                vehicleLoadRatio_ = input.readDouble();
+                                bitField0_ |= 0x00000004;
+                                break;
+                            } // case 25
+                            case 34 : {
+                                fi.hsl.common.passengercount.proto.PassengerCount.DoorCount m = input.readMessage(
+                                        fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.PARSER,
+                                        extensionRegistry);
+                                if (doorCountsBuilder_ == null) {
+                                    ensureDoorCountsIsMutable();
+                                    doorCounts_.add(m);
+                                } else {
+                                    doorCountsBuilder_.addMessage(m);
+                                }
+                                break;
+                            } // case 34
+                            case 42 : {
+                                extensions_ = input.readBytes();
+                                bitField0_ |= 0x00000010;
+                                break;
+                            } // case 42
+                            default : {
+                                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                                    done = true; // was an endgroup tag
+                                }
+                                break;
+                            } // default:
+                        } // switch (tag)
+                    } // while (!done)
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.unwrapIOException();
+                } finally {
+                    onChanged();
+                } // finally
+                return this;
+            }
+            private int bitField0_;
+
+            private java.lang.Object countQuality_ = "";
+            /**
+             * <code>optional string countQuality = 1;</code>
+             * @return Whether the countQuality field is set.
+             */
+            public boolean hasCountQuality() {
+                return ((bitField0_ & 0x00000001) != 0);
+            }
+            /**
+             * <code>optional string countQuality = 1;</code>
+             * @return The countQuality.
+             */
+            public java.lang.String getCountQuality() {
+                java.lang.Object ref = countQuality_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        countQuality_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string countQuality = 1;</code>
+             * @return The bytes for countQuality.
+             */
+            public com.google.protobuf.ByteString getCountQualityBytes() {
+                java.lang.Object ref = countQuality_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    countQuality_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string countQuality = 1;</code>
+             * @param value The countQuality to set.
+             * @return This builder for chaining.
+             */
+            public Builder setCountQuality(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                countQuality_ = value;
+                bitField0_ |= 0x00000001;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string countQuality = 1;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearCountQuality() {
+                countQuality_ = getDefaultInstance().getCountQuality();
+                bitField0_ = (bitField0_ & ~0x00000001);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string countQuality = 1;</code>
+             * @param value The bytes for countQuality to set.
+             * @return This builder for chaining.
+             */
+            public Builder setCountQualityBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                countQuality_ = value;
+                bitField0_ |= 0x00000001;
+                onChanged();
+                return this;
+            }
+
+            private int vehicleLoad_;
+            /**
+             * <code>optional int32 vehicleLoad = 2;</code>
+             * @return Whether the vehicleLoad field is set.
+             */
+            @java.lang.Override
+            public boolean hasVehicleLoad() {
+                return ((bitField0_ & 0x00000002) != 0);
+            }
+            /**
+             * <code>optional int32 vehicleLoad = 2;</code>
+             * @return The vehicleLoad.
+             */
+            @java.lang.Override
+            public int getVehicleLoad() {
+                return vehicleLoad_;
+            }
+            /**
+             * <code>optional int32 vehicleLoad = 2;</code>
+             * @param value The vehicleLoad to set.
+             * @return This builder for chaining.
+             */
+            public Builder setVehicleLoad(int value) {
+
+                vehicleLoad_ = value;
+                bitField0_ |= 0x00000002;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int32 vehicleLoad = 2;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearVehicleLoad() {
+                bitField0_ = (bitField0_ & ~0x00000002);
+                vehicleLoad_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private double vehicleLoadRatio_;
+            /**
+             * <code>optional double vehicleLoadRatio = 3;</code>
+             * @return Whether the vehicleLoadRatio field is set.
+             */
+            @java.lang.Override
+            public boolean hasVehicleLoadRatio() {
+                return ((bitField0_ & 0x00000004) != 0);
+            }
+            /**
+             * <code>optional double vehicleLoadRatio = 3;</code>
+             * @return The vehicleLoadRatio.
+             */
+            @java.lang.Override
+            public double getVehicleLoadRatio() {
+                return vehicleLoadRatio_;
+            }
+            /**
+             * <code>optional double vehicleLoadRatio = 3;</code>
+             * @param value The vehicleLoadRatio to set.
+             * @return This builder for chaining.
+             */
+            public Builder setVehicleLoadRatio(double value) {
+
+                vehicleLoadRatio_ = value;
+                bitField0_ |= 0x00000004;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional double vehicleLoadRatio = 3;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearVehicleLoadRatio() {
+                bitField0_ = (bitField0_ & ~0x00000004);
+                vehicleLoadRatio_ = 0D;
+                onChanged();
+                return this;
+            }
+
+            private java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount> doorCounts_ = java.util.Collections
+                    .emptyList();
+            private void ensureDoorCountsIsMutable() {
+                if (!((bitField0_ & 0x00000008) != 0)) {
+                    doorCounts_ = new java.util.ArrayList<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount>(
+                            doorCounts_);
+                    bitField0_ |= 0x00000008;
+                }
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount, fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder, fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder> doorCountsBuilder_;
+
+            /**
+             * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+             */
+            public java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount> getDoorCountsList() {
+                if (doorCountsBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(doorCounts_);
+                } else {
+                    return doorCountsBuilder_.getMessageList();
+                }
+            }
+            /**
+             * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+             */
+            public int getDoorCountsCount() {
+                if (doorCountsBuilder_ == null) {
+                    return doorCounts_.size();
+                } else {
+                    return doorCountsBuilder_.getCount();
+                }
+            }
+            /**
+             * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+             */
+            public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount getDoorCounts(int index) {
+                if (doorCountsBuilder_ == null) {
+                    return doorCounts_.get(index);
+                } else {
+                    return doorCountsBuilder_.getMessage(index);
+                }
+            }
+            /**
+             * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+             */
+            public Builder setDoorCounts(int index, fi.hsl.common.passengercount.proto.PassengerCount.DoorCount value) {
+                if (doorCountsBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureDoorCountsIsMutable();
+                    doorCounts_.set(index, value);
+                    onChanged();
+                } else {
+                    doorCountsBuilder_.setMessage(index, value);
+                }
+                return this;
+            }
+            /**
+             * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+             */
+            public Builder setDoorCounts(int index,
+                    fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder builderForValue) {
+                if (doorCountsBuilder_ == null) {
+                    ensureDoorCountsIsMutable();
+                    doorCounts_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    doorCountsBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+            /**
+             * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+             */
+            public Builder addDoorCounts(fi.hsl.common.passengercount.proto.PassengerCount.DoorCount value) {
+                if (doorCountsBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureDoorCountsIsMutable();
+                    doorCounts_.add(value);
+                    onChanged();
+                } else {
+                    doorCountsBuilder_.addMessage(value);
+                }
+                return this;
+            }
+            /**
+             * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+             */
+            public Builder addDoorCounts(int index, fi.hsl.common.passengercount.proto.PassengerCount.DoorCount value) {
+                if (doorCountsBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureDoorCountsIsMutable();
+                    doorCounts_.add(index, value);
+                    onChanged();
+                } else {
+                    doorCountsBuilder_.addMessage(index, value);
+                }
+                return this;
+            }
+            /**
+             * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+             */
+            public Builder addDoorCounts(
+                    fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder builderForValue) {
+                if (doorCountsBuilder_ == null) {
+                    ensureDoorCountsIsMutable();
+                    doorCounts_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    doorCountsBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+            /**
+             * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+             */
+            public Builder addDoorCounts(int index,
+                    fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder builderForValue) {
+                if (doorCountsBuilder_ == null) {
+                    ensureDoorCountsIsMutable();
+                    doorCounts_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    doorCountsBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+            /**
+             * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+             */
+            public Builder addAllDoorCounts(
+                    java.lang.Iterable<? extends fi.hsl.common.passengercount.proto.PassengerCount.DoorCount> values) {
+                if (doorCountsBuilder_ == null) {
+                    ensureDoorCountsIsMutable();
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(values, doorCounts_);
+                    onChanged();
+                } else {
+                    doorCountsBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+            /**
+             * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+             */
+            public Builder clearDoorCounts() {
+                if (doorCountsBuilder_ == null) {
+                    doorCounts_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000008);
+                    onChanged();
+                } else {
+                    doorCountsBuilder_.clear();
+                }
+                return this;
+            }
+            /**
+             * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+             */
+            public Builder removeDoorCounts(int index) {
+                if (doorCountsBuilder_ == null) {
+                    ensureDoorCountsIsMutable();
+                    doorCounts_.remove(index);
+                    onChanged();
+                } else {
+                    doorCountsBuilder_.remove(index);
+                }
+                return this;
+            }
+            /**
+             * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+             */
+            public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder getDoorCountsBuilder(int index) {
+                return getDoorCountsFieldBuilder().getBuilder(index);
+            }
+            /**
+             * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+             */
+            public fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder getDoorCountsOrBuilder(
+                    int index) {
+                if (doorCountsBuilder_ == null) {
+                    return doorCounts_.get(index);
+                } else {
+                    return doorCountsBuilder_.getMessageOrBuilder(index);
+                }
+            }
+            /**
+             * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+             */
+            public java.util.List<? extends fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder> getDoorCountsOrBuilderList() {
+                if (doorCountsBuilder_ != null) {
+                    return doorCountsBuilder_.getMessageOrBuilderList();
+                } else {
+                    return java.util.Collections.unmodifiableList(doorCounts_);
+                }
+            }
+            /**
+             * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+             */
+            public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder addDoorCountsBuilder() {
+                return getDoorCountsFieldBuilder()
+                        .addBuilder(fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.getDefaultInstance());
+            }
+            /**
+             * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+             */
+            public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder addDoorCountsBuilder(int index) {
+                return getDoorCountsFieldBuilder().addBuilder(index,
+                        fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.getDefaultInstance());
+            }
+            /**
+             * <code>repeated .proto.DoorCount doorCounts = 4;</code>
+             */
+            public java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder> getDoorCountsBuilderList() {
+                return getDoorCountsFieldBuilder().getBuilderList();
+            }
+            private com.google.protobuf.RepeatedFieldBuilderV3<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount, fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder, fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder> getDoorCountsFieldBuilder() {
+                if (doorCountsBuilder_ == null) {
+                    doorCountsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount, fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder, fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder>(
+                            doorCounts_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                    doorCounts_ = null;
+                }
+                return doorCountsBuilder_;
+            }
+
+            private java.lang.Object extensions_ = "";
+            /**
+             * <code>optional string extensions = 5;</code>
+             * @return Whether the extensions field is set.
+             */
+            public boolean hasExtensions() {
+                return ((bitField0_ & 0x00000010) != 0);
+            }
+            /**
+             * <code>optional string extensions = 5;</code>
+             * @return The extensions.
+             */
+            public java.lang.String getExtensions() {
+                java.lang.Object ref = extensions_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        extensions_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string extensions = 5;</code>
+             * @return The bytes for extensions.
+             */
+            public com.google.protobuf.ByteString getExtensionsBytes() {
+                java.lang.Object ref = extensions_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    extensions_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string extensions = 5;</code>
+             * @param value The extensions to set.
+             * @return This builder for chaining.
+             */
+            public Builder setExtensions(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                extensions_ = value;
                 bitField0_ |= 0x00000010;
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string extensions = 5;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearExtensions() {
+                extensions_ = getDefaultInstance().getExtensions();
+                bitField0_ = (bitField0_ & ~0x00000010);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string extensions = 5;</code>
+             * @param value The bytes for extensions to set.
+             * @return This builder for chaining.
+             */
+            public Builder setExtensionsBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
                 }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
+                extensions_ = value;
+                bitField0_ |= 0x00000010;
+                onChanged();
+                return this;
+            }
+            @java.lang.Override
+            public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
 
-      private java.lang.Object countQuality_ = "";
-      /**
-       * <code>optional string countQuality = 1;</code>
-       * @return Whether the countQuality field is set.
-       */
-      public boolean hasCountQuality() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>optional string countQuality = 1;</code>
-       * @return The countQuality.
-       */
-      public java.lang.String getCountQuality() {
-        java.lang.Object ref = countQuality_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            countQuality_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+            @java.lang.Override
+            public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:proto.VehicleCounts)
         }
-      }
-      /**
-       * <code>optional string countQuality = 1;</code>
-       * @return The bytes for countQuality.
-       */
-      public com.google.protobuf.ByteString
-          getCountQualityBytes() {
-        java.lang.Object ref = countQuality_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          countQuality_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        // @@protoc_insertion_point(class_scope:proto.VehicleCounts)
+        private static final fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts DEFAULT_INSTANCE;
+        static {
+            DEFAULT_INSTANCE = new fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts();
         }
-      }
-      /**
-       * <code>optional string countQuality = 1;</code>
-       * @param value The countQuality to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCountQuality(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        countQuality_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string countQuality = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCountQuality() {
-        countQuality_ = getDefaultInstance().getCountQuality();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string countQuality = 1;</code>
-       * @param value The bytes for countQuality to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCountQualityBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        countQuality_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
 
-      private int vehicleLoad_ ;
-      /**
-       * <code>optional int32 vehicleLoad = 2;</code>
-       * @return Whether the vehicleLoad field is set.
-       */
-      @java.lang.Override
-      public boolean hasVehicleLoad() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <code>optional int32 vehicleLoad = 2;</code>
-       * @return The vehicleLoad.
-       */
-      @java.lang.Override
-      public int getVehicleLoad() {
-        return vehicleLoad_;
-      }
-      /**
-       * <code>optional int32 vehicleLoad = 2;</code>
-       * @param value The vehicleLoad to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVehicleLoad(int value) {
-        
-        vehicleLoad_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 vehicleLoad = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVehicleLoad() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        vehicleLoad_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private double vehicleLoadRatio_ ;
-      /**
-       * <code>optional double vehicleLoadRatio = 3;</code>
-       * @return Whether the vehicleLoadRatio field is set.
-       */
-      @java.lang.Override
-      public boolean hasVehicleLoadRatio() {
-        return ((bitField0_ & 0x00000004) != 0);
-      }
-      /**
-       * <code>optional double vehicleLoadRatio = 3;</code>
-       * @return The vehicleLoadRatio.
-       */
-      @java.lang.Override
-      public double getVehicleLoadRatio() {
-        return vehicleLoadRatio_;
-      }
-      /**
-       * <code>optional double vehicleLoadRatio = 3;</code>
-       * @param value The vehicleLoadRatio to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVehicleLoadRatio(double value) {
-        
-        vehicleLoadRatio_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional double vehicleLoadRatio = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVehicleLoadRatio() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        vehicleLoadRatio_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount> doorCounts_ =
-        java.util.Collections.emptyList();
-      private void ensureDoorCountsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
-          doorCounts_ = new java.util.ArrayList<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount>(doorCounts_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          fi.hsl.common.passengercount.proto.PassengerCount.DoorCount, fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder, fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder> doorCountsBuilder_;
-
-      /**
-       * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-       */
-      public java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount> getDoorCountsList() {
-        if (doorCountsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(doorCounts_);
-        } else {
-          return doorCountsBuilder_.getMessageList();
+        public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts getDefaultInstance() {
+            return DEFAULT_INSTANCE;
         }
-      }
-      /**
-       * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-       */
-      public int getDoorCountsCount() {
-        if (doorCountsBuilder_ == null) {
-          return doorCounts_.size();
-        } else {
-          return doorCountsBuilder_.getCount();
+
+        @java.lang.Deprecated
+        public static final com.google.protobuf.Parser<VehicleCounts> PARSER = new com.google.protobuf.AbstractParser<VehicleCounts>() {
+            @java.lang.Override
+            public VehicleCounts parsePartialFrom(com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                    builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                    throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                    throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                            .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+            }
+        };
+
+        public static com.google.protobuf.Parser<VehicleCounts> parser() {
+            return PARSER;
         }
-      }
-      /**
-       * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-       */
-      public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount getDoorCounts(int index) {
-        if (doorCountsBuilder_ == null) {
-          return doorCounts_.get(index);
-        } else {
-          return doorCountsBuilder_.getMessage(index);
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<VehicleCounts> getParserForType() {
+            return PARSER;
         }
-      }
-      /**
-       * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-       */
-      public Builder setDoorCounts(
-          int index, fi.hsl.common.passengercount.proto.PassengerCount.DoorCount value) {
-        if (doorCountsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureDoorCountsIsMutable();
-          doorCounts_.set(index, value);
-          onChanged();
-        } else {
-          doorCountsBuilder_.setMessage(index, value);
+
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
         }
-        return this;
-      }
-      /**
-       * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-       */
-      public Builder setDoorCounts(
-          int index, fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder builderForValue) {
-        if (doorCountsBuilder_ == null) {
-          ensureDoorCountsIsMutable();
-          doorCounts_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          doorCountsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-       */
-      public Builder addDoorCounts(fi.hsl.common.passengercount.proto.PassengerCount.DoorCount value) {
-        if (doorCountsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureDoorCountsIsMutable();
-          doorCounts_.add(value);
-          onChanged();
-        } else {
-          doorCountsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-       */
-      public Builder addDoorCounts(
-          int index, fi.hsl.common.passengercount.proto.PassengerCount.DoorCount value) {
-        if (doorCountsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureDoorCountsIsMutable();
-          doorCounts_.add(index, value);
-          onChanged();
-        } else {
-          doorCountsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-       */
-      public Builder addDoorCounts(
-          fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder builderForValue) {
-        if (doorCountsBuilder_ == null) {
-          ensureDoorCountsIsMutable();
-          doorCounts_.add(builderForValue.build());
-          onChanged();
-        } else {
-          doorCountsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-       */
-      public Builder addDoorCounts(
-          int index, fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder builderForValue) {
-        if (doorCountsBuilder_ == null) {
-          ensureDoorCountsIsMutable();
-          doorCounts_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          doorCountsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-       */
-      public Builder addAllDoorCounts(
-          java.lang.Iterable<? extends fi.hsl.common.passengercount.proto.PassengerCount.DoorCount> values) {
-        if (doorCountsBuilder_ == null) {
-          ensureDoorCountsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, doorCounts_);
-          onChanged();
-        } else {
-          doorCountsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-       */
-      public Builder clearDoorCounts() {
-        if (doorCountsBuilder_ == null) {
-          doorCounts_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-          onChanged();
-        } else {
-          doorCountsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-       */
-      public Builder removeDoorCounts(int index) {
-        if (doorCountsBuilder_ == null) {
-          ensureDoorCountsIsMutable();
-          doorCounts_.remove(index);
-          onChanged();
-        } else {
-          doorCountsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-       */
-      public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder getDoorCountsBuilder(
-          int index) {
-        return getDoorCountsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-       */
-      public fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder getDoorCountsOrBuilder(
-          int index) {
-        if (doorCountsBuilder_ == null) {
-          return doorCounts_.get(index);  } else {
-          return doorCountsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-       */
-      public java.util.List<? extends fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder> 
-           getDoorCountsOrBuilderList() {
-        if (doorCountsBuilder_ != null) {
-          return doorCountsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(doorCounts_);
-        }
-      }
-      /**
-       * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-       */
-      public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder addDoorCountsBuilder() {
-        return getDoorCountsFieldBuilder().addBuilder(
-            fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-       */
-      public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder addDoorCountsBuilder(
-          int index) {
-        return getDoorCountsFieldBuilder().addBuilder(
-            index, fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .proto.DoorCount doorCounts = 4;</code>
-       */
-      public java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder> 
-           getDoorCountsBuilderList() {
-        return getDoorCountsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          fi.hsl.common.passengercount.proto.PassengerCount.DoorCount, fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder, fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder> 
-          getDoorCountsFieldBuilder() {
-        if (doorCountsBuilder_ == null) {
-          doorCountsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              fi.hsl.common.passengercount.proto.PassengerCount.DoorCount, fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder, fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder>(
-                  doorCounts_,
-                  ((bitField0_ & 0x00000008) != 0),
-                  getParentForChildren(),
-                  isClean());
-          doorCounts_ = null;
-        }
-        return doorCountsBuilder_;
-      }
 
-      private java.lang.Object extensions_ = "";
-      /**
-       * <code>optional string extensions = 5;</code>
-       * @return Whether the extensions field is set.
-       */
-      public boolean hasExtensions() {
-        return ((bitField0_ & 0x00000010) != 0);
-      }
-      /**
-       * <code>optional string extensions = 5;</code>
-       * @return The extensions.
-       */
-      public java.lang.String getExtensions() {
-        java.lang.Object ref = extensions_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            extensions_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string extensions = 5;</code>
-       * @return The bytes for extensions.
-       */
-      public com.google.protobuf.ByteString
-          getExtensionsBytes() {
-        java.lang.Object ref = extensions_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          extensions_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string extensions = 5;</code>
-       * @param value The extensions to set.
-       * @return This builder for chaining.
-       */
-      public Builder setExtensions(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        extensions_ = value;
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string extensions = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearExtensions() {
-        extensions_ = getDefaultInstance().getExtensions();
-        bitField0_ = (bitField0_ & ~0x00000010);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string extensions = 5;</code>
-       * @param value The bytes for extensions to set.
-       * @return This builder for chaining.
-       */
-      public Builder setExtensionsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        extensions_ = value;
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:proto.VehicleCounts)
     }
 
-    // @@protoc_insertion_point(class_scope:proto.VehicleCounts)
-    private static final fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts();
-    }
+    public interface DoorCountOrBuilder
+            extends
+                // @@protoc_insertion_point(interface_extends:proto.DoorCount)
+                com.google.protobuf.MessageOrBuilder {
 
-    public static fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
+        /**
+         * <code>optional string door = 1;</code>
+         * @return Whether the door field is set.
+         */
+        boolean hasDoor();
+        /**
+         * <code>optional string door = 1;</code>
+         * @return The door.
+         */
+        java.lang.String getDoor();
+        /**
+         * <code>optional string door = 1;</code>
+         * @return The bytes for door.
+         */
+        com.google.protobuf.ByteString getDoorBytes();
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<VehicleCounts>
-        PARSER = new com.google.protobuf.AbstractParser<VehicleCounts>() {
-      @java.lang.Override
-      public VehicleCounts parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<VehicleCounts> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<VehicleCounts> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public fi.hsl.common.passengercount.proto.PassengerCount.VehicleCounts getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface DoorCountOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:proto.DoorCount)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional string door = 1;</code>
-     * @return Whether the door field is set.
-     */
-    boolean hasDoor();
-    /**
-     * <code>optional string door = 1;</code>
-     * @return The door.
-     */
-    java.lang.String getDoor();
-    /**
-     * <code>optional string door = 1;</code>
-     * @return The bytes for door.
-     */
-    com.google.protobuf.ByteString
-        getDoorBytes();
-
-    /**
-     * <code>repeated .proto.Count count = 2;</code>
-     */
-    java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.Count> 
-        getCountList();
-    /**
-     * <code>repeated .proto.Count count = 2;</code>
-     */
-    fi.hsl.common.passengercount.proto.PassengerCount.Count getCount(int index);
-    /**
-     * <code>repeated .proto.Count count = 2;</code>
-     */
-    int getCountCount();
-    /**
-     * <code>repeated .proto.Count count = 2;</code>
-     */
-    java.util.List<? extends fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder> 
-        getCountOrBuilderList();
-    /**
-     * <code>repeated .proto.Count count = 2;</code>
-     */
-    fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder getCountOrBuilder(
-        int index);
-  }
-  /**
-   * Protobuf type {@code proto.DoorCount}
-   */
-  public static final class DoorCount extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:proto.DoorCount)
-      DoorCountOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use DoorCount.newBuilder() to construct.
-    private DoorCount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private DoorCount() {
-      door_ = "";
-      count_ = java.util.Collections.emptyList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new DoorCount();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_DoorCount_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_DoorCount_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.class, fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int DOOR_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object door_ = "";
-    /**
-     * <code>optional string door = 1;</code>
-     * @return Whether the door field is set.
-     */
-    @java.lang.Override
-    public boolean hasDoor() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>optional string door = 1;</code>
-     * @return The door.
-     */
-    @java.lang.Override
-    public java.lang.String getDoor() {
-      java.lang.Object ref = door_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          door_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string door = 1;</code>
-     * @return The bytes for door.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDoorBytes() {
-      java.lang.Object ref = door_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        door_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int COUNT_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.Count> count_;
-    /**
-     * <code>repeated .proto.Count count = 2;</code>
-     */
-    @java.lang.Override
-    public java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.Count> getCountList() {
-      return count_;
-    }
-    /**
-     * <code>repeated .proto.Count count = 2;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder> 
-        getCountOrBuilderList() {
-      return count_;
-    }
-    /**
-     * <code>repeated .proto.Count count = 2;</code>
-     */
-    @java.lang.Override
-    public int getCountCount() {
-      return count_.size();
-    }
-    /**
-     * <code>repeated .proto.Count count = 2;</code>
-     */
-    @java.lang.Override
-    public fi.hsl.common.passengercount.proto.PassengerCount.Count getCount(int index) {
-      return count_.get(index);
-    }
-    /**
-     * <code>repeated .proto.Count count = 2;</code>
-     */
-    @java.lang.Override
-    public fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder getCountOrBuilder(
-        int index) {
-      return count_.get(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, door_);
-      }
-      for (int i = 0; i < count_.size(); i++) {
-        output.writeMessage(2, count_.get(i));
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, door_);
-      }
-      for (int i = 0; i < count_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, count_.get(i));
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof fi.hsl.common.passengercount.proto.PassengerCount.DoorCount)) {
-        return super.equals(obj);
-      }
-      fi.hsl.common.passengercount.proto.PassengerCount.DoorCount other = (fi.hsl.common.passengercount.proto.PassengerCount.DoorCount) obj;
-
-      if (hasDoor() != other.hasDoor()) return false;
-      if (hasDoor()) {
-        if (!getDoor()
-            .equals(other.getDoor())) return false;
-      }
-      if (!getCountList()
-          .equals(other.getCountList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasDoor()) {
-        hash = (37 * hash) + DOOR_FIELD_NUMBER;
-        hash = (53 * hash) + getDoor().hashCode();
-      }
-      if (getCountCount() > 0) {
-        hash = (37 * hash) + COUNT_FIELD_NUMBER;
-        hash = (53 * hash) + getCountList().hashCode();
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(fi.hsl.common.passengercount.proto.PassengerCount.DoorCount prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
+        /**
+         * <code>repeated .proto.Count count = 2;</code>
+         */
+        java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.Count> getCountList();
+        /**
+         * <code>repeated .proto.Count count = 2;</code>
+         */
+        fi.hsl.common.passengercount.proto.PassengerCount.Count getCount(int index);
+        /**
+         * <code>repeated .proto.Count count = 2;</code>
+         */
+        int getCountCount();
+        /**
+         * <code>repeated .proto.Count count = 2;</code>
+         */
+        java.util.List<? extends fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder> getCountOrBuilderList();
+        /**
+         * <code>repeated .proto.Count count = 2;</code>
+         */
+        fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder getCountOrBuilder(int index);
     }
     /**
      * Protobuf type {@code proto.DoorCount}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:proto.DoorCount)
-        fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_DoorCount_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_DoorCount_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.class, fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder.class);
-      }
-
-      // Construct using fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.newBuilder()
-      private Builder() {
-
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        door_ = "";
-        if (countBuilder_ == null) {
-          count_ = java.util.Collections.emptyList();
-        } else {
-          count_ = null;
-          countBuilder_.clear();
+    public static final class DoorCount extends com.google.protobuf.GeneratedMessageV3
+            implements
+                // @@protoc_insertion_point(message_implements:proto.DoorCount)
+                DoorCountOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use DoorCount.newBuilder() to construct.
+        private DoorCount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_DoorCount_descriptor;
-      }
-
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount getDefaultInstanceForType() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount build() {
-        fi.hsl.common.passengercount.proto.PassengerCount.DoorCount result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private DoorCount() {
+            door_ = "";
+            count_ = java.util.Collections.emptyList();
         }
-        return result;
-      }
 
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount buildPartial() {
-        fi.hsl.common.passengercount.proto.PassengerCount.DoorCount result = new fi.hsl.common.passengercount.proto.PassengerCount.DoorCount(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(fi.hsl.common.passengercount.proto.PassengerCount.DoorCount result) {
-        if (countBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            count_ = java.util.Collections.unmodifiableList(count_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.count_ = count_;
-        } else {
-          result.count_ = countBuilder_.build();
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new DoorCount();
         }
-      }
 
-      private void buildPartial0(fi.hsl.common.passengercount.proto.PassengerCount.DoorCount result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.door_ = door_;
-          to_bitField0_ |= 0x00000001;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
         }
-        result.bitField0_ |= to_bitField0_;
-      }
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_DoorCount_descriptor;
+        }
 
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof fi.hsl.common.passengercount.proto.PassengerCount.DoorCount) {
-          return mergeFrom((fi.hsl.common.passengercount.proto.PassengerCount.DoorCount)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+            return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_DoorCount_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.class,
+                            fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder.class);
         }
-      }
 
-      public Builder mergeFrom(fi.hsl.common.passengercount.proto.PassengerCount.DoorCount other) {
-        if (other == fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.getDefaultInstance()) return this;
-        if (other.hasDoor()) {
-          door_ = other.door_;
-          bitField0_ |= 0x00000001;
-          onChanged();
+        private int bitField0_;
+        public static final int DOOR_FIELD_NUMBER = 1;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object door_ = "";
+        /**
+         * <code>optional string door = 1;</code>
+         * @return Whether the door field is set.
+         */
+        @java.lang.Override
+        public boolean hasDoor() {
+            return ((bitField0_ & 0x00000001) != 0);
         }
-        if (countBuilder_ == null) {
-          if (!other.count_.isEmpty()) {
-            if (count_.isEmpty()) {
-              count_ = other.count_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+        /**
+         * <code>optional string door = 1;</code>
+         * @return The door.
+         */
+        @java.lang.Override
+        public java.lang.String getDoor() {
+            java.lang.Object ref = door_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
-              ensureCountIsMutable();
-              count_.addAll(other.count_);
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    door_ = s;
+                }
+                return s;
             }
-            onChanged();
-          }
-        } else {
-          if (!other.count_.isEmpty()) {
-            if (countBuilder_.isEmpty()) {
-              countBuilder_.dispose();
-              countBuilder_ = null;
-              count_ = other.count_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              countBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getCountFieldBuilder() : null;
+        }
+        /**
+         * <code>optional string door = 1;</code>
+         * @return The bytes for door.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getDoorBytes() {
+            java.lang.Object ref = door_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                door_ = b;
+                return b;
             } else {
-              countBuilder_.addAllMessages(other.count_);
+                return (com.google.protobuf.ByteString) ref;
             }
-          }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
+        public static final int COUNT_FIELD_NUMBER = 2;
+        @SuppressWarnings("serial")
+        private java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.Count> count_;
+        /**
+         * <code>repeated .proto.Count count = 2;</code>
+         */
+        @java.lang.Override
+        public java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.Count> getCountList() {
+            return count_;
         }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                door_ = input.readBytes();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                fi.hsl.common.passengercount.proto.PassengerCount.Count m =
-                    input.readMessage(
-                        fi.hsl.common.passengercount.proto.PassengerCount.Count.PARSER,
-                        extensionRegistry);
+        /**
+         * <code>repeated .proto.Count count = 2;</code>
+         */
+        @java.lang.Override
+        public java.util.List<? extends fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder> getCountOrBuilderList() {
+            return count_;
+        }
+        /**
+         * <code>repeated .proto.Count count = 2;</code>
+         */
+        @java.lang.Override
+        public int getCountCount() {
+            return count_.size();
+        }
+        /**
+         * <code>repeated .proto.Count count = 2;</code>
+         */
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.Count getCount(int index) {
+            return count_.get(index);
+        }
+        /**
+         * <code>repeated .proto.Count count = 2;</code>
+         */
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder getCountOrBuilder(int index) {
+            return count_.get(index);
+        }
+
+        private byte memoizedIsInitialized = -1;
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1)
+                return true;
+            if (isInitialized == 0)
+                return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (((bitField0_ & 0x00000001) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, door_);
+            }
+            for (int i = 0; i < count_.size(); i++) {
+                output.writeMessage(2, count_.get(i));
+            }
+            getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1)
+                return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, door_);
+            }
+            for (int i = 0; i < count_.size(); i++) {
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, count_.get(i));
+            }
+            size += getUnknownFields().getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof fi.hsl.common.passengercount.proto.PassengerCount.DoorCount)) {
+                return super.equals(obj);
+            }
+            fi.hsl.common.passengercount.proto.PassengerCount.DoorCount other = (fi.hsl.common.passengercount.proto.PassengerCount.DoorCount) obj;
+
+            if (hasDoor() != other.hasDoor())
+                return false;
+            if (hasDoor()) {
+                if (!getDoor().equals(other.getDoor()))
+                    return false;
+            }
+            if (!getCountList().equals(other.getCountList()))
+                return false;
+            if (!getUnknownFields().equals(other.getUnknownFields()))
+                return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasDoor()) {
+                hash = (37 * hash) + DOOR_FIELD_NUMBER;
+                hash = (53 * hash) + getDoor().hashCode();
+            }
+            if (getCountCount() > 0) {
+                hash = (37 * hash) + COUNT_FIELD_NUMBER;
+                hash = (53 * hash) + getCountList().hashCode();
+            }
+            hash = (29 * hash) + getUnknownFields().hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(
+                com.google.protobuf.ByteString data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(
+                com.google.protobuf.ByteString data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseDelimitedFrom(
+                java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseDelimitedFrom(
+                java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+                    extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(
+                com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount parseFrom(
+                com.google.protobuf.CodedInputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+        public static Builder newBuilder(fi.hsl.common.passengercount.proto.PassengerCount.DoorCount prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         * Protobuf type {@code proto.DoorCount}
+         */
+        public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                    // @@protoc_insertion_point(builder_implements:proto.DoorCount)
+                    fi.hsl.common.passengercount.proto.PassengerCount.DoorCountOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_DoorCount_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_DoorCount_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.class,
+                                fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.Builder.class);
+            }
+
+            // Construct using fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.newBuilder()
+            private Builder() {
+
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+
+            }
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                bitField0_ = 0;
+                door_ = "";
                 if (countBuilder_ == null) {
-                  ensureCountIsMutable();
-                  count_.add(m);
+                    count_ = java.util.Collections.emptyList();
                 } else {
-                  countBuilder_.addMessage(m);
+                    count_ = null;
+                    countBuilder_.clear();
                 }
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
+                bitField0_ = (bitField0_ & ~0x00000002);
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_DoorCount_descriptor;
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount getDefaultInstanceForType() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount build() {
+                fi.hsl.common.passengercount.proto.PassengerCount.DoorCount result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
                 }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
+                return result;
+            }
 
-      private java.lang.Object door_ = "";
-      /**
-       * <code>optional string door = 1;</code>
-       * @return Whether the door field is set.
-       */
-      public boolean hasDoor() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>optional string door = 1;</code>
-       * @return The door.
-       */
-      public java.lang.String getDoor() {
-        java.lang.Object ref = door_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            door_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount buildPartial() {
+                fi.hsl.common.passengercount.proto.PassengerCount.DoorCount result = new fi.hsl.common.passengercount.proto.PassengerCount.DoorCount(
+                        this);
+                buildPartialRepeatedFields(result);
+                if (bitField0_ != 0) {
+                    buildPartial0(result);
+                }
+                onBuilt();
+                return result;
+            }
+
+            private void buildPartialRepeatedFields(
+                    fi.hsl.common.passengercount.proto.PassengerCount.DoorCount result) {
+                if (countBuilder_ == null) {
+                    if (((bitField0_ & 0x00000002) != 0)) {
+                        count_ = java.util.Collections.unmodifiableList(count_);
+                        bitField0_ = (bitField0_ & ~0x00000002);
+                    }
+                    result.count_ = count_;
+                } else {
+                    result.count_ = countBuilder_.build();
+                }
+            }
+
+            private void buildPartial0(fi.hsl.common.passengercount.proto.PassengerCount.DoorCount result) {
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) != 0)) {
+                    result.door_ = door_;
+                    to_bitField0_ |= 0x00000001;
+                }
+                result.bitField0_ |= to_bitField0_;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+            @java.lang.Override
+            public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+            @java.lang.Override
+            public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+            @java.lang.Override
+            public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof fi.hsl.common.passengercount.proto.PassengerCount.DoorCount) {
+                    return mergeFrom((fi.hsl.common.passengercount.proto.PassengerCount.DoorCount) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(fi.hsl.common.passengercount.proto.PassengerCount.DoorCount other) {
+                if (other == fi.hsl.common.passengercount.proto.PassengerCount.DoorCount.getDefaultInstance())
+                    return this;
+                if (other.hasDoor()) {
+                    door_ = other.door_;
+                    bitField0_ |= 0x00000001;
+                    onChanged();
+                }
+                if (countBuilder_ == null) {
+                    if (!other.count_.isEmpty()) {
+                        if (count_.isEmpty()) {
+                            count_ = other.count_;
+                            bitField0_ = (bitField0_ & ~0x00000002);
+                        } else {
+                            ensureCountIsMutable();
+                            count_.addAll(other.count_);
+                        }
+                        onChanged();
+                    }
+                } else {
+                    if (!other.count_.isEmpty()) {
+                        if (countBuilder_.isEmpty()) {
+                            countBuilder_.dispose();
+                            countBuilder_ = null;
+                            count_ = other.count_;
+                            bitField0_ = (bitField0_ & ~0x00000002);
+                            countBuilder_ = com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                                    ? getCountFieldBuilder()
+                                    : null;
+                        } else {
+                            countBuilder_.addAllMessages(other.count_);
+                        }
+                    }
+                }
+                this.mergeUnknownFields(other.getUnknownFields());
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+                if (extensionRegistry == null) {
+                    throw new java.lang.NullPointerException();
+                }
+                try {
+                    boolean done = false;
+                    while (!done) {
+                        int tag = input.readTag();
+                        switch (tag) {
+                            case 0 :
+                                done = true;
+                                break;
+                            case 10 : {
+                                door_ = input.readBytes();
+                                bitField0_ |= 0x00000001;
+                                break;
+                            } // case 10
+                            case 18 : {
+                                fi.hsl.common.passengercount.proto.PassengerCount.Count m = input.readMessage(
+                                        fi.hsl.common.passengercount.proto.PassengerCount.Count.PARSER,
+                                        extensionRegistry);
+                                if (countBuilder_ == null) {
+                                    ensureCountIsMutable();
+                                    count_.add(m);
+                                } else {
+                                    countBuilder_.addMessage(m);
+                                }
+                                break;
+                            } // case 18
+                            default : {
+                                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                                    done = true; // was an endgroup tag
+                                }
+                                break;
+                            } // default:
+                        } // switch (tag)
+                    } // while (!done)
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.unwrapIOException();
+                } finally {
+                    onChanged();
+                } // finally
+                return this;
+            }
+            private int bitField0_;
+
+            private java.lang.Object door_ = "";
+            /**
+             * <code>optional string door = 1;</code>
+             * @return Whether the door field is set.
+             */
+            public boolean hasDoor() {
+                return ((bitField0_ & 0x00000001) != 0);
+            }
+            /**
+             * <code>optional string door = 1;</code>
+             * @return The door.
+             */
+            public java.lang.String getDoor() {
+                java.lang.Object ref = door_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        door_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <code>optional string door = 1;</code>
+             * @return The bytes for door.
+             */
+            public com.google.protobuf.ByteString getDoorBytes() {
+                java.lang.Object ref = door_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    door_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>optional string door = 1;</code>
+             * @param value The door to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDoor(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                door_ = value;
+                bitField0_ |= 0x00000001;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string door = 1;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearDoor() {
+                door_ = getDefaultInstance().getDoor();
+                bitField0_ = (bitField0_ & ~0x00000001);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional string door = 1;</code>
+             * @param value The bytes for door to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDoorBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                door_ = value;
+                bitField0_ |= 0x00000001;
+                onChanged();
+                return this;
+            }
+
+            private java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.Count> count_ = java.util.Collections
+                    .emptyList();
+            private void ensureCountIsMutable() {
+                if (!((bitField0_ & 0x00000002) != 0)) {
+                    count_ = new java.util.ArrayList<fi.hsl.common.passengercount.proto.PassengerCount.Count>(count_);
+                    bitField0_ |= 0x00000002;
+                }
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<fi.hsl.common.passengercount.proto.PassengerCount.Count, fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder, fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder> countBuilder_;
+
+            /**
+             * <code>repeated .proto.Count count = 2;</code>
+             */
+            public java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.Count> getCountList() {
+                if (countBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(count_);
+                } else {
+                    return countBuilder_.getMessageList();
+                }
+            }
+            /**
+             * <code>repeated .proto.Count count = 2;</code>
+             */
+            public int getCountCount() {
+                if (countBuilder_ == null) {
+                    return count_.size();
+                } else {
+                    return countBuilder_.getCount();
+                }
+            }
+            /**
+             * <code>repeated .proto.Count count = 2;</code>
+             */
+            public fi.hsl.common.passengercount.proto.PassengerCount.Count getCount(int index) {
+                if (countBuilder_ == null) {
+                    return count_.get(index);
+                } else {
+                    return countBuilder_.getMessage(index);
+                }
+            }
+            /**
+             * <code>repeated .proto.Count count = 2;</code>
+             */
+            public Builder setCount(int index, fi.hsl.common.passengercount.proto.PassengerCount.Count value) {
+                if (countBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureCountIsMutable();
+                    count_.set(index, value);
+                    onChanged();
+                } else {
+                    countBuilder_.setMessage(index, value);
+                }
+                return this;
+            }
+            /**
+             * <code>repeated .proto.Count count = 2;</code>
+             */
+            public Builder setCount(int index,
+                    fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder builderForValue) {
+                if (countBuilder_ == null) {
+                    ensureCountIsMutable();
+                    count_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    countBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+            /**
+             * <code>repeated .proto.Count count = 2;</code>
+             */
+            public Builder addCount(fi.hsl.common.passengercount.proto.PassengerCount.Count value) {
+                if (countBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureCountIsMutable();
+                    count_.add(value);
+                    onChanged();
+                } else {
+                    countBuilder_.addMessage(value);
+                }
+                return this;
+            }
+            /**
+             * <code>repeated .proto.Count count = 2;</code>
+             */
+            public Builder addCount(int index, fi.hsl.common.passengercount.proto.PassengerCount.Count value) {
+                if (countBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureCountIsMutable();
+                    count_.add(index, value);
+                    onChanged();
+                } else {
+                    countBuilder_.addMessage(index, value);
+                }
+                return this;
+            }
+            /**
+             * <code>repeated .proto.Count count = 2;</code>
+             */
+            public Builder addCount(fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder builderForValue) {
+                if (countBuilder_ == null) {
+                    ensureCountIsMutable();
+                    count_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    countBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+            /**
+             * <code>repeated .proto.Count count = 2;</code>
+             */
+            public Builder addCount(int index,
+                    fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder builderForValue) {
+                if (countBuilder_ == null) {
+                    ensureCountIsMutable();
+                    count_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    countBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+            /**
+             * <code>repeated .proto.Count count = 2;</code>
+             */
+            public Builder addAllCount(
+                    java.lang.Iterable<? extends fi.hsl.common.passengercount.proto.PassengerCount.Count> values) {
+                if (countBuilder_ == null) {
+                    ensureCountIsMutable();
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(values, count_);
+                    onChanged();
+                } else {
+                    countBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+            /**
+             * <code>repeated .proto.Count count = 2;</code>
+             */
+            public Builder clearCount() {
+                if (countBuilder_ == null) {
+                    count_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000002);
+                    onChanged();
+                } else {
+                    countBuilder_.clear();
+                }
+                return this;
+            }
+            /**
+             * <code>repeated .proto.Count count = 2;</code>
+             */
+            public Builder removeCount(int index) {
+                if (countBuilder_ == null) {
+                    ensureCountIsMutable();
+                    count_.remove(index);
+                    onChanged();
+                } else {
+                    countBuilder_.remove(index);
+                }
+                return this;
+            }
+            /**
+             * <code>repeated .proto.Count count = 2;</code>
+             */
+            public fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder getCountBuilder(int index) {
+                return getCountFieldBuilder().getBuilder(index);
+            }
+            /**
+             * <code>repeated .proto.Count count = 2;</code>
+             */
+            public fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder getCountOrBuilder(int index) {
+                if (countBuilder_ == null) {
+                    return count_.get(index);
+                } else {
+                    return countBuilder_.getMessageOrBuilder(index);
+                }
+            }
+            /**
+             * <code>repeated .proto.Count count = 2;</code>
+             */
+            public java.util.List<? extends fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder> getCountOrBuilderList() {
+                if (countBuilder_ != null) {
+                    return countBuilder_.getMessageOrBuilderList();
+                } else {
+                    return java.util.Collections.unmodifiableList(count_);
+                }
+            }
+            /**
+             * <code>repeated .proto.Count count = 2;</code>
+             */
+            public fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder addCountBuilder() {
+                return getCountFieldBuilder()
+                        .addBuilder(fi.hsl.common.passengercount.proto.PassengerCount.Count.getDefaultInstance());
+            }
+            /**
+             * <code>repeated .proto.Count count = 2;</code>
+             */
+            public fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder addCountBuilder(int index) {
+                return getCountFieldBuilder().addBuilder(index,
+                        fi.hsl.common.passengercount.proto.PassengerCount.Count.getDefaultInstance());
+            }
+            /**
+             * <code>repeated .proto.Count count = 2;</code>
+             */
+            public java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder> getCountBuilderList() {
+                return getCountFieldBuilder().getBuilderList();
+            }
+            private com.google.protobuf.RepeatedFieldBuilderV3<fi.hsl.common.passengercount.proto.PassengerCount.Count, fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder, fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder> getCountFieldBuilder() {
+                if (countBuilder_ == null) {
+                    countBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<fi.hsl.common.passengercount.proto.PassengerCount.Count, fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder, fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder>(
+                            count_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                    count_ = null;
+                }
+                return countBuilder_;
+            }
+            @java.lang.Override
+            public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:proto.DoorCount)
         }
-      }
-      /**
-       * <code>optional string door = 1;</code>
-       * @return The bytes for door.
-       */
-      public com.google.protobuf.ByteString
-          getDoorBytes() {
-        java.lang.Object ref = door_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          door_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        // @@protoc_insertion_point(class_scope:proto.DoorCount)
+        private static final fi.hsl.common.passengercount.proto.PassengerCount.DoorCount DEFAULT_INSTANCE;
+        static {
+            DEFAULT_INSTANCE = new fi.hsl.common.passengercount.proto.PassengerCount.DoorCount();
         }
-      }
-      /**
-       * <code>optional string door = 1;</code>
-       * @param value The door to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDoor(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        door_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string door = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDoor() {
-        door_ = getDefaultInstance().getDoor();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string door = 1;</code>
-       * @param value The bytes for door to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDoorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        door_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
 
-      private java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.Count> count_ =
-        java.util.Collections.emptyList();
-      private void ensureCountIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          count_ = new java.util.ArrayList<fi.hsl.common.passengercount.proto.PassengerCount.Count>(count_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          fi.hsl.common.passengercount.proto.PassengerCount.Count, fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder, fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder> countBuilder_;
-
-      /**
-       * <code>repeated .proto.Count count = 2;</code>
-       */
-      public java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.Count> getCountList() {
-        if (countBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(count_);
-        } else {
-          return countBuilder_.getMessageList();
+        public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount getDefaultInstance() {
+            return DEFAULT_INSTANCE;
         }
-      }
-      /**
-       * <code>repeated .proto.Count count = 2;</code>
-       */
-      public int getCountCount() {
-        if (countBuilder_ == null) {
-          return count_.size();
-        } else {
-          return countBuilder_.getCount();
+
+        @java.lang.Deprecated
+        public static final com.google.protobuf.Parser<DoorCount> PARSER = new com.google.protobuf.AbstractParser<DoorCount>() {
+            @java.lang.Override
+            public DoorCount parsePartialFrom(com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                    builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                    throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                    throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                            .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+            }
+        };
+
+        public static com.google.protobuf.Parser<DoorCount> parser() {
+            return PARSER;
         }
-      }
-      /**
-       * <code>repeated .proto.Count count = 2;</code>
-       */
-      public fi.hsl.common.passengercount.proto.PassengerCount.Count getCount(int index) {
-        if (countBuilder_ == null) {
-          return count_.get(index);
-        } else {
-          return countBuilder_.getMessage(index);
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<DoorCount> getParserForType() {
+            return PARSER;
         }
-      }
-      /**
-       * <code>repeated .proto.Count count = 2;</code>
-       */
-      public Builder setCount(
-          int index, fi.hsl.common.passengercount.proto.PassengerCount.Count value) {
-        if (countBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCountIsMutable();
-          count_.set(index, value);
-          onChanged();
-        } else {
-          countBuilder_.setMessage(index, value);
+
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
         }
-        return this;
-      }
-      /**
-       * <code>repeated .proto.Count count = 2;</code>
-       */
-      public Builder setCount(
-          int index, fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder builderForValue) {
-        if (countBuilder_ == null) {
-          ensureCountIsMutable();
-          count_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          countBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .proto.Count count = 2;</code>
-       */
-      public Builder addCount(fi.hsl.common.passengercount.proto.PassengerCount.Count value) {
-        if (countBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCountIsMutable();
-          count_.add(value);
-          onChanged();
-        } else {
-          countBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .proto.Count count = 2;</code>
-       */
-      public Builder addCount(
-          int index, fi.hsl.common.passengercount.proto.PassengerCount.Count value) {
-        if (countBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCountIsMutable();
-          count_.add(index, value);
-          onChanged();
-        } else {
-          countBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .proto.Count count = 2;</code>
-       */
-      public Builder addCount(
-          fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder builderForValue) {
-        if (countBuilder_ == null) {
-          ensureCountIsMutable();
-          count_.add(builderForValue.build());
-          onChanged();
-        } else {
-          countBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .proto.Count count = 2;</code>
-       */
-      public Builder addCount(
-          int index, fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder builderForValue) {
-        if (countBuilder_ == null) {
-          ensureCountIsMutable();
-          count_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          countBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .proto.Count count = 2;</code>
-       */
-      public Builder addAllCount(
-          java.lang.Iterable<? extends fi.hsl.common.passengercount.proto.PassengerCount.Count> values) {
-        if (countBuilder_ == null) {
-          ensureCountIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, count_);
-          onChanged();
-        } else {
-          countBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .proto.Count count = 2;</code>
-       */
-      public Builder clearCount() {
-        if (countBuilder_ == null) {
-          count_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          countBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .proto.Count count = 2;</code>
-       */
-      public Builder removeCount(int index) {
-        if (countBuilder_ == null) {
-          ensureCountIsMutable();
-          count_.remove(index);
-          onChanged();
-        } else {
-          countBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .proto.Count count = 2;</code>
-       */
-      public fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder getCountBuilder(
-          int index) {
-        return getCountFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .proto.Count count = 2;</code>
-       */
-      public fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder getCountOrBuilder(
-          int index) {
-        if (countBuilder_ == null) {
-          return count_.get(index);  } else {
-          return countBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .proto.Count count = 2;</code>
-       */
-      public java.util.List<? extends fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder> 
-           getCountOrBuilderList() {
-        if (countBuilder_ != null) {
-          return countBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(count_);
-        }
-      }
-      /**
-       * <code>repeated .proto.Count count = 2;</code>
-       */
-      public fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder addCountBuilder() {
-        return getCountFieldBuilder().addBuilder(
-            fi.hsl.common.passengercount.proto.PassengerCount.Count.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .proto.Count count = 2;</code>
-       */
-      public fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder addCountBuilder(
-          int index) {
-        return getCountFieldBuilder().addBuilder(
-            index, fi.hsl.common.passengercount.proto.PassengerCount.Count.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .proto.Count count = 2;</code>
-       */
-      public java.util.List<fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder> 
-           getCountBuilderList() {
-        return getCountFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          fi.hsl.common.passengercount.proto.PassengerCount.Count, fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder, fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder> 
-          getCountFieldBuilder() {
-        if (countBuilder_ == null) {
-          countBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              fi.hsl.common.passengercount.proto.PassengerCount.Count, fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder, fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder>(
-                  count_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          count_ = null;
-        }
-        return countBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:proto.DoorCount)
     }
 
-    // @@protoc_insertion_point(class_scope:proto.DoorCount)
-    private static final fi.hsl.common.passengercount.proto.PassengerCount.DoorCount DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new fi.hsl.common.passengercount.proto.PassengerCount.DoorCount();
-    }
+    public interface CountOrBuilder
+            extends
+                // @@protoc_insertion_point(interface_extends:proto.Count)
+                com.google.protobuf.MessageOrBuilder {
 
-    public static fi.hsl.common.passengercount.proto.PassengerCount.DoorCount getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
+        /**
+         * <pre>
+         *Field 'class' in JSON, represents passenger class.
+         * </pre>
+         *
+         * <code>optional string clazz = 1;</code>
+         * @return Whether the clazz field is set.
+         */
+        boolean hasClazz();
+        /**
+         * <pre>
+         *Field 'class' in JSON, represents passenger class.
+         * </pre>
+         *
+         * <code>optional string clazz = 1;</code>
+         * @return The clazz.
+         */
+        java.lang.String getClazz();
+        /**
+         * <pre>
+         *Field 'class' in JSON, represents passenger class.
+         * </pre>
+         *
+         * <code>optional string clazz = 1;</code>
+         * @return The bytes for clazz.
+         */
+        com.google.protobuf.ByteString getClazzBytes();
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<DoorCount>
-        PARSER = new com.google.protobuf.AbstractParser<DoorCount>() {
-      @java.lang.Override
-      public DoorCount parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
+        /**
+         * <code>optional int32 in = 2;</code>
+         * @return Whether the in field is set.
+         */
+        boolean hasIn();
+        /**
+         * <code>optional int32 in = 2;</code>
+         * @return The in.
+         */
+        int getIn();
 
-    public static com.google.protobuf.Parser<DoorCount> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<DoorCount> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public fi.hsl.common.passengercount.proto.PassengerCount.DoorCount getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface CountOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:proto.Count)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     *Field 'class' in JSON, represents passenger class.
-     * </pre>
-     *
-     * <code>optional string clazz = 1;</code>
-     * @return Whether the clazz field is set.
-     */
-    boolean hasClazz();
-    /**
-     * <pre>
-     *Field 'class' in JSON, represents passenger class.
-     * </pre>
-     *
-     * <code>optional string clazz = 1;</code>
-     * @return The clazz.
-     */
-    java.lang.String getClazz();
-    /**
-     * <pre>
-     *Field 'class' in JSON, represents passenger class.
-     * </pre>
-     *
-     * <code>optional string clazz = 1;</code>
-     * @return The bytes for clazz.
-     */
-    com.google.protobuf.ByteString
-        getClazzBytes();
-
-    /**
-     * <code>optional int32 in = 2;</code>
-     * @return Whether the in field is set.
-     */
-    boolean hasIn();
-    /**
-     * <code>optional int32 in = 2;</code>
-     * @return The in.
-     */
-    int getIn();
-
-    /**
-     * <code>optional int32 out = 3;</code>
-     * @return Whether the out field is set.
-     */
-    boolean hasOut();
-    /**
-     * <code>optional int32 out = 3;</code>
-     * @return The out.
-     */
-    int getOut();
-  }
-  /**
-   * Protobuf type {@code proto.Count}
-   */
-  public static final class Count extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:proto.Count)
-      CountOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Count.newBuilder() to construct.
-    private Count(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Count() {
-      clazz_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Count();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Count_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Count_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              fi.hsl.common.passengercount.proto.PassengerCount.Count.class, fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int CLAZZ_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object clazz_ = "";
-    /**
-     * <pre>
-     *Field 'class' in JSON, represents passenger class.
-     * </pre>
-     *
-     * <code>optional string clazz = 1;</code>
-     * @return Whether the clazz field is set.
-     */
-    @java.lang.Override
-    public boolean hasClazz() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <pre>
-     *Field 'class' in JSON, represents passenger class.
-     * </pre>
-     *
-     * <code>optional string clazz = 1;</code>
-     * @return The clazz.
-     */
-    @java.lang.Override
-    public java.lang.String getClazz() {
-      java.lang.Object ref = clazz_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          clazz_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *Field 'class' in JSON, represents passenger class.
-     * </pre>
-     *
-     * <code>optional string clazz = 1;</code>
-     * @return The bytes for clazz.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getClazzBytes() {
-      java.lang.Object ref = clazz_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        clazz_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int IN_FIELD_NUMBER = 2;
-    private int in_ = 0;
-    /**
-     * <code>optional int32 in = 2;</code>
-     * @return Whether the in field is set.
-     */
-    @java.lang.Override
-    public boolean hasIn() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>optional int32 in = 2;</code>
-     * @return The in.
-     */
-    @java.lang.Override
-    public int getIn() {
-      return in_;
-    }
-
-    public static final int OUT_FIELD_NUMBER = 3;
-    private int out_ = 0;
-    /**
-     * <code>optional int32 out = 3;</code>
-     * @return Whether the out field is set.
-     */
-    @java.lang.Override
-    public boolean hasOut() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>optional int32 out = 3;</code>
-     * @return The out.
-     */
-    @java.lang.Override
-    public int getOut() {
-      return out_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, clazz_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeInt32(2, in_);
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeInt32(3, out_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, clazz_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, in_);
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, out_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof fi.hsl.common.passengercount.proto.PassengerCount.Count)) {
-        return super.equals(obj);
-      }
-      fi.hsl.common.passengercount.proto.PassengerCount.Count other = (fi.hsl.common.passengercount.proto.PassengerCount.Count) obj;
-
-      if (hasClazz() != other.hasClazz()) return false;
-      if (hasClazz()) {
-        if (!getClazz()
-            .equals(other.getClazz())) return false;
-      }
-      if (hasIn() != other.hasIn()) return false;
-      if (hasIn()) {
-        if (getIn()
-            != other.getIn()) return false;
-      }
-      if (hasOut() != other.hasOut()) return false;
-      if (hasOut()) {
-        if (getOut()
-            != other.getOut()) return false;
-      }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasClazz()) {
-        hash = (37 * hash) + CLAZZ_FIELD_NUMBER;
-        hash = (53 * hash) + getClazz().hashCode();
-      }
-      if (hasIn()) {
-        hash = (37 * hash) + IN_FIELD_NUMBER;
-        hash = (53 * hash) + getIn();
-      }
-      if (hasOut()) {
-        hash = (37 * hash) + OUT_FIELD_NUMBER;
-        hash = (53 * hash) + getOut();
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(fi.hsl.common.passengercount.proto.PassengerCount.Count prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
+        /**
+         * <code>optional int32 out = 3;</code>
+         * @return Whether the out field is set.
+         */
+        boolean hasOut();
+        /**
+         * <code>optional int32 out = 3;</code>
+         * @return The out.
+         */
+        int getOut();
     }
     /**
      * Protobuf type {@code proto.Count}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:proto.Count)
-        fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Count_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Count_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                fi.hsl.common.passengercount.proto.PassengerCount.Count.class, fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder.class);
-      }
-
-      // Construct using fi.hsl.common.passengercount.proto.PassengerCount.Count.newBuilder()
-      private Builder() {
-
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        clazz_ = "";
-        in_ = 0;
-        out_ = 0;
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Count_descriptor;
-      }
-
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.Count getDefaultInstanceForType() {
-        return fi.hsl.common.passengercount.proto.PassengerCount.Count.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.Count build() {
-        fi.hsl.common.passengercount.proto.PassengerCount.Count result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+    public static final class Count extends com.google.protobuf.GeneratedMessageV3
+            implements
+                // @@protoc_insertion_point(message_implements:proto.Count)
+                CountOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use Count.newBuilder() to construct.
+        private Count(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-        return result;
-      }
+        private Count() {
+            clazz_ = "";
+        }
 
-      @java.lang.Override
-      public fi.hsl.common.passengercount.proto.PassengerCount.Count buildPartial() {
-        fi.hsl.common.passengercount.proto.PassengerCount.Count result = new fi.hsl.common.passengercount.proto.PassengerCount.Count(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new Count();
+        }
 
-      private void buildPartial0(fi.hsl.common.passengercount.proto.PassengerCount.Count result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.clazz_ = clazz_;
-          to_bitField0_ |= 0x00000001;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.in_ = in_;
-          to_bitField0_ |= 0x00000002;
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Count_descriptor;
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.out_ = out_;
-          to_bitField0_ |= 0x00000004;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
 
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof fi.hsl.common.passengercount.proto.PassengerCount.Count) {
-          return mergeFrom((fi.hsl.common.passengercount.proto.PassengerCount.Count)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+            return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Count_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(fi.hsl.common.passengercount.proto.PassengerCount.Count.class,
+                            fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder.class);
         }
-      }
 
-      public Builder mergeFrom(fi.hsl.common.passengercount.proto.PassengerCount.Count other) {
-        if (other == fi.hsl.common.passengercount.proto.PassengerCount.Count.getDefaultInstance()) return this;
-        if (other.hasClazz()) {
-          clazz_ = other.clazz_;
-          bitField0_ |= 0x00000001;
-          onChanged();
+        private int bitField0_;
+        public static final int CLAZZ_FIELD_NUMBER = 1;
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object clazz_ = "";
+        /**
+         * <pre>
+         *Field 'class' in JSON, represents passenger class.
+         * </pre>
+         *
+         * <code>optional string clazz = 1;</code>
+         * @return Whether the clazz field is set.
+         */
+        @java.lang.Override
+        public boolean hasClazz() {
+            return ((bitField0_ & 0x00000001) != 0);
         }
-        if (other.hasIn()) {
-          setIn(other.getIn());
-        }
-        if (other.hasOut()) {
-          setOut(other.getOut());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                clazz_ = input.readBytes();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 16: {
-                in_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
-              case 24: {
-                out_ = input.readInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
+        /**
+         * <pre>
+         *Field 'class' in JSON, represents passenger class.
+         * </pre>
+         *
+         * <code>optional string clazz = 1;</code>
+         * @return The clazz.
+         */
+        @java.lang.Override
+        public java.lang.String getClazz() {
+            java.lang.Object ref = clazz_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    clazz_ = s;
                 }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object clazz_ = "";
-      /**
-       * <pre>
-       *Field 'class' in JSON, represents passenger class.
-       * </pre>
-       *
-       * <code>optional string clazz = 1;</code>
-       * @return Whether the clazz field is set.
-       */
-      public boolean hasClazz() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <pre>
-       *Field 'class' in JSON, represents passenger class.
-       * </pre>
-       *
-       * <code>optional string clazz = 1;</code>
-       * @return The clazz.
-       */
-      public java.lang.String getClazz() {
-        java.lang.Object ref = clazz_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            clazz_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
+                return s;
+            }
         }
-      }
-      /**
-       * <pre>
-       *Field 'class' in JSON, represents passenger class.
-       * </pre>
-       *
-       * <code>optional string clazz = 1;</code>
-       * @return The bytes for clazz.
-       */
-      public com.google.protobuf.ByteString
-          getClazzBytes() {
-        java.lang.Object ref = clazz_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          clazz_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+        /**
+         * <pre>
+         *Field 'class' in JSON, represents passenger class.
+         * </pre>
+         *
+         * <code>optional string clazz = 1;</code>
+         * @return The bytes for clazz.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getClazzBytes() {
+            java.lang.Object ref = clazz_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                clazz_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
         }
-      }
-      /**
-       * <pre>
-       *Field 'class' in JSON, represents passenger class.
-       * </pre>
-       *
-       * <code>optional string clazz = 1;</code>
-       * @param value The clazz to set.
-       * @return This builder for chaining.
-       */
-      public Builder setClazz(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        clazz_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *Field 'class' in JSON, represents passenger class.
-       * </pre>
-       *
-       * <code>optional string clazz = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearClazz() {
-        clazz_ = getDefaultInstance().getClazz();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *Field 'class' in JSON, represents passenger class.
-       * </pre>
-       *
-       * <code>optional string clazz = 1;</code>
-       * @param value The bytes for clazz to set.
-       * @return This builder for chaining.
-       */
-      public Builder setClazzBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        clazz_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
 
-      private int in_ ;
-      /**
-       * <code>optional int32 in = 2;</code>
-       * @return Whether the in field is set.
-       */
-      @java.lang.Override
-      public boolean hasIn() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <code>optional int32 in = 2;</code>
-       * @return The in.
-       */
-      @java.lang.Override
-      public int getIn() {
-        return in_;
-      }
-      /**
-       * <code>optional int32 in = 2;</code>
-       * @param value The in to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIn(int value) {
-        
-        in_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 in = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIn() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        in_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int IN_FIELD_NUMBER = 2;
+        private int in_ = 0;
+        /**
+         * <code>optional int32 in = 2;</code>
+         * @return Whether the in field is set.
+         */
+        @java.lang.Override
+        public boolean hasIn() {
+            return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         * <code>optional int32 in = 2;</code>
+         * @return The in.
+         */
+        @java.lang.Override
+        public int getIn() {
+            return in_;
+        }
 
-      private int out_ ;
-      /**
-       * <code>optional int32 out = 3;</code>
-       * @return Whether the out field is set.
-       */
-      @java.lang.Override
-      public boolean hasOut() {
-        return ((bitField0_ & 0x00000004) != 0);
-      }
-      /**
-       * <code>optional int32 out = 3;</code>
-       * @return The out.
-       */
-      @java.lang.Override
-      public int getOut() {
-        return out_;
-      }
-      /**
-       * <code>optional int32 out = 3;</code>
-       * @param value The out to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOut(int value) {
-        
-        out_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 out = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOut() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        out_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
+        public static final int OUT_FIELD_NUMBER = 3;
+        private int out_ = 0;
+        /**
+         * <code>optional int32 out = 3;</code>
+         * @return Whether the out field is set.
+         */
+        @java.lang.Override
+        public boolean hasOut() {
+            return ((bitField0_ & 0x00000004) != 0);
+        }
+        /**
+         * <code>optional int32 out = 3;</code>
+         * @return The out.
+         */
+        @java.lang.Override
+        public int getOut() {
+            return out_;
+        }
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        private byte memoizedIsInitialized = -1;
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1)
+                return true;
+            if (isInitialized == 0)
+                return false;
 
+            memoizedIsInitialized = 1;
+            return true;
+        }
 
-      // @@protoc_insertion_point(builder_scope:proto.Count)
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (((bitField0_ & 0x00000001) != 0)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, clazz_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                output.writeInt32(2, in_);
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                output.writeInt32(3, out_);
+            }
+            getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1)
+                return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) != 0)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, clazz_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, in_);
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, out_);
+            }
+            size += getUnknownFields().getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof fi.hsl.common.passengercount.proto.PassengerCount.Count)) {
+                return super.equals(obj);
+            }
+            fi.hsl.common.passengercount.proto.PassengerCount.Count other = (fi.hsl.common.passengercount.proto.PassengerCount.Count) obj;
+
+            if (hasClazz() != other.hasClazz())
+                return false;
+            if (hasClazz()) {
+                if (!getClazz().equals(other.getClazz()))
+                    return false;
+            }
+            if (hasIn() != other.hasIn())
+                return false;
+            if (hasIn()) {
+                if (getIn() != other.getIn())
+                    return false;
+            }
+            if (hasOut() != other.hasOut())
+                return false;
+            if (hasOut()) {
+                if (getOut() != other.getOut())
+                    return false;
+            }
+            if (!getUnknownFields().equals(other.getUnknownFields()))
+                return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasClazz()) {
+                hash = (37 * hash) + CLAZZ_FIELD_NUMBER;
+                hash = (53 * hash) + getClazz().hashCode();
+            }
+            if (hasIn()) {
+                hash = (37 * hash) + IN_FIELD_NUMBER;
+                hash = (53 * hash) + getIn();
+            }
+            if (hasOut()) {
+                hash = (37 * hash) + OUT_FIELD_NUMBER;
+                hash = (53 * hash) + getOut();
+            }
+            hash = (29 * hash) + getUnknownFields().hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(
+                com.google.protobuf.ByteString data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(
+                com.google.protobuf.ByteString data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseDelimitedFrom(
+                java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseDelimitedFrom(
+                java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+                    extensionRegistry);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(
+                com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Count parseFrom(
+                com.google.protobuf.CodedInputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+        public static Builder newBuilder(fi.hsl.common.passengercount.proto.PassengerCount.Count prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         * Protobuf type {@code proto.Count}
+         */
+        public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                    // @@protoc_insertion_point(builder_implements:proto.Count)
+                    fi.hsl.common.passengercount.proto.PassengerCount.CountOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Count_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Count_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(fi.hsl.common.passengercount.proto.PassengerCount.Count.class,
+                                fi.hsl.common.passengercount.proto.PassengerCount.Count.Builder.class);
+            }
+
+            // Construct using fi.hsl.common.passengercount.proto.PassengerCount.Count.newBuilder()
+            private Builder() {
+
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+
+            }
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                bitField0_ = 0;
+                clazz_ = "";
+                in_ = 0;
+                out_ = 0;
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.internal_static_proto_Count_descriptor;
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.Count getDefaultInstanceForType() {
+                return fi.hsl.common.passengercount.proto.PassengerCount.Count.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.Count build() {
+                fi.hsl.common.passengercount.proto.PassengerCount.Count result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public fi.hsl.common.passengercount.proto.PassengerCount.Count buildPartial() {
+                fi.hsl.common.passengercount.proto.PassengerCount.Count result = new fi.hsl.common.passengercount.proto.PassengerCount.Count(
+                        this);
+                if (bitField0_ != 0) {
+                    buildPartial0(result);
+                }
+                onBuilt();
+                return result;
+            }
+
+            private void buildPartial0(fi.hsl.common.passengercount.proto.PassengerCount.Count result) {
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) != 0)) {
+                    result.clazz_ = clazz_;
+                    to_bitField0_ |= 0x00000001;
+                }
+                if (((from_bitField0_ & 0x00000002) != 0)) {
+                    result.in_ = in_;
+                    to_bitField0_ |= 0x00000002;
+                }
+                if (((from_bitField0_ & 0x00000004) != 0)) {
+                    result.out_ = out_;
+                    to_bitField0_ |= 0x00000004;
+                }
+                result.bitField0_ |= to_bitField0_;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+            @java.lang.Override
+            public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+            @java.lang.Override
+            public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+            @java.lang.Override
+            public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof fi.hsl.common.passengercount.proto.PassengerCount.Count) {
+                    return mergeFrom((fi.hsl.common.passengercount.proto.PassengerCount.Count) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(fi.hsl.common.passengercount.proto.PassengerCount.Count other) {
+                if (other == fi.hsl.common.passengercount.proto.PassengerCount.Count.getDefaultInstance())
+                    return this;
+                if (other.hasClazz()) {
+                    clazz_ = other.clazz_;
+                    bitField0_ |= 0x00000001;
+                    onChanged();
+                }
+                if (other.hasIn()) {
+                    setIn(other.getIn());
+                }
+                if (other.hasOut()) {
+                    setOut(other.getOut());
+                }
+                this.mergeUnknownFields(other.getUnknownFields());
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+                if (extensionRegistry == null) {
+                    throw new java.lang.NullPointerException();
+                }
+                try {
+                    boolean done = false;
+                    while (!done) {
+                        int tag = input.readTag();
+                        switch (tag) {
+                            case 0 :
+                                done = true;
+                                break;
+                            case 10 : {
+                                clazz_ = input.readBytes();
+                                bitField0_ |= 0x00000001;
+                                break;
+                            } // case 10
+                            case 16 : {
+                                in_ = input.readInt32();
+                                bitField0_ |= 0x00000002;
+                                break;
+                            } // case 16
+                            case 24 : {
+                                out_ = input.readInt32();
+                                bitField0_ |= 0x00000004;
+                                break;
+                            } // case 24
+                            default : {
+                                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                                    done = true; // was an endgroup tag
+                                }
+                                break;
+                            } // default:
+                        } // switch (tag)
+                    } // while (!done)
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.unwrapIOException();
+                } finally {
+                    onChanged();
+                } // finally
+                return this;
+            }
+            private int bitField0_;
+
+            private java.lang.Object clazz_ = "";
+            /**
+             * <pre>
+             *Field 'class' in JSON, represents passenger class.
+             * </pre>
+             *
+             * <code>optional string clazz = 1;</code>
+             * @return Whether the clazz field is set.
+             */
+            public boolean hasClazz() {
+                return ((bitField0_ & 0x00000001) != 0);
+            }
+            /**
+             * <pre>
+             *Field 'class' in JSON, represents passenger class.
+             * </pre>
+             *
+             * <code>optional string clazz = 1;</code>
+             * @return The clazz.
+             */
+            public java.lang.String getClazz() {
+                java.lang.Object ref = clazz_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        clazz_ = s;
+                    }
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+            /**
+             * <pre>
+             *Field 'class' in JSON, represents passenger class.
+             * </pre>
+             *
+             * <code>optional string clazz = 1;</code>
+             * @return The bytes for clazz.
+             */
+            public com.google.protobuf.ByteString getClazzBytes() {
+                java.lang.Object ref = clazz_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+                            .copyFromUtf8((java.lang.String) ref);
+                    clazz_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <pre>
+             *Field 'class' in JSON, represents passenger class.
+             * </pre>
+             *
+             * <code>optional string clazz = 1;</code>
+             * @param value The clazz to set.
+             * @return This builder for chaining.
+             */
+            public Builder setClazz(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                clazz_ = value;
+                bitField0_ |= 0x00000001;
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             *Field 'class' in JSON, represents passenger class.
+             * </pre>
+             *
+             * <code>optional string clazz = 1;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearClazz() {
+                clazz_ = getDefaultInstance().getClazz();
+                bitField0_ = (bitField0_ & ~0x00000001);
+                onChanged();
+                return this;
+            }
+            /**
+             * <pre>
+             *Field 'class' in JSON, represents passenger class.
+             * </pre>
+             *
+             * <code>optional string clazz = 1;</code>
+             * @param value The bytes for clazz to set.
+             * @return This builder for chaining.
+             */
+            public Builder setClazzBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                clazz_ = value;
+                bitField0_ |= 0x00000001;
+                onChanged();
+                return this;
+            }
+
+            private int in_;
+            /**
+             * <code>optional int32 in = 2;</code>
+             * @return Whether the in field is set.
+             */
+            @java.lang.Override
+            public boolean hasIn() {
+                return ((bitField0_ & 0x00000002) != 0);
+            }
+            /**
+             * <code>optional int32 in = 2;</code>
+             * @return The in.
+             */
+            @java.lang.Override
+            public int getIn() {
+                return in_;
+            }
+            /**
+             * <code>optional int32 in = 2;</code>
+             * @param value The in to set.
+             * @return This builder for chaining.
+             */
+            public Builder setIn(int value) {
+
+                in_ = value;
+                bitField0_ |= 0x00000002;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int32 in = 2;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearIn() {
+                bitField0_ = (bitField0_ & ~0x00000002);
+                in_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int out_;
+            /**
+             * <code>optional int32 out = 3;</code>
+             * @return Whether the out field is set.
+             */
+            @java.lang.Override
+            public boolean hasOut() {
+                return ((bitField0_ & 0x00000004) != 0);
+            }
+            /**
+             * <code>optional int32 out = 3;</code>
+             * @return The out.
+             */
+            @java.lang.Override
+            public int getOut() {
+                return out_;
+            }
+            /**
+             * <code>optional int32 out = 3;</code>
+             * @param value The out to set.
+             * @return This builder for chaining.
+             */
+            public Builder setOut(int value) {
+
+                out_ = value;
+                bitField0_ |= 0x00000004;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>optional int32 out = 3;</code>
+             * @return This builder for chaining.
+             */
+            public Builder clearOut() {
+                bitField0_ = (bitField0_ & ~0x00000004);
+                out_ = 0;
+                onChanged();
+                return this;
+            }
+            @java.lang.Override
+            public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:proto.Count)
+        }
+
+        // @@protoc_insertion_point(class_scope:proto.Count)
+        private static final fi.hsl.common.passengercount.proto.PassengerCount.Count DEFAULT_INSTANCE;
+        static {
+            DEFAULT_INSTANCE = new fi.hsl.common.passengercount.proto.PassengerCount.Count();
+        }
+
+        public static fi.hsl.common.passengercount.proto.PassengerCount.Count getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        @java.lang.Deprecated
+        public static final com.google.protobuf.Parser<Count> PARSER = new com.google.protobuf.AbstractParser<Count>() {
+            @java.lang.Override
+            public Count parsePartialFrom(com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                    builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                    throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                    throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                            .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+            }
+        };
+
+        public static com.google.protobuf.Parser<Count> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Count> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public fi.hsl.common.passengercount.proto.PassengerCount.Count getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    // @@protoc_insertion_point(class_scope:proto.Count)
-    private static final fi.hsl.common.passengercount.proto.PassengerCount.Count DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Descriptors.Descriptor internal_static_proto_Data_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_proto_Data_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor internal_static_proto_Topic_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_proto_Topic_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor internal_static_proto_Payload_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_proto_Payload_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor internal_static_proto_VehicleCounts_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_proto_VehicleCounts_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor internal_static_proto_DoorCount_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_proto_DoorCount_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor internal_static_proto_Count_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_proto_Count_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
     static {
-      DEFAULT_INSTANCE = new fi.hsl.common.passengercount.proto.PassengerCount.Count();
+        java.lang.String[] descriptorData = {"\n\025passenger-count.proto\022\005proto\"s\n\004Data\022\030"
+                + "\n\rSchemaVersion\030\001 \002(\005:\0011\022\033\n\005topic\030\002 \001(\0132"
+                + "\014.proto.Topic\022\037\n\007payload\030\003 \002(\0132\016.proto.P"
+                + "ayload\022\023\n\013received_at\030\004 \001(\003\"\243\004\n\005Topic\022\030\n"
+                + "\rSchemaVersion\030\001 \002(\005:\0011\022\023\n\013received_at\030\002"
+                + " \002(\003\022\024\n\014topic_prefix\030\003 \002(\t\022\025\n\rtopic_vers"
+                + "ion\030\004 \002(\t\022.\n\014journey_type\030\005 \002(\0162\030.proto."
+                + "Topic.JourneyType\0220\n\rtemporal_type\030\006 \002(\016"
+                + "2\031.proto.Topic.TemporalType\022*\n\nevent_typ"
+                + "e\030\007 \002(\0162\026.proto.Topic.EventType\0222\n\016trans"
+                + "port_mode\030\010 \001(\0162\032.proto.Topic.TransportM"
+                + "ode\022\023\n\013operator_id\030\t \002(\005\022\026\n\016vehicle_numb"
+                + "er\030\n \002(\005\"4\n\013JourneyType\022\013\n\007journey\020\000\022\013\n\007"
+                + "deadrun\020\001\022\013\n\007signoff\020\002\")\n\014TemporalType\022\013"
+                + "\n\007ongoing\020\000\022\014\n\010upcoming\020\001\"X\n\rTransportMo"
+                + "de\022\007\n\003bus\020\000\022\t\n\005train\020\001\022\010\n\004tram\020\002\022\t\n\005metr"
+                + "o\020\003\022\t\n\005ferry\020\004\022\010\n\004ubus\020\005\022\t\n\005robot\020\006\"\024\n\tE"
+                + "ventType\022\007\n\003apc\020\000\"\220\002\n\007Payload\022\014\n\004desi\030\001 "
+                + "\001(\t\022\013\n\003dir\030\002 \001(\t\022\014\n\004oper\030\003 \001(\005\022\013\n\003veh\030\004 "
+                + "\001(\005\022\013\n\003tst\030\005 \001(\003\022\013\n\003tsi\030\006 \001(\003\022\013\n\003lat\030\007 \001"
+                + "(\001\022\014\n\004long\030\010 \001(\001\022\013\n\003odo\030\t \001(\001\022\014\n\004oday\030\n "
+                + "\001(\t\022\013\n\003jrn\030\013 \001(\005\022\014\n\004line\030\014 \001(\005\022\r\n\005start\030"
+                + "\r \001(\t\022\013\n\003loc\030\016 \001(\t\022\014\n\004stop\030\017 \001(\005\022\r\n\005rout"
+                + "e\030\020 \001(\t\022+\n\rvehicleCounts\030\021 \001(\0132\024.proto.V"
+                + "ehicleCounts\"\216\001\n\rVehicleCounts\022\024\n\014countQ"
+                + "uality\030\001 \001(\t\022\023\n\013vehicleLoad\030\002 \001(\005\022\030\n\020veh"
+                + "icleLoadRatio\030\003 \001(\001\022$\n\ndoorCounts\030\004 \003(\0132"
+                + "\020.proto.DoorCount\022\022\n\nextensions\030\005 \001(\t\"6\n"
+                + "\tDoorCount\022\014\n\004door\030\001 \001(\t\022\033\n\005count\030\002 \003(\0132"
+                + "\014.proto.Count\"/\n\005Count\022\r\n\005clazz\030\001 \001(\t\022\n\n"
+                + "\002in\030\002 \001(\005\022\013\n\003out\030\003 \001(\005B4\n\"fi.hsl.common."
+                + "passengercount.protoB\016PassengerCount"};
+        descriptor = com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(descriptorData,
+                new com.google.protobuf.Descriptors.FileDescriptor[]{});
+        internal_static_proto_Data_descriptor = getDescriptor().getMessageTypes().get(0);
+        internal_static_proto_Data_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_proto_Data_descriptor,
+                new java.lang.String[]{"SchemaVersion", "Topic", "Payload", "ReceivedAt",});
+        internal_static_proto_Topic_descriptor = getDescriptor().getMessageTypes().get(1);
+        internal_static_proto_Topic_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_proto_Topic_descriptor,
+                new java.lang.String[]{"SchemaVersion", "ReceivedAt", "TopicPrefix", "TopicVersion", "JourneyType",
+                        "TemporalType", "EventType", "TransportMode", "OperatorId", "VehicleNumber",});
+        internal_static_proto_Payload_descriptor = getDescriptor().getMessageTypes().get(2);
+        internal_static_proto_Payload_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_proto_Payload_descriptor,
+                new java.lang.String[]{"Desi", "Dir", "Oper", "Veh", "Tst", "Tsi", "Lat", "Long", "Odo", "Oday", "Jrn",
+                        "Line", "Start", "Loc", "Stop", "Route", "VehicleCounts",});
+        internal_static_proto_VehicleCounts_descriptor = getDescriptor().getMessageTypes().get(3);
+        internal_static_proto_VehicleCounts_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_proto_VehicleCounts_descriptor,
+                new java.lang.String[]{"CountQuality", "VehicleLoad", "VehicleLoadRatio", "DoorCounts", "Extensions",});
+        internal_static_proto_DoorCount_descriptor = getDescriptor().getMessageTypes().get(4);
+        internal_static_proto_DoorCount_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_proto_DoorCount_descriptor, new java.lang.String[]{"Door", "Count",});
+        internal_static_proto_Count_descriptor = getDescriptor().getMessageTypes().get(5);
+        internal_static_proto_Count_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_proto_Count_descriptor, new java.lang.String[]{"Clazz", "In", "Out",});
     }
 
-    public static fi.hsl.common.passengercount.proto.PassengerCount.Count getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<Count>
-        PARSER = new com.google.protobuf.AbstractParser<Count>() {
-      @java.lang.Override
-      public Count parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<Count> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Count> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public fi.hsl.common.passengercount.proto.PassengerCount.Count getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_proto_Data_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_proto_Data_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_proto_Topic_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_proto_Topic_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_proto_Payload_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_proto_Payload_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_proto_VehicleCounts_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_proto_VehicleCounts_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_proto_DoorCount_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_proto_DoorCount_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_proto_Count_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_proto_Count_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\025passenger-count.proto\022\005proto\"s\n\004Data\022\030" +
-      "\n\rSchemaVersion\030\001 \002(\005:\0011\022\033\n\005topic\030\002 \001(\0132" +
-      "\014.proto.Topic\022\037\n\007payload\030\003 \002(\0132\016.proto.P" +
-      "ayload\022\023\n\013received_at\030\004 \001(\003\"\243\004\n\005Topic\022\030\n" +
-      "\rSchemaVersion\030\001 \002(\005:\0011\022\023\n\013received_at\030\002" +
-      " \002(\003\022\024\n\014topic_prefix\030\003 \002(\t\022\025\n\rtopic_vers" +
-      "ion\030\004 \002(\t\022.\n\014journey_type\030\005 \002(\0162\030.proto." +
-      "Topic.JourneyType\0220\n\rtemporal_type\030\006 \002(\016" +
-      "2\031.proto.Topic.TemporalType\022*\n\nevent_typ" +
-      "e\030\007 \002(\0162\026.proto.Topic.EventType\0222\n\016trans" +
-      "port_mode\030\010 \001(\0162\032.proto.Topic.TransportM" +
-      "ode\022\023\n\013operator_id\030\t \002(\005\022\026\n\016vehicle_numb" +
-      "er\030\n \002(\005\"4\n\013JourneyType\022\013\n\007journey\020\000\022\013\n\007" +
-      "deadrun\020\001\022\013\n\007signoff\020\002\")\n\014TemporalType\022\013" +
-      "\n\007ongoing\020\000\022\014\n\010upcoming\020\001\"X\n\rTransportMo" +
-      "de\022\007\n\003bus\020\000\022\t\n\005train\020\001\022\010\n\004tram\020\002\022\t\n\005metr" +
-      "o\020\003\022\t\n\005ferry\020\004\022\010\n\004ubus\020\005\022\t\n\005robot\020\006\"\024\n\tE" +
-      "ventType\022\007\n\003apc\020\000\"\220\002\n\007Payload\022\014\n\004desi\030\001 " +
-      "\001(\t\022\013\n\003dir\030\002 \001(\t\022\014\n\004oper\030\003 \001(\005\022\013\n\003veh\030\004 " +
-      "\001(\005\022\013\n\003tst\030\005 \001(\003\022\013\n\003tsi\030\006 \001(\003\022\013\n\003lat\030\007 \001" +
-      "(\001\022\014\n\004long\030\010 \001(\001\022\013\n\003odo\030\t \001(\001\022\014\n\004oday\030\n " +
-      "\001(\t\022\013\n\003jrn\030\013 \001(\005\022\014\n\004line\030\014 \001(\005\022\r\n\005start\030" +
-      "\r \001(\t\022\013\n\003loc\030\016 \001(\t\022\014\n\004stop\030\017 \001(\005\022\r\n\005rout" +
-      "e\030\020 \001(\t\022+\n\rvehicleCounts\030\021 \001(\0132\024.proto.V" +
-      "ehicleCounts\"\216\001\n\rVehicleCounts\022\024\n\014countQ" +
-      "uality\030\001 \001(\t\022\023\n\013vehicleLoad\030\002 \001(\005\022\030\n\020veh" +
-      "icleLoadRatio\030\003 \001(\001\022$\n\ndoorCounts\030\004 \003(\0132" +
-      "\020.proto.DoorCount\022\022\n\nextensions\030\005 \001(\t\"6\n" +
-      "\tDoorCount\022\014\n\004door\030\001 \001(\t\022\033\n\005count\030\002 \003(\0132" +
-      "\014.proto.Count\"/\n\005Count\022\r\n\005clazz\030\001 \001(\t\022\n\n" +
-      "\002in\030\002 \001(\005\022\013\n\003out\030\003 \001(\005B4\n\"fi.hsl.common." +
-      "passengercount.protoB\016PassengerCount"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_proto_Data_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_proto_Data_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_proto_Data_descriptor,
-        new java.lang.String[] { "SchemaVersion", "Topic", "Payload", "ReceivedAt", });
-    internal_static_proto_Topic_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_proto_Topic_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_proto_Topic_descriptor,
-        new java.lang.String[] { "SchemaVersion", "ReceivedAt", "TopicPrefix", "TopicVersion", "JourneyType", "TemporalType", "EventType", "TransportMode", "OperatorId", "VehicleNumber", });
-    internal_static_proto_Payload_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_proto_Payload_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_proto_Payload_descriptor,
-        new java.lang.String[] { "Desi", "Dir", "Oper", "Veh", "Tst", "Tsi", "Lat", "Long", "Odo", "Oday", "Jrn", "Line", "Start", "Loc", "Stop", "Route", "VehicleCounts", });
-    internal_static_proto_VehicleCounts_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_proto_VehicleCounts_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_proto_VehicleCounts_descriptor,
-        new java.lang.String[] { "CountQuality", "VehicleLoad", "VehicleLoadRatio", "DoorCounts", "Extensions", });
-    internal_static_proto_DoorCount_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_proto_DoorCount_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_proto_DoorCount_descriptor,
-        new java.lang.String[] { "Door", "Count", });
-    internal_static_proto_Count_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_proto_Count_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_proto_Count_descriptor,
-        new java.lang.String[] { "Clazz", "In", "Out", });
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }

@@ -59,26 +59,26 @@ public class HfpParserTest {
         HfpJson hfp = parseJsonFromResources("hfp-sample-pas.json");
         assertEquals("413", hfp.payload.desi);
         assertEquals("2", hfp.payload.dir);
-        assertEquals(22, (int)hfp.payload.oper);
-        assertEquals(817, (int)hfp.payload.veh);
+        assertEquals(22, (int) hfp.payload.oper);
+        assertEquals(817, (int) hfp.payload.veh);
         assertEquals("2019-06-27T11:53:24.541Z", hfp.payload.tst);
         assertEquals(1561636404, hfp.payload.tsi);
         assertEquals(11.33, hfp.payload.spd, 0.00001f);
-        assertEquals(245, (int)hfp.payload.hdg);
+        assertEquals(245, (int) hfp.payload.hdg);
         assertEquals(60.274556, hfp.payload.lat, 0.00001f);
         assertEquals(24.840979, hfp.payload.longitude, 0.00001f);
         assertEquals(-0.15, hfp.payload.acc, 0.00001f);
-        assertEquals(102, (int)hfp.payload.dl);
+        assertEquals(102, (int) hfp.payload.dl);
         assertEquals(15160, hfp.payload.odo, 0.00001f);
-        assertEquals(0, (int)hfp.payload.drst);
+        assertEquals(0, (int) hfp.payload.drst);
         assertEquals("2019-06-27", hfp.payload.oday);
-        assertEquals(6, (int)hfp.payload.jrn);
-        assertEquals(835, (int)hfp.payload.line);
+        assertEquals(6, (int) hfp.payload.jrn);
+        assertEquals(835, (int) hfp.payload.line);
         assertEquals("14:05", hfp.payload.start);
         assertEquals("GPS", hfp.payload.loc);
-        assertEquals(4170203, (int)hfp.payload.stop);
+        assertEquals(4170203, (int) hfp.payload.stop);
         assertEquals("4413", hfp.payload.route);
-        assertEquals(0, (int)hfp.payload.occu);
+        assertEquals(0, (int) hfp.payload.occu);
     }
 
     @Test
@@ -161,7 +161,7 @@ public class HfpParserTest {
         assertEquals(false, hfp.hasTlpDecision());
     }
 
-     @Test
+    @Test
     public void parseMissingTlrFiledsJsonFileToProtobuf() throws Exception {
         HfpJson json = parseJsonFromResources("hfp-tlr-sample-missing.json");
         Hfp.Payload hfp = HfpParser.parsePayload(json);
@@ -246,7 +246,8 @@ public class HfpParserTest {
 
     @Test
     public void parseTopic() throws Exception {
-        Hfp.Topic meta = parseAndValidateTopic("/hfp/v1/journey/ongoing/bus/0022/00854/4555B/2/Leppävaara/19:56/4150264/5/60;24/28/65/06");
+        Hfp.Topic meta = parseAndValidateTopic(
+                "/hfp/v1/journey/ongoing/bus/0022/00854/4555B/2/Leppävaara/19:56/4150264/5/60;24/28/65/06");
         assertEquals(Hfp.Topic.JourneyType.journey, meta.getJourneyType());
         assertEquals(Hfp.Topic.TemporalType.ongoing, meta.getTemporalType());
         assertEquals(Hfp.Topic.TransportMode.bus, meta.getTransportMode());
@@ -255,7 +256,7 @@ public class HfpParserTest {
         assertEquals(HfpParser.createUniqueVehicleId(22, 854), meta.getUniqueVehicleId());
 
         assertEquals("4555B", meta.getRouteId());
-        assertEquals(2, (int)meta.getDirectionId());
+        assertEquals(2, (int) meta.getDirectionId());
         assertEquals("Leppävaara", meta.getHeadsign());
         assertEquals(LocalTime.of(19, 56), HfpParser.safeParseLocalTime(meta.getStartTime()).get());
         assertEquals("4150264", meta.getNextStop());
@@ -268,7 +269,8 @@ public class HfpParserTest {
     @Test
     public void parseMissingGeohash() throws Exception {
         ///hfp/v1/journey/ongoing/bus/0012/01328/4560/1/Myyrmäki/04:57/4160299/0////
-        Hfp.Topic meta = parseAndValidateTopic("/hfp/v1/journey/ongoing/bus/0022/00854/4555B/2/Leppävaara/19:56/4150264/0////");
+        Hfp.Topic meta = parseAndValidateTopic(
+                "/hfp/v1/journey/ongoing/bus/0022/00854/4555B/2/Leppävaara/19:56/4150264/0////");
         assertEquals(0, meta.getGeohashLevel());
         assertFalse(meta.hasLatitude());
         assertFalse(meta.hasLongitude());
@@ -276,7 +278,8 @@ public class HfpParserTest {
 
     @Test
     public void parseGeohashWithOverloadedZeroLevel() throws Exception {
-        Hfp.Topic meta = parseAndValidateTopic("/hfp/v1/journey/ongoing/bus/0012/01825/1039/2/Kamppi/05:36/1320105/0/60;24/28/44/12");
+        Hfp.Topic meta = parseAndValidateTopic(
+                "/hfp/v1/journey/ongoing/bus/0012/01825/1039/2/Kamppi/05:36/1320105/0/60;24/28/44/12");
         assertEquals(0, meta.getGeohashLevel());
         assertTrue(60.241 - meta.getLatitude() < 0.00001);
         assertTrue(24.842 - meta.getLongitude() < 0.00001);
@@ -306,7 +309,8 @@ public class HfpParserTest {
 
     @Test
     public void parseTopicWhenPrefixLonger() throws Exception {
-        Hfp.Topic meta = parseAndValidateTopic("/hsldevcom/public/hfp/v1/deadrun/upcoming/tram/0022/00854////08:08///60;24/28/65/06");
+        Hfp.Topic meta = parseAndValidateTopic(
+                "/hsldevcom/public/hfp/v1/deadrun/upcoming/tram/0022/00854////08:08///60;24/28/65/06");
         assertEquals(Hfp.Topic.JourneyType.deadrun, meta.getJourneyType());
         assertEquals(Hfp.Topic.TemporalType.upcoming, meta.getTemporalType());
         assertEquals(Hfp.Topic.TransportMode.tram, meta.getTransportMode());
@@ -337,11 +341,14 @@ public class HfpParserTest {
 
     @Test
     public void testTopicPrefixParsing() throws Exception {
-        String prefix = parseTopicPrefix("/hfp/v1/journey/ongoing/bus/0022/00854/4555B/2/Leppävaara/19:56/4150264/5/60;24/28/65/06");
+        String prefix = parseTopicPrefix(
+                "/hfp/v1/journey/ongoing/bus/0022/00854/4555B/2/Leppävaara/19:56/4150264/5/60;24/28/65/06");
         assertEquals("/hfp/", prefix);
-        String emptyPrefix = parseTopicPrefix("/v1/journey/ongoing/bus/0022/00854/4555B/2/Leppävaara/19:56/4150264/5/60;24/28/65/06");
+        String emptyPrefix = parseTopicPrefix(
+                "/v1/journey/ongoing/bus/0022/00854/4555B/2/Leppävaara/19:56/4150264/5/60;24/28/65/06");
         assertEquals("/", emptyPrefix);
-        String longerPrefix = parseTopicPrefix("/hsldevcomm/public/hfp/v1/journey/ongoing/bus/0022/00854/4555B/2/Leppävaara/19:56/4150264/5/60;24/28/65/06");
+        String longerPrefix = parseTopicPrefix(
+                "/hsldevcomm/public/hfp/v1/journey/ongoing/bus/0022/00854/4555B/2/Leppävaara/19:56/4150264/5/60;24/28/65/06");
         assertEquals("/hsldevcomm/public/hfp/", longerPrefix);
 
     }

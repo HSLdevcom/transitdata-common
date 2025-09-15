@@ -14,7 +14,8 @@ import java.util.regex.Pattern;
  * Keys and corresponding values that are shared in the Transitdata pipeline.
  */
 public class TransitdataProperties {
-    private TransitdataProperties() {}
+    private TransitdataProperties() {
+    }
     private static final Pattern matchTimestampSecondsAndMillisecondsPattern = Pattern.compile("\\d{2}\\.\\d{3}Z$");
 
     public static final String REDIS_PREFIX_JPP = "jpp:";
@@ -49,21 +50,17 @@ public class TransitdataProperties {
      * Actual protobuf files can be found in package transitdata.proto
      */
     public enum ProtobufSchema {
-        PubtransRoiArrival("pubtrans-roi-arrival"),
-        PubtransRoiDeparture("pubtrans-roi-departure"),
-        GTFS_TripUpdate("gtfs-trip-update"),
-        GTFS_ServiceAlert("gtfs-service-alert"),
-        GTFS_VehiclePosition("gtfs-vehicle-position"),
-        InternalMessagesTripCancellation("internal-messages-trip-cancellation"),
-        InternalMessagesStopEstimate("internal-messages-stop-estimate"),
-        MetroAtsEstimate( "metro-ats-estimate"),
-        MqttRawMessage("mqtt-raw"),
-        HfpData("hfp-data"),
-        TransitdataServiceAlert("transitdata-service-alert"),
-        StopCancellations("stop-cancellations"),
-        Eke("eke"),
-        EkeSummary("ekeSummary"),
-        PassengerCount("passenger-count");
+        PubtransRoiArrival("pubtrans-roi-arrival"), PubtransRoiDeparture("pubtrans-roi-departure"), GTFS_TripUpdate(
+                "gtfs-trip-update"), GTFS_ServiceAlert("gtfs-service-alert"), GTFS_VehiclePosition(
+                        "gtfs-vehicle-position"), InternalMessagesTripCancellation(
+                                "internal-messages-trip-cancellation"), InternalMessagesStopEstimate(
+                                        "internal-messages-stop-estimate"), MetroAtsEstimate(
+                                                "metro-ats-estimate"), MqttRawMessage("mqtt-raw"), HfpData(
+                                                        "hfp-data"), TransitdataServiceAlert(
+                                                                "transitdata-service-alert"), StopCancellations(
+                                                                        "stop-cancellations"), Eke("eke"), EkeSummary(
+                                                                                "ekeSummary"), PassengerCount(
+                                                                                        "passenger-count");
         public final String key;
 
         ProtobufSchema(String key) {
@@ -82,7 +79,7 @@ public class TransitdataProperties {
                 }
             }
 
-            throw new IllegalArgumentException("No protobuf schema found for string "+str);
+            throw new IllegalArgumentException("No protobuf schema found for string " + str);
         }
     }
 
@@ -98,12 +95,14 @@ public class TransitdataProperties {
     }
 
     @NotNull
-    public static String formatJoreId(@NotNull String route, @NotNull String direction, @NotNull String startDate, @NotNull String startTime) {
+    public static String formatJoreId(@NotNull String route, @NotNull String direction, @NotNull String startDate,
+            @NotNull String startTime) {
         return REDIS_PREFIX_JORE_ID + route + "-" + direction + "-" + startDate + "-" + startTime;
     }
 
     @NotNull
-    public static String formatJoreId(@NotNull String route, @NotNull String direction, @NotNull JoreDateTime startDateTime) {
+    public static String formatJoreId(@NotNull String route, @NotNull String direction,
+            @NotNull JoreDateTime startDateTime) {
         return formatJoreId(route, direction, startDateTime.getJoreDateString(), startDateTime.getJoreTimeString());
     }
 
@@ -113,7 +112,8 @@ public class TransitdataProperties {
      * @return
      */
     @NotNull
-    public static String formatMetroId(@NotNull final String stopShortName, @NotNull final String originalStartDatetime) {
+    public static String formatMetroId(@NotNull final String stopShortName,
+            @NotNull final String originalStartDatetime) {
         // Transform dateTime string: remove milliseconds, change seconds
         // e.g 2019-12-20T15:12:56.123Z --> 2019-12-20T15:12:00Z
         Matcher m = matchTimestampSecondsAndMillisecondsPattern.matcher(originalStartDatetime);
