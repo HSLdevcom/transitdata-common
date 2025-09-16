@@ -140,4 +140,8 @@ public class RedisStore {
             pool.close();
         }
     }
+
+    public boolean isClosed() {
+        return pool.isClosed();
+    }
 }

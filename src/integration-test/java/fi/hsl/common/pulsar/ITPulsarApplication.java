@@ -3,6 +3,7 @@ package fi.hsl.common.pulsar;
 import com.typesafe.config.Config;
 import fi.hsl.common.config.ConfigUtils;
 import fi.hsl.common.health.HealthServer;
+import fi.hsl.common.redis.RedisStore;
 import org.apache.pulsar.client.api.Consumer;
 import org.apache.pulsar.client.api.Message;
 import org.apache.pulsar.client.api.Producer;
@@ -104,7 +105,7 @@ public class ITPulsarApplication {
     public void testPulsarWithMultipleTopics() throws Exception {
         Map<String, Object> o1 = new HashMap<>();
         o1.put("pulsar.consumer.enabled", false);
-        o1.put("redis.enabled", false);
+        o1.put("redisCluster.enabled", false);
         o1.put("pulsar.producer.multipleProducers", true);
         String topic1 = formatTopicName("test-1");
         String topic2 = formatTopicName("test-2");

@@ -23,8 +23,7 @@ public class PulsarMockApplication extends PulsarApplication {
                 overrides.put("pulsar.port", pulsar.getMappedPort(PulsarContainer.BROKER_PORT));
             }
             if (redis != null) {
-                overrides.put("redis.host", redis.getContainerIpAddress());
-                overrides.put("redis.port", redis.getMappedPort(baseConfig.getInt("redis.port")));
+                overrides.put("redisCluster.sentinels", redis.getContainerIpAddress() + ":" + redis.getMappedPort(26379));
             }
 
             Config config = ConfigFactory.parseMap(overrides);
