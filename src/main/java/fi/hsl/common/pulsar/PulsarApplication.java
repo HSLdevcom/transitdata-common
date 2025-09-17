@@ -96,15 +96,6 @@ public class PulsarApplication implements AutoCloseable {
             );
         }
 
-        if (config.hasPath("redisCluster.enabled") && config.getBoolean("redisCluster.enabled")) {
-            var redisClusterProperties = redisClusterProperties(config);
-            redisStore = createRedisStore(redisClusterProperties);
-
-            if (redisClusterProperties.healthCheck) {
-                healthServer.addCheck(createRedisHealthCheck(redisStore));
-            }
-        }
-
         if (config.getBoolean("health.enabled")) {
             final int port = config.getInt("health.port");
             final String endpoint = config.getString("health.endpoint");
@@ -124,6 +115,15 @@ public class PulsarApplication implements AutoCloseable {
 
             healthServer = new HealthServer(port, endpoint);
             healthServer.addCheck(pulsarHealthCheck);
+        }
+
+        if (config.hasPath("redisCluster.enabled") && config.getBoolean("redisCluster.enabled")) {
+            var redisClusterProperties = redisClusterProperties(config);
+            redisStore = createRedisStore(redisClusterProperties);
+
+            if (redisClusterProperties.healthCheck && healthServer != null) {
+                healthServer.addCheck(createRedisHealthCheck(redisStore));
+            }
         }
 
         return createContext(config, client, consumer, producers, redisStore, admin, healthServer);
