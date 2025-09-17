@@ -2,13 +2,13 @@ package fi.hsl.common.pulsar;
 
 import com.typesafe.config.Config;
 import fi.hsl.common.health.HealthServer;
+import fi.hsl.common.redis.RedisStore;
 import org.apache.pulsar.client.admin.PulsarAdmin;
 import org.apache.pulsar.client.api.Consumer;
 import org.apache.pulsar.client.api.Producer;
 import org.apache.pulsar.client.api.PulsarClient;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import redis.clients.jedis.Jedis;
 
 import java.util.Map;
 
@@ -20,7 +20,7 @@ public class PulsarApplicationContext {
     private Map<String, Producer<byte[]>> producers;
     private PulsarClient client;
     private PulsarAdmin admin;
-    private Jedis jedis;
+    private RedisStore redisStore;
     private HealthServer healthServer;
 
     @Nullable
@@ -81,12 +81,12 @@ public class PulsarApplicationContext {
     }
 
     @Nullable
-    public Jedis getJedis() {
-        return jedis;
+    public RedisStore getRedisStore() {
+        return redisStore;
     }
 
-    protected void setJedis(@Nullable Jedis jedis) {
-        this.jedis = jedis;
+    public void setRedisStore(RedisStore redisStore) {
+        this.redisStore = redisStore;
     }
 
     @Nullable

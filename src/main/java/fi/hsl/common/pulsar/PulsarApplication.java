@@ -2,13 +2,24 @@ package fi.hsl.common.pulsar;
 
 import com.typesafe.config.Config;
 import fi.hsl.common.health.HealthServer;
+import fi.hsl.common.redis.RedisClusterProperties;
+import fi.hsl.common.redis.RedisStore;
 import org.apache.pulsar.client.admin.PulsarAdmin;
-import org.apache.pulsar.client.api.*;
+import org.apache.pulsar.client.api.CompressionType;
+import org.apache.pulsar.client.api.Consumer;
+import org.apache.pulsar.client.api.ConsumerBuilder;
+import org.apache.pulsar.client.api.Message;
+import org.apache.pulsar.client.api.MessageId;
+import org.apache.pulsar.client.api.Producer;
+import org.apache.pulsar.client.api.PulsarClient;
+import org.apache.pulsar.client.api.PulsarClientException;
+import org.apache.pulsar.client.api.SubscriptionType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisSentinelPool;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -18,6 +29,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.BooleanSupplier;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+
+import static fi.hsl.common.redis.RedisClusterProperties.redisClusterProperties;
+import static redis.clients.jedis.Protocol.DEFAULT_DATABASE;
 
 public class PulsarApplication implements AutoCloseable {
     private static final Logger log = LoggerFactory.getLogger(PulsarApplication.class);
@@ -30,7 +44,7 @@ public class PulsarApplication implements AutoCloseable {
     Map<String, @NotNull Producer<byte[]>> producers;
     PulsarClient client;
     PulsarAdmin admin;
-    Jedis jedis;
+    RedisStore redisStore;
     HealthServer healthServer;
 
     PulsarApplication() {
@@ -43,8 +57,7 @@ public class PulsarApplication implements AutoCloseable {
             app = new PulsarApplication();
             app.context = app.initialize(config);
             return app;
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             log.error("Failed to create new PulsarApplication instance", e);
             //Let's clear all related resources in case we fail
             if (app != null) {
@@ -64,8 +77,8 @@ public class PulsarApplication implements AutoCloseable {
         this.config = config;
 
         client = createPulsarClient(
-            config.getString("pulsar.host"),
-            config.getInt("pulsar.port")
+                config.getString("pulsar.host"),
+                config.getInt("pulsar.port")
         );
 
         if (config.getBoolean("pulsar.producer.enabled")) {
@@ -83,15 +96,13 @@ public class PulsarApplication implements AutoCloseable {
             );
         }
 
-        if (config.getBoolean("redis.enabled")) {
-            int connTimeOutSecs = 2;
-            if (config.hasPath("redis.connTimeOutSecs")) {
-                connTimeOutSecs = config.getInt("redis.connTimeOutSecs");
+        if (config.hasPath("redisCluster.enabled") && config.getBoolean("redisCluster.enabled")) {
+            var redisClusterProperties = redisClusterProperties(config);
+            redisStore = createRedisStore(redisClusterProperties);
+
+            if (redisClusterProperties.healthCheck) {
+                healthServer.addCheck(createRedisHealthCheck(redisStore));
             }
-            jedis = createRedisClient(
-                    config.getString("redis.host"),
-                    config.getInt("redis.port"),
-                    connTimeOutSecs);
         }
 
         if (config.getBoolean("health.enabled")) {
@@ -100,7 +111,7 @@ public class PulsarApplication implements AutoCloseable {
 
             final BooleanSupplier pulsarHealthCheck = () -> {
                 boolean status = true;
-                if (producers != null && producers.values().stream().anyMatch(producer ->  !producer.isConnected())  ){
+                if (producers != null && producers.values().stream().anyMatch(producer -> !producer.isConnected())) {
                     status = false;
                     log.error("HealthCheck: Pulsar producer is not connected");
                 }
@@ -113,45 +124,14 @@ public class PulsarApplication implements AutoCloseable {
 
             healthServer = new HealthServer(port, endpoint);
             healthServer.addCheck(pulsarHealthCheck);
-
-            final BooleanSupplier jedisConnHealthCheck = () -> {
-                // this doesn't seem to work very reliably
-                return jedis.isConnected();
-            };
-
-            final BooleanSupplier customRedisConnHealthCheck = () -> {
-                boolean connOk = false;
-                synchronized (jedis) {
-                    try {
-                        String maybePong = jedis.ping();
-                        if (maybePong.equals("PONG")) {
-                            connOk = true;
-                        } else {
-                            log.error("jedis.ping() returned: {}", maybePong);
-                        }
-                    } catch (Exception e) {
-                        log.error("Exception in custom health check for redis connection", e);
-                    }
-                    return connOk;
-                }
-            };
-
-            if (config.hasPath("redis.customHealthCheckEnabled")) {
-                if (config.getBoolean("redis.customHealthCheckEnabled")) {
-                    log.info("Adding custom health check for Redis connection");
-                    healthServer.addCheck(customRedisConnHealthCheck);
-                }
-            } else if (jedis != null) {
-                healthServer.addCheck(jedisConnHealthCheck);
-            }
         }
 
-        return createContext(config, client, consumer, producers, jedis, admin, healthServer);
+        return createContext(config, client, consumer, producers, redisStore, admin, healthServer);
     }
 
     @NotNull
     protected Jedis createRedisClient(@NotNull String redisHost, int port, int connTimeOutSecs) {
-        log.info("Connecting to Redis at " + redisHost + ":" + port + " with connection timeout of (s): "+ connTimeOutSecs);
+        log.info("Connecting to Redis at " + redisHost + ":" + port + " with connection timeout of (s): " + connTimeOutSecs);
         int timeOutMs = connTimeOutSecs * 1000;
         Jedis jedis = new Jedis(redisHost, port, timeOutMs);
         jedis.connect();
@@ -171,14 +151,14 @@ public class PulsarApplication implements AutoCloseable {
 
     @NotNull
     protected PulsarApplicationContext createContext(@NotNull Config config, @NotNull PulsarClient client,
-                @Nullable Consumer<byte[]> consumer, @Nullable Map<@NotNull String, @NotNull Producer<byte[]>> producers,
-                @Nullable Jedis jedis, @Nullable PulsarAdmin admin, @Nullable HealthServer healthServer) {
+                                                     @Nullable Consumer<byte[]> consumer, @Nullable Map<@NotNull String, @NotNull Producer<byte[]>> producers,
+                                                     @Nullable RedisStore redisStore, @Nullable PulsarAdmin admin, @Nullable HealthServer healthServer) {
         PulsarApplicationContext context = new PulsarApplicationContext();
         context.setConfig(config);
         context.setClient(client);
         context.setConsumer(consumer);
         context.setProducers(producers);
-        context.setJedis(jedis);
+        context.setRedisStore(redisStore);
         context.setAdmin(admin);
         context.setHealthServer(healthServer);
         return context;
@@ -279,6 +259,38 @@ public class PulsarApplication implements AutoCloseable {
                 .build();
     }
 
+    @NotNull
+    protected RedisStore createRedisStore(@NotNull RedisClusterProperties properties) {
+        var pool = new JedisSentinelPool(
+                properties.masterName,
+                properties.sentinels,
+                properties.jedisPoolConfig(),
+                (int) properties.connectionTimeout.toMillis(),
+                (int) properties.socketTimeout.toMillis(),
+                null,
+                DEFAULT_DATABASE
+        );
+
+        return new RedisStore(pool);
+    }
+
+    private static BooleanSupplier createRedisHealthCheck(RedisStore redisStore) {
+        return () -> redisStore.execute(jedis -> {
+            try {
+                final var maybePong = jedis.ping();
+                if (maybePong.equals("PONG")) {
+                    return true;
+                } else {
+                    log.error("jedis.ping() returned: {}", maybePong);
+                }
+            } catch (Exception e) {
+                log.error("Redis health check failed", e);
+            }
+
+            return false;
+        });
+    }
+
     public void launchWithHandler(@NotNull IMessageHandler handler) throws Exception {
         if (consumer == null) {
             throw new Exception("Consumer disabled, cannot start the handler");
@@ -291,8 +303,7 @@ public class PulsarApplication implements AutoCloseable {
                 }
                 //TODO move Ack and possibly message sending to here
             }
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             log.error("Exception in main handler loop", ex);
             throw ex;
         }
@@ -301,7 +312,7 @@ public class PulsarApplication implements AutoCloseable {
     public void close() {
         log.info("Closing PulsarApplication resources");
 
-        if (producers != null){
+        if (producers != null) {
             for (Producer producer : producers.values()) {
                 try {
                     producer.close();
@@ -324,8 +335,8 @@ public class PulsarApplication implements AutoCloseable {
         }
         if (admin != null)
             admin.close();
-        if (jedis != null)
-            jedis.close();
+        if (redisStore != null)
+            redisStore.close();
         if (healthServer != null)
             healthServer.close();
     }
