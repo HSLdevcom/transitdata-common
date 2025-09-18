@@ -53,7 +53,8 @@ public class PulsarApplicationContext {
     @Nullable
     public Producer<byte[]> getSingleProducer() {
         if (getProducers().size() != 1) {
-            throw new IllegalStateException("Cannot get single producer when there are multiple producers (" + String.join(", ", getProducers().keySet()) + ")");
+            throw new IllegalStateException("Cannot get single producer when there are multiple producers ("
+                    + String.join(", ", getProducers().keySet()) + ")");
         }
         return getProducers().values().stream().findFirst().get();
     }

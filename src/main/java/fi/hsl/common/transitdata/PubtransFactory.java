@@ -15,13 +15,15 @@ public class PubtransFactory {
     public static final int JORE_DIRECTION_ID_OUTBOUND = 1;
     public static final int JORE_DIRECTION_ID_INBOUND = 2;
 
-    private PubtransFactory() {}
+    private PubtransFactory() {
+    }
 
     /**
      * Protobuf build()-functions can throw RuntimeException so let's make them visible and flag the possible Exception on function signature also
      */
     @NotNull
-    public static InternalMessages.TripInfo createTripInfo(@NotNull PubtransTableProtos.DOITripInfo doiInfo) throws Exception {
+    public static InternalMessages.TripInfo createTripInfo(@NotNull PubtransTableProtos.DOITripInfo doiInfo)
+            throws Exception {
         InternalMessages.TripInfo.Builder tripBuilder = InternalMessages.TripInfo.newBuilder();
         tripBuilder.setTripId(Long.toString(doiInfo.getDvjId()));
         tripBuilder.setOperatingDay(doiInfo.getOperatingDay());
@@ -33,8 +35,8 @@ public class PubtransFactory {
 
     @NotNull
     public static InternalMessages.StopEstimate createStopEstimate(@NotNull PubtransTableProtos.Common common,
-                                                                   @NotNull PubtransTableProtos.DOITripInfo doiTripInfo,
-                                                                   @NotNull InternalMessages.StopEstimate.Type arrivalOrDeparture) throws Exception {
+            @NotNull PubtransTableProtos.DOITripInfo doiTripInfo,
+            @NotNull InternalMessages.StopEstimate.Type arrivalOrDeparture) throws Exception {
         InternalMessages.StopEstimate.Builder builder = InternalMessages.StopEstimate.newBuilder();
         builder.setSchemaVersion(builder.getSchemaVersion());
 
@@ -45,9 +47,9 @@ public class PubtransFactory {
         builder.setTargetedStopId(doiTripInfo.getTargetedStopId());
         builder.setStopSequence(common.getJourneyPatternSequenceNumber());
 
-        InternalMessages.StopEstimate.Status scheduledStatus = (common.getState() == PUBTRANS_SKIPPED_STATE) ?
-                InternalMessages.StopEstimate.Status.SKIPPED :
-                InternalMessages.StopEstimate.Status.SCHEDULED;
+        InternalMessages.StopEstimate.Status scheduledStatus = (common.getState() == PUBTRANS_SKIPPED_STATE)
+                ? InternalMessages.StopEstimate.Status.SKIPPED
+                : InternalMessages.StopEstimate.Status.SCHEDULED;
 
         builder.setStatus(scheduledStatus);
 

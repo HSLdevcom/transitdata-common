@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import javax.validation.constraints.Null;
 import java.util.Optional;
 
-
 public class HfpValidator {
 
     private static final Logger log = LoggerFactory.getLogger(HfpParser.class);
@@ -24,13 +23,13 @@ public class HfpValidator {
     public static Optional<String> validateLocationQualityMethod(@Nullable String str) {
         if (validateString(str).isPresent()) {
             switch (str) {
-                case "GPS":
-                case "ODO":
-                case "MAN":
-                case "DR":
-                case "N/A":
+                case "GPS" :
+                case "ODO" :
+                case "MAN" :
+                case "DR" :
+                case "N/A" :
                     return Optional.of(str);
-                default:
+                default :
                     log.warn("Received unknown location quality method: {}", str);
                     return Optional.empty();
             }

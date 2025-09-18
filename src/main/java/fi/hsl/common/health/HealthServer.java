@@ -22,8 +22,7 @@ public class HealthServer {
     public final int port;
     public final String endpoint;
     public final HttpServer httpServer;
-    private final ExecutorService healthCheckExecutor =
-        Executors.newCachedThreadPool();
+    private final ExecutorService healthCheckExecutor = Executors.newCachedThreadPool();
     private final List<BooleanSupplier> checks = new CopyOnWriteArrayList<>();
 
     public HealthServer(final int port, @NotNull final String endpoint) throws IOException {
@@ -38,7 +37,8 @@ public class HealthServer {
         log.info("HealthServer started");
     }
 
-    private void writeResponse(@NotNull final HttpExchange httpExchange, @NotNull final int responseCode, @NotNull final String responseBody) throws IOException {
+    private void writeResponse(@NotNull final HttpExchange httpExchange, @NotNull final int responseCode,
+            @NotNull final String responseBody) throws IOException {
         final byte[] response = responseBody.getBytes(StandardCharsets.UTF_8);
         httpExchange.getResponseHeaders().add("Content-Type", "text/plain; charset=" + StandardCharsets.UTF_8.name());
         httpExchange.sendResponseHeaders(responseCode, response.length);
@@ -95,8 +95,7 @@ public class HealthServer {
 
     public boolean checkHealth() {
         try {
-            CompletionService<Boolean> executorCompletionService
-                    = new ExecutorCompletionService<>(healthCheckExecutor);
+            CompletionService<Boolean> executorCompletionService = new ExecutorCompletionService<>(healthCheckExecutor);
             int n = checks.size();
             List<Future<Boolean>> futures = new ArrayList<>(n);
             try {
@@ -110,7 +109,8 @@ public class HealthServer {
                             return false; // Return false immediately if any check fails
                         }
                     } catch (ExecutionException e) {
-                        log.error("A health check task execution failed. Marking unhealthy.", e.getCause() != null ? e.getCause() : e);
+                        log.error("A health check task execution failed. Marking unhealthy.",
+                                e.getCause() != null ? e.getCause() : e);
                         return false;
                     } catch (InterruptedException e) {
                         log.error("Health check interrupted. Marking unhealthy.", e);

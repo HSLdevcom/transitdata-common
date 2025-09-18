@@ -14,7 +14,8 @@ import org.slf4j.LoggerFactory;
 public class ConfigParser {
     private static final Logger log = LoggerFactory.getLogger(ConfigParser.class);
 
-    private ConfigParser() {}
+    private ConfigParser() {
+    }
 
     /**
      * Create a valid Config from a configuration file and environment variables using default filename "environment.conf".
