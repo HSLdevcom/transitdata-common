@@ -2,44 +2,35 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>fi.hsl</groupId>
     <artifactId>transitdata-common</artifactId>
-    <version>2.0.5</version>
+    <version>3.0.1</version>
     <packaging>jar</packaging>
     <name>Common utilities for Transitdata projects</name>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <java.version>25</java.version>
         <pulsar.version>3.0.7</pulsar.version>
         <testcontainers.version>1.18.3</testcontainers.version>
         <spotlessMavenPlugin.version>2.43.0</spotlessMavenPlugin.version>
-        <googleJavaFormat.version>1.17.0</googleJavaFormat.version>
+        <googleJavaFormat.version>1.23.0</googleJavaFormat.version>
     </properties>
 
     <profiles>
-        <!-- The Configuration of the unit-test profile -->
         <profile>
             <id>unit-test</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <!--
-                    Build profile for unit tests.
-                    Usage: mvn test -P unit-test
-                -->
                 <build.profile.id>unit-test</build.profile.id>
                 <skip.integration.tests>true</skip.integration.tests>
                 <skip.unit.tests>false</skip.unit.tests>
             </properties>
         </profile>
-        <!-- The Configuration of the integration-test profile -->
+
         <profile>
             <id>integration-test</id>
             <properties>
-                <!--
-                    Build profile for integration tests.
-                    Usage: mvn verify -P integration-test
-                -->
                 <build.profile.id>integration-test</build.profile.id>
                 <skip.integration.tests>false</skip.integration.tests>
                 <skip.unit.tests>true</skip.unit.tests>
@@ -61,82 +52,67 @@
             <artifactId>protobuf-java</artifactId>
             <version>3.21.12</version>
         </dependency>
-
         <dependency>
             <groupId>com.dslplatform</groupId>
-            <artifactId>dsl-json-java8</artifactId>
+            <artifactId>dsl-json</artifactId>
             <version>1.10.0</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.pulsar</groupId>
             <artifactId>pulsar-client</artifactId>
             <version>${pulsar.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.pulsar</groupId>
             <artifactId>pulsar-client-admin</artifactId>
             <version>${pulsar.version}</version>
         </dependency>
-
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>4.4.3</version>
-            <type>jar</type>
-            <scope>compile</scope>
         </dependency>
-
         <dependency>
             <groupId>com.typesafe</groupId>
             <artifactId>config</artifactId>
             <version>1.4.2</version>
         </dependency>
-
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.4.7</version>
         </dependency>
-
         <dependency>
             <groupId>ch.qos.logback.contrib</groupId>
             <artifactId>logback-json-classic</artifactId>
             <version>0.1.5</version>
         </dependency>
-
         <dependency>
             <groupId>ch.qos.logback.contrib</groupId>
             <artifactId>logback-jackson</artifactId>
             <version>0.1.5</version>
         </dependency>
-
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>2.0.7</version>
         </dependency>
-
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.15.0</version>
         </dependency>
-
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
             <version>24.0.1</version>
         </dependency>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>testcontainers</artifactId>
@@ -149,23 +125,31 @@
             <version>${testcontainers.version}</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>
         <finalName>${project.artifactId}-${project.version}</finalName>
+
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
                 <excludes>
-                    <!-- exclude logback.xml so that we don't shadow resources for applications using this library -->
                     <exclude>logback.xml</exclude>
                 </excludes>
             </resource>
         </resources>
 
         <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>25</release>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -188,36 +172,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
-                <configuration>
-                    <source>11</source>
-                    <target>11</target>
-                </configuration>
-            </plugin>
 
-            <plugin>
-                <groupId>com.coderplus.maven.plugins</groupId>
-                <artifactId>copy-rename-maven-plugin</artifactId>
-                <version>1.0.1</version>
-                <executions>
-                    <execution>
-                        <id>copy-and-rename-pom-file</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <configuration>
-                            <sourceFile>${project.basedir}/pom.xml</sourceFile>
-                            <destinationFile>${project.build.directory}/${project.build.finalName}.pom</destinationFile>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <!-- create a complete jar for testing in other environments -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -229,31 +184,12 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-                    <descriptors>
-                        <descriptor>test-jar-with-dependencies.xml</descriptor>
-                    </descriptors>
-                </configuration>
-                <executions>
-                    <execution>
-                        <!--Do not run the assembly plugin twice -->
-                        <!--<phase>package</phase>-->
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
                 <version>3.4.0</version>
                 <executions>
-                    <!-- Add a new source directory to our build -->
                     <execution>
                         <id>add-integration-test-sources</id>
                         <phase>generate-test-sources</phase>
@@ -261,13 +197,11 @@
                             <goal>add-test-source</goal>
                         </goals>
                         <configuration>
-                            <!-- Configures the source directory of our integration tests -->
                             <sources>
                                 <source>src/integration-test/java</source>
                             </sources>
                         </configuration>
                     </execution>
-                    <!-- Add a new resource directory to our build -->
                     <execution>
                         <id>add-integration-test-resources</id>
                         <phase>generate-test-resources</phase>
@@ -277,13 +211,12 @@
                         <configuration>
                             <resources>
                                 <resource>
-                                    <filtering>true</filtering>
                                     <directory>src/integration-test/resources</directory>
+                                    <filtering>true</filtering>
                                 </resource>
                             </resources>
                         </configuration>
                     </execution>
-
                 </executions>
             </plugin>
 
@@ -293,7 +226,6 @@
                 <version>3.1.2</version>
                 <configuration>
                     <skipTests>${skip.unit.tests}</skipTests>
-                    <!-- Excludes integration tests when unit tests are run -->
                     <excludes>
                         <exclude>**/IT*.java</exclude>
                     </excludes>
@@ -306,6 +238,7 @@
                     </environmentVariables>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
@@ -323,6 +256,7 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>com.diffplug.spotless</groupId>
                 <artifactId>spotless-maven-plugin</artifactId>
@@ -349,6 +283,7 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 </project>

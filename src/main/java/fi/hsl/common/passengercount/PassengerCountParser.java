@@ -2,7 +2,6 @@ package fi.hsl.common.passengercount;
 
 import com.dslplatform.json.DslJson;
 import com.dslplatform.json.ParsingException;
-import com.dslplatform.json.runtime.Settings;
 import fi.hsl.common.passengercount.json.*;
 import fi.hsl.common.passengercount.proto.PassengerCount;
 import org.jetbrains.annotations.NotNull;
@@ -20,7 +19,10 @@ public class PassengerCountParser {
 
     static final Pattern topicVersionRegex = Pattern.compile("(^v\\d+|dev)");
 
-    final DslJson<Object> dslJson = new DslJson<>(Settings.withRuntime().allowArrayFormat(true).includeServiceLoader());
+    DslJson<Object> dslJson = new DslJson<>(
+            new DslJson.Settings<>()
+                    .allowArrayFormat(true)
+                    .includeServiceLoader());
 
     @NotNull
     public static PassengerCountParser newInstance() {

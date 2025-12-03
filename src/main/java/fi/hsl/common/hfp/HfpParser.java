@@ -2,7 +2,6 @@ package fi.hsl.common.hfp;
 
 import com.dslplatform.json.DslJson;
 import com.dslplatform.json.ParsingException;
-import com.dslplatform.json.runtime.Settings;
 import fi.hsl.common.hfp.proto.Hfp;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -35,7 +34,7 @@ public class HfpParser {
     //Example: https://github.com/ngs-doo/dsl-json/blob/master/examples/MavenJava8/src/main/java/com/dslplatform/maven/Example.java
 
     //Note! Apparently not thread safe, for per thread reuse use ThreadLocal pattern or create separate instances
-    final DslJson<Object> dslJson = new DslJson<>(Settings.withRuntime().allowArrayFormat(true).includeServiceLoader());
+    final DslJson<Object> dslJson = new DslJson<>(new DslJson.Settings<>().allowArrayFormat(true).includeServiceLoader());
 
     private static void foundVehicleWithEmptyTransportMode(String uniqueVehicleId) {
         vehiclesWithEmptyTransportMode.add(uniqueVehicleId);
