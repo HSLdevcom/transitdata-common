@@ -1,10 +1,11 @@
 package fi.hsl.common.passengercount.json;
 
-import com.dslplatform.json.CompiledJson;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 
-@CompiledJson(onUnknown = CompiledJson.Behavior.IGNORE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Vehiclecounts {
     public String countquality;
     public int vehicleload;

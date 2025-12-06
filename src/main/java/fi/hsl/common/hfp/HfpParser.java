@@ -1,14 +1,15 @@
 package fi.hsl.common.hfp;
 
-import com.dslplatform.json.DslJson;
-import com.dslplatform.json.ParsingException;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import fi.hsl.common.hfp.proto.Hfp;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.validation.constraints.Null;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.Time;
@@ -28,13 +29,11 @@ public class HfpParser {
 
     private static Set<String> vehiclesWithEmptyTransportMode = new HashSet<>();
 
-    // Let's use dsl-json (https://github.com/ngs-doo/dsl-json) for performance.
-    // Based on this benchmark: https://github.com/fabienrenaud/java-json-benchmark
-
-    //Example: https://github.com/ngs-doo/dsl-json/blob/master/examples/MavenJava8/src/main/java/com/dslplatform/maven/Example.java
-
-    //Note! Apparently not thread safe, for per thread reuse use ThreadLocal pattern or create separate instances
-    final DslJson<Object> dslJson = new DslJson<>(new DslJson.Settings<>().allowArrayFormat(true).includeServiceLoader());
+    final ObjectMapper objectMapper = new ObjectMapper()
+            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+            .configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true)
+            .configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true)
+            .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
 
     private static void foundVehicleWithEmptyTransportMode(String uniqueVehicleId) {
         vehiclesWithEmptyTransportMode.add(uniqueVehicleId);
@@ -53,32 +52,35 @@ public class HfpParser {
     /**
      * Methods for parsing the Json Payload
      **/
-
     @Nullable
     public HfpJson parseJson(@NotNull byte[] data) throws IOException, InvalidHfpPayloadException {
         try {
-            return dslJson.deserialize(HfpJson.class, data, data.length);
+            HfpJson hfpJson = objectMapper.readValue(data, HfpJson.class);
+            validateRequiredFields(hfpJson);
+            return hfpJson;
         } catch (IOException ioe) {
-            if (ioe instanceof ParsingException) {
-                throw new InvalidHfpPayloadException("Failed to parse HFP JSON", (ParsingException) ioe);
-            } else {
-                throw ioe;
-            }
+            throw new InvalidHfpPayloadException("Failed to parse HFP JSON", ioe);
+        }
+    }
+
+    private void validateRequiredFields(HfpJson hfpJson) throws InvalidHfpPayloadException {
+        if (hfpJson == null || hfpJson.payload == null) {
+            throw new InvalidHfpPayloadException("Payload is missing or null");
+        }
+        HfpJson.Payload p = hfpJson.payload;
+        if (p.tst == null) {
+            throw new InvalidHfpPayloadException("Field 'tst' cannot be null");
         }
     }
 
     @NotNull
     public String serializeToString(@NotNull final HfpJson json) throws IOException {
-        final ByteArrayOutputStream os = new ByteArrayOutputStream();
-        dslJson.serialize(json, os);
-        return os.toString("UTF-8");
+        return objectMapper.writeValueAsString(json);
     }
 
     @NotNull
     public byte[] serializeToByteArray(@NotNull final HfpJson json) throws IOException {
-        final ByteArrayOutputStream os = new ByteArrayOutputStream();
-        dslJson.serialize(json, os);
-        return os.toByteArray();
+        return objectMapper.writeValueAsBytes(json);
     }
 
     public Optional<Hfp.Payload> safeParse(@NotNull byte[] data) {
@@ -96,12 +98,11 @@ public class HfpParser {
         final HfpJson.Payload payload = json.payload;
 
         Hfp.Payload.Builder builder = Hfp.Payload.newBuilder();
-        // Required attributes
+
         builder.setSchemaVersion(builder.getSchemaVersion());
         HfpValidator.validateString(payload.tst).ifPresent(builder::setTst); // TODO add validation for offsetdatetime format
         builder.setTsi(payload.tsi);
 
-        // Optional attributes
         HfpValidator.validateString(payload.desi).ifPresent(builder::setDesi);
         HfpValidator.validateString(payload.dir).ifPresent(builder::setDir);
         if (payload.oper != null)
@@ -173,7 +174,6 @@ public class HfpParser {
     /**
      * Methods for parsing the data from the topic
      */
-
     public static Optional<Hfp.Topic> safeParseTopic(@NotNull String topic) {
         try {
             return Optional.of(parseTopic(topic));
@@ -440,7 +440,11 @@ public class HfpParser {
     }
 
     public static class InvalidHfpPayloadException extends Exception {
-        private InvalidHfpPayloadException(String message, ParsingException cause) {
+        public InvalidHfpPayloadException(String message) {
+            super(message);
+        }
+
+        public InvalidHfpPayloadException(String message, Throwable cause) {
             super(message, cause);
         }
     }

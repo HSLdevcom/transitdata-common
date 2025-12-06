@@ -1,10 +1,12 @@
 package fi.hsl.common.passengercount.json;
 
-import com.dslplatform.json.CompiledJson;
-import com.dslplatform.json.JsonAttribute;
 
-@CompiledJson(onUnknown = CompiledJson.Behavior.IGNORE)
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ApcJson {
-    @JsonAttribute(nullable = false, name = "APC")
+
+    @JsonProperty(value = "APC", required = true)
     public Apc apc;
 }

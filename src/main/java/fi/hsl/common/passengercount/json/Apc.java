@@ -1,11 +1,11 @@
 package fi.hsl.common.passengercount.json;
 
-import com.dslplatform.json.CompiledJson;
-import com.dslplatform.json.JsonAttribute;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;
 
-@CompiledJson(onUnknown = CompiledJson.Behavior.IGNORE)
+@JsonIgnoreProperties
 public class Apc {
     public String desi;
     public String dir;
@@ -14,7 +14,7 @@ public class Apc {
     public Date tst;
     public Long tsi;
     public Double lat;
-    @JsonAttribute(name = "long")
+    @JsonProperty("long")
     public Double lon;
     public Double odo;
     public String oday;
