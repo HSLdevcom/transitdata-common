@@ -19,16 +19,15 @@ public class PassengerCountParserTest {
     private final String TEST_TOPIC = "/hfp/v2/journey/ongoing/apc/bus/0022/01288";
 
     @Test
+    public void parseJson_ignoreUnknownProperties_Test() throws Exception {
+        final var apc = parseJsonFromResources("src/test/resources/passenger-count-unknown-properties-sample.json").apc;
+        performAssertions(apc);
+    }
+
+    @Test
     public void parseJsonTest() throws Exception {
         Apc apc = parseJsonFromResources("src/test/resources/passenger-count-sample.json").apc;
-        assertEquals("555", apc.desi);
-        assertEquals(12, (int) apc.oper);
-        assertEquals("GPS", apc.loc);
-        assertEquals("regular | defect | other", apc.vehiclecounts.countquality);
-        assertEquals(15, apc.vehiclecounts.vehicleload);
-        assertEquals(1, apc.vehiclecounts.doorcounts.size());
-        assertEquals("door1", apc.vehiclecounts.doorcounts.get(0).door);
-
+        performAssertions(apc);
     }
 
     private ApcJson parseJsonFromResources(String filename) throws Exception {
@@ -36,6 +35,16 @@ public class PassengerCountParserTest {
         ApcJson apcJson = PassengerCountParser.newInstance().parseJson(data);
         assertNotNull(apcJson);
         return apcJson;
+    }
+
+    private void performAssertions(Apc apc) {
+        assertEquals("555", apc.desi);
+        assertEquals(12, (int) apc.oper);
+        assertEquals("GPS", apc.loc);
+        assertEquals("regular | defect | other", apc.vehiclecounts.countquality);
+        assertEquals(15, apc.vehiclecounts.vehicleload);
+        assertEquals(1, apc.vehiclecounts.doorcounts.size());
+        assertEquals("door1", apc.vehiclecounts.doorcounts.get(0).door);
     }
 
     @Test
