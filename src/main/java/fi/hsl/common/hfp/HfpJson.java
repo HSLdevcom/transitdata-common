@@ -22,9 +22,8 @@ public class HfpJson {
     // {"VP":{"desi":"81","dir":"2","oper":22,"veh":792,"tst":"2018-04-05T17:38:36Z","tsi":1522949916,"spd":0.16,"hdg":225,"lat":60.194481,"long":25.03095,"acc":0,"dl":-25,"odo":2819,"drst":0,"oday":"2018-04-05","jrn":636,"line":112,"start":"20:25"}}
 
     @JsonProperty("VP")
-    @JsonAlias({"DUE", "ARR", "DEP", "ARS", "PDE", "PAS", "WAIT",
-            "DOO", "DOC", "TLR", "TLA", "DA", "DOUT", "BA", "BOUT",
-            "VJA", "VJOUT"})
+    @JsonAlias({"DUE", "ARR", "DEP", "ARS", "PDE", "PAS", "WAIT", "DOO", "DOC", "TLR", "TLA", "DA", "DOUT", "BA",
+            "BOUT", "VJA", "VJOUT"})
     public Payload payload;
 
     @JsonIgnoreProperties(ignoreUnknown = true)
@@ -142,8 +141,7 @@ public class HfpJson {
 
     public static class OdoSerializer extends JsonSerializer<Double> {
         @Override
-        public void serialize(Double value, JsonGenerator gen, SerializerProvider serializers)
-                throws IOException {
+        public void serialize(Double value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
             if (value == null) {
                 gen.writeNull();
             } else {

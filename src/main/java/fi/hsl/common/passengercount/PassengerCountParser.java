@@ -21,8 +21,7 @@ public class PassengerCountParser {
 
     static final Pattern topicVersionRegex = Pattern.compile("(^v\\d+|dev)");
 
-    ObjectMapper objectMapper = new ObjectMapper()
-            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+    ObjectMapper objectMapper = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
             .configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true)
             .configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true)
             .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
@@ -274,9 +273,7 @@ public class PassengerCountParser {
             return objectMapper.readValue(data, ApcJson.class);
         } catch (IOException ioe) {
             if (ioe instanceof com.fasterxml.jackson.core.JsonProcessingException jpe) {
-                throw new PassengerCountParser.InvalidAPCPayloadException(
-                        "Failed to parse APC JSON", jpe
-                );
+                throw new PassengerCountParser.InvalidAPCPayloadException("Failed to parse APC JSON", jpe);
             } else {
                 throw ioe;
             }
