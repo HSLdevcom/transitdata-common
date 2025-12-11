@@ -1,8 +1,9 @@
 package fi.hsl.common.passengercount;
 
-import com.dslplatform.json.DslJson;
-import com.dslplatform.json.ParsingException;
-import com.dslplatform.json.runtime.Settings;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import fi.hsl.common.passengercount.json.*;
 import fi.hsl.common.passengercount.proto.PassengerCount;
 import org.jetbrains.annotations.NotNull;
@@ -20,7 +21,10 @@ public class PassengerCountParser {
 
     static final Pattern topicVersionRegex = Pattern.compile("(^v\\d+|dev)");
 
-    final DslJson<Object> dslJson = new DslJson<>(Settings.withRuntime().allowArrayFormat(true).includeServiceLoader());
+    ObjectMapper objectMapper = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+            .configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true)
+            .configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true)
+            .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
 
     @NotNull
     public static PassengerCountParser newInstance() {
@@ -259,23 +263,21 @@ public class PassengerCountParser {
     }
 
     public OutputStream serializeJson(ApcJson apcJson, OutputStream outputStream) throws IOException {
-        dslJson.serialize(apcJson, outputStream);
+        objectMapper.writeValue(outputStream, apcJson);
         return outputStream;
     }
 
     @Nullable
     public ApcJson parseJson(byte @NotNull [] data) throws IOException, InvalidAPCPayloadException {
         try {
-            return dslJson.deserialize(ApcJson.class, data, data.length);
+            return objectMapper.readValue(data, ApcJson.class);
         } catch (IOException ioe) {
-            if (ioe instanceof ParsingException) {
-                throw new PassengerCountParser.InvalidAPCPayloadException("Failed to parse APC JSON",
-                        (ParsingException) ioe);
+            if (ioe instanceof com.fasterxml.jackson.core.JsonProcessingException jpe) {
+                throw new PassengerCountParser.InvalidAPCPayloadException("Failed to parse APC JSON", jpe);
             } else {
                 throw ioe;
             }
         }
-
     }
 
     private static OptionalDouble safeParseDouble(String s) {
@@ -334,7 +336,7 @@ public class PassengerCountParser {
     }
 
     public static class InvalidAPCPayloadException extends Exception {
-        private InvalidAPCPayloadException(String message, ParsingException cause) {
+        private InvalidAPCPayloadException(String message, JsonProcessingException cause) {
             super(message, cause);
         }
     }
