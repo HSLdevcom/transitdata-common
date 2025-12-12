@@ -15,17 +15,11 @@ class RedisClusterPropertiesTest {
     @Test
     void shouldLoadAllPropertiesWhenPresent() {
         // given
-        var config = parseMap(Map.of(
-                "redisCluster.masterName", "mymaster",
-                "redisCluster.sentinels", "host1:26379,host2:26379",
-                "redisCluster.healthCheck", "true",
-                "redisCluster.idleConnectionTimeout", "10s",
-                "redisCluster.minIdleConnections", "5",
-                "redisCluster.maxConnections", "20",
-                "redisCluster.maxWait", "2s",
-                "redisCluster.connectionTimeout", "15s",
-                "redisCluster.socketTimeout", "30s"
-        ));
+        var config = parseMap(Map.of("redisCluster.masterName", "mymaster", "redisCluster.sentinels",
+                "host1:26379,host2:26379", "redisCluster.healthCheck", "true", "redisCluster.idleConnectionTimeout",
+                "10s", "redisCluster.minIdleConnections", "5", "redisCluster.maxConnections", "20",
+                "redisCluster.maxWait", "2s", "redisCluster.connectionTimeout", "15s", "redisCluster.socketTimeout",
+                "30s"));
 
         // when
         var props = redisClusterProperties(config);
@@ -45,10 +39,7 @@ class RedisClusterPropertiesTest {
     @Test
     void shouldApplyDefaultsWhenOptionalPropertiesMissing() {
         // given
-        var config = parseMap(Map.of(
-                "redisCluster.masterName", "mymaster",
-                "redisCluster.sentinels", "host1:26379"
-        ));
+        var config = parseMap(Map.of("redisCluster.masterName", "mymaster", "redisCluster.sentinels", "host1:26379"));
 
         // when
         var props = redisClusterProperties(config);
@@ -68,13 +59,10 @@ class RedisClusterPropertiesTest {
     @Test
     void shouldThrowWhenMasterNameMissing() {
         // given
-        var config = parseMap(Map.of(
-                "redisCluster.sentinels", "host1:26379"
-        ));
+        var config = parseMap(Map.of("redisCluster.sentinels", "host1:26379"));
 
         // when / then
-        assertThatThrownBy(() -> redisClusterProperties(config))
-                .isInstanceOf(IllegalArgumentException.class)
+        assertThatThrownBy(() -> redisClusterProperties(config)).isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("redisCluster.masterName is required");
     }
 
@@ -84,22 +72,17 @@ class RedisClusterPropertiesTest {
         var config = parseMap(Map.of("redisCluster.masterName", "mymaster"));
 
         // when / then
-        assertThatThrownBy(() -> redisClusterProperties(config))
-                .isInstanceOf(IllegalArgumentException.class)
+        assertThatThrownBy(() -> redisClusterProperties(config)).isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("redisCluster.sentinels is required");
     }
 
     @Test
     void shouldThrowWhenSentinelsEmpty() {
         // given
-        var config = parseMap(Map.of(
-                "redisCluster.masterName", "mymaster",
-                "redisCluster.sentinels", ""
-        ));
+        var config = parseMap(Map.of("redisCluster.masterName", "mymaster", "redisCluster.sentinels", ""));
 
         // when / then
-        assertThatThrownBy(() -> redisClusterProperties(config))
-                .isInstanceOf(IllegalArgumentException.class)
+        assertThatThrownBy(() -> redisClusterProperties(config)).isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("sentinels must not be empty");
     }
 }

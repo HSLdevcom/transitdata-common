@@ -29,8 +29,7 @@ class ChecksTest {
         String value = null;
 
         // when / then
-        assertThatThrownBy(() -> checkRequired("myParam", value))
-                .isInstanceOf(IllegalArgumentException.class)
+        assertThatThrownBy(() -> checkRequired("myParam", value)).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("myParam is required");
     }
 
@@ -52,8 +51,7 @@ class ChecksTest {
         List<String> collection = null;
 
         // when / then
-        assertThatThrownBy(() -> checkNotEmpty("param", collection))
-                .isInstanceOf(IllegalArgumentException.class)
+        assertThatThrownBy(() -> checkNotEmpty("param", collection)).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("param must not be null");
     }
 
@@ -63,8 +61,7 @@ class ChecksTest {
         var collection = List.of();
 
         // when / then
-        assertThatThrownBy(() -> checkNotEmpty("param", collection))
-                .isInstanceOf(IllegalArgumentException.class)
+        assertThatThrownBy(() -> checkNotEmpty("param", collection)).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("param must not be empty");
     }
 
@@ -86,8 +83,7 @@ class ChecksTest {
         String value = null;
 
         // when / then
-        assertThatThrownBy(() -> checkNotEmpty("param", value))
-                .isInstanceOf(IllegalArgumentException.class)
+        assertThatThrownBy(() -> checkNotEmpty("param", value)).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("param must not be blank");
     }
 
@@ -97,8 +93,7 @@ class ChecksTest {
         var value = "   ";
 
         // when / then
-        assertThatThrownBy(() -> checkNotEmpty("param", value))
-                .isInstanceOf(IllegalArgumentException.class)
+        assertThatThrownBy(() -> checkNotEmpty("param", value)).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("param must not be blank");
     }
 }

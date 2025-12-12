@@ -250,15 +250,9 @@ public class PulsarApplication implements AutoCloseable {
 
     @NotNull
     protected RedisStore createRedisStore(@NotNull RedisClusterProperties properties) {
-        var pool = new JedisSentinelPool(
-                properties.masterName,
-                properties.sentinels,
-                properties.jedisPoolConfig(),
-                (int) properties.connectionTimeout.toMillis(),
-                (int) properties.socketTimeout.toMillis(),
-                null,
-                DEFAULT_DATABASE
-        );
+        var pool = new JedisSentinelPool(properties.masterName, properties.sentinels, properties.jedisPoolConfig(),
+                (int) properties.connectionTimeout.toMillis(), (int) properties.socketTimeout.toMillis(), null,
+                DEFAULT_DATABASE);
 
         return new RedisStore(pool);
     }

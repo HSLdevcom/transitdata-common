@@ -32,8 +32,7 @@ class RedisStoreTest {
         jedis = mock(Jedis.class);
         redisStore = new RedisStore(jedisPool);
 
-        given(jedisPool.getResource())
-                .willReturn(jedis);
+        given(jedisPool.getResource()).willReturn(jedis);
     }
 
     @Test
@@ -146,9 +145,7 @@ class RedisStoreTest {
         // given
         var firstScan = new ScanResult<>("1", List.of("k1", "k2"));
         var secondScan = new ScanResult<>("0", List.of("k3"));
-        given(jedis.scan(anyString(), any(ScanParams.class)))
-                .willReturn(firstScan)
-                .willReturn(secondScan);
+        given(jedis.scan(anyString(), any(ScanParams.class))).willReturn(firstScan).willReturn(secondScan);
 
         // when
         var keys = redisStore.getKeys("prefix", 10);

@@ -35,15 +35,10 @@ public class RedisClusterProperties {
     public final Duration connectionTimeout;
     public final Duration socketTimeout;
 
-    private RedisClusterProperties(String masterName,
-                                   Set<String> sentinels,
-                                   @Nullable Boolean healthCheck,
-                                   @Nullable Duration idleConnectionTimeout,
-                                   @Nullable Integer minIdleConnections,
-                                   @Nullable Integer maxConnections,
-                                   @Nullable Duration maxWait,
-                                   @Nullable Duration connectionTimeout,
-                                   @Nullable Duration socketTimeout) {
+    private RedisClusterProperties(String masterName, Set<String> sentinels, @Nullable Boolean healthCheck,
+            @Nullable Duration idleConnectionTimeout, @Nullable Integer minIdleConnections,
+            @Nullable Integer maxConnections, @Nullable Duration maxWait, @Nullable Duration connectionTimeout,
+            @Nullable Duration socketTimeout) {
         this.masterName = checkNotEmpty("masterName", masterName);
         this.sentinels = checkNotEmpty("sentinels", sentinels);
         this.healthCheck = ofNullable(healthCheck).orElse(false);
@@ -56,20 +51,16 @@ public class RedisClusterProperties {
     }
 
     public static RedisClusterProperties redisClusterProperties(Config config) {
-        return new RedisClusterProperties(
-                getRequired(config, "redisCluster.masterName", config::getString),
-                stream(getRequired(config, "redisCluster.sentinels", config::getString)
-                        .split(","))
-                        .filter(not(StringUtils::isBlank))
-                        .collect(toSet()),
+        return new RedisClusterProperties(getRequired(config, "redisCluster.masterName", config::getString),
+                stream(getRequired(config, "redisCluster.sentinels", config::getString).split(","))
+                        .filter(not(StringUtils::isBlank)).collect(toSet()),
                 getNullable(config, "redisCluster.healthCheck", config::getBoolean),
                 getNullable(config, "redisCluster.idleConnectionTimeout", config::getDuration),
                 getNullable(config, "redisCluster.minIdleConnections", config::getInt),
                 getNullable(config, "redisCluster.maxConnections", config::getInt),
                 getNullable(config, "redisCluster.maxWait", config::getDuration),
                 getNullable(config, "redisCluster.connectionTimeout", config::getDuration),
-                getNullable(config, "redisCluster.socketTimeout", config::getDuration)
-        );
+                getNullable(config, "redisCluster.socketTimeout", config::getDuration));
     }
 
     public JedisPoolConfig jedisPoolConfig() {
