@@ -29,17 +29,15 @@ public class TransitdataSchema {
             String version = received.getProperty(TransitdataProperties.KEY_SCHEMA_VERSION);
             Optional<Integer> maybeVersion = Optional.ofNullable(version).map(Integer::parseInt);
             return Optional.of(new TransitdataSchema(schema, maybeVersion));
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             log.error("Failed to parse protobuf schema", e);
             return Optional.empty();
         }
     }
 
-    public static boolean hasProtobufSchema(@NotNull Message received, @NotNull TransitdataProperties.ProtobufSchema expected) {
-        return parseFromPulsarMessage(received)
-                .map(schema -> schema.schema == expected)
-                .orElse(false);
+    public static boolean hasProtobufSchema(@NotNull Message received,
+            @NotNull TransitdataProperties.ProtobufSchema expected) {
+        return parseFromPulsarMessage(received).map(schema -> schema.schema == expected).orElse(false);
     }
 
 }

@@ -1,11 +1,11 @@
 package fi.hsl.common.passengercount.json;
 
-import com.dslplatform.json.CompiledJson;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 
-@CompiledJson(onUnknown = CompiledJson.Behavior.IGNORE)
-public class DoorCount{
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class DoorCount {
     public String door;
     public List<Count> count;
 }

@@ -19,16 +19,15 @@ public class PassengerCountParserTest {
     private final String TEST_TOPIC = "/hfp/v2/journey/ongoing/apc/bus/0022/01288";
 
     @Test
+    public void parseJson_ignoreUnknownProperties_Test() throws Exception {
+        final var apc = parseJsonFromResources("src/test/resources/passenger-count-unknown-properties-sample.json").apc;
+        performAssertions(apc);
+    }
+
+    @Test
     public void parseJsonTest() throws Exception {
         Apc apc = parseJsonFromResources("src/test/resources/passenger-count-sample.json").apc;
-        assertEquals("555", apc.desi);
-        assertEquals(12, (int)apc.oper);
-        assertEquals("GPS", apc.loc);
-        assertEquals("regular | defect | other", apc.vehiclecounts.countquality);
-        assertEquals(15, apc.vehiclecounts.vehicleload);
-        assertEquals(1, apc.vehiclecounts.doorcounts.size());
-        assertEquals("door1", apc.vehiclecounts.doorcounts.get(0).door);
-
+        performAssertions(apc);
     }
 
     private ApcJson parseJsonFromResources(String filename) throws Exception {
@@ -38,8 +37,18 @@ public class PassengerCountParserTest {
         return apcJson;
     }
 
+    private void performAssertions(Apc apc) {
+        assertEquals("555", apc.desi);
+        assertEquals(12, (int) apc.oper);
+        assertEquals("GPS", apc.loc);
+        assertEquals("regular | defect | other", apc.vehiclecounts.countquality);
+        assertEquals(15, apc.vehiclecounts.vehicleload);
+        assertEquals(1, apc.vehiclecounts.doorcounts.size());
+        assertEquals("door1", apc.vehiclecounts.doorcounts.get(0).door);
+    }
+
     @Test
-    public void convertJsonToProtobufMessageTest() throws Exception{
+    public void convertJsonToProtobufMessageTest() throws Exception {
         ApcJson apcJson = parseJsonFromResources("src/test/resources/passenger-count-sample.json");
         PassengerCount.Payload payload = PassengerCountParser.newInstance().parsePayload(apcJson).get();
         assertEquals("555", payload.getDesi());
@@ -52,7 +61,7 @@ public class PassengerCountParserTest {
     }
 
     @Test
-    public void convertProtobufToJsonTest() throws Exception{
+    public void convertProtobufToJsonTest() throws Exception {
         PassengerCountParser parser = PassengerCountParser.newInstance();
         ApcJson apcJson = parseJsonFromResources("src/test/resources/passenger-count-sample.json");
         PassengerCount.Payload payload = parser.parsePayload(apcJson).get();
@@ -67,9 +76,12 @@ public class PassengerCountParserTest {
         assertEquals(apcJson.apc.vehiclecounts.countquality, newApcJson.apc.vehiclecounts.countquality);
         assertEquals(apcJson.apc.vehiclecounts.extensions, newApcJson.apc.vehiclecounts.extensions);
         assertEquals(apcJson.apc.vehiclecounts.vehicleload, newApcJson.apc.vehiclecounts.vehicleload);
-        assertEquals(apcJson.apc.vehiclecounts.doorcounts.get(0).door, newApcJson.apc.vehiclecounts.doorcounts.get(0).door);
-        assertEquals(apcJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).clazz, newApcJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).clazz);
-        assertEquals(apcJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).in, newApcJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).in);
+        assertEquals(apcJson.apc.vehiclecounts.doorcounts.get(0).door,
+                newApcJson.apc.vehiclecounts.doorcounts.get(0).door);
+        assertEquals(apcJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).clazz,
+                newApcJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).clazz);
+        assertEquals(apcJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).in,
+                newApcJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).in);
     }
 
     @Test
@@ -90,9 +102,12 @@ public class PassengerCountParserTest {
         assertEquals(apcJson.apc.vehiclecounts.countquality, parsedJson.apc.vehiclecounts.countquality);
         assertEquals(apcJson.apc.vehiclecounts.extensions, parsedJson.apc.vehiclecounts.extensions);
         assertEquals(apcJson.apc.vehiclecounts.vehicleload, parsedJson.apc.vehiclecounts.vehicleload);
-        assertEquals(apcJson.apc.vehiclecounts.doorcounts.get(0).door, parsedJson.apc.vehiclecounts.doorcounts.get(0).door);
-        assertEquals(apcJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).clazz, parsedJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).clazz);
-        assertEquals(apcJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).in, parsedJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).in);
+        assertEquals(apcJson.apc.vehiclecounts.doorcounts.get(0).door,
+                parsedJson.apc.vehiclecounts.doorcounts.get(0).door);
+        assertEquals(apcJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).clazz,
+                parsedJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).clazz);
+        assertEquals(apcJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).in,
+                parsedJson.apc.vehiclecounts.doorcounts.get(0).count.get(0).in);
     }
 
     private String parseTopicPrefix(String topic) throws Exception {

@@ -14,7 +14,8 @@ import java.util.Scanner;
 public class ConfigUtils {
     private static final Logger log = LoggerFactory.getLogger(ConfigUtils.class);
 
-    private ConfigUtils() {}
+    private ConfigUtils() {
+    }
 
     @NotNull
     public static String getEnvOrThrow(@NotNull String name) throws IllegalArgumentException {
@@ -29,8 +30,7 @@ public class ConfigUtils {
         try {
             int n = Integer.parseInt(value);
             return Optional.of(n);
-        }
-        catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             log.error("Failed to parse int from " + value, e);
             return Optional.empty();
         }
@@ -76,7 +76,8 @@ public class ConfigUtils {
     }
 
     @NotNull
-    public static String getSecretFromFileOrThrow(@NotNull final String envName, final Optional<String> defaultPath) throws Exception {
+    public static String getSecretFromFileOrThrow(@NotNull final String envName, final Optional<String> defaultPath)
+            throws Exception {
         String secretFilePath;
         final Optional<String> maybeSecretFilePath = getEnv(envName);
         if (maybeSecretFilePath.isPresent()) {

@@ -21,7 +21,8 @@ public class JoreDateTime {
     private int joreSeconds;
     private LocalDateTime dateTime;
 
-    public JoreDateTime(@NotNull final String serviceDayStartTimeString, @NotNull final String date24h, @NotNull final String time24h) {
+    public JoreDateTime(@NotNull final String serviceDayStartTimeString, @NotNull final String date24h,
+            @NotNull final String time24h) {
         int serviceDayStartTimeSeconds = LocalTime.parse(serviceDayStartTimeString).toSecondOfDay();
         LocalDate date = LocalDate.parse(date24h, DateTimeFormatter.ofPattern("yyyyMMdd"));
         LocalTime time = LocalTime.parse(time24h);
@@ -77,14 +78,13 @@ public class JoreDateTime {
             throw new ParseException("Failed to parse provided time string", 0);
         }
         return Integer.parseInt(matcher.group(1)) * HOUR_IN_SECONDS
-                + Integer.parseInt(matcher.group(2)) * MINUTE_IN_SECONDS
-                + Integer.parseInt(matcher.group(3));
+                + Integer.parseInt(matcher.group(2)) * MINUTE_IN_SECONDS + Integer.parseInt(matcher.group(3));
     }
 
     @NotNull
     public static String secondsToTimeString(int seconds) {
         int h = seconds / HOUR_IN_SECONDS;
-        int m  = (seconds % HOUR_IN_SECONDS) / MINUTE_IN_SECONDS;
+        int m = (seconds % HOUR_IN_SECONDS) / MINUTE_IN_SECONDS;
         int s = seconds % MINUTE_IN_SECONDS;
         return String.format("%02d:%02d:%02d", h, m, s);
     }

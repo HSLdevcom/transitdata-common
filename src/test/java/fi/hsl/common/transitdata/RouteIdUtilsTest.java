@@ -60,7 +60,7 @@ public class RouteIdUtilsTest {
 
     @Test
     public void testNormalizingNormalIdReturnsItself() {
-        assertEquals("2550", RouteIdUtils.normalizeRouteId( "2550"));
+        assertEquals("2550", RouteIdUtils.normalizeRouteId("2550"));
         assertEquals("3001Z", RouteIdUtils.normalizeRouteId("3001Z"));
     }
 

@@ -1,8 +1,9 @@
 package fi.hsl.common.passengercount;
 
-import com.dslplatform.json.DslJson;
-import com.dslplatform.json.ParsingException;
-import com.dslplatform.json.runtime.Settings;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import fi.hsl.common.passengercount.json.*;
 import fi.hsl.common.passengercount.proto.PassengerCount;
 import org.jetbrains.annotations.NotNull;
@@ -20,7 +21,10 @@ public class PassengerCountParser {
 
     static final Pattern topicVersionRegex = Pattern.compile("(^v\\d+|dev)");
 
-    final DslJson<Object> dslJson = new DslJson<>(Settings.withRuntime().allowArrayFormat(true).includeServiceLoader());
+    ObjectMapper objectMapper = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+            .configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true)
+            .configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true)
+            .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
 
     @NotNull
     public static PassengerCountParser newInstance() {
@@ -139,7 +143,7 @@ public class PassengerCountParser {
             log.warn("Field 'doorcounts' is null for vehicle {}/{}", payload.oper, payload.veh);
             return Optional.empty();
         }
-        
+
         payloadBuilder.setVehicleCounts(vehicleBuilder);
         return Optional.of(payloadBuilder.build());
     }
@@ -168,21 +172,21 @@ public class PassengerCountParser {
     public static PassengerCount.Topic parseTopic(@NotNull String topic) throws InvalidAPCTopicException {
         return parseTopic(topic, System.currentTimeMillis());
     }
-    
+
     @NotNull
-    public static PassengerCount.Topic parseTopic(@NotNull String topic, long receivedMs) throws InvalidAPCTopicException {
+    public static PassengerCount.Topic parseTopic(@NotNull String topic, long receivedMs)
+            throws InvalidAPCTopicException {
         //log.debug("Parsing metadata from topic: " + topic);
 
         final String[] parts = topic.split("/", -1); //-1 to include empty substrings
-        
+
         final PassengerCount.Topic.Builder builder = PassengerCount.Topic.newBuilder();
-        
+
         builder.setSchemaVersion(builder.getSchemaVersion());
         builder.setReceivedAt(receivedMs);
-        
-        
+
         int versionIndex = findVersionIndex(parts);
-        if (versionIndex < 0 ) {
+        if (versionIndex < 0) {
             throw new InvalidAPCTopicException("Failed to find topic version from topic " + topic);
         }
         builder.setTopicPrefix(joinFirstNParts(parts, versionIndex, "/"));
@@ -190,27 +194,23 @@ public class PassengerCountParser {
         final String versionStr = parts[index++];
         builder.setTopicVersion(versionStr);
 
-        final PassengerCount.Topic.JourneyType journeyType =
-                safeValueOf(PassengerCount.Topic.JourneyType.class, parts[index++])
-                        .orElseThrow(() -> new InvalidAPCTopicException("Unknown journey type: " + topic));
+        final PassengerCount.Topic.JourneyType journeyType = safeValueOf(PassengerCount.Topic.JourneyType.class,
+                parts[index++]).orElseThrow(() -> new InvalidAPCTopicException("Unknown journey type: " + topic));
         builder.setJourneyType(journeyType);
 
-        final PassengerCount.Topic.TemporalType temporalType =
-                safeValueOf(PassengerCount.Topic.TemporalType.class, parts[index++])
-                        .orElseThrow(() -> new InvalidAPCTopicException("Unknown temporal type: " + topic));
+        final PassengerCount.Topic.TemporalType temporalType = safeValueOf(PassengerCount.Topic.TemporalType.class,
+                parts[index++]).orElseThrow(() -> new InvalidAPCTopicException("Unknown temporal type: " + topic));
         builder.setTemporalType(temporalType);
 
-        final PassengerCount.Topic.EventType eventType =
-                safeValueOf(PassengerCount.Topic.EventType.class, parts[index++])
-                        .orElseThrow(() -> new InvalidAPCTopicException("Unknown event type: " + topic));
+        final PassengerCount.Topic.EventType eventType = safeValueOf(PassengerCount.Topic.EventType.class,
+                parts[index++]).orElseThrow(() -> new InvalidAPCTopicException("Unknown event type: " + topic));
         builder.setEventType(eventType);
-
 
         final String strTransportMode = parts[index++];
         if (strTransportMode != null && !strTransportMode.isEmpty()) {
-            final PassengerCount.Topic.TransportMode transportMode =
-                    safeValueOf(PassengerCount.Topic.TransportMode.class, strTransportMode)
-                            .orElseThrow(() -> new InvalidAPCTopicException("Unknown transport mode: " + topic));
+            final PassengerCount.Topic.TransportMode transportMode = safeValueOf(
+                    PassengerCount.Topic.TransportMode.class, strTransportMode)
+                    .orElseThrow(() -> new InvalidAPCTopicException("Unknown transport mode: " + topic));
             builder.setTransportMode(transportMode);
         }
 
@@ -219,9 +219,8 @@ public class PassengerCountParser {
 
         return builder.build();
     }
-    
 
-    public ApcJson toJson(PassengerCount.Payload passengerCountPayload){
+    public ApcJson toJson(PassengerCount.Payload passengerCountPayload) {
         ApcJson apcJson = new ApcJson();
         apcJson.apc = new Apc();
         apcJson.apc.veh = passengerCountPayload.getVeh();
@@ -263,25 +262,22 @@ public class PassengerCountParser {
         return apcJson;
     }
 
-
     public OutputStream serializeJson(ApcJson apcJson, OutputStream outputStream) throws IOException {
-        dslJson.serialize(apcJson, outputStream);
+        objectMapper.writeValue(outputStream, apcJson);
         return outputStream;
     }
-
 
     @Nullable
     public ApcJson parseJson(byte @NotNull [] data) throws IOException, InvalidAPCPayloadException {
         try {
-            return dslJson.deserialize(ApcJson.class, data, data.length);
+            return objectMapper.readValue(data, ApcJson.class);
         } catch (IOException ioe) {
-            if (ioe instanceof ParsingException) {
-                throw new PassengerCountParser.InvalidAPCPayloadException("Failed to parse APC JSON", (ParsingException)ioe);
+            if (ioe instanceof com.fasterxml.jackson.core.JsonProcessingException jpe) {
+                throw new PassengerCountParser.InvalidAPCPayloadException("Failed to parse APC JSON", jpe);
             } else {
                 throw ioe;
             }
         }
-
     }
 
     private static OptionalDouble safeParseDouble(String s) {
@@ -340,7 +336,7 @@ public class PassengerCountParser {
     }
 
     public static class InvalidAPCPayloadException extends Exception {
-        private InvalidAPCPayloadException(String message, ParsingException cause) {
+        private InvalidAPCPayloadException(String message, JsonProcessingException cause) {
             super(message, cause);
         }
     }

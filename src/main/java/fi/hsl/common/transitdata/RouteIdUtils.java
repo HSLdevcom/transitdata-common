@@ -18,7 +18,8 @@ public class RouteIdUtils {
     private static final String FERRY_ROUTE_NAME_REGEX = "^1019E?";
     private static final Pattern FERRY_ROUTE_PATTERN = Pattern.compile(FERRY_ROUTE_NAME_REGEX);
 
-    private RouteIdUtils() {}
+    private RouteIdUtils() {
+    }
 
     /**
      * Checks if route ID is for train route

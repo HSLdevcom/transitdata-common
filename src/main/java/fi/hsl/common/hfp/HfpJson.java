@@ -1,21 +1,32 @@
 package fi.hsl.common.hfp;
 
-import com.dslplatform.json.*;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonDeserializer;
+import com.fasterxml.jackson.databind.JsonSerializer;
+import com.fasterxml.jackson.databind.SerializerProvider;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.io.IOException;
 
-// ignore unknown properties (default for objects).
-// to disallow unknown properties in JSON set it to FAIL which will result in exception instead
-@CompiledJson(onUnknown = CompiledJson.Behavior.IGNORE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class HfpJson {
     //Specification: https://digitransit.fi/en/developers/apis/4-realtime-api/vehicle-positions/
     //Example payload:
     // {"VP":{"desi":"81","dir":"2","oper":22,"veh":792,"tst":"2018-04-05T17:38:36Z","tsi":1522949916,"spd":0.16,"hdg":225,"lat":60.194481,"long":25.03095,"acc":0,"dl":-25,"odo":2819,"drst":0,"oday":"2018-04-05","jrn":636,"line":112,"start":"20:25"}}
 
-    @JsonAttribute(nullable = false, name = "VP", alternativeNames = {"DUE", "ARR", "DEP", "ARS", "PDE", "PAS", "WAIT", "DOO", "DOC", "TLR", "TLA", "DA", "DOUT", "BA", "BOUT", "VJA", "VJOUT"})
+    @JsonProperty("VP")
+    @JsonAlias({"DUE", "ARR", "DEP", "ARS", "PDE", "PAS", "WAIT", "DOO", "DOC", "TLR", "TLA", "DA", "DOUT", "BA",
+            "BOUT", "VJA", "VJOUT"})
     public Payload payload;
 
-    @CompiledJson(onUnknown = CompiledJson.Behavior.IGNORE)
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Payload {
 
         public String desi;
@@ -26,10 +37,10 @@ public class HfpJson {
 
         public Integer veh;
 
-        @JsonAttribute(nullable = false)
+        @JsonProperty(required = true)
         public String tst;
 
-        @JsonAttribute(nullable = false)
+        @JsonProperty(required = true)
         public long tsi;
 
         public Double spd;
@@ -38,14 +49,15 @@ public class HfpJson {
 
         public Double lat;
 
-        @JsonAttribute(name = "long") //use alternative name in JSON
+        @JsonProperty("long") //use alternative name in JSON
         public Double longitude;
 
         public Double acc;
 
         public Integer dl;
 
-        @JsonAttribute(converter = Odo.class)
+        @JsonDeserialize(using = OdoDeserializer.class)
+        @JsonSerialize(using = OdoSerializer.class)
         public Double odo;
 
         public Integer drst;
@@ -72,63 +84,69 @@ public class HfpJson {
 
         public String ttdep;
 
-        @JsonAttribute(name = "dr-type") //use alternative name in JSON
+        @JsonProperty("dr-type") //use alternative name in JSON
         public Integer dr_type;
 
-        @JsonAttribute(name = "tlp-requestid") //use alternative name in JSON
+        @JsonProperty("tlp-requestid")
         public Integer tlp_requestid;
 
-        @JsonAttribute(name = "tlp-requesttype") //use alternative name in JSON
+        @JsonProperty("tlp-requesttype")
         public String tlp_requesttype;
 
-        @JsonAttribute(name = "tlp-prioritylevel") //use alternative name in JSON
+        @JsonProperty("tlp-prioritylevel")
         public String tlp_prioritylevel;
 
-        @JsonAttribute(name = "tlp-reason") //use alternative name in JSON
+        @JsonProperty("tlp-reason")
         public String tlp_reason;
 
-        @JsonAttribute(name = "tlp-att-seq") //use alternative name in JSON
+        @JsonProperty("tlp-att-seq")
         public Integer tlp_att_seq;
 
-        @JsonAttribute(name = "tlp-decision") //use alternative name in JSON
+        @JsonProperty("tlp-decision")
         public String tlp_decision;
 
         public Integer sid;
 
-        @JsonAttribute(name = "signal-groupid") //use alternative name in JSON
+        @JsonProperty("signal-groupid")
         public Integer signal_groupid;
 
-        @JsonAttribute(name = "tlp-signalgroupnbr") //use alternative name in JSON
+        @JsonProperty("tlp-signalgroupnbr")
         public Integer tlp_signalgroupnbr;
 
-        @JsonAttribute(name = "tlp-line-configid") //use alternative name in JSON
+        @JsonProperty("tlp-line-configid")
         public Integer tlp_line_configid;
 
-        @JsonAttribute(name = "tlp-point-configid") //use alternative name in JSON
+        @JsonProperty("tlp-point-configid")
         public Integer tlp_point_configid;
 
-        @JsonAttribute(name = "tlp-frequency") //use alternative name in JSON
+        @JsonProperty("tlp-frequency")
         public Integer tlp_frequency;
 
-        @JsonAttribute(name = "tlp-protocol") //use alternative name in JSON
+        @JsonProperty("tlp-protocol")
         public String tlp_protocol;
 
         public String label;
     }
 
-    public static abstract class Odo {
-        public static final JsonReader.ReadObject<Double> JSON_READER = new JsonReader.ReadObject<Double>() {
-            public Double read(JsonReader reader) throws IOException {
-                return reader.wasNull() ? null : NumberConverter.deserializeDouble(reader);
+    public static class OdoDeserializer extends JsonDeserializer<Double> {
+        @Override
+        public Double deserialize(JsonParser p, DeserializationContext ctxt)
+                throws IOException, JsonProcessingException {
+            if (p.currentToken().isNumeric()) {
+                return p.getDoubleValue();
             }
-        };
-
-        public static final JsonWriter.WriteObject<Double> JSON_WRITER = new JsonWriter.WriteObject<Double>() {
-            public void write(JsonWriter writer, Double value) {
-                if (value == null) writer.writeNull();
-                else NumberConverter.serializeNullable(value.intValue(), writer);
-            }
-        };
+            return null;
+        }
     }
 
+    public static class OdoSerializer extends JsonSerializer<Double> {
+        @Override
+        public void serialize(Double value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
+            if (value == null) {
+                gen.writeNull();
+            } else {
+                gen.writeNumber(value.intValue());
+            }
+        }
+    }
 }
