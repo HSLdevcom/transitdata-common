@@ -97,6 +97,7 @@ message FeedEntity {
   optional TripUpdate trip_update = 3;
   optional VehiclePosition vehicle = 4;
   optional Alert alert = 5;
+  optional Shape shape = 6;
 
   // The extensions namespace allows 3rd-party developers to extend the
   // GTFS Realtime Specification in order to add and evaluate new features and
@@ -303,6 +304,42 @@ message TripUpdate {
   // formally adopted in the future.
   optional int32 delay = 5;
 
+  message TripProperties {
+    // Provides the updated properties for the trip.
+
+    optional string trip_id = 1;
+    // Defines the identifier of a new trip that is a duplicate of an existing trip defined in (CSV) GTFS trips.txt
+    // but will start at a different service date and/or time (defined using TripProperties.start_date and
+    // TripProperties.start_time). See definition of trips.trip_id in (CSV) GTFS. Its value must be different than the
+    // ones used in the (CSV) GTFS. This field is required if schedule_relationship is DUPLICATED, otherwise this field
+    // must not be populated and will be ignored by consumers.
+
+    optional string start_date = 2;
+    // Service date on which the duplicated trip will be run. Must be provided in YYYYMMDD format. This field is
+    // required if schedule_relationship is DUPLICATED, otherwise this field must not be populated and will be ignored
+    // by consumers.
+
+    optional string start_time = 3;
+    // Defines the departure start time of the trip when it’s duplicated. See definition of stop_times.departure_time
+    // in (CSV) GTFS. Scheduled arrival and departure times for the duplicated trip are calculated based on the offset
+    // between the original trip departure_time and this field. For example, if a GTFS trip has stop A with a
+    // departure_time of 10:00:00 and stop B with departure_time of 10:01:00, and this field is populated with the
+    // value of 10:30:00, stop B on the duplicated trip will have a scheduled departure_time of 10:31:00. Real-time
+    // prediction delay values are applied to this calculated schedule time to determine the predicted time. For
+    // example, if a departure delay of 30 is provided for stop B, then the predicted departure time is 10:31:30.
+    // Real-time prediction time values do not have any offset applied to them and indicate the predicted time as
+    // rovided. For example, if a departure time representing 10:31:30 is provided for stop B, then the predicted
+    // departure time is 10:31:30.This field is required if schedule_relationship is DUPLICATED, otherwise this field
+    // must not be populated and will be ignored by consumers.
+
+    optional string shape_id = 4;
+    // Specifies the shape of the vehicle travel path for this trip when it differs from the original. Refers to a
+    // shape defined in the (CSV) GTFS or a new shape entity in a real-time feed. See definition of trips.shape_id in
+    // (CSV) GTFS.
+  }
+
+  optional TripProperties trip_properties = 6;
+
   // The extensions namespace allows 3rd-party developers to extend the
   // GTFS Realtime Specification in order to add and evaluate new features and
   // modifications to the spec.
@@ -478,6 +515,21 @@ message Alert {
   }
 
   optional SeverityLevel severity_level = 14 [default = UNKNOWN_SEVERITY];
+
+  // The extensions namespace allows 3rd-party developers to extend the
+  // GTFS Realtime Specification in order to add and evaluate new features
+  // and modifications to the spec.
+  extensions 1000 to 1999;
+}
+
+// Data about the realtime added shapes, such as for a detour.
+message Shape {
+  // Identifier of the shape. Must be different than any shape_id defined in the (CSV) GTFS.
+  required string shape_id = 1;
+
+  // Encoded polyline representation of the shape. This polyline must contain at least two points. For more information
+  // about encoded polylines, see https://developers.google.com/maps/documentation/utilities/polylinealgorithm
+  required string encoded_polyline = 2;
 
   // The extensions namespace allows 3rd-party developers to extend the
   // GTFS Realtime Specification in order to add and evaluate new features
