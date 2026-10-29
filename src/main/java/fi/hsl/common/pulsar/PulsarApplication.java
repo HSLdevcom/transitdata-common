@@ -2,6 +2,7 @@ package fi.hsl.common.pulsar;
 
 import com.typesafe.config.Config;
 import fi.hsl.common.health.HealthServer;
+import fi.hsl.common.metrics.MetricsServer;
 import fi.hsl.common.redis.RedisClusterProperties;
 import fi.hsl.common.redis.RedisStore;
 import org.apache.pulsar.client.admin.PulsarAdmin;
@@ -46,6 +47,7 @@ public class PulsarApplication implements AutoCloseable {
     PulsarAdmin admin;
     RedisStore redisStore;
     HealthServer healthServer;
+    MetricsServer metricsServer;
 
     PulsarApplication() {
     }
@@ -118,6 +120,10 @@ public class PulsarApplication implements AutoCloseable {
             if (redisClusterProperties.healthCheck && healthServer != null) {
                 healthServer.addCheck(createRedisHealthCheck(redisStore));
             }
+        }
+
+        if (config.hasPath("metrics.enabled") && config.getBoolean("metrics.enabled")) {
+            metricsServer = new MetricsServer(config.getInt("metrics.port"));
         }
 
         return createContext(config, client, consumer, producers, redisStore, admin, healthServer);
@@ -322,5 +328,7 @@ public class PulsarApplication implements AutoCloseable {
             redisStore.close();
         if (healthServer != null)
             healthServer.close();
+        if (metricsServer != null)
+            metricsServer.close();
     }
 }
